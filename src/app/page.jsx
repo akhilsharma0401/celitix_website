@@ -943,12 +943,15 @@ const Home = () => {
       <div className="bg-[#F6EDF9] py-2 sm:py-8 md:py-10">
         <div className="lg:px-15 md:px-10 px-2 w-full py-5 md:py-20">
           <video
-            className="w-full h-auto rounded-2xl object-cover box-reveal-bottom "
+            className="w-full h-auto rounded-2xl z-30 "
             src={hero}
-            autoPlay
-            muted
-            loop
-            playsInline
+             key={hero}
+                loop
+                muted
+                autoPlay
+                playsInline
+                preload="metadata"
+          
             title="All-in-One Communication Platform"
             alt="All-in-One Communication Platform"
           >
