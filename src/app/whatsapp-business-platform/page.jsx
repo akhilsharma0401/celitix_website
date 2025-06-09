@@ -145,7 +145,7 @@ const WhatsApp = () => {
       'Every business is different, and so is its process. With Celitix’s user-friendly WhatsApp Flowbuilder, anyone can design their perfect workflow. Use forms, lists, check boxes, and drop-down menus.',
     buttonText: 'Learn More',
     // This is a video file, so we’ll set isVideo=true:
-    image: '/assets/videos/CustomFlows.mp4',
+    image: '/assets/videos/cust.mp4',
     isVideo: true,
   },
   Chatbots: {
@@ -153,7 +153,7 @@ const WhatsApp = () => {
     description:
       'Let customers explore your brand at their own pace. Customise one of our pre-built chatbots, or build your own from scratch. Add rich media, videos, documents, and links to create excellent brand experiences.',
     buttonText: 'Get Started',
-    image: "/assets/videos/whatsChatbot.mp4",
+    image: "/assets/videos/wbot.mp4",
     isVideo: true,
   },
   'Manage Orders': {
@@ -161,7 +161,7 @@ const WhatsApp = () => {
     description:
       'Share your products, let customers browse, choose their items, place orders, and take payments. Smart brands can also set up loyalty programs and take feedback to strengthen customer relationships long-term.',
     buttonText: 'Explore',
-    image: "/assets/videos/whatsManageOrders.mp4",
+    image: "/assets/videos/word.mp4",
     isVideo: true,
   },
   }

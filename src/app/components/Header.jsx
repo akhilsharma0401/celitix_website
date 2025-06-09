@@ -243,10 +243,10 @@ const Header = () => {
 
                 <div className="absolute top-0 left-1/4 -translate-x-1/2 -translate-y-2 rotate-45 bg-white h-4 w-4 border-t border-l border-gray-200 z-[1]"></div>
 
-                <div className="absolute -left-40 top-full grid grid-cols-3 lg:grid-cols-3 md:grid-cols-3 gap-6 bg-white text-black border border-gray-200 shadow-lg p-6 rounded-md w-[800px] ">
+                <div className="absolute -left-40 top-full grid grid-cols-2 lg:grid-cols-2 md:grid-cols-2 gap-6 bg-white text-black border border-gray-200 shadow-lg p-6 rounded-md w-[600px] ">
 
-                  <div className="w-full bg-white border border-gray-200 rounded-lg shadow-md p-6 text-gray-800 hover:shadow-lg transition duration-300 ease-in-out">
-                    {/* Icon or Emoji */}
+                  {/* <div className="w-full bg-white border border-gray-200 rounded-lg shadow-md p-6 text-gray-800 hover:shadow-lg transition duration-300 ease-in-out">
+                    
                     <div className="flex items-center gap-2 mb-4">
                       <div className="w-10 h-10 flex items-center justify-center bg-indigo-100 text-indigo-600 rounded-full text-xl font-bold">
                         <Image src={Channels} alt="Channels" className="w-6 h-6" />
@@ -258,12 +258,12 @@ const Header = () => {
                       Explore our omnichannel communication solutions
                     </p>
 
-                    {/* <a
+                    <a
                            
                         className="text-indigo-600 text-sm font-semibold hover:underline"
                                  >
                               Overview &rarr;
-                                </a> */}
+                                </a>
 
                     <Link href="/cpaas-solutions">
                       <UniversalButton
@@ -273,7 +273,7 @@ const Header = () => {
                       />
                     </Link>
 
-                  </div>
+                  </div> */}
                   <div className="w-full grid grid-cols-1 popfh sm:grid-cols-1 md:grid-cols-1 gap-1 p-1">
                     <Link href="/whatsapp-business-platform">
                       <ChannelItem title="WhatsApp" desc="Most Comprehensive" />

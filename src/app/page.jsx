@@ -942,7 +942,7 @@ const Home = () => {
         <div className="lg:px-15 md:px-10 px-2 w-full py-5 md:py-20">
           <video
             className="w-full h-auto rounded-2xl object-cover box-reveal-bottom "
-            src='/assets/videos/Hero.mp4'
+            src='/assets/videos/hero.mp4'
             autoPlay
             muted
             loop
