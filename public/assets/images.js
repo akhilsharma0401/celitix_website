@@ -34,7 +34,7 @@ import L1Appauth from "./Icons/mobile-app-authentication-icon.png"
 
 // Home
 // 1st
-// import homehero from "./videos/Hero.mp4"
+// import homehero from "./videos/hero.mp4"
 // 1st
 // 2nd
 import homesecond1 from "./images/dial-me-now-icon.png"

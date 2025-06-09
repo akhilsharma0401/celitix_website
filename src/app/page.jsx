@@ -22,7 +22,7 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 // import Careers from "./company/Careers";
 // import { Helmet } from 'react-helmet-async';
 // import { initScrollReveal } from "../utils/ScrollReveal";
-import { Click_to_Call, Ecommerce1, Ecommerce2, Ecommerce3, Ecommerce4, Ecommerce5, Ecommerce6, Education1, Education2, Education3, Education4, Education5, Email_Solutions, Finance1, Finance2, Finance3, Finance4, Finance5, FoodBeverage_01, FoodBeverage_02, FoodBeverage_03, FoodBeverage_04, FoodBeverage_05, Healthcare1, Healthcare2, Healthcare3, Healthcare4, Healthcare5, home_reach, home_serve, home_solve, homehero, homesecond1, homesecond10, homesecond11, homesecond2, homesecond3, homesecond4, homesecond5, homesecond6, homesecond7, homesecond8, homesecond9, Inbound_Dialer, Missed_Call_Services, Outbound_Dialer, ProfessionalServices1, ProfessionalServices2, ProfessionalServices3, ProfessionalServices4, ProfessionalServices5, RCS_Business_Messaging, ReachApp, Reachclicktocall, Reachemail, Reachinboundcalling, ReachMissedcall, ReachObd, ReachRCS, ReachSMS, Reachwaytosms, Reachwhatsappicon, RealEstateConstruction1, RealEstateConstruction2, RealEstateConstruction3, RealEstateConstruction4, RealEstateConstruction5, rocket, SMS_Marketing, TechStartups1, TechStartups2, TechStartups3, TechStartups4, TechStartups5, TechStartups6, Travel1, Travel2, Travel3, Travel4, Travel5, Two_Way_SMS, WhatsApp_Business_Platform } from '../../public/assets/images';
+import { Click_to_Call, Ecommerce1, Ecommerce2, Ecommerce3, Ecommerce4, Ecommerce5, Ecommerce6, Education1, Education2, Education3, Education4, Education5, Email_Solutions, Finance1, Finance2, Finance3, Finance4, Finance5, FoodBeverage_01, FoodBeverage_02, FoodBeverage_03, FoodBeverage_04, FoodBeverage_05, Healthcare1, Healthcare2, Healthcare3, Healthcare4, Healthcare5, home_reach, home_serve, home_solve, homesecond1, homesecond10, homesecond11, homesecond2, homesecond3, homesecond4, homesecond5, homesecond6, homesecond7, homesecond8, homesecond9, Inbound_Dialer, Missed_Call_Services, Outbound_Dialer, ProfessionalServices1, ProfessionalServices2, ProfessionalServices3, ProfessionalServices4, ProfessionalServices5, RCS_Business_Messaging, ReachApp, Reachclicktocall, Reachemail, Reachinboundcalling, ReachMissedcall, ReachObd, ReachRCS, ReachSMS, Reachwaytosms, Reachwhatsappicon, RealEstateConstruction1, RealEstateConstruction2, RealEstateConstruction3, RealEstateConstruction4, RealEstateConstruction5, rocket, SMS_Marketing, TechStartups1, TechStartups2, TechStartups3, TechStartups4, TechStartups5, TechStartups6, Travel1, Travel2, Travel3, Travel4, Travel5, Two_Way_SMS, WhatsApp_Business_Platform } from '../../public/assets/images';
 import Link from "next/link";
 // import FormPopup from "../components/FormPopup";
 import { App_Authenticator } from "../../public/assets/images";
@@ -888,61 +888,63 @@ const Home = () => {
     setOpenDialog(false);
   }
 
+
+  const hero = "/assets/videos/hero.mp4"
   return (
     <div className="bg-[#f6edf9]">
-     <div style={{
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
-          top: 0,
-          left: 0,
-          zIndex: 10, // above background, below/around content
-        }}>
-          <OurClientele num={5} />
+      <div style={{
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        top: 0,
+        left: 0,
+        zIndex: 10, // above background, below/around content
+      }}>
+        <OurClientele num={5} />
       </div>
-        
 
-        {/* <Header /> */}
-        {/* <Helmet>
+
+      {/* <Header /> */}
+      {/* <Helmet>
         <title>Celitix - CPaaS for Omnichannel Communication</title>
         <meta name="description" content=" One Cloud-Powered Dashboard for All Your Business Communication. Unified Sales, Support, & Service." />
         <link rel="preload" as="image" href={homehero} crossorigin="anonymous" />
       </Helmet> */}
-        {/* 1nd */}
+      {/* 1nd */}
 
-        <div className="w-full  pt-35 relative z-20">
+      <div className="w-full  pt-35 relative z-20">
 
-          <div className="text-center px-4 py-2 md:py-20 space-y-4 box-reveal-bottom">
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold text-gray-900 heading md:mb-10 mb-1">
-              All-in-One <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]"> Communication </span> Platform
-            </h1>
+        <div className="text-center px-4 py-2 md:py-20 space-y-4 box-reveal-bottom">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold text-gray-900 heading md:mb-10 mb-1">
+            All-in-One <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]"> Communication </span> Platform
+          </h1>
 
-            <p className="text-md md:text-lg lg:text-2xl font-semibold text-gray-700 sub-heading md:mb-10 mb-1">
-              Celitix connects businesses with people. Run promotional campaigns, manage leads,<br /> engage automatically and provide personalised support - all from one place!
-            </p>
-            <div className="flex justify-center items-center gap-4 md:gap-6 lg:gap-8 flex-wrap">
-              <UniversalButton
-                label="Talk to Expert"
-                variant="brutal"
-                className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-2 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] mb-2"
-                onClick={handleShowFormPopup}
-              />
-              <FormPopup
-                visible={openDialog}
-                onHide={handleCloseDialog}
-              />
-            </div>
+          <p className="text-md md:text-lg lg:text-2xl font-semibold text-gray-700 sub-heading md:mb-10 mb-1">
+            Celitix connects businesses with people. Run promotional campaigns, manage leads,<br /> engage automatically and provide personalised support - all from one place!
+          </p>
+          <div className="flex justify-center items-center gap-4 md:gap-6 lg:gap-8 flex-wrap">
+            <UniversalButton
+              label="Talk to Expert"
+              variant="brutal"
+              className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-2 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] mb-2"
+              onClick={handleShowFormPopup}
+            />
+            <FormPopup
+              visible={openDialog}
+              onHide={handleCloseDialog}
+            />
           </div>
-
-
         </div>
-      
+
+
+      </div>
+
       {/* 1nd */}
       <div className="bg-[#F6EDF9] py-2 sm:py-8 md:py-10">
         <div className="lg:px-15 md:px-10 px-2 w-full py-5 md:py-20">
           <video
             className="w-full h-auto rounded-2xl object-cover box-reveal-bottom "
-            src='/assets/videos/hero.mp4'
+            src={hero}
             autoPlay
             muted
             loop
