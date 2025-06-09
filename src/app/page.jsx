@@ -889,7 +889,7 @@ const Home = () => {
   }
 
 
-  const hero = "/assets/videos/wbot.mp4"
+  const hero = "/assets/videos/mainvideo.mp4"
   return (
     <div className="bg-[#f6edf9]">
       <div style={{
@@ -945,13 +945,13 @@ const Home = () => {
           <video
             className="w-full h-auto rounded-2xl z-30 "
             src={hero}
-             key={hero}
-                loop
-                muted
-                autoPlay
-                playsInline
-                preload="metadata"
-          
+            key={hero}
+            loop
+            muted
+            autoPlay
+            playsInline
+            preload="metadata"
+
             title="All-in-One Communication Platform"
             alt="All-in-One Communication Platform"
           >
