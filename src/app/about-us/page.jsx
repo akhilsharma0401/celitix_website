@@ -6,6 +6,8 @@ import Link from "next/link";
 import Image from 'next/image';
 import { Efficiency, Excellence, Improvement, Integrity, Partnership, featureicon1, featureicon2, featureicon3, featureicon4, heroimg, brandgrowth, bookingschedule } from '../../../public/assets/images';
 import UniversalButton from '../components/UniversalButton'
+import FormPopup from '../components/FormPopup';
+
 
 
 const About = () => {
@@ -13,6 +15,16 @@ const About = () => {
   //   initScrollReveal();
   // }, []);
 
+
+  const [openDialog, setOpenDialog] = useState(false);
+  
+    const handleShowFormPopup = () => {
+      setOpenDialog(true);
+    }
+  
+    const handleCloseDialog = () => {
+      setOpenDialog(false);
+    }
 
   // 2nd
   const features = [
@@ -82,6 +94,8 @@ const About = () => {
     return () => clearInterval(interval);
   }, []);
   // 3rd
+
+   
   return (
     <div>
       {/* <Helmet>
@@ -109,9 +123,14 @@ const About = () => {
               <UniversalButton
                 label="Connect With Us"
                 variant="brutal"
-                onClick={() => (window.location.href = '/careers#form')}
+                // onClick={() => (window.location.href = '/careers#form')}
                 className="bg-[#9B44B6] border-[#9B44B6] text-white px-5 py-2 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6]"
+                  onClick={handleShowFormPopup}
               />
+               <FormPopup
+                  visible={openDialog}
+                  onHide={handleCloseDialog}
+                />
             </div>
           </div>
 

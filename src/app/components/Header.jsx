@@ -10,17 +10,17 @@ import Link from 'next/link'
 // import { Helmet } from 'react-helmet-async';
 // import UniversalButton from './UniversalButton';
 import Channels from '../../../public/assets/mainicons/Channels.png';
-import Industries  from '../../../public/assets/mainicons/Industries.png';
-import AboutUsicon   from '../../../public/assets/mainicons/AboutUsicon.png';
-import Careersicon   from '../../../public/assets/mainicons/Careersicon.png';
-import celitixheader   from '../../../public/assets/mainicons/celitix-cpaas-solution-logo.svg';
+import Industries from '../../../public/assets/mainicons/Industries.png';
+import AboutUsicon from '../../../public/assets/mainicons/AboutUsicon.png';
+import Careersicon from '../../../public/assets/mainicons/Careersicon.png';
+import celitixheader from '../../../public/assets/mainicons/celitix-cpaas-solution-logo.svg';
 // import { AboutUsicon, Authenticationicon, Careersicon, celitixheader, Channels, Click2callicon, Ecommerceicon, Educationicon, Emailicon, Financeicon, FoodProductionicon, Healthcareicon, IBDicon, Industries, MissedCallicon, OBDicon, RCSicon, RealEstateicon, ServiceBasedicon, SMSicon, TechStartupsicon, Tourismicon, twoWaySMSicon, WhatsAppicon } from '../../assets/images';
-import SMSicon   from '../../../public/assets/mainicons/SMSicon.png';
-import twoWaySMSicon   from '../../../public/assets/mainicons/twoWaySMSicon.png';
-import WhatsAppicon   from '../../../public/assets/mainicons/WhatsAppicon.png';
-import MissedCallicon   from '../../../public/assets/mainicons/Missed-Callicon.png';
-import Authenticationicon   from '../../../public/assets/mainicons/Authenticationicon.png';
-import Click2callicon   from '../../../public/assets/mainicons/Click2callicon.png';
+import SMSicon from '../../../public/assets/mainicons/SMSicon.png';
+import twoWaySMSicon from '../../../public/assets/mainicons/twoWaySMSicon.png';
+import WhatsAppicon from '../../../public/assets/mainicons/WhatsAppicon.png';
+import MissedCallicon from '../../../public/assets/mainicons/Missed-Callicon.png';
+import Authenticationicon from '../../../public/assets/mainicons/Authenticationicon.png';
+import Click2callicon from '../../../public/assets/mainicons/Click2callicon.png';
 import IBDicon from '../../../public/assets/mainicons/IBDicon.png';
 import OBDicon from '../../../public/assets/mainicons/OBDicon.png';
 import RCSicon from '../../../public/assets/mainicons/RCSicon.png';
@@ -31,10 +31,10 @@ import Financeicon from '../../../public/assets/mainicons/Finance.png';
 import FoodProductionicon from '../../../public/assets/mainicons/Food-Production.png';
 import Healthcareicon from '../../../public/assets/mainicons/Healthcare.png';
 import RealEstateicon from '../../../public/assets/mainicons/Real-Estate.png';
-import ServiceBasedicon   from '../../../public/assets/mainicons/Service-Based.png';
-import TechStartupsicon   from '../../../public/assets/mainicons/Tech-Startups.png';
+import ServiceBasedicon from '../../../public/assets/mainicons/Service-Based.png';
+import TechStartupsicon from '../../../public/assets/mainicons/Tech-Startups.png';
 import Image from 'next/image';
-import { Tourismicon } from '../../../public/assets/images';
+import { ContactUsicon, Tourismicon } from '../../../public/assets/images';
 import UniversalButton from './UniversalButton';
 import FormPopup from './FormPopup';
 
@@ -45,7 +45,7 @@ const Header = () => {
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
   const toggleMenu = () => setMobileMenuOpen(!mobileMenuOpen);
-//   const navigate = useNavigate();
+  //   const navigate = useNavigate();
 
   const iconMap = {
     SMS: <Image src={SMSicon} alt="SMS" className="w-6 h-6 mt-1" />,
@@ -77,7 +77,7 @@ const Header = () => {
       setIsChannelsOpen(true)
     } else {
       // second click: go to product page
-    //   navigate('/cpaas-solutions')
+      //   navigate('/cpaas-solutions')
     }
   }
 
@@ -97,7 +97,7 @@ const Header = () => {
 
   const ResourcesItem = ({ title, desc, to }) => (
     <div
-    //   onClick={() => navigate(to)}
+      //   onClick={() => navigate(to)}
       className="flex items-center gap-2 p-2 rounded-md transition-all duration-300 cursor-pointer 
                    hover:bg-gray-50 hover:shadow-md hover:scale-105 "
     >
@@ -121,23 +121,23 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-    // const handleShowFormPopup = () => {
-    //     setopenDialog(true);
-    // }
+  // const handleShowFormPopup = () => {
+  //     setopenDialog(true);
+  // }
 
-    // const handleCloseDialog = () => {
-    //     setopenDialog(false);
-    // }
+  // const handleCloseDialog = () => {
+  //     setopenDialog(false);
+  // }
 
-   const [openDialog, setopenDialog] = useState(false);
-  
-    const handleShowFormPopup = () => {
-      setopenDialog(true);
-    }
-  
-    const handleCloseDialog = () => {
-      setopenDialog(false);
-    }
+  const [openDialog, setopenDialog] = useState(false);
+
+  const handleShowFormPopup = () => {
+    setopenDialog(true);
+  }
+
+  const handleCloseDialog = () => {
+    setopenDialog(false);
+  }
   return (
     <>
       {/* <Helmet>
@@ -189,8 +189,57 @@ const Header = () => {
                 </div>
               </Link>
               <div className="absolute left-1/2 top-9 mt-2 transform -translate-x-1/2 opacity-0 scale-95 
-            pointer-events-none group-hover:pointer-events-auto group-hover:opacity-100 
-             group-hover:scale-100 transition-all duration-500 ease-out z-50 ">
+              pointer-events-none group-hover:pointer-events-auto group-hover:opacity-100 
+              group-hover:scale-100 transition-all duration-500 ease-out z-50 ">
+
+                <div className="absolute top-0 left-1/4 -translate-x-1/2 -translate-y-2 rotate-45 bg-white h-4 w-4 border-t border-l border-gray-200 z-[1]"></div>
+
+                <div className="absolute -left-32 top-full bg-white text-black border border-gray-200 shadow-lg p-6 rounded-md w-65 ">
+
+                  <div className="w-full bg-white border border-gray-200 rounded-lg shadow-md p-6 text-gray-800 hover:shadow-lg transition duration-300 ease-in-out">
+                    {/* Icon or Emoji */}
+                    <div className="flex items-center gap-2 mb-4">
+                      <div className="w-10 h-10 flex items-center justify-center bg-indigo-100 text-indigo-600 rounded-full text-xl font-bold">
+                        <Image src={Channels} alt="Channels" className="w-6 h-6" />
+                      </div>
+                      <h2 className="text-lg popfh font-bold">CPaaS</h2>
+                    </div>
+
+                    <p className="text-sm text-gray-600 mb-4 popfh leading-relaxed">
+                      Explore our omnichannel communication solutions
+                    </p>
+
+                    {/* <a
+                           
+                        className="text-indigo-600 text-sm font-semibold hover:underline"
+                                 >
+                              Overview &rarr;
+                                </a> */}
+
+                    <Link href="/cpaas-solutions">
+                      <UniversalButton
+                        label="Overview →"
+                        variant="brutal"
+                        className="bg-[#9B44B6] border-[#9B44B6] text-white px-2 py-1 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] lora mb-2"
+                      />
+                    </Link>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative group cursor-pointer">
+              <Link href="/cpaas-solutions">
+                <div className="popfh flex items-center text-lg gap-2 p-2 rounded-md transition-all duration-300 cursor-pointer">
+                  Channels
+                  <MdKeyboardArrowDown className="block group-hover:hidden  transition-transform duration-300" />
+                  <MdKeyboardArrowUp className="hidden group-hover:block transition-transform duration-300" />
+                </div>
+              </Link>
+              <div className="absolute left-1/2 top-9 mt-2 transform -translate-x-1/2 opacity-0 scale-95 
+              pointer-events-none group-hover:pointer-events-auto group-hover:opacity-100 
+              group-hover:scale-100 transition-all duration-500 ease-out z-50 ">
 
                 <div className="absolute top-0 left-1/4 -translate-x-1/2 -translate-y-2 rotate-45 bg-white h-4 w-4 border-t border-l border-gray-200 z-[1]"></div>
 
@@ -314,33 +363,33 @@ const Header = () => {
 
                   </div>
                   <div className="w-full grid grid-cols-1 popfh sm:grid-cols-1 md:grid-cols-1 gap-1 p-1">
-                    <Link  href="/retail-and-ecommerce">
+                    <Link href="/retail-and-ecommerce">
                       <ResourcesItem title="ECommerce" />
                     </Link>
-                    <Link  href="/healthcare">
+                    <Link href="/healthcare">
                       <ResourcesItem title="Healthcare" />
                     </Link>
-                    <Link  href="/financial-services">
+                    <Link href="/financial-services">
                       <ResourcesItem title="Finance" />
                     </Link>
-                    <Link  href="/education-and-edtech">
+                    <Link href="/education-and-edtech">
                       <ResourcesItem title="Education" />
                     </Link>
-                    <Link  href="/travel-and-tourism">
+                    <Link href="/travel-and-tourism">
                       <ResourcesItem title="Tourism" />
                     </Link>
                   </div>
                   <div className="w-full grid grid-cols-1 popfh sm:grid-cols-1 md:grid-cols-1 gap-1 p-1">
-                    <Link  href="/construction-and-real-estate">
+                    <Link href="/construction-and-real-estate">
                       <ResourcesItem title="Real Estate" />
                     </Link>
-                    <Link  href="/food-and-beverages">
+                    <Link href="/food-and-beverages">
                       <ResourcesItem title="Food Production" />
                     </Link>
-                    <Link  href="/professional-services">
+                    <Link href="/professional-services">
                       <ResourcesItem title="Service-Based" />
                     </Link>
-                    <Link  href="/tech-startups">
+                    <Link href="/tech-startups">
                       <ResourcesItem title="Tech Startups" />
                     </Link>
 
@@ -394,13 +443,13 @@ const Header = () => {
               {/* Dropdown */}
               <div className="absolute left-1/2 top-9 mt-2 transform -translate-x-1/2 z-50
               opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto
-              transition-all duration-500 ease-out border border-gray-200 p-2 rounded-md  bg-white w-56 ">
+              transition-all duration-500 ease-out border border-gray-200 p-2 rounded-md  bg-white w-85">
                 {/* Arrow */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 rotate-45 bg-white h-4 w-4 border-t border-l border-gray-200  z-[1]" />
 
                 {/* Dropdown Box */}
-                <div className="bg-white border border-gray-200 grid grid-cols-2 rounded-lg shadow-md py-3 px-0 flex-col">
-                  <Link  href="/about-us">
+                <div className="bg-white border border-gray-200 grid grid-cols-3 rounded-lg shadow-md py-3 px-0 flex-col">
+                  <Link href="/about-us">
                     <div className="flex flex-col popfh items-center justify-center border-r border-gray-700 m-0">
                       <Image
                         src={AboutUsicon}
@@ -410,14 +459,24 @@ const Header = () => {
                       <ResourcesItem title="About Us" desc="About our team" />
                     </div>
                   </Link>
-                  <Link  href="/careers">
-                    <div className="flex flex-col popfh items-center justify-center">
+                  <Link href="/careers">
+                    <div className="flex flex-col popfh items-center justify-center border-r border-gray-700 m-0">
                       <Image
                         src={Careersicon}
                         alt="House Icon"
                         className="text-[#9B44B6] w-6 h-6"
                       />
                       <ResourcesItem title="Careers" desc="Who we work with" />
+                    </div>
+                  </Link>
+                  <Link href="/contact-us">
+                    <div className="flex flex-col popfh items-center justify-center">
+                      <Image
+                        src={ContactUsicon}
+                        alt="House Icon"
+                        className="text-[#9B44B6] w-7 h-6"
+                      />
+                      <ResourcesItem title="ContactUs" />
                     </div>
                   </Link>
 
@@ -429,7 +488,7 @@ const Header = () => {
 
             {/* Pricing  */}
             <div className="relative group cursor-pointer">
-              <Link  href="/pricing">
+              <Link href="/pricing">
                 <div className="flex items-center text-lg popfh gap-2 p-2 rounded-md transition-all duration-300">
                   Pricing
                   <MdKeyboardArrowDown className="block group-hover:hidden transition-transform duration-300" />
@@ -454,25 +513,23 @@ const Header = () => {
           group-hover:scale-100 transition-all duration-500 ease-out z-50 border border-gray-200 p-2 rounded-md  bg-white w-60">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 rotate-45 bg-white h-4 w-4 border-t border-l border-gray-200  z-[1]"></div>
                 <div className="bg-white border border-gray-200 grid grid-cols-2 rounded-lg shadow-md py-3 px-0 flex-col">
-                   <Link  href="/contact-us">
+                  <Link href="/tutorial">
                     <div className="flex flex-col popfh items-center justify-center border-r border-gray-700 m-0">
-                      <ResourcesItem title="Contact Us"/>
+                      <ResourcesItem title="Tutorial" desc="Learn & Explore" />
                     </div>
                   </Link>
-                  <Link  href="https://blog.celitix.com">
+                  <Link href="https://blog.celitix.com">
                     <div className="flex flex-col popfh items-center justify-center">
-                       <ResourcesItem title="Blog" desc="Learn & Explore" />
+                      <ResourcesItem title="Blog" desc="Learn & Explore" />
                     </div>
                   </Link>
-
-                  
                 </div>
               </div>
             </div>
 
-            
 
-              {/* <div className="relative group cursor-pointer">
+
+            {/* <div className="relative group cursor-pointer">
               <div className="flex items-center text-lg gap-2 p-2 popfh rounded-md transition-all duration-300">
                 Resources
                 <MdKeyboardArrowDown className="block group-hover:hidden transition-transform duration-300" />
@@ -494,9 +551,9 @@ const Header = () => {
 
           <div className="hidden lg:flex flex-shrink-0 gap-3">
             {/* <Link  href="/book-a-demo"> */}
-              <UniversalButton label="Book Demo" variant="brutal" className='bg-[#9B44B6] border-[#9B44B6] text-white px-2 py-1 font-semibold hover:bg-white hover:text-black 
-              hover:shadow-[4px_4px_0px_#9B44B6]'  onClick={handleShowFormPopup}/>
-               <FormPopup
+            <UniversalButton label="Book Demo" variant="brutal" className='bg-[#9B44B6] border-[#9B44B6] text-white px-2 py-1 font-semibold hover:bg-white hover:text-black 
+              hover:shadow-[4px_4px_0px_#9B44B6]'  onClick={handleShowFormPopup} />
+            <FormPopup
               visible={openDialog}
               onHide={handleCloseDialog}
             />
@@ -544,18 +601,29 @@ const Header = () => {
         {mobileMenuOpen && (
           <div className="lg:hidden bg-white shadow-md px-4 pt-2 -mt-2 pb-4 space-y-3 text-sm font-medium text-black transition-all duration-300 rounded-b-2xl overflow-y-auto">
             <div
-              className="relative group cursor-pointer"
+              className="relative group cursor-pointer mb-0"
+
+            >
+              <Link href="/cpaas-solutions">
+                <div className="flex items-center text-lg gap-2 p-2 rounded-md transition-all duration-300 cursor-pointer">
+                  CPaaS <MdKeyboardArrowDown />
+                </div>
+              </Link>
+            </div>
+
+            <div
+              className="relative group cursor-pointer mb-0"
               onClick={() => {
                 if (window.innerWidth < 769) setIsChannelsOpen(!isChannelsOpen);
               }}
             >
-              
-               <div
-        className="flex items-center text-lg gap-2 p-2 rounded-md transition-all duration-300 cursor-pointer"
-        onClick={handleClick}
-      >
-        CPaaS <MdKeyboardArrowDown className={`${isChannelsOpen ? 'rotate-180' : ''} transition-transform duration-300`} />
-      </div>
+
+              <div
+                className="flex items-center text-lg gap-2 p-2 rounded-md transition-all duration-300 cursor-pointer"
+                onClick={handleClick}
+              >
+                Channels <MdKeyboardArrowDown className={`${isChannelsOpen ? 'rotate-180' : ''} transition-transform duration-300`} />
+              </div>
 
               <div
                 className={`bg-white text-black rounded-md z-50
@@ -563,41 +631,41 @@ const Header = () => {
           ${isChannelsOpen ? 'block' : 'hidden'} grid sm:grid-cols-2 md:grid-cols-2 w-full md:w-[800px]
       `}
               >
-                <Link  href="/whatsapp-business-platform">
+                <Link href="/whatsapp-business-platform">
                   <ChannelItem title="WhatsApp" desc="Most Comprehensive" />
                 </Link>
-                <Link  href="/rcs-business-messaging">
+                <Link href="/rcs-business-messaging">
                   <ChannelItem title="RCS" desc="Least Competitive" />
                 </Link>
-                <Link  href="/sms-marketing">
+                <Link href="/sms-marketing">
                   <ChannelItem title="SMS" desc="Best Reach" />
                 </Link>
-                <Link  href="/two-way-sms">
+                <Link href="/two-way-sms">
                   <ChannelItem title="2 Way SMS" desc="Best For Engagement" />
                 </Link>
-                <Link  href="/inbound-dialer">
+                <Link href="/inbound-dialer">
                   <ChannelItem title="IBD" desc="Best For Customer Service" />
                 </Link>
-                <Link  href="/outbound-dialer">
+                <Link href="/outbound-dialer">
                   <ChannelItem title="OBD" desc="Most Accessible" />
                 </Link>
-                <Link  href="/missed-call-services">
+                <Link href="/missed-call-services">
                   <ChannelItem title="Missed Call" desc="Most Customizable" />
                 </Link>
-                <Link  href="/click-to-call">
+                <Link href="/click-to-call">
                   <ChannelItem title="Click2Call" desc="Best For User Experience" />
                 </Link>
-                <Link  href="/user-verification">
+                <Link href="/user-verification">
                   <ChannelItem title="Authentication" desc="Easy Security" />
                 </Link>
-                <Link  href="/email-otp">
+                <Link href="/email-otp">
                   <ChannelItem title="Email OTP" desc="Trusted & Trackable" />
                 </Link>
               </div>
 
             </div>
             <div
-              className="relative group cursor-pointer"
+              className="relative group cursor-pointer mb-0"
               onClick={() => {
                 if (window.innerWidth < 769) setIsIndustriesOpen(!isIndustriesOpen);
               }}
@@ -611,38 +679,38 @@ const Header = () => {
         ${isIndustriesOpen ? 'block' : 'hidden'} grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2
           w-full md:w-[800px] max-h-[80vh] overflow-y-auto`}
               >
-                <Link  href="/retail-and-ecommerce">
+                <Link href="/retail-and-ecommerce">
                   <ResourcesItem title="ECommerce" />
                 </Link>
-                <Link  href="/healthcare">
+                <Link href="/healthcare">
                   <ResourcesItem title="Healthcare" />
                 </Link>
-                <Link  href="/financial-services">
+                <Link href="/financial-services">
                   <ResourcesItem title="Finance" />
                 </Link>
-                <Link  href="/education-and-edtech">
+                <Link href="/education-and-edtech">
                   <ResourcesItem title="Education" />
                 </Link>
-                <Link  href="/travel-and-tourism">
-                  <ResourcesItem title="tourism" />
+                <Link href="/travel-and-tourism">
+                  <ResourcesItem title="Tourism" />
                 </Link>
-                <Link  href="/construction-and-real-estate">
+                <Link href="/construction-and-real-estate">
                   <ResourcesItem title="Real Estate" />
                 </Link>
-                <Link  href="/food-and-beverages">
+                <Link href="/food-and-beverages">
                   <ResourcesItem title="Food Production" />
                 </Link>
-                <Link  href="/professional-services">
+                <Link href="/professional-services">
                   <ResourcesItem title="Service-Based" />
                 </Link>
-                <Link  href="/tech-startups">
+                <Link href="/tech-startups">
                   <ResourcesItem title="Tech Startups" />
                 </Link>
               </div>
 
             </div>
             <div
-              className="relative group cursor-pointer"
+              className="relative group cursor-pointer mb-0"
               onClick={() => {
                 if (window.innerWidth < 769) setIsCompaniesOpen(!isCompaniesOpen);
               }}
@@ -656,20 +724,28 @@ const Header = () => {
         ${isCompaniesOpen ? 'block' : 'hidden'} grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 
           w-full md:w-[800px] max-h-[80vh] overflow-y-auto`}
               >
-                <Link  href="/about-us">
+                <Link href="/about-us">
                   <ResourcesItem title="About Us" desc="About our team" />
                 </Link>
-                <Link  href="/careers">
+                <Link href="/careers">
                   <ResourcesItem title="Careers" desc="Who we work with" />
+                </Link>
+                <Link href="/contact-us">
+                  <ResourcesItem title="Contact Us" />
                 </Link>
               </div>
             </div>
 
-            <Link  href="/pricing">
-              <div className="flex items-center text-lg gap-2 p-2 rounded-md transition-all duration-300 cursor-pointer">
-                Pricing <MdKeyboardArrowDown />
-              </div>
-            </Link>
+            <div
+              className="relative group cursor-pointer mb-0"
+
+            >
+              <Link href="/pricing">
+                <div className="flex items-center text-lg gap-2 p-2 rounded-md transition-all duration-300 cursor-pointer">
+                  Pricing <MdKeyboardArrowDown />
+                </div>
+              </Link>
+            </div>
             {/* <div className="flex items-center text-lg gap-2 p-2 rounded-md transition-all duration-300 cursor-pointer">
                 Resources <MdKeyboardArrowDown />
                   </div> */}
@@ -690,8 +766,11 @@ const Header = () => {
         ${isResourcesOpen ? 'block' : 'hidden'} grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 
           w-full md:w-[800px] max-h-[80vh] overflow-y-auto`}
               >
-                <Link  href="https://blog.celitix.com">
-                  <ResourcesItem title="blog" desc="Learn & Explore" />
+                <Link href="https://blog.celitix.com">
+                  <ResourcesItem title="Blog" desc="Learn & Explore" />
+                </Link>
+                <Link href="/tutorial">
+                  <ResourcesItem title="Tutorial" desc="Learn & Explore" />
                 </Link>
                 {/* <ResourcesItem title="Case Studies" desc="How Celitix Helps" /> */}
               </div>
@@ -699,8 +778,8 @@ const Header = () => {
             </div>
             <div className=" flex  gap-2">
               {/* <Link  href="/book-a-demo"> */}
-                <UniversalButton label="Book Demo" variant="brutal" className='bg-[#9B44B6] border-[#9B44B6] text-white px-2 py-1 font-semibold hover:bg-white hover:text-black 
-              hover:shadow-[4px_4px_0px_#9B44B6]' onClick={handleShowFormPopup}/>
+              <UniversalButton label="Book Demo" variant="brutal" className='bg-[#9B44B6] border-[#9B44B6] text-white px-2 py-1 font-semibold hover:bg-white hover:text-black 
+              hover:shadow-[4px_4px_0px_#9B44B6]' onClick={handleShowFormPopup} />
               {/* </Link> */}
               <a
                 href="https://app.celitix.com/login"

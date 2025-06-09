@@ -91,16 +91,16 @@ const Email = () => {
   };
 
   const faqs = [
-    {
-      question: "What is Celitix’s App Authenticator?",
-      answer:
-        "It’s a secure verification tool using OTP or token-based flows via SMS, Email, WhatsApp, and Voice. ",
-    },
-    {
-      question: "How is OTP-Free verification different?",
-      answer:
-        "It uses a silent token instead of visible OTPs, improving speed and reducing user effort.",
-    },
+    // {
+    //   question: "What is Celitix’s App Authenticator?",
+    //   answer:
+    //     "It’s a secure verification tool using OTP or token-based flows via SMS, Email, WhatsApp, and Voice. ",
+    // },
+    // {
+    //   question: "How is OTP-Free verification different?",
+    //   answer:
+    //     "It uses a silent token instead of visible OTPs, improving speed and reducing user effort.",
+    // },
     {
       question: "Can I verify users via email?",
       answer:

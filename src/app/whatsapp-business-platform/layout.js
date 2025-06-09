@@ -32,9 +32,9 @@ const cityMapping = {
 
 export async function generateMetadata({ params }) {
   // Extract the city name from params
-  const cityName = cityMapping[params.city?.toLowerCase()] || ""; 
+  const cityName = cityMapping[params.city?.toLowerCase()] || "";
   return {
-    title: `WhatsApp Business API & Chatbots | Celitix ${cityName}`, 
+    title: `WhatsApp Business API & Chatbots | Celitix ${cityName}`,
     description: `Use WhatsApp to grow your ${cityName} business. Reach new heights with Celitix’s enterprise messaging solutions. Chatbots, Click to WhatsApp ads, CRM, & more.`,
   };
 }

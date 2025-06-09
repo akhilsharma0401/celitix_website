@@ -22,7 +22,7 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 // import Careers from "./company/Careers";
 // import { Helmet } from 'react-helmet-async';
 // import { initScrollReveal } from "../utils/ScrollReveal";
-import { Click_to_Call, Ecommerce1, Ecommerce2, Ecommerce3, Ecommerce4, Ecommerce5, Ecommerce6, Education1, Education2, Education3, Education4, Education5, Email_Solutions, Finance1, Finance2, Finance3, Finance4, Finance5, FoodBeverage_01, FoodBeverage_02, FoodBeverage_03, FoodBeverage_04, FoodBeverage_05, Healthcare1, Healthcare2, Healthcare3, Healthcare4, Healthcare5, home_reach, home_serve, home_solve, homehero, homesecond1, homesecond10, homesecond11, homesecond2, homesecond3, homesecond4, homesecond5, homesecond6, homesecond7, homesecond8, homesecond9, Inbound_Dialer, Missed_Call_Services, Outbound_Dialer, ProfessionalServices1, ProfessionalServices2, ProfessionalServices3, ProfessionalServices4, ProfessionalServices5, RCS_Business_Messaging, ReachApp, Reachclicktocall, Reachemail, Reachinboundcalling, ReachMissedcall, ReachObd, ReachRCS, ReachSMS, Reachwaytosms, Reachwhatsappicon, RealEstateConstruction1, RealEstateConstruction2, RealEstateConstruction3, RealEstateConstruction4, RealEstateConstruction5, SMS_Marketing, TechStartups1, TechStartups2, TechStartups3, TechStartups4, TechStartups5, TechStartups6, Travel1, Travel2, Travel3, Travel4, Travel5, Two_Way_SMS, WhatsApp_Business_Platform } from '../../public/assets/images';
+import { Click_to_Call, Ecommerce1, Ecommerce2, Ecommerce3, Ecommerce4, Ecommerce5, Ecommerce6, Education1, Education2, Education3, Education4, Education5, Email_Solutions, Finance1, Finance2, Finance3, Finance4, Finance5, FoodBeverage_01, FoodBeverage_02, FoodBeverage_03, FoodBeverage_04, FoodBeverage_05, Healthcare1, Healthcare2, Healthcare3, Healthcare4, Healthcare5, home_reach, home_serve, home_solve, homehero, homesecond1, homesecond10, homesecond11, homesecond2, homesecond3, homesecond4, homesecond5, homesecond6, homesecond7, homesecond8, homesecond9, Inbound_Dialer, Missed_Call_Services, Outbound_Dialer, ProfessionalServices1, ProfessionalServices2, ProfessionalServices3, ProfessionalServices4, ProfessionalServices5, RCS_Business_Messaging, ReachApp, Reachclicktocall, Reachemail, Reachinboundcalling, ReachMissedcall, ReachObd, ReachRCS, ReachSMS, Reachwaytosms, Reachwhatsappicon, RealEstateConstruction1, RealEstateConstruction2, RealEstateConstruction3, RealEstateConstruction4, RealEstateConstruction5, rocket, SMS_Marketing, TechStartups1, TechStartups2, TechStartups3, TechStartups4, TechStartups5, TechStartups6, Travel1, Travel2, Travel3, Travel4, Travel5, Two_Way_SMS, WhatsApp_Business_Platform } from '../../public/assets/images';
 import Link from "next/link";
 // import FormPopup from "../components/FormPopup";
 import { App_Authenticator } from "../../public/assets/images";
@@ -942,18 +942,15 @@ const Home = () => {
         <div className="lg:px-15 md:px-10 px-2 w-full py-5 md:py-20">
           <video
             className="w-full h-auto rounded-2xl object-cover box-reveal-bottom "
-            // src={homehero}
+            src='/assets/videos/Hero.mp4'
             autoPlay
             muted
             loop
             playsInline
-            // crossorigin="anonymous"
-            // fetchpriority="high"
-            // loading="eager"
             title="All-in-One Communication Platform"
             alt="All-in-One Communication Platform"
           >
-            <source src="/assets/videos/Hero.mp4" type="video/mp4" />
+            {/* <source src="/assets/videos/Hero.mp4" type="video/mp4" /> */}
           </video>
         </div>
       </div>
@@ -1123,7 +1120,7 @@ const Home = () => {
           }}
         >
           <Image
-            src='/assets/imagesMain/rocket.webp'
+            src={rocket}
             alt="Rocket"
             className="w-full h-full object-contain"
             width={600}

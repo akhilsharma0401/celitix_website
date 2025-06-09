@@ -230,13 +230,14 @@ const WhatsApp = () => {
                   onHide={handleCloseDialog}
                 />
 
-
+                 <Link href="https://wa.me/917230000091" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                 <UniversalButton
                   label="Chat Now"
                   variant="brutal"
                   className="bg-[#9B44B6] border-[#9B44B6] text-white px-5 py-2 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] flex items-center gap-2"
                   icon={<ArrowRightAltIcon style={{ fontSize: 18 }} />}
-                />
+                  />
+                  </Link>
 
               </div>
             </div>
@@ -604,6 +605,7 @@ const WhatsApp = () => {
             ) : (
               <video
                 key={image}
+                src={image}
                 loop
                 muted
                 autoPlay
@@ -611,7 +613,7 @@ const WhatsApp = () => {
                 preload="metadata"
                 className="w-80 h-auto rounded-lg"
               >
-                <source src={image} type="video/mp4" />
+                {/* <source src={image} type="video/mp4" /> */}
                 {/* Fallback message in case the browser doesn’t support video */}
                 Your browser does not support the video tag.
               </video>

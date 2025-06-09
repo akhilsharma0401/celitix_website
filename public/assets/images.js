@@ -1,6 +1,7 @@
 // header images
 import celitixheader from "./mainicons/celitix-cpaas-solution-logo.svg"
 import celitixfooter from "./mainicons/celitix-cpaas-solution-logo-footer.svg"
+
 import footerBatch from "./mainicons/BATCH01.svg"
 import METAWHITE from "./mainicons/MetaLogowhite.png"
 import Industries from "./mainicons/Industries.png"
@@ -12,7 +13,7 @@ import YouTube from "./Icons/Youtube.svg"
 import twitter from "./Icons/twitter_Icon.png"
 import whats from "./Icons/WhatsApp.svg"
 import LinkedIn from "./Icons/LinkedIn_Icon.png"
-// import rocket from "./imagesMain/rocket.webp"
+import rocket from "./imagesMain/rocket.webp"
 import LANDING from "./imagesMain/LANDING.png"
 import LANDING2nd from "./imagesMain/LANDING2nd.png"
 import LANDINGTHREESECOND from "./imagesMain/LANDINGTHREESECOND.png"
@@ -483,6 +484,7 @@ import TechStartupsicon from "./mainicons/Tech-Startups.png"
 
 import Careersicon from "./mainicons/Careersicon.png"
 import AboutUsicon from "./mainicons/AboutUsicon.png"
+import ContactUsicon from "./mainicons/ContactUs.png"
 
 
 // ICONS
@@ -588,7 +590,7 @@ export {
     METAWHITE,
     Industries,
     Channels,
-    // rocket,
+    rocket,
    
 
     LinkedIn,
@@ -1063,6 +1065,7 @@ export {
 
     Careersicon,
     AboutUsicon,
+    ContactUsicon,
     // ICONS
 
     // CTA
