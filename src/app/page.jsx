@@ -889,7 +889,7 @@ const Home = () => {
   }
 
 
-  const hero = "/assets/videos/hero.mp4"
+  const hero = "/assets/videos/wbot.mp4"
   return (
     <div className="bg-[#f6edf9]">
       <div style={{
