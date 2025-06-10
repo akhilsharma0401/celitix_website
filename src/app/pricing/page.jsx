@@ -66,16 +66,16 @@ const Pricing = () => {
                 <meta name="Explore the flexible pricing for Celitix, the all-in-one CPaaS platform for messaging & voice calling solutions. Pay only for what you use." />
                
             </Helmet> */}
-            {/* <div className="bg-[#f7ebfc] w-full h-screen flex justify-center items-center">
+            <div className="bg-[#f7ebfc] w-full h-screen flex justify-center items-center">
                 <Image
                     src={comingSoon}
                     alt="Coming Soon"
                     className="max-w-full max-h-full object-contain"
                 />
-            </div> */}
+            </div>
 
             {/* 1st */}
-            <section className="bg-[#f7ebfc] pt-25 md:pt-35 px-4 sm:px-6 lg:px-20">
+            {/* <section className="bg-[#f7ebfc] pt-25 md:pt-35 px-4 sm:px-6 lg:px-20">
                 <div className="max-w-7xl mx-auto items-center pb-5 md:pb-10">
                     <div className="space-y-3 text-center box-reveal-left">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl heading font-bold text-gray-900 leading-tight">
@@ -102,7 +102,7 @@ const Pricing = () => {
                     </div>
 
                 </div>
-            </section>
+            </section> */}
             {/* 1st */}
             {/* 2nd */}
             {/* <section className="bg-[#f7ebfc] py-2 md:py-10 px-4 sm:px-6 lg:px-25">

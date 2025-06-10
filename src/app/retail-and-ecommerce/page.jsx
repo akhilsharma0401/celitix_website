@@ -96,76 +96,129 @@ const ECommerce = () => {
     'Tech Startups': '/tech-startups',
   };
 
-  const router  = useRouter();
+ const router = useRouter();
 
-  const handleLearnMore = () => {
-    const route = industryRoutes[activeTabs];
-    if (route) {
-      navigate(route);
-    } else {
-      console.warn('No route defined for:', activeTabs);
-    }
-  };
+const handleLearnMore = () => {
+  const route = industryRoutes[activeTabs];
+  if (route) {
+    router.push(route); // ✅ Correct usage
+  } else {
+    console.warn('No route defined for:', activeTabs);
+  }
+};
   const tabContent = {
-    Ecommerce: {
-      title: "Ecommerce",
-      description: "Recover abandoned carts, automate updates, and turn broadcasts into conversations with Click-to-WhatsApp ads.",
-      buttonText: "Learn More",
-      image: Ecommerce,
+      'E-Commerce': {
+        title: "E-Commerce",
+        description: "Carts get left, but not for long! Our flows sing a comeback song. From browse to buy, we help you try, retarget smart and amplify. Turn broadcasts into conversations with Click-to-WhatsApp ads. ",
+        useCases: [
+          "Recover abandoned carts",
+          "Automate order & delivery updates",
+          "Trigger re-engagement via SMS or WhatsApp"
+        ],
+  
+        buttonText: "Learn More",
+        image: Ecommerce,
+  
+      },
+      Healthcare: {
+        title: "Healthcare",
+        description: "A missed reminder or lost file? Not on our watch. We make healthcare timely, secure, and in style, so your patients feel peace, not panic. Secure, automatic, and patient-friendly!",
+        useCases: [
+          "Appointment & test result alerts",
+          "Prescription refill reminders",
+          "Feedback or follow-up via SMS "
+        ],
+        buttonText: "Learn More",
+        image: Healthcare,
+  
+      },
+      Finance: {
+        title: "Finance",
+        description: "From KYC to claims that fly, we help banks and insurers simplify. Trust is built on clear updates and smooth flows. We deliver both. Keep customers updated and take care of logistics from one place.",
+        useCases: [
+          "OTP and silent authentications",
+          "Transaction & policy alerts",
+          "KYC nudges via WhatsApp or RCS"
+        ],
+        buttonText: "Learn More",
+        image: Finance,
+      },
+      Education: {
+        title: "Education",
+        description: "Classroom to home, everyone’s informed. No missed fees, no lost results, just smoother learning, start to end. With better communication, students listen, remember, and participate.",
+        useCases: [
+          "Exam & result notifications",
+          "Fee due & payment reminders",
+          "Student engagement surveys"
+        ],
+        buttonText: "Learn More",
+        image: Education,
+      },
+      Hospitality: {
+        title: "Hospitality",
+        description: "Before check-in or after checkout, offer a quality of service that speaks for itself. Delight your guests with thoughtful nudges, and they’ll remember the stay. Upgrade the guest experience.",
+        useCases: [
+          "Booking confirmations & itinerary updates",
+          "In-stay service requests",
+          "Post-visit feedback collection"
+        ],
+        buttonText: "Learn More",
+        image: Hospitality,  // Corrected image
+      },
+      "Real Estate": {
+        title: "Real Estate & Construction",
+        description: "From visiting a plot to closing deals, it's all about timing. We help you chase less, close more, and keep buyers in the loop, every step. Organise your sales process and achieve more with less. ",
+        useCases: [
+          "Site visit scheduling",
+          "Project milestone updates",
+          "Lead follow-ups via WhatsApp"
+        ],
+        buttonText: "Learn More",
+        image: RealEstateConstruction, // Corrected image
+      },
+      "Food & Beverage": {
+        title: "Food & Beverage",
+        description: "Empty tables or full hearts? With us, it’s always the latter. Whether it’s orders or loyalty, the perfect recipe = automation with a human touch. Grow your business with technology!",
+        useCases: [
+          "Reservation confirmations",
+          "Loyalty rewards via SMS",
+          "Campaigns for special menus or offers"
+        ],
+        buttonText: "Learn More",
+        image: FoodBeverage, // Corrected image
+      },
+      "Professional Services": {
+        title: "Professional Services",
+        description: "From consulting to clinics, workflows matter. We help you handle more clients, less chaos, without hiring more hands. Your network is your net worth. Organise contacts and stay connected. ",
+        useCases: [
+          "Automated appointment bookings",
+          "Service alerts and follow-ups",
+          "Campaigns for lead generation"
+        ],
+        buttonText: "Learn More",
+        image: ProfessionalServices,
+      },
+      "Tech Startups": {
+        title: "Tech Startups",
+        description: "Speed is key, but so is trust. With Celitix, scale doesn’t break service, it builds it. Deliver faster, support smarter, grow leaner. Build a brand with a consistent omnichannel customer experience.",
+        useCases: [
+          "App onboarding via token-based flows",
+          "Support workflows over WhatsApp",
+          "Multi-channel user engagement"
+        ],
+        buttonText: "Learn More",
+        image: TechStartups, // Corrected image
+      },
+    };
 
-    },
-    Healthcare: {
-      title: "Healthcare",
-      description: "Send appointment reminders, test results, and prescription updates. Secure, automatic, and patient-friendly!",
-      buttonText: "Learn More",
-      image: Healthcare,
-
-    },
-    Finance: {
-      title: "Finance",
-      description: "Send OTPs, share policy or transaction updates, and manage KYC with compliance-ready communication.",
-      buttonText: "Learn More",
-      image: Finance,
-    },
-    Education: {
-      title: "Education",
-      description: "Automate reminders, results, and fee alerts. Keep students and parents in sync with minimal effort.",
-      buttonText: "Learn More",
-      image: Education,
-    },
-    Hospitality: {
-      title: "Hospitality",
-      description: "Upgrade guest experiences with instant confirmations, custom service flows, and automated feedback collection. ",
-      buttonText: "Learn More",
-      image: Hospitality,  // Corrected image
-    },
-    "Real Estate": {
-      title: "Real Estate & Construction",
-      description: "Follow up with leads, book site visits, and share project updates. Organize your sales process and achieve more with less.",
-      buttonText: "Learn More",
-      image: RealEstateConstruction, // Corrected image
-    },
-    "Food & Beverage": {
-      title: "Food & Beverage",
-      description: "Manage bookings, run loyalty programs, and keep track of customers. Grow your business with technology!",
-      buttonText: "Learn More",
-      image: FoodBeverage, // Corrected image
-    },
-    "Professional Services": {
-      title: "Professional Services",
-      description: "Handle CRM, integrated workflows, campaigns, and service from one place. Schedule, follow-up, and support at any volume.",
-      buttonText: "Learn More",
-      image: ProfessionalServices,
-    },
-    "Tech Startups": {
-      title: "Tech Startups",
-      description: "Deliver a branded, scalable user experience across channels. Onboard faster, support better, grow smarter.",
-      buttonText: "Learn More",
-      image: TechStartups, // Corrected image
-    },
-  };
-
-
+const content = tabContent[activeTabs] || {};
+  const {
+    title,
+    description,
+    useCases,
+    buttonText,
+    image
+  } = content;
 
 
 
@@ -497,33 +550,34 @@ const ECommerce = () => {
         <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0 lg:gap-12 px-4 sm:px-8 lg:px-20 py-2">
 
           <div className="lg:w-1/2 text-center lg:text-left">
-            <h2 className="text:xl md:text-3xl lg:text-4xl sub-heading font-semibold text-gray-800 mb-4">
+            <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-4 sub-heading">
               {tabContent[activeTabs]?.title || "Ecommerce"}
             </h2>
-            <p className="text-lg pera text-gray-600 mb-6">
+            <p className="text-lg text-gray-600 pera mb-6">
               {tabContent[activeTabs]?.description || "Recover abandoned carts, automate updates, and turn broadcasts into conversations with Click-to-WhatsApp ads."}
             </p>
-            <UniversalButton
-              label={tabContent[activeTabs]?.buttonText || "Learn More"}
-              variant="brutal"
-              className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-2 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6]"
-              onClick={handleLearnMore}
-            />
-
-
-
-
+            <div className="mb-6">
+              <p className="font-semibold text-gray-800 text-xl  sub-heading mb-2">Use Cases:</p>
+              <ul className="list-disc list-inside pera text-gray-700 text-base space-y-1">
+                {useCases.map((useCase, idx) => (
+                  <li key={idx}>{useCase}</li>
+                ))}
+              </ul>
+            </div>
+            <UniversalButton label={tabContent[activeTabs]?.buttonText || "Learn More"} variant="brutal" className='bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 font-semibold hover:bg-white hover:text-black 
+              hover:shadow-[4px_4px_0px_#9B44B6]'  onClick={handleLearnMore} />
           </div>
 
 
-          <div className="lg:w-1/2 flex justify-center lg:justify-end">
-            <div className="w-full max-w-xs lg:max-w-md">
-              <Image
-                src={tabContent[activeTabs]?.image || "/assets/industries/ecommerce.png"}
-                alt={tabContent[activeTabs]?.title || "Industry"}
-                className="rounded-lg w-full h-full object-cover"
-              />
-            </div>
+          <div className="lg:w-1/2 flex justify-center ">
+                      <div className="w-full lg:w-80 xl:w-90 2xl:w-120 h-auto">
+                        <Image
+                          src={tabContent[activeTabs]?.image || "/assets/industries/ecommerce.png"}
+                          alt={tabContent[activeTabs]?.title || "Industry"}
+                          className="rounded-lg w-full h-full"
+                          // loading="auto"
+                        />
+                      </div>
           </div>
         </div>
       </div>

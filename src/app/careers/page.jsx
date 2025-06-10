@@ -12,11 +12,11 @@ import { sendOtp, verifyOtp } from "../../utils/Otp";
 import { verifyToken } from "../../utils/VerifyToken";
 import Image from 'next/image';
 
-import {  careercardicon1, careercardicon2, careercardicon3, heroimgcareer } from '../../../public/assets/images';
+import { careercardicon1, careercardicon2, careercardicon3, heroimgcareer } from '../../../public/assets/images';
 
 import axios from "axios"
 import UniversalButton from '../components/UniversalButton';
-// const url = import.meta.env.VITE_URL
+// const url = process.env.NEXT_PUBLIC_API_URL
 
 
 
@@ -136,7 +136,7 @@ Interpersonal skills, including the ability to build rapport`,
 
   const validatePhoneNumber = (phone) => /^[0-9]{10,13}$/.test(phone);
   const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
+  const url = process.env.NEXT_PUBLIC_API_URL
   // Email field handlers
   const handleEmailChange = (e) => {
     const email = e.target.value;
@@ -329,7 +329,7 @@ Interpersonal skills, including the ability to build rapport`,
 
   return (
     <div>
-      
+
       {/* <Helmet>
         <title>Careers at Celitix | Join Our Team </title>
         <meta name="description" content="Explore career opportunities at Celitix. Work with a team that’s building the future of customer communication in India." />
@@ -556,23 +556,26 @@ Interpersonal skills, including the ability to build rapport`,
 
                 >
                   {/* <ToastContainer/> */}
-                  <input
-                    type="text"
-                    name="fname"
-                    placeholder="First Name"
-                    value={form.firstName}
-                    onChange={(e) => setForm({ ...form, firstName: e.target.value })}
-                    className="w-full border border-gray-300 rounded-md p-2"
-                  />
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-                  <input
-                    type="text"
-                    name="lname"
-                    placeholder="Last Name"
-                    value={form.lastName}
-                    onChange={(e) => setForm({ ...form, lastName: e.target.value })}
-                    className="w-full border border-gray-300 rounded-md p-2"
-                  />
+                    <input
+                      type="text"
+                      name="fname"
+                      placeholder="First Name"
+                      value={form.firstName}
+                      onChange={(e) => setForm({ ...form, firstName: e.target.value })}
+                      className="w-full border border-gray-300 rounded-md p-2"
+                    />
+
+                    <input
+                      type="text"
+                      name="lname"
+                      placeholder="Last Name"
+                      value={form.lastName}
+                      onChange={(e) => setForm({ ...form, lastName: e.target.value })}
+                      className="w-full border border-gray-300 rounded-md p-2"
+                    />
+                  </div>
 
                   <input
                     type="text"
@@ -651,19 +654,19 @@ Interpersonal skills, including the ability to build rapport`,
                     </div>
                   </div>
 
-
                   <textarea name="message" placeholder="How can we help you?" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="form-textarea w-full border border-gray-300 rounded-md p-2" />
 
                   <TurnstileComponent onChange={handleTurnstileChange} />
-
-                  <UniversalButton
-                    // label={submitLabel} // Dynamically change the label based on the state
-                    label={isFetching ? "Submitting..." : "Submit"}
-                    type="submit"
-                    variant="brutal"
-                    className="bg-[#9B44B6] border-[#9B44B6] text-white hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] px-4 py-2 rounded-md"
-                    disabled={isFetching}
-                  />
+                  <div className='flex justify-center'>
+                    <UniversalButton
+                      // label={submitLabel} // Dynamically change the label based on the state
+                      label={isFetching ? "Submitting..." : "Submit"}
+                      type="submit"
+                      variant="brutal"
+                      className="bg-[#9B44B6] border-[#9B44B6] text-white hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] px-4 py-2 rounded-md"
+                      disabled={isFetching}
+                    />
+                  </div>
                 </form>
               </div>
             </div>

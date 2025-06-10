@@ -251,11 +251,12 @@ Hide scrollbar track .custom-scrollbar::-webkit-scrollbar-track {
 
 /* Container to hold the bubbles */
 .bubble-container {
-  position: relative;
+  position: absolute;
   width: 100%;
-  height: 100vh;      /* or whatever height you need */
+  height: inherit;
   background: #f6edf9;
   overflow: hidden;
+  z-index: 0;
 }
 
 /* Base bubble style */
@@ -269,16 +270,85 @@ Hide scrollbar track .custom-scrollbar::-webkit-scrollbar-track {
 }
 
 /* Per-bubble overrides */
-.bubble.b1 { width: 40px; height: 40px; left: 10%;  animation-duration: 8s;  animation-delay: 0s; }
-.bubble.b2 { width: 20px; height: 20px; left: 20%;  animation-duration: 5s;  animation-delay: 1s; }
-.bubble.b3 { width: 50px; height: 50px; left: 35%;  animation-duration: 7s;  animation-delay: 2s; }
-.bubble.b4 { width: 80px; height: 80px; left: 50%;  animation-duration: 11s; animation-delay: 0s; }
-.bubble.b5 { width: 35px; height: 35px; left: 55%;  animation-duration: 6s;  animation-delay: 1s; }
-.bubble.b6 { width: 45px; height: 45px; left: 65%;  animation-duration: 8s;  animation-delay: 3s; }
-.bubble.b7 { width: 90px; height: 90px; left: 70%;  animation-duration: 12s; animation-delay: 2s; }
-.bubble.b8 { width: 25px; height: 25px; left: 80%;  animation-duration: 6s;  animation-delay: 2s; }
-.bubble.b9 { width: 15px; height: 15px; left: 70%;  animation-duration: 5s;  animation-delay: 1s; }
-.bubble.b10{ width: 90px; height: 90px; left: 25%;  animation-duration: 10s; animation-delay: 4s; }
+.bubble.b1 {
+  width: 40px;
+  height: 40px;
+  left: 10%;
+  animation-duration: 8s;
+  animation-delay: 0s;
+}
+
+.bubble.b2 {
+  width: 20px;
+  height: 20px;
+  left: 20%;
+  animation-duration: 5s;
+  animation-delay: 1s;
+}
+
+.bubble.b3 {
+  width: 50px;
+  height: 50px;
+  left: 35%;
+  animation-duration: 7s;
+  animation-delay: 2s;
+}
+
+.bubble.b4 {
+  width: 80px;
+  height: 80px;
+  left: 50%;
+  animation-duration: 11s;
+  animation-delay: 0s;
+}
+
+.bubble.b5 {
+  width: 35px;
+  height: 35px;
+  left: 55%;
+  animation-duration: 6s;
+  animation-delay: 1s;
+}
+
+.bubble.b6 {
+  width: 45px;
+  height: 45px;
+  left: 65%;
+  animation-duration: 8s;
+  animation-delay: 3s;
+}
+
+.bubble.b7 {
+  width: 90px;
+  height: 90px;
+  left: 70%;
+  animation-duration: 12s;
+  animation-delay: 2s;
+}
+
+.bubble.b8 {
+  width: 25px;
+  height: 25px;
+  left: 80%;
+  animation-duration: 6s;
+  animation-delay: 2s;
+}
+
+.bubble.b9 {
+  width: 15px;
+  height: 15px;
+  left: 70%;
+  animation-duration: 5s;
+  animation-delay: 1s;
+}
+
+.bubble.b10 {
+  width: 90px;
+  height: 90px;
+  left: 25%;
+  animation-duration: 10s;
+  animation-delay: 4s;
+}
 
 /* Keyframes */
 @keyframes rise {
@@ -286,9 +356,11 @@ Hide scrollbar track .custom-scrollbar::-webkit-scrollbar-track {
     bottom: -100px;
     transform: translateX(0);
   }
+
   50% {
     transform: translateX(100px);
   }
+
   100% {
     bottom: 1080px;
     transform: translateX(-200px);
@@ -337,12 +409,14 @@ Hide scrollbar track .custom-scrollbar::-webkit-scrollbar-track {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
 /* down to 800px → 2 cols */
 @media (max-width: 800px) {
   .sitemap-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 /* down to 480px → 1 col */
 @media (max-width: 480px) {
   .sitemap-grid {
@@ -353,13 +427,14 @@ Hide scrollbar track .custom-scrollbar::-webkit-scrollbar-track {
 .sitemap-card {
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   transition: box-shadow 0.2s;
 }
+
 .sitemap-card:hover {
-  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 .sitemap-card-content {
@@ -372,6 +447,7 @@ Hide scrollbar track .custom-scrollbar::-webkit-scrollbar-track {
   align-items: center;
   margin-bottom: 16px;
 }
+
 .sitemap-accent-bar {
   width: 4px;
   height: 24px;
@@ -379,6 +455,7 @@ Hide scrollbar track .custom-scrollbar::-webkit-scrollbar-track {
   margin-right: 8px;
   border-radius: 2px;
 }
+
 .sitemap-title-text {
   font-size: 1.125rem;
   font-weight: 700;
@@ -391,6 +468,7 @@ Hide scrollbar track .custom-scrollbar::-webkit-scrollbar-track {
   margin: 0;
   padding: 0;
 }
+
 .sitemap-list-item {
   display: flex;
   align-items: center;
@@ -399,17 +477,21 @@ Hide scrollbar track .custom-scrollbar::-webkit-scrollbar-track {
   text-decoration: none;
   transition: color 0.2s, transform 0.2s;
 }
+
 .sitemap-list-item:hover {
   color: #9333EA;
 }
+
 .sitemap-list-label {
   flex-grow: 1;
 }
+
 .sitemap-list-item svg {
   width: 1rem;
   height: 1rem;
   transition: transform 0.2s;
 }
+
 .sitemap-list-item:hover svg {
   transform: translateX(4px);
 }
@@ -464,15 +546,15 @@ Hide scrollbar track .custom-scrollbar::-webkit-scrollbar-track {
 
 
 
-.p-dialog-mask .p-dialog-center .p-component-overlay .p-component-overlay-enter .p-dialog-resizable{
-      background-color: rgba(0, 0, 0, 0.4) !important;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    left: 0px;
-    top: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1101;
+.p-dialog-mask .p-dialog-center .p-component-overlay .p-component-overlay-enter .p-dialog-resizable {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1101;
 }

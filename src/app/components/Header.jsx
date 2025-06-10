@@ -167,7 +167,7 @@ const Header = () => {
       >
         <div className="flex items-center justify-between px-4 md:px-6 py-4 bg-white md:rounded-2xl shadow-md relative">
           <div className="cursor-pointer">
-            <Link href="https://celitix.com" target="_blank" rel="noopener noreferrer">
+            <Link href="/">
               <Image
                 src={celitixheader}
                 alt="Celitix CPaaS Solution Logo"

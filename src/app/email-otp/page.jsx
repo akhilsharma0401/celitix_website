@@ -91,30 +91,35 @@ const Email = () => {
   };
 
   const faqs = [
-    // {
-    //   question: "What is Celitix’s App Authenticator?",
-    //   answer:
-    //     "It’s a secure verification tool using OTP or token-based flows via SMS, Email, WhatsApp, and Voice. ",
-    // },
-    // {
-    //   question: "How is OTP-Free verification different?",
-    //   answer:
-    //     "It uses a silent token instead of visible OTPs, improving speed and reducing user effort.",
-    // },
     {
-      question: "Can I verify users via email?",
+      question: "How long is the OTP valid?",
       answer:
-        "Yes. Celitix supports Email OTP and Email + Phone 2FA setups.",
+        "Each OTP is valid for a configurable duration, typically 5-10 minutes, to ensure security.",
     },
     {
-      question: "Is this suitable for MFA?",
+      question: "Can we customize the email template?",
       answer:
-        "Absolutely. Enable multi-channel 2FA with automatic fallbacks for failed verifications.",
+        "Yes, Celitix allows you to personalize HTML email templates to reflect your brand.",
     },
     {
-      question: "Can it scale globally?",
+      question: "What happens if the user doesn’t receive the OTP?",
       answer:
-        " Yes. Celitix’s App Authenticator supports international delivery across all verification channels.",
+        "Users can request a resend, and our system tracks delivery failures to ensure troubleshooting.",
+    },
+    {
+      question: "Is email OTP secure enough for large transactions?",
+      answer:
+        "Yes, email OTPs, combined with other authentication methods, provide robust security for high-value transactions.",
+    },
+    {
+      question: "Does Celitix offer API integration for email OTPs?",
+      answer:
+        " Yes, our APIs are developer-friendly, allowing you to integrate email OTPs with ease.",
+    },
+    {
+      question: "How long does it take to set up Celitix’s email OTP?",
+      answer:
+        "Integration can be completed within minutes using our API and ready-to-use templates.",
     },
   ];
   // 8rd

@@ -32,7 +32,6 @@ const ContactUs = () => {
     company: '',
     service: '',
     message: '',
-    consent: false,
   });
   const [isTouched, setIsTouched] = useState(false);
   const [isValid, setIsValid] = useState(false);
@@ -48,7 +47,7 @@ const ContactUs = () => {
 
   const otpRefs = useRef([]);
 
-  // const url = import.meta.env.VITE_URL
+  const url = process.env.NEXT_PUBLIC_API_URL
 
 
   const validatePhoneNumber = (phone) => /^[0-9]{10,13}$/.test(phone);
@@ -158,7 +157,7 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { firstName, lastName, email, phone, service } = form;
+    const { firstName, lastName, email, phone, service, consent } = form;
 
     if (!firstName.trim()) return toast.error('First Name is required.');
     if (!lastName.trim()) return toast.error('Last Name is required.');
@@ -173,6 +172,8 @@ const ContactUs = () => {
 
     // if (!isOtpVerified) return toast.error('Please verify your phone number with OTP.');
     if (!service.trim()) return toast.error('Please select a service.');
+
+    if (!consent) return toast.error('You must accept the Terms & Conditions and Privacy Policy.');
 
     const captchaVerify = await verifyToken(turnstileResponse)
 
@@ -210,6 +211,7 @@ const ContactUs = () => {
       toast.error("Unable to send form data. Please try again later")
       return
     }
+    
     // setIsSubmitting(true);
     setIsFetching(false);
     // setSubmitLabel("Submitting...");
@@ -280,7 +282,7 @@ const ContactUs = () => {
                           New Sanganer Road,<br />
                           Jaipur, Rajasthan, India - 302019 <br />
                           <small className='text-md pera text-shadow-blue-800'>Monday–Saturday 10am - 7pm</small>
-                          </p>
+                        </p>
                       </li>
                     </a>
                   </ul>
@@ -394,25 +396,42 @@ const ContactUs = () => {
                   </div>
                 )}
 
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-                <input type="text" name="company" placeholder="Company Name" value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} className="form-input w-full border border-gray-300 rounded-md p-2" />
+                  <input type="text" name="company" placeholder="Company Name" value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} className="form-input w-full border border-gray-300 rounded-md p-2" />
 
-                <select name="service" value={form.service} onChange={(e) => setForm({ ...form, service: e.target.value })} className="form-select w-full border border-gray-300 rounded-md p-2 text-gray-500">
-                  <option value="" disabled>Select Service</option>
-                  <option value="WhatsApp Business API">WhatsApp Business API</option>
-                  <option value="RCS Business Messaging">RCS Business Messaging</option>
-                  <option value="SMS Solution">SMS Solution</option>
-                  <option value="IVR/Missed Call">Virtual Receptionist (IVR)/Missed Call</option>
-                  <option value="User Verification">Chatbot Services</option>
-                  <option value="API Integration">API Integrations</option>
-                  <option value="2-way SMS">2 Way SMS (Long/Shortcode)</option>
-                  <option value="Missed Call Services">Missed Call Services</option>
-                  <option value="Other CPaaS Solutions">Other CPaaS Solutions</option>
-                </select>
+                  <select name="service" value={form.service} onChange={(e) => setForm({ ...form, service: e.target.value })} className="form-select w-full border border-gray-300 rounded-md p-2 text-gray-500">
+                    <option value="" disabled>Select Service</option>
+                    <option value="WhatsApp Business API">WhatsApp Business API</option>
+                    <option value="RCS Business Messaging">RCS Business Messaging</option>
+                    <option value="SMS Solution">SMS Solution</option>
+                    <option value="IVR/Missed Call">Virtual Receptionist (IVR)/Missed Call</option>
+                    <option value="User Verification">Chatbot Services</option>
+                    <option value="API Integration">API Integrations</option>
+                    <option value="2-way SMS">2 Way SMS (Long/Shortcode)</option>
+                    <option value="Missed Call Services">Missed Call Services</option>
+                    <option value="Other CPaaS Solutions">Other CPaaS Solutions</option>
+                  </select>
+                </div>
 
                 <textarea name="message" placeholder="How can we help you?" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="form-textarea w-full border border-gray-300 rounded-md p-2" />
 
-                <TurnstileComponent onChange={handleTurnstileChange} />
+                <div className="flex items-start gap-2 mb-4">
+                  <input
+                    type="checkbox"
+                    id="terms"
+                    className="mt-1"
+                    checked={form.consent}
+                    onChange={(e) => setForm({ ...form, consent: e.target.checked })}
+                  />
+                  <label htmlFor="terms" className="text-sm sub-heading">
+                    By clicking Submit, I accept all <a href="/terms-and-conditions" className="text-blue-600">Terms & Conditions</a> and <a href="/privacy-policy" className="text-blue-600">Privacy Policy</a>.
+                  </label>
+                </div>
+
+                <div className="mb-2">
+                  <TurnstileComponent onChange={handleTurnstileChange} />
+                </div>
                 <div className='flex justify-center'>
                   <UniversalButton
                     // label={submitLabel} // Dynamically change the label based on the state

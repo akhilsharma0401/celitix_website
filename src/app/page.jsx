@@ -891,8 +891,8 @@ const Home = () => {
 
   const hero = "/assets/videos/mainvideo.mp4"
   return (
-    <div className="bg-[#f6edf9]">
-      <div style={{
+    <div className="bg-[#f6edf9] relative">
+      {/* <div style={{
         position: 'absolute',
         width: '100%',
         height: '100%',
@@ -901,7 +901,18 @@ const Home = () => {
         zIndex: 10, // above background, below/around content
       }}>
         <OurClientele num={5} />
-      </div>
+      </div> */}
+
+      {/* <div style={{
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        top: 0,
+        left: 0,
+        zIndex: 10, // above background, below/around content
+      }}>
+      </div> */}
+      {/* <OurClientele num={5} /> */}
 
 
       {/* <Header /> */}
@@ -912,27 +923,29 @@ const Home = () => {
       </Helmet> */}
       {/* 1nd */}
 
-      <div className="w-full  pt-35 relative z-20">
+      <div className="h-[90vh]">
+        <OurClientele num={5} />
+        <div className="w-full  pt-35 relative z-20 ">
+          <div className="text-center px-4 py-2 md:py-20 space-y-4 box-reveal-bottom">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold text-gray-900 heading md:mb-10 mb-1">
+              All-in-One <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]"> Communication </span> Platform
+            </h1>
 
-        <div className="text-center px-4 py-2 md:py-20 space-y-4 box-reveal-bottom">
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold text-gray-900 heading md:mb-10 mb-1">
-            All-in-One <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]"> Communication </span> Platform
-          </h1>
-
-          <p className="text-md md:text-lg lg:text-2xl font-semibold text-gray-700 sub-heading md:mb-10 mb-1">
-            Celitix connects businesses with people. Run promotional campaigns, manage leads,<br /> engage automatically and provide personalised support - all from one place!
-          </p>
-          <div className="flex justify-center items-center gap-4 md:gap-6 lg:gap-8 flex-wrap">
-            <UniversalButton
-              label="Talk to Expert"
-              variant="brutal"
-              className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-2 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] mb-2"
-              onClick={handleShowFormPopup}
-            />
-            <FormPopup
-              visible={openDialog}
-              onHide={handleCloseDialog}
-            />
+            <p className="text-md md:text-lg lg:text-2xl font-semibold text-gray-700 sub-heading md:mb-10 mb-1">
+              Celitix connects businesses with people. Run promotional campaigns, manage leads,<br /> engage automatically and provide personalised support - all from one place!
+            </p>
+            <div className="flex justify-center items-center gap-4 md:gap-6  lg:gap-8 flex-wrap">
+              <UniversalButton
+                label="Talk to Expert"
+                variant="brutal"
+                className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-2 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] mb-2"
+                onClick={handleShowFormPopup}
+              />
+              <FormPopup
+                visible={openDialog}
+                onHide={handleCloseDialog}
+              />
+            </div>
           </div>
         </div>
 
@@ -940,10 +953,10 @@ const Home = () => {
       </div>
 
       {/* 1nd */}
-      <div className="bg-[#F6EDF9] py-2 sm:py-8 md:py-10">
-        <div className="lg:px-15 md:px-10 px-2 w-full py-5 md:py-20">
+      <div className="bg-[#F6EDF9] py-2 sm:py-8 md:pb-10 z-50">
+        <div className="lg:px-15 md:px-10 px-2 w-full py-5 md:pb-20">
           <video
-            className="w-full h-auto rounded-2xl z-30 "
+            className="w-full h-auto rounded-2xl"
             src={hero}
             key={hero}
             loop

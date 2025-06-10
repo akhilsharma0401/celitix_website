@@ -1,5 +1,5 @@
 "use client"
-import React, {   useState } from 'react'
+import React, { useState } from 'react'
 // import { initScrollReveal } from '../../utils/ScrollReveal';
 import { useRouter } from 'next/navigation';
 import { CTALASTIMAGE, Ecommerce, Education, Finance, FoodBeverage, HealthAutomated, Healthcare2nd, Healthcare4th1, Healthcare4th2, Healthcare4th3, Healthcarehero, HealthPersonalised, HealthPrivate, HealthServe, Hospitality, ProfessionalServices, RealEstateConstruction, TechStartups } from '../../../public/assets/images';
@@ -78,15 +78,15 @@ const Healthcare = () => {
 
 
   // 6rd
-  const [activeTabs, setActiveTabs] = useState("Ecommerce");
+  const [activeTabs, setActiveTabs] = useState("E-Commerce");
 
   const tabs = [
-    "Ecommerce", "Finance", "Education", "Hospitality",
+    "E-Commerce", "Finance", "Education", "Hospitality",
     "Real Estate", "Food & Beverage", "Professional Services", "Tech Startups"
   ];
 
   const industryRoutes = {
-    Ecommerce: '/retail-and-ecommerce',
+    'E-Commerce': '/retail-and-ecommerce',
     // Healthcare: '/healthcare',
     Finance: '/financial-services',
     Education: '/education-and-edtech',
@@ -98,74 +98,129 @@ const Healthcare = () => {
   };
 
   const router = useRouter();
-
+  
   const handleLearnMore = () => {
     const route = industryRoutes[activeTabs];
     if (route) {
-      router(route);
+      router.push(route); // ✅ Correct usage
     } else {
       console.warn('No route defined for:', activeTabs);
     }
   };
 
   const tabContent = {
-    Ecommerce: {
-      title: "Ecommerce",
-      description: "Recover abandoned carts, automate updates, and turn broadcasts into conversations with Click-to-WhatsApp ads.",
+    'E-Commerce': {
+      title: "E-Commerce",
+      description: "Carts get left, but not for long! Our flows sing a comeback song. From browse to buy, we help you try, retarget smart and amplify. Turn broadcasts into conversations with Click-to-WhatsApp ads. ",
+      useCases: [
+        "Recover abandoned carts",
+        "Automate order & delivery updates",
+        "Trigger re-engagement via SMS or WhatsApp"
+      ],
+
       buttonText: "Learn More",
       image: Ecommerce,
 
     },
     Healthcare: {
       title: "Healthcare",
-      description: "Send appointment reminders, test results, and prescription updates. Secure, automatic, and patient-friendly!",
+      description: "A missed reminder or lost file? Not on our watch. We make healthcare timely, secure, and in style, so your patients feel peace, not panic. Secure, automatic, and patient-friendly!",
+      useCases: [
+        "Appointment & test result alerts",
+        "Prescription refill reminders",
+        "Feedback or follow-up via SMS "
+      ],
       buttonText: "Learn More",
       image: Healthcare,
 
     },
     Finance: {
       title: "Finance",
-      description: "Send OTPs, share policy or transaction updates, and manage KYC with compliance-ready communication.",
+      description: "From KYC to claims that fly, we help banks and insurers simplify. Trust is built on clear updates and smooth flows. We deliver both. Keep customers updated and take care of logistics from one place.",
+      useCases: [
+        "OTP and silent authentications",
+        "Transaction & policy alerts",
+        "KYC nudges via WhatsApp or RCS"
+      ],
       buttonText: "Learn More",
       image: Finance,
     },
     Education: {
       title: "Education",
-      description: "Automate reminders, results, and fee alerts. Keep students and parents in sync with minimal effort.",
+      description: "Classroom to home, everyone’s informed. No missed fees, no lost results, just smoother learning, start to end. With better communication, students listen, remember, and participate.",
+      useCases: [
+        "Exam & result notifications",
+        "Fee due & payment reminders",
+        "Student engagement surveys"
+      ],
       buttonText: "Learn More",
       image: Education,
     },
     Hospitality: {
       title: "Hospitality",
-      description: "Upgrade guest experiences with instant confirmations, custom service flows, and automated feedback collection. ",
+      description: "Before check-in or after checkout, offer a quality of service that speaks for itself. Delight your guests with thoughtful nudges, and they’ll remember the stay. Upgrade the guest experience.",
+      useCases: [
+        "Booking confirmations & itinerary updates",
+        "In-stay service requests",
+        "Post-visit feedback collection"
+      ],
       buttonText: "Learn More",
       image: Hospitality,  // Corrected image
     },
     "Real Estate": {
       title: "Real Estate & Construction",
-      description: "Follow up with leads, book site visits, and share project updates. Organize your sales process and achieve more with less.",
+      description: "From visiting a plot to closing deals, it's all about timing. We help you chase less, close more, and keep buyers in the loop, every step. Organise your sales process and achieve more with less. ",
+      useCases: [
+        "Site visit scheduling",
+        "Project milestone updates",
+        "Lead follow-ups via WhatsApp"
+      ],
       buttonText: "Learn More",
       image: RealEstateConstruction, // Corrected image
     },
     "Food & Beverage": {
       title: "Food & Beverage",
-      description: "Manage bookings, run loyalty programs, and keep track of customers. Grow your business with technology!",
+      description: "Empty tables or full hearts? With us, it’s always the latter. Whether it’s orders or loyalty, the perfect recipe = automation with a human touch. Grow your business with technology!",
+      useCases: [
+        "Reservation confirmations",
+        "Loyalty rewards via SMS",
+        "Campaigns for special menus or offers"
+      ],
       buttonText: "Learn More",
       image: FoodBeverage, // Corrected image
     },
     "Professional Services": {
       title: "Professional Services",
-      description: "Handle CRM, integrated workflows, campaigns, and service from one place. Schedule, follow-up, and support at any volume.",
+      description: "From consulting to clinics, workflows matter. We help you handle more clients, less chaos, without hiring more hands. Your network is your net worth. Organise contacts and stay connected. ",
+      useCases: [
+        "Automated appointment bookings",
+        "Service alerts and follow-ups",
+        "Campaigns for lead generation"
+      ],
       buttonText: "Learn More",
       image: ProfessionalServices,
     },
     "Tech Startups": {
       title: "Tech Startups",
-      description: "Deliver a branded, scalable user experience across channels. Onboard faster, support better, grow smarter.",
+      description: "Speed is key, but so is trust. With Celitix, scale doesn’t break service, it builds it. Deliver faster, support smarter, grow leaner. Build a brand with a consistent omnichannel customer experience.",
+      useCases: [
+        "App onboarding via token-based flows",
+        "Support workflows over WhatsApp",
+        "Multi-channel user engagement"
+      ],
       buttonText: "Learn More",
       image: TechStartups, // Corrected image
     },
   };
+
+   const content = tabContent[activeTabs] || {};
+  const {
+    title,
+    description,
+    useCases,
+    buttonText,
+    image
+  } = content;
   // 6rd
   // 7th
   const [openIndex, setOpenIndex] = useState(null);
@@ -265,9 +320,9 @@ const Healthcare = () => {
               src={Healthcarehero}
               alt="Improve Patient Experience with Celitix"
               className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg object-contain box-reveal-bottom"
-              loading="eager"
+              // loading="eager"
               // fetchpriority="high"
-              crossorigin="anonymous"
+              // crossorigin="anonymous"
               title=' Healthcare & Telemedicine'
             />
           </div>
@@ -465,30 +520,37 @@ const Healthcare = () => {
 
 
         {/* Tab Content */}
-        <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0 lg:gap-12 px-4 sm:px-8 lg:px-20 py-2 md:py-5">
+         <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-start justify-between space-y-8 lg:space-y-0 lg:gap-12 px-4 sm:px-8 lg:px-20 py-2 md:py-5">
           {/* Left Text Section */}
           <div className="lg:w-1/2 text-center lg:text-left">
-            <h2 className="text:xl md:text-3xl lg:text-4xl sub-heading font-semibold text-gray-800 mb-4">
+            <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-4 sub-heading">
               {tabContent[activeTabs]?.title || "Ecommerce"}
             </h2>
-            <p className="text-lg pera text-gray-600 mb-6">
+            <p className="text-lg text-gray-600 pera mb-6">
               {tabContent[activeTabs]?.description || "Recover abandoned carts, automate updates, and turn broadcasts into conversations with Click-to-WhatsApp ads."}
             </p>
-            <UniversalButton
-              label={tabContent[activeTabs]?.buttonText || "Learn More"}
-              variant="brutal"
-              className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-2 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6]"
-              onClick={handleLearnMore}
-            />
+            <div className="mb-6">
+              <p className="font-semibold text-gray-800 text-xl  sub-heading mb-2">Use Cases:</p>
+              <ul className="list-disc list-inside pera text-gray-700 text-base space-y-1">
+                {useCases?.map((useCase, idx) => (
+  <li key={idx}>{useCase}</li>
+))}
+              </ul>
+            </div>
+            <UniversalButton label={tabContent[activeTabs]?.buttonText || "Learn More"} variant="brutal" className='bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 font-semibold hover:bg-white hover:text-black 
+              hover:shadow-[4px_4px_0px_#9B44B6]'  onClick={handleLearnMore} />
           </div>
 
           {/* Right Image Section */}
-          <div className="lg:w-1/2 flex justify-center lg:justify-end">
-            <div className="w-full max-w-xs lg:max-w-md">
+          <div className="lg:w-1/2 flex justify-center ">
+            <div className="w-full lg:w-80 xl:w-90 2xl:w-120 h-auto">
               <Image
-                src={tabContent[activeTabs]?.image || "/assets/industries/ecommerce.png"}
+                src={tabContent[activeTabs]?.image || Ecommerce}
                 alt={tabContent[activeTabs]?.title || "Industry"}
-                className="rounded-lg w-full h-full object-cover"
+                className="rounded-lg w-full h-full"
+                // loading="auto"
+                width={500}
+                height={300}
               />
             </div>
           </div>

@@ -11,8 +11,8 @@ import { sendOtp, verifyOtp } from '../../utils/Otp';
 import { verifyToken } from "../../utils/VerifyToken";
 import axios from "axios"
 
-// const url = import.meta.env.NEXT_PUBLIC_API_URL
-const url = "https://celitix.com:3001";
+  const url = process.env.NEXT_PUBLIC_API_URL
+// const url = "https://celitix.com:3001";
 
 const FormPopup = ({ visible, onHide }) => {
   // useEffect(() => {
