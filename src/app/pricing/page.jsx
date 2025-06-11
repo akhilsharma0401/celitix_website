@@ -147,16 +147,16 @@ const Pricing = () => {
                 <meta name="Explore the flexible pricing for Celitix, the all-in-one CPaaS platform for messaging & voice calling solutions. Pay only for what you use." />
                
             </Helmet> */}
-            {/* <div className="bg-[#f7ebfc] w-full h-screen flex justify-center items-center">
+            <div className="bg-[#f7ebfc] w-full h-screen flex justify-center items-center">
                 <Image
                     src={comingSoon}
                     alt="Coming Soon"
                     className="max-w-full max-h-full object-contain"
                 />
-            </div> */}
+            </div>
 
             {/* 1st */}
-            <section className="bg-[#f7ebfc] pt-25 md:pt-35 px-4 sm:px-6 lg:px-20">
+            {/* <section className="bg-[#f7ebfc] pt-25 md:pt-35 px-4 sm:px-6 lg:px-20">
                 <div className="max-w-7xl mx-auto items-center pb-5 md:pb-10">
                     <div className="space-y-3 text-center box-reveal-left">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl heading font-bold text-gray-900 leading-tight">
@@ -183,7 +183,7 @@ const Pricing = () => {
                     </div>
 
                 </div>
-            </section>
+            </section> */}
             {/* 1st */}
             {/* 2nd */}
             {/* <section className="bg-[#f7ebfc] py-2 md:py-10 px-4 sm:px-6 lg:px-25">
@@ -233,7 +233,7 @@ const Pricing = () => {
             </section> */}
             {/* 2nd */}
             {/* 3rd */}
-            <section className='bg-[#f7ebfc]'>
+            {/* <section className='bg-[#f7ebfc]'>
                 <div className="px-4 py-8 max-w-7xl mx-auto">
                     <div className="flex gap-6">
 
@@ -289,11 +289,7 @@ const Pricing = () => {
                                     <Image src={ReachApp} alt="OTP-Free" className="w-4 h-4 mr-1" /> OTP-Free
                                 </a>
                             </div>
-                            {/* <UniversalButton
-                                label="Contact us →"
-                                variant="brutal"
-                                className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-2 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] mb-2"
-                            /> */}
+                           
 
                         </div>
 
@@ -329,7 +325,7 @@ const Pricing = () => {
                                     <div className="mt-6 bg-white rounded-xl p-5 border border-blue-200 shadow-inner max-w-md mx-auto text-left">
                                         <h5 className="text-lg font-semibold text-blue-700 mb-2">{channel} Pricing</h5>
 
-                                        {/* Description Text */}
+                                      
                                         {channel === 'WhatsApp' && (
                                             <p className="text-gray-600 text-sm">
                                                 Starting at $0.005 per message with end-to-end encryption and template support.
@@ -1146,7 +1142,7 @@ const Pricing = () => {
 
                     </div>
                 </div>
-            </section>
+            </section> */}
             {/* 3rd */}
             {/* 4th */}
             {/* <div className="flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-[#A05CD7] to-[#4B0FA6] px-6 md:px-12 py-5 md:py-20">
