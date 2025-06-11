@@ -53,7 +53,7 @@ const Landing = () => {
     const otpRefs = useRef([]);
 
     // const url = import.meta.env.VITE_URL
-    const url = "https://celitix.com:3001";
+    const url = process.env.NEXT_PUBLIC_API_URL
 
 
     const validatePhoneNumber = (phone) => /^[0-9]{10,13}$/.test(phone);

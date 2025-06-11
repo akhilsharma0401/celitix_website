@@ -631,34 +631,34 @@ const Header = () => {
           ${isChannelsOpen ? 'block' : 'hidden'} grid sm:grid-cols-2 md:grid-cols-2 w-full md:w-[800px]
       `}
               >
-                <Link href="/whatsapp-business-platform">
+                <Link href="/whatsapp-business-platform" onClick={() => setMobileMenuOpen(false)}>
                   <ChannelItem title="WhatsApp" desc="Most Comprehensive" />
                 </Link>
-                <Link href="/rcs-business-messaging">
+                <Link href="/rcs-business-messaging" onClick={() => setMobileMenuOpen(false)}>
                   <ChannelItem title="RCS" desc="Least Competitive" />
                 </Link>
-                <Link href="/sms-marketing">
+                <Link href="/sms-marketing" onClick={() => setMobileMenuOpen(false)}>
                   <ChannelItem title="SMS" desc="Best Reach" />
                 </Link>
-                <Link href="/two-way-sms">
+                <Link href="/two-way-sms" onClick={() => setMobileMenuOpen(false)}>
                   <ChannelItem title="2 Way SMS" desc="Best For Engagement" />
                 </Link>
-                <Link href="/inbound-dialer">
+                <Link href="/inbound-dialer" onClick={() => setMobileMenuOpen(false)}>
                   <ChannelItem title="IBD" desc="Best For Customer Service" />
                 </Link>
-                <Link href="/outbound-dialer">
+                <Link href="/outbound-dialer" onClick={() => setMobileMenuOpen(false)}>
                   <ChannelItem title="OBD" desc="Most Accessible" />
                 </Link>
-                <Link href="/missed-call-services">
+                <Link href="/missed-call-services" onClick={() => setMobileMenuOpen(false)}>
                   <ChannelItem title="Missed Call" desc="Most Customizable" />
                 </Link>
-                <Link href="/click-to-call">
+                <Link href="/click-to-call" onClick={() => setMobileMenuOpen(false)}>
                   <ChannelItem title="Click2Call" desc="Best For User Experience" />
                 </Link>
-                <Link href="/user-verification">
+                <Link href="/user-verification" onClick={() => setMobileMenuOpen(false)}>
                   <ChannelItem title="Authentication" desc="Easy Security" />
                 </Link>
-                <Link href="/email-otp">
+                <Link href="/email-otp" onClick={() => setMobileMenuOpen(false)}>
                   <ChannelItem title="Email OTP" desc="Trusted & Trackable" />
                 </Link>
               </div>
@@ -679,31 +679,31 @@ const Header = () => {
         ${isIndustriesOpen ? 'block' : 'hidden'} grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2
           w-full md:w-[800px] max-h-[80vh] overflow-y-auto`}
               >
-                <Link href="/retail-and-ecommerce">
+                <Link href="/retail-and-ecommerce" onClick={() => setMobileMenuOpen(false)}>
                   <ResourcesItem title="ECommerce" />
                 </Link>
-                <Link href="/healthcare">
+                <Link href="/healthcare" onClick={() => setMobileMenuOpen(false)}>
                   <ResourcesItem title="Healthcare" />
                 </Link>
-                <Link href="/financial-services">
+                <Link href="/financial-services" onClick={() => setMobileMenuOpen(false)}>
                   <ResourcesItem title="Finance" />
                 </Link>
-                <Link href="/education-and-edtech">
+                <Link href="/education-and-edtech" onClick={() => setMobileMenuOpen(false)}>
                   <ResourcesItem title="Education" />
                 </Link>
-                <Link href="/travel-and-tourism">
+                <Link href="/travel-and-tourism" onClick={() => setMobileMenuOpen(false)}>
                   <ResourcesItem title="Tourism" />
                 </Link>
-                <Link href="/construction-and-real-estate">
+                <Link href="/construction-and-real-estate" onClick={() => setMobileMenuOpen(false)}>
                   <ResourcesItem title="Real Estate" />
                 </Link>
-                <Link href="/food-and-beverages">
+                <Link href="/food-and-beverages" onClick={() => setMobileMenuOpen(false)}>
                   <ResourcesItem title="Food Production" />
                 </Link>
-                <Link href="/professional-services">
+                <Link href="/professional-services" onClick={() => setMobileMenuOpen(false)}>
                   <ResourcesItem title="Service-Based" />
                 </Link>
-                <Link href="/tech-startups">
+                <Link href="/tech-startups" onClick={() => setMobileMenuOpen(false)}> 
                   <ResourcesItem title="Tech Startups" />
                 </Link>
               </div>
@@ -724,13 +724,13 @@ const Header = () => {
         ${isCompaniesOpen ? 'block' : 'hidden'} grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 
           w-full md:w-[800px] max-h-[80vh] overflow-y-auto`}
               >
-                <Link href="/about-us">
+                <Link href="/about-us" onClick={() => setMobileMenuOpen(false)}>
                   <ResourcesItem title="About Us" desc="About our team" />
                 </Link>
-                <Link href="/careers">
+                <Link href="/careers" onClick={() => setMobileMenuOpen(false)}>
                   <ResourcesItem title="Careers" desc="Who we work with" />
                 </Link>
-                <Link href="/contact-us">
+                <Link href="/contact-us" onClick={() => setMobileMenuOpen(false)}>
                   <ResourcesItem title="Contact Us" />
                 </Link>
               </div>
@@ -740,7 +740,7 @@ const Header = () => {
               className="relative group cursor-pointer mb-0"
 
             >
-              <Link href="/pricing">
+              <Link href="/pricing" onClick={() => setMobileMenuOpen(false)}>
                 <div className="flex items-center text-lg gap-2 p-2 rounded-md transition-all duration-300 cursor-pointer">
                   Pricing <MdKeyboardArrowDown />
                 </div>
@@ -766,10 +766,10 @@ const Header = () => {
         ${isResourcesOpen ? 'block' : 'hidden'} grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 
           w-full md:w-[800px] max-h-[80vh] overflow-y-auto`}
               >
-                <Link href="https://blog.celitix.com">
+                <Link href="https://blog.celitix.com" onClick={() => setMobileMenuOpen(false)}>
                   <ResourcesItem title="Blog" desc="Learn & Explore" />
                 </Link>
-                <Link href="/tutorial">
+                <Link href="/tutorial" onClick={() => setMobileMenuOpen(false)}>
                   <ResourcesItem title="Tutorial" desc="Learn & Explore" />
                 </Link>
                 {/* <ResourcesItem title="Case Studies" desc="How Celitix Helps" /> */}

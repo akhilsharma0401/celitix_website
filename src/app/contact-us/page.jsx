@@ -293,10 +293,10 @@ const ContactUs = () => {
                       </li>
                     </a>
                     <span className="text-black-900">•</span>
-                    <a href="tel:+91 968-000-6460" className=" transition">
+                    <a href="#" className=" transition">
                       <li className="flex sub-heading  items-center gap-1">
                         <FaPhoneAlt />
-                        <a href="tel:+919680006460" className="sub-heading ">
+                        <a  href="tel:+919680006460" className="sub-heading ">
                           +91 968-000-6460
                         </a>
                       </li>
