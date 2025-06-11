@@ -16,6 +16,7 @@
     "dotenv": "^16.5.0",
     "framer-motion": "^12.15.0",
     "next": "15.3.3",
+    "nodemailer": "^7.0.3",
     "primeflex": "^4.0.0",
     "primeicons": "^7.0.0",
     "primereact": "^10.9.6",
