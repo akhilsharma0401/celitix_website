@@ -1,20 +1,52 @@
-import path from "path";
+import path, { join } from "path";
 import { promises as fs } from "fs";
 
-export async function POST(request) {
+const filesDir = path.join(process.cwd(), "public/backend/files");
+
+export async function POST(request, response) {
   try {
-    const filePath = path.join(process.cwd(), "public/backend/data.txt");
-    const {
-      name,
-      email,
-      phone,
-      company,
-      service,
-      message,
-      source,
-      designation,
-      experience,
-    } = await request.json();
+    // console.log("name", name);
+    const formData = await request.formData();
+    const file = formData.get("file");
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const phone = formData.get("phone");
+    const company = formData.get("company");
+    const service = formData.get("service");
+    const message = formData.get("message");
+    const source = formData.get("source");
+    const designation = formData.get("designation");
+    const experience = formData.get("experience");
+
+    // const {
+    //   name,
+    //   email,
+    //   phone,
+    //   company,
+    //   service,
+    //   message,
+    //   source,
+    //   designation,
+    //   experience,
+    // } = formData;
+
+    console.log("name", name);
+
+    const fileName = file.name;
+    const ext = path.extname(fileName);
+    const uniqueName = `${Date.now()}-${Math.round(Math.random() * 1e9)}${ext}`;
+
+    const filePath = path.join(filesDir, uniqueName);
+
+    const arrayBuffer = await file.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+    await fs.writeFile(filePath, buffer);
+
+    let fileUrl = `${process.env.NEXT_PUBLIC_API_URL}/backend/files/${uniqueName}`;
+
+    // console.log("File saved:", filePath);
+
+    const dataFilePath = path.join(process.cwd(), "public/backend/data.txt");
 
     const payload = {
       Name: name,
@@ -44,11 +76,9 @@ export async function POST(request) {
       );
     }
 
-    const fileUrl = "";
-
     const textContent = `${payload.Name},${payload.Email},${payload.Phone},${payload.Company},${payload.Service},${payload.Message},${payload.Timestamp},${payload.Source},${payload.Experience},${payload.Designation},${fileUrl}`;
 
-    await fs.appendFile(filePath, textContent + "\n", (err) => {
+    await fs.appendFile(dataFilePath, textContent + "\n", (err) => {
       if (err) {
         return new Response(
           JSON.stringify({
@@ -65,6 +95,7 @@ export async function POST(request) {
       }
       //   res.send("Data saved");
     });
+
     return new Response(
       JSON.stringify({
         message: "Data saved successfully",
