@@ -1,10 +1,15 @@
 import axios from "axios";
 
 export const verifyToken = async (token) => {
-    // const url = import.meta.env.VITE_URL
-    const url = "https://celitix.com:3001";
+  const url = process.env.NEXT_PUBLIC_API_URL;
+  const data = {
+    token,
+  };
 
-    const res = await axios.get(`${url}/verify-token/${token}`)
-    return res
-
-}
+  const res = await axios.post(`${url}/verify-token`, data,{
+      headers:{
+        "x-secret-key":process.env.NEXT_PUBLIC_API_KEY
+      }
+    });
+  return res;
+};

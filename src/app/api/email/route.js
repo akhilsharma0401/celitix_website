@@ -51,8 +51,8 @@ export async function POST(request) {
 
     mailOptions = {
       from: "ads@proactivedigital.in",
-      // to: "info@proactivedigital.in, sales@proactivesms.in, yogendra@proactivesms.in",
-      to: "dummymail12hai@gmail.com",
+      to: "info@proactivedigital.in, sales@proactivesms.in, yogendra@proactivesms.in",
+      // to: "dummymail12hai@gmail.com",
       subject: `Celitix ${source} Enquiry`,
       html: `Name: ${name}<br>Email: ${email}<br>Phone: ${phone}<br>Message: ${message}`,
     };

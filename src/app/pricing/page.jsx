@@ -62,14 +62,70 @@ const Pricing = () => {
 
     const calculateTotal = (val, currency) => {
         let inrTotal = 0;
-        if (val <= 200000) inrTotal = val * 0.10;
-        else if (val <= 400000) inrTotal = val * 0.09;
-        else if (val <= 600000) inrTotal = val * 0.08;
-        else if (val <= 800000) inrTotal = val * 0.07;
-        else inrTotal = val * 0.06;
+
+        if (channel === 'RCS') {
+            if (val <= 200000) inrTotal = val * 0.30;
+            else if (val <= 400000) inrTotal = val * 0.29;
+            else if (val <= 600000) inrTotal = val * 0.28;
+            else if (val <= 800000) inrTotal = val * 0.27;
+            else inrTotal = val * 0.26;
+        }
+        else if (channel === 'Email OTP') {
+            if (val <= 200000) inrTotal = val * 0.05;
+            else if (val <= 400000) inrTotal = val * 0.05;
+            else if (val <= 600000) inrTotal = val * 0.05;
+            else if (val <= 800000) inrTotal = val * 0.05;
+            else inrTotal = val * 0.05;
+        }
+        else if (channel === 'Outbound Dialer') {
+            if (val <= 200000) inrTotal = val * 0.50;
+            else if (val <= 400000) inrTotal = val * 0.49;
+            else if (val <= 600000) inrTotal = val * 0.48;
+            else if (val <= 800000) inrTotal = val * 0.47;
+            else inrTotal = val * 0.46;
+        }
+        else if (channel === 'Outbound Dialer') {
+            if (val <= 200000) inrTotal = val * 0.50;
+            else if (val <= 400000) inrTotal = val * 0.49;
+            else if (val <= 600000) inrTotal = val * 0.48;
+            else if (val <= 800000) inrTotal = val * 0.47;
+            else inrTotal = val * 0.46;
+        }
+        else if (channel === 'Inbound Dialer') {
+            if (val <= 3) inrTotal = val * 0.50;
+            else if (val <= 6) inrTotal = val * 0.49;
+            else if (val <= 9) inrTotal = val * 0.48;
+            else inrTotal = val * 0.46;
+        }
+        else if (channel === 'Missed Call') {
+            if (val <= 3) inrTotal = val * 1;
+            else if (val <= 6) inrTotal = val * 0.49;
+            else if (val <= 9) inrTotal = val * 0.48;
+            else inrTotal = val * 0.46;
+        }
+        else if (channel === '2 Way SMS') {
+            if (val <= 3) inrTotal = val * 2;
+            else if (val <= 6) inrTotal = val * 1.49;
+            else if (val <= 9) inrTotal = val * 2.48;
+            else inrTotal = val * 5.46;
+        }
+        else if (channel === 'Authenticator') {
+            if (val <= 3) inrTotal = val * 5;
+            else if (val <= 6) inrTotal = val * 0.49;
+            else if (val <= 9) inrTotal = val * 0.48;
+            else inrTotal = val * 0.46;
+        }
+        else {
+            // Default logic (e.g., SMS, WhatsApp, etc.)
+            if (val <= 200000) inrTotal = val * 0.10;
+            else if (val <= 400000) inrTotal = val * 0.09;
+            else if (val <= 600000) inrTotal = val * 0.08;
+            else if (val <= 800000) inrTotal = val * 0.07;
+            else inrTotal = val * 0.06;
+        }
 
         if (currency === 'usd') return inrTotal / rates.inr;
-        if (currency === 'eur') return inrTotal / rates.inr * rates.eur;
+        if (currency === 'eur') return (inrTotal / rates.inr) * rates.eur;
         return inrTotal;
     };
 
@@ -91,16 +147,16 @@ const Pricing = () => {
                 <meta name="Explore the flexible pricing for Celitix, the all-in-one CPaaS platform for messaging & voice calling solutions. Pay only for what you use." />
                
             </Helmet> */}
-            <div className="bg-[#f7ebfc] w-full h-screen flex justify-center items-center">
+            {/* <div className="bg-[#f7ebfc] w-full h-screen flex justify-center items-center">
                 <Image
                     src={comingSoon}
                     alt="Coming Soon"
                     className="max-w-full max-h-full object-contain"
                 />
-            </div>
+            </div> */}
 
             {/* 1st */}
-            {/* <section className="bg-[#f7ebfc] pt-25 md:pt-35 px-4 sm:px-6 lg:px-20">
+            <section className="bg-[#f7ebfc] pt-25 md:pt-35 px-4 sm:px-6 lg:px-20">
                 <div className="max-w-7xl mx-auto items-center pb-5 md:pb-10">
                     <div className="space-y-3 text-center box-reveal-left">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl heading font-bold text-gray-900 leading-tight">
@@ -127,7 +183,7 @@ const Pricing = () => {
                     </div>
 
                 </div>
-            </section> */}
+            </section>
             {/* 1st */}
             {/* 2nd */}
             {/* <section className="bg-[#f7ebfc] py-2 md:py-10 px-4 sm:px-6 lg:px-25">
@@ -177,7 +233,7 @@ const Pricing = () => {
             </section> */}
             {/* 2nd */}
             {/* 3rd */}
-            {/* <section className='bg-[#f7ebfc]'>
+            <section className='bg-[#f7ebfc]'>
                 <div className="px-4 py-8 max-w-7xl mx-auto">
                     <div className="flex gap-6">
 
@@ -233,7 +289,11 @@ const Pricing = () => {
                                     <Image src={ReachApp} alt="OTP-Free" className="w-4 h-4 mr-1" /> OTP-Free
                                 </a>
                             </div>
-                           
+                            {/* <UniversalButton
+                                label="Contact us →"
+                                variant="brutal"
+                                className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-2 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] mb-2"
+                            /> */}
 
                         </div>
 
@@ -246,7 +306,11 @@ const Pricing = () => {
                                 <select
                                     className="bg-white border border-blue-300 text-blue-800 font-medium rounded-lg px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
                                     value={channel}
-                                    onChange={(e) => setChannel(e.target.value)}
+                                    onChange={(e) => {
+                                        setChannel(e.target.value);
+                                        setValue(0);        // Reset message volume
+                                        setCurrency('inr'); // Reset currency to INR (or your default)
+                                    }}
                                 >
                                     <option value="">Select Channel</option>
                                     <option value="WhatsApp">WhatsApp</option>
@@ -264,87 +328,88 @@ const Pricing = () => {
                                 {channel && (
                                     <div className="mt-6 bg-white rounded-xl p-5 border border-blue-200 shadow-inner max-w-md mx-auto text-left">
                                         <h5 className="text-lg font-semibold text-blue-700 mb-2">{channel} Pricing</h5>
-                                        <p className="text-gray-600 text-sm">
-                                            {channel === 'WhatsApp' && 'Starting at $0.005 per message with end-to-end encryption and template support.'}
-                                            {channel === 'RCS' && 'Starting at $0.004 per message with rich media capabilities and suggested replies.'}
-                                            {channel === 'SMS' && 'Starting at $0.002 per message with 98% global reach.'}
-                                        </p>
-                                    </div>
-                                )}
-                            </div>
 
-                            <div className="mt-10 flex flex-col md:flex-row gap-6 items-center justify-center">
-                                <div className="w-full md:w-2/3">
-                                    <label className="text-sm font-semibold text-gray-600 mb-1 flex justify-between">
-                                        Message Volume
-                                        <span className="text-xs text-gray-500">{value} messages</span>
-                                    </label>
-                                    <div className="relative w-full">
-                                        <input
-                                            type="range"
-                                            min="0"
-                                            max="1000000"
-                                            // step="200000"
-                                            value={value}
-                                            onChange={(e) => setValue(Number(e.target.value))}
-                                            className="w-full h-2 rounded-full appearance-none cursor-pointer"
-                                            style={{
-                                                background: `linear-gradient(to right, #2563eb ${percent}%, #d1d5db ${percent}%)`
-                                            }}
-                                        />
-                                        <div className="absolute top-2 left-0 w-full h-6 pointer-events-none">
-                                            {ticks.map((tick) => (
-                                                <button
-                                                    key={tick}
-                                                    onClick={() => setValue(tick)}
-                                                    style={{
-                                                        left: `${(tick / 1000000) * 100}%`,
-                                                        transform: 'translateX(-50%)',
-                                                    }}
-                                                    className="absolute top-2.5 w-1 h-3 bg-blue-500 rounded-full pointer-events-auto shadow-md"
-                                                />
-                                            ))}
-                                        </div>
-                                    </div>
-                                </div>
+                                        {/* Description Text */}
+                                        {channel === 'WhatsApp' && (
+                                            <p className="text-gray-600 text-sm">
+                                                Starting at $0.005 per message with end-to-end encryption and template support.
+                                            </p>
+                                        )}
 
-                                <input
-                                    type="number"
-                                    min="0"
-                                    max="1000000"
-                                    value={value}
-                                    onChange={handleChange}
-                                    className="text-center text-blue-800 bg-white border border-blue-300 font-semibold px-4 py-2 rounded-lg w-32 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                                />
-                            </div>
+                                        {channel === 'RCS' && (
+                                            <div>
+                                                <div className="mt-10 flex flex-col md:flex-row gap-6 items-center justify-center">
+                                                    <div className="w-full md:w-2/3">
+                                                        <label className="text-sm font-semibold text-gray-600 mb-1 flex justify-between">
+                                                            Message Volume
+                                                            <span className="text-xs text-gray-500">{value} messages</span>
+                                                        </label>
+                                                        <div className="relative w-full">
+                                                            <input
+                                                                type="range"
+                                                                min="0"
+                                                                max="1000000"
+                                                                // step="200000"
+                                                                value={value}
+                                                                onChange={(e) => setValue(Number(e.target.value))}
+                                                                className="w-full h-2 rounded-full appearance-none cursor-pointer"
+                                                                style={{
+                                                                    background: `linear-gradient(to right, #2563eb ${percent}%, #d1d5db ${percent}%)`
+                                                                }}
+                                                            />
+                                                            <div className="absolute top-2 left-0 w-full h-6 pointer-events-none">
+                                                                {ticks.map((tick) => (
+                                                                    <button
+                                                                        key={tick}
+                                                                        onClick={() => setValue(tick)}
+                                                                        style={{
+                                                                            left: `${(tick / 1000000) * 100}%`,
+                                                                            transform: 'translateX(-50%)',
+                                                                        }}
+                                                                        className="absolute top-2.5 w-1 h-3 bg-blue-500 rounded-full pointer-events-auto shadow-md"
+                                                                    />
+                                                                ))}
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
-                            <div className="mt-6 flex items-center justify-center gap-4">
-                                <div className="flex gap-2">
-                                    {['inr', 'usd', 'eur'].map((cur) => (
-                                        <button
-                                            key={cur}
-                                            onClick={() => setCurrency(cur)}
-                                            className={`px-4 py-2 rounded-full font-medium text-sm transition ${currency === cur
-                                                ? 'bg-blue-600 text-white shadow'
-                                                : 'bg-white border border-blue-300 text-blue-600'
-                                                }`}
-                                        >
-                                            {cur.toUpperCase()}
-                                        </button>
-                                    ))}
-                                </div>
+                                                    <input
+                                                        type="number"
+                                                        min="0"
+                                                        max="1000000"
+                                                        value={value}
+                                                        onChange={handleChange}
+                                                        className="text-center text-blue-800 bg-white border border-blue-300 font-semibold px-4 py-2 rounded-lg w-32 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                                    />
+                                                </div>
 
-                                <div className="text-lg font-bold text-blue-800">
-                                    Total: {formatCurrency(total, currency)}
-                                </div>
-                            </div>
+                                                <div className="mt-6 flex items-center justify-center gap-4">
+                                                    <div className="flex gap-2">
+                                                        {['inr', 'usd', 'eur'].map((cur) => (
+                                                            <button
+                                                                key={cur}
+                                                                onClick={() => setCurrency(cur)}
+                                                                className={`px-4 py-2 rounded-full font-medium text-sm transition ${currency === cur
+                                                                    ? 'bg-blue-600 text-white shadow'
+                                                                    : 'bg-white border border-blue-300 text-blue-600'
+                                                                    }`}
+                                                            >
+                                                                {cur.toUpperCase()}
+                                                            </button>
+                                                        ))}
+                                                    </div>
 
-                            <style jsx>{`
+                                                    <div className="text-lg font-bold text-blue-800">
+                                                        Total: {formatCurrency(total, currency)}
+                                                    </div>
+                                                </div>
+
+                                                <style jsx>{`
     input[type='range']::-webkit-slider-thumb {
       appearance: none;
-      height: 16px;
-      width: 16px;
-      background: #1e40af;
+      height: 10px;
+      width: 10px;
+    //   background: #1e40af;
       border-radius: 50%;
       cursor: pointer;
     }
@@ -356,6 +421,723 @@ const Pricing = () => {
       cursor: pointer;
     }
   `}</style>
+                                            </div>
+                                        )}
+
+                                        {channel === 'Email OTP' && (
+                                            <div>
+                                                <div className="mt-10 flex flex-col md:flex-row gap-6 items-center justify-center">
+                                                    <div className="w-full md:w-2/3">
+                                                        <label className="text-sm font-semibold text-gray-600 mb-1 flex justify-between">
+                                                            Email Volume
+                                                            <span className="text-xs text-gray-500">{value} Email messages</span>
+                                                        </label>
+                                                        <div className="relative w-full">
+                                                            <input
+                                                                type="range"
+                                                                min="0"
+                                                                max="1000000"
+                                                                // step="200000"
+                                                                value={value}
+                                                                onChange={(e) => setValue(Number(e.target.value))}
+                                                                className="w-full h-2 rounded-full appearance-none cursor-pointer"
+                                                                style={{
+                                                                    background: `linear-gradient(to right, #2563eb ${percent}%, #d1d5db ${percent}%)`
+                                                                }}
+                                                            />
+                                                            <div className="absolute top-2 left-0 w-full h-6 pointer-events-none">
+                                                                {ticks.map((tick) => (
+                                                                    <button
+                                                                        key={tick}
+                                                                        onClick={() => setValue(tick)}
+                                                                        style={{
+                                                                            left: `${(tick / 1000000) * 100}%`,
+                                                                            transform: 'translateX(-50%)',
+                                                                        }}
+                                                                        className="absolute top-2.5 w-1 h-3 bg-blue-500 rounded-full pointer-events-auto shadow-md"
+                                                                    />
+                                                                ))}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <input
+                                                        type="number"
+                                                        min="0"
+                                                        max="1000000"
+                                                        value={value}
+                                                        onChange={handleChange}
+                                                        className="text-center text-blue-800 bg-white border border-blue-300 font-semibold px-4 py-2 rounded-lg w-32 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                                    />
+                                                </div>
+
+                                                <div className="mt-6 flex items-center justify-center gap-4">
+                                                    <div className="flex gap-2">
+                                                        {['inr', 'usd', 'eur'].map((cur) => (
+                                                            <button
+                                                                key={cur}
+                                                                onClick={() => setCurrency(cur)}
+                                                                className={`px-4 py-2 rounded-full font-medium text-sm transition ${currency === cur
+                                                                    ? 'bg-blue-600 text-white shadow'
+                                                                    : 'bg-white border border-blue-300 text-blue-600'
+                                                                    }`}
+                                                            >
+                                                                {cur.toUpperCase()}
+                                                            </button>
+                                                        ))}
+                                                    </div>
+
+                                                    <div className="text-lg font-bold text-blue-800">
+                                                        Total: {formatCurrency(total, currency)}
+                                                    </div>
+                                                </div>
+
+                                                <style jsx>{`
+    input[type='range']::-webkit-slider-thumb {
+      appearance: none;
+      height: 10px;
+      width: 10px;
+    //   background: #1e40af;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    input[type='range']::-moz-range-thumb {
+      height: 16px;
+      width: 16px;
+      background: #1e40af;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  `}</style>
+                                            </div>
+                                        )}
+
+                                        {channel === 'SMS' && (
+                                            <div>
+                                                <div className="mt-10 flex flex-col md:flex-row gap-6 items-center justify-center">
+                                                    <div className="w-full md:w-2/3">
+                                                        <label className="text-sm font-semibold text-gray-600 mb-1 flex justify-between">
+                                                            Message Volume
+                                                            <span className="text-xs text-gray-500">{value} messages</span>
+                                                        </label>
+                                                        <div className="relative w-full">
+                                                            <input
+                                                                type="range"
+                                                                min="0"
+                                                                max="1000000"
+                                                                // step="200000"
+                                                                value={value}
+                                                                onChange={(e) => setValue(Number(e.target.value))}
+                                                                className="w-full h-2 rounded-full appearance-none cursor-pointer"
+                                                                style={{
+                                                                    background: `linear-gradient(to right, #2563eb ${percent}%, #d1d5db ${percent}%)`
+                                                                }}
+                                                            />
+                                                            <div className="absolute top-2 left-0 w-full h-6 pointer-events-none">
+                                                                {ticks.map((tick) => (
+                                                                    <button
+                                                                        key={tick}
+                                                                        onClick={() => setValue(tick)}
+                                                                        style={{
+                                                                            left: `${(tick / 1000000) * 100}%`,
+                                                                            transform: 'translateX(-50%)',
+                                                                        }}
+                                                                        className="absolute top-2.5 w-1 h-3 bg-blue-500 rounded-full pointer-events-auto shadow-md"
+                                                                    />
+                                                                ))}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <input
+                                                        type="number"
+                                                        min="0"
+                                                        max="1000000"
+                                                        value={value}
+                                                        onChange={handleChange}
+                                                        className="text-center text-blue-800 bg-white border border-blue-300 font-semibold px-4 py-2 rounded-lg w-32 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                                    />
+                                                </div>
+
+                                                <div className="mt-6 flex items-center justify-center gap-4">
+                                                    <div className="flex gap-2">
+                                                        {['inr', 'usd', 'eur'].map((cur) => (
+                                                            <button
+                                                                key={cur}
+                                                                onClick={() => setCurrency(cur)}
+                                                                className={`px-4 py-2 rounded-full font-medium text-sm transition ${currency === cur
+                                                                    ? 'bg-blue-600 text-white shadow'
+                                                                    : 'bg-white border border-blue-300 text-blue-600'
+                                                                    }`}
+                                                            >
+                                                                {cur.toUpperCase()}
+                                                            </button>
+                                                        ))}
+                                                    </div>
+
+                                                    <div className="text-lg font-bold text-blue-800">
+                                                        Total: {formatCurrency(total, currency)}
+                                                    </div>
+                                                </div>
+
+                                                <style jsx>{`
+    input[type='range']::-webkit-slider-thumb {
+      appearance: none;
+      height: 10px;
+      width: 10px;
+    //   background: #1e40af;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    input[type='range']::-moz-range-thumb {
+      height: 16px;
+      width: 16px;
+      background: #1e40af;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  `}</style>
+                                            </div>
+                                        )}
+
+                                        {channel === 'Outbound Dialer' && (
+                                            <div>
+                                                <div className="mt-10 flex flex-col md:flex-row gap-6 items-center justify-center">
+                                                    <div className="w-full md:w-2/3">
+                                                        <label className="text-sm font-semibold text-gray-600 mb-1 flex justify-between">
+                                                            credit Volume
+                                                            <span className="text-xs text-gray-500">{value} voice credit</span>
+                                                        </label>
+                                                        <div className="relative w-full">
+                                                            <input
+                                                                type="range"
+                                                                min="0"
+                                                                max="1000000"
+                                                                // step="200000"
+                                                                value={value}
+                                                                onChange={(e) => setValue(Number(e.target.value))}
+                                                                className="w-full h-2 rounded-full appearance-none cursor-pointer"
+                                                                style={{
+                                                                    background: `linear-gradient(to right, #2563eb ${percent}%, #d1d5db ${percent}%)`
+                                                                }}
+                                                            />
+                                                            <div className="absolute top-2 left-0 w-full h-6 pointer-events-none">
+                                                                {ticks.map((tick) => (
+                                                                    <button
+                                                                        key={tick}
+                                                                        onClick={() => setValue(tick)}
+                                                                        style={{
+                                                                            left: `${(tick / 1000000) * 100}%`,
+                                                                            transform: 'translateX(-50%)',
+                                                                        }}
+                                                                        className="absolute top-2.5 w-1 h-3 bg-blue-500 rounded-full pointer-events-auto shadow-md"
+                                                                    />
+                                                                ))}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <input
+                                                        type="number"
+                                                        min="0"
+                                                        max="1000000"
+                                                        value={value}
+                                                        onChange={handleChange}
+                                                        className="text-center text-blue-800 bg-white border border-blue-300 font-semibold px-4 py-2 rounded-lg w-32 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                                    />
+                                                </div>
+
+                                                <div className="mt-6 flex items-center justify-center gap-4">
+                                                    <div className="flex gap-2">
+                                                        {['inr', 'usd', 'eur'].map((cur) => (
+                                                            <button
+                                                                key={cur}
+                                                                onClick={() => setCurrency(cur)}
+                                                                className={`px-4 py-2 rounded-full font-medium text-sm transition ${currency === cur
+                                                                    ? 'bg-blue-600 text-white shadow'
+                                                                    : 'bg-white border border-blue-300 text-blue-600'
+                                                                    }`}
+                                                            >
+                                                                {cur.toUpperCase()}
+                                                            </button>
+                                                        ))}
+                                                    </div>
+
+                                                    <div className="text-lg font-bold text-blue-800">
+                                                        Total: {formatCurrency(total, currency)}
+                                                    </div>
+                                                </div>
+
+                                                <style jsx>{`
+    input[type='range']::-webkit-slider-thumb {
+      appearance: none;
+      height: 10px;
+      width: 10px;
+    //   background: #1e40af;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    input[type='range']::-moz-range-thumb {
+      height: 16px;
+      width: 16px;
+      background: #1e40af;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  `}</style>
+                                            </div>
+                                        )}
+
+                                        {channel === 'Click to Call' && (
+                                            <div>
+                                                <div className="mt-10 flex flex-col md:flex-row gap-6 items-center justify-center">
+                                                    <div className="w-full md:w-2/3">
+                                                        <label className="text-sm font-semibold text-gray-600 mb-1 flex justify-between">
+                                                            credit Volume
+                                                            <span className="text-xs text-gray-500">{value} C2C credit</span>
+                                                        </label>
+                                                        <div className="relative w-full">
+                                                            <input
+                                                                type="range"
+                                                                min="0"
+                                                                max="1000000"
+                                                                // step="200000"
+                                                                value={value}
+                                                                onChange={(e) => setValue(Number(e.target.value))}
+                                                                className="w-full h-2 rounded-full appearance-none cursor-pointer"
+                                                                style={{
+                                                                    background: `linear-gradient(to right, #2563eb ${percent}%, #d1d5db ${percent}%)`
+                                                                }}
+                                                            />
+                                                            <div className="absolute top-2 left-0 w-full h-6 pointer-events-none">
+                                                                {ticks.map((tick) => (
+                                                                    <button
+                                                                        key={tick}
+                                                                        onClick={() => setValue(tick)}
+                                                                        style={{
+                                                                            left: `${(tick / 1000000) * 100}%`,
+                                                                            transform: 'translateX(-50%)',
+                                                                        }}
+                                                                        className="absolute top-2.5 w-1 h-3 bg-blue-500 rounded-full pointer-events-auto shadow-md"
+                                                                    />
+                                                                ))}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <input
+                                                        type="number"
+                                                        min="0"
+                                                        max="1000000"
+                                                        value={value}
+                                                        onChange={handleChange}
+                                                        className="text-center text-blue-800 bg-white border border-blue-300 font-semibold px-4 py-2 rounded-lg w-32 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                                    />
+                                                </div>
+
+                                                <div className="mt-6 flex items-center justify-center gap-4">
+                                                    <div className="flex gap-2">
+                                                        {['inr', 'usd', 'eur'].map((cur) => (
+                                                            <button
+                                                                key={cur}
+                                                                onClick={() => setCurrency(cur)}
+                                                                className={`px-4 py-2 rounded-full font-medium text-sm transition ${currency === cur
+                                                                    ? 'bg-blue-600 text-white shadow'
+                                                                    : 'bg-white border border-blue-300 text-blue-600'
+                                                                    }`}
+                                                            >
+                                                                {cur.toUpperCase()}
+                                                            </button>
+                                                        ))}
+                                                    </div>
+
+                                                    <div className="text-lg font-bold text-blue-800">
+                                                        Total: {formatCurrency(total, currency)}
+                                                    </div>
+                                                </div>
+
+                                                <style jsx>{`
+    input[type='range']::-webkit-slider-thumb {
+      appearance: none;
+      height: 10px;
+      width: 10px;
+    //   background: #1e40af;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    input[type='range']::-moz-range-thumb {
+      height: 16px;
+      width: 16px;
+      background: #1e40af;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  `}</style>
+                                            </div>
+                                        )}
+
+                                        {channel === 'Inbound Dialer' && (
+                                            <div>
+                                                <div className="mt-10 flex flex-col md:flex-row gap-6 items-center justify-center">
+                                                    <div className="w-full md:w-2/3">
+                                                        <label className="text-sm font-semibold text-gray-600 mb-1 flex justify-between">
+                                                            Duration
+                                                            <span className="text-xs text-gray-500">{value} Month{value !== 1 ? 's' : ''}</span>
+                                                        </label>
+
+                                                        <div className="relative w-full">
+                                                            <input
+                                                                type="range"
+                                                                min="0"
+                                                                max="12"
+                                                                value={value}
+                                                                onChange={(e) => setValue(Number(e.target.value))}
+                                                                className="w-full h-2 rounded-full appearance-none cursor-pointer"
+                                                                style={{
+                                                                    background: `linear-gradient(to right, #2563eb ${(value / 12) * 100}%, #d1d5db ${(value / 12) * 100}%)`,
+                                                                }}
+                                                            />
+
+                                                            <div className="absolute top-2 left-0 w-full h-6 pointer-events-none">
+                                                                {[3, 6, 9, 12].map((tick) => (
+                                                                    <button
+                                                                        key={tick}
+                                                                        onClick={() => setValue(tick)}
+                                                                        style={{
+                                                                            left: `${(tick / 12) * 100}%`,
+                                                                            transform: 'translateX(-50%)',
+                                                                        }}
+                                                                        className="absolute top-2.5 w-1 h-3 bg-blue-500 rounded-full pointer-events-auto shadow-md"
+                                                                    />
+                                                                ))}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <input
+                                                        type="number"
+                                                        min="0"
+                                                        max="12"
+                                                        value={value}
+                                                        onChange={handleChange}
+                                                        className="text-center text-blue-800 bg-white border border-blue-300 font-semibold px-4 py-2 rounded-lg w-32 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                                    />
+                                                </div>
+
+                                                <div className="mt-6 flex items-center justify-center gap-4">
+                                                    <div className="flex gap-2">
+                                                        {['inr', 'usd', 'eur'].map((cur) => (
+                                                            <button
+                                                                key={cur}
+                                                                onClick={() => setCurrency(cur)}
+                                                                className={`px-4 py-2 rounded-full font-medium text-sm transition ${currency === cur
+                                                                        ? 'bg-blue-600 text-white shadow'
+                                                                        : 'bg-white border border-blue-300 text-blue-600'
+                                                                    }`}
+                                                            >
+                                                                {cur.toUpperCase()}
+                                                            </button>
+                                                        ))}
+                                                    </div>
+
+                                                    <div className="text-lg font-bold text-blue-800">
+                                                        Total: {formatCurrency(total, currency)}
+                                                    </div>
+                                                </div>
+
+                                                <style jsx>{`
+      input[type='range']::-webkit-slider-thumb {
+        appearance: none;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        // background: #1e40af;
+      }
+      input[type='range']::-moz-range-thumb {
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        cursor: pointer;
+        background: #1e40af;
+      }
+    `}</style>
+                                            </div>
+                                        )}
+
+                                        {channel === 'Missed Call' && (
+                                            <div>
+                                                <div className="mt-10 flex flex-col md:flex-row gap-6 items-center justify-center">
+                                                    <div className="w-full md:w-2/3">
+                                                        <label className="text-sm font-semibold text-gray-600 mb-1 flex justify-between">
+                                                            Duration
+                                                            <span className="text-xs text-gray-500">{value} Month{value !== 1 ? 's' : ''}</span>
+                                                        </label>
+
+                                                        <div className="relative w-full">
+                                                            <input
+                                                                type="range"
+                                                                min="0"
+                                                                max="12"
+                                                                value={value}
+                                                                onChange={(e) => setValue(Number(e.target.value))}
+                                                                className="w-full h-2 rounded-full appearance-none cursor-pointer"
+                                                                style={{
+                                                                    background: `linear-gradient(to right, #2563eb ${(value / 12) * 100}%, #d1d5db ${(value / 12) * 100}%)`,
+                                                                }}
+                                                            />
+
+                                                            <div className="absolute top-2 left-0 w-full h-6 pointer-events-none">
+                                                                {[3, 6, 9, 12].map((tick) => (
+                                                                    <button
+                                                                        key={tick}
+                                                                        onClick={() => setValue(tick)}
+                                                                        style={{
+                                                                            left: `${(tick / 12) * 100}%`,
+                                                                            transform: 'translateX(-50%)',
+                                                                        }}
+                                                                        className="absolute top-2.5 w-1 h-3 bg-blue-500 rounded-full pointer-events-auto shadow-md"
+                                                                    />
+                                                                ))}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <input
+                                                        type="number"
+                                                        min="0"
+                                                        max="12"
+                                                        value={value}
+                                                        onChange={handleChange}
+                                                        className="text-center text-blue-800 bg-white border border-blue-300 font-semibold px-4 py-2 rounded-lg w-32 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                                    />
+                                                </div>
+
+                                                <div className="mt-6 flex items-center justify-center gap-4">
+                                                    <div className="flex gap-2">
+                                                        {['inr', 'usd', 'eur'].map((cur) => (
+                                                            <button
+                                                                key={cur}
+                                                                onClick={() => setCurrency(cur)}
+                                                                className={`px-4 py-2 rounded-full font-medium text-sm transition ${currency === cur
+                                                                        ? 'bg-blue-600 text-white shadow'
+                                                                        : 'bg-white border border-blue-300 text-blue-600'
+                                                                    }`}
+                                                            >
+                                                                {cur.toUpperCase()}
+                                                            </button>
+                                                        ))}
+                                                    </div>
+
+                                                    <div className="text-lg font-bold text-blue-800">
+                                                        Total: {formatCurrency(total, currency)}
+                                                    </div>
+                                                </div>
+
+                                                <style jsx>{`
+      input[type='range']::-webkit-slider-thumb {
+        appearance: none;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        // background: #1e40af;
+      }
+      input[type='range']::-moz-range-thumb {
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        cursor: pointer;
+        background: #1e40af;
+      }
+    `}</style>
+                                            </div>
+                                         )}
+                                         
+                                        {channel === '2 Way SMS' && (
+                                            <div>
+                                                <div className="mt-10 flex flex-col md:flex-row gap-6 items-center justify-center">
+                                                    <div className="w-full md:w-2/3">
+                                                        <label className="text-sm font-semibold text-gray-600 mb-1 flex justify-between">
+                                                            Duration
+                                                            <span className="text-xs text-gray-500">{value} Month{value !== 1 ? 's' : ''}</span>
+                                                        </label>
+
+                                                        <div className="relative w-full">
+                                                            <input
+                                                                type="range"
+                                                                min="0"
+                                                                max="12"
+                                                                value={value}
+                                                                onChange={(e) => setValue(Number(e.target.value))}
+                                                                className="w-full h-2 rounded-full appearance-none cursor-pointer"
+                                                                style={{
+                                                                    background: `linear-gradient(to right, #2563eb ${(value / 12) * 100}%, #d1d5db ${(value / 12) * 100}%)`,
+                                                                }}
+                                                            />
+
+                                                            <div className="absolute top-2 left-0 w-full h-6 pointer-events-none">
+                                                                {[3, 6, 9, 12].map((tick) => (
+                                                                    <button
+                                                                        key={tick}
+                                                                        onClick={() => setValue(tick)}
+                                                                        style={{
+                                                                            left: `${(tick / 12) * 100}%`,
+                                                                            transform: 'translateX(-50%)',
+                                                                        }}
+                                                                        className="absolute top-2.5 w-1 h-3 bg-blue-500 rounded-full pointer-events-auto shadow-md"
+                                                                    />
+                                                                ))}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <input
+                                                        type="number"
+                                                        min="0"
+                                                        max="12"
+                                                        value={value}
+                                                        onChange={handleChange}
+                                                        className="text-center text-blue-800 bg-white border border-blue-300 font-semibold px-4 py-2 rounded-lg w-32 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                                    />
+                                                </div>
+
+                                                <div className="mt-6 flex items-center justify-center gap-4">
+                                                    <div className="flex gap-2">
+                                                        {['inr', 'usd', 'eur'].map((cur) => (
+                                                            <button
+                                                                key={cur}
+                                                                onClick={() => setCurrency(cur)}
+                                                                className={`px-4 py-2 rounded-full font-medium text-sm transition ${currency === cur
+                                                                        ? 'bg-blue-600 text-white shadow'
+                                                                        : 'bg-white border border-blue-300 text-blue-600'
+                                                                    }`}
+                                                            >
+                                                                {cur.toUpperCase()}
+                                                            </button>
+                                                        ))}
+                                                    </div>
+
+                                                    <div className="text-lg font-bold text-blue-800">
+                                                        Total: {formatCurrency(total, currency)}
+                                                    </div>
+                                                </div>
+
+                                                <style jsx>{`
+      input[type='range']::-webkit-slider-thumb {
+        appearance: none;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        // background: #1e40af;
+      }
+      input[type='range']::-moz-range-thumb {
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        cursor: pointer;
+        background: #1e40af;
+      }
+    `}</style>
+                                            </div>
+                                         )}
+
+                                        {channel === 'Authenticator' && (
+                                            <div>
+                                                <div className="mt-10 flex flex-col md:flex-row gap-6 items-center justify-center">
+                                                    <div className="w-full md:w-2/3">
+                                                        <label className="text-sm font-semibold text-gray-600 mb-1 flex justify-between">
+                                                            Duration
+                                                            <span className="text-xs text-gray-500">{value} Month{value !== 1 ? 's' : ''}</span>
+                                                        </label>
+
+                                                        <div className="relative w-full">
+                                                            <input
+                                                                type="range"
+                                                                min="0"
+                                                                max="12"
+                                                                value={value}
+                                                                onChange={(e) => setValue(Number(e.target.value))}
+                                                                className="w-full h-2 rounded-full appearance-none cursor-pointer"
+                                                                style={{
+                                                                    background: `linear-gradient(to right, #2563eb ${(value / 12) * 100}%, #d1d5db ${(value / 12) * 100}%)`,
+                                                                }}
+                                                            />
+
+                                                            <div className="absolute top-2 left-0 w-full h-6 pointer-events-none">
+                                                                {[3, 6, 9, 12].map((tick) => (
+                                                                    <button
+                                                                        key={tick}
+                                                                        onClick={() => setValue(tick)}
+                                                                        style={{
+                                                                            left: `${(tick / 12) * 100}%`,
+                                                                            transform: 'translateX(-50%)',
+                                                                        }}
+                                                                        className="absolute top-2.5 w-1 h-3 bg-blue-500 rounded-full pointer-events-auto shadow-md"
+                                                                    />
+                                                                ))}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <input
+                                                        type="number"
+                                                        min="0"
+                                                        max="12"
+                                                        value={value}
+                                                        onChange={handleChange}
+                                                        className="text-center text-blue-800 bg-white border border-blue-300 font-semibold px-4 py-2 rounded-lg w-32 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                                    />
+                                                </div>
+
+                                                <div className="mt-6 flex items-center justify-center gap-4">
+                                                    <div className="flex gap-2">
+                                                        {['inr', 'usd', 'eur'].map((cur) => (
+                                                            <button
+                                                                key={cur}
+                                                                onClick={() => setCurrency(cur)}
+                                                                className={`px-4 py-2 rounded-full font-medium text-sm transition ${currency === cur
+                                                                        ? 'bg-blue-600 text-white shadow'
+                                                                        : 'bg-white border border-blue-300 text-blue-600'
+                                                                    }`}
+                                                            >
+                                                                {cur.toUpperCase()}
+                                                            </button>
+                                                        ))}
+                                                    </div>
+
+                                                    <div className="text-lg font-bold text-blue-800">
+                                                        Total: {formatCurrency(total, currency)}
+                                                    </div>
+                                                </div>
+
+                                                <style jsx>{`
+      input[type='range']::-webkit-slider-thumb {
+        appearance: none;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        // background: #1e40af;
+      }
+      input[type='range']::-moz-range-thumb {
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        cursor: pointer;
+        background: #1e40af;
+      }
+    `}</style>
+                                            </div>
+                                         )}
+
+                                    </div>
+                                )}
+
+                            </div>
+
+
                         </div>
 
 
@@ -364,7 +1146,7 @@ const Pricing = () => {
 
                     </div>
                 </div>
-            </section> */}
+            </section>
             {/* 3rd */}
             {/* 4th */}
             {/* <div className="flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-[#A05CD7] to-[#4B0FA6] px-6 md:px-12 py-5 md:py-20">

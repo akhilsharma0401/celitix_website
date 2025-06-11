@@ -46,7 +46,7 @@ export async function POST(request, response) {
 
     // // console.log("File saved:", filePath);
 
-    // const dataFilePath = path.join(process.cwd(), "public/backend/data.txt");
+    const dataFilePath = path.join(process.cwd(), "public/backend/data.txt");
 
     const payload = {
       Name: name,

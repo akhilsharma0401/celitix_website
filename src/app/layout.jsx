@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import GlobalToaster from "@/utils/GlobalToaster";
 import { CELITIX_FAV_ICON } from "../../public/assets/images.js";
+import Head from "next/head";
 
 const lora = Lora({
   subsets: ["latin"],
@@ -29,8 +30,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
+      <Head>
+
         <link rel="icon" href={CELITIX_FAV_ICON} />
+      </Head>
+      <head>
         {/* <!-- Google Tag Manager --> */}
         <Script
           id="gtm-init"

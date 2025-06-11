@@ -208,14 +208,14 @@ const Landing = () => {
             toast.error("Unable to send form data. Please try again later")
             return
         }
-        const sendEmail = await axios.post(`${url}/send-email`, data)
+        const sendEmail = await axios.post(`${url}/email`, data)
 
         if (!sendEmail.data.status) {
             toast.error("Unable to send form data. Please try again later")
             return
         }
 
-        const sendWhatsapp = await axios.post(`${url}/send-whatsapp`, data)
+        const sendWhatsapp = await axios.post(`${url}/whatsapp`, data)
 
         if (!sendWhatsapp?.data?.status) {
             toast.error("Unable to send form data. Please try again later")

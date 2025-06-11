@@ -238,9 +238,21 @@ Interpersonal skills, including the ability to build rapport`,
     // }
   };
 
-  const handleFileChange = (e) => {
-    setResume(e.target.files[0]);
-  };
+ const handleFileChange = (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  const maxSizeInMB = 2;
+  const maxSizeInBytes = maxSizeInMB * 1024 * 1024;
+
+  if (file.size > maxSizeInBytes) {
+    toast.error('File must be less than 2MB.');
+    e.target.value = ''; // Reset file input
+    return;
+  }
+
+  setResume(file); // ✅ valid file
+};
 
   const handleTurnstileChange = (token) => {
     setTurnstileResponse(token)
@@ -284,7 +296,11 @@ Interpersonal skills, including the ability to build rapport`,
     formData.append("designation", form.designation);
     formData.append("file", resume);
 
-    const res = await axios.post(`${url}/save`, formData)
+    const res = await axios.post(`${url}/carrer-save`, formData,{
+      headers:{
+        "x-secret-key":process.env.NEXT_PUBLIC_API_KEY
+      }
+    })
     if (!res.data.status) {
       toast.error("Unable to send form data. Please try again later")
       return
@@ -304,7 +320,11 @@ Interpersonal skills, including the ability to build rapport`,
     }
     setIsFetching(true);
 
-    const sendEmail = await axios.post(`${url}/send-email`, emailData)
+    const sendEmail = await axios.post(`${url}/email`, emailData,{
+      headers:{
+        "x-secret-key":process.env.NEXT_PUBLIC_API_KEY
+      }
+    })
 
     if (!sendEmail.data.status) {
       toast.error("Unable to send form data. Please try again later")
@@ -643,6 +663,7 @@ Interpersonal skills, including the ability to build rapport`,
                       <input
                         id="file-upload"
                         type="file"
+                        accept=".pdf,.doc,.docx"
                         onChange={handleFileChange}
                         className="absolute inset-0 opacity-0 w-full h-full cursor-pointer"
                       />

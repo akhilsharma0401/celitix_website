@@ -201,18 +201,30 @@ const FormPopup = ({ visible, onHide }) => {
 
     setIsFetching(true);
 
-    const res = await axios.post(`${url}/save`, data)
+    const res = await axios.post(`${url}/save`, data, {
+      headers:{
+        "x-secret-key":process.env.NEXT_PUBLIC_API_KEY
+      }
+    })
     if (!res.data.status) {
       toast.error("Unable to send form data. Please try again later")
       return
     }
-    const sendEmail = await axios.post(`${url}/send-email`, data)
+    const sendEmail = await axios.post(`${url}/email`, data,{
+      headers:{
+        "x-secret-key":process.env.NEXT_PUBLIC_API_KEY
+      }
+    })
 
     if (!sendEmail.data.status) {
       toast.error("Unable to send form data. Please try again later")
       return
     }
-    const sendWhatsapp = await axios.post(`${url}/send-whatsapp`, data)
+    const sendWhatsapp = await axios.post(`${url}/whatsapp`, data,{
+      headers:{
+        "x-secret-key":process.env.NEXT_PUBLIC_API_KEY
+      }
+    })
 
     if (!sendWhatsapp?.data?.status) {
       toast.error("Unable to send form data. Please try again later")
@@ -342,8 +354,10 @@ const FormPopup = ({ visible, onHide }) => {
               </div>
 
               <textarea name="message" placeholder="How can we help you?" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="form-textarea w-full border border-gray-300 rounded-md p-2" />
+              <div className=''>
 
               <TurnstileComponent onChange={handleTurnstileChange} />
+              </div>
 
               <div className='flex justify-center'>
                 <UniversalButton

@@ -193,19 +193,33 @@ const ContactUs = () => {
 
     setIsFetching(true);
 
-    const res = await axios.post(`${url}/save`, data)
+    const res = await axios.post(`${url}/save`, data,{
+      headers:{
+        "x-secret-key":process.env.NEXT_PUBLIC_API_KEY
+      }
+    })
     if (!res.data.status) {
       toast.error("Unable to send form data. Please try again later")
       return
     }
-    const sendEmail = await axios.post(`${url}/send-email`, data)
+    const sendEmail = await axios.post(`${url}/email`, data,
+      {
+      headers:{
+        "x-secret-key":process.env.NEXT_PUBLIC_API_KEY
+      }
+    }
+    )
 
     if (!sendEmail.data.status) {
       toast.error("Unable to send form data. Please try again later")
       return
     }
 
-    const sendWhatsapp = await axios.post(`${url}/send-whatsapp`, data)
+    const sendWhatsapp = await axios.post(`${url}/whatsapp`, data,{
+      headers:{
+        "x-secret-key":process.env.NEXT_PUBLIC_API_KEY
+      }
+    })
 
     if (!sendWhatsapp?.data?.status) {
       toast.error("Unable to send form data. Please try again later")
@@ -293,14 +307,14 @@ const ContactUs = () => {
                       </li>
                     </a>
                     <span className="text-black-900">•</span>
-                    <a href="#" className=" transition">
+                    <div className=" transition">
                       <li className="flex sub-heading  items-center gap-1">
                         <FaPhoneAlt />
                         <a  href="tel:+919680006460" className="sub-heading ">
                           +91 968-000-6460
                         </a>
                       </li>
-                    </a>
+                    </div>
 
                   </div>
                 </motion.div>
@@ -429,9 +443,11 @@ const ContactUs = () => {
                   </label>
                 </div>
 
-                <div className="mb-2">
+               <div className='mb-2'>
+
                   <TurnstileComponent onChange={handleTurnstileChange} />
-                </div>
+               </div>
+              
                 <div className='flex justify-center'>
                   <UniversalButton
                     // label={submitLabel} // Dynamically change the label based on the state
