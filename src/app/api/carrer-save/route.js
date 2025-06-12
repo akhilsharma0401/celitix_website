@@ -18,20 +18,6 @@ export async function POST(request, response) {
     const designation = formData.get("designation");
     const experience = formData.get("experience");
 
-    // const {
-    //   name,
-    //   email,
-    //   phone,
-    //   company,
-    //   service,
-    //   message,
-    //   source,
-    //   designation,
-    //   experience,
-    // } = formData;
-
-    console.log("name", name);
-
     const fileName = file.name;
     const ext = path.extname(fileName);
     const uniqueName = `${Date.now()}-${Math.round(Math.random() * 1e9)}${ext}`;
@@ -99,7 +85,7 @@ export async function POST(request, response) {
     return new Response(
       JSON.stringify({
         message: "Data saved successfully",
-
+        fileUrl,
         status: true,
       }),
       {
