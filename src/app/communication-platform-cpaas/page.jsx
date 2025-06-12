@@ -203,19 +203,31 @@ const Landing = () => {
 
         setIsFetching(true);
 
-        const res = await axios.post(`${url}/save`, data)
+        const res = await axios.post(`${url}/save`, data,{
+      headers:{
+        "x-secret-key":process.env.NEXT_PUBLIC_API_KEY
+      }
+    })
         if (!res.data.status) {
             toast.error("Unable to send form data. Please try again later")
             return
         }
-        const sendEmail = await axios.post(`${url}/email`, data)
+        const sendEmail = await axios.post(`${url}/email`, data, {
+      headers:{
+        "x-secret-key":process.env.NEXT_PUBLIC_API_KEY
+      }
+    })
 
         if (!sendEmail.data.status) {
             toast.error("Unable to send form data. Please try again later")
             return
         }
 
-        const sendWhatsapp = await axios.post(`${url}/whatsapp`, data)
+        const sendWhatsapp = await axios.post(`${url}/whatsapp`, data, {
+      headers:{
+        "x-secret-key":process.env.NEXT_PUBLIC_API_KEY
+      }
+    })
 
         if (!sendWhatsapp?.data?.status) {
             toast.error("Unable to send form data. Please try again later")
