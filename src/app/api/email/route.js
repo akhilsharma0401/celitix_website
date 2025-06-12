@@ -54,7 +54,7 @@ export async function POST(request) {
       to: "info@proactivedigital.in, sales@proactivesms.in, yogendra@proactivesms.in",
       // to: "dummymail12hai@gmail.com",
       subject: `Celitix ${source} Enquiry`,
-      html: `Name: ${name}<br>Email: ${email}<br>Phone: ${phone}<br>Message: ${message}`,
+      html: `Name: ${name}<br>Email: ${email}<br>Phone: ${phone}<br>Message: ${message}<br>Company: ${company}<br>Service: ${service}`,
     };
 
     if (designation || experience || resume) {

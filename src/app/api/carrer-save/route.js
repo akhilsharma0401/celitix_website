@@ -42,7 +42,7 @@ export async function POST(request, response) {
     const buffer = Buffer.from(arrayBuffer);
     await fs.writeFile(filePath, buffer);
 
-    let fileUrl = `${process.env.NEXT_PUBLIC_API_URL}/backend/files/${uniqueName}`;
+    let fileUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/backend/files/${uniqueName}`;
 
     // console.log("File saved:", filePath);
 
