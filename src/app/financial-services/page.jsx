@@ -516,7 +516,7 @@ const Finance = () => {
         {/* Tab Content */}
          <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-start justify-between space-y-8 lg:space-y-0 lg:gap-12 px-4 sm:px-8 lg:px-20 py-2 md:py-5">
           {/* Left Text Section */}
-          <div className="lg:w-1/2 text-center lg:text-left">
+          <div className="lg:w-1/2 text-left">
             <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-4 sub-heading">
               {tabContent[activeTabs]?.title || "Ecommerce"}
             </h2>

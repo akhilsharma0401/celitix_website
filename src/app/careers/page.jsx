@@ -564,7 +564,7 @@ Interpersonal skills, including the ability to build rapport`,
           </div>
 
           {/* Optional Image Column */}
-          <div className="w-full px-4 sm:px-6 py-5" ref={formRef} id="form">
+          <div className="w-full px-0 md:px-6 py-5" ref={formRef} id="form">
             <h2 className="text-2xl md:text-4xl heading text-center mb-6">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]"> Apply </span> Now
             </h2>

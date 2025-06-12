@@ -166,7 +166,7 @@ const About = () => {
       </section>
       {/* 2nd */}
       {/* 3rd */}
-      <section className="bg-[#f7ebfc] px-4 py-20 sm:px-6 lg:px-20">
+      <section className="bg-[#f7ebfc] px-4 py-5 md:py-20 sm:px-6 lg:px-20">
         <div className="px-4 max-w-7xl mx-auto text-center spacey-4">
           <h2 className="text-3xl md:text-4xl lg:text-5xl heading mb-2">
             Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]"> Journey </span>

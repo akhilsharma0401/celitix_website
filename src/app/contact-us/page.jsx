@@ -278,7 +278,7 @@ const ContactUs = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <h1 className="text-4xl md:text-5xl font-semibold text-gray-900 heading md:mb-5 mb-1">
+                  <h1 className="text-5xl md:text-5xl font-semibold text-gray-900 heading mb-5 mb-1">
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]">Contact Us </span>
                   </h1>
 
@@ -300,15 +300,15 @@ const ContactUs = () => {
                       </li>
                     </a>
                   </ul>
-                  <div className="flex justify-start items-center sub-heading space-x-6 text-black-700">
+                  <div className="flex flex-wrap justify-start items-center sub-heading space-x-6 text-black-700">
                     <a href="support@celitix.com" className=" transition">
-                      <li className="flex sub-heading  items-center gap-2">
+                      <li className="flex sub-heading  items-center gap-2 mb-1">
                         <FaEnvelope /> <span>support@celitix.com</span>
                       </li>
                     </a>
-                    <span className="text-black-900">•</span>
+                    <span className="hidden sm:inline text-black-900">•</span>
                     <div className=" transition">
-                      <li className="flex sub-heading  items-center gap-1">
+                      <li className="flex sub-heading  items-center gap-1 mb-1">
                         <FaPhoneAlt />
                         <a  href="tel:+919680006460" className="sub-heading ">
                           +91 968-000-6460

@@ -3,12 +3,17 @@ import React, { useRef, useState } from 'react'
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 // import { Helmet } from "react-helmet-async"
 // import { initScrollReveal } from '../../utils/ScrollReveal';
-import { Authenticationicon, AutomateWorkflows, Click2callicon, compliant, ConnectYourChannels, CTALASTIMAGE, Emailicon, IBDicon, InternationalSMS, LinkTracking, MissedCallicon, MultichannelIntegrations, MultichannelIntegrationsSms, Notify24, OBDicon, PerfectBackup, RCSicon, RealTimeAnalytics, SeasonalPromotions, SendSmarterFaste, SimpleSMS, SMS_Marketing, SMSicon, TechSupport, TransactionalSMS, twoWaySMSicon, Verifyusers, WhatsAppicon, WhyChooseSMS } from '../../../public/assets/images';
+
+
+
+
+import { Authenticationicon, AutomateWorkflows, Click2callicon, compliant, ConnectYourChannels, CTALASTIMAGE, Emailicon, IBDicon, InternationalSMS, LinkTracking, MissedCallicon, MultichannelIntegrations, MultichannelIntegrationsSms, Notify24, OBDicon, PerfectBackup, RCSicon, RealTimeAnalytics, SeasonalPromotions, SendSmarterFaste, SimpleSMS,  SMSicon, TechSupport, TransactionalSMS, twoWaySMSicon, Verifyusers, WhatsAppicon, WhyChooseSMS } from '../../../../public/assets/images';
 import Image from 'next/image';
 import Link from "next/link";
 import FaqItem from '@/app/components/Faq';
 import UniversalButton from '@/app/components/UniversalButton';
 import FormPopup from '@/app/components/FormPopup';
+import { SMS_Marketing } from '../../../../public/assets/images';
 
 // src/assets/mainicons/TechSupport.png
 
@@ -177,7 +182,7 @@ const Sms = () => {
               alt="Reach Instantly with SMS"
               loading="eager"
               // fetchpriority="high"
-              crossorigin="anonymous"
+              // crossorigin="anonymous"
               title='Reach Instantly with SMS'
               className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg object-contain box-reveal-bottom"
             />
@@ -658,9 +663,9 @@ const Sms = () => {
                 }
                 // question={faq.question}
                 answer={
-                  <p className="text-sm md:text-md sub-heading  font-semibold text-gray-700">
+                  <span className="text-sm md:text-md sub-heading  font-semibold text-gray-700">
                     {faq.answer}
-                  </p>
+                  </span>
                 }
                 isOpen={openIndex === idx}
                 onClick={() => toggle(idx)}

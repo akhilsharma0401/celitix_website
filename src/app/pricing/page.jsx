@@ -233,7 +233,7 @@ const Pricing = () => {
             </section> */}
             {/* 2nd */}
             {/* 3rd */}
-            {/* <section className='bg-[#f7ebfc]'>
+            <section className='bg-[#f7ebfc]'>
                 <div className="px-4 py-8 max-w-7xl mx-auto">
                     <div className="flex gap-6">
 
@@ -258,35 +258,35 @@ const Pricing = () => {
                             </ul>
                             <h6 className="text-gray-700 heading font-semibold mb-2">Available Channels</h6>
                             <div className="flex flex-wrap gap-2 mb-4">
-                                <a href="/pricing/sms" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
+                                <a href="/sms-marketing" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
                                     <Image src={ReachSMS} alt="SMS" className="w-4 h-4 mr-1" /> SMS
                                 </a>
-                                <a href="/pricing/rcs" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
+                                <a href="/rcs-business-messaging" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
                                     <Image src={ReachRCS} alt="RCS" className="w-4 h-4 mr-1" /> RCS
                                 </a>
-                                <a href="/pricing/whatsapp" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
+                                <a href="/whatsapp-business-platform" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
                                     <Image src={Reachwhatsappicon} alt="WhatsApp" className="w-4 h-4 mr-1" /> WhatsApp
                                 </a>
-                                <a href="/pricing/mms" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
+                                <a href="/inbound-dialer" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
                                     <Image src={Reachinboundcalling} alt="IBD" className="w-4 h-4 mr-1" /> IBD
                                 </a>
-                                <a href="/pricing/push" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
+                                <a href="/outbound-dialer" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
                                     <Image src={ReachObd} alt="OBD" className="w-4 h-4 mr-1" /> OBD
                                 </a>
-                                <a href="/pricing/voice" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
+                                <a href="/missed-call-services" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
                                     <Image src={ReachMissedcall} alt="Missed Call" className="w-4 h-4 mr-1" /> Missed Call
                                 </a>
-                                <a href="/pricing/viber" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
+                                <a href="/two-way-sms" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
                                     <Image src={Reachwaytosms} alt="2 Way SMS" className="w-4 h-4 mr-1" /> 2 Way SMS
                                 </a>
-                                <a href="/pricing/messenger" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
+                                <a href="/click-to-call" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
                                     <Image src={Reachclicktocall} alt="Click 2 Call" className="w-4 h-4 mr-1" /> Click 2 Call
                                 </a>
-                                <a href="/pricing/email" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
+                                <a href="/email-otp" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
                                     <Image src={Reachemail} alt="Email" className="w-4 h-4 mr-1" /> Email
                                 </a>
-                                <a href="/pricing/messenger" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
-                                    <Image src={ReachApp} alt="OTP-Free" className="w-4 h-4 mr-1" /> OTP-Free
+                                <a href="/user-verification" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
+                                    <Image src={ReachApp} alt="Authentication" className="w-4 h-4 mr-1" /> Authentication
                                 </a>
                             </div>
                            
@@ -1142,7 +1142,7 @@ const Pricing = () => {
 
                     </div>
                 </div>
-            </section> */}
+            </section>
             {/* 3rd */}
             {/* 4th */}
             {/* <div className="flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-[#A05CD7] to-[#4B0FA6] px-6 md:px-12 py-5 md:py-20">

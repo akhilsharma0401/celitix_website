@@ -923,7 +923,7 @@ const Home = () => {
       </Helmet> */}
       {/* 1nd */}
 
-      <div className="h-[90vh]">
+      <div className="md:h-[90vh]">
         <OurClientele num={5} />
         <div className="w-full  pt-35 relative z-20 ">
           <div className="text-center px-4 py-2 md:py-20 space-y-4 box-reveal-bottom">
