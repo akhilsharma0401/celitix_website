@@ -6,8 +6,8 @@ const ErrorPage = () => {
   // Lottie animation options
   const defaultOptions = {
     loop: true,
-    autoplay: true, 
-    animationData: animationData, 
+    autoplay: true,
+    animationData: animationData,
     rendererSettings: {
       preserveAspectRatio: 'xMidYMid slice',
     },
@@ -28,12 +28,12 @@ const ErrorPage = () => {
             </div>
           </div>
           <div className="flex justify-center items-center mt-6">
-  <Lottie
-    options={defaultOptions}
-    height={window.innerWidth > 640 ? 350 : 250}  // Adjust height based on screen width (e.g., small screens get smaller height)
-    width={window.innerWidth > 640 ? 500 : 350}   // Adjust width based on screen width
-  />
-</div>
+            <Lottie
+              options={defaultOptions}
+              height={window.innerWidth > 640 ? 350 : 250}  // Adjust height based on screen width (e.g., small screens get smaller height)
+              width={window.innerWidth > 640 ? 500 : 350}   // Adjust width based on screen width
+            />
+          </div>
 
         </div>
       </div>
