@@ -64,9 +64,9 @@ export async function generateMetadata({ params }) {
   const isKnownCity = city && cities.includes(city.toLowerCase()); // Check if it's a known city
 
   return {
-    title: isKnownCity ? `SMS Marketing & OTP Platform | Celitix in ${formattedCity}` : `SMS Marketing & OTP Platform | Celitix`,
+    title: isKnownCity ? `SMS Marketing & OTP Platform in ${formattedCity}` : `SMS Marketing & OTP Platform | Celitix`,
     description: isKnownCity
-      ? `Reach anyone, anywhere, instantly in ${formattedCity}. Use Celitix’s SMS platform to deliver OTPs, alerts, and promotional messages and drive results.`
+      ? `Reach anyone, anywhere, instantly right from ${formattedCity}. Use Celitix’s SMS platform to deliver OTPs, alerts, and promotional messages and drive results.`
       : `Reach anyone, anywhere, instantly. Use Celitix’s SMS platform to deliver OTPs, alerts, and promotional messages and drive results.`,
     alternates: {
       canonical: city ? `http://localhost:3000/sms-marketing/${city}` : `localhost:3000/sms-marketing`,

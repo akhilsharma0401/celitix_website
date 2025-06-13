@@ -177,7 +177,7 @@ const Sms = () => {
               alt="Reach Instantly with SMS"
               loading="eager"
               // fetchpriority="high"
-              crossorigin="anonymous"
+              // crossorigin="anonymous"
               title='Reach Instantly with SMS'
               className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg object-contain box-reveal-bottom"
             />
@@ -658,9 +658,9 @@ const Sms = () => {
                 }
                 // question={faq.question}
                 answer={
-                  <p className="text-sm md:text-md sub-heading  font-semibold text-gray-700">
+                  <span className="text-sm md:text-md sub-heading font-semibold text-gray-700">
                     {faq.answer}
-                  </p>
+                  </span>
                 }
                 isOpen={openIndex === idx}
                 onClick={() => toggle(idx)}

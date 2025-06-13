@@ -189,7 +189,7 @@ const ClickTwoCall = () => {
               alt="Connect Instantly with Click to Call"
               loading="eager"
               // fetchpriority="high"
-              crossorigin="anonymous"
+              // crossorigin="anonymous"
               title='Connect Instantly with Click to Call'
               className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg object-contain box-reveal-bottom"
             />

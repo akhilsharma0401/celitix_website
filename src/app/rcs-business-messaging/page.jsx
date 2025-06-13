@@ -792,22 +792,15 @@ const Rcs = () => {
               <FaqItem
                 key={idx}
                 question={
-                  <h4 className="text-base md:text-md heading font-medium text-gray-900 ">
+                  <h4 className="text-base md:text-md heading font-medium text-gray-900">
                     {faq.question}
                   </h4>
                 }
+                // question={faq.question}
                 answer={
-                  <div className="text-sm md:text-md sub-heading  font-semibold text-gray-700 ">
-                    {Array.isArray(faq.answer) ? (
-                      faq.answer.map((line, lineIdx) => (
-                        <p key={lineIdx} className="mb-2 leading-relaxed">
-                          {line}
-                        </p>
-                      ))
-                    ) : (
-                      <p className="leading-relaxed ">{faq.answer}</p>
-                    )}
-                  </div>
+                  <span className="text-sm md:text-md sub-heading font-semibold text-gray-700">
+                    {faq.answer}
+                  </span>
                 }
                 isOpen={openIndex === idx}
                 onClick={() => toggle(idx)}

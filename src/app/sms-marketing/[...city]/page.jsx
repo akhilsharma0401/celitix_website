@@ -3,7 +3,6 @@ import React, { use, useRef, useState } from 'react'
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 // import { Helmet } from "react-helmet-async"
 // import { initScrollReveal } from '../../utils/ScrollReveal';
-
 import { Authenticationicon, AutomateWorkflows, Click2callicon, compliant, ConnectYourChannels, CTALASTIMAGE, Emailicon, IBDicon, InternationalSMS, LinkTracking, MissedCallicon, MultichannelIntegrations, MultichannelIntegrationsSms, Notify24, OBDicon, PerfectBackup, RCSicon, RealTimeAnalytics, SeasonalPromotions, SendSmarterFaste, SimpleSMS,  SMSicon, TechSupport, TransactionalSMS, twoWaySMSicon, Verifyusers, WhatsAppicon, WhyChooseSMS } from '../../../../public/assets/images';
 import Image from 'next/image';
 import Link from "next/link";
