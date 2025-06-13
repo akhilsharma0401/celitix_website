@@ -233,7 +233,7 @@ const Pricing = () => {
             </section> */}
             {/* 2nd */}
             {/* 3rd */}
-            <section className='bg-[#f7ebfc]'>
+            {/* <section className='bg-[#f7ebfc]'>
                 <div className="px-4 py-8 max-w-7xl mx-auto">
                     <div className="flex gap-6">
 
@@ -1142,7 +1142,7 @@ const Pricing = () => {
 
                     </div>
                 </div>
-            </section>
+            </section> */}
             {/* 3rd */}
             {/* 4th */}
             {/* <div className="flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-[#A05CD7] to-[#4B0FA6] px-6 md:px-12 py-5 md:py-20">
