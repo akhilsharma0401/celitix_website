@@ -1,4 +1,4 @@
-import Sms from "./Sms"
+import Sms from "./sms"
 import { smskey } from "../lib/cities"
 import ErrorPage from "../components/ErrorPage"
 

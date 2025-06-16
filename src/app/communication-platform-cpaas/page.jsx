@@ -163,10 +163,10 @@ const Landing = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-       
+
         if (!isOtpVerified) {
-        toast.error('Please verify the otp before submitting the form.');
-        return;
+            toast.error('Please verify the otp before submitting the form.');
+            return;
         }
 
         const { firstName, lastName, email, phone, service } = form;
@@ -203,20 +203,20 @@ const Landing = () => {
 
         setIsFetching(true);
 
-        const res = await axios.post(`${url}/save`, data,{
-      headers:{
-        "x-secret-key":process.env.NEXT_PUBLIC_API_KEY
-      }
-    })
+        const res = await axios.post(`${url}/save`, data, {
+            headers: {
+                "x-secret-key": process.env.NEXT_PUBLIC_API_KEY
+            }
+        })
         if (!res.data.status) {
             toast.error("Unable to send form data. Please try again later")
             return
         }
         const sendEmail = await axios.post(`${url}/email`, data, {
-      headers:{
-        "x-secret-key":process.env.NEXT_PUBLIC_API_KEY
-      }
-    })
+            headers: {
+                "x-secret-key": process.env.NEXT_PUBLIC_API_KEY
+            }
+        })
 
         if (!sendEmail.data.status) {
             toast.error("Unable to send form data. Please try again later")
@@ -224,10 +224,10 @@ const Landing = () => {
         }
 
         const sendWhatsapp = await axios.post(`${url}/whatsapp`, data, {
-      headers:{
-        "x-secret-key":process.env.NEXT_PUBLIC_API_KEY
-      }
-    })
+            headers: {
+                "x-secret-key": process.env.NEXT_PUBLIC_API_KEY
+            }
+        })
 
         if (!sendWhatsapp?.data?.status) {
             toast.error("Unable to send form data. Please try again later")
@@ -235,7 +235,7 @@ const Landing = () => {
         }
         // setIsSubmitting(true);
         setIsFetching(false);
-         pushToDataLayer({
+        pushToDataLayer({
             event: "form_submit",
             form_id: "form_1",
             form_name: "Form 1",
@@ -371,7 +371,9 @@ const Landing = () => {
 
                             <textarea name="message" placeholder="How can we help you?" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="form-textarea w-full border border-gray-300 rounded-md p-2" />
 
-                            <TurnstileComponent onChange={handleTurnstileChange} />
+                            <div className=''>
+                                <TurnstileComponent onChange={handleTurnstileChange} />
+                            </div>
                             <div className='flex justify-center'>
                                 <UniversalButton
                                     // label={submitLabel} // Dynamically change the label based on the state
