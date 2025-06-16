@@ -1,8 +1,32 @@
-import React from 'react';
+"use client"
+
+import React, { useState, useEffect } from 'react';
 import Lottie from 'react-lottie'; // Correct import for Lottie
 import animationData from '../../../public/assets/Lottie/Animation.json';
 
 const ErrorPage = () => {
+  // State to track the window width
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  // Use useEffect to update the window width when the component mounts
+  useEffect(() => {
+    // Function to update window width
+    const updateWindowWidth = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    // Call the function initially
+    updateWindowWidth();
+
+    // Add event listener to update width on resize
+    window.addEventListener('resize', updateWindowWidth);
+
+    // Cleanup the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('resize', updateWindowWidth);
+    };
+  }, []);
+
   // Lottie animation options
   const defaultOptions = {
     loop: true,
@@ -28,13 +52,15 @@ const ErrorPage = () => {
             </div>
           </div>
           <div className="flex justify-center items-center mt-6">
-            <Lottie
-              options={defaultOptions}
-              height={window.innerWidth > 640 ? 350 : 250}  // Adjust height based on screen width (e.g., small screens get smaller height)
-              width={window.innerWidth > 640 ? 500 : 350}   // Adjust width based on screen width
-            />
+            {/* Ensure that windowWidth is greater than 0 before rendering Lottie */}
+            {windowWidth > 0 && (
+              <Lottie
+                options={defaultOptions}
+                height={windowWidth > 640 ? 350 : 250}
+                width={windowWidth > 640 ? 500 : 350} // Adjust width based on screen width
+              />
+            )}
           </div>
-
         </div>
       </div>
     </>
@@ -42,3 +68,4 @@ const ErrorPage = () => {
 };
 
 export default ErrorPage;
+

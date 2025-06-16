@@ -28,30 +28,53 @@ module.exports = {
 
   additionalPaths: async (config) => {
 
-    const data = [
-      {
-        country: "India", cities: ['jaipur', 'delhi', 'mumbai', 'bangalore',
-          'lucknow', 'indore', 'surat', 'bhopal',
-          'patna', 'nagpur', 'vadodara', 'ludhiana',
-          'kanpur', 'kochi', 'coimbatore', 'bhubaneswar',
-          'vishakhapatnam', 'thiruvananthapuram', 'rajkot',
-          'guwahati', 'amritsar', 'agra', 'varanasi',
-          'mumbai', 'delhi-ncr', 'bengaluru', 'chennai',
-          'hyderabad', 'kolkata', 'ahmedabad', 'pune']
-      },
-      // { country: "USA", cities: ["New York", "Los Angeles"] },
-    ];
+    // const data = [
+    //   {
+    //     country: "India", cities: ['jaipur', 'delhi', 'mumbai', 'bangalore',
+    //       'lucknow', 'indore', 'surat', 'bhopal',
+    //       'patna', 'nagpur', 'vadodara', 'ludhiana',
+    //       'kanpur', 'kochi', 'coimbatore', 'bhubaneswar',
+    //       'vishakhapatnam', 'thiruvananthapuram', 'rajkot',
+    //       'guwahati', 'amritsar', 'agra', 'varanasi',
+    //       'mumbai', 'delhi-ncr', 'bengaluru', 'chennai',
+    //       'hyderabad', 'kolkata', 'ahmedabad', 'pune']
+    //   },
+    //   // { country: "USA", cities: ["New York", "Los Angeles"] },
+    // ];
+
+    const data = ['jaipur', 'delhi', 'mumbai', 'bangalore',
+      'lucknow', 'indore', 'surat', 'bhopal',
+      'patna', 'nagpur', 'vadodara', 'ludhiana',
+      'kanpur', 'kochi', 'coimbatore', 'bhubaneswar',
+      'vishakhapatnam', 'thiruvananthapuram', 'rajkot',
+      'guwahati', 'amritsar', 'agra', 'varanasi',
+      'mumbai', 'delhi-ncr', 'bengaluru', 'chennai',
+      'hyderabad', 'kolkata', 'ahmedabad', 'pune']
+
+    const additionalPathss = [
+      'sms-service-provider', 'bulk-sms', 'sms-marketing'
+    ]
 
 
-    const paths = data.flatMap((country) =>
-      country.cities.map((city) => ({
-        loc: `/sms-marketing/${city.toLowerCase()}`,
+
+    const paths = data.flatMap((city) =>
+      additionalPathss.map((path) => ({
+        loc: `/${path}/${city.toLowerCase()}`,
         lastmod: new Date().toISOString(),
         changefreq: 'daily',
         priority: 0.7,
       }))
-    );
+    )
 
-    return paths;
+    const rootPath = additionalPathss.flatMap((path) => ({
+      loc: `/${path}`,
+      lastmod: new Date().toISOString(),
+      changefreq: 'daily',
+      priority: 0.7,
+    }))
+
+
+
+    return [...paths, ...rootPath];
   },
 };

@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import GlobalToaster from "@/utils/GlobalToaster";
 import { CELITIX_FAV_ICON } from "../../public/assets/images.js";
 import Head from "next/head";
+import CookieConsent from "./components/CookieConsent";
 
 const lora = Lora({
   subsets: ["latin"],
@@ -129,6 +130,7 @@ export default function RootLayout({ children }) {
         </noscript>
         <GlobalToaster />
         <Header />
+        <CookieConsent />
         <main>{children}</main>
         <Footer />
       </body>

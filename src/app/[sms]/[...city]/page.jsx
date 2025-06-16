@@ -1,21 +1,34 @@
 "use client"
-import React, { useRef, useState } from 'react'
+import React, { use, useRef, useState } from 'react'
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 // import { Helmet } from "react-helmet-async"
 // import { initScrollReveal } from '../../utils/ScrollReveal';
-import { Authenticationicon, AutomateWorkflows, Click2callicon, compliant, ConnectYourChannels, CTALASTIMAGE, Emailicon, IBDicon, InternationalSMS, LinkTracking, MissedCallicon, MultichannelIntegrations, MultichannelIntegrationsSms, Notify24, OBDicon, PerfectBackup, RCSicon, RealTimeAnalytics, SeasonalPromotions, SendSmarterFaste, SimpleSMS, SMS_Marketing, SMSicon, TechSupport, TransactionalSMS, twoWaySMSicon, Verifyusers, WhatsAppicon, WhyChooseSMS } from '../../../public/assets/images';
+import { Authenticationicon, AutomateWorkflows, Click2callicon, compliant, ConnectYourChannels, CTALASTIMAGE, Emailicon, IBDicon, InternationalSMS, LinkTracking, MissedCallicon, MultichannelIntegrations, MultichannelIntegrationsSms, Notify24, OBDicon, PerfectBackup, RCSicon, RealTimeAnalytics, SeasonalPromotions, SendSmarterFaste, SimpleSMS,  SMSicon, TechSupport, TransactionalSMS, twoWaySMSicon, Verifyusers, WhatsAppicon, WhyChooseSMS } from '../../../../public/assets/images';
 import Image from 'next/image';
 import Link from "next/link";
 import FaqItem from '@/app/components/Faq';
 import UniversalButton from '@/app/components/UniversalButton';
 import FormPopup from '@/app/components/FormPopup';
+import { SMS_Marketing } from '../../../../public/assets/images';
 
+import Notfound from '@/app/components/Not-found';
 // src/assets/mainicons/TechSupport.png
 
+import { cities } from '../../lib/cities'; // Your list of predefined cities
+import ErrorPage from '@/app/components/ErrorPage';
+
+export const dynamic = 'force-dynamic'; // Allow dynamic rendering
+
+
+const Sms = ({params}) => {
+  const cityParam = use(params);
+   const city = cityParam.city?.[0] || null;
+  const isKnownCity = city && cities.includes(city.toLowerCase()); // Check if the city is known
+  const formattedCity = city ? city.charAt(0).toUpperCase() + city.slice(1) : 'India'; // Format city name
 
 
 
-const Sms = () => {
+
   // useEffect(() => {
   //   initScrollReveal();
   // }, []);
@@ -130,7 +143,7 @@ const Sms = () => {
 
 
 
-
+if (isKnownCity){
   return (
     <div>
       {/* <Helmet>
@@ -149,7 +162,8 @@ const Sms = () => {
             </span>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl heading font-bold text-gray-900 popf leading-tight">
-              Reach<span className="text-transparent bg-clip-text  bg-gradient-to-r from-[#2b40b0] to-[#36bae2]">  Instantly </span> with SMS
+              Reach<span className="text-transparent bg-clip-text  bg-gradient-to-r from-[#2b40b0] to-[#36bae2]">  Instantly </span> with SMS 
+              {/* {formattedCity} */}
             </h1>
 
             <p className="text-gray-600 text-base md:text-lg max-w-md pera">
@@ -658,7 +672,7 @@ const Sms = () => {
                 }
                 // question={faq.question}
                 answer={
-                  <span className="text-sm md:text-md sub-heading font-semibold text-gray-700">
+                  <span className="text-sm md:text-md sub-heading  font-semibold text-gray-700">
                     {faq.answer}
                   </span>
                 }
@@ -672,6 +686,11 @@ const Sms = () => {
       {/* 9th */}
     </div>
   )
+}
+
+return (
+  <ErrorPage/>
+)
 }
 
 export default Sms

@@ -2,10 +2,10 @@
 import React, { useRef, useState } from 'react';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
+import { TurnstileComponent } from '../../utils/TurnstileComponent';
 import Image from 'next/image';
 // import { initScrollReveal } from '../utils/ScrollReveal';
 import { useRouter } from 'next/navigation';
-import { TurnstileComponent } from '../../utils/TurnstileComponent';
 import toast from 'react-hot-toast';
 import { sendOtp, verifyOtp } from '../../utils/Otp';
 // import { verifyToken } from "../../utils/VerifyToken";

@@ -700,9 +700,9 @@ const ClickTwoCall = () => {
                 }
                 // question={faq.question}
                 answer={
-                  <p className="text-sm md:text-md sub-heading  font-semibold text-gray-700 ">
+                  <span className="text-sm md:text-md sub-heading  font-semibold text-gray-700 ">
                     {faq.answer}
-                  </p>
+                  </span>
                 }
                 isOpen={openIndex === idx}
                 onClick={() => toggle(idx)}

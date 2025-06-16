@@ -1,7 +1,7 @@
 // header images
 import celitixheader from "./mainicons/celitix-cpaas-solution-logo.svg"
 import celitixfooter from "./mainicons/celitix-cpaas-solution-logo-footer.svg"
-
+import Cookieimg from "./imagesMain/Cookie.svg"
 import footerBatch from "./mainicons/BATCH01.svg"
 import METAWHITE from "./mainicons/MetaLogowhite.png"
 import Industries from "./mainicons/Industries.png"
@@ -591,6 +591,7 @@ export {
     Industries,
     Channels,
     rocket,
+    Cookieimg,
    
 
     LinkedIn,

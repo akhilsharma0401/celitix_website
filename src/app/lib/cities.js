@@ -9,4 +9,8 @@ export const cities = [
   'mumbai', 'delhi-ncr', 'bengaluru', 'chennai', 
   'hyderabad', 'kolkata', 'ahmedabad', 'pune'
 ];
-// Known cities
+
+export const smskey = [
+  'sms-service-provider', 'bulk-sms','sms-marketing' 
+];
+
