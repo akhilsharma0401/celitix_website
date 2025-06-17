@@ -4,6 +4,7 @@ import Cookie from 'js-cookie';
 import Image from 'next/image';
 import { Cookieimg } from '../../../public/assets/images';
 import Link from 'next/link';
+import UniversalButton from './UniversalButton';
 
 const CookieConsent = () => {
   const [showBanner, setShowBanner] = useState(false);
@@ -37,12 +38,12 @@ const CookieConsent = () => {
 
           {/* Cookie consent banner */}
           <div className="cookie-consent-banner">
-            <div className="cookie-illustration">
+            {/* <div className="cookie-illustration">
               <Image src={Cookieimg} alt="Cookie Monster" height={100} />
-            </div>
+            </div> */}
             <div className="cookie-text">
               <h2 className='heading text-xl'>Our Website Uses Cookies</h2>
-              <p className='sub-heading text-lg'>
+              <p className='sub-heading text-md'>
                 This site uses cookies to enhance your browsing experience. By
                 clicking accept, you consent to our use of cookies as detailed in our{' '}
                 <Link href="/privacy-policy">
@@ -51,8 +52,22 @@ const CookieConsent = () => {
               </p>
             </div>
             <div className="buttons">
-              <button onClick={acceptCookies} className="accept-btn">Accept Cookies</button>
-              <button onClick={rejectCookies} className="reject-btn">Decline Cookies</button>
+              <UniversalButton
+              variant="brutal"
+              className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 rounded hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] disabled:bg-gray-300 disabled:text-gray-700 disabled:cursor-not-allowed"
+              label='Accept Cookies'
+                onClick={acceptCookies}
+              
+              />
+              <UniversalButton
+              variant="brutal"
+              className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 rounded hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] disabled:bg-gray-300 disabled:text-gray-700 disabled:cursor-not-allowed"
+              label='Decline Cookies'
+                onClick={rejectCookies}
+              
+              />
+              {/* <button onClick={acceptCookies} className="accept-btn">Accept Cookies</button>
+              <button onClick={rejectCookies} className="reject-btn">Decline Cookies</button> */}
             </div>
           </div>
         </>
@@ -72,15 +87,15 @@ const CookieConsent = () => {
         /* Cookie consent banner itself */
         .cookie-consent-banner {
           position: fixed;
-          bottom: 20%;
-          left: 50%;
+          bottom: 0%;
+          left: 20%;
           transform: translateX(-50%);
-          background-color: #FFF;
+          background-color: #F7EBFC;
           color: black;
-          border-radius: 20px;
+          border-radius: 0px 10px 0px 0px;
           padding: 20px 25px;
-          width: 90%;
-          max-width: 600px;
+          width: 100%;
+          max-width: 550px;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -104,16 +119,16 @@ const CookieConsent = () => {
           text-align: center;
         }
 
-        .cookie-text h2 {
-          font-size: 18px;
-          font-weight: 600;
-        }
+        // .cookie-text h2 {
+        //   font-size: 18px;
+        //   font-weight: 600;
+        // }
 
-        .cookie-text p {
-          font-size: 14px;
-          line-height: 1.5;
-          margin-top: 8px;
-        }
+        // .cookie-text p {
+        //   font-size: 14px;
+        //   line-height: 1.5;
+        //   margin-top: 8px;
+        // }
 
         .privacy-link {
           color: #ffcc00;

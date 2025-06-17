@@ -103,32 +103,36 @@ const Sms = ({params}) => {
   };
 
   const faqs = [
-    {
-      question: "How is Celitix’s SMS different?",
-      answer:
-        "Celitix lets you automate, segment, and track SMS campaigns. It's smarter and more effective than basic SMS tools.",
-    },
-    {
-      question: "What kind of messages can I send?",
-      answer:
-        "You can send transactional alerts (like OTPs or booking updates), promotional messages, service reminders, and more.",
-    },
-    {
-      question: "Can I integrate it with my CRM or app?",
-      answer:
-        "Yes! Celitix offers API access to connect with your systems and automate SMS flows.",
-    },
-    {
-      question: "Does SMS still work without internet?",
-      answer:
-        "Yes. SMS is delivered over mobile networks and works on all devices, with or without data.",
-    },
-    {
-      question: "Can I track SMS campaign results?",
-      answer:
-        "Yes. Use Celitix’s analytics to see delivery, open rates, and link clicks. ",
-    },
-  ];
+  {
+    question: "How is Celitix’s SMS different?",
+    answer:
+      "Celitix lets you automate, segment, and track SMS campaigns. It's smarter and more effective than basic SMS tools.",
+  },
+  {
+    question: "What kind of messages can I send?",
+    answer:
+      "You can send transactional alerts (like OTPs or booking updates), promotional messages, service reminders, and more.",
+  },
+  {
+    question: "Can I integrate it with my CRM or app?",
+    answer:
+      "Yes! Celitix offers API access to connect with your systems and automate SMS flows.",
+  },
+  {
+    question: "Does SMS still work without internet?",
+    answer:
+      "Yes. SMS is delivered over mobile networks and works on all devices, with or without data.",
+  },
+  {
+    question: "Can I track SMS campaign results?",
+    answer:
+      "Yes. Use Celitix’s analytics to see delivery, open rates, and link clicks.",
+  },
+  {
+    question: `What does Celitix offer as an SMS marketing and OTP platform for businesses in ${formattedCity}?`,
+    answer: `Celitix helps ${formattedCity}-based businesses run bulk SMS campaigns and send OTPs with reliable delivery, DLT compliance, and simple dashboard control.`,
+  },
+];
   // 8rd
 
   const [openDialog, setOpenDialog] = useState(false);
