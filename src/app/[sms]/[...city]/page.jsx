@@ -167,7 +167,7 @@ if (isKnownCity){
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl heading font-bold text-gray-900 popf leading-tight">
               Reach<span className="text-transparent bg-clip-text  bg-gradient-to-r from-[#2b40b0] to-[#36bae2]">  Instantly </span> with SMS 
-              {/* {formattedCity} */}
+              
             </h1>
 
             <p className="text-gray-600 text-base md:text-lg max-w-md pera">
