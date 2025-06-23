@@ -18,7 +18,7 @@ import {
     FaEnvelope
 } from 'react-icons/fa';
 // import { Helmet } from 'react-helmet-async';
-import { LANDING, LANDING2nd } from '../../../public/assets/images';
+import { App_Authenticator, Click_to_Call, Email_Solutions, Inbound_Dialer, LANDING, LANDING2nd, Missed_Call_Services, Outbound_Dialer, RCS_Business_Messaging, ReachApp, Reachclicktocall, Reachemail, Reachinboundcalling, ReachMissedcall, ReachObd, ReachRCS, ReachSMS, Reachwaytosms, Reachwhatsappicon, SMS_Marketing, Two_Way_SMS, WhatsApp_Business_Platform } from '../../../public/assets/images';
 import { pushToDataLayer } from '../../utils/gtm.js';
 import UniversalButton from '../components/UniversalButton';
 
@@ -254,6 +254,174 @@ const Landing = () => {
         console.log("Turnstile Token:", token);
     };
 
+
+
+
+
+
+
+
+
+
+    // 5rd
+    
+      const services = [
+        {
+          id: 1,
+          name: 'WhatsApp Business Platform',
+          icon: Reachwhatsappicon,
+          content: {
+            image: WhatsApp_Business_Platform,
+            desc: 'Leverage the world’s #1 messaging app. With advanced features like Chatbots, Click-to-WhatsApp ads, Branded Profiles and more.',
+            ButtonName: 'Start Now',
+          },
+        },
+        {
+          id: 2,
+          name: 'RCS Business Messaging',
+          icon: ReachRCS,
+          content: {
+            image: RCS_Business_Messaging,
+            desc: 'Rich, interactive messaging on native mobile apps. Shoot epic promotions, update and support users with action buttons, rich media and more!',
+            ButtonName: 'Explore',
+          },
+        },
+        {
+          id: 3,
+          name: 'SMS Solutions',
+          icon: ReachSMS,
+          content: {
+            image: SMS_Marketing,
+            desc: 'Perfect for urgent updates and reliable delivery. OTPs, Transactional messages, Bulk Promotions and API Integrations.',
+            ButtonName: 'Learn More',
+          },
+        },
+        {
+          id: 4,
+          name: '2 Way SMS',
+          icon: Reachwaytosms,
+          content: {
+            image: Two_Way_SMS,
+            desc: 'Create engaging, interactive SMS campaigns. Take votes, run quizzes, get confirmations and generate leads!',
+            ButtonName: 'Get Started',
+          },
+        },
+        {
+          id: 5,
+          name: 'Inbound Dialer',
+          icon: Reachinboundcalling,
+          content: {
+            image: Inbound_Dialer,
+            desc: 'Never miss a call again with customisable IVR menus, smart routing and call records. Perfect for customer support helplines.',
+            ButtonName: 'Learn More',
+          },
+        },
+        {
+          id: 6,
+          name: 'Outbound Dialer',
+          icon: ReachObd,
+          content: {
+            image: Outbound_Dialer,
+            desc: 'Start conversations with bulk voice call campaigns and IVR integrations. Pre-record audios in local languages or use AI-generated text-to-speech.',
+            ButtonName: 'Explore ',
+          },
+        },
+        {
+          id: 7,
+          name: 'Click to Call',
+          icon: Reachclicktocall,
+          content: {
+            image: Click_to_Call,
+            desc: 'Enhance your app or site’s user experience (UX). Let customers and agents connect effortlessly over voice call with secure number masking.',
+            ButtonName: 'Know More ',
+          },
+        },
+        {
+          id: 8,
+          name: 'Missed Call Services',
+          icon: ReachMissedcall,
+          content: {
+            image: Missed_Call_Services,
+            desc: 'Get leads, votes or confirmations with a dedicated missed call number. Auto trigger opt-ins, callbacks or custom actions when users call.',
+            ButtonName: 'Start Now',
+          },
+        },
+        {
+          id: 9,
+          name: 'App Authenticator',
+          icon: ReachApp,
+          content: {
+            image: App_Authenticator,
+            desc: 'Verify users without OTPs. Frictionless security that’s user-friendly and easier for your dev team.',
+            ButtonName: 'Explore',
+          },
+        },
+        {
+          id: 10,
+          name: 'Email OTP',
+          icon: Reachemail,
+          content: {
+            image: Email_Solutions,
+            desc: 'Verify users with pre-made HTML email templates. Great for onboarding authentication flows and MFA.',
+            ButtonName: 'Check It Out',
+          },
+        },
+      ];
+      const [activeTab, setActiveTab] = useState(1);
+      const activeService = services.find((s) => s.id === activeTab);
+      // btn
+      const handleservices = () => {
+        const btnText = activeService.content.ButtonName.trim();
+        const validLabels = [
+          'Start Now',
+          'Check It Out',
+          'Learn More',
+          'Explore',
+          'Explore ',
+          'Get Started',
+          'Know More ',
+        ];
+    
+        if (validLabels.includes(btnText)) {
+          switch (activeService.id) {
+            case 1:
+              router.push('/whatsapp-business-platform');
+              break;
+            case 2:
+              router.push('/rcs-business-messaging');
+              break;
+            case 3:
+              router.push('/sms-marketing');
+              break;
+            case 4:
+              router.push('/two-way-sms');
+              break;
+            case 5:
+              router.push('/inbound-dialer');
+              break;
+            case 6:
+              router.push('/outbound-dialer');
+              break;
+            case 7:
+              router.push('/click-to-call');
+              break;
+            case 8:
+              router.push('/missed-call-services');
+              break;
+            case 9:
+              router.push('/user-verification');
+              break;
+            case 10:
+              router.push('/email-otp');
+              break;
+            default:
+              console.log('No route defined for this service');
+          }
+        }
+      };
+      // btn
+      // 5rd
+
     return (
         <div className='bg-[#F6EDF9]'>
             {/* <Helmet>
@@ -390,7 +558,7 @@ const Landing = () => {
 
                 </div>
             </div>
-            <div className="px-4 lg:px-25 py-2 md:py-10">
+            {/* <div className="px-4 lg:px-25 py-2 md:py-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8 mb-2 md:mb-8">
                     <motion.div
                         className="space-y-8"
@@ -424,7 +592,51 @@ const Landing = () => {
                         <Image src={LANDING2nd} alt="" className='w-96 h-96' />
                     </div>
                 </div>
-            </div>
+            </div> */}
+             <div className="bg-[#F6EDF9] py-2 sm:py-8 md:py-10">
+            
+                    <div className="text-center px-4 sm:px-6 md:px-8 py-4 md:py-5">
+                      <h2 className="text-2xl md:4xl lg:text-5xl font-semibold text-gray-900 heading">
+                        Reach Customers <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]"> Wherever</span> They Are
+                      </h2>
+                    </div>
+            
+                    <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-6 md:px-10 my-0 md:mt-10">
+            
+                      {/* Service Buttons */}
+                      <div className="bg-[#f7f6f6] rounded-xl shadow-sm p-4 sm:p-6 md:p-8">
+                        {services.map((service) => (
+                          <button
+                            key={service.id}
+                            onClick={() => setActiveTab(service.id)}
+                            className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg mb-2 text-lg text-left transition-all duration-200 sub-heading ${activeTab === service.id
+                              ? 'bg-[#ffffff] text-[#a535d1]'
+                              : 'hover:bg-gray-100 text-black sub-heading'
+                              }`}
+                          >
+                            <Image src={service.icon} alt={service.name} className="h-8 w-8" />
+                            <span className="font-medium">{service.name}</span>
+                          </button>
+                        ))}
+                      </div>
+            
+                      {/* Active Service Display */}
+                      <div className="flex flex-col items-center justify-center text-center gap-4 px-4 sm:px-6 md:px-10">
+                        <Image
+                          src={activeService.content.image}
+                          alt={activeService.name}
+                          className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl"
+                        />
+                        <p className="text-gray-600 text-base md:text-lg font-medium pera">{activeService.content.desc}</p>
+            
+                        <UniversalButton label={activeService.content.ButtonName} variant="brutal" className='bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 font-semibold hover:bg-white hover:text-black 
+                          hover:shadow-[4px_4px_0px_#9B44B6]' onClick={handleservices} />
+                        {/* <button className="bg-purple-800 text-white px-6 py-2 rounded-md hover:bg-purple-700 transition">
+                          {activeService.content.ButtonName}
+                        </button> */}
+                      </div>
+                    </div>
+                  </div>
         </div>
     );
 };

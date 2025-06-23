@@ -4,7 +4,7 @@ import { Accordion, AccordionTab } from 'primereact/accordion';
 import 'primereact/resources/themes/lara-light-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
-import { comingSoon, CTALASTIMAGE, ReachApp, Reachclicktocall, Reachemail, Reachinboundcalling, ReachMissedcall, ReachObd, ReachRCS, ReachSMS, Reachwaytosms, Reachwhatsappicon } from '../../../public/assets/images';
+import { comingSoon, CTALASTIMAGE, Inbound_Dialer, ReachApp, Reachclicktocall, Reachemail, Reachinboundcalling, ReachMissedcall, ReachObd, ReachRCS, ReachSMS, Reachwaytosms, Reachwhatsappicon } from '../../../public/assets/images';
 // import { Helmet } from 'react-helmet-async';
 import FormPopup from '../components/FormPopup';
 import Image from 'next/image';
@@ -22,6 +22,22 @@ import LineStyleIcon from '@mui/icons-material/LineStyle';
 import UniversalButton from '../components/UniversalButton';
 
 const Pricing = () => {
+    const CHANNEL_ICONS = {
+        WhatsApp: Reachwhatsappicon,
+        RCS: ReachRCS,
+        SMS: ReachSMS,
+        Authenticator: ReachApp,
+        EmailOTP: Reachemail,
+        Outbound: ReachObd,
+        Inbound: Reachinboundcalling,
+        Missed: ReachMissedcall,
+        Twoway: Reachwaytosms,
+        clicktocall: Reachclicktocall,
+    };
+
+
+
+
     const [openDialog, setOpenDialog] = useState(false);
     const handleShowFormPopup = () => {
         setOpenDialog(true);
@@ -32,113 +48,87 @@ const Pricing = () => {
 
 
 
+    // ─────────────────────────────────────────────────────────────────────────────
+    // 1️⃣ State & initial setup
     const [value, setValue] = useState(0);
-    const [channel, setChannel] = useState('');
+    const [channel, setChannel] = useState('WhatsApp');
+    const [whatsAppType, setWhatsAppType] = useState('Marketing');  // new
     const [currency, setCurrency] = useState('inr');
-    const [rates, setRates] = useState({ usd: 1 / 75, eur: 1 / 90 }); // fallback values
+    const [rates, setRates] = useState({ usd: 1 / 75, eur: 1 / 90 });      // fallback
     const ticks = [200000, 400000, 600000, 800000];
 
+    // ─────────────────────────────────────────────────────────────────────────────
+    // 2️⃣ Fetch live rates
     useEffect(() => {
         fetch('https://v6.exchangerate-api.com/v6/26e0264a2658e739860a6998/latest/USD')
-            .then((res) => res.json())
-            .then((data) => {
+            .then(res => res.json())
+            .then(data => {
                 setRates({
-                    usd: 1, // base is already USD
+                    usd: 1,
                     eur: data.conversion_rates.EUR,
                     inr: data.conversion_rates.INR,
                 });
             })
-            .catch((err) => {
-                console.error("Failed to fetch rates", err);
-            });
+            .catch(err => console.error("Failed to fetch rates", err));
     }, []);
 
-    const handleChange = (e) => {
-        const val = Math.max(0, Math.min(1000000, Number(e.target.value)));
-        setValue(val);
+    // ─────────────────────────────────────────────────────────────────────────────
+    // 3️⃣ Input handler + percent
+    const handleChange = e => {
+        const v = Math.max(0, Math.min(1000000, Number(e.target.value)));
+        setValue(v);
     };
+    const percent = (value / 1_000_000) * 100;
 
-    const percent = (value / 1000000) * 100;
+    // ─────────────────────────────────────────────────────────────────────────────
+    // 4️⃣ Helper to build a lookup key
+    function getChannelKey(channel, whatsAppType) {
+        if (channel === 'WhatsApp') {
+            return `WhatsApp_${whatsAppType}`;
+        }
+        return channel.replace(/\s+/g, '_');
+    }
 
-    const calculateTotal = (val, currency) => {
-        let inrTotal = 0;
+    // ─────────────────────────────────────────────────────────────────────────────
+    // 5️⃣ Refactored total calculator
+    function calculateTotal(val, currency, channelKey) {
+        const CHANNEL_RATES = {
+            WhatsApp_Marketing: [[Infinity, 0.85]],
+            WhatsApp_Utility: [[Infinity, 0.15]],
+            WhatsApp_Authentication: [[Infinity, 0.15]],
+            RCS: [[100000, 0.20], [500000, 0.18], [Infinity, 0.16]],
+            SMS: [[100000, 0.12], [500000, 0.10], [Infinity, 0.09]],
+            EmailOTP: [[Infinity, 0.05]],      // flat
+            Outbound: [[100000, 0.20], [500000, 0.18], [Infinity, 0.16]],
+            clicktocall: [[100000, 0.20], [500000, 0.18], [Infinity, 0.16]],
+            Inbound: [[3, 0.50], [6, 0.49], [9, 0.48], [Infinity, 0.46]],
+            Missed: [[3, 1], [6, 0.49], [9, 0.48], [Infinity, 0.46]],
+            Twoway: [[3, 2], [6, 1.49], [9, 2.48], [Infinity, 5.46]],
+            Authenticator: [[3, 5], [6, 0.49], [9, 0.48], [Infinity, 0.46]],
+            default: [[200000, 0.10], [400000, 0.09], [600000, 0.08], [800000, 0.07], [Infinity, 0.06]],
+        };
 
-        if (channel === 'RCS') {
-            if (val <= 200000) inrTotal = val * 0.30;
-            else if (val <= 400000) inrTotal = val * 0.29;
-            else if (val <= 600000) inrTotal = val * 0.28;
-            else if (val <= 800000) inrTotal = val * 0.27;
-            else inrTotal = val * 0.26;
-        }
-        else if (channel === 'Email OTP') {
-            if (val <= 200000) inrTotal = val * 0.05;
-            else if (val <= 400000) inrTotal = val * 0.05;
-            else if (val <= 600000) inrTotal = val * 0.05;
-            else if (val <= 800000) inrTotal = val * 0.05;
-            else inrTotal = val * 0.05;
-        }
-        else if (channel === 'Outbound Dialer') {
-            if (val <= 200000) inrTotal = val * 0.50;
-            else if (val <= 400000) inrTotal = val * 0.49;
-            else if (val <= 600000) inrTotal = val * 0.48;
-            else if (val <= 800000) inrTotal = val * 0.47;
-            else inrTotal = val * 0.46;
-        }
-        else if (channel === 'Outbound Dialer') {
-            if (val <= 200000) inrTotal = val * 0.50;
-            else if (val <= 400000) inrTotal = val * 0.49;
-            else if (val <= 600000) inrTotal = val * 0.48;
-            else if (val <= 800000) inrTotal = val * 0.47;
-            else inrTotal = val * 0.46;
-        }
-        else if (channel === 'Inbound Dialer') {
-            if (val <= 3) inrTotal = val * 0.50;
-            else if (val <= 6) inrTotal = val * 0.49;
-            else if (val <= 9) inrTotal = val * 0.48;
-            else inrTotal = val * 0.46;
-        }
-        else if (channel === 'Missed Call') {
-            if (val <= 3) inrTotal = val * 1;
-            else if (val <= 6) inrTotal = val * 0.49;
-            else if (val <= 9) inrTotal = val * 0.48;
-            else inrTotal = val * 0.46;
-        }
-        else if (channel === '2 Way SMS') {
-            if (val <= 3) inrTotal = val * 2;
-            else if (val <= 6) inrTotal = val * 1.49;
-            else if (val <= 9) inrTotal = val * 2.48;
-            else inrTotal = val * 5.46;
-        }
-        else if (channel === 'Authenticator') {
-            if (val <= 3) inrTotal = val * 5;
-            else if (val <= 6) inrTotal = val * 0.49;
-            else if (val <= 9) inrTotal = val * 0.48;
-            else inrTotal = val * 0.46;
-        }
-        else {
-            // Default logic (e.g., SMS, WhatsApp, etc.)
-            if (val <= 200000) inrTotal = val * 0.10;
-            else if (val <= 400000) inrTotal = val * 0.09;
-            else if (val <= 600000) inrTotal = val * 0.08;
-            else if (val <= 800000) inrTotal = val * 0.07;
-            else inrTotal = val * 0.06;
-        }
+        const slabs = CHANNEL_RATES[channelKey] || CHANNEL_RATES.default;
+        const rate = slabs.find(([limit]) => val <= limit)[1];
+        const inrTotal = val * rate;
 
         if (currency === 'usd') return inrTotal / rates.inr;
         if (currency === 'eur') return (inrTotal / rates.inr) * rates.eur;
         return inrTotal;
-    };
+    }
 
+    // ─────────────────────────────────────────────────────────────────────────────
+    // 6️⃣ Currency formatter
     const formatCurrency = (amount, currency) => {
-        const currencySymbols = {
-            inr: '₹',
-            usd: '$',
-            eur: '€',
-        };
-        return `${currencySymbols[currency] || ''}${amount.toFixed(2)}`;
+        const symbols = { inr: '₹', usd: '$', eur: '€' };
+        return `${symbols[currency] || ''}${amount.toFixed(2)}`;
     };
 
-    const total = calculateTotal(value, currency);
+    // ─────────────────────────────────────────────────────────────────────────────
+    // 7️⃣ Compute total with the merged logic
+    const channelKey = getChannelKey(channel, whatsAppType);
+    const total = calculateTotal(value, currency, channelKey);
+
 
     return (
         <>
@@ -233,7 +223,7 @@ const Pricing = () => {
             </section> */}
             {/* 2nd */}
             {/* 3rd */}
-            {/* <section className='bg-[#f7ebfc]'>
+            {/* <section className='bg-[#f7ebfc] py-20'>
                 <div className="px-4 py-8 max-w-7xl mx-auto">
                     <div className="flex gap-6">
 
@@ -289,12 +279,12 @@ const Pricing = () => {
                                     <Image src={ReachApp} alt="Authentication" className="w-4 h-4 mr-1" /> Authentication
                                 </a>
                             </div>
-                           
+
 
                         </div>
 
 
-                        <div className="flex flex-col bg-gradient-to-br from-white via-blue-50 to-blue-100 rounded-3xl shadow-xl p-8 md:p-12 w-full max-w-4xl mx-auto transition-all duration-300">
+                        <div className="flex flex-col bg-gradient-to-br from-white via-blue-50 to-blue-100 rounded-3xl shadow-xl p-8 md:p-12 w-3/4 max-w-4xl mx-auto transition-all duration-300">
                             <div className="text-center">
                                 <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
                                     Choose Your Communication Channel
@@ -312,28 +302,176 @@ const Pricing = () => {
                                     <option value="WhatsApp">WhatsApp</option>
                                     <option value="RCS">RCS</option>
                                     <option value="SMS">SMS</option>
-                                    <option value="2 Way SMS">2 Way SMS</option>
-                                    <option value="Inbound Dialer">Inbound Dialer</option>
-                                    <option value="Outbound Dialer">Outbound Dialer</option>
-                                    <option value="Click to Call">Click to Call</option>
-                                    <option value="Missed Call">Missed Call</option>
+                                    <option value="Twoway">2 Way SMS</option>
+                                    <option value="Inbound">Inbound Dialer</option>
+                                    <option value="Outbound">Outbound Dialer</option>
+                                    <option value="clicktocall">Click to Call</option>
+                                    <option value="Missed">Missed Call</option>
                                     <option value="Authenticator">Authenticator</option>
-                                    <option value="Email OTP">Email OTP</option>
+                                    <option value="EmailOTP">Email OTP</option>
                                 </select>
 
                                 {channel && (
-                                    <div className="mt-6 bg-white rounded-xl p-5 border border-blue-200 shadow-inner max-w-md mx-auto text-left">
-                                        <h5 className="text-lg font-semibold text-blue-700 mb-2">{channel} Pricing</h5>
+                                    <div className="mt-6 bg-white rounded-xl p-5 border border-blue-200 shadow-inner max-w-2xl mx-auto text-left">
 
-                                      
+
+
                                         {channel === 'WhatsApp' && (
-                                            <p className="text-gray-600 text-sm">
-                                                Starting at $0.005 per message with end-to-end encryption and template support.
-                                            </p>
+                                            <>
+                                                <div className="flex items-center gap-2 mb-2">
+                                                    <Image
+                                                        src={CHANNEL_ICONS[channel]}
+                                                        alt={channel}
+                                                        className="w-10 h-10"
+                                                    />
+                                                    <h5 className="text-lg font-semibold text-blue-700">
+                                                        {channel} Pricing
+                                                    </h5>
+                                                </div>
+                                                <div className="mt-4 flex justify-center items-center gap-4">
+                                                   
+                                                    {['Marketing', 'Utility', 'Authentication'].map(type => (
+                                                        <button
+                                                            key={type}
+                                                            onClick={() => {
+                                                                setWhatsAppType(type);
+                                                                setValue(0);
+                                                                setCurrency('inr');
+                                                            }}
+                                                            className={`
+        px-4 py-2 rounded-full font-medium text-sm transition
+        ${whatsAppType === type
+                                                                    ? 'bg-green-600 text-white shadow-md'
+                                                                    : 'bg-white border border-gray-300 text-gray-700 hover:bg-gray-100'
+                                                                }
+      `}
+                                                        >
+                                                            {type}
+                                                        </button>
+                                                    ))}
+                                                </div>
+
+
+                                               
+                                                <div className="mt-10 flex flex-col md:flex-row gap-6 items-center justify-center">
+                                                    <div className="w-full md:w-2/3">
+                                                        <label className="text-sm font-semibold text-gray-600 mb-1 flex justify-between">
+                                                            Message Volume
+                                                            <span className="text-xs text-gray-500">{value} messages</span>
+                                                        </label>
+                                                        <div className="relative w-full">
+                                                            <input
+                                                                type="range"
+                                                                min="0"
+                                                                max="1000000"
+                                                                value={value}
+                                                                onChange={e => setValue(Number(e.target.value))}
+                                                                className="w-full h-2 rounded-full appearance-none cursor-pointer"
+                                                                style={{
+                                                                    background: `linear-gradient(to right, #2563eb ${percent}%, #d1d5db ${percent}%)`
+                                                                }}
+                                                            />
+                                                            <div className="absolute top-2 left-0 w-full h-6 pointer-events-none">
+                                                                {ticks.map(tick => (
+                                                                    <button
+                                                                        key={tick}
+                                                                        onClick={() => setValue(tick)}
+                                                                        style={{
+                                                                            left: `${(tick / 1000000) * 100}%`,
+                                                                            transform: 'translateX(-50%)'
+                                                                        }}
+                                                                        className="absolute top-2.5 w-1 h-3 bg-blue-500 rounded-full pointer-events-auto shadow-md"
+                                                                    />
+                                                                ))}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <input
+                                                        type="number"
+                                                        min="0"
+                                                        max="1000000"
+                                                        value={value}
+                                                        onChange={handleChange}
+                                                        className="text-center text-blue-800 bg-white border border-blue-300 font-semibold px-4 py-2 rounded-lg w-32 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                                    />
+                                                </div>
+
+
+                                                <div className="mt-6 flex items-center justify-center gap-4">
+                                                 
+                                                    <div className="flex gap-2">
+                                                        {['inr', 'usd', 'eur'].map(cur => (
+                                                            <button
+                                                                key={cur}
+                                                                onClick={() => setCurrency(cur)}
+                                                                className={`px-4 py-2 rounded-full font-medium text-sm transition ${currency === cur
+                                                                    ? 'bg-green-600 text-white shadow'
+                                                                    : 'bg-white border border-blue-300 text-blue-600'
+                                                                    }`}
+                                                            >
+                                                                {cur.toUpperCase()}
+                                                            </button>
+                                                        ))}
+                                                    </div>
+                                                
+                                                    <div className="flex items-baseline justify-center gap-2">
+                                                        <div className="text-lg font-bold text-blue-800">
+                                                            Total: {formatCurrency(total, currency)}
+                                                        </div>
+                                                        <span className="text-xs text-gray-500">
+                                                            (+18 % GST)
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div className="flex justify-end mt-2 md:mt-5">
+                                                    <UniversalButton
+                                                        label="More Details"
+                                                        variant="brutal"
+                                                        className="bg-[#9B44B6] border-[#9B44B6] text-white px-5 py-1 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6]"
+                                                        onClick={handleShowFormPopup}
+                                                    />
+
+                                                    <FormPopup
+                                                        visible={openDialog}
+                                                        onHide={handleCloseDialog}
+                                                    />
+                                                </div>
+
+                                                <style jsx>{`
+    input[type='range']::-webkit-slider-thumb {
+      appearance: none;
+      height: 10px;
+      width: 10px;
+    //   background: #1e40af;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    input[type='range']::-moz-range-thumb {
+      height: 16px;
+      width: 16px;
+      background: #1e40af;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  `}</style>
+                                            </>
                                         )}
+
 
                                         {channel === 'RCS' && (
                                             <div>
+                                                <div className="flex items-center gap-2 mb-2">
+                                                    <Image
+                                                        src={CHANNEL_ICONS[channel]}
+                                                        alt={channel}
+                                                        className="w-10 h-10"
+                                                    />
+                                                    <h5 className="text-lg font-semibold text-blue-700">
+                                                        {channel} Pricing
+                                                    </h5>
+                                                </div>
                                                 <div className="mt-10 flex flex-col md:flex-row gap-6 items-center justify-center">
                                                     <div className="w-full md:w-2/3">
                                                         <label className="text-sm font-semibold text-gray-600 mb-1 flex justify-between">
@@ -395,9 +533,29 @@ const Pricing = () => {
                                                         ))}
                                                     </div>
 
-                                                    <div className="text-lg font-bold text-blue-800">
-                                                        Total: {formatCurrency(total, currency)}
+                                                   
+                                                    <div className="flex items-baseline justify-center gap-2">
+                                                        <div className="text-lg font-bold text-blue-800">
+                                                            Total: {formatCurrency(total, currency)}
+                                                        </div>
+                                                        <span className="text-xs text-gray-500">
+                                                            (+18 % GST)
+                                                        </span>
                                                     </div>
+                                                </div>
+
+                                                <div className="flex justify-end mt-2 md:mt-5">
+                                                    <UniversalButton
+                                                        label="More Details"
+                                                        variant="brutal"
+                                                        className="bg-[#9B44B6] border-[#9B44B6] text-white px-5 py-1 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6]"
+                                                        onClick={handleShowFormPopup}
+                                                    />
+
+                                                    <FormPopup
+                                                        visible={openDialog}
+                                                        onHide={handleCloseDialog}
+                                                    />
                                                 </div>
 
                                                 <style jsx>{`
@@ -420,8 +578,19 @@ const Pricing = () => {
                                             </div>
                                         )}
 
-                                        {channel === 'Email OTP' && (
+
+                                        {channel === 'EmailOTP' && (
                                             <div>
+                                                <div className="flex items-center gap-2 mb-2">
+                                                    <Image
+                                                        src={CHANNEL_ICONS[channel]}
+                                                        alt={channel}
+                                                        className="w-10 h-10"
+                                                    />
+                                                    <h5 className="text-lg font-semibold text-blue-700">
+                                                        Email OTP Pricing
+                                                    </h5>
+                                                </div>
                                                 <div className="mt-10 flex flex-col md:flex-row gap-6 items-center justify-center">
                                                     <div className="w-full md:w-2/3">
                                                         <label className="text-sm font-semibold text-gray-600 mb-1 flex justify-between">
@@ -508,8 +677,19 @@ const Pricing = () => {
                                             </div>
                                         )}
 
+
                                         {channel === 'SMS' && (
                                             <div>
+                                                <div className="flex items-center gap-2 mb-2">
+                                                    <Image
+                                                        src={CHANNEL_ICONS[channel]}
+                                                        alt={channel}
+                                                        className="w-10 h-10"
+                                                    />
+                                                    <h5 className="text-lg font-semibold text-blue-700">
+                                                        {channel} Pricing
+                                                    </h5>
+                                                </div>
                                                 <div className="mt-10 flex flex-col md:flex-row gap-6 items-center justify-center">
                                                     <div className="w-full md:w-2/3">
                                                         <label className="text-sm font-semibold text-gray-600 mb-1 flex justify-between">
@@ -576,6 +756,20 @@ const Pricing = () => {
                                                     </div>
                                                 </div>
 
+                                                <div className="flex justify-end mt-2 md:mt-5">
+                                                    <UniversalButton
+                                                        label="More Details"
+                                                        variant="brutal"
+                                                        className="bg-[#9B44B6] border-[#9B44B6] text-white px-5 py-1 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6]"
+                                                        onClick={handleShowFormPopup}
+                                                    />
+
+                                                    <FormPopup
+                                                        visible={openDialog}
+                                                        onHide={handleCloseDialog}
+                                                    />
+                                                </div>
+
                                                 <style jsx>{`
     input[type='range']::-webkit-slider-thumb {
       appearance: none;
@@ -596,8 +790,19 @@ const Pricing = () => {
                                             </div>
                                         )}
 
-                                        {channel === 'Outbound Dialer' && (
+
+                                        {channel === 'Outbound' && (
                                             <div>
+                                                <div className="flex items-center gap-2 mb-2">
+                                                    <Image
+                                                        src={CHANNEL_ICONS[channel]}
+                                                        alt={channel}
+                                                        className="w-10 h-10"
+                                                    />
+                                                    <h5 className="text-lg font-semibold text-blue-700">
+                                                        Outbound Dialer Pricing
+                                                    </h5>
+                                                </div>
                                                 <div className="mt-10 flex flex-col md:flex-row gap-6 items-center justify-center">
                                                     <div className="w-full md:w-2/3">
                                                         <label className="text-sm font-semibold text-gray-600 mb-1 flex justify-between">
@@ -664,6 +869,20 @@ const Pricing = () => {
                                                     </div>
                                                 </div>
 
+                                                <div className="flex justify-end mt-2 md:mt-5">
+                                                    <UniversalButton
+                                                        label="More Details"
+                                                        variant="brutal"
+                                                        className="bg-[#9B44B6] border-[#9B44B6] text-white px-5 py-1 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6]"
+                                                        onClick={handleShowFormPopup}
+                                                    />
+
+                                                    <FormPopup
+                                                        visible={openDialog}
+                                                        onHide={handleCloseDialog}
+                                                    />
+                                                </div>
+
                                                 <style jsx>{`
     input[type='range']::-webkit-slider-thumb {
       appearance: none;
@@ -684,8 +903,19 @@ const Pricing = () => {
                                             </div>
                                         )}
 
-                                        {channel === 'Click to Call' && (
+
+                                        {channel === 'clicktocall' && (
                                             <div>
+                                                <div className="flex items-center gap-2 mb-2">
+                                                    <Image
+                                                        src={CHANNEL_ICONS[channel]}
+                                                        alt={channel}
+                                                        className="w-10 h-10"
+                                                    />
+                                                    <h5 className="text-lg font-semibold text-blue-700">
+                                                        Click to Call Pricing
+                                                    </h5>
+                                                </div>
                                                 <div className="mt-10 flex flex-col md:flex-row gap-6 items-center justify-center">
                                                     <div className="w-full md:w-2/3">
                                                         <label className="text-sm font-semibold text-gray-600 mb-1 flex justify-between">
@@ -772,8 +1002,19 @@ const Pricing = () => {
                                             </div>
                                         )}
 
-                                        {channel === 'Inbound Dialer' && (
+
+                                        {channel === 'Inbound' && (
                                             <div>
+                                                <div className="flex items-center gap-2 mb-2">
+                                                    <Image
+                                                        src={CHANNEL_ICONS[channel]}
+                                                        alt={channel}
+                                                        className="w-10 h-10"
+                                                    />
+                                                    <h5 className="text-lg font-semibold text-blue-700">
+                                                        Inbound Dialer Pricing
+                                                    </h5>
+                                                </div>
                                                 <div className="mt-10 flex flex-col md:flex-row gap-6 items-center justify-center">
                                                     <div className="w-full md:w-2/3">
                                                         <label className="text-sm font-semibold text-gray-600 mb-1 flex justify-between">
@@ -827,8 +1068,8 @@ const Pricing = () => {
                                                                 key={cur}
                                                                 onClick={() => setCurrency(cur)}
                                                                 className={`px-4 py-2 rounded-full font-medium text-sm transition ${currency === cur
-                                                                        ? 'bg-blue-600 text-white shadow'
-                                                                        : 'bg-white border border-blue-300 text-blue-600'
+                                                                    ? 'bg-blue-600 text-white shadow'
+                                                                    : 'bg-white border border-blue-300 text-blue-600'
                                                                     }`}
                                                             >
                                                                 {cur.toUpperCase()}
@@ -861,8 +1102,19 @@ const Pricing = () => {
                                             </div>
                                         )}
 
-                                        {channel === 'Missed Call' && (
+
+                                        {channel === 'Missed' && (
                                             <div>
+                                                <div className="flex items-center gap-2 mb-2">
+                                                    <Image
+                                                        src={CHANNEL_ICONS[channel]}
+                                                        alt={channel}
+                                                        className="w-10 h-10"
+                                                    />
+                                                    <h5 className="text-lg font-semibold text-blue-700">
+                                                        Missed Call Pricing
+                                                    </h5>
+                                                </div>
                                                 <div className="mt-10 flex flex-col md:flex-row gap-6 items-center justify-center">
                                                     <div className="w-full md:w-2/3">
                                                         <label className="text-sm font-semibold text-gray-600 mb-1 flex justify-between">
@@ -916,8 +1168,8 @@ const Pricing = () => {
                                                                 key={cur}
                                                                 onClick={() => setCurrency(cur)}
                                                                 className={`px-4 py-2 rounded-full font-medium text-sm transition ${currency === cur
-                                                                        ? 'bg-blue-600 text-white shadow'
-                                                                        : 'bg-white border border-blue-300 text-blue-600'
+                                                                    ? 'bg-blue-600 text-white shadow'
+                                                                    : 'bg-white border border-blue-300 text-blue-600'
                                                                     }`}
                                                             >
                                                                 {cur.toUpperCase()}
@@ -948,10 +1200,21 @@ const Pricing = () => {
       }
     `}</style>
                                             </div>
-                                         )}
-                                         
-                                        {channel === '2 Way SMS' && (
+                                        )}
+
+
+                                        {channel === 'Twoway' && (
                                             <div>
+                                                <div className="flex items-center gap-2 mb-2">
+                                                    <Image
+                                                        src={CHANNEL_ICONS[channel]}
+                                                        alt={channel}
+                                                        className="w-10 h-10"
+                                                    />
+                                                    <h5 className="text-lg font-semibold text-blue-700">
+                                                        Two Way SMS Pricing
+                                                    </h5>
+                                                </div>
                                                 <div className="mt-10 flex flex-col md:flex-row gap-6 items-center justify-center">
                                                     <div className="w-full md:w-2/3">
                                                         <label className="text-sm font-semibold text-gray-600 mb-1 flex justify-between">
@@ -1005,8 +1268,8 @@ const Pricing = () => {
                                                                 key={cur}
                                                                 onClick={() => setCurrency(cur)}
                                                                 className={`px-4 py-2 rounded-full font-medium text-sm transition ${currency === cur
-                                                                        ? 'bg-blue-600 text-white shadow'
-                                                                        : 'bg-white border border-blue-300 text-blue-600'
+                                                                    ? 'bg-blue-600 text-white shadow'
+                                                                    : 'bg-white border border-blue-300 text-blue-600'
                                                                     }`}
                                                             >
                                                                 {cur.toUpperCase()}
@@ -1037,10 +1300,21 @@ const Pricing = () => {
       }
     `}</style>
                                             </div>
-                                         )}
+                                        )}
+
 
                                         {channel === 'Authenticator' && (
                                             <div>
+                                                <div className="flex items-center gap-2 mb-2">
+                                                    <Image
+                                                        src={CHANNEL_ICONS[channel]}
+                                                        alt={channel}
+                                                        className="w-10 h-10"
+                                                    />
+                                                    <h5 className="text-lg font-semibold text-blue-700">
+                                                        Authenticator Pricing
+                                                    </h5>
+                                                </div>
                                                 <div className="mt-10 flex flex-col md:flex-row gap-6 items-center justify-center">
                                                     <div className="w-full md:w-2/3">
                                                         <label className="text-sm font-semibold text-gray-600 mb-1 flex justify-between">
@@ -1094,8 +1368,8 @@ const Pricing = () => {
                                                                 key={cur}
                                                                 onClick={() => setCurrency(cur)}
                                                                 className={`px-4 py-2 rounded-full font-medium text-sm transition ${currency === cur
-                                                                        ? 'bg-blue-600 text-white shadow'
-                                                                        : 'bg-white border border-blue-300 text-blue-600'
+                                                                    ? 'bg-blue-600 text-white shadow'
+                                                                    : 'bg-white border border-blue-300 text-blue-600'
                                                                     }`}
                                                             >
                                                                 {cur.toUpperCase()}
@@ -1106,6 +1380,20 @@ const Pricing = () => {
                                                     <div className="text-lg font-bold text-blue-800">
                                                         Total: {formatCurrency(total, currency)}
                                                     </div>
+                                                </div>
+
+                                                <div className="flex justify-start mt-2 md:mt-5">
+                                                    <UniversalButton
+                                                        label="Try Authenticator"
+                                                        variant="brutal"
+                                                        className="bg-[#9B44B6] border-[#9B44B6] text-white px-5 py-1 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6]"
+                                                        onClick={handleShowFormPopup}
+                                                    />
+
+                                                    <FormPopup
+                                                        visible={openDialog}
+                                                        onHide={handleCloseDialog}
+                                                    />
                                                 </div>
 
                                                 <style jsx>{`
@@ -1126,10 +1414,14 @@ const Pricing = () => {
       }
     `}</style>
                                             </div>
-                                         )}
+                                        )}
 
                                     </div>
                                 )}
+
+
+                               
+
 
                             </div>
 
@@ -1145,17 +1437,17 @@ const Pricing = () => {
             </section> */}
             {/* 3rd */}
             {/* 4th */}
-            {/* <div className="flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-[#A05CD7] to-[#4B0FA6] px-6 md:px-12 py-5 md:py-20">
-               
+            {/* <div className="flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-[#A05CD7] to-[#4B0FA6] px-6 md:px-12 py-5 md:py-20 md:pt-20">
+
                 <div className="relative w-full md:w-1/2 flex justify-center mb-10 md:mb-0">
-                    <img
+                    <Image
                         src={CTALASTIMAGE}
                         alt="Customer Support"
                         className="z-10 w-full sm:w-72 md:w-80 lg:w-[500px] object-contain lg:absolute top-0 md:-top-65"
                     />
                 </div>
 
-              
+
                 <div className="w-full md:w-1/2 text-center md:text-left">
                     <h2 className="text-white text-2xl sm:text-3xl heading md:text-4xl font-bold mb-4">
                         Need Custom Pricing?
@@ -1181,17 +1473,3 @@ const Pricing = () => {
 };
 
 export default Pricing;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
