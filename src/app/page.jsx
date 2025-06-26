@@ -1,12 +1,11 @@
-"use client"
+"use client";
 import React, { useEffect, useRef, useState } from "react";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
-import { motion } from 'framer-motion';
-import 'swiper/css';
-import { useRouter } from 'next/navigation'
-import Image from 'next/image';
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import { motion } from "framer-motion";
+import "swiper/css";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 // import CarouselImg from "../components/common/carousel";
 // import Parallax from "../components/common/Parallax";
@@ -22,7 +21,89 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 // import Careers from "./company/Careers";
 // import { Helmet } from 'react-helmet-async';
 // import { initScrollReveal } from "../utils/ScrollReveal";
-import { Click_to_Call, Ecommerce1, Ecommerce2, Ecommerce3, Ecommerce4, Ecommerce5, Ecommerce6, Education1, Education2, Education3, Education4, Education5, Email_Solutions, Finance1, Finance2, Finance3, Finance4, Finance5, FoodBeverage_01, FoodBeverage_02, FoodBeverage_03, FoodBeverage_04, FoodBeverage_05, Healthcare1, Healthcare2, Healthcare3, Healthcare4, Healthcare5, home_reach, home_serve, home_solve, homesecond1, homesecond10, homesecond11, homesecond2, homesecond3, homesecond4, homesecond5, homesecond6, homesecond7, homesecond8, homesecond9, Inbound_Dialer, Missed_Call_Services, Outbound_Dialer, ProfessionalServices1, ProfessionalServices2, ProfessionalServices3, ProfessionalServices4, ProfessionalServices5, RCS_Business_Messaging, ReachApp, Reachclicktocall, Reachemail, Reachinboundcalling, ReachMissedcall, ReachObd, ReachRCS, ReachSMS, Reachwaytosms, Reachwhatsappicon, RealEstateConstruction1, RealEstateConstruction2, RealEstateConstruction3, RealEstateConstruction4, RealEstateConstruction5, rocket, SMS_Marketing, TechStartups1, TechStartups2, TechStartups3, TechStartups4, TechStartups5, TechStartups6, Travel1, Travel2, Travel3, Travel4, Travel5, Two_Way_SMS, WhatsApp_Business_Platform } from '../../public/assets/images';
+import {
+  Click_to_Call,
+  Ecommerce1,
+  Ecommerce2,
+  Ecommerce3,
+  Ecommerce4,
+  Ecommerce5,
+  Ecommerce6,
+  Education1,
+  Education2,
+  Education3,
+  Education4,
+  Education5,
+  Email_Solutions,
+  Finance1,
+  Finance2,
+  Finance3,
+  Finance4,
+  Finance5,
+  FoodBeverage_01,
+  FoodBeverage_02,
+  FoodBeverage_03,
+  FoodBeverage_04,
+  FoodBeverage_05,
+  Healthcare1,
+  Healthcare2,
+  Healthcare3,
+  Healthcare4,
+  Healthcare5,
+  home_reach,
+  home_serve,
+  home_solve,
+  homesecond1,
+  homesecond10,
+  homesecond11,
+  homesecond2,
+  homesecond3,
+  homesecond4,
+  homesecond5,
+  homesecond6,
+  homesecond7,
+  homesecond8,
+  homesecond9,
+  Inbound_Dialer,
+  Missed_Call_Services,
+  Outbound_Dialer,
+  ProfessionalServices1,
+  ProfessionalServices2,
+  ProfessionalServices3,
+  ProfessionalServices4,
+  ProfessionalServices5,
+  RCS_Business_Messaging,
+  ReachApp,
+  Reachclicktocall,
+  Reachemail,
+  Reachinboundcalling,
+  ReachMissedcall,
+  ReachObd,
+  ReachRCS,
+  ReachSMS,
+  Reachwaytosms,
+  Reachwhatsappicon,
+  RealEstateConstruction1,
+  RealEstateConstruction2,
+  RealEstateConstruction3,
+  RealEstateConstruction4,
+  RealEstateConstruction5,
+  rocket,
+  SMS_Marketing,
+  TechStartups1,
+  TechStartups2,
+  TechStartups3,
+  TechStartups4,
+  TechStartups5,
+  TechStartups6,
+  Travel1,
+  Travel2,
+  Travel3,
+  Travel4,
+  Travel5,
+  Two_Way_SMS,
+  WhatsApp_Business_Platform,
+} from "../../public/assets/images";
 import Link from "next/link";
 // import FormPopup from "../components/FormPopup";
 import { App_Authenticator } from "../../public/assets/images";
@@ -30,21 +111,18 @@ import UniversalButton from "./components/UniversalButton";
 import FormPopup from "./components/FormPopup";
 import OurClientele from "./components/OurClientele";
 import FaqItem from "./components/Faq";
-
-
-
-// export const metadata = {
-//   title: "Celitix ",
-//   description: "One Cloud-Powered Dashboard for All Your Business Communication. Unified Sales, Support, & Service.",
-// };
-
-
+import { Seo } from "@/utils/seo";
 const Home = () => {
-  const router = useRouter()
+  const router = useRouter();
   // useEffect(() => {
   //   initScrollReveal();
   // }, []);
 
+  const metaData = {
+    title: "Celitix ",
+    description:
+      "One Cloud-Powered Dashboard for All Your Business Communication. Unified Sales, Support, & Service.",
+  };
   const [isVisible, setIsVisible] = useState(false);
   // 1nd
   // 1nd
@@ -72,7 +150,6 @@ const Home = () => {
     { src: homesecond9, alt: "Socar" },
     { src: homesecond10, alt: "Yahoo" },
     { src: homesecond11, alt: "Luna" },
-
   ];
   // 2nd
   // 3rd
@@ -112,7 +189,6 @@ const Home = () => {
       color: "text-[#9B44B6]  transition-all duration-1000 ease-in-out",
       img: home_solve,
     },
-
   ];
 
   useEffect(() => {
@@ -142,102 +218,102 @@ const Home = () => {
   const services = [
     {
       id: 1,
-      name: 'WhatsApp Business Platform',
+      name: "WhatsApp Business Platform",
       icon: Reachwhatsappicon,
       content: {
         image: WhatsApp_Business_Platform,
-        desc: 'Leverage the world’s #1 messaging app. With advanced features like Chatbots, Click-to-WhatsApp ads, Branded Profiles and more.',
-        ButtonName: 'Start Now',
+        desc: "Leverage the world’s #1 messaging app. With advanced features like Chatbots, Click-to-WhatsApp ads, Branded Profiles and more.",
+        ButtonName: "Start Now",
       },
     },
     {
       id: 2,
-      name: 'RCS Business Messaging',
+      name: "RCS Business Messaging",
       icon: ReachRCS,
       content: {
         image: RCS_Business_Messaging,
-        desc: 'Rich, interactive messaging on native mobile apps. Shoot epic promotions, update and support users with action buttons, rich media and more!',
-        ButtonName: 'Explore',
+        desc: "Rich, interactive messaging on native mobile apps. Shoot epic promotions, update and support users with action buttons, rich media and more!",
+        ButtonName: "Explore",
       },
     },
     {
       id: 3,
-      name: 'SMS Solutions',
+      name: "SMS Solutions",
       icon: ReachSMS,
       content: {
         image: SMS_Marketing,
-        desc: 'Perfect for urgent updates and reliable delivery. OTPs, Transactional messages, Bulk Promotions and API Integrations.',
-        ButtonName: 'Learn More',
+        desc: "Perfect for urgent updates and reliable delivery. OTPs, Transactional messages, Bulk Promotions and API Integrations.",
+        ButtonName: "Learn More",
       },
     },
     {
       id: 4,
-      name: '2 Way SMS',
+      name: "2 Way SMS",
       icon: Reachwaytosms,
       content: {
         image: Two_Way_SMS,
-        desc: 'Create engaging, interactive SMS campaigns. Take votes, run quizzes, get confirmations and generate leads!',
-        ButtonName: 'Get Started',
+        desc: "Create engaging, interactive SMS campaigns. Take votes, run quizzes, get confirmations and generate leads!",
+        ButtonName: "Get Started",
       },
     },
     {
       id: 5,
-      name: 'Inbound Dialer',
+      name: "Inbound Dialer",
       icon: Reachinboundcalling,
       content: {
         image: Inbound_Dialer,
-        desc: 'Never miss a call again with customisable IVR menus, smart routing and call records. Perfect for customer support helplines.',
-        ButtonName: 'Learn More',
+        desc: "Never miss a call again with customisable IVR menus, smart routing and call records. Perfect for customer support helplines.",
+        ButtonName: "Learn More",
       },
     },
     {
       id: 6,
-      name: 'Outbound Dialer',
+      name: "Outbound Dialer",
       icon: ReachObd,
       content: {
         image: Outbound_Dialer,
-        desc: 'Start conversations with bulk voice call campaigns and IVR integrations. Pre-record audios in local languages or use AI-generated text-to-speech.',
-        ButtonName: 'Explore ',
+        desc: "Start conversations with bulk voice call campaigns and IVR integrations. Pre-record audios in local languages or use AI-generated text-to-speech.",
+        ButtonName: "Explore ",
       },
     },
     {
       id: 7,
-      name: 'Click to Call',
+      name: "Click to Call",
       icon: Reachclicktocall,
       content: {
         image: Click_to_Call,
-        desc: 'Enhance your app or site’s user experience (UX). Let customers and agents connect effortlessly over voice call with secure number masking.',
-        ButtonName: 'Know More ',
+        desc: "Enhance your app or site’s user experience (UX). Let customers and agents connect effortlessly over voice call with secure number masking.",
+        ButtonName: "Know More ",
       },
     },
     {
       id: 8,
-      name: 'Missed Call Services',
+      name: "Missed Call Services",
       icon: ReachMissedcall,
       content: {
         image: Missed_Call_Services,
-        desc: 'Get leads, votes or confirmations with a dedicated missed call number. Auto trigger opt-ins, callbacks or custom actions when users call.',
-        ButtonName: 'Start Now',
+        desc: "Get leads, votes or confirmations with a dedicated missed call number. Auto trigger opt-ins, callbacks or custom actions when users call.",
+        ButtonName: "Start Now",
       },
     },
     {
       id: 9,
-      name: 'App Authenticator',
+      name: "App Authenticator",
       icon: ReachApp,
       content: {
         image: App_Authenticator,
-        desc: 'Verify users without OTPs. Frictionless security that’s user-friendly and easier for your dev team.',
-        ButtonName: 'Explore',
+        desc: "Verify users without OTPs. Frictionless security that’s user-friendly and easier for your dev team.",
+        ButtonName: "Explore",
       },
     },
     {
       id: 10,
-      name: 'Email OTP',
+      name: "Email OTP",
       icon: Reachemail,
       content: {
         image: Email_Solutions,
-        desc: 'Verify users with pre-made HTML email templates. Great for onboarding authentication flows and MFA.',
-        ButtonName: 'Check It Out',
+        desc: "Verify users with pre-made HTML email templates. Great for onboarding authentication flows and MFA.",
+        ButtonName: "Check It Out",
       },
     },
   ];
@@ -247,49 +323,49 @@ const Home = () => {
   const handleservices = () => {
     const btnText = activeService.content.ButtonName.trim();
     const validLabels = [
-      'Start Now',
-      'Check It Out',
-      'Learn More',
-      'Explore',
-      'Explore ',
-      'Get Started',
-      'Know More ',
+      "Start Now",
+      "Check It Out",
+      "Learn More",
+      "Explore",
+      "Explore ",
+      "Get Started",
+      "Know More ",
     ];
 
     if (validLabels.includes(btnText)) {
       switch (activeService.id) {
         case 1:
-          router.push('/whatsapp-business-platform');
+          router.push("/whatsapp-business-platform");
           break;
         case 2:
-          router.push('/rcs-business-messaging');
+          router.push("/rcs-business-messaging");
           break;
         case 3:
-          router.push('/sms-marketing');
+          router.push("/sms-marketing");
           break;
         case 4:
-          router.push('/two-way-sms');
+          router.push("/two-way-sms");
           break;
         case 5:
-          router.push('/inbound-dialer');
+          router.push("/inbound-dialer");
           break;
         case 6:
-          router.push('/outbound-dialer');
+          router.push("/outbound-dialer");
           break;
         case 7:
-          router.push('/click-to-call');
+          router.push("/click-to-call");
           break;
         case 8:
-          router.push('/missed-call-services');
+          router.push("/missed-call-services");
           break;
         case 9:
-          router.push('/user-verification');
+          router.push("/user-verification");
           break;
         case 10:
-          router.push('/email-otp');
+          router.push("/email-otp");
           break;
         default:
-          console.log('No route defined for this service');
+          console.log("No route defined for this service");
       }
     }
   };
@@ -336,9 +412,8 @@ const Home = () => {
         "Learn More",
         "Learn More",
         "Learn More",
-        "Learn More"
+        "Learn More",
       ],
-
     },
     Healthcare: {
       title: [
@@ -348,13 +423,7 @@ const Home = () => {
         "Elevate The Patient Experience",
         "Remind, Reorder, and Deliver ",
       ],
-      image: [
-        Healthcare1,
-        Healthcare2,
-        Healthcare3,
-        Healthcare4,
-        Healthcare5,
-      ],
+      image: [Healthcare1, Healthcare2, Healthcare3, Healthcare4, Healthcare5],
       features: [
         " Automatic Updates",
         "Improved Care",
@@ -385,13 +454,7 @@ const Home = () => {
         "2FA, OTP & OTP-Free",
         "Build Trust & Drive Action",
       ],
-      image: [
-        Finance1,
-        Finance2,
-        Finance3,
-        Finance4,
-        Finance5,
-      ],
+      image: [Finance1, Finance2, Finance3, Finance4, Finance5],
       features: [
         "Onboarding",
         "Transaction Alerts",
@@ -405,7 +468,6 @@ const Home = () => {
         "Update customers on their loan application’s progress or introduce your new credit card. Essential for policy renewals and EMI payments.",
         "Protect logins and actions with fast, reliable two-factor authentication and multi-channel OTPs. Improve UX with OTP-free verification.",
         "Re-engage users through offers, alerts, or educational messages. Simplify connection with Click-to-Call buttons.",
-
       ],
       desbutton: [
         "Learn More",
@@ -413,7 +475,6 @@ const Home = () => {
         "Learn More",
         "Learn More",
         "Learn More",
-
       ],
     },
     Education: {
@@ -424,13 +485,7 @@ const Home = () => {
         "Update on SMS",
         "24/7 Chatbots",
       ],
-      image: [
-        Education1,
-        Education2,
-        Education3,
-        Education4,
-        Education5,
-      ],
+      image: [Education1, Education2, Education3, Education4, Education5],
       features: [
         "Fee Payments",
         "Result Notifications",
@@ -461,13 +516,7 @@ const Home = () => {
         "Inspire Adventures",
         "Reward Longtime Guests",
       ],
-      image: [
-        Travel1,
-        Travel2,
-        Travel3,
-        Travel4,
-        Travel5,
-      ],
+      image: [Travel1, Travel2, Travel3, Travel4, Travel5],
       features: [
         " Booking Support",
         "Chatbot Travel Guides",
@@ -642,12 +691,17 @@ const Home = () => {
         "Learn More",
       ],
     },
-
   };
 
   const industryList = Object.keys(sectionData);
 
-  const SectionLayout = ({ image, features, descriptions, desbutton, title }) => {
+  const SectionLayout = ({
+    image,
+    features,
+    descriptions,
+    desbutton,
+    title,
+  }) => {
     const [activeFeature, setActiveFeature] = useState(0);
 
     return (
@@ -657,10 +711,11 @@ const Home = () => {
             <button
               key={idx}
               onClick={() => setActiveFeature(idx)}
-              className={`text-left px-4 py-2 rounded-xl font-medium transition-all duration-200 sub-heading ${idx === activeFeature
-                ? "bg-[#803B96] text-white shadow-md"
-                : "text-gray-700 hover:bg-[#803B96] hover:text-white hover:shadow"
-                }`}
+              className={`text-left px-4 py-2 rounded-xl font-medium transition-all duration-200 sub-heading ${
+                idx === activeFeature
+                  ? "bg-[#803B96] text-white shadow-md"
+                  : "text-gray-700 hover:bg-[#803B96] hover:text-white hover:shadow"
+              }`}
             >
               {feature}
             </button>
@@ -672,7 +727,7 @@ const Home = () => {
             src={image[activeFeature]}
             alt="Preview"
             className="w-[260px] sm:w-[300px] drop-shadow-md hover:scale-105 transition-transform duration-300"
-          // loading="auto"
+            // loading="auto"
           />
         </div>
 
@@ -715,85 +770,87 @@ const Home = () => {
   const handleFeatureRedirect = (industry, index) => {
     const routes = {
       Ecommerce: [
-        '/retail-and-ecommerce',
-        '/retail-and-ecommerce',
-        '/retail-and-ecommerce',
-        '/retail-and-ecommerce',
-        '/retail-and-ecommerce',
-        '/retail-and-ecommerce',
+        "/retail-and-ecommerce",
+        "/retail-and-ecommerce",
+        "/retail-and-ecommerce",
+        "/retail-and-ecommerce",
+        "/retail-and-ecommerce",
+        "/retail-and-ecommerce",
       ],
       Healthcare: [
-        '/healthcare',
-        '/healthcare',
-        '/healthcare',
-        '/healthcare',
-        '/healthcare'
+        "/healthcare",
+        "/healthcare",
+        "/healthcare",
+        "/healthcare",
+        "/healthcare",
       ],
       Finance: [
-        '/financial-services',
-        '/financial-services',
-        '/financial-services',
-        '/financial-services',
-        '/financial-services'
+        "/financial-services",
+        "/financial-services",
+        "/financial-services",
+        "/financial-services",
+        "/financial-services",
       ],
       Education: [
-        '/education-and-edtech',
-        '/education-and-edtech',
-        '/education-and-edtech',
-        '/education-and-edtech',
-        '/education-and-edtech'
+        "/education-and-edtech",
+        "/education-and-edtech",
+        "/education-and-edtech",
+        "/education-and-edtech",
+        "/education-and-edtech",
       ],
       Travel: [
-        '/travel-and-tourism',
-        '/travel-and-tourism',
-        '/travel-and-tourism',
-        '/travel-and-tourism',
-        '/travel-and-tourism'
+        "/travel-and-tourism",
+        "/travel-and-tourism",
+        "/travel-and-tourism",
+        "/travel-and-tourism",
+        "/travel-and-tourism",
       ],
       RealEstateConstruction: [
-        '/construction-and-real-estate',
-        '/construction-and-real-estate',
-        '/construction-and-real-estate',
-        '/construction-and-real-estate',
-        '/construction-and-real-estate'
+        "/construction-and-real-estate",
+        "/construction-and-real-estate",
+        "/construction-and-real-estate",
+        "/construction-and-real-estate",
+        "/construction-and-real-estate",
       ],
       FoodBeverage: [
-        '/food-and-beverages',
-        '/food-and-beverages',
-        '/food-and-beverages',
-        '/food-and-beverages',
-        '/food-and-beverages'
+        "/food-and-beverages",
+        "/food-and-beverages",
+        "/food-and-beverages",
+        "/food-and-beverages",
+        "/food-and-beverages",
       ],
       ProfessionalServices: [
-        '/professional-services',
-        '/professional-services',
-        '/professional-services',
-        '/professional-services',
-        '/professional-services'
+        "/professional-services",
+        "/professional-services",
+        "/professional-services",
+        "/professional-services",
+        "/professional-services",
       ],
       TechStartups: [
-        '/tech-startups',
-        '/tech-startups',
-        '/tech-startups',
-        '/tech-startups',
-        '/tech-startups',
-        '/tech-startups'
-      ]
+        "/tech-startups",
+        "/tech-startups",
+        "/tech-startups",
+        "/tech-startups",
+        "/tech-startups",
+        "/tech-startups",
+      ],
     };
 
     const route = routes[industry]?.[index];
     if (route) router.push(route);
-    else console.warn('No route defined for:', industry, index);
+    else console.warn("No route defined for:", industry, index);
   };
 
   const [activeIndustry, setActiveIndustry] = useState("E-Commerce");
-  const { image, features, descriptions, desbutton, title } = sectionData[activeIndustry];
+  const { image, features, descriptions, desbutton, title } =
+    sectionData[activeIndustry];
   // 6rd
   // 7rd
   const blogPosts = [
     {
       date: "September 16, 2024",
-      title: "Generative AI security: How to keep your chatbot healthy and your platform protected",
+      title:
+        "Generative AI security: How to keep your chatbot healthy and your platform protected",
       description:
         "Discover essential strategies to secure AI chatbots from evolving GenAI threats. Learn how to protect your AI investments now and keep them healthy and thriving.",
       tags: ["BLOG", "GENRATIVE AI", "CUSTOMER SECURITY", "BEST PRACTICES"],
@@ -882,17 +939,18 @@ const Home = () => {
 
   const handleShowFormPopup = () => {
     setOpenDialog(true);
-  }
+  };
 
   const handleCloseDialog = () => {
     setOpenDialog(false);
-  }
+  };
 
-
-  const hero = "/assets/videos/mainvideo.mp4"
+  const hero = "/assets/videos/mainvideo.mp4";
   return (
-    <div className="bg-[#f6edf9] relative">
-      {/* <div style={{
+    <>
+      <Seo title={metaData.title} description={metaData.description} />
+      <div className="bg-[#f6edf9] relative">
+        {/* <div style={{
         position: 'absolute',
         width: '100%',
         height: '100%',
@@ -903,7 +961,7 @@ const Home = () => {
         <OurClientele num={5} />
       </div> */}
 
-      {/* <div style={{
+        {/* <div style={{
         position: 'absolute',
         width: '100%',
         height: '100%',
@@ -912,168 +970,169 @@ const Home = () => {
         zIndex: 10, // above background, below/around content
       }}>
       </div> */}
-      {/* <OurClientele num={5} /> */}
+        {/* <OurClientele num={5} /> */}
 
-
-      {/* <Header /> */}
-      {/* <Helmet>
+        {/* <Header /> */}
+        {/* <Helmet>
         <title>Celitix - CPaaS for Omnichannel Communication</title>
         <meta name="description" content=" One Cloud-Powered Dashboard for All Your Business Communication. Unified Sales, Support, & Service." />
         <link rel="preload" as="image" href={homehero} crossorigin="anonymous" />
       </Helmet> */}
-      {/* 1nd */}
+        {/* 1nd */}
 
-      <div className="md:h-[90vh]">
-        <OurClientele num={5} />
-        <div className="w-full  pt-35 relative z-20 ">
-          <div className="text-center px-4 py-2 md:py-20 space-y-4 box-reveal-bottom">
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold text-gray-900 heading md:mb-10 mb-1">
-              All-in-One <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]"> Communication </span> Platform
-            </h1>
+        <div className="md:h-[90vh]">
+          <OurClientele num={5} />
+          <div className="w-full  pt-35 relative z-20 ">
+            <div className="text-center px-4 py-2 md:py-20 space-y-4 box-reveal-bottom">
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold text-gray-900 heading md:mb-10 mb-1">
+                All-in-One{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]">
+                  {" "}
+                  Communication{" "}
+                </span>{" "}
+                Platform
+              </h1>
 
-            <p className="text-md md:text-lg lg:text-2xl font-semibold text-gray-700 sub-heading md:mb-10 mb-1">
-              Celitix connects businesses with people. Run promotional campaigns, manage leads,<br /> engage automatically and provide personalised support - all from one place!
-            </p>
-            <div className="flex justify-center items-center gap-4 md:gap-6  lg:gap-8 flex-wrap">
-              <UniversalButton
-                label="Talk to Expert"
-                variant="brutal"
-                className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-2 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] mb-2"
-                onClick={handleShowFormPopup}
-              />
-              <FormPopup
-                visible={openDialog}
-                onHide={handleCloseDialog}
-              />
+              <p className="text-md md:text-lg lg:text-2xl font-semibold text-gray-700 sub-heading md:mb-10 mb-1">
+                Celitix connects businesses with people. Run promotional
+                campaigns, manage leads,
+                <br /> engage automatically and provide personalised support -
+                all from one place!
+              </p>
+              <div className="flex justify-center items-center gap-4 md:gap-6  lg:gap-8 flex-wrap">
+                <UniversalButton
+                  label="Talk to Expert"
+                  variant="brutal"
+                  className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-2 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] mb-2"
+                  onClick={handleShowFormPopup}
+                />
+                <FormPopup visible={openDialog} onHide={handleCloseDialog} />
+              </div>
             </div>
           </div>
         </div>
 
-
-      </div>
-
-      {/* 1nd */}
-      <div className="bg-[#F6EDF9] py-2 sm:py-8 md:pb-10 z-50">
-        <div className="lg:px-15 md:px-10 px-2 w-full py-5 md:pb-20">
-          <video
-            className="w-full h-auto rounded-2xl"
-            src={hero}
-            key={hero}
-            loop
-            muted
-            autoPlay
-            playsInline
-            preload="metadata"
-
-            title="All-in-One Communication Platform"
-            alt="All-in-One Communication Platform"
-          >
-            {/* <source src="/assets/videos/Hero.mp4" type="video/mp4" /> */}
-          </video>
+        {/* 1nd */}
+        <div className="bg-[#F6EDF9] py-2 sm:py-8 md:pb-10 z-50">
+          <div className="lg:px-15 md:px-10 px-2 w-full py-5 md:pb-20">
+            <video
+              className="w-full h-auto rounded-2xl"
+              src={hero}
+              key={hero}
+              loop
+              muted
+              autoPlay
+              playsInline
+              preload="metadata"
+              title="All-in-One Communication Platform"
+              alt="All-in-One Communication Platform"
+            >
+              {/* <source src="/assets/videos/Hero.mp4" type="video/mp4" /> */}
+            </video>
+          </div>
         </div>
-      </div>
-      {/* 2nd */}
-      <div className="Second bg-[#D8E3F5] py-2 md:py-15">
-        {/* <div className="text-center px-4 pb-5 md:pb-10">
+        {/* 2nd */}
+        <div className="Second bg-[#D8E3F5] py-2 md:py-15">
+          {/* <div className="text-center px-4 pb-5 md:pb-10">
           <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 popf">
             Our Clientele
           </h2>
         </div> */}
-        <div className="w-full carousel-mask px-4">
-          <Swiper
-            modules={[Autoplay]}
-            slidesPerView="auto"
-            spaceBetween={24}
-            loop={true}
-            speed={5000}
-            autoplay={{
-              delay: 0,
-              disableOnInteraction: false,
-            }}
-            allowTouchMove={true}
-          >
-            {[...logos, ...logos].map((logo, index) => (
-              <SwiperSlide key={index} style={{ width: 'auto' }}>
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  className="h-16 sm:h-20 md:h-24 w-25 md:w-50 object-contain  hover:grayscale-0 transition duration-1000 ease-in-out"
-                // loading="auto"
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          <div className="w-full carousel-mask px-4">
+            <Swiper
+              modules={[Autoplay]}
+              slidesPerView="auto"
+              spaceBetween={24}
+              loop={true}
+              speed={5000}
+              autoplay={{
+                delay: 0,
+                disableOnInteraction: false,
+              }}
+              allowTouchMove={true}
+            >
+              {[...logos, ...logos].map((logo, index) => (
+                <SwiperSlide key={index} style={{ width: "auto" }}>
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="h-16 sm:h-20 md:h-24 w-25 md:w-50 object-contain  hover:grayscale-0 transition duration-1000 ease-in-out"
+                    // loading="auto"
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </div>
-      </div>
-      {/* 2nd */}
-      {/* 3nd */}
-      <div className="w-full bg-[#f6edf9] relative lg:h-[400vh]">
-        <div className="absolute inset-0 z-0">
-          {steps.map((step) => (
-            <div
-              key={step.id}
-              id={step.id}
-              ref={(el) => (sectionRefs.current[step.id] = el)}
-              className="md:h-200 h-0"
-            />
-          ))}
-        </div>
-
-        <div className="sticky top-0 h-200 md:h-screen flex items-center bg-[#f6edf9] z-10">
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-20 max-w-7xl mx-auto px-0 w-full items-center">
-            <div className="w-full h-auto rounded-[2rem] overflow-hidden border-gray-200 p-2 lg:p-10">
-              <Image
-                src={current.img}
-                alt={current.title}
-                className="w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
-                // loading="auto"
-                onLoad={(e) => e.currentTarget.classList.add('opacity-100')}
+        {/* 2nd */}
+        {/* 3nd */}
+        <div className="w-full bg-[#f6edf9] relative lg:h-[400vh]">
+          <div className="absolute inset-0 z-0">
+            {steps.map((step) => (
+              <div
+                key={step.id}
+                id={step.id}
+                ref={(el) => (sectionRefs.current[step.id] = el)}
+                className="md:h-200 h-0"
               />
-            </div>
+            ))}
+          </div>
 
-            <div className=" ">
-              {steps.map((step) => {
-                const isActive = step.id === activeStep;
-                return (
-                  <div
-                    key={step.id}
-                    role="button"
-                    onClick={() => setActiveStep(step.id)}
-                    className="transition duration-500 cursor-pointer"
-                  >
-                    <h3
-                      className={`text-3xl md:text-4xl lg:text-6xl transition-all font-semibold duration-1000 ease-in-out lora ${isActive ? step.color : "text-gray-600 heading"} rounded-full p-4`}
-                    >
-                      {step.title}
-                    </h3>
+          <div className="sticky top-0 h-200 md:h-screen flex items-center bg-[#f6edf9] z-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-20 max-w-7xl mx-auto px-0 w-full items-center">
+              <div className="w-full h-auto rounded-[2rem] overflow-hidden border-gray-200 p-2 lg:p-10">
+                <Image
+                  src={current.img}
+                  alt={current.title}
+                  className="w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
+                  // loading="auto"
+                  onLoad={(e) => e.currentTarget.classList.add("opacity-100")}
+                />
+              </div>
 
+              <div className=" ">
+                {steps.map((step) => {
+                  const isActive = step.id === activeStep;
+                  return (
                     <div
-                      className={`transition-all duration-1000 ease-in-out transform overflow-hidden ${isActive
-                        ? "opacity-100 max-h-[200] md:max-h-[250px] translate-y-0 scale-100 rounded-lg p-4"
-                        : "opacity-0 max-h-0 -translate-y-2 scale-95 pointer-events-none"
-                        }`}
+                      key={step.id}
+                      role="button"
+                      onClick={() => setActiveStep(step.id)}
+                      className="transition duration-500 cursor-pointer"
                     >
-                      <h4 className="text-base lg:text-2xl font-medium text-gray-900 mb-1 sub-heading">
-                        {step.subtitle}
-                      </h4>
-                      {/* <p className="text-gray-600 text-sm lg:text-base leading-relaxed pera">
+                      <h3
+                        className={`text-3xl md:text-4xl lg:text-6xl transition-all font-semibold duration-1000 ease-in-out lora ${
+                          isActive ? step.color : "text-gray-600 heading"
+                        } rounded-full p-4`}
+                      >
+                        {step.title}
+                      </h3>
+
+                      <div
+                        className={`transition-all duration-1000 ease-in-out transform overflow-hidden ${
+                          isActive
+                            ? "opacity-100 max-h-[200] md:max-h-[250px] translate-y-0 scale-100 rounded-lg p-4"
+                            : "opacity-0 max-h-0 -translate-y-2 scale-95 pointer-events-none"
+                        }`}
+                      >
+                        <h4 className="text-base lg:text-2xl font-medium text-gray-900 mb-1 sub-heading">
+                          {step.subtitle}
+                        </h4>
+                        {/* <p className="text-gray-600 text-sm lg:text-base leading-relaxed pera">
             {step.desc}
           </p> */}
-                      <ul className="list-disc list-inside text-gray-600 pera space-y-1 mt-2 pl-2">
-                        <li>{step.point1}</li>
-                        <li>{step.point2}</li>
-                        <li>{step.point3}</li>
-                      </ul>
+                        <ul className="list-disc list-inside text-gray-600 pera space-y-1 mt-2 pl-2">
+                          <li>{step.point1}</li>
+                          <li>{step.point2}</li>
+                          <li>{step.point3}</li>
+                        </ul>
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
-            </div>
+                  );
+                })}
+              </div>
 
-
-
-            {/* <div className=" ">
+              {/* <div className=" ">
               {steps.map((step) => {
                 const isActive = step.id === activeStep;
                 return (
@@ -1115,53 +1174,48 @@ const Home = () => {
                 );
               })}
             </div> */}
-
+            </div>
           </div>
         </div>
-      </div>
-      {/* 3nd */}
-      {/* 4nd */}
-      <div className='relative bg-linear-to-r from-[#6b0da1] to-[#8447c6] '>
-        <motion.div
-          className="absolute top-0 left-0 w-32 h-32 md:w-32 md:h-32"
-          initial={{ x: 0, y: 0, rotate: 0, scale: 0.8 }}
-          animate={{
-            x: [0, 10, 0],
-            y: [0, -10, 0],
-            rotate: [0, 5, 0, -5, 0],
-            scale: [0.8, 0.7, 0.8]
-          }}
-          transition={{
-            duration: 5,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        >
-          <Image
-            src={rocket}
-            alt="Rocket"
-            className="w-full h-full object-contain"
-            width={600}
-            height={400}
+        {/* 3nd */}
+        {/* 4nd */}
+        <div className="relative bg-linear-to-r from-[#6b0da1] to-[#8447c6] ">
+          <motion.div
+            className="absolute top-0 left-0 w-32 h-32 md:w-32 md:h-32"
+            initial={{ x: 0, y: 0, rotate: 0, scale: 0.8 }}
+            animate={{
+              x: [0, 10, 0],
+              y: [0, -10, 0],
+              rotate: [0, 5, 0, -5, 0],
+              scale: [0.8, 0.7, 0.8],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            <Image
+              src={rocket}
+              alt="Rocket"
+              className="w-full h-full object-contain"
+              width={600}
+              height={400}
+            />
+          </motion.div>
+          <div className=" max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 h-auto md:h-40 w-full px-4 py-6">
+            <div className="flex flex-col justify-center items-center md:items-start text-left">
+              <h2 className="text-2xl md:text-4xl font-semibold text-gray-50 heading">
+                Start Now
+              </h2>
+              <p className="text-sm sm:text-base md:text-lg text-gray-50 font-light mt-2 max-w-xl sub-heading">
+                Connect now for a free consultation. Learn how Celitix can help.
+              </p>
+            </div>
 
-          />
-        </motion.div>
-        <div className=" max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 h-auto md:h-40 w-full px-4 py-6">
-
-          <div className="flex flex-col justify-center items-center md:items-start text-left">
-            <h2 className="text-2xl md:text-4xl font-semibold text-gray-50 heading">
-              Start Now
-            </h2>
-            <p className="text-sm sm:text-base md:text-lg text-gray-50 font-light mt-2 max-w-xl sub-heading">
-              Connect now for a free consultation. Learn how Celitix can help.
-
-            </p>
-          </div>
-
-          <div className="flex md:justify-end justify-center items-center text-left gap-2 md:mt-0 mt-5">
-            <div>
-
-              {/* <motion.div
+            <div className="flex md:justify-end justify-center items-center text-left gap-2 md:mt-0 mt-5">
+              <div>
+                {/* <motion.div
       whileHover={{ scale: 1.1, rotate: 3, boxShadow: '0px 8px 15px rgba(0,0,0,0.3)' }}
       whileTap={{ scale: 0.95, rotate: -1 }}
       transition={{ type: 'spring', stiffness: 400, damping: 25 }}
@@ -1174,101 +1228,125 @@ const Home = () => {
       />
     </motion.div> */}
 
-              <motion.div
-                animate={{ y: [0, -6, 0] }}
-                transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <UniversalButton
-                  label="Book A Demo"
-                  variant="transitionbtn"
-                  className="px-4 py-2 rounded-xl text-black-50 bg-white"
-                // onClick={handleShowFormPopup}
-                />
-              </motion.div>
+                <motion.div
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 3,
+                    ease: "easeInOut",
+                  }}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <UniversalButton
+                    label="Book A Demo"
+                    variant="transitionbtn"
+                    className="px-4 py-2 rounded-xl text-black-50 bg-white"
+                    // onClick={handleShowFormPopup}
+                  />
+                </motion.div>
 
-              {/* <FormPopup
+                {/* <FormPopup
                 visible={openDialog}
                 onHide={handleCloseDialog}
               /> */}
 
-              {/* <UniversalButton label="Book A Demo" variant="brutal" className='bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 font-semibold hover:bg-white hover:text-black 
+                {/* <UniversalButton label="Book A Demo" variant="brutal" className='bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 font-semibold hover:bg-white hover:text-black 
               hover:shadow-[4px_4px_0px_#9B44B6]'/> */}
-            </div>
-            <div>
-              {/* <Link href="#" to="/book-a-demo">
+              </div>
+              <div>
+                {/* <Link href="#" to="/book-a-demo">
                 <UniversalButton
                   label="Chat With Us"
                   variant="transitionbtn"
                   className="px-4 py-2 rounded-xl text-black-50 bg-[#ffffff] sm:px-4 sm:py-2 "
                 />
               </Link> */}
-              {/* <UniversalButton label="Chat With Us" variant="brutal" className='bg-[#8e9dbe] border-[#9B44B6] text-white px-3 py-1 font-semibold hover:bg-white hover:text-black 
+                {/* <UniversalButton label="Chat With Us" variant="brutal" className='bg-[#8e9dbe] border-[#9B44B6] text-white px-3 py-1 font-semibold hover:bg-white hover:text-black 
               hover:shadow-[4px_4px_0px_#9B44B6]'/> */}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      {/* 4nd */}
-      {/* 5nd */}
-      <div className="bg-[#F6EDF9] py-2 sm:py-8 md:py-10">
-
-        <div className="text-center px-4 sm:px-6 md:px-8 py-4 md:py-5">
-          <h2 className="text-2xl md:4xl lg:text-5xl font-semibold text-gray-900 heading">
-            Reach Customers <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]"> Wherever</span> They Are
-          </h2>
-        </div>
-
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-6 md:px-10 my-0 md:mt-10">
-
-          {/* Service Buttons */}
-          <div className="bg-[#f7f6f6] rounded-xl shadow-sm p-4 sm:p-6 md:p-8">
-            {services.map((service) => (
-              <button
-                key={service.id}
-                onClick={() => setActiveTab(service.id)}
-                className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg mb-2 text-lg text-left transition-all duration-200 sub-heading ${activeTab === service.id
-                  ? 'bg-[#ffffff] text-[#a535d1]'
-                  : 'hover:bg-gray-100 text-black sub-heading'
-                  }`}
-              >
-                <Image src={service.icon} alt={service.name} className="h-8 w-8" />
-                <span className="font-medium">{service.name}</span>
-              </button>
-            ))}
+        {/* 4nd */}
+        {/* 5nd */}
+        <div className="bg-[#F6EDF9] py-2 sm:py-8 md:py-10">
+          <div className="text-center px-4 sm:px-6 md:px-8 py-4 md:py-5">
+            <h2 className="text-2xl md:4xl lg:text-5xl font-semibold text-gray-900 heading">
+              Reach Customers{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]">
+                {" "}
+                Wherever
+              </span>{" "}
+              They Are
+            </h2>
           </div>
 
-          {/* Active Service Display */}
-          <div className="flex flex-col items-center justify-center text-center gap-4 px-4 sm:px-6 md:px-10">
-            <Image
-              src={activeService.content.image}
-              alt={activeService.name}
-              className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl"
-            />
-            <p className="text-gray-600 text-base md:text-lg font-medium pera">{activeService.content.desc}</p>
+          <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-6 md:px-10 my-0 md:mt-10">
+            {/* Service Buttons */}
+            <div className="bg-[#f7f6f6] rounded-xl shadow-sm p-4 sm:p-6 md:p-8">
+              {services.map((service) => (
+                <button
+                  key={service.id}
+                  onClick={() => setActiveTab(service.id)}
+                  className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg mb-2 text-lg text-left transition-all duration-200 sub-heading ${
+                    activeTab === service.id
+                      ? "bg-[#ffffff] text-[#a535d1]"
+                      : "hover:bg-gray-100 text-black sub-heading"
+                  }`}
+                >
+                  <Image
+                    src={service.icon}
+                    alt={service.name}
+                    className="h-8 w-8"
+                  />
+                  <span className="font-medium">{service.name}</span>
+                </button>
+              ))}
+            </div>
 
-            <UniversalButton label={activeService.content.ButtonName} variant="brutal" className='bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 font-semibold hover:bg-white hover:text-black 
-              hover:shadow-[4px_4px_0px_#9B44B6]' onClick={handleservices} />
-            {/* <button className="bg-purple-800 text-white px-6 py-2 rounded-md hover:bg-purple-700 transition">
+            {/* Active Service Display */}
+            <div className="flex flex-col items-center justify-center text-center gap-4 px-4 sm:px-6 md:px-10">
+              <Image
+                src={activeService.content.image}
+                alt={activeService.name}
+                className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl"
+              />
+              <p className="text-gray-600 text-base md:text-lg font-medium pera">
+                {activeService.content.desc}
+              </p>
+
+              <UniversalButton
+                label={activeService.content.ButtonName}
+                variant="brutal"
+                className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 font-semibold hover:bg-white hover:text-black 
+              hover:shadow-[4px_4px_0px_#9B44B6]"
+                onClick={handleservices}
+              />
+              {/* <button className="bg-purple-800 text-white px-6 py-2 rounded-md hover:bg-purple-700 transition">
               {activeService.content.ButtonName}
             </button> */}
+            </div>
           </div>
         </div>
-      </div>
-      {/* 5nd */}
-      {/* 6nd */}
-      <div className="bg-[#F6EDF9] py-2 md:py-10 px-4 md:px-10 lg:px-20">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center px-4 pb-12">
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-gray-900 heading">
-              Automate Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]"> Perfect Communication </span> Workflow
-            </h2>
-            {/* <p className="text-base lg:text-2xl font-semibold text-gray-700 sub-heading">
+        {/* 5nd */}
+        {/* 6nd */}
+        <div className="bg-[#F6EDF9] py-2 md:py-10 px-4 md:px-10 lg:px-20">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center px-4 pb-12">
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-gray-900 heading">
+                Automate Your{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]">
+                  {" "}
+                  Perfect Communication{" "}
+                </span>{" "}
+                Workflow
+              </h2>
+              {/* <p className="text-base lg:text-2xl font-semibold text-gray-700 sub-heading">
             Automate Your Perfect Communication Workflow
           </p> */}
-          </div>
-          {/* <div className="flex flex-wrap justify-center gap-4 mb-10 bg-[#F7F6F6] px-4 py-3 rounded-xl shadow-md border border-gray-200">
+            </div>
+            {/* <div className="flex flex-wrap justify-center gap-4 mb-10 bg-[#F7F6F6] px-4 py-3 rounded-xl shadow-md border border-gray-200">
 
           {industryList.map((industry) => (
             <button
@@ -1284,33 +1362,34 @@ const Home = () => {
           ))}
         </div> */}
 
-          <div className="flex overflow-x-auto whitespace-nowrap scrollbar gap-4 mb-10 bg-[#F7F6F6] px-4 py-3 rounded-xl shadow-md border border-gray-200">
-            {industryList.map((industry) => (
-              <button
-                key={industry}
-                onClick={() => setActiveIndustry(industry)}
-                className={`px-4 py-2 rounded-full font-medium shrink-0 transition-all duration-200 sub-heading ${industry === activeIndustry
-                  ? "bg-[#9B44B6] text-white shadow-lg scale-105"
-                  : "text-gray-600 hover:bg-[#9B44B6] hover:text-white hover:shadow"
+            <div className="flex overflow-x-auto whitespace-nowrap scrollbar gap-4 mb-10 bg-[#F7F6F6] px-4 py-3 rounded-xl shadow-md border border-gray-200">
+              {industryList.map((industry) => (
+                <button
+                  key={industry}
+                  onClick={() => setActiveIndustry(industry)}
+                  className={`px-4 py-2 rounded-full font-medium shrink-0 transition-all duration-200 sub-heading ${
+                    industry === activeIndustry
+                      ? "bg-[#9B44B6] text-white shadow-lg scale-105"
+                      : "text-gray-600 hover:bg-[#9B44B6] hover:text-white hover:shadow"
                   }`}
-              >
-                {industry}
-              </button>
-            ))}
-          </div>
+                >
+                  {industry}
+                </button>
+              ))}
+            </div>
 
-          <SectionLayout
-            image={image}
-            features={features}
-            descriptions={descriptions}
-            desbutton={desbutton}
-            title={title}
-          />
+            <SectionLayout
+              image={image}
+              features={features}
+              descriptions={descriptions}
+              desbutton={desbutton}
+              title={title}
+            />
+          </div>
         </div>
-      </div>
-      {/* 6nd */}
-      {/* 7nd */}
-      {/* <div className="w-full px-4 py-2 md:py-10 bg-[#f4f7fb]">
+        {/* 6nd */}
+        {/* 7nd */}
+        {/* <div className="w-full px-4 py-2 md:py-10 bg-[#f4f7fb]">
         <div className="text-center px-4 pb-10">
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-gray-900 heading">
             Learn & Lead! Read Our Blogs
@@ -1375,74 +1454,53 @@ const Home = () => {
           </div>
         </div>
       </div> */}
-      {/* 7nd */}
-      {/* 8nd */}
-      <div className=" bg-[#F6EDF9] flex justify-center items-center py-2 md:py-15 px-4">
-        <div className="w-full max-w-4xl bg-[#F7F4F9] border border-[#D1CDE3] rounded-xl p-6 shadow-lg">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-center text-gray-900 heading mb-8">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]"> Celitix</span> FAQs
-          </h2>
+        {/* 7nd */}
+        {/* 8nd */}
+        <div className=" bg-[#F6EDF9] flex justify-center items-center py-2 md:py-15 px-4">
+          <div className="w-full max-w-4xl bg-[#F7F4F9] border border-[#D1CDE3] rounded-xl p-6 shadow-lg">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-center text-gray-900 heading mb-8">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]">
+                {" "}
+                Celitix
+              </span>{" "}
+              FAQs
+            </h2>
 
-          <div className="bg-white rounded-xl py-4 px-2 sm:px-4">
-            {faqs.map((faq, idx) => (
-              <FaqItem
-                key={idx}
-                question={
-                  <h4 className="text-base md:text-xl font-medium text-gray-900 sub-heading">
-                    {faq.question}
-                  </h4>
-                }
-                // question={faq.question}
-                answer={
-                  <span className="text-sm md:text-md font-semibold text-gray-700 pera">
-                    {faq.answer}
-                  </span>
-                }
-                isOpen={openIndex === idx}
-                onClick={() => toggle(idx)}
-              />
-            ))}
+            <div className="bg-white rounded-xl py-4 px-2 sm:px-4">
+              {faqs.map((faq, idx) => (
+                <FaqItem
+                  key={idx}
+                  question={
+                    <h4 className="text-base md:text-xl font-medium text-gray-900 sub-heading">
+                      {faq.question}
+                    </h4>
+                  }
+                  // question={faq.question}
+                  answer={
+                    <span className="text-sm md:text-md font-semibold text-gray-700 pera">
+                      {faq.answer}
+                    </span>
+                  }
+                  isOpen={openIndex === idx}
+                  onClick={() => toggle(idx)}
+                />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-      {/* 8nd */}
+        {/* 8nd */}
 
+        {/* <Rcs/> */}
+        {/* <Ibd/> */}
+        {/* <About/> */}
+        {/* <ANewWayto3/> */}
+        {/* <MissedCall/> */}
+        {/* <OurClientele/> */}
+        {/* <ClickTwoCall/> */}
+        {/* <ClientsScroll2/> */}
 
-
-
-      {/* <Rcs/> */}
-      {/* <Ibd/> */}
-      {/* <About/> */}
-      {/* <ANewWayto3/> */}
-      {/* <MissedCall/> */}
-      {/* <OurClientele/> */}
-      {/* <ClickTwoCall/> */}
-      {/* <ClientsScroll2/> */}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      {/* <OurClientele /> */}
-      {/* <div className='flex flex-col items-center justify-center h-screen bg-gray-100'>
+        {/* <OurClientele /> */}
+        {/* <div className='flex flex-col items-center justify-center h-screen bg-gray-100'>
        <UniversalButton label="primary" variant="primary" className='relative z-10 transition-all duration-300 group-hover:text-white px-2 py-1 font-semibold mb-2' />
        <UniversalButton label="Transition" variant="transitionbtn" className='relative z-10 transition-all duration-300 group-hover:text-white px-2 py-1 font-semibold mb-2' />
       <UniversalButton label="Draw" variant="draw" className='px-2 py-1 font-semibold text-white mb-2' />
@@ -1450,8 +1508,8 @@ const Home = () => {
        <UniversalButton label="Glow" variant="glow" className='px-4 py-1 font-semibold text-white mb-2' />
      </div> */}
 
-      {/* Hero Section start here */}
-      {/* <div className="bg-blue-100 p-6 rounded-b-4xl">
+        {/* Hero Section start here */}
+        {/* <div className="bg-blue-100 p-6 rounded-b-4xl">
         <div className="flex justify-center items-center mt-20  ">
           <div className="flex flex-col justify-center items-center">
             <h1 className="text-7xl font-old text-gray-800 flex justify-center items-center popf">
@@ -1825,9 +1883,8 @@ const Home = () => {
           </div>
         </div>
       </div> */}
-
-
-    </div>
+      </div>
+    </>
   );
 };
 

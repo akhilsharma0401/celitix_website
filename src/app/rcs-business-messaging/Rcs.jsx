@@ -1,49 +1,25 @@
+
 "use client"
-import React, { use, useRef, useState } from 'react'
+import React, {  useRef, useState } from 'react'
+
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 // import { Helmet } from "react-helmet-async"
+import { AddMultimedia, Authenticationicon, BoostYourSales, BrandedProfiles, BuildCustomFlows, BuildYourBrand, CarouselMessages, Click2callicon, CTAButtons, CTALASTIMAGE, DisruptionFree, DriveMoreAction, Emailicon, FallbackChannels, IBDicon, MissedCallicon, OBDicon, RCS_Business_Messaging, RCSicon, RCSVsSMS, RichMediaCards, RichPromotionsRCS, SMSicon, SMSVsRCS, StartNowStayReady, TargetSmarter, TheCelitixRCS, TryOptimise, twoWaySMSicon, WhatsAppicon } from '../../../public/assets/images';
 // import { initScrollReveal } from '../../utils/ScrollReveal';
-import { Authenticationicon, AutomateWorkflows, Click2callicon, compliant, ConnectYourChannels, CTALASTIMAGE, Emailicon, IBDicon, InternationalSMS, LinkTracking, MissedCallicon, MultichannelIntegrations, MultichannelIntegrationsSms, Notify24, OBDicon, PerfectBackup, RCSicon, RealTimeAnalytics, SeasonalPromotions, SendSmarterFaste, SimpleSMS,  SMSicon, TechSupport, TransactionalSMS, twoWaySMSicon, Verifyusers, WhatsAppicon, WhyChooseSMS } from '../../../../public/assets/images';
 import Image from 'next/image';
 import Link from "next/link";
-import FaqItem from '@/app/components/Faq';
-import UniversalButton from '@/app/components/UniversalButton';
-import FormPopup from '@/app/components/FormPopup';
-import { SMS_Marketing } from '../../../../public/assets/images';
+import { CheckCircle, RemoveCircleOutline } from '@mui/icons-material';
+import FaqItem from '../components/Faq';
+import UniversalButton from '../components/UniversalButton';
+import FormPopup from '../components/FormPopup';
 
-import Notfound from '@/app/components/Not-found';
-// src/assets/mainicons/TechSupport.png
-
-import { cities } from '../../lib/cities'; // Your list of predefined cities
-import ErrorPage from '@/app/components/ErrorPage';
-
-export const dynamic = 'force-dynamic'; // Allow dynamic rendering
-
-
-const Sms = ({params}) => {
-  const cityParam = use(params);
-   const city = cityParam.city?.[0] || null;
-  const isKnownCity = city && cities.includes(city.toLowerCase()); // Check if the city is known
-  const formattedCity = city ? city.charAt(0).toUpperCase() + city.slice(1) : 'India'; // Format city name
-
-
-
+const Rcs = () => {
 
   // useEffect(() => {
   //   initScrollReveal();
   // }, []);
-  // 5th
-  const features = [
-    { title: 'Transactional SMS, OTP, Alerts, Updates', imgSrc: TransactionalSMS },
-    { title: 'Seasonal Promotions, Rewards, etc.', imgSrc: SeasonalPromotions },
-    { title: 'Link Tracking For Every Campaign', imgSrc: RealTimeAnalytics },
-    { title: 'Real Time Analytics', imgSrc: MultichannelIntegrationsSms },
-    { title: '24x7 Technical Support', imgSrc: LinkTracking },
-    { title: 'Multichannel Integrations', imgSrc: TechSupport },
-  ]
-  // 5th
 
-  // 7rd
+  // 8rd
   const blogPosts = [
     {
       date: "September 16, 2024",
@@ -94,8 +70,8 @@ const Sms = ({params}) => {
       behavior: "smooth",
     });
   };
-  // 7rd
   // 8rd
+  // 9rd
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggle = (index) => {
@@ -103,37 +79,35 @@ const Sms = ({params}) => {
   };
 
   const faqs = [
-  {
-    question: "How is Celitix’s SMS different?",
-    answer:
-      "Celitix lets you automate, segment, and track SMS campaigns. It's smarter and more effective than basic SMS tools.",
-  },
-  {
-    question: "What kind of messages can I send?",
-    answer:
-      "You can send transactional alerts (like OTPs or booking updates), promotional messages, service reminders, and more.",
-  },
-  {
-    question: "Can I integrate it with my CRM or app?",
-    answer:
-      "Yes! Celitix offers API access to connect with your systems and automate SMS flows.",
-  },
-  {
-    question: "Does SMS still work without internet?",
-    answer:
-      "Yes. SMS is delivered over mobile networks and works on all devices, with or without data.",
-  },
-  {
-    question: "Can I track SMS campaign results?",
-    answer:
-      "Yes. Use Celitix’s analytics to see delivery, open rates, and link clicks.",
-  },
-  {
-    question: `What does Celitix offer as an SMS marketing and OTP platform for businesses in ${formattedCity}?`,
-    answer: `Celitix helps ${formattedCity}-based businesses run bulk SMS campaigns and send OTPs with reliable delivery, DLT compliance, and simple dashboard control.`,
-  },
-];
-  // 8rd
+    {
+      question: "What is RCS Business Messaging (RBM)?",
+      answer: [
+        "RCS (Rich Communication Services) is the next evolution of SMS. It offers a rich messaging experience of apps like WhatsApp & Telegram on Android’s default messaging app.",
+        "RCS Business Messaging (RBM) is an enterprise-grade solution offered by Celitix. With it, companies can use this new platform for marketing and business growth."
+      ]
+    },
+    {
+      question: "How is RCS different from SMS?",
+      answer:
+        "Unlike SMS, RCS offers tons of smart features expected of modern messaging. While SMS promotional campaigns are limited, RBM lets you send branded promotional messages with images, buttons, carousels, and more.",
+    },
+    {
+      question: "Does RCS work on iPhones?",
+      answer:
+        "No. Apple has launched RCS support for iOS 18 in September 2024. However, due to network issues, RCS is currently only supported on Android in India. With Celitix, you can set fallback SMS options for iOS users.",
+    },
+    {
+      question: "Do users need an app to receive RCS?",
+      answer:
+        "No. RCS runs directly on all newer Android devices’ native messaging app, no installation required. Older Android devices must download the Google Messages app to use RCS.",
+    },
+    {
+      question: "How to get started with RBM?",
+      answer:
+        "Our team will guide you through the onboarding process. Click here to get started.",
+    },
+  ];
+  // 9rd
 
   const [openDialog, setOpenDialog] = useState(false);
 
@@ -147,31 +121,86 @@ const Sms = ({params}) => {
 
 
 
-if (isKnownCity){
+  // 5new addtion
+  const features = [
+    { label: 'Basic Text Messaging ', sms: true, rcs: true },
+    { label: ' Verified Brand Profiles', sms: false, rcs: true },
+    { label: ' Link Previews & Locations', sms: false, rcs: true },
+    { label: ' Carousels or Rich Card Messages', sms: false, rcs: true },
+    { label: 'CTA Action Buttons', sms: false, rcs: true },
+    { label: 'Rich Media (Pics, Vids, & Docs)', sms: false, rcs: true },
+
+  ];
+
+
+
+  // extra section
+
+  const tabs = [
+    { key: 'Rich Media Cards', label: 'Rich Media Cards' },
+    { key: 'Carousel Messages', label: 'Carousel Messages' },
+    { key: 'CTA Buttons', label: 'CTA Buttons' },
+    { key: 'Branded Profiles', label: 'Branded Profiles' },
+  ]
+
+  const tabData = {
+    'Rich Media Cards': {
+      heading: 'Tell A Bigger Story In Every Message',
+      description:
+        'Charm users with stunning images, videos, descriptions, & action buttons in a single card. Perfect for promotions, product highlights, or personalised recommendations. Designed to convert, built to impress.',
+      buttonText: 'Learn More',
+      image: RichMediaCards,
+    },
+    'Carousel Messages': {
+      heading: 'Showcase Multiple Products',
+      description: 'Let users swipe through rich carousel messages. Customise according to your needs. Each tile supports media, text, and its own CTA. It’s the closest you can get to a mini-landing page inside a message.',
+      buttonText: 'Learn More',
+      image: CarouselMessages,
+    },
+    'CTA Buttons': {
+      heading: 'Let Customers Tap Into Action',
+      description:
+        'Power your campaigns with one-touch buttons, from “Buy Now” to “Book a Slot” to “Get Directions.” Reduce friction, increase response. Combine with media cards to drive the next steps instantly. ',
+      buttonText: 'Get Started',
+      image: CTAButtons,
+    },
+    'Branded Profiles': {
+      heading: 'Messages With Identity, Not Just Reach',
+      description:
+        'Appear with your brand name, logo, and verified status. No random numbers, no uncertainty. More trust = more engagement. RCS brand profiles bring legitimacy and polish to every interaction.',
+      buttonText: 'Explore',
+      image: BrandedProfiles,
+    },
+  }
+
+  const [activeTab, setActiveTab] = useState('Rich Media Cards');
+  const content = tabData[activeTab];
+  // extra section
+
+
   return (
     <div>
-      {/* <Helmet>
-        <title>SMS Marketing & OTP Platform | Celitix </title>
-        <meta name="description" content=" Reach anyone, anywhere, instantly. Use Celitix’s SMS platform to deliver OTPs, alerts, and promotional messages and drive results." />
-        <link rel="preload" as="image" href={SMS_Marketing} crossorigin="anonymous" />
-      </Helmet> */}
 
+      {/* <Helmet>
+        <title>RCS Business Messaging | Celitix</title>
+        <meta name="description" content=" Break free from the limitations of SMS marketing. Engage users with buttons, media, and branded messages via Celitix’s RCS platform." />
+        <link rel="preload" as="image" href={RCS_Business_Messaging} crossorigin="anonymous" />
+      </Helmet> */}
 
       {/* 1st */}
       <section className="bg-[#f7ebfc] pt-25 md:pt-35 px-4 sm:px-6 lg:px-20">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10 pb-10 md:pb-20">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10 pb-10 md:pb-20 sub-heading">
           <div className="space-y-6 box-reveal-left">
-            <span className="inline-block bg-purple-700 text-white text-md sub-heading font-bold px-4 py-1 rounded-full uppercase tracking-wide popf">
-              SMS Solutions
+            <span className="inline-block bg-purple-700 sub-heading text-white text-md font-bold px-4 py-1 rounded-full uppercase tracking-wide">
+              RCS Business Messaging
             </span>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl heading font-bold text-gray-900 popf leading-tight">
-              Reach<span className="text-transparent bg-clip-text  bg-gradient-to-r from-[#2b40b0] to-[#36bae2]">  Instantly </span> with SMS 
-              
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 popf leading-tight heading">
+              Get<span className="text-transparent bg-clip-text  bg-gradient-to-r from-[#2b40b0] to-[#36bae2]"> Visibility </span>With RCS
             </h1>
 
             <p className="text-gray-600 text-base md:text-lg max-w-md pera">
-              Connect with every customer through fast, reliable and low-cost SMS messaging + SMS API Integration.
+              Enrich your promotions with RCS Business Messaging. Provide a better experience across channels. Combine with SMS fallbacks.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -191,12 +220,12 @@ if (isKnownCity){
 
           <div className="flex justify-center md:justify-end">
             <Image
-              src={SMS_Marketing}
-              alt="Reach Instantly with SMS"
+              src={RCS_Business_Messaging}
+              alt="RCS Business Messaging"
               loading="eager"
               // fetchpriority="high"
               // crossorigin="anonymous"
-              title='Reach Instantly with SMS'
+              title='RCS Business Messaging'
               className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg object-contain box-reveal-bottom"
             />
           </div>
@@ -204,10 +233,10 @@ if (isKnownCity){
       </section>
       {/* 1st */}
       {/* 2st */}
-      <section className="bg-[#f7ebfc] py-5 md:py-16 px-4 sm:px-6 lg:px-25">
+      <section className="bg-[#f7ebfc] py-2 md:py-10 px-4 sm:px-6 lg:px-25">
         <div className="text-center px-1 md:px-4 pb-5 md:pb-15">
-          <h2 className="text-2xl md:text-4xl lg:text-5xl heading font-semibold text-gray-900">
-            Simple Reliable Everywhere
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-gray-900 popf heading">
+            Rich Promotions, Half the Price
           </h2>
         </div>
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 items-start justify-center">
@@ -218,16 +247,16 @@ if (isKnownCity){
               <div className="absolute -left-7 top-1/2 -translate-y-1/2 z-10">
                 <div className="w-15 h-15 bg-blue-500 rounded-full shadow-md flex items-center justify-center overflow-hidden">
                   <Image
-                    src={Notify24}
-                    alt="Feature Icon"
+                    src={BuildYourBrand}
+                    alt="BuildYourBrand"
                     className="w-8 h-8 object-contain"
                   />
                 </div>
               </div>
-              <div className="bg-white border border-black  rounded-[20px] p-5 pl-8 relative z-0">
-                <h3 className="text-base sm:text-lg heading  font-bold text-black mb-1 ml-4">Notify 24/7 </h3>
+              <div className="bg-white border border-black rounded-[20px] p-5 pl-8 relative z-0">
+                <h3 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-4">Build Your Brand</h3>
                 <p className="text-md text-black pera ml-4">
-                  Automatically update your customers in real time. Integrate your system with Celitix’s SMS API.
+                  Flaunt your logo & brand colors with a verified RCS profile. Make every message official.
                 </p>
               </div>
             </div>
@@ -237,17 +266,16 @@ if (isKnownCity){
               <div className="absolute -left-7 top-1/2 -translate-y-1/2 z-10">
                 <div className="w-15 h-15 bg-blue-500 rounded-full shadow-md flex items-center justify-center overflow-hidden">
                   <Image
-                    src={Verifyusers}
-                    alt="Feature Icon"
+                    src={DriveMoreAction}
+                    alt="DriveMoreAction"
                     className="w-8 h-8 object-contain"
                   />
                 </div>
               </div>
               <div className="bg-white border border-black rounded-[20px] p-5 pl-8 relative z-0">
-                <h3 className="text-base sm:text-lg heading font-bold text-black mb-1 ml-4">Verify Users </h3>
+                <h3 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-4">Drive More Action</h3>
                 <p className="text-md text-black pera ml-4">
-                  The most reliable and trusted channel for secure OTP & 2-Factor Authentication on Celitix.
-                </p>
+                  Nudge users to call, buy, tap or click instantly with action buttons on rich message cards.</p>
               </div>
             </div>
 
@@ -256,27 +284,27 @@ if (isKnownCity){
               <div className="absolute -left-7 top-1/2 -translate-y-1/2 z-10">
                 <div className="w-15 h-15 bg-blue-500 rounded-full shadow-md flex items-center justify-center overflow-hidden">
                   <Image
-                    src={MultichannelIntegrations}
+                    src={AddMultimedia}
                     alt="Feature Icon"
                     className="w-8 h-8 object-contain"
                   />
                 </div>
               </div>
               <div className="bg-white border border-black rounded-[20px] p-5 pl-8 relative z-0">
-                <h3 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-4">Multilingual</h3>
+                <h3 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-4">Add Multimedia</h3>
                 <p className="text-md text-black pera ml-4">
-                  Send SMS in any local language. Reach users in their mother tongue and get better results.
+                  Supercharge your messages with videos, images, carousels, QR codes, and dynamic cards.
                 </p>
               </div>
             </div>
           </div>
 
           {/* Center Mobile Mockup */}
-          <div className="flex justify-center order-second md:order-none">
+          <div className="flex justify-center order-first md:order-none">
             <Image
-              src={SimpleSMS}
+              src={RichPromotionsRCS}
               alt="Phone Mockup"
-              className="w-[260px] sm:w-[300px] md:w-[340px] lg:w-[370px] object-contain"
+              className="w-[260px] sm:w-[300px] md:w-[340px] lg:w-[380px] object-contain"
             />
           </div>
 
@@ -287,16 +315,16 @@ if (isKnownCity){
               <div className="absolute -left-7 top-1/2 -translate-y-1/2 z-10">
                 <div className="w-15 h-15 bg-blue-500 rounded-full shadow-md flex items-center justify-center overflow-hidden">
                   <Image
-                    src={compliant}
+                    src={FallbackChannels}
                     alt="Feature Icon"
                     className="w-8 h-8 object-contain"
                   />
                 </div>
               </div>
               <div className="bg-white border border-black rounded-[20px] p-5 pl-8 relative z-0">
-                <h3 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-4">100% Compliant</h3>
+                <h3 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-4">Fallback Channels</h3>
                 <p className="text-md text-black pera ml-4">
-                  Use approved templates and sender IDs to build trust. Celitix simplifies the rules for you.
+                  User doesn’t have RCS? No problem. Auto-switch to SMS so messages land every time.
                 </p>
               </div>
             </div>
@@ -306,16 +334,16 @@ if (isKnownCity){
               <div className="absolute -left-7 top-1/2 -translate-y-1/2 z-10">
                 <div className="w-15 h-15 bg-blue-500 rounded-full shadow-md flex items-center justify-center overflow-hidden">
                   <Image
-                    src={InternationalSMS}
+                    src={TargetSmarter}
                     alt="Feature Icon"
                     className="w-8 h-8 object-contain"
                   />
                 </div>
               </div>
               <div className="bg-white border border-black rounded-[20px] p-5 pl-8 relative z-0">
-                <h3 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-4">International SMS</h3>
+                <h3 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-4">Target Smarter</h3>
                 <p className="text-md text-black pera ml-4">
-                  Reach users across borders through global SMS routes. For SaaS, Tech, & global
+                  Segment your numbers into groups & schedule messages. Reach the right people at the right time.
                 </p>
               </div>
             </div>
@@ -325,16 +353,16 @@ if (isKnownCity){
               <div className="absolute -left-7 top-1/2 -translate-y-1/2 z-10">
                 <div className="w-15 h-15 bg-blue-500 rounded-full shadow-md flex items-center justify-center overflow-hidden">
                   <Image
-                    src={PerfectBackup}
+                    src={BoostYourSales}
                     alt="Feature Icon"
                     className="w-8 h-8 object-contain"
                   />
                 </div>
               </div>
               <div className="bg-white border border-black rounded-[20px] p-5 pl-8 relative z-0">
-                <h3 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-4">Perfect Backup </h3>
+                <h3 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-4">Boost Your Sales</h3>
                 <p className="text-md text-black pera ml-4">
-                  An ideal automated fallback. For when channels like Voice, RCS or WhatsApp are unsuccessful.
+                  Combine all features to drive results and make an impact. Optimise using analytics.
                 </p>
               </div>
             </div>
@@ -343,12 +371,12 @@ if (isKnownCity){
       </section>
       {/* 2st */}
       {/* 3st */}
-      <section className="bg-[#f7ebfc] py-5 md:py-16 px-4 sm:px-6 lg:px-20">
-        <div className="text-center px-1 md:px-4 pb-5 md:pb-15">
-          <h2 className="text-2xl md:text-4xl lg:text-5xl heading font-semibold text-gray-900 mb-1">
-            Why Choose Celitix?
+      <section className="bg-[#f7ebfc] py-2 md:py-10 px-4 sm:px-6 lg:px-20">
+        <div className="text-center px-1 md:px-4 pb-5 md:pb-8">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-gray-900 popf heading">
+            The Celitix Difference
           </h2>
-          <p className='text-sm md:text-xl sub-heading font-semibold text-gray-700'>SMS API is urgent, reliable, & developer-friendly. Add it to any channel with Celitix.
+          <p className='text-sm md:text-xl font-semibold text-gray-700 sub-heading'>Explore the power of RCS Business Messaging while managing existing workflows. Do it effortlessly, with Celitix.
           </p>
         </div>
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-12 lg:gap-20">
@@ -359,17 +387,17 @@ if (isKnownCity){
             <div className="flex items-center gap-4 bg-[#FFFFFF] p-6 rounded-3xl">
               <div className="w-14 h-14 sm:w-16 sm:h-16 bg-blue-500 rounded-xl sm:rounded-2xl shrink-0 flex items-center justify-center">
                 <Image
-                  src={AutomateWorkflows}
+                  src={DisruptionFree}
                   alt=""
                   className="w-6 h-6 sm:w-8 sm:h-8 object-contain"
                 />
               </div>
               <div>
-                <h3 className="text-base sm:text-lg heading font-bold text-black mb-1">
-                  Send Smarter, Faster
+                <h3 className="text-base sm:text-lg font-bold text-black mb-1 heading">
+                  Disruption-free
                 </h3>
                 <p className="text-md text-gray-800 leading-relaxed pera">
-                  Trigger OTPs, alerts, or promos automatically from your CRM, app or system. Deliver to users who don’t have internet.
+                  Run RCS alongside your existing communication workflows. No switching platforms, no mess.
                 </p>
               </div>
             </div>
@@ -378,17 +406,17 @@ if (isKnownCity){
             <div className="flex items-center gap-4 bg-[#FFFFFF] p-6 rounded-3xl">
               <div className="w-14 h-14 sm:w-16 sm:h-16 bg-blue-500 rounded-xl sm:rounded-2xl shrink-0 flex items-center justify-center">
                 <Image
-                  src={SendSmarterFaste}
+                  src={TryOptimise}
                   alt=""
                   className="w-6 h-6 sm:w-8 sm:h-8 object-contain"
                 />
               </div>
               <div>
                 <h3 className="text-base sm:text-lg font-bold text-black mb-1 heading">
-                  Connect Your Channels
+                  Try & Optimise
                 </h3>
                 <p className="text-md text-gray-800 leading-relaxed pera">
-                  Auto-send SMS after users engage with missed call or 2-way SMS campaigns. Craft seamless experiences across channels.
+                  Try new formats, test campaigns, & track what clicks. Segment customers into groups for better results.
                 </p>
               </div>
             </div>
@@ -397,17 +425,17 @@ if (isKnownCity){
             <div className="flex items-center gap-4 bg-[#FFFFFF] p-6 rounded-3xl">
               <div className="w-14 h-14 sm:w-16 sm:h-16 bg-blue-500 rounded-xl sm:rounded-2xl shrink-0 flex items-center justify-center">
                 <Image
-                  src={ConnectYourChannels}
+                  src={StartNowStayReady}
                   alt=""
                   className="w-6 h-6 sm:w-8 sm:h-8 object-contain"
                 />
               </div>
               <div>
                 <h3 className="text-base sm:text-lg font-bold text-black mb-1 heading">
-                  Automate Workflows That Work
+                  Start Now, Stay Ready
                 </h3>
                 <p className="text-md text-gray-800 leading-relaxed pera">
-                  Build, measure, & manage smart flows with SMS fallbacks. Manage onboarding, sales & more, all from one dashboard.
+                  Build your RCS muscle now, so when the market shifts, you're already ahead of the curve.
                 </p>
               </div>
             </div>
@@ -416,25 +444,25 @@ if (isKnownCity){
           {/* Right Image */}
           <div className="w-full flex justify-center">
             <Image
-              src={WhyChooseSMS}
+              src={TheCelitixRCS}
               alt="Why Celitix Makes It Better"
-              className="w-60 sm:w-80 md:w-[380px] lg:w-[420px] object-contain"
+              className="w-60 sm:w-80 md:w-[380px] lg:w-[400px] object-contain"
             />
           </div>
         </div>
       </section>
       {/* 3st */}
       {/* 4th */}
-      <div className='bg-[#f7ebfc] py-2 md:py-10 pt-10 md:pt-16'>
+      <div className='bg-[#f7ebfc] py-2 md:py-10 md:pt-10'>
         <div className=" bg-linear-to-r from-[#6b0da1] to-[#8447c6] grid grid-cols-1 md:grid-cols-2 h-auto py-10 px-6 sm:px-8 rounded-3xl shadow-2xl w-full sm:w-11/12 md:w-11/12 mx-auto items-center gap-8">
 
           {/* Left Section */}
           <div className="flex flex-col justify-center text-center md:text-left">
-            <h2 className="text-4xl sm:text-3xl md:text-4xl font-bold text-white popf heading">
-              Connect With Us
+            <h2 className="text-4xl sm:text-3xl md:text-4xl font-bold text-white popf heading ">
+              Ready to Sell More?
             </h2>
             <p className="text-sm md:text-lg text-white font-light popf mt-2 sub-heading">
-              Start now or learn how Celitix’s SMS solutions can help you.
+              Get a free demo or start your RCS onboarding process!
             </p>
           </div>
 
@@ -442,11 +470,12 @@ if (isKnownCity){
           <div className="flex justify-center md:justify-end">
             <div className="flex flex-col sm:flex-row gap-3 items-center">
               <UniversalButton
-                label="Consult Expert"
+                label="Start Now"
                 variant="transitionbtn"
                 className="px-6 py-3 rounded-full text-gray-900 bg-white hover:bg-gray-200 transition-all duration-300"
                 onClick={handleShowFormPopup}
               />
+
 
               <FormPopup
                 visible={openDialog}
@@ -458,39 +487,132 @@ if (isKnownCity){
         </div>
       </div>
       {/* 4th */}
-      {/* 5th */}
-      <div className="bg-[#f7ebfc] py-2 md:py-10 px-4 sm:px-5 lg:px-25">
-        <div className="text-center px-1 md:px-4 pb-5 md:pb-15">
-          <h2 className="text-2xl md:text-4xl lg:text-5xl heading font-semibold text-gray-900">
-            SMS API: Send, Sync, Automate
-
+      {/* extra */}
+      <section className="py-2 md:py-10 bg-[#f7ebfc]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl heading text-center mb-6 sm:mb-8">
+            Promote Better with RCS
           </h2>
 
-        </div>
+          {/* Tabs - scrollable on mobile */}
+          <div className="overflow-x-auto; flex lg:justify-center justify-start">
+            <div className="inline-flex space-x-4 ">
+              {tabs.map(tab => {
+                const active = tab.key === activeTab;
+                return (
+                  <button
+                    key={tab.key}
+                    onClick={() => setActiveTab(tab.key)}
+                    className={`relative px-4 py-2 uppercase text-xs sm:text-sm tracking-wide transition-colors focus:outline-none whitespace-nowrap ${active
+                        ? 'text-white bg-[#6E11B0] shadow-lg heading'
+                        : 'text-gray-800 sub-heading bg-[#E9D4FF] hover:bg-[#e4caff] hover:text-[#6b0da1]'
+                      } rounded-t-xl `}
+                  >
+                    {tab.label}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
 
-        <div className="flex flex-wrap -mx-2 sub-heading">
-          {features.map(({ title, imgSrc }, i) => (
-            <div key={i} className="w-full sm:w-1/2 md:w-1/3 px-2 mb-4">
-              <div
-                className="
-                border border-gray-300 rounded-lg
-                p-6 flex flex-col items-center
-                transition-colors duration-200 bg-[#8200DB] text-white"
-              >
+          {/* Content box */}
+          <div className="border border-[#6b0da1] rounded-3xl shadow-inner bg-white">
+            <div className="mt-4 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 p-6 sm:p-8">
+              {/* Text */}
+              <div className="flex flex-col justify-center space-y-4">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold sub-heading">
+                  {content.heading}
+                </h3>
+                <p className="text-gray-700 leading-relaxed pera text-sm sm:text-base">
+                  {content.description}
+                </p>
+                {/* <UniversalButton
+                label={content.buttonText}
+                variant="primary"
+                className="bg-[#6b0da1] text-white px-6 py-2 rounded-full shadow-md hover:bg-[#5a0b94] transition-transform transform hover:-translate-y-1"
+                onClick={() => console.log('Clicked', activeTab)}
+              /> */}
+              </div>
+
+              {/* Image */}
+              <div className="flex justify-center h-96">
                 <Image
-                  src={imgSrc}
-                  alt={title}
-                  className="w-8 h-8 mb-4"
+                  src={content.image}
+                  alt={activeTab}
+                  className="w-80 h-auto "
                 />
-                <p className="text-center">{title}</p>
               </div>
             </div>
-          ))}
+          </div>
+        </div>
+      </section>
+      {/* extra */}
+      {/* 5th */}
+      <div className="bg-[#f7ebfc] py-5 md:py-16 px-4 md:px-8 lg:px-16">
+        <h2 className="text-center text-2xl md:text-3xl font-bold text-gray-900 mb-2 heading">
+          RCS Vs. SMS: Unlock Superior Messaging Features
+        </h2>
+        <p className="text-center text-gray-700 max-w-2xl mx-auto mb-10 sub-heading">
+          Enterprises across industries can use our business communication solutions to communicate
+          effectively with customers through our omnichannel marketing platform.
+        </p>
+
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-6">
+          {/* SMS Image */}
+          <div className="w-full lg:w-1/4 flex justify-center">
+            <Image
+              src={SMSVsRCS}
+              alt="SMS Mobile"
+              className="w-44 sm:w-52"
+            />
+          </div>
+
+          {/* Features Table */}
+          <div className="w-full lg:w-2/4">
+            <div className="grid grid-cols-3 gap-2 font-medium text-center mb-2">
+              <div className="text-gray-900 sub-heading">SMS</div>
+              <div></div>
+              <div className="text-gray-900 sub-heading">RCS</div>
+            </div>
+            <div className="divide-y">
+              {features.map((feature, idx) => (
+                <div
+                  key={idx}
+                  className="grid grid-cols-3 items-center text-center py-2 text-sm md:text-base pera"
+                >
+                  <div>
+                    {feature.sms ? (
+                      <CheckCircle className="text-green-500" />
+                    ) : (
+                      <RemoveCircleOutline className="text-gray-400" />
+                    )}
+                  </div>
+                  <div className="text-gray-800 font-semibold">{feature.label}</div>
+                  <div>
+                    {feature.rcs ? (
+                      <CheckCircle className="text-green-500" />
+                    ) : (
+                      <RemoveCircleOutline className="text-gray-400" />
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* RCS Image */}
+          <div className="w-full lg:w-1/4 flex justify-center">
+            <Image
+              src={RCSVsSMS}
+              alt="RCS Mobile"
+              className="w-44 sm:w-52"
+            />
+          </div>
         </div>
       </div>
       {/* 5th */}
       {/* 6nd */}
-      <section className="bg-[#f6effc] px-4 sm:px-6 lg:px-20 py-2 md:py-10  text-center">
+      <section className="bg-[#f6effc] px-4 sm:px-6 lg:px-20 py-6 sm:py-10 md:py-16  text-center">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-purple-900 mb-2 md:mb-12 heading">
           Utilise Every Channel
         </h2>
@@ -572,15 +694,15 @@ if (isKnownCity){
         {/* Right Content */}
         <div className="w-full md:w-1/2 text-center md:text-left">
           <h2 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold mb-4 heading">
-            Start Sending with Celitix
+            Send Texts That Sell
           </h2>
           <p className="text-gray-200 text-sm sm:text-base md:text-lg font-light mb-6 max-w-xl sub-heading">
-            Get the most out of SMS with automation, segmentation, and real-time analytics.
+            Turn broadcasts into conversation. Connect with your customers and drive conversations.
           </p>
           <UniversalButton
-            label="Start Now "
+            label="Start Now"
             variant="transitionbtn"
-            className="px-4 py-2 rounded-xl text-black bg-white sm:px-4 sm:py-2 hover:bg-gray-200 transition-all duration-300"
+            className="px-4 py-2 rounded-xl text-black bg-white sm:px-4 sm:py-2 transition-all duration-300 "
             onClick={handleShowFormPopup}
           />
 
@@ -592,9 +714,9 @@ if (isKnownCity){
       </div>
       {/* 7nd */}
       {/* 8nd */}
-      {/* <div className="w-full px-4 py-5 md:py-20 bg-[#f4f7fb]">
-        <div className="text-center px-1 md:px-4 pb-5 md:pb-18">
-          <h2 className="text-2xl md:text-4xl lg:text-5xl heading font-semibold text-gray-900 popf">
+      {/* <div className="w-full px-4 py-2 md:py-10 bg-[#f7ebfc]">
+        <div className="text-center px-1 md:px-4 pb-5 md:pb-15">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-gray-900 popf heading">
             WhatsApp Marketing: Learn More
           </h2>
         </div>
@@ -619,7 +741,7 @@ if (isKnownCity){
                 </div>
 
                 <p className="text-gray-600 text-sm">{post.date}</p>
-                <h3 className="font-semibold sub-heading text-lg text-gray-800 mt-2 mb-3 line-clamp-2">
+                <h3 className="font-semibold text-lg text-gray-800 mt-2 mb-3 line-clamp-2 sub-heading">
                   {post.title}
                 </h3>
                 <p className="text-gray-600 text-sm mb-4 line-clamp-3">
@@ -659,10 +781,10 @@ if (isKnownCity){
       </div> */}
       {/* 8nd */}
       {/* 9th */}
-      <div className=" bg-[#f7ebfc] flex justify-center items-center py-10 md:py-20 px-4">
+      <div className=" bg-[#f7ebfc] flex justify-center items-center py-2 md:py-20 px-4">
         <div className="w-full max-w-4xl bg-[#F7F4F9] border border-[#D1CDE3] rounded-xl p-6 shadow-lg">
-          <h2 className="text-2xl md:text-4xl heading font-semibold text-center text-gray-900 popf mb-8">
-            SMS Services FAQs
+          <h2 className="text-2xl md:text-4xl font-semibold text-center text-gray-900 popf mb-8 heading">
+            RCS Services FAQs
           </h2>
 
           <div className="bg-white rounded-xl py-4 px-2 sm:px-4">
@@ -676,7 +798,7 @@ if (isKnownCity){
                 }
                 // question={faq.question}
                 answer={
-                  <span className="text-sm md:text-md sub-heading  font-semibold text-gray-700">
+                  <span className="text-sm md:text-md sub-heading font-semibold text-gray-700">
                     {faq.answer}
                   </span>
                 }
@@ -685,16 +807,13 @@ if (isKnownCity){
               />
             ))}
           </div>
+
         </div>
       </div>
       {/* 9th */}
     </div>
+
   )
 }
 
-return (
-  <ErrorPage/>
-)
-}
-
-export default Sms
+export default Rcs

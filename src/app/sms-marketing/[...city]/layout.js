@@ -8,15 +8,11 @@
 //   return <>{children}</>;
 // }
 
-
-
-
-
 // app/sms-marketing/[...city]/page.jsx
 
-import { cities,smskey } from '../../lib/cities'; 
+import { cities, smskey } from "../../lib/cities";
 
-export const dynamic = 'force-dynamic'; // Enable dynamic rendering
+export const dynamic = "force-dynamic"; // Enable dynamic rendering
 
 // export default function CitySMSPage({ params }) {
 //   const city = params.city?.[0] || null; // Get dynamic city parameter
@@ -47,29 +43,24 @@ export const dynamic = 'force-dynamic'; // Enable dynamic rendering
 //   );
 // }
 
-
-
-
-
-
-
-
-
-
-
-
 export async function generateMetadata({ params }) {
   const city = params.city?.[0] || null; // Get city parameter from the URL
-  const formattedCity = city ? city.charAt(0).toUpperCase() + city.slice(1) : 'India'; // Format the city
-  const isKnownCity = city && cities.includes(city.toLowerCase()); 
+  const formattedCity = city
+    ? city.charAt(0).toUpperCase() + city.slice(1)
+    : "India"; // Format the city
+  const isKnownCity = city && cities.includes(city.toLowerCase());
 
   return {
-    title: isKnownCity ? `SMS Marketing & OTP Platform in ${formattedCity}` : `SMS Marketing & OTP Platform | Celitix`,
+    title: isKnownCity
+      ? `SMS Marketing & OTP Platform in ${formattedCity}`
+      : `SMS Marketing & OTP Platform | Celitix`,
     description: isKnownCity
       ? `Reach anyone, anywhere, instantly right from ${formattedCity}. Use Celitix’s SMS platform to deliver OTPs, alerts, and promotional messages and drive results.`
       : `Reach anyone, anywhere, instantly. Use Celitix’s SMS platform to deliver OTPs, alerts, and promotional messages and drive results.`,
     alternates: {
-      canonical: city ? `http://localhost:3000/sms-marketing/${city}` : `localhost:3000/sms-marketing`,
+      canonical: city
+        ? `http://localhost:3000/sms-marketing/${city}`
+        : `localhost:3000/sms-marketing`,
     },
   };
 }
@@ -78,26 +69,15 @@ export default function Layout({ children }) {
   return <>{children}</>;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 // Assuming this is where your arrays are defined.
 
 // export async function generateMetadata({ params }) {
 //   const city = params.city?.[0] || null; // Get city parameter from the URL
 //   const key = params.key?.[0] || null; // Get service key parameter from the URL
-  
+
 //   const formattedCity = city ? city.charAt(0).toUpperCase() + city.slice(1) : 'India'; // Format the city
 //   const formattedSmsKey = key ? key.charAt(0).toUpperCase() + key.slice(1) : 'Service'; // Format the service key
-  
+
 //   const isKnownCity = city && cities.includes(city.toLowerCase()); // Check if city is in cities array
 //   const isKnownKey = key && smskey.includes(key.toLowerCase()); // Check if service key is in smskey array
 
@@ -105,23 +85,21 @@ export default function Layout({ children }) {
 //   const isKnownCityAndKey = isKnownCity && isKnownKey;
 
 //   return {
-//     title: isKnownCityAndKey 
-//       ? `${formattedSmsKey} in ${formattedCity}` 
+//     title: isKnownCityAndKey
+//       ? `${formattedSmsKey} in ${formattedCity}`
 //       : `SMS Marketing & OTP Platform | Celitix`,
-    
+
 //     description: isKnownCityAndKey
 //       ? `Reach anyone, anywhere, instantly right from ${formattedCity}. Use Celitix’s SMS platform to deliver OTPs, alerts, and promotional messages and drive results.`
 //       : `Reach anyone, anywhere, instantly. Use Celitix’s SMS platform to deliver OTPs, alerts, and promotional messages and drive results.`,
-    
+
 //     alternates: {
-//       canonical: city 
-//         ? `http://localhost:3000/${formattedSmsKey}` 
-//         : `http://localhost:3000/sms-marketing`,  
+//       canonical: city
+//         ? `http://localhost:3000/${formattedSmsKey}`
+//         : `http://localhost:3000/sms-marketing`,
 //     },
 //   };
 // }
-
-
 
 // export default function Layout({ children }) {
 //   return <>{children}</>;
