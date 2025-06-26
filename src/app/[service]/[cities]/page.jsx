@@ -23,9 +23,14 @@ export default async function Cities({ params }) {
     },
   };
   const WhatsAppCitiesMeta = {
-    title: `WhatsApp Business API & Chatbots | Celitix ${formattedCity}`,
+    title: `WhatsApp Business API & Chatbots in ${formattedCity}`,
     description: `Use WhatsApp to grow your ${formattedCity} business. Reach new heights with Celitix’s enterprise messaging solutions. Chatbots, Click to WhatsApp ads, CRM, & more.`,
   };
+
+  const RcsCitiesMeta = {
+  title: `RCS Business Messaging in ${formattedCity}`,
+  description: `Break free from the limitations of SMS marketing in ${formattedCity}. Engage users with buttons, media, and branded messages via Celitix’s RCS platform.`,
+};
 
   // //
   //   const RCSCitiesMeta = {
@@ -61,6 +66,17 @@ export default async function Cities({ params }) {
           description={WhatsAppCitiesMeta.description}
         />
         <WhatsApp />
+      </>
+    );
+  }
+  if (rcskey?.includes(service)) {
+    return (
+      <>
+        <Seo
+          title={RcsCitiesMeta.title}
+          description={RcsCitiesMeta.description}
+        />
+        <Rcs/>
       </>
     );
   }
