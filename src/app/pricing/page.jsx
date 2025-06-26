@@ -146,7 +146,7 @@ const Pricing = () => {
             </div>
 
             {/* 1st */}
-            {/* <section className="bg-[#f7ebfc] pt-25 md:pt-35 px-4 sm:px-6 lg:px-20">
+            <section className="bg-[#f7ebfc] pt-25 md:pt-35 px-4 sm:px-6 lg:px-20">
                 <div className="max-w-7xl mx-auto items-center pb-5 md:pb-10">
                     <div className="space-y-3 text-center box-reveal-left">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl heading font-bold text-gray-900 leading-tight">
@@ -173,7 +173,7 @@ const Pricing = () => {
                     </div>
 
                 </div>
-            </section> */}
+            </section>
             {/* 1st */}
             {/* 2nd */}
             {/* <section className="bg-[#f7ebfc] py-2 md:py-10 px-4 sm:px-6 lg:px-25">
@@ -223,7 +223,7 @@ const Pricing = () => {
             </section> */}
             {/* 2nd */}
             {/* 3rd */}
-            {/* <section className='bg-[#f7ebfc] py-20'>
+            <section className='bg-[#f7ebfc] py-20'>
                 <div className="px-4 py-8 max-w-7xl mx-auto">
                     <div className="flex gap-6">
 
@@ -329,7 +329,7 @@ const Pricing = () => {
                                                     </h5>
                                                 </div>
                                                 <div className="mt-4 flex justify-center items-center gap-4">
-                                                   
+                                                    {/* <span className="font-semibold text-gray-700">Type:</span> */}
                                                     {['Marketing', 'Utility', 'Authentication'].map(type => (
                                                         <button
                                                             key={type}
@@ -352,7 +352,7 @@ const Pricing = () => {
                                                 </div>
 
 
-                                               
+                                                {/* ← Your existing slider/currency block */}
                                                 <div className="mt-10 flex flex-col md:flex-row gap-6 items-center justify-center">
                                                     <div className="w-full md:w-2/3">
                                                         <label className="text-sm font-semibold text-gray-600 mb-1 flex justify-between">
@@ -399,7 +399,7 @@ const Pricing = () => {
 
 
                                                 <div className="mt-6 flex items-center justify-center gap-4">
-                                                 
+                                                    {/* currency toggles */}
                                                     <div className="flex gap-2">
                                                         {['inr', 'usd', 'eur'].map(cur => (
                                                             <button
@@ -414,7 +414,7 @@ const Pricing = () => {
                                                             </button>
                                                         ))}
                                                     </div>
-                                                
+                                                    {/* total */}
                                                     <div className="flex items-baseline justify-center gap-2">
                                                         <div className="text-lg font-bold text-blue-800">
                                                             Total: {formatCurrency(total, currency)}
@@ -533,7 +533,9 @@ const Pricing = () => {
                                                         ))}
                                                     </div>
 
-                                                   
+                                                    {/* <div className="text-lg font-bold text-blue-800">
+                                                        Total: {formatCurrency(total, currency)}
+                                                    </div> */}
                                                     <div className="flex items-baseline justify-center gap-2">
                                                         <div className="text-lg font-bold text-blue-800">
                                                             Total: {formatCurrency(total, currency)}
@@ -1420,7 +1422,27 @@ const Pricing = () => {
                                 )}
 
 
-                               
+                                {/* <div className="flex justify-start mt-2 md:mt-5">
+                                    <UniversalButton
+                                        label={channel}
+                                        variant="brutal"
+                                        className="bg-[#9B44B6] border-[#9B44B6] text-white px-5 py-2 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6]"
+                                        onClick={handleShowFormPopup}
+                                    />
+
+                                    <FormPopup
+                                        visible={openDialog}
+                                        onHide={handleCloseDialog}
+                                    />
+                                </div> */}
+
+                                {/* <div style={{ backgroundColor: 'red', display: 'inline-block' }}>
+                                    <Lottie
+                                        options={defaultOptions}
+                                        height={height}
+                                        width={width}
+                                    />
+                                </div> */}
 
 
                             </div>
@@ -1434,10 +1456,10 @@ const Pricing = () => {
 
                     </div>
                 </div>
-            </section> */}
+            </section>
             {/* 3rd */}
             {/* 4th */}
-            {/* <div className="flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-[#A05CD7] to-[#4B0FA6] px-6 md:px-12 py-5 md:py-20 md:pt-20">
+            <div className="flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-[#A05CD7] to-[#4B0FA6] px-6 md:px-12 py-5 md:py-20 md:pt-20">
 
                 <div className="relative w-full md:w-1/2 flex justify-center mb-10 md:mb-0">
                     <Image
@@ -1466,7 +1488,7 @@ const Pricing = () => {
                         onHide={handleCloseDialog}
                     />
                 </div>
-            </div> */}
+            </div>
             {/* 4th */}
         </>
     );
