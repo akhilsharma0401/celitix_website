@@ -59,8 +59,8 @@ export async function generateMetadata({ params }) {
       : `Reach anyone, anywhere, instantly. Use Celitix’s SMS platform to deliver OTPs, alerts, and promotional messages and drive results.`,
     alternates: {
       canonical: city
-        ? `http://localhost:3000/sms-marketing/${city}`
-        : `localhost:3000/sms-marketing`,
+        ? `https://www.celitix.com/sms-marketing/${city}`
+        : `https://www.celitix.com/sms-marketing`,
     },
   };
 }

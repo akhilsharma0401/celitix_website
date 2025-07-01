@@ -2,6 +2,9 @@
 export const metadata = {
   title: "Thank You | Celitix",
   description: "Thank you for connecting with Celitix! We’ll be in touch soon to help you unlock smarter, faster, and more effective communication for your business.",
+  alternates: {
+    canonical: "https://www.celitix.com/thank-you",
+  },
 };
 
 export default function Layout({ children }) {

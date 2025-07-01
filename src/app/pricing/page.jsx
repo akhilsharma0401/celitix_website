@@ -298,17 +298,17 @@ const Pricing = () => {
                                         setCurrency('inr'); // Reset currency to INR (or your default)
                                     }}
                                 >
-                                    <option value="">Select Channel</option>
+                                    {/* <option value="">Select Channel</option> */}
                                     <option value="WhatsApp">WhatsApp</option>
                                     <option value="RCS">RCS</option>
                                     <option value="SMS">SMS</option>
-                                    <option value="Twoway">2 Way SMS</option>
-                                    <option value="Inbound">Inbound Dialer</option>
                                     <option value="Outbound">Outbound Dialer</option>
+                                    {/* <option value="Twoway">2 Way SMS</option>
+                                    <option value="Inbound">Inbound Dialer</option>
                                     <option value="clicktocall">Click to Call</option>
                                     <option value="Missed">Missed Call</option>
                                     <option value="Authenticator">Authenticator</option>
-                                    <option value="EmailOTP">Email OTP</option>
+                                    <option value="EmailOTP">Email OTP</option> */}
                                 </select>
 
                                 {channel && (

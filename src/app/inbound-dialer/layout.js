@@ -2,6 +2,9 @@
 export const metadata = {
   title: "Inbound Dialer(IBD) & IVR Solutions | Celitix",
   description: "Manage incoming calls in large volumes with smart routing & records. Improve sales, support, and customer service with Celitix’s Inbound Dialer & IVR solutions.",
+  alternates: {
+    canonical: "https://www.celitix.com/inbound-dialer",
+  },
 };
 
 export default function Layout({ children }) {

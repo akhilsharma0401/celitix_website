@@ -2,6 +2,9 @@
 export const metadata = {
   title: "SMS Marketing & OTP Platform | Celitix",
   description: "Reach anyone, anywhere, instantly. Use Celitix’s SMS platform to deliver OTPs, alerts, and promotional messages and drive results.",
+  alternates: {
+    canonical: "https://www.celitix.com/sms-marketing",
+  },
 };
 
 export default function Layout({ children }) {

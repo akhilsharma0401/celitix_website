@@ -16,21 +16,25 @@ export default async function Cities({ params }) {
   const SMSCitiesMeta = {
     title: `SMS Marketing & OTP Platform in ${formattedCity}`,
     description: `Reach anyone, anywhere, instantly right from ${formattedCity}. Use Celitix’s SMS platform to deliver OTPs, alerts, and promotional messages and drive results.`,
-    alternates: {
-      canonical: cities
-        ? `http://localhost:3000/sms-marketing/${cities}`
-        : `localhost:3000/sms-marketing`,
-    },
+    link: cities
+      ? `https://www.celitix.com/sms-marketing/${cities}`
+      : `https://www.celitix.com/sms-marketing`,
   };
   const WhatsAppCitiesMeta = {
     title: `WhatsApp Business API & Chatbots in ${formattedCity}`,
     description: `Use WhatsApp to grow your ${formattedCity} business. Reach new heights with Celitix’s enterprise messaging solutions. Chatbots, Click to WhatsApp ads, CRM, & more.`,
+    link: cities
+      ? `https://www.celitix.com/whatsapp-business-platform/${cities}`
+      : `https://www.celitix.com/whatsapp-business-platform`,
   };
 
   const RcsCitiesMeta = {
-  title: `RCS Business Messaging in ${formattedCity}`,
-  description: `Break free from the limitations of SMS marketing in ${formattedCity}. Engage users with buttons, media, and branded messages via Celitix’s RCS platform.`,
-};
+    title: `RCS Business Messaging in ${formattedCity}`,
+    description: `Break free from the limitations of SMS marketing in ${formattedCity}. Engage users with buttons, media, and branded messages via Celitix’s RCS platform.`,
+    link: cities
+      ? `https://www.celitix.com/rcs-business-messaging/${cities}`
+      : `https://www.celitix.com/rcs-business-messaging`,
+  };
 
   // //
   //   const RCSCitiesMeta = {
@@ -45,6 +49,7 @@ export default async function Cities({ params }) {
         <Seo
           title={SMSCitiesMeta.title}
           description={SMSCitiesMeta.description}
+          link={SMSCitiesMeta.link}
         />
         <Sms />
       </>
@@ -64,6 +69,7 @@ export default async function Cities({ params }) {
         <Seo
           title={WhatsAppCitiesMeta.title}
           description={WhatsAppCitiesMeta.description}
+          link={WhatsAppCitiesMeta.link}
         />
         <WhatsApp />
       </>
@@ -75,8 +81,9 @@ export default async function Cities({ params }) {
         <Seo
           title={RcsCitiesMeta.title}
           description={RcsCitiesMeta.description}
+          link={RcsCitiesMeta.link}
         />
-        <Rcs/>
+        <Rcs />
       </>
     );
   }

@@ -2,6 +2,9 @@
 export const metadata = {
   title: "Privacy Policy | Celitix",
   description: "Your privacy matters. Read how Celitix collects, uses, and protects your personal information while delivering seamless communication experiences.",
+  alternates: {
+    canonical: "https://www.celitix.com/privacy-policy",
+  },
 };
 
 export default function Layout({ children }) {
