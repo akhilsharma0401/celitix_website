@@ -37,7 +37,7 @@ const CookieConsent = () => {
           <div className="cookie-consent-background"></div>
 
           {/* Cookie consent banner */}
-          <div className="cookie-consent-banner">
+          <div className="cookie-consent-banner fixed bottom-0 left-1/2 md:left-65">
             {/* <div className="cookie-illustration">
               <Image src={Cookieimg} alt="Cookie Monster" height={100} />
             </div> */}
@@ -86,9 +86,7 @@ const CookieConsent = () => {
 
         /* Cookie consent banner itself */
         .cookie-consent-banner {
-          position: fixed;
-          bottom: 0%;
-          left: 20%;
+          
           transform: translateX(-50%);
           background-color: #F7EBFC;
           color: black;
