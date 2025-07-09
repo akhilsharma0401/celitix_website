@@ -28,6 +28,7 @@ import L1obd from "./Icons/custom-obd-solution-icon.png"
 import L1ibd from "./Icons/custom-ibd-ivr-solution-icon.png"
 import L1email from "./Icons/whatsapp-business-api-icon.png"
 import L1Appauth from "./Icons/mobile-app-authentication-icon.png"
+import chat from "./videos/CELITIX-FAV-GIF.gif"
 
 
 // header images
@@ -572,7 +573,7 @@ import OmnichannelLanding from "./imagesMain/OmnichannelLanding.png"
 // landingpage
 
 export {
-
+    chat,
     // careerr
     heroimgcareer,
     careercardicon1,

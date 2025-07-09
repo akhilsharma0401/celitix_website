@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { Efficiency, Excellence, Improvement, Integrity, Partnership, featureicon1, featureicon2, featureicon3, featureicon4, heroimg, brandgrowth, bookingschedule } from '../../../public/assets/images';
 import UniversalButton from '../components/UniversalButton'
 import FormPopup from '../components/FormPopup';
+import ChatLauncher from '../components/Common/ChatLauncher';
 
 
 
@@ -98,6 +99,7 @@ const About = () => {
    
   return (
     <div>
+      
       {/* <Helmet>
         <title>About Celitix | Smarter Business Communication </title>
         <meta name="description" content="Discover the team behind Celitix: Our mission, values, and how we help businesses simplify communication." />

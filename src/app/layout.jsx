@@ -7,6 +7,7 @@ import GlobalToaster from "@/utils/GlobalToaster";
 import { CELITIX_FAV_ICON } from "../../public/assets/images.js";
 import Head from "next/head";
 import CookieConsent from "./components/CookieConsent";
+import ChatLauncher from "./components/Common/ChatLauncher";
 
 const lora = Lora({
   subsets: ["latin"],
@@ -133,6 +134,8 @@ export default function RootLayout({ children }) {
         <CookieConsent />
         <main>{children}</main>
         <Footer />
+        <ChatLauncher />
+        {/* <ChatWindow /> */}
       </body>
     </html>
   );

@@ -112,6 +112,8 @@ import FormPopup from "./components/FormPopup";
 import OurClientele from "./components/OurClientele";
 import FaqItem from "./components/Faq";
 import { Seo } from "@/utils/seo";
+import ChatWindow from "./components/Common/ChatWindow";
+import ChatLauncher from "./components/Common/ChatLauncher";
 const Home = () => {
   const router = useRouter();
   // useEffect(() => {
@@ -948,6 +950,7 @@ const Home = () => {
   const hero = "/assets/videos/mainvideo.mp4";
   return (
     <>
+      {/* <ChatLauncher /> */}
       <Seo title={metaData.title} description={metaData.description} />
       <div className="bg-[#f6edf9] relative">
         {/* <div style={{
