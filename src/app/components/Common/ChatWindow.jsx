@@ -83,7 +83,7 @@ export default function ChatWindow({ onClose }) {
             />
           </div>
           <div>
-            <h2 className="font-semibold text-lg leading-tight heading">Celitix Chat</h2>
+            <h2 className="font-semibold text-lg leading-tight heading">Celitix</h2>
             <p className="text-xs opacity-75 sub-heading">Online</p>
           </div>
         </div>
