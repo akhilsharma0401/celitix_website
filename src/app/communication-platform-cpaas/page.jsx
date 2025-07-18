@@ -274,6 +274,7 @@ const Landing = () => {
             image: WhatsApp_Business_Platform,
             desc: 'Leverage the world’s #1 messaging app. With advanced features like Chatbots, Click-to-WhatsApp ads, Branded Profiles and more.',
             ButtonName: 'Start Now',
+            altname: 'whatsapp business api',
           },
         },
         {
@@ -284,6 +285,7 @@ const Landing = () => {
             image: RCS_Business_Messaging,
             desc: 'Rich, interactive messaging on native mobile apps. Shoot epic promotions, update and support users with action buttons, rich media and more!',
             ButtonName: 'Explore',
+            altname: 'Rcs Message',
           },
         },
         {
@@ -294,6 +296,7 @@ const Landing = () => {
             image: SMS_Marketing,
             desc: 'Perfect for urgent updates and reliable delivery. OTPs, Transactional messages, Bulk Promotions and API Integrations.',
             ButtonName: 'Learn More',
+            altname: 'Bulk messaging services',
           },
         },
         {
@@ -304,6 +307,7 @@ const Landing = () => {
             image: Two_Way_SMS,
             desc: 'Create engaging, interactive SMS campaigns. Take votes, run quizzes, get confirmations and generate leads!',
             ButtonName: 'Get Started',
+            altname: 'Two way SMS',
           },
         },
         {
@@ -314,6 +318,7 @@ const Landing = () => {
             image: Inbound_Dialer,
             desc: 'Never miss a call again with customisable IVR menus, smart routing and call records. Perfect for customer support helplines.',
             ButtonName: 'Learn More',
+            altname: 'IVR sysytem',
           },
         },
         {
@@ -324,6 +329,7 @@ const Landing = () => {
             image: Outbound_Dialer,
             desc: 'Start conversations with bulk voice call campaigns and IVR integrations. Pre-record audios in local languages or use AI-generated text-to-speech.',
             ButtonName: 'Explore ',
+            altname: 'Outbound dialer',
           },
         },
         {
@@ -334,6 +340,7 @@ const Landing = () => {
             image: Click_to_Call,
             desc: 'Enhance your app or site’s user experience (UX). Let customers and agents connect effortlessly over voice call with secure number masking.',
             ButtonName: 'Know More ',
+            altname: 'Click to Call',
           },
         },
         {
@@ -344,6 +351,7 @@ const Landing = () => {
             image: Missed_Call_Services,
             desc: 'Get leads, votes or confirmations with a dedicated missed call number. Auto trigger opt-ins, callbacks or custom actions when users call.',
             ButtonName: 'Start Now',
+            altname: 'Missed call service provider',
           },
         },
         {
@@ -354,6 +362,7 @@ const Landing = () => {
             image: App_Authenticator,
             desc: 'Verify users without OTPs. Frictionless security that’s user-friendly and easier for your dev team.',
             ButtonName: 'Explore',
+            altname: 'Authenticator App',
           },
         },
         {
@@ -364,6 +373,7 @@ const Landing = () => {
             image: Email_Solutions,
             desc: 'Verify users with pre-made HTML email templates. Great for onboarding authentication flows and MFA.',
             ButtonName: 'Check It Out',
+            altname: 'Email OTP verification',
           },
         },
       ];
@@ -624,8 +634,10 @@ const Landing = () => {
                       <div className="flex flex-col items-center justify-center text-center gap-4 px-4 sm:px-6 md:px-10">
                         <Image
                           src={activeService.content.image}
-                          alt={activeService.name}
+                          alt={activeService.content.altname}
                           className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl"
+                           priority={true}
+                          quality={75}
                         />
                         <p className="text-gray-600 text-base md:text-lg font-medium pera">{activeService.content.desc}</p>
             

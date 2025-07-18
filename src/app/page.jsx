@@ -953,26 +953,9 @@ const Home = () => {
       {/* <ChatLauncher /> */}
       <Seo title={metaData.title} description={metaData.description} />
       <div className="bg-[#f6edf9] relative">
-        {/* <div style={{
-        position: 'absolute',
-        width: '100%',
-        height: '100%',
-        top: 0,
-        left: 0,
-        zIndex: 10, // above background, below/around content
-      }}>
-        <OurClientele num={5} />
-      </div> */}
+        
 
-        {/* <div style={{
-        position: 'absolute',
-        width: '100%',
-        height: '100%',
-        top: 0,
-        left: 0,
-        zIndex: 10, // above background, below/around content
-      }}>
-      </div> */}
+       
         {/* <OurClientele num={5} /> */}
 
         {/* <Header /> */}
@@ -1055,7 +1038,7 @@ const Home = () => {
               allowTouchMove={true}
             >
               {[...logos, ...logos].map((logo, index) => (
-                <SwiperSlide key={index} style={{ width: "auto" }}>
+                <SwiperSlide key={index} className="SwiperSlide">
                   <Image
                     src={logo.src}
                     alt={logo.alt}

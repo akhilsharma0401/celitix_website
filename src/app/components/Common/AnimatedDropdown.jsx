@@ -45,9 +45,9 @@ const AnimatedDropdown = ({
             </button>
 
             <div
-                className={`absolute z-10 w-full bg-white border border-gray-300 rounded-md shadow-lg mt-1 transition-all duration-200 overflow-hidden ${isOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
+                className={`absolute z-10 w-full bg-white border border-gray-300 rounded-md shadow-lg mt-1 transition-all duration-200 overflow-hidden ${isOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0 dropdownmain"
                     }`}
-                style={{ transition: "all 0.2s ease-in-out" }}
+                // style={{ transition: "all 0.2s ease-in-out" }}
             >
                 <ul className="py-1 text-sm text-gray-700">
                     {options.map((option) => (

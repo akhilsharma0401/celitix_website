@@ -19,13 +19,8 @@ export const TurnstileComponent = ({ onChange }) => {
   }, [onChange]);
 
   return (
-    <div
-      style={{
-        backgroundColor: '#fff', // Set wrapper background
-        padding: '10px',
-        borderRadius: '8px',
-        display: 'inline-block'
-      }}
+    <div className="turnstile-wrapper"
+      
     >
       <div ref={turnstileRef} />
     </div>

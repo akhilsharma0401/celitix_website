@@ -1,8 +1,26 @@
+"use client"
+
 import { useState, useRef, useEffect } from "react";
 import { FiSend, FiX } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { CELITIX_FAV_ICON } from "../../../../public/assets/images";
+import axios from "axios";
+import Cookies from "js-cookie"
+
+
+async function generateSessionId() {
+  try {
+    const res = await axios.get("https://instamailz.in/session/new")
+    console.log(res?.data?.sessionId)
+    Cookies.set('session_id', res?.data?.sessionId, { expires: 1 })
+    return res?.data?.sessionId
+  }
+  catch (e) {
+    console.log(e)
+  }
+}
+
 
 
 function TypingText({ text, onComplete }) {
@@ -22,6 +40,7 @@ function TypingText({ text, onComplete }) {
 }
 
 export default function ChatWindow({ onClose }) {
+
   const [messages, setMessages] = useState([
     { from: "bot", text: "Welcome to Celitix!", isTyping: false },
   ]);
@@ -34,28 +53,28 @@ export default function ChatWindow({ onClose }) {
   }, [messages]);
 
   const sendMessage = async () => {
+
+
     if (!input.trim()) return;
-    // add user message
     setMessages((m) => [...m, { from: "user", text: input }]);
     setInput("");
-
-    // add typing indicator
     setMessages((m) => [...m, { from: "bot", text: "", isTyping: true }]);
 
+    let session_id = Cookies.get("session_id")
+    if (!session_id) {
+      session_id = await generateSessionId()
+    }
     try {
-      const res = await fetch("https://570ad9b9dac7.ngrok-free.app/chat", {
+      const res = await fetch("https://instamailz.in/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           "x-api-key": "YmcD26P9FrIx",
         },
-        body: JSON.stringify({ question: input }),
+        body: JSON.stringify({ question: input, sessionId: session_id }),
       });
       const { answer } = await res.json();
-
-      // replace typing indicator with animated text
       setMessages((m) => {
-        // remove typing placeholder
         const withoutTyping = m.filter((msg) => !msg.isTyping);
         return [...withoutTyping, { from: "bot", text: answer, isTyping: false }];
       });
@@ -105,13 +124,12 @@ export default function ChatWindow({ onClose }) {
               className={`flex ${msg.from === "user" ? "justify-end" : "justify-start"}`}
             >
               <div
-                className={`max-w-[70%] px-4 py-2 text-sm leading-snug whitespace-pre-wrap break-words ${
-                  msg.from === "user"
-                    ? "bg-[#873bcae7] text-white rounded-l-lg rounded-tr-lg shadow-lg sub-heading"
-                    : "bg-gray-100 text-gray-800 rounded-r-lg rounded-bl-lg shadow sub-heading text-wrap whitespace-pre-wrap"
-                }`}
+                className={`max-w-[70%] px-4 py-2 text-sm leading-snug whitespace-pre-wrap break-words ${msg.from === "user"
+                  ? "bg-[#873bcae7] text-white rounded-l-lg rounded-tr-lg shadow-lg sub-heading"
+                  : "bg-gray-100 text-gray-800 rounded-r-lg rounded-bl-lg shadow sub-heading text-wrap whitespace-pre-wrap"
+                  }`}
               >
-               {msg.from === "user" ? (
+                {msg.from === "user" ? (
                   msg.text
                 ) : msg.isTyping ? (
                   <span className="italic text-gray-400 sub-heading">Typing...</span>

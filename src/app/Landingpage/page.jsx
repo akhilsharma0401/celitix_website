@@ -595,7 +595,7 @@ Connect online platforms to direct communications, reach more people, and let th
                         allowTouchMove={true}
                     >
                         {[...logos, ...logos].map((logo, index) => (
-                            <SwiperSlide key={index} style={{width: 'auto'}}>
+                            <SwiperSlide key={index} className='SwiperSlide'>
                                 <Image
                                     src={logo.src}
                                     alt={logo.alt}

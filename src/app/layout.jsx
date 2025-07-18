@@ -32,11 +32,16 @@ const poppins = Poppins({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <Head>
+      {/* <Head>
 
         <link rel="icon" href={CELITIX_FAV_ICON} />
-      </Head>
+      </Head> */}
       <head>
+        <link rel="icon" type="image/svg+xml" href="/assets/Icons/CELITIXFAVICON.svg" />
+        {/* <title>Celitix</title> */}
+        <link rel="canonical" href="https://www.celitix.com"/>
+        
+
         {/* <!-- Google Tag Manager --> */}
         <Script
           id="gtm-init"
@@ -116,7 +121,7 @@ export default function RootLayout({ children }) {
             src="https://www.googletagmanager.com/ns.html?id=GTM-MMDW54T8"
             height="0"
             width="0"
-          // style="display:none;visibility:hidden"
+       
           ></iframe>
         </noscript>
 
@@ -125,7 +130,7 @@ export default function RootLayout({ children }) {
           <img
             height="1"
             width="1"
-            // style="display:none"
+           
             src="https://www.facebook.com/tr?id=587446320662611&ev=PageView&noscript=1"
           />
         </noscript>
@@ -134,8 +139,7 @@ export default function RootLayout({ children }) {
         <CookieConsent />
         <main>{children}</main>
         <Footer />
-        {/* <ChatLauncher /> */}
-        {/* <ChatWindow /> */}
+        <ChatLauncher />
       </body>
     </html>
   );
