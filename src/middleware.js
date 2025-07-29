@@ -2,7 +2,10 @@ import { NextResponse } from "next/server";
 
 // Middleware to check for secretKey in API requests
 export async function middleware(request) {
-  // Only apply to API routes
+
+  if (request.nextUrl.pathname === "/api/ip") {
+    return NextResponse.next();
+  }
   if (!request.nextUrl.pathname.startsWith("/api")) {
     return NextResponse.next();
   }
