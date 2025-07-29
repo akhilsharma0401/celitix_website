@@ -15,10 +15,11 @@ import { verifyToken } from "../../utils/VerifyToken";
 import axios from 'axios';
 import Image from 'next/image';
 import toast from 'react-hot-toast';
+import { pushToDataLayer } from '@/utils/gtm';
 
 const Landingpage = () => {
     // Typing animation for channel text
-    const phrases = ['RCS', 'SMS']
+    const phrases = ['RCS', 'SMS', 'WhatsApp', 'Email', 'Voice Call', 'Missed Call', 'IVR', 'Authentication', 'Click to Call', 'Two Way SMS', 'Outbound Dialer', 'Inbound Dialer', 'Chatbot'];
     const [text, setText] = useState('')
     const [idx, setIdx] = useState(0)
 
@@ -69,7 +70,7 @@ const Landingpage = () => {
 
 
     //   section form
-     const router = useRouter();
+    const router = useRouter();
     const [form, setForm] = useState({
         firstName: '',
         lastName: '',
@@ -96,7 +97,7 @@ const Landingpage = () => {
     const formRef = useRef(null);
 
     // const url = import.meta.env.VITE_URL
-    const url = "https://celitix.com:3001";
+    const url = process.env.NEXT_PUBLIC_API_URL
 
 
     const validatePhoneNumber = (phone) => /^[0-9]{10,13}$/.test(phone);
@@ -112,7 +113,7 @@ const Landingpage = () => {
         setIsTouched(true);
     };
 
-    const handlesendOtp = async () => {
+   const handlesendOtp = async () => {
         const phone = form.phone.trim();
         const email = form.email.trim();
 
@@ -155,7 +156,7 @@ const Landingpage = () => {
         }, 1000);
     };
 
-    const handleOtpChange = (index, value) => {
+     const handleOtpChange = (index, value) => {
         if (/^\d?$/.test(value)) {
             const updatedOtp = [...otp];
             updatedOtp[index] = value;
@@ -169,7 +170,7 @@ const Landingpage = () => {
         }
     };
 
-    const handleverifyOtp = async () => {
+     const handleverifyOtp = async () => {
         const phone = form.phone
         const enteredOtp = otp.join('');
         const res = await verifyOtp({
@@ -181,6 +182,7 @@ const Landingpage = () => {
             return
         }
         toast.success("OTP Verified successfully")
+
         // setIsOtpVerified(true);
         setIsClicked(true);
         setIsOtpSent(false);
@@ -206,6 +208,11 @@ const Landingpage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        if (!isOtpVerified) {
+            toast.error('Please verify the otp before submitting the form.');
+            return;
+        }
+
         const { firstName, lastName, email, phone, service } = form;
 
         if (!firstName.trim()) return toast.error('First Name is required.');
@@ -219,42 +226,52 @@ const Landingpage = () => {
             return;
         }
 
-        if (!isOtpVerified) return toast.error('Please verify your phone number with OTP.');
+        // if (!isOtpVerified) return toast.error('Please verify your phone number with OTP.');
         if (!service.trim()) return toast.error('Please select a service.');
 
-        const captchaVerify = await verifyToken(turnstileResponse)
-        console.log("captchaVerify", captchaVerify)
+        // const captchaVerify = await verifyToken(turnstileResponse)
 
-        if (!captchaVerify?.data?.status) {
-            return toast.error("Unable to verify captcha. Please Contact Site Administrator ")
-        }
+        // if (!captchaVerify?.data?.status) {
+        //     return toast.error("Unable to verify captcha. Please Contact Site Administrator ")
+        // }
 
         const data = {
             name: `${firstName} ${lastName}`,
             email: email,
             phone: phone,
-            company: "fsadasd" || "N/A",
+            company: form.company || "N/A",
             service: service,
+            message: form.message || "N/A",
             source: "L3-communication platform cpaas",
-            message: form.message || "N/A"
-
         };
 
         setIsFetching(true);
 
-        const res = await axios.post(`${url}/save`, data)
+        const res = await axios.post(`${url}/save`, data, {
+            headers: {
+                "x-secret-key": process.env.NEXT_PUBLIC_API_KEY
+            }
+        })
         if (!res.data.status) {
             toast.error("Unable to send form data. Please try again later")
             return
         }
-        const sendEmail = await axios.post(`${url}/send-email`, data)
+        const sendEmail = await axios.post(`${url}/email`, data, {
+            headers: {
+                "x-secret-key": process.env.NEXT_PUBLIC_API_KEY
+            }
+        })
 
         if (!sendEmail.data.status) {
             toast.error("Unable to send form data. Please try again later")
             return
         }
 
-        const sendWhatsapp = await axios.post(`${url}/send-whatsapp`, data)
+        const sendWhatsapp = await axios.post(`${url}/whatsapp`, data, {
+            headers: {
+                "x-secret-key": process.env.NEXT_PUBLIC_API_KEY
+            }
+        })
 
         if (!sendWhatsapp?.data?.status) {
             toast.error("Unable to send form data. Please try again later")
@@ -262,18 +279,24 @@ const Landingpage = () => {
         }
         // setIsSubmitting(true);
         setIsFetching(false);
+        pushToDataLayer({
+            event: "form_submit",
+            form_id: "form_1",
+            form_name: "Form 1",
+            page_path: window.location.pathname,
+        });
         // setSubmitLabel("Submitting...");
-        toast.success('Your enquiry has been received.');
+        toast.success('Form submitted successfully!');
         router.push('/thank-you');
     };
 
 
     const [turnstileResponse, setTurnstileResponse] = useState(null); // To store the Turnstile response token
-    // Handle Turnstile success response
-    const handleTurnstileChange = (token) => {
-        setTurnstileResponse(token);
-        console.log("Turnstile Token:", token);
-    };
+       // Handle Turnstile success response
+       const handleTurnstileChange = (token) => {
+           setTurnstileResponse(token);
+           console.log("Turnstile Token:", token);
+       };
     //   section form
 
 
@@ -390,7 +413,7 @@ const Landingpage = () => {
             mockup: Click_to_Call,
         },
         {
-           title: "Missed Call Services",
+            title: "Missed Call Services",
             intro: "Boost engagement with a dedicated missed call number. The system auto-responds to customer calls with 100% customisable actions. Use it for voting, taking polls, or contests!",
             bullets: [
                 "Generate pre-verified leads for future promotions.",
@@ -498,32 +521,32 @@ Connect online platforms to direct communications, reach more people, and let th
 
     return (
         <div className="min-h-screen bg-gray-50">
-            <div className="bg-[#9B44B6] text-white text-sm md:px-3 px-1 pt-1 pb-0 flex justify-between items-center flex-wrap comicf">
+            {/* <div className="bg-[#9B44B6] text-white text-sm md:px-3 px-1 pt-1 pb-0 flex justify-between items-center flex-wrap comicf">
 
-                {/* Email Section */}
+               
                 <div className="flex items-center gap-1 md:gap-2 mb-2">
                     <FaEnvelope />
                     <span className='sub-heading'>support@celitix.com</span>
                 </div>
 
-                {/* Phone Section */}
+             
                 <div className="flex items-center gap-1 md:gap-2 mb mb-2">
                     <FaPhoneAlt />
                     <span className='sub-heading'>+91 968-000-6460</span>
                 </div>
-            </div>
+            </div> */}
             {/* Navbar */}
-            <header className="w-full py-4 bg-gray-50 shadow">
+            {/* <header className="w-full py-4 bg-gray-50 shadow">
                 <div className="max-w-7xl mx-auto flex items-center justify-between px-4">
                     <a href="https://www.celitix.com" target="_blank" rel="noopener noreferrer">
                         <Image src={celitixheader} alt="Celitix" className="h-10" />
                     </a>
                     <Image src={METACOLOR} alt="Meta Tech Partner" className="h-15 w-40" />
                 </div>
-            </header>
+            </header> */}
 
             {/* Hero */}
-            <section className="py-5 md:py-10 bg-gray-50">
+            <section className="py-15 pt-25 md:pt-35 bg-gray-50">
                 <div className=" text-center px-4">
                     <h1 className="text-3xl md:text-5xl lg:text-6xl heading font-medium text-gray-800 mb-4">
                         All-in-One <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2] "> Communication Platform </span> for
@@ -600,7 +623,7 @@ Connect online platforms to direct communications, reach more people, and let th
                                     src={logo.src}
                                     alt={logo.alt}
                                     className="h-16 sm:h-20 md:h-24 w-25 md:w-50 object-contain hover:grayscale-0 transition duration-1000 ease-in-out"
-                                    // loading="auto"
+                                // loading="auto"
                                 />
                             </SwiperSlide>
                         ))}
@@ -613,117 +636,122 @@ Connect online platforms to direct communications, reach more people, and let th
             <section className="bg-[#F5F8FB] py-2 lg:py-10 px-4 md:px-20" >
                 <div className='max-w-7xl mx-auto'>
 
-                <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6">
-                    {/* Accordion Column */}
-                    <div className="w-full px-4 sm:px-6 py-5 flex justify-center">
-                        <Image
-                            src={landingpageformsection}
-                            alt="landingpageformsection"
-                            className="mx-auto h-[200px] md:h-[800px] lg:h-[600px] object-contain"
-                        />
-                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6">
+                        {/* Accordion Column */}
+                        <div className="w-full px-4 sm:px-6 py-5 flex justify-center">
+                            <Image
+                                src={landingpageformsection}
+                                alt="landingpageformsection"
+                                className="mx-auto h-[200px] md:h-[800px] lg:h-[600px] object-contain"
+                            />
+                        </div>
 
 
-                    {/* Optional Form Column */}
-                    <div className="w-full px-4 sm:px-6 py-5" ref={formRef} id="form">
+                        {/* Optional Form Column */}
+                        <div className="w-full px-4 sm:px-6 py-5" ref={formRef} id="form">
 
-                        <div>
-                            <div className="bg-[#F5F8FB] border border-gray-300 pera rounded-xl p-1 shadow-sm md:p-6">
-                                <form onSubmit={handleSubmit} className="space-y-4 bg-[#F5F8FB] border border-gray-300 rounded-xl p-4 md:p-6 shadow-sm">
-                                    <h2 className="text-2xl md:text-4xl heading text-center mb-6">
-                                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]"> Book Demo </span>Today!
+                            <div>
+                                <div className="bg-[#F5F8FB] border border-gray-300 pera rounded-xl p-1 shadow-sm md:p-6">
+                                    <div className="space-y-4 bg-[#F5F8FB] border border-gray-300 rounded-xl p-4 md:p-6 shadow-sm">
+                                        <h2 className="text-2xl md:text-4xl heading text-center mb-6">
+                                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]"> Book Demo </span>Today!
 
-                                    </h2>
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                        <input
-                                            type="text"
-                                            name="fname"
-                                            placeholder="First Name"
-                                            value={form.firstName}
-                                            onChange={(e) => setForm({ ...form, firstName: e.target.value })}
-                                            className="w-full border border-gray-300 rounded-md p-2"
-                                        />
-                                        <input
-                                            type="text"
-                                            name="lname"
-                                            placeholder="Last Name"
-                                            value={form.lastName}
-                                            onChange={(e) => setForm({ ...form, lastName: e.target.value })}
-                                            className="w-full border border-gray-300 rounded-md p-2"
-                                        />
-                                    </div>
-
-
-                                    <input
-                                        type="text"
-                                        name="email"
-                                        placeholder="Email Address"
-                                        value={form.email}
-                                        onChange={handleEmailChange}
-                                        onBlur={handleEmailBlur}
-                                        disabled={isOtpVerified}
-                                        className={`w-full rounded-md p-2 border focus:outline-none focus:ring-2 ${!isTouched
-                                            ? 'border-gray-300 focus:ring-blue-300'
-                                            : isValid
-                                                ? 'border-green-500 focus:ring-green-300'
-                                                : 'border-red-500 focus:ring-red-300'
-                                            }`}
-                                    />
-                                    <div className="flex gap-2 items-center">
-                                        <input type="text" name="phone" placeholder="Phone No." disabled={isOtpVerified} value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value.replace(/[^\d]/g, '').slice(0, 13), isOtpVerified: false })} className="form-input w-full border border-gray-300 rounded-md p-2" />
-                                        {!isClicked && (
-                                            <UniversalButton label={buttonLabel} type="button" variant="brutal" disable={!validatePhoneNumber(form.phone) || resendTimer > 0} onClick={handlesendOtp} className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 rounded hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] disabled:bg-gray-300 disabled:text-gray-700 disabled:cursor-not-allowed" />
-                                        )}
-                                    </div>
-
-                                    {isOtpSent && resendTimer > 0 && (
-                                        <div className="text-sm text-gray-600 mt-1">Resend in {resendTimer} seconds</div>
-                                    )}
-
-                                    {isOtpSent && (
-                                        <div className="flex items-center gap-2 flex-wrap mt-2">
-                                            {otp.map((digit, index) => (
-                                                <input key={index} ref={(el) => (otpRefs.current[index] = el)} type="text" maxLength={1} inputMode="numeric" value={digit} onChange={(e) => handleOtpChange(index, e.target.value)} className="w-10 h-10 text-center border border-gray-300 rounded" />
-                                            ))}
-                                            <UniversalButton label="Submit" variant="brutal" type="button" onClick={handleverifyOtp} className="bg-[#9B44B6] border-[#9B44B6] text-white hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] px-3 py-1 rounded-md mx-1" />
+                                        </h2>
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                            <input
+                                    type="text"
+                                    name="fname"
+                                    placeholder="First Name"
+                                    value={form.firstName}
+                                    onChange={(e) => setForm({ ...form, firstName: e.target.value })}
+                                    className="w-full border border-gray-300 rounded-md p-2"
+                                />
+                                            <input
+                                    type="text"
+                                    name="lname"
+                                    placeholder="Last Name"
+                                    value={form.lastName}
+                                    onChange={(e) => setForm({ ...form, lastName: e.target.value })}
+                                    className="w-full border border-gray-300 rounded-md p-2"
+                                />
                                         </div>
-                                    )}
 
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                        <input type="text" name="company" placeholder="Company Name" value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} className="form-input w-full border border-gray-300 rounded-md p-2" />
 
-                                        <select name="service" value={form.service} onChange={(e) => setForm({ ...form, service: e.target.value })} className="form-select w-full border border-gray-300 rounded-md p-2 text-gray-500">
-                                            <option value="" disabled>Select Service</option>
-                                            <option value="WhatsApp Business API">WhatsApp Business API</option>
-                                            <option value="RCS Business Messaging">RCS Business Messaging</option>
-                                            <option value="SMS Solution">SMS Solution</option>
-                                            <option value="IVR/Missed Call">Virtual Receptionist (IVR)/Missed Call</option>
-                                            <option value="User Verification">Chatbot Services</option>
-                                            <option value="API Integration">API Integrations</option>
-                                            <option value="2-way SMS">2 Way SMS (Long/Shortcode)</option>
-                                            <option value="Missed Call Services">Missed Call Services</option>
-                                            <option value="Other CPaaS Solutions">Other CPaaS Solutions</option>
-                                        </select>
+                                        <input
+                                type="text"
+                                name="email"
+                                placeholder="Email Address"
+                                value={form.email}
+                                onChange={handleEmailChange}
+                                onBlur={handleEmailBlur}
+                                disabled={isOtpVerified}
+                                className={`w-full rounded-md p-2 border focus:outline-none focus:ring-2 ${!isTouched
+                                    ? 'border-gray-300 focus:ring-blue-300'
+                                    : isValid
+                                        ? 'border-green-500 focus:ring-green-300'
+                                        : 'border-red-500 focus:ring-red-300'
+                                    }`}
+                            />
+                                        <div className="flex gap-2 items-center">
+                                <input type="text" name="phone" placeholder="Phone No." disabled={isOtpVerified} value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value.replace(/[^\d]/g, '').slice(0, 13), isOtpVerified: false })} className="form-input w-full border border-gray-300 rounded-md p-2" />
+                                {!isClicked && (
+                                    <UniversalButton label={buttonLabel} type="button" variant="brutal" disable={!validatePhoneNumber(form.phone) || resendTimer > 0} onClick={handlesendOtp} className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 rounded hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] disabled:bg-gray-300 disabled:text-gray-700 disabled:cursor-not-allowed" />
+                                )}
+                            </div>
+
+                                        {isOtpSent && resendTimer > 0 && (
+                                <div className="text-sm text-gray-600 mt-1">Resend in {resendTimer} seconds</div>
+                            )}
+
+
+                                        {isOtpSent && (
+                                <div className="flex items-center gap-2 flex-wrap mt-2">
+                                    {otp.map((digit, index) => (
+                                        <input key={index} ref={(el) => (otpRefs.current[index] = el)} type="text" maxLength={1} inputMode="numeric" value={digit} onChange={(e) => handleOtpChange(index, e.target.value)} className="w-10 h-10 text-center border border-gray-300 rounded" />
+                                    ))}
+                                    <UniversalButton label="Submit" variant="brutal" type="button" onClick={handleverifyOtp} className="bg-[#9B44B6] border-[#9B44B6] text-white hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] px-3 py-1 rounded-md mx-1" />
+                                </div>
+                            )}
+
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+                                <input type="text" name="company" placeholder="Company Name" value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} className="form-input w-full border border-gray-300 rounded-md p-2" />
+
+                                <select name="service" value={form.service} onChange={(e) => setForm({ ...form, service: e.target.value })} className="form-select w-full border border-gray-300 rounded-md p-2 text-gray-500">
+                                    <option value="" disabled>Select Service</option>
+                                    <option value="WhatsApp Business API">WhatsApp Business API</option>
+                                    <option value="RCS Business Messaging">RCS Business Messaging</option>
+                                    <option value="SMS Solution">SMS Solution</option>
+                                    <option value="IVR/Missed Call">Virtual Receptionist (IVR)/Missed Call</option>
+                                    <option value="User Verification">Chatbot Services</option>
+                                    <option value="API Integration">API Integrations</option>
+                                    <option value="2-way SMS">2 Way SMS (Long/Shortcode)</option>
+                                    <option value="Missed Call Services">Missed Call Services</option>
+                                    <option value="Other CPaaS Solutions">Other CPaaS Solutions</option>
+                                </select>
+                            </div>
+
+                                        <textarea name="message" placeholder="How can we help you?" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="form-textarea w-full border border-gray-300 rounded-md p-2" />
+
+                                        <div className=''>
+                                                                        <TurnstileComponent onChange={handleTurnstileChange} />
+                                                                    </div>
+                                        <div className='flex justify-center'>
+                                <UniversalButton
+                                    // label={submitLabel} // Dynamically change the label based on the state
+                                    label={isFetching ? "Submitting..." : "Submit"}
+                                    type="submit"
+                                    variant="brutal"
+                                    className="bg-[#9B44B6] border-[#9B44B6] text-white hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] px-4 py-2 rounded-md"
+                                    disabled={isFetching}
+                                    onClick={handleSubmit}
+                                />
+                            </div>
                                     </div>
-
-                                    <textarea name="message" placeholder="How can we help you?" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="form-textarea w-full border border-gray-300 rounded-md p-2" />
-
-                                    <TurnstileComponent onChange={handleTurnstileChange} />
-                                    <div className='flex justify-center'>
-                                        <UniversalButton
-                                            // label={submitLabel} // Dynamically change the label based on the state
-                                            label={isFetching ? "Submitting..." : "Submit"}
-                                            type="submit"
-                                            variant="brutal"
-                                            className="bg-[#9B44B6] border-[#9B44B6] text-white hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] px-4 py-2 rounded-md"
-                                            disabled={isFetching}
-                                        />
-                                    </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 </div>
             </section>
 
@@ -944,7 +972,7 @@ Connect online platforms to direct communications, reach more people, and let th
             </section>
 
 
-            <footer className="bg-gradient-to-r from-[#2b40b0] via-[#8447c6] to-[#36bae2] text-white">
+            {/* <footer className="bg-gradient-to-r from-[#2b40b0] via-[#8447c6] to-[#36bae2] text-white">
                 <div className="max-w-7xl mx-auto px-4 py-3 sub-heading md:text-lg flex flex-col md:flex-row items-center justify-center text-md">
                     <span>© {new Date().getFullYear()} Celitix. All rights reserved.</span>
                     <nav className="flex space-x-4 md:ml-4 mt-2 md:mt-0">
@@ -967,7 +995,7 @@ Connect online platforms to direct communications, reach more people, and let th
                         </a>
                     </nav>
                 </div>
-            </footer>
+            </footer> */}
         </div>
     )
 }

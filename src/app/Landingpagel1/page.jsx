@@ -13,6 +13,7 @@ import { verifyToken } from "../../utils/VerifyToken";
 import Image from 'next/image';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { pushToDataLayer } from '@/utils/gtm';
 
 const Landingpagel1 = () => {
     // Form
@@ -42,7 +43,7 @@ const Landingpagel1 = () => {
     const otpRefs = useRef([]);
 
     // const url = import.meta.env.VITE_URL
-    const url = "https://celitix.com:3001";
+     const url = process.env.NEXT_PUBLIC_API_URL
 
 
     const validatePhoneNumber = (phone) => /^[0-9]{10,13}$/.test(phone);
@@ -127,6 +128,7 @@ const Landingpagel1 = () => {
             return
         }
         toast.success("OTP Verified successfully")
+
         // setIsOtpVerified(true);
         setIsClicked(true);
         setIsOtpSent(false);
@@ -152,6 +154,11 @@ const Landingpagel1 = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        if (!isOtpVerified) {
+            toast.error('Please verify the otp before submitting the form.');
+            return;
+        }
+
         const { firstName, lastName, email, phone, service } = form;
 
         if (!firstName.trim()) return toast.error('First Name is required.');
@@ -165,14 +172,14 @@ const Landingpagel1 = () => {
             return;
         }
 
-        if (!isOtpVerified) return toast.error('Please verify your phone number with OTP.');
+        // if (!isOtpVerified) return toast.error('Please verify your phone number with OTP.');
         if (!service.trim()) return toast.error('Please select a service.');
 
-        const captchaVerify = await verifyToken(turnstileResponse)
+        // const captchaVerify = await verifyToken(turnstileResponse)
 
-        if (!captchaVerify?.data?.status) {
-            return toast.error("Unable to verify captcha. Please Contact Site Administrator ")
-        }
+        // if (!captchaVerify?.data?.status) {
+        //     return toast.error("Unable to verify captcha. Please Contact Site Administrator ")
+        // }
 
         const data = {
             name: `${firstName} ${lastName}`,
@@ -180,26 +187,37 @@ const Landingpagel1 = () => {
             phone: phone,
             company: form.company || "N/A",
             service: service,
-            source: "Landingpage L1",
             message: form.message || "N/A",
             source: "L3-communication platform cpaas",
         };
 
         setIsFetching(true);
 
-        const res = await axios.post(`${url}/save`, data)
+        const res = await axios.post(`${url}/save`, data, {
+            headers: {
+                "x-secret-key": process.env.NEXT_PUBLIC_API_KEY
+            }
+        })
         if (!res.data.status) {
             toast.error("Unable to send form data. Please try again later")
             return
         }
-        const sendEmail = await axios.post(`${url}/send-email`, data)
+        const sendEmail = await axios.post(`${url}/email`, data, {
+            headers: {
+                "x-secret-key": process.env.NEXT_PUBLIC_API_KEY
+            }
+        })
 
         if (!sendEmail.data.status) {
             toast.error("Unable to send form data. Please try again later")
             return
         }
 
-        const sendWhatsapp = await axios.post(`${url}/send-whatsapp`, data)
+        const sendWhatsapp = await axios.post(`${url}/whatsapp`, data, {
+            headers: {
+                "x-secret-key": process.env.NEXT_PUBLIC_API_KEY
+            }
+        })
 
         if (!sendWhatsapp?.data?.status) {
             toast.error("Unable to send form data. Please try again later")
@@ -207,6 +225,12 @@ const Landingpagel1 = () => {
         }
         // setIsSubmitting(true);
         setIsFetching(false);
+        pushToDataLayer({
+            event: "form_submit",
+            form_id: "form_1",
+            form_name: "Form 1",
+            page_path: window.location.pathname,
+        });
         // setSubmitLabel("Submitting...");
         toast.success('Form submitted successfully!');
         router.push('/thank-you');
@@ -214,11 +238,11 @@ const Landingpagel1 = () => {
 
 
     const [turnstileResponse, setTurnstileResponse] = useState(null); // To store the Turnstile response token
-    // Handle Turnstile success response
-    const handleTurnstileChange = (token) => {
-        setTurnstileResponse(token);
-        console.log("Turnstile Token:", token);
-    };
+           // Handle Turnstile success response
+           const handleTurnstileChange = (token) => {
+               setTurnstileResponse(token);
+               console.log("Turnstile Token:", token);
+           };
     // Form
 
 
@@ -375,7 +399,7 @@ const Landingpagel1 = () => {
 
     return (
         <div>
-            <section className="relative bg-[#FFF2EB] px-4 py-5 md:py-20">
+            <section className="relative bg-[#FFF2EB] px-4 py-5 md:py-20 ">
                 <div className='max-w-6xl mx-auto'>
                     {/* Wave background bottom */}
                     <div className="absolute inset-x-0 bottom-0 pointer-events-none">
@@ -395,7 +419,7 @@ const Landingpagel1 = () => {
                         <div className='flex justify-start items-center'>
                             {/* Left Content */}
                             <div className="text-center lg:text-left">
-                                <Image src={celitixheader} alt="Celitix logo" className="mx-auto lg:mx-0 mb-4 h-14 md:h-16" />
+                                {/* <Image src={celitixheader} alt="Celitix logo" className="mx-auto lg:mx-0 mb-4 h-14 md:h-16" /> */}
                                 <p className="text-purple-600 sub-heading text-lg md:text-2xl  font-medium mb-2">Scale 1-on-1 Communication</p>
                                 <h1 className="text-2xl md:text-4xl lg:text-5xl heading font-extrabold text-gray-800 mb-4">
                                     Save time, boost sales <br />& reduce costs
@@ -411,59 +435,59 @@ const Landingpagel1 = () => {
                         {/* Right Form */}
                         <div className="bg-[#F9F4FF] order-1 md:order-2 border-gray-300 rounded-xl p-1 md:p-6 shadow-sm">
 
-                            <form onSubmit={handleSubmit} className="space-y-4 bg-white border border-gray-300 rounded-xl p-4 md:p-6 shadow-sm">
+                            <div className="space-y-4 bg-white border border-gray-300 rounded-xl p-4 md:p-6 shadow-sm">
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-                                    <input
-                                        type="text"
-                                        name="fname"
-                                        placeholder="First Name"
-                                        value={form.firstName}
-                                        onChange={(e) => setForm({ ...form, firstName: e.target.value })}
-                                        className="w-full border border-gray-300 rounded-md p-2"
-                                    />
-                                    <input
-                                        type="text"
-                                        name="lname"
-                                        placeholder="Last Name"
-                                        value={form.lastName}
-                                        onChange={(e) => setForm({ ...form, lastName: e.target.value })}
-                                        className="w-full border border-gray-300 rounded-md p-2"
-                                    />
+                                     <input
+                                    type="text"
+                                    name="fname"
+                                    placeholder="First Name"
+                                    value={form.firstName}
+                                    onChange={(e) => setForm({ ...form, firstName: e.target.value })}
+                                    className="w-full border border-gray-300 rounded-md p-2"
+                                />
+                                        <input
+                                    type="text"
+                                    name="lname"
+                                    placeholder="Last Name"
+                                    value={form.lastName}
+                                    onChange={(e) => setForm({ ...form, lastName: e.target.value })}
+                                    className="w-full border border-gray-300 rounded-md p-2"
+                                />
                                 </div>
 
 
                                 <input
-                                    type="text"
-                                    name="email"
-                                    placeholder="Email Address"
-                                    value={form.email}
-                                    onChange={handleEmailChange}
-                                    onBlur={handleEmailBlur}
-                                    disabled={isOtpVerified}
-                                    className={`w-full rounded-md p-2 border focus:outline-none focus:ring-2 ${!isTouched
-                                        ? 'border-gray-300 focus:ring-blue-300'
-                                        : isValid
-                                            ? 'border-green-500 focus:ring-green-300'
-                                            : 'border-red-500 focus:ring-red-300'
-                                        }`}
-                                />
+                                type="text"
+                                name="email"
+                                placeholder="Email Address"
+                                value={form.email}
+                                onChange={handleEmailChange}
+                                onBlur={handleEmailBlur}
+                                disabled={isOtpVerified}
+                                className={`w-full rounded-md p-2 border focus:outline-none focus:ring-2 ${!isTouched
+                                    ? 'border-gray-300 focus:ring-blue-300'
+                                    : isValid
+                                        ? 'border-green-500 focus:ring-green-300'
+                                        : 'border-red-500 focus:ring-red-300'
+                                    }`}
+                            />
                                 <div className="flex gap-2 items-center">
                                     <input type="text" name="phone" placeholder="Phone No." disabled={isOtpVerified} value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value.replace(/[^\d]/g, '').slice(0, 13), isOtpVerified: false })} className="form-input w-full border border-gray-300 rounded-md p-2" />
-                                    {!isClicked && (
-                                        <UniversalButton label={buttonLabel} type="button" variant="brutal" disable={!validatePhoneNumber(form.phone) || resendTimer > 0} onClick={handlesendOtp} className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 rounded hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] disabled:bg-gray-300 disabled:text-gray-700 disabled:cursor-not-allowed" />
-                                    )}
+                                {!isClicked && (
+                                    <UniversalButton label={buttonLabel} type="button" variant="brutal" disable={!validatePhoneNumber(form.phone) || resendTimer > 0} onClick={handlesendOtp} className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 rounded hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] disabled:bg-gray-300 disabled:text-gray-700 disabled:cursor-not-allowed" />
+                                )}
                                 </div>
 
-                                {isOtpSent && resendTimer > 0 && (
-                                    <div className="text-sm text-gray-600 mt-1">Resend in {resendTimer} seconds</div>
-                                )}
+                                  {isOtpSent && resendTimer > 0 && (
+                                <div className="text-sm text-gray-600 mt-1">Resend in {resendTimer} seconds</div>
+                            )}
 
                                 {isOtpSent && (
-                                    <div className="flex items-center gap-2 flex-wrap mt-2">
-                                        {otp.map((digit, index) => (
-                                            <input key={index} ref={(el) => (otpRefs.current[index] = el)} type="text" maxLength={1} inputMode="numeric" value={digit} onChange={(e) => handleOtpChange(index, e.target.value)} className="w-10 h-10 text-center border border-gray-300 rounded" />
-                                        ))}
+                                <div className="flex items-center gap-2 flex-wrap mt-2">
+                                    {otp.map((digit, index) => (
+                                        <input key={index} ref={(el) => (otpRefs.current[index] = el)} type="text" maxLength={1} inputMode="numeric" value={digit} onChange={(e) => handleOtpChange(index, e.target.value)} className="w-10 h-10 text-center border border-gray-300 rounded" />
+                                    ))}
                                         <UniversalButton label="Submit" variant="brutal" type="button" onClick={handleverifyOtp} className="bg-[#9B44B6] border-[#9B44B6] text-white hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] px-3 py-1 rounded-md mx-1" />
                                     </div>
                                 )}
@@ -473,33 +497,36 @@ const Landingpagel1 = () => {
                                     <input type="text" name="company" placeholder="Company Name" value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} className="form-input w-full border border-gray-300 rounded-md p-2" />
 
                                     <select name="service" value={form.service} onChange={(e) => setForm({ ...form, service: e.target.value })} className="form-select w-full border border-gray-300 rounded-md p-2 text-gray-500">
-                                        <option value="" disabled>Select Service</option>
-                                        <option value="WhatsApp Business API">WhatsApp Business API</option>
-                                        <option value="RCS Business Messaging">RCS Business Messaging</option>
-                                        <option value="SMS Solution">SMS Solution</option>
-                                        <option value="IVR/Missed Call">Virtual Receptionist (IVR)/Missed Call</option>
-                                        <option value="User Verification">Chatbot Services</option>
-                                        <option value="API Integration">API Integrations</option>
-                                        <option value="2-way SMS">2 Way SMS (Long/Shortcode)</option>
-                                        <option value="Missed Call Services">Missed Call Services</option>
-                                        <option value="Other CPaaS Solutions">Other CPaaS Solutions</option>
-                                    </select>
+                                    <option value="" disabled>Select Service</option>
+                                    <option value="WhatsApp Business API">WhatsApp Business API</option>
+                                    <option value="RCS Business Messaging">RCS Business Messaging</option>
+                                    <option value="SMS Solution">SMS Solution</option>
+                                    <option value="IVR/Missed Call">Virtual Receptionist (IVR)/Missed Call</option>
+                                    <option value="User Verification">Chatbot Services</option>
+                                    <option value="API Integration">API Integrations</option>
+                                    <option value="2-way SMS">2 Way SMS (Long/Shortcode)</option>
+                                    <option value="Missed Call Services">Missed Call Services</option>
+                                    <option value="Other CPaaS Solutions">Other CPaaS Solutions</option>
+                                </select>
                                 </div>
 
                                 <textarea name="message" placeholder="How can we help you?" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="form-textarea w-full border border-gray-300 rounded-md p-2" />
 
-                                <TurnstileComponent onChange={handleTurnstileChange} />
+                                <div className=''>
+                                                                                                        <TurnstileComponent onChange={handleTurnstileChange} />
+                                                                                                    </div>
                                 <div className='flex justify-center'>
                                     <UniversalButton
-                                        // label={submitLabel} // Dynamically change the label based on the state
-                                        label={isFetching ? "Submitting..." : "Submit"}
-                                        type="submit"
-                                        variant="brutal"
-                                        className="bg-[#9B44B6] border-[#9B44B6] text-white hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] px-4 py-2 rounded-md"
-                                        disabled={isFetching}
-                                    />
+                                    // label={submitLabel} // Dynamically change the label based on the state
+                                    label={isFetching ? "Submitting..." : "Submit"}
+                                    type="submit"
+                                    variant="brutal"
+                                    className="bg-[#9B44B6] border-[#9B44B6] text-white hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] px-4 py-2 rounded-md"
+                                    disabled={isFetching}
+                                    onClick={handleSubmit}
+                                />
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -805,7 +832,7 @@ const Landingpagel1 = () => {
             </section>
 
 
-            <footer className="bg-gradient-to-r from-[#2b40b0] via-[#8447c6] to-[#36bae2] text-white">
+            {/* <footer className="bg-gradient-to-r from-[#2b40b0] via-[#8447c6] to-[#36bae2] text-white">
                 <div className="max-w-7xl mx-auto px-4 py-3 sub-heading md:text-lg flex flex-col md:flex-row items-center justify-center text-md">
                     <span>© {new Date().getFullYear()} Celitix. All rights reserved.</span>
                     <nav className="flex space-x-4 md:ml-4 mt-2 md:mt-0">
@@ -828,7 +855,7 @@ const Landingpagel1 = () => {
                         </a>
                     </nav>
                 </div>
-            </footer>
+            </footer> */}
         </div>
     )
 }
