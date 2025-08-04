@@ -55,10 +55,25 @@ import { verifyToken } from "../../utils/VerifyToken";
 import axios from "axios";
 import Image from "next/image";
 import toast from "react-hot-toast";
+import { pushToDataLayer } from "@/utils/gtm";
 
 const Landingpage = () => {
   // Typing animation for channel text
-  const phrases = ["RCS", "SMS"];
+  const phrases = [
+    "RCS",
+    "SMS",
+    "WhatsApp",
+    "Email",
+    "Voice Call",
+    "Missed Call",
+    "IVR",
+    "Authentication",
+    "Click to Call",
+    "Two Way SMS",
+    "Outbound Dialer",
+    "Inbound Dialer",
+    "Chatbot",
+  ];
   const [text, setText] = useState("");
   const [idx, setIdx] = useState(0);
 
@@ -137,7 +152,7 @@ const Landingpage = () => {
   const formRef = useRef(null);
 
   // const url = import.meta.env.VITE_URL
-  const url = "https://celitix.com:3001";
+  const url = process.env.NEXT_PUBLIC_API_URL;
 
   const validatePhoneNumber = (phone) => /^[0-9]{10,13}$/.test(phone);
   const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -220,6 +235,7 @@ const Landingpage = () => {
       return;
     }
     toast.success("OTP Verified successfully");
+
     // setIsOtpVerified(true);
     setIsClicked(true);
     setIsOtpSent(false);
@@ -246,6 +262,11 @@ const Landingpage = () => {
     try {
       e.preventDefault();
 
+      if (!isOtpVerified) {
+        toast.error("Please verify the otp before submitting the form.");
+        return;
+      }
+
       const { firstName, lastName, email, phone, service } = form;
 
       if (!firstName.trim()) return toast.error("First Name is required.");
@@ -261,43 +282,52 @@ const Landingpage = () => {
         return;
       }
 
-      if (!isOtpVerified)
-        return toast.error("Please verify your phone number with OTP.");
+      // if (!isOtpVerified) return toast.error('Please verify your phone number with OTP.');
       if (!service.trim()) return toast.error("Please select a service.");
 
-      const captchaVerify = await verifyToken(turnstileResponse);
+      // const captchaVerify = await verifyToken(turnstileResponse)
 
-      if (!captchaVerify?.data?.status) {
-        return toast.error(
-          "Unable to verify captcha. Please Contact Site Administrator "
-        );
-      }
+      // if (!captchaVerify?.data?.status) {
+      //     return toast.error("Unable to verify captcha. Please Contact Site Administrator ")
+      // }
 
       const data = {
         name: `${firstName} ${lastName}`,
         email: email,
         phone: phone,
-        company: "fsadasd" || "N/A",
+        company: form.company || "N/A",
         service: service,
-        source: "L3-communication platform cpaas",
         message: form.message || "N/A",
+        source: "L3-communication platform cpaas",
       };
 
       setIsFetching(true);
 
-      const res = await axios.post(`${url}/save`, data);
+      const res = await axios.post(`${url}/save`, data, {
+        headers: {
+          "x-secret-key": process.env.NEXT_PUBLIC_API_KEY,
+        },
+      });
       if (!res.data.status) {
         toast.error("Unable to send form data. Please try again later");
         return;
       }
-      const sendEmail = await axios.post(`${url}/send-email`, data);
+      const sendEmail = await axios.post(`${url}/email`, data, {
+        headers: {
+          "x-secret-key": process.env.NEXT_PUBLIC_API_KEY,
+        },
+      });
 
       if (!sendEmail.data.status) {
         toast.error("Unable to send form data. Please try again later");
         return;
       }
 
-      const sendWhatsapp = await axios.post(`${url}/send-whatsapp`, data);
+      const sendWhatsapp = await axios.post(`${url}/whatsapp`, data, {
+        headers: {
+          "x-secret-key": process.env.NEXT_PUBLIC_API_KEY,
+        },
+      });
 
       if (!sendWhatsapp?.data?.status) {
         toast.error("Unable to send form data. Please try again later");
@@ -305,13 +335,18 @@ const Landingpage = () => {
       }
       // setIsSubmitting(true);
       setIsFetching(false);
+      pushToDataLayer({
+        event: "form_submit",
+        form_id: "form_1",
+        form_name: "Form 1",
+        page_path: window.location.pathname,
+      });
       // setSubmitLabel("Submitting...");
-      toast.success("Your enquiry has been received.");
+      toast.success("Form submitted successfully!");
       router.push("/thank-you");
     } catch (e) {
       return toast.error("Unable to send form data. Please try again later");
-    }
-      finally{
+    } finally {
       setIsFetching(false);
     }
   };
@@ -540,39 +575,32 @@ Connect online platforms to direct communications, reach more people, and let th
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="bg-[#9B44B6] text-white text-sm md:px-3 px-1 pt-1 pb-0 flex justify-between items-center flex-wrap comicf">
-        {/* Email Section */}
-        <div className="flex items-center gap-1 md:gap-2 mb-2">
-          <FaEnvelope />
-          <span className="sub-heading">support@celitix.com</span>
-        </div>
+      {/* <div className="bg-[#9B44B6] text-white text-sm md:px-3 px-1 pt-1 pb-0 flex justify-between items-center flex-wrap comicf">
 
-        {/* Phone Section */}
-        <div className="flex items-center gap-1 md:gap-2 mb mb-2">
-          <FaPhoneAlt />
-          <span className="sub-heading">+91 968-000-6460</span>
-        </div>
-      </div>
+               
+                <div className="flex items-center gap-1 md:gap-2 mb-2">
+                    <FaEnvelope />
+                    <span className='sub-heading'>support@celitix.com</span>
+                </div>
+
+             
+                <div className="flex items-center gap-1 md:gap-2 mb mb-2">
+                    <FaPhoneAlt />
+                    <span className='sub-heading'>+91 968-000-6460</span>
+                </div>
+            </div> */}
       {/* Navbar */}
-      <header className="w-full py-4 bg-gray-50 shadow">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-4">
-          <a
-            href="https://www.celitix.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image src={celitixheader} alt="Celitix" className="h-10" />
-          </a>
-          <Image
-            src={METACOLOR}
-            alt="Meta Tech Partner"
-            className="h-15 w-40"
-          />
-        </div>
-      </header>
+      {/* <header className="w-full py-4 bg-gray-50 shadow">
+                <div className="max-w-7xl mx-auto flex items-center justify-between px-4">
+                    <a href="https://www.celitix.com" target="_blank" rel="noopener noreferrer">
+                        <Image src={celitixheader} alt="Celitix" className="h-10" />
+                    </a>
+                    <Image src={METACOLOR} alt="Meta Tech Partner" className="h-15 w-40" />
+                </div>
+            </header> */}
 
       {/* Hero */}
-      <section className="py-5 md:py-10 bg-gray-50">
+      <section className="py-15 pt-25 md:pt-35 bg-gray-50">
         <div className=" text-center px-4">
           <h1 className="text-3xl md:text-5xl lg:text-6xl heading font-medium text-gray-800 mb-4">
             All-in-One{" "}
@@ -681,10 +709,7 @@ Connect online platforms to direct communications, reach more people, and let th
             <div className="w-full px-4 sm:px-6 py-5" ref={formRef} id="form">
               <div>
                 <div className="bg-[#F5F8FB] border border-gray-300 pera rounded-xl p-1 shadow-sm md:p-6">
-                  <form
-                    onSubmit={handleSubmit}
-                    className="space-y-4 bg-[#F5F8FB] border border-gray-300 rounded-xl p-4 md:p-6 shadow-sm"
-                  >
+                  <div className="space-y-4 bg-[#F5F8FB] border border-gray-300 rounded-xl p-4 md:p-6 shadow-sm">
                     <h2 className="text-2xl md:text-4xl heading text-center mb-6">
                       <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]">
                         {" "}
@@ -856,7 +881,9 @@ Connect online platforms to direct communications, reach more people, and let th
                       className="form-textarea w-full border border-gray-300 rounded-md p-2"
                     />
 
-                    <TurnstileComponent onChange={handleTurnstileChange} />
+                    <div className="">
+                      <TurnstileComponent onChange={handleTurnstileChange} />
+                    </div>
                     <div className="flex justify-center">
                       <UniversalButton
                         // label={submitLabel} // Dynamically change the label based on the state
@@ -865,9 +892,10 @@ Connect online platforms to direct communications, reach more people, and let th
                         variant="brutal"
                         className="bg-[#9B44B6] border-[#9B44B6] text-white hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] px-4 py-2 rounded-md"
                         disabled={isFetching}
+                        onClick={handleSubmit}
                       />
                     </div>
-                  </form>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1116,32 +1144,30 @@ Connect online platforms to direct communications, reach more people, and let th
         </div>
       </section>
 
-      <footer className="bg-gradient-to-r from-[#2b40b0] via-[#8447c6] to-[#36bae2] text-white">
-        <div className="max-w-7xl mx-auto px-4 py-3 sub-heading md:text-lg flex flex-col md:flex-row items-center justify-center text-md">
-          <span>
-            © {new Date().getFullYear()} Celitix. All rights reserved.
-          </span>
-          <nav className="flex space-x-4 md:ml-4 mt-2 md:mt-0">
-            <a
-              href="/terms-and-conditions"
-              className=""
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Terms &amp; Conditions
-            </a>
-            <span className="hidden md:inline">|</span>
-            <a
-              href="/privacy-policy"
-              className=""
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Privacy Policy
-            </a>
-          </nav>
-        </div>
-      </footer>
+      {/* <footer className="bg-gradient-to-r from-[#2b40b0] via-[#8447c6] to-[#36bae2] text-white">
+                <div className="max-w-7xl mx-auto px-4 py-3 sub-heading md:text-lg flex flex-col md:flex-row items-center justify-center text-md">
+                    <span>© {new Date().getFullYear()} Celitix. All rights reserved.</span>
+                    <nav className="flex space-x-4 md:ml-4 mt-2 md:mt-0">
+                        <a
+                            href="/terms-and-conditions"
+                            className=""
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Terms &amp; Conditions
+                        </a>
+                        <span className="hidden md:inline">|</span>
+                        <a
+                            href="/privacy-policy"
+                            className=""
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Privacy Policy
+                        </a>
+                    </nav>
+                </div>
+            </footer> */}
     </div>
   );
 };

@@ -38,6 +38,7 @@ import { verifyToken } from "../../utils/VerifyToken";
 import Image from "next/image";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { pushToDataLayer } from "@/utils/gtm";
 
 const Landingpagel1 = () => {
   // Form
@@ -67,7 +68,7 @@ const Landingpagel1 = () => {
   const otpRefs = useRef([]);
 
   // const url = import.meta.env.VITE_URL
-  const url = "https://celitix.com:3001";
+  const url = process.env.NEXT_PUBLIC_API_URL;
 
   const validatePhoneNumber = (phone) => /^[0-9]{10,13}$/.test(phone);
   const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -150,6 +151,7 @@ const Landingpagel1 = () => {
       return;
     }
     toast.success("OTP Verified successfully");
+
     // setIsOtpVerified(true);
     setIsClicked(true);
     setIsOtpSent(false);
@@ -176,6 +178,11 @@ const Landingpagel1 = () => {
     try {
       e.preventDefault();
 
+      if (!isOtpVerified) {
+        toast.error("Please verify the otp before submitting the form.");
+        return;
+      }
+
       const { firstName, lastName, email, phone, service } = form;
 
       if (!firstName.trim()) return toast.error("First Name is required.");
@@ -191,17 +198,14 @@ const Landingpagel1 = () => {
         return;
       }
 
-      if (!isOtpVerified)
-        return toast.error("Please verify your phone number with OTP.");
+      // if (!isOtpVerified) return toast.error('Please verify your phone number with OTP.');
       if (!service.trim()) return toast.error("Please select a service.");
 
-      const captchaVerify = await verifyToken(turnstileResponse);
+      // const captchaVerify = await verifyToken(turnstileResponse)
 
-      if (!captchaVerify?.data?.status) {
-        return toast.error(
-          "Unable to verify captcha. Please Contact Site Administrator "
-        );
-      }
+      // if (!captchaVerify?.data?.status) {
+      //     return toast.error("Unable to verify captcha. Please Contact Site Administrator ")
+      // }
 
       const data = {
         name: `${firstName} ${lastName}`,
@@ -209,26 +213,37 @@ const Landingpagel1 = () => {
         phone: phone,
         company: form.company || "N/A",
         service: service,
-        source: "Landingpage L1",
         message: form.message || "N/A",
         source: "L3-communication platform cpaas",
       };
 
       setIsFetching(true);
 
-      const res = await axios.post(`${url}/save`, data);
+      const res = await axios.post(`${url}/save`, data, {
+        headers: {
+          "x-secret-key": process.env.NEXT_PUBLIC_API_KEY,
+        },
+      });
       if (!res.data.status) {
         toast.error("Unable to send form data. Please try again later");
         return;
       }
-      const sendEmail = await axios.post(`${url}/send-email`, data);
+      const sendEmail = await axios.post(`${url}/email`, data, {
+        headers: {
+          "x-secret-key": process.env.NEXT_PUBLIC_API_KEY,
+        },
+      });
 
       if (!sendEmail.data.status) {
         toast.error("Unable to send form data. Please try again later");
         return;
       }
 
-      const sendWhatsapp = await axios.post(`${url}/send-whatsapp`, data);
+      const sendWhatsapp = await axios.post(`${url}/whatsapp`, data, {
+        headers: {
+          "x-secret-key": process.env.NEXT_PUBLIC_API_KEY,
+        },
+      });
 
       if (!sendWhatsapp?.data?.status) {
         toast.error("Unable to send form data. Please try again later");
@@ -236,11 +251,17 @@ const Landingpagel1 = () => {
       }
       // setIsSubmitting(true);
       setIsFetching(false);
+      pushToDataLayer({
+        event: "form_submit",
+        form_id: "form_1",
+        form_name: "Form 1",
+        page_path: window.location.pathname,
+      });
       // setSubmitLabel("Submitting...");
       toast.success("Form submitted successfully!");
       router.push("/thank-you");
     } catch (e) {
-      return toast.error("Unable to send form data. Please try again later");
+      toast.error("Unable to send form data. Please try again later");
     } finally {
       setIsFetching(false);
     }
@@ -400,7 +421,7 @@ const Landingpagel1 = () => {
 
   return (
     <div>
-      <section className="relative bg-[#FFF2EB] px-4 py-5 md:py-20">
+      <section className="relative bg-[#FFF2EB] px-4 py-5 md:py-20 ">
         <div className="max-w-6xl mx-auto">
           {/* Wave background bottom */}
           <div className="absolute inset-x-0 bottom-0 pointer-events-none">
@@ -420,11 +441,7 @@ const Landingpagel1 = () => {
             <div className="flex justify-start items-center">
               {/* Left Content */}
               <div className="text-center lg:text-left">
-                <Image
-                  src={celitixheader}
-                  alt="Celitix logo"
-                  className="mx-auto lg:mx-0 mb-4 h-14 md:h-16"
-                />
+                {/* <Image src={celitixheader} alt="Celitix logo" className="mx-auto lg:mx-0 mb-4 h-14 md:h-16" /> */}
                 <p className="text-purple-600 sub-heading text-lg md:text-2xl  font-medium mb-2">
                   Scale 1-on-1 Communication
                 </p>
@@ -442,10 +459,7 @@ const Landingpagel1 = () => {
 
             {/* Right Form */}
             <div className="bg-[#F9F4FF] order-1 md:order-2 border-gray-300 rounded-xl p-1 md:p-6 shadow-sm">
-              <form
-                onSubmit={handleSubmit}
-                className="space-y-4 bg-white border border-gray-300 rounded-xl p-4 md:p-6 shadow-sm"
-              >
+              <div className="space-y-4 bg-white border border-gray-300 rounded-xl p-4 md:p-6 shadow-sm">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <input
                     type="text"
@@ -604,7 +618,9 @@ const Landingpagel1 = () => {
                   className="form-textarea w-full border border-gray-300 rounded-md p-2"
                 />
 
-                <TurnstileComponent onChange={handleTurnstileChange} />
+                <div className="">
+                  <TurnstileComponent onChange={handleTurnstileChange} />
+                </div>
                 <div className="flex justify-center">
                   <UniversalButton
                     // label={submitLabel} // Dynamically change the label based on the state
@@ -613,9 +629,10 @@ const Landingpagel1 = () => {
                     variant="brutal"
                     className="bg-[#9B44B6] border-[#9B44B6] text-white hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] px-4 py-2 rounded-md"
                     disabled={isFetching}
+                    onClick={handleSubmit}
                   />
                 </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>
@@ -925,32 +942,30 @@ const Landingpagel1 = () => {
         </div>
       </section>
 
-      <footer className="bg-gradient-to-r from-[#2b40b0] via-[#8447c6] to-[#36bae2] text-white">
-        <div className="max-w-7xl mx-auto px-4 py-3 sub-heading md:text-lg flex flex-col md:flex-row items-center justify-center text-md">
-          <span>
-            © {new Date().getFullYear()} Celitix. All rights reserved.
-          </span>
-          <nav className="flex space-x-4 md:ml-4 mt-2 md:mt-0">
-            <a
-              href="/terms-and-conditions"
-              className=""
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Terms &amp; Conditions
-            </a>
-            <span className="hidden md:inline">|</span>
-            <a
-              href="/privacy-policy"
-              className=""
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Privacy Policy
-            </a>
-          </nav>
-        </div>
-      </footer>
+      {/* <footer className="bg-gradient-to-r from-[#2b40b0] via-[#8447c6] to-[#36bae2] text-white">
+                <div className="max-w-7xl mx-auto px-4 py-3 sub-heading md:text-lg flex flex-col md:flex-row items-center justify-center text-md">
+                    <span>© {new Date().getFullYear()} Celitix. All rights reserved.</span>
+                    <nav className="flex space-x-4 md:ml-4 mt-2 md:mt-0">
+                        <a
+                            href="/terms-and-conditions"
+                            className=""
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Terms &amp; Conditions
+                        </a>
+                        <span className="hidden md:inline">|</span>
+                        <a
+                            href="/privacy-policy"
+                            className=""
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Privacy Policy
+                        </a>
+                    </nav>
+                </div>
+            </footer> */}
     </div>
   );
 };
