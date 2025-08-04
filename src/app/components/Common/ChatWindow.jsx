@@ -7,17 +7,17 @@ import Image from "next/image";
 import { CELITIX_FAV_ICON } from "../../../../public/assets/images";
 import axios from "axios";
 import Cookies from "js-cookie"
+import toast from "react-hot-toast";
 
 
 async function generateSessionId() {
   try {
     const res = await axios.get("https://instamailz.in/session/new")
-    console.log(res?.data?.sessionId)
     Cookies.set('session_id', res?.data?.sessionId, { expires: 1 })
     return res?.data?.sessionId
   }
   catch (e) {
-    console.log(e)
+    toast.error("Error generating session id. Please try again later.");
   }
 }
 
