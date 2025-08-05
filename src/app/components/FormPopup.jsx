@@ -1,17 +1,17 @@
-"use client"
-import React, { useEffect, useRef, useState } from 'react';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import UniversalButton from '../components/UniversalButton';
-import { initScrollReveal } from '../../utils/ScrollReveal';
-import { useRouter } from 'next/navigation';
-import { TurnstileComponent } from '../../utils/TurnstileComponent';
-import toast from 'react-hot-toast';
+"use client";
+import React, { useEffect, useRef, useState } from "react";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import UniversalButton from "../components/UniversalButton";
+import { initScrollReveal } from "../../utils/ScrollReveal";
+import { useRouter } from "next/navigation";
+import { TurnstileComponent } from "../../utils/TurnstileComponent";
+import toast from "react-hot-toast";
 import { Dialog } from "primereact/dialog";
-import { sendOtp, verifyOtp } from '../../utils/Otp';
+import { sendOtp, verifyOtp } from "../../utils/Otp";
 import { verifyToken } from "../../utils/VerifyToken";
-import axios from "axios"
+import axios from "axios";
 
-  const url = process.env.NEXT_PUBLIC_API_URL
+const url = process.env.NEXT_PUBLIC_API_URL;
 // const url = "https://celitix.com:3001";
 
 const FormPopup = ({ visible, onHide }) => {
@@ -21,13 +21,13 @@ const FormPopup = ({ visible, onHide }) => {
 
   const router = useRouter();
   const [form, setForm] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    company: '',
-    service: '',
-    message: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    company: "",
+    service: "",
+    message: "",
     consent: false,
   });
 
@@ -35,7 +35,7 @@ const FormPopup = ({ visible, onHide }) => {
   const [isTouched, setIsTouched] = useState(false);
   const [isValid, setIsValid] = useState(false);
 
-  const [otp, setOtp] = useState(Array(6).fill(''));
+  const [otp, setOtp] = useState(Array(6).fill(""));
   const otpRefs = useRef([]);
   const [isOtpSent, setIsOtpSent] = useState(false);
   const [resendTimer, setResendTimer] = useState(0);
@@ -65,28 +65,27 @@ const FormPopup = ({ visible, onHide }) => {
     const email = form.email.trim();
 
     if (!validatePhoneNumber(phone)) {
-      toast.error('Enter a valid phone number.');
+      toast.error("Enter a valid phone number.");
       return;
     }
 
     if (!validateEmail(email)) {
-      toast.error('Enter a valid email address.');
+      toast.error("Enter a valid email address.");
       return;
     }
 
     // Set verified if validations pass
     setButtonLabel("Resend");
 
-    const res = await sendOtp(phone)
+    const res = await sendOtp(phone);
     if (res?.data?.result !== "success") {
-      toast.error("Error Sending OTP. Please try again later.")
+      toast.error("Error Sending OTP. Please try again later.");
     }
-
 
     setIsOtpSent(true);
     setResendTimer(30);
     startResendTimer();
-    toast.success('OTP sent successfully!');
+    toast.success("OTP sent successfully!");
   };
 
   const startResendTimer = () => {
@@ -107,37 +106,37 @@ const FormPopup = ({ visible, onHide }) => {
       updatedOtp[index] = value;
       setOtp(updatedOtp);
 
-      if (value !== '' && index < otp.length - 1) {
+      if (value !== "" && index < otp.length - 1) {
         otpRefs.current[index + 1]?.focus();
-      } else if (value === '' && index > 0) {
+      } else if (value === "" && index > 0) {
         otpRefs.current[index - 1]?.focus();
       }
     }
   };
 
   const handleverifyOtp = async () => {
-    const enteredOtp = otp.join('');
-    const validOtp = '123456'; // Replace with real OTP logic
+    const enteredOtp = otp.join("");
+    const validOtp = "123456"; // Replace with real OTP logic
     const phone = form.phone.trim();
 
     if (enteredOtp.length < 6) {
-      toast.error('Please enter the complete 6-digit OTP.');
+      toast.error("Please enter the complete 6-digit OTP.");
       return;
     }
 
     const res = await verifyOtp({
       mobile: phone,
-      otp: enteredOtp
-    })
+      otp: enteredOtp,
+    });
     if (res.data.result !== "success") {
-      toast.error("Please enter valid OTP")
-      return
+      toast.error("Please enter valid OTP");
+      return;
     }
-    toast.success("OTP Verified successfully")
+    toast.success("OTP Verified successfully");
     setIsOtpVerified(true);
     setIsClicked(true);
     setIsOtpSent(false);
-    setOtp(Array(6).fill(''));
+    setOtp(Array(6).fill(""));
 
     // if (enteredOtp === validOtp) {
     //   toast.success('OTP Verified Successfully!');
@@ -149,103 +148,109 @@ const FormPopup = ({ visible, onHide }) => {
     // }
   };
 
-
-
-
   const [turnstileResponse, setTurnstileResponse] = useState(null); // To store the Turnstile response token
   // Handle Turnstile success response
   const handleTurnstileChange = (token) => {
     setTurnstileResponse(token);
-    console.log("Turnstile Token:", token); // Print the Turnstile token
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    try {
+      e.preventDefault();
 
-    if (!isOtpVerified) {
-    toast.error('Please verify the otp before submitting the form.');
-    return;
-    }
-
-    const { firstName, lastName, email, phone, service } = form;
-
-    if (!firstName.trim()) return toast.error('First Name is required.');
-    if (!lastName.trim()) return toast.error('Last Name is required.');
-    if (!email.trim() || !validateEmail(email)) return toast.error('Enter a valid email address.');
-    if (!validatePhoneNumber(phone)) return toast.error('Enter a valid phone number.');
-
-    const enteredOtp = otp.join('');
-    if (!isOtpVerified && enteredOtp.length < 6) {
-      toast.error('Please verify your phone number with OTP.');
-      return;
-    }
-
-    // if (!isOtpVerified) return toast.error('Please verify your phone number with OTP.');
-    if (!service.trim()) return toast.error('Please select a service.');
-
-    const captchaVerify = await verifyToken(turnstileResponse)
-
-    if (!captchaVerify?.data?.status) {
-      return toast.error("Unable to verify captcha. Please Contact Site Administrator ")
-    }
-
-    const data = {
-      name: `${firstName} ${lastName}`,
-      email: email,
-      phone: phone,
-      company: form.company || "N/A",
-      service: service,
-      source: "Book Demo",
-      message: form.message || "N/A"
-    };
-
-    setIsFetching(true);
-
-    const res = await axios.post(`${url}/save`, data, {
-      headers:{
-        "x-secret-key":process.env.NEXT_PUBLIC_API_KEY
+      if (!isOtpVerified) {
+        toast.error("Please verify the otp before submitting the form.");
+        return;
       }
-    })
-    if (!res.data.status) {
-      toast.error("Unable to send form data. Please try again later")
-      return
-    }
-    const sendEmail = await axios.post(`${url}/email`, data,{
-      headers:{
-        "x-secret-key":process.env.NEXT_PUBLIC_API_KEY
+
+      const { firstName, lastName, email, phone, service } = form;
+
+      if (!firstName.trim()) return toast.error("First Name is required.");
+      if (!lastName.trim()) return toast.error("Last Name is required.");
+      if (!email.trim() || !validateEmail(email))
+        return toast.error("Enter a valid email address.");
+      if (!validatePhoneNumber(phone))
+        return toast.error("Enter a valid phone number.");
+
+      const enteredOtp = otp.join("");
+      if (!isOtpVerified && enteredOtp.length < 6) {
+        toast.error("Please verify your phone number with OTP.");
+        return;
       }
-    })
 
-    if (!sendEmail.data.status) {
-      toast.error("Unable to send form data. Please try again later")
-      return
-    }
-    const sendWhatsapp = await axios.post(`${url}/whatsapp`, data,{
-      headers:{
-        "x-secret-key":process.env.NEXT_PUBLIC_API_KEY
+      // if (!isOtpVerified) return toast.error('Please verify your phone number with OTP.');
+      if (!service.trim()) return toast.error("Please select a service.");
+
+      const captchaVerify = await verifyToken(turnstileResponse);
+
+      if (!captchaVerify?.data?.status) {
+        return toast.error(
+          "Unable to verify captcha. Please Contact Site Administrator "
+        );
       }
-    })
 
-    if (!sendWhatsapp?.data?.status) {
-      toast.error("Unable to send form data. Please try again later")
-      return
+      const data = {
+        name: `${firstName} ${lastName}`,
+        email: email,
+        phone: phone,
+        company: form.company || "N/A",
+        service: service,
+        source: "Book Demo",
+        message: form.message || "N/A",
+      };
+
+      setIsFetching(true);
+
+      const res = await axios.post(`${url}/save`, data, {
+        headers: {
+          "x-secret-key": process.env.NEXT_PUBLIC_API_KEY,
+        },
+      });
+      if (!res.data.status) {
+        toast.error("Unable to send form data. Please try again later");
+        return;
+      }
+      const sendEmail = await axios.post(`${url}/email`, data, {
+        headers: {
+          "x-secret-key": process.env.NEXT_PUBLIC_API_KEY,
+        },
+      });
+
+      if (!sendEmail.data.status) {
+        toast.error("Unable to send form data. Please try again later");
+        return;
+      }
+      const sendWhatsapp = await axios.post(`${url}/whatsapp`, data, {
+        headers: {
+          "x-secret-key": process.env.NEXT_PUBLIC_API_KEY,
+        },
+      });
+
+      if (!sendWhatsapp?.data?.status) {
+        toast.error("Unable to send form data. Please try again later");
+        return;
+      }
+
+      setIsFetching(false);
+      toast.success("Your enquiry has been received.");
+
+      router.push("/thank-you");
+      onHide();
+    } catch (e) {
+      return toast.error("Unable to send form data. Please try again later");
     }
-
-    setIsFetching(false);
-    toast.success('Your enquiry has been received.');
-    console.log('Form submitted:', form);
-    router.push('/thank-you');
-    onHide()
+    finally{
+      setIsFetching(false);
+    }
   };
-
 
   return (
     <Dialog
       visible={visible}
       className="p-5 rounded-2xl bg-white border border-white z-99"
-      style={{ width:'45rem', backgroundColor:'white', }}
+      style={{ width: "45rem", backgroundColor: "white" }}
       onHide={onHide}
-      maskStyle={{ backgroundColor: 'rgba(80, 80, 80, 0.3)' }}
+      maskStyle={{ backgroundColor: "rgba(80, 80, 80, 0.3)" }}
       draggable={false}
       header={
         <h2 className="text-md heading py-3">
@@ -253,7 +258,7 @@ const FormPopup = ({ visible, onHide }) => {
         </h2>
       }
     >
-      <div className=''>
+      <div className="">
         {/* <Header /> */}
         <div className="px-1 ">
           {/* <div className="text-center mb-8 box-reveal-top">
@@ -279,15 +284,19 @@ const FormPopup = ({ visible, onHide }) => {
                     </div> */}
 
           <div className="">
-
-            <form onSubmit={handleSubmit} className="space-y-4 bg-white border border-gray-300 rounded-xl p-1 md:p-2 shadow-sm ">
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-4 bg-white border border-gray-300 rounded-xl p-1 md:p-2 shadow-sm "
+            >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <input
                   type="text"
                   name="fname"
                   placeholder="First Name"
                   value={form.firstName}
-                  onChange={(e) => setForm({ ...form, firstName: e.target.value })}
+                  onChange={(e) =>
+                    setForm({ ...form, firstName: e.target.value })
+                  }
                   className="w-full border border-gray-300 rounded-md p-2"
                 />
                 <input
@@ -295,7 +304,9 @@ const FormPopup = ({ visible, onHide }) => {
                   name="lname"
                   placeholder="Last Name"
                   value={form.lastName}
-                  onChange={(e) => setForm({ ...form, lastName: e.target.value })}
+                  onChange={(e) =>
+                    setForm({ ...form, lastName: e.target.value })
+                  }
                   className="w-full border border-gray-300 rounded-md p-2"
                 />
               </div>
@@ -308,58 +319,134 @@ const FormPopup = ({ visible, onHide }) => {
                   onChange={handleEmailChange}
                   onBlur={handleEmailBlur}
                   disabled={isOtpVerified}
-                  className={`w-full rounded-md p-2 border focus:outline-none focus:ring-2 ${!isTouched
-                    ? 'border-gray-300 focus:ring-blue-300'
-                    : isValid
-                      ? 'border-green-500 focus:ring-green-300'
-                      : 'border-red-500 focus:ring-red-300'
-                    }`}
+                  className={`w-full rounded-md p-2 border focus:outline-none focus:ring-2 ${
+                    !isTouched
+                      ? "border-gray-300 focus:ring-blue-300"
+                      : isValid
+                      ? "border-green-500 focus:ring-green-300"
+                      : "border-red-500 focus:ring-red-300"
+                  }`}
                 />
                 <div className="flex gap-2 items-center">
-                  <input type="text" name="phone" placeholder="Phone No." disabled={isOtpVerified} value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value.replace(/[^\d]/g, '').slice(0, 13), isOtpVerified: false })} className="form-input w-full border border-gray-300 rounded-md p-2" />
+                  <input
+                    type="text"
+                    name="phone"
+                    placeholder="Phone No."
+                    disabled={isOtpVerified}
+                    value={form.phone}
+                    onChange={(e) =>
+                      setForm({
+                        ...form,
+                        phone: e.target.value
+                          .replace(/[^\d]/g, "")
+                          .slice(0, 13),
+                        isOtpVerified: false,
+                      })
+                    }
+                    className="form-input w-full border border-gray-300 rounded-md p-2"
+                  />
                   {!isClicked && (
-                    <UniversalButton label={buttonLabel} type="button" variant="brutal" disable={!validatePhoneNumber(form.phone) || resendTimer > 0} onClick={handlesendOtp} className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 rounded hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] disabled:bg-gray-300 disabled:text-gray-700 disabled:cursor-not-allowed" />
+                    <UniversalButton
+                      label={buttonLabel}
+                      type="button"
+                      variant="brutal"
+                      disable={
+                        !validatePhoneNumber(form.phone) || resendTimer > 0
+                      }
+                      onClick={handlesendOtp}
+                      className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 rounded hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] disabled:bg-gray-300 disabled:text-gray-700 disabled:cursor-not-allowed"
+                    />
                   )}
                 </div>
               </div>
 
               {isOtpSent && resendTimer > 0 && (
-                <div className="text-sm text-gray-600 mt-1">Resend in {resendTimer} seconds</div>
+                <div className="text-sm text-gray-600 mt-1">
+                  Resend in {resendTimer} seconds
+                </div>
               )}
 
               {isOtpSent && (
                 <div className="flex items-center gap-2 flex-wrap mt-2">
                   {otp.map((digit, index) => (
-                    <input key={index} ref={(el) => (otpRefs.current[index] = el)} type="text" maxLength={1} inputMode="numeric" value={digit} onChange={(e) => handleOtpChange(index, e.target.value)} className="w-10 h-10 text-center border border-gray-300 rounded" />
+                    <input
+                      key={index}
+                      ref={(el) => (otpRefs.current[index] = el)}
+                      type="text"
+                      maxLength={1}
+                      inputMode="numeric"
+                      value={digit}
+                      onChange={(e) => handleOtpChange(index, e.target.value)}
+                      className="w-10 h-10 text-center border border-gray-300 rounded"
+                    />
                   ))}
-                  <UniversalButton label="Submit" variant="brutal" type="button" onClick={handleverifyOtp} className="bg-[#9B44B6] border-[#9B44B6] text-white hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] px-3 py-1 rounded-md mx-1" />
+                  <UniversalButton
+                    label="Submit"
+                    variant="brutal"
+                    type="button"
+                    onClick={handleverifyOtp}
+                    className="bg-[#9B44B6] border-[#9B44B6] text-white hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] px-3 py-1 rounded-md mx-1"
+                  />
                 </div>
               )}
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <input type="text" name="company" placeholder="Company Name" value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} className="form-input w-full border border-gray-300 rounded-md p-2" />
+                <input
+                  type="text"
+                  name="company"
+                  placeholder="Company Name"
+                  value={form.company}
+                  onChange={(e) =>
+                    setForm({ ...form, company: e.target.value })
+                  }
+                  className="form-input w-full border border-gray-300 rounded-md p-2"
+                />
 
-                <select name="service" value={form.service} onChange={(e) => setForm({ ...form, service: e.target.value })} className="form-select w-full border border-gray-300 rounded-md p-2 text-gray-500">
-                  <option value="" disabled>Select Service</option>
-                  <option value="WhatsApp Business API">WhatsApp Business API</option>
-                  <option value="RCS Business Messaging">RCS Business Messaging</option>
+                <select
+                  name="service"
+                  value={form.service}
+                  onChange={(e) =>
+                    setForm({ ...form, service: e.target.value })
+                  }
+                  className="form-select w-full border border-gray-300 rounded-md p-2 text-gray-500"
+                >
+                  <option value="" disabled>
+                    Select Service
+                  </option>
+                  <option value="WhatsApp Business API">
+                    WhatsApp Business API
+                  </option>
+                  <option value="RCS Business Messaging">
+                    RCS Business Messaging
+                  </option>
                   <option value="SMS Solution">SMS Solution</option>
-                  <option value="IVR/Missed Call">Virtual Receptionist (IVR)/Missed Call</option>
+                  <option value="IVR/Missed Call">
+                    Virtual Receptionist (IVR)/Missed Call
+                  </option>
                   <option value="User Verification">Chatbot Services</option>
                   <option value="API Integration">API Integrations</option>
                   <option value="2-way SMS">2 Way SMS (Long/Shortcode)</option>
-                  <option value="Missed Call Services">Missed Call Services</option>
-                  <option value="Other CPaaS Solutions">Other CPaaS Solutions</option>
+                  <option value="Missed Call Services">
+                    Missed Call Services
+                  </option>
+                  <option value="Other CPaaS Solutions">
+                    Other CPaaS Solutions
+                  </option>
                 </select>
               </div>
 
-              <textarea name="message" placeholder="How can we help you?" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="form-textarea w-full border border-gray-300 rounded-md p-2" />
-              <div className=''>
-
-              <TurnstileComponent onChange={handleTurnstileChange} />
+              <textarea
+                name="message"
+                placeholder="How can we help you?"
+                value={form.message}
+                onChange={(e) => setForm({ ...form, message: e.target.value })}
+                className="form-textarea w-full border border-gray-300 rounded-md p-2"
+              />
+              <div className="">
+                <TurnstileComponent onChange={handleTurnstileChange} />
               </div>
 
-              <div className='flex justify-center'>
+              <div className="flex justify-center">
                 <UniversalButton
                   // label={submitLabel} // Dynamically change the label based on the state
                   label={isFetching ? "Submitting..." : "Submit"}
@@ -375,8 +462,7 @@ const FormPopup = ({ visible, onHide }) => {
         {/* <Footer /> */}
       </div>
     </Dialog>
+  );
+};
 
-  )
-}
-
-export default FormPopup
+export default FormPopup;

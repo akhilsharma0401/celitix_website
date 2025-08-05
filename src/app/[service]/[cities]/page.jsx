@@ -7,7 +7,6 @@ import { Seo } from "@/utils/seo";
 export default async function Cities({ params }) {
   const { service, cities } = await params;
 
-  console.log(service);
 
   const formattedCity = cities
     ? cities?.charAt(0).toUpperCase() + cities?.slice(1)

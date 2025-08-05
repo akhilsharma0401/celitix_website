@@ -1,21 +1,46 @@
-"use client"
-import React, { useRef, useState } from 'react'
-import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+"use client";
+import React, { useRef, useState } from "react";
+import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 // import { Helmet } from 'react-helmet-async';
-import { Authenticationicon, BuildCustomFlows, Chatbots, Click2callicon, ClicktoWhatsAppAds, CTALASTIMAGE, DoMoreWithLess, Emailicon, IBDicon, LiveNotifications, MeetCustomersWhatsapp, METACOLOR, MissedCallicon, MultiAgentLiveChat, OBDicon, PromoteinBulk, RCSicon, RichCampaigns, ScaleSmartStayReady, ShowcaseCatalogues, SMSicon, twoWaySMSicon, WhatsApp_Business_Platform, WhatsAppAPI, WhatsAppicon, whatsChatbot, whatsManageOrders, WhyCelitixWhatsapp } from '../../../public/assets/images';
+import {
+  Authenticationicon,
+  BuildCustomFlows,
+  Chatbots,
+  Click2callicon,
+  ClicktoWhatsAppAds,
+  CTALASTIMAGE,
+  DoMoreWithLess,
+  Emailicon,
+  IBDicon,
+  LiveNotifications,
+  MeetCustomersWhatsapp,
+  METACOLOR,
+  MissedCallicon,
+  MultiAgentLiveChat,
+  OBDicon,
+  PromoteinBulk,
+  RCSicon,
+  RichCampaigns,
+  ScaleSmartStayReady,
+  ShowcaseCatalogues,
+  SMSicon,
+  twoWaySMSicon,
+  WhatsApp_Business_Platform,
+  WhatsAppAPI,
+  WhatsAppicon,
+  whatsChatbot,
+  whatsManageOrders,
+  WhyCelitixWhatsapp,
+} from "../../../public/assets/images";
 // import { initScrollReveal } from '../../utils/ScrollReveal';
-import Image from 'next/image';
+import Image from "next/image";
 import Link from "next/link";
 // import LocationSEO from '../../components/LocationSEO';
-import FaqItem from '../components/Faq';
-import FormPopup from '../components/FormPopup';
-import UniversalButton from '../components/UniversalButton';
-
-
-
-
+import FaqItem from "../components/Faq";
+import FormPopup from "../components/FormPopup";
+import UniversalButton from "../components/UniversalButton";
 
 const WhatsApp = () => {
   // useEffect(() => {
@@ -25,7 +50,8 @@ const WhatsApp = () => {
   const blogPosts = [
     {
       date: "September 16, 2024",
-      title: "Generative AI security: How to keep your chatbot healthy and your platform protected",
+      title:
+        "Generative AI security: How to keep your chatbot healthy and your platform protected",
       description:
         "Discover essential strategies to secure AI chatbots from evolving GenAI threats. Learn how to protect your AI investments now and keep them healthy and thriving.",
       tags: ["BLOG", "GENRATIVE AI", "CUSTOMER SECURITY", "BEST PRACTICES"],
@@ -113,73 +139,70 @@ const WhatsApp = () => {
 
   const handleShowFormPopup = () => {
     setOpenDialog(true);
-  }
+  };
 
   const handleCloseDialog = () => {
     setOpenDialog(false);
-  }
+  };
 
   // extra section
 
   const tabs = [
-    { key: 'Rich Campaigns', label: 'Rich Campaigns' },
-    { key: 'Custom Flows', label: 'Custom Flows' },
-    { key: 'Chatbots', label: 'Chatbots' },
-    { key: 'Manage Orders', label: 'Manage Orders' },
-  ]
+    { key: "Rich Campaigns", label: "Rich Campaigns" },
+    { key: "Custom Flows", label: "Custom Flows" },
+    { key: "Chatbots", label: "Chatbots" },
+    { key: "Manage Orders", label: "Manage Orders" },
+  ];
 
   const tabData = {
-   'Rich Campaigns': {
-    heading: 'Turn Broadcasts Into Conversations',
-    description:
-      'Send or schedule direct promotional messages on WhatsApp. Incorporate rich media like documents, images, audio, & videos. Add action buttons, product lists, and personalised offers to nudge the sale.',
-    buttonText: 'Learn More',
-    // If you store a PNG/JPG for “Rich Campaigns”:
-    // image can point to a static image import or an external URL
-    image: RichCampaigns,
-    isVideo: false,
-  },
-  'Custom Flows': {
-    heading: 'Perfect Workflows For Any Use Case',
-    description:
-      'Every business is different, and so is its process. With Celitix’s user-friendly WhatsApp Flowbuilder, anyone can design their perfect workflow. Use forms, lists, check boxes, and drop-down menus.',
-    buttonText: 'Learn More',
-    // This is a video file, so we’ll set isVideo=true:
-    image: '/assets/videos/cust.mp4',
-    isVideo: true,
-  },
-  Chatbots: {
-    heading: 'Engage, Guide & Support Customers',
-    description:
-      'Let customers explore your brand at their own pace. Customise one of our pre-built chatbots, or build your own from scratch. Add rich media, videos, documents, and links to create excellent brand experiences.',
-    buttonText: 'Get Started',
-    image: "/assets/videos/wbot.mp4",
-    isVideo: true,
-  },
-  'Manage Orders': {
-    heading: 'From Browse To Checkout, on WhatsApp',
-    description:
-      'Share your products, let customers browse, choose their items, place orders, and take payments. Smart brands can also set up loyalty programs and take feedback to strengthen customer relationships long-term.',
-    buttonText: 'Explore',
-    image: "/assets/videos/word.mp4",
-    isVideo: true,
-  },
-  }
+    "Rich Campaigns": {
+      heading: "Turn Broadcasts Into Conversations",
+      description:
+        "Send or schedule direct promotional messages on WhatsApp. Incorporate rich media like documents, images, audio, & videos. Add action buttons, product lists, and personalised offers to nudge the sale.",
+      buttonText: "Learn More",
+      // If you store a PNG/JPG for “Rich Campaigns”:
+      // image can point to a static image import or an external URL
+      image: RichCampaigns,
+      isVideo: false,
+    },
+    "Custom Flows": {
+      heading: "Perfect Workflows For Any Use Case",
+      description:
+        "Every business is different, and so is its process. With Celitix’s user-friendly WhatsApp Flowbuilder, anyone can design their perfect workflow. Use forms, lists, check boxes, and drop-down menus.",
+      buttonText: "Learn More",
+      // This is a video file, so we’ll set isVideo=true:
+      image: "/assets/videos/cust.mp4",
+      isVideo: true,
+    },
+    Chatbots: {
+      heading: "Engage, Guide & Support Customers",
+      description:
+        "Let customers explore your brand at their own pace. Customise one of our pre-built chatbots, or build your own from scratch. Add rich media, videos, documents, and links to create excellent brand experiences.",
+      buttonText: "Get Started",
+      image: "/assets/videos/wbot.mp4",
+      isVideo: true,
+    },
+    "Manage Orders": {
+      heading: "From Browse To Checkout, on WhatsApp",
+      description:
+        "Share your products, let customers browse, choose their items, place orders, and take payments. Smart brands can also set up loyalty programs and take feedback to strengthen customer relationships long-term.",
+      buttonText: "Explore",
+      image: "/assets/videos/word.mp4",
+      isVideo: true,
+    },
+  };
 
- const [activeTab, setActiveTab] = useState("Rich Campaigns");
+  const [activeTab, setActiveTab] = useState("Rich Campaigns");
 
   // Destructure the current tab’s data in one go:
-  const { heading, description, buttonText, image, isVideo } = tabData[activeTab];
-  console.log("tabData", tabData)
+  const { heading, description, buttonText, image, isVideo } =
+    tabData[activeTab];
 
   // extra section
 
-
   return (
     <div>
-
-
-    {/* <LocationSEO
+      {/* <LocationSEO
         baseTitle="WhatsApp Business API & Chatbots | Celitix"
         baseDescription="Deploy WhatsApp Business API & Chatbots in CITY—automate customer conversations at scale."
       /> */}
@@ -206,18 +229,22 @@ const WhatsApp = () => {
               /> */}
             </div>
 
-            <div className='box-reveal-left space-y-6'>
-
+            <div className="box-reveal-left space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-6xl heading  font-bold text-gray-900 popf leading-tight">
-                Stay <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]"> Connected </span> on WhatsApp
+                Stay{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]">
+                  {" "}
+                  Connected{" "}
+                </span>{" "}
+                on WhatsApp
               </h1>
 
               <p className="text-gray-600  text-base md:text-lg  max-w-md">
-                Let customers come to you using the official WhatsApp Business API. Be present on the world’s biggest messaging app.
+                Let customers come to you using the official WhatsApp Business
+                API. Be present on the world’s biggest messaging app.
               </p>
 
               <div className="flex flex-wrap gap-4">
-
                 <UniversalButton
                   label="Book Demo"
                   variant="brutal"
@@ -225,20 +252,21 @@ const WhatsApp = () => {
                   onClick={handleShowFormPopup}
                 />
 
-                <FormPopup
-                  visible={openDialog}
-                  onHide={handleCloseDialog}
-                />
+                <FormPopup visible={openDialog} onHide={handleCloseDialog} />
 
-                 <Link href="https://wa.me/917230000091" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                <UniversalButton
-                  label="Chat Now"
-                  variant="brutal"
-                  className="bg-[#9B44B6] border-[#9B44B6] text-white px-5 py-2 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] flex items-center gap-2"
-                  icon={<ArrowRightAltIcon style={{ fontSize: 18 }} />}
+                <Link
+                  href="https://wa.me/917230000091"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp"
+                >
+                  <UniversalButton
+                    label="Chat Now"
+                    variant="brutal"
+                    className="bg-[#9B44B6] border-[#9B44B6] text-white px-5 py-2 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] flex items-center gap-2"
+                    icon={<ArrowRightAltIcon style={{ fontSize: 18 }} />}
                   />
-                  </Link>
-
+                </Link>
               </div>
             </div>
           </div>
@@ -250,7 +278,7 @@ const WhatsApp = () => {
               // loading="eager"
               // fetchpriority="high"
               // crossorigin="anonymous"
-              title='WhatsApp Business Platform'
+              title="WhatsApp Business Platform"
               className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg object-contain box-reveal-bottom"
             />
           </div>
@@ -280,9 +308,12 @@ const WhatsApp = () => {
                 </div>
               </div>
               <div className="bg-white border border-black rounded-[20px] p-5 pl-8 relative z-0">
-                <h3 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-4">Showcase Catalogues</h3>
+                <h3 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-4">
+                  Showcase Catalogues
+                </h3>
                 <p className="text-md text-black pera ml-4">
-                  Let customers explore your products, place orders, make payments and get support, all in one place!
+                  Let customers explore your products, place orders, make
+                  payments and get support, all in one place!
                 </p>
               </div>
             </div>
@@ -300,9 +331,12 @@ const WhatsApp = () => {
                 </div>
               </div>
               <div className="bg-white border border-black rounded-[20px] p-5 pl-8 relative z-0">
-                <h3 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-4">Click-to-WhatsApp Ads</h3>
+                <h3 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-4">
+                  Click-to-WhatsApp Ads
+                </h3>
                 <p className="text-md text-black pera ml-4">
-                  Get traffic from social media ads directly to WhatsApp chats. Turn broadcasts into conversations!
+                  Get traffic from social media ads directly to WhatsApp chats.
+                  Turn broadcasts into conversations!
                 </p>
               </div>
             </div>
@@ -320,9 +354,12 @@ const WhatsApp = () => {
                 </div>
               </div>
               <div className="bg-white border border-black rounded-[20px] p-5 pl-8 relative z-0">
-                <h4 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-4">Multi-Agent Live Chat</h4>
+                <h4 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-4">
+                  Multi-Agent Live Chat
+                </h4>
                 <p className="text-md text-black pera ml-4">
-                  Work together on a shared inbox for sales, support, and service. Handle all your CRM on WhatsApp.
+                  Work together on a shared inbox for sales, support, and
+                  service. Handle all your CRM on WhatsApp.
                 </p>
               </div>
             </div>
@@ -352,9 +389,12 @@ const WhatsApp = () => {
                 </div>
               </div>
               <div className="bg-white border border-black rounded-[20px] p-5 pl-8 relative z-0">
-                <h4 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-4">Quick & Easy Chatbots</h4>
+                <h4 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-4">
+                  Quick & Easy Chatbots
+                </h4>
                 <p className="text-md text-black pera ml-4">
-                  Use an intuitive, user-friendly flow builder to make your perfect Chatbot for automatic engagement.
+                  Use an intuitive, user-friendly flow builder to make your
+                  perfect Chatbot for automatic engagement.
                 </p>
               </div>
             </div>
@@ -372,9 +412,12 @@ const WhatsApp = () => {
                 </div>
               </div>
               <div className="bg-white border border-black rounded-[20px] p-5 pl-8 relative z-0">
-                <h4 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-4">Live Notifications</h4>
+                <h4 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-4">
+                  Live Notifications
+                </h4>
                 <p className="text-md text-black pera ml-4">
-                  Share service updates, promotions, abandoned cart messages and more with links, media and buttons.
+                  Share service updates, promotions, abandoned cart messages and
+                  more with links, media and buttons.
                 </p>
               </div>
             </div>
@@ -392,9 +435,12 @@ const WhatsApp = () => {
                 </div>
               </div>
               <div className="bg-white border border-black rounded-[20px] p-5 pl-8 relative z-0">
-                <h4 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-4">Promote in Bulk</h4>
+                <h4 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-4">
+                  Promote in Bulk
+                </h4>
                 <p className="text-md text-black pera ml-4">
-                  Schedule promotional messages to segmented customers in bulk without getting blocked by Meta.
+                  Schedule promotional messages to segmented customers in bulk
+                  without getting blocked by Meta.
                 </p>
               </div>
             </div>
@@ -408,11 +454,11 @@ const WhatsApp = () => {
           <h2 className="text-2xl md:text-4xl heading lg:text-5xl font-semibold text-gray-900 mb-3">
             Why Celitix Makes It Better
           </h2>
-          <p className='text-sm md:text-xl sub-heading text-gray-700'>WhatsApp is powerful. Celitix makes it work for your business.
+          <p className="text-sm md:text-xl sub-heading text-gray-700">
+            WhatsApp is powerful. Celitix makes it work for your business.
           </p>
         </div>
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-12 lg:gap-20">
-
           {/* Left Feature Cards */}
           <div className="flex flex-col gap-6">
             {/* Card 1 */}
@@ -429,7 +475,9 @@ const WhatsApp = () => {
                   Build Custom Flows
                 </h3>
                 <p className="text-md text-gray-800 leading-relaxed pera">
-                  Craft custom workflows using chatbots, buttons, and rich media. Integrate other channels to guide users from hello to checkout.
+                  Craft custom workflows using chatbots, buttons, and rich
+                  media. Integrate other channels to guide users from hello to
+                  checkout.
                 </p>
               </div>
             </div>
@@ -448,7 +496,9 @@ const WhatsApp = () => {
                   Do More With Less
                 </h3>
                 <p className="text-md text-gray-800 leading-relaxed pera">
-                  Customers can discover, ask, and order via WhatsApp. Manage sales and support across every direct channel from one dashboard.
+                  Customers can discover, ask, and order via WhatsApp. Manage
+                  sales and support across every direct channel from one
+                  dashboard.
                 </p>
               </div>
             </div>
@@ -467,7 +517,9 @@ const WhatsApp = () => {
                   Scale Smart, Stay Ready
                 </h3>
                 <p className="text-md text-gray-800 leading-relaxed pera">
-                  Peak sales for seasonal spikes or scale down to save resources. Integrate, add or remove channels and work more efficiently.
+                  Peak sales for seasonal spikes or scale down to save
+                  resources. Integrate, add or remove channels and work more
+                  efficiently.
                 </p>
               </div>
             </div>
@@ -485,9 +537,8 @@ const WhatsApp = () => {
       </section>
       {/* 3st */}
       {/* 4th */}
-      <div className='bg-[#f7ebfc] py-2 md:py-10'>
+      <div className="bg-[#f7ebfc] py-2 md:py-10">
         <div className=" bg-linear-to-r from-[#6b0da1] to-[#8447c6] grid grid-cols-1 md:grid-cols-2 h-auto py-10 px-6 sm:px-8 rounded-3xl  w-full sm:w-11/12 md:w-11/12 mx-auto items-center gap-8">
-
           {/* Left Section */}
           <div className="flex flex-col justify-center text-center md:text-left">
             <h2 className="text-4xl sm:text-3xl heading md:text-4xl font-bold text-white popf ">
@@ -508,14 +559,9 @@ const WhatsApp = () => {
                 onClick={handleShowFormPopup}
               />
 
-
-              <FormPopup
-                visible={openDialog}
-                onHide={handleCloseDialog}
-              />
+              <FormPopup visible={openDialog} onHide={handleCloseDialog} />
             </div>
           </div>
-
         </div>
       </div>
       {/* 4th */}
@@ -529,41 +575,45 @@ const WhatsApp = () => {
           <div className="overflow-x-auto flex lg:justify-center justify-start">
             <div className="inline-flex space-x-4 px-4 lg:px-0">
               <button
-                onClick={() => setActiveTab('Rich Campaigns')}
-                className={`relative px-4 py-2 uppercase text-xs sm:text-sm tracking-wide transition-colors focus:outline-none whitespace-nowrap rounded-t-xl ${activeTab === 'Rich Campaigns'
-                  ? 'text-white bg-[#6E11B0] shadow-lg heading'
-                  : 'text-gray-800 sub-heading bg-[#E9D4FF] hover:bg-[#e4caff] hover:text-[#6b0da1]'
-                  }`}
+                onClick={() => setActiveTab("Rich Campaigns")}
+                className={`relative px-4 py-2 uppercase text-xs sm:text-sm tracking-wide transition-colors focus:outline-none whitespace-nowrap rounded-t-xl ${
+                  activeTab === "Rich Campaigns"
+                    ? "text-white bg-[#6E11B0] shadow-lg heading"
+                    : "text-gray-800 sub-heading bg-[#E9D4FF] hover:bg-[#e4caff] hover:text-[#6b0da1]"
+                }`}
               >
                 Rich Campaigns
               </button>
 
               <button
-                onClick={() => setActiveTab('Custom Flows')}
-                className={`relative px-4 py-2 uppercase text-xs sm:text-sm tracking-wide transition-colors focus:outline-none whitespace-nowrap rounded-t-xl ${activeTab === 'Custom Flows'
-                  ? 'text-white bg-[#6E11B0] shadow-lg heading'
-                  : 'text-gray-800 sub-heading bg-[#E9D4FF] hover:bg-[#e4caff] hover:text-[#6b0da1]'
-                  }`}
+                onClick={() => setActiveTab("Custom Flows")}
+                className={`relative px-4 py-2 uppercase text-xs sm:text-sm tracking-wide transition-colors focus:outline-none whitespace-nowrap rounded-t-xl ${
+                  activeTab === "Custom Flows"
+                    ? "text-white bg-[#6E11B0] shadow-lg heading"
+                    : "text-gray-800 sub-heading bg-[#E9D4FF] hover:bg-[#e4caff] hover:text-[#6b0da1]"
+                }`}
               >
                 Custom Flows
               </button>
 
               <button
-                onClick={() => setActiveTab('Chatbots')}
-                className={`relative px-4 py-2 uppercase text-xs sm:text-sm tracking-wide transition-colors focus:outline-none whitespace-nowrap rounded-t-xl ${activeTab === 'Chatbots'
-                  ? 'text-white bg-[#6E11B0] shadow-lg heading'
-                  : 'text-gray-800 sub-heading bg-[#E9D4FF] hover:bg-[#e4caff] hover:text-[#6b0da1]'
-                  }`}
+                onClick={() => setActiveTab("Chatbots")}
+                className={`relative px-4 py-2 uppercase text-xs sm:text-sm tracking-wide transition-colors focus:outline-none whitespace-nowrap rounded-t-xl ${
+                  activeTab === "Chatbots"
+                    ? "text-white bg-[#6E11B0] shadow-lg heading"
+                    : "text-gray-800 sub-heading bg-[#E9D4FF] hover:bg-[#e4caff] hover:text-[#6b0da1]"
+                }`}
               >
                 Chatbots
               </button>
 
               <button
-                onClick={() => setActiveTab('Manage Orders')}
-                className={`relative px-4 py-2 uppercase text-xs sm:text-sm tracking-wide transition-colors focus:outline-none whitespace-nowrap rounded-t-xl ${activeTab === 'Manage Orders'
-                  ? 'text-white bg-[#6E11B0] shadow-lg heading'
-                  : 'text-gray-800 sub-heading bg-[#E9D4FF] hover:bg-[#e4caff] hover:text-[#6b0da1]'
-                  }`}
+                onClick={() => setActiveTab("Manage Orders")}
+                className={`relative px-4 py-2 uppercase text-xs sm:text-sm tracking-wide transition-colors focus:outline-none whitespace-nowrap rounded-t-xl ${
+                  activeTab === "Manage Orders"
+                    ? "text-white bg-[#6E11B0] shadow-lg heading"
+                    : "text-gray-800 sub-heading bg-[#E9D4FF] hover:bg-[#e4caff] hover:text-[#6b0da1]"
+                }`}
               >
                 Manage Orders
               </button>
@@ -572,55 +622,54 @@ const WhatsApp = () => {
 
           {/* Content box */}
           <div className="border border-[#6b0da1] rounded-3xl shadow-inner bg-white">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 p-6 sm:p-8">
-          {/* Left side: heading, description, button */}
-          <div className="flex flex-col justify-center space-y-4">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold sub-heading text-black">
-              {heading}
-            </h3>
-            <p className="text-gray-700 leading-relaxed pera text-sm sm:text-base">
-              {description}
-            </p>
-            <button
-              className="inline-block px-6 py-2 bg-[#6b0da1] text-white rounded-full w-max hover:bg-[#580a88] transition"
-              onClick={() => {
-                // Put your “Learn More” or “Get Started” click handler here.
-                console.log(`${activeTab} button clicked`);
-              }}
-            >
-              {buttonText}
-            </button>
-          </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 p-6 sm:p-8">
+              {/* Left side: heading, description, button */}
+              <div className="flex flex-col justify-center space-y-4">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold sub-heading text-black">
+                  {heading}
+                </h3>
+                <p className="text-gray-700 leading-relaxed pera text-sm sm:text-base">
+                  {description}
+                </p>
+                <button
+                  className="inline-block px-6 py-2 bg-[#6b0da1] text-white rounded-full w-max hover:bg-[#580a88] transition"
+                  onClick={() => {
+                    // Put your “Learn More” or “Get Started” click handler here.
+                  }}
+                >
+                  {buttonText}
+                </button>
+              </div>
 
-          {/* Right side: image or video */}
-          <div className="flex justify-center h-96">
-            {!isVideo ? (
-              <Image
-                src={image}
-                alt={activeTab}
-                width={320}
-                height={180}
-                className="w-80 h-auto rounded-lg"
-              />
-            ) : (
-              <video
-                key={image}
-                src={image}
-                loop
-                muted
-                autoPlay
-                playsInline
-                preload="metadata"
-                className="w-80 h-auto rounded-lg"
-              >
-                {/* <source src={image} type="video/mp4" /> */}
-                {/* Fallback message in case the browser doesn’t support video */}
-                Your browser does not support the video tag.
-              </video>
-            )}
+              {/* Right side: image or video */}
+              <div className="flex justify-center h-96">
+                {!isVideo ? (
+                  <Image
+                    src={image}
+                    alt={activeTab}
+                    width={320}
+                    height={180}
+                    className="w-80 h-auto rounded-lg"
+                  />
+                ) : (
+                  <video
+                    key={image}
+                    src={image}
+                    loop
+                    muted
+                    autoPlay
+                    playsInline
+                    preload="metadata"
+                    className="w-80 h-auto rounded-lg"
+                  >
+                    {/* <source src={image} type="video/mp4" /> */}
+                    {/* Fallback message in case the browser doesn’t support video */}
+                    Your browser does not support the video tag.
+                  </video>
+                )}
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
         </div>
       </section>
       {/* extra */}
@@ -630,39 +679,54 @@ const WhatsApp = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center px-1 md:px-4 pb-2 md:pb-10">
             <h2 className="text-2xl md:text-4xl lg:text-5xl heading font-semibold text-gray-900 popf">
-              WhatsApp API:
-              Integrate. Automate. Scale.
+              WhatsApp API: Integrate. Automate. Scale.
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 items-center">
             {/* Left Text Block */}
             <div className="space-y-6">
-              <div className=' text-left space-y-2'>
-                <h3 className="text-base sm:text-lg font-semibold heading">Connect Your Systems</h3>
+              <div className=" text-left space-y-2">
+                <h3 className="text-base sm:text-lg font-semibold heading">
+                  Connect Your Systems
+                </h3>
                 <ul className="text-gray-700 space-y-2 text-md sub-heading">
                   {[
-                    'Automate lead nurturing, get status updates, & more',
-                    'Sync customer data for smarter, faster replies',
-                    'Add WhatsApp to your website, app, or CRM',
+                    "Automate lead nurturing, get status updates, & more",
+                    "Sync customer data for smarter, faster replies",
+                    "Add WhatsApp to your website, app, or CRM",
                   ].map((text, i) => (
-                    <li key={i} className="flex justify-start items-center gap-2">
-                      <CheckCircleIcon className="text-blue-500" fontSize="small" />
+                    <li
+                      key={i}
+                      className="flex justify-start items-center gap-2"
+                    >
+                      <CheckCircleIcon
+                        className="text-blue-500"
+                        fontSize="small"
+                      />
                       <span>{text}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className=' text-left space-y-2'>
-                <h3 className="text-base sm:text-lg font-semibold heading">Rich Media Experience</h3>
+              <div className=" text-left space-y-2">
+                <h3 className="text-base sm:text-lg font-semibold heading">
+                  Rich Media Experience
+                </h3>
                 <ul className="text-gray-700 space-y-2 text-md sub-heading">
                   {[
-                    'Share catalogues, images, PDFs, or videos in chat',
-                    'Use quick replies and buttons to drive action',
-                    'Create flows that look and feel premium'
+                    "Share catalogues, images, PDFs, or videos in chat",
+                    "Use quick replies and buttons to drive action",
+                    "Create flows that look and feel premium",
                   ].map((text, i) => (
-                    <li key={i} className="flex justify-start items-center gap-2">
-                      <CheckCircleIcon className="text-blue-500" fontSize="small" />
+                    <li
+                      key={i}
+                      className="flex justify-start items-center gap-2"
+                    >
+                      <CheckCircleIcon
+                        className="text-blue-500"
+                        fontSize="small"
+                      />
                       <span>{text}</span>
                     </li>
                   ))}
@@ -681,32 +745,42 @@ const WhatsApp = () => {
 
             {/* Right Text Block */}
             <div className="space-y-6">
-              <div className='text-left space-y-2'>
-                <h3 className="text-base sm:text-lg font-semibold heading">Verify, Notify & Update</h3>
+              <div className="text-left space-y-2">
+                <h3 className="text-base sm:text-lg font-semibold heading">
+                  Verify, Notify & Update
+                </h3>
                 <ul className="text-gray-700 space-y-2 text-md sub-heading">
                   {[
-                    'Keep users updated on orders, bookings, & services',
-                    'Reduce calls and confusion with proactive messages',
-                    'Send OTPs, reminders, and confirmations instantly'
+                    "Keep users updated on orders, bookings, & services",
+                    "Reduce calls and confusion with proactive messages",
+                    "Send OTPs, reminders, and confirmations instantly",
                   ].map((text, i) => (
                     <li key={i} className="flex items-center gap-2">
-                      <CheckCircleIcon className="text-blue-500" fontSize="small" />
+                      <CheckCircleIcon
+                        className="text-blue-500"
+                        fontSize="small"
+                      />
                       <span>{text}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className='text-left space-y-2'>
-                <h3 className="text-base sm:text-lg font-semibold heading">Omnichannel Journeys</h3>
+              <div className="text-left space-y-2">
+                <h3 className="text-base sm:text-lg font-semibold heading">
+                  Omnichannel Journeys
+                </h3>
                 <ul className="text-gray-700 space-y-2 text-md sub-heading">
                   {[
-                    'Track and optimise every step from one dashboard',
-                    'Combine WhatsApp with all your other channels',
-                    'Let users choose how they want to connect'
+                    "Track and optimise every step from one dashboard",
+                    "Combine WhatsApp with all your other channels",
+                    "Let users choose how they want to connect",
                   ].map((text, i) => (
                     <li key={i} className="flex items-center gap-2">
-                      <CheckCircleIcon className="text-blue-500" fontSize="small" />
+                      <CheckCircleIcon
+                        className="text-blue-500"
+                        fontSize="small"
+                      />
                       <span>{text}</span>
                     </li>
                   ))}
@@ -725,55 +799,145 @@ const WhatsApp = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-7xl mx-auto mb-12">
           {/* Row 1 */}
-          <Link href="/whatsapp-business-platform" className="flex flex-col items-center bg-white rounded-2xl py-6 hover:shadow-lg transition-shadow">
-            <Image src={WhatsAppicon} alt="WhatsApp" className="w-10 h-10 mb-2 object-contain" />
-            <p className="text-sm font-medium text-gray-800 text-md sub-heading">WhatsApp</p>
+          <Link
+            href="/whatsapp-business-platform"
+            className="flex flex-col items-center bg-white rounded-2xl py-6 hover:shadow-lg transition-shadow"
+          >
+            <Image
+              src={WhatsAppicon}
+              alt="WhatsApp"
+              className="w-10 h-10 mb-2 object-contain"
+            />
+            <p className="text-sm font-medium text-gray-800 text-md sub-heading">
+              WhatsApp
+            </p>
           </Link>
 
-          <Link href="/rcs-business-messaging" className="flex flex-col items-center bg-white rounded-2xl py-6 hover:shadow-lg transition-shadow">
-            <Image src={RCSicon} alt="RCS" className="w-10 h-10 mb-2 object-contain" />
-            <p className="text-sm font-medium text-gray-800 text-md sub-heading">RCS</p>
+          <Link
+            href="/rcs-business-messaging"
+            className="flex flex-col items-center bg-white rounded-2xl py-6 hover:shadow-lg transition-shadow"
+          >
+            <Image
+              src={RCSicon}
+              alt="RCS"
+              className="w-10 h-10 mb-2 object-contain"
+            />
+            <p className="text-sm font-medium text-gray-800 text-md sub-heading">
+              RCS
+            </p>
           </Link>
 
-          <Link href="/sms-marketing" className="flex flex-col items-center bg-white rounded-2xl py-6 hover:shadow-lg transition-shadow">
-            <Image src={SMSicon} alt="SMS" className="w-10 h-10 mb-2 object-contain" />
-            <p className="text-sm font-medium text-gray-800 text-md sub-heading">SMS</p>
+          <Link
+            href="/sms-marketing"
+            className="flex flex-col items-center bg-white rounded-2xl py-6 hover:shadow-lg transition-shadow"
+          >
+            <Image
+              src={SMSicon}
+              alt="SMS"
+              className="w-10 h-10 mb-2 object-contain"
+            />
+            <p className="text-sm font-medium text-gray-800 text-md sub-heading">
+              SMS
+            </p>
           </Link>
 
-          <Link href="/two-way-sms" className="flex flex-col items-center bg-white rounded-2xl py-6 hover:shadow-lg transition-shadow">
-            <Image src={twoWaySMSicon} alt="2-Way SMS" className="w-10 h-10 mb-2 object-contain" />
-            <p className="text-sm font-medium text-gray-800 text-md sub-heading">2-Way SMS</p>
+          <Link
+            href="/two-way-sms"
+            className="flex flex-col items-center bg-white rounded-2xl py-6 hover:shadow-lg transition-shadow"
+          >
+            <Image
+              src={twoWaySMSicon}
+              alt="2-Way SMS"
+              className="w-10 h-10 mb-2 object-contain"
+            />
+            <p className="text-sm font-medium text-gray-800 text-md sub-heading">
+              2-Way SMS
+            </p>
           </Link>
 
-          <Link href="/email-otp" className="flex flex-col items-center bg-white rounded-2xl py-6 hover:shadow-lg transition-shadow">
-            <Image src={Emailicon} alt="Email" className="w-10 h-10 mb-2 object-contain" />
-            <p className="text-sm font-medium text-gray-800 text-md sub-heading">Email</p>
+          <Link
+            href="/email-otp"
+            className="flex flex-col items-center bg-white rounded-2xl py-6 hover:shadow-lg transition-shadow"
+          >
+            <Image
+              src={Emailicon}
+              alt="Email"
+              className="w-10 h-10 mb-2 object-contain"
+            />
+            <p className="text-sm font-medium text-gray-800 text-md sub-heading">
+              Email
+            </p>
           </Link>
 
           {/* Row 2 */}
-          <Link href="/inbound-dialer" className="flex flex-col items-center bg-white rounded-2xl py-6 hover:shadow-lg transition-shadow">
-            <Image src={IBDicon} alt="Inbound Dialer" className="w-10 h-10 mb-2 object-contain" />
-            <p className="text-sm font-medium text-gray-800 text-md sub-heading">Inbound Dialer</p>
+          <Link
+            href="/inbound-dialer"
+            className="flex flex-col items-center bg-white rounded-2xl py-6 hover:shadow-lg transition-shadow"
+          >
+            <Image
+              src={IBDicon}
+              alt="Inbound Dialer"
+              className="w-10 h-10 mb-2 object-contain"
+            />
+            <p className="text-sm font-medium text-gray-800 text-md sub-heading">
+              Inbound Dialer
+            </p>
           </Link>
 
-          <Link href="/outbound-dialer" className="flex flex-col items-center bg-white rounded-2xl py-6 hover:shadow-lg transition-shadow">
-            <Image src={OBDicon} alt="Outbound Dialer" className="w-10 h-10 mb-2 object-contain" />
-            <p className="text-sm font-medium text-gray-800 text-md sub-heading">Outbound Dialer</p>
+          <Link
+            href="/outbound-dialer"
+            className="flex flex-col items-center bg-white rounded-2xl py-6 hover:shadow-lg transition-shadow"
+          >
+            <Image
+              src={OBDicon}
+              alt="Outbound Dialer"
+              className="w-10 h-10 mb-2 object-contain"
+            />
+            <p className="text-sm font-medium text-gray-800 text-md sub-heading">
+              Outbound Dialer
+            </p>
           </Link>
 
-          <Link href="/click-to-call" className="flex flex-col items-center bg-white rounded-2xl py-6 hover:shadow-lg transition-shadow">
-            <Image src={Click2callicon} alt="Click to Call" className="w-10 h-10 mb-2 object-contain" />
-            <p className="text-sm font-medium text-gray-800 text-md sub-heading">Click to Call</p>
+          <Link
+            href="/click-to-call"
+            className="flex flex-col items-center bg-white rounded-2xl py-6 hover:shadow-lg transition-shadow"
+          >
+            <Image
+              src={Click2callicon}
+              alt="Click to Call"
+              className="w-10 h-10 mb-2 object-contain"
+            />
+            <p className="text-sm font-medium text-gray-800 text-md sub-heading">
+              Click to Call
+            </p>
           </Link>
 
-          <Link href="/missed-call-services" className="flex flex-col items-center bg-white rounded-2xl py-6 hover:shadow-lg transition-shadow">
-            <Image src={MissedCallicon} alt="Missed Call" className="w-10 h-10 mb-2 object-contain" />
-            <p className="text-sm font-medium text-gray-800 text-md sub-heading">Missed Call</p>
+          <Link
+            href="/missed-call-services"
+            className="flex flex-col items-center bg-white rounded-2xl py-6 hover:shadow-lg transition-shadow"
+          >
+            <Image
+              src={MissedCallicon}
+              alt="Missed Call"
+              className="w-10 h-10 mb-2 object-contain"
+            />
+            <p className="text-sm font-medium text-gray-800 text-md sub-heading">
+              Missed Call
+            </p>
           </Link>
 
-          <Link href="/user-verification" className="flex flex-col items-center bg-white rounded-2xl py-6 hover:shadow-lg transition-shadow">
-            <Image src={Authenticationicon} alt="Authentication " className="w-10 h-10 mb-2 object-contain" />
-            <p className="text-sm font-medium text-gray-800 text-md sub-heading">Authentication </p>
+          <Link
+            href="/user-verification"
+            className="flex flex-col items-center bg-white rounded-2xl py-6 hover:shadow-lg transition-shadow"
+          >
+            <Image
+              src={Authenticationicon}
+              alt="Authentication "
+              className="w-10 h-10 mb-2 object-contain"
+            />
+            <p className="text-sm font-medium text-gray-800 text-md sub-heading">
+              Authentication{" "}
+            </p>
           </Link>
         </div>
 
@@ -803,7 +967,8 @@ const WhatsApp = () => {
             Elevate Your Customer Experience
           </h2>
           <p className="text-gray-200 text-sm sm:text-base md:text-lg sub-heading font-light mb-6 max-w-xl">
-            Go beyond the ordinary and connect with your target groups to grow your business.
+            Go beyond the ordinary and connect with your target groups to grow
+            your business.
           </p>
           <UniversalButton
             label="Book  Demo"
@@ -812,10 +977,7 @@ const WhatsApp = () => {
             onClick={handleShowFormPopup}
           />
 
-          <FormPopup
-            visible={openDialog}
-            onHide={handleCloseDialog}
-          />
+          <FormPopup visible={openDialog} onHide={handleCloseDialog} />
         </div>
       </div>
       {/* 7nd */}
@@ -917,7 +1079,7 @@ const WhatsApp = () => {
       </div>
       {/* 9th */}
     </div>
-  )
-}
+  );
+};
 
-export default WhatsApp
+export default WhatsApp;

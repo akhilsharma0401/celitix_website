@@ -47,7 +47,6 @@ export async function POST(request) {
       },
     };
 
-
     const config = {
       headers: {
         key: process.env.WHATSAPP_KEY,
@@ -62,7 +61,7 @@ export async function POST(request) {
       config
     );
 
-    if (response?.data?.messages[0]?.message_status === "accepted") {
+    if (Array.isArray(response?.data?.messages) && response?.data?.messages[0]?.message_status === "accepted") {
       return new Response(JSON.stringify({ status: true }), {
         status: 200,
         headers: {
@@ -80,7 +79,6 @@ export async function POST(request) {
         }
       );
     }
-
   } catch (e) {
     return new Response(
       JSON.stringify({

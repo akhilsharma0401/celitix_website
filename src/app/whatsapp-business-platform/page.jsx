@@ -170,7 +170,6 @@ const WhatsApp = () => {
 
   // Destructure the current tab’s data in one go:
   const { heading, description, buttonText, image, isVideo } = tabData[activeTab];
-  console.log("tabData", tabData)
 
   // extra section
 
@@ -585,7 +584,6 @@ const WhatsApp = () => {
               className="inline-block px-6 py-2 bg-[#6b0da1] text-white rounded-full w-max hover:bg-[#580a88] transition"
               onClick={() => {
                 // Put your “Learn More” or “Get Started” click handler here.
-                console.log(`${activeTab} button clicked`);
               }}
             >
               {buttonText}
