@@ -107,7 +107,8 @@ const Landing = () => {
     // Set verified if validations pass
     setButtonLabel("Resend");
 
-    if (resendTimer === 0) {;
+    if (resendTimer === 0) {
+      ;
       const res = await sendOtp(phone);
       if (res?.data?.result !== "success") {
         toast.error("Error Sending OTP. Please try again later.");
@@ -519,13 +520,12 @@ const Landing = () => {
                 onChange={handleEmailChange}
                 onBlur={handleEmailBlur}
                 disabled={isOtpVerified}
-                className={`w-full rounded-md p-2 border focus:outline-none focus:ring-2 ${
-                  !isTouched
+                className={`w-full rounded-md p-2 border focus:outline-none focus:ring-2 ${!isTouched
                     ? "border-gray-300 focus:ring-blue-300"
                     : isValid
-                    ? "border-green-500 focus:ring-green-300"
-                    : "border-red-500 focus:ring-red-300"
-                }`}
+                      ? "border-green-500 focus:ring-green-300"
+                      : "border-red-500 focus:ring-red-300"
+                  }`}
               />
               <div className="flex gap-2 items-center">
                 <input
@@ -696,12 +696,11 @@ const Landing = () => {
       <div className="bg-[#F6EDF9] py-2 sm:py-8 md:py-10">
         <div className="text-center px-4 sm:px-6 md:px-8 py-4 md:py-5">
           <h2 className="text-2xl md:4xl lg:text-5xl font-semibold text-gray-900 heading">
-            Reach Customers{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]">
-              {" "}
-              Wherever
+            Expand your reach with
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]">{" "}
+              multi-channel
             </span>{" "}
-            They Are
+            customer engagement
           </h2>
         </div>
 
@@ -712,11 +711,10 @@ const Landing = () => {
               <button
                 key={service.id}
                 onClick={() => setActiveTab(service.id)}
-                className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg mb-2 text-lg text-left transition-all duration-200 sub-heading ${
-                  activeTab === service.id
+                className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg mb-2 text-lg text-left transition-all duration-200 sub-heading ${activeTab === service.id
                     ? "bg-[#ffffff] text-[#a535d1]"
                     : "hover:bg-gray-100 text-black sub-heading"
-                }`}
+                  }`}
               >
                 <Image
                   src={service.icon}
