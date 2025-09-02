@@ -350,6 +350,14 @@ const Footer = () => {
         >
           Privacy Policy
             <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-full"></span>
+          </Link>{' '}
+              |{' '}
+        <Link
+          href="/payment-and-cancellation"
+          className="group relative cursor-pointer hover:text-gray-300 transition inline-block"
+        >
+          Payment & Cancellation Policy
+            <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-full"></span>
           </Link>
         </div>
 

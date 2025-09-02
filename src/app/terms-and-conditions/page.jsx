@@ -9,7 +9,7 @@ const TermsConditions = () => {
 //     initScrollReveal();
 //   }, []);
   return (
-    <div className='bg-[#f7ebfc]'>
+    <div className='bg-[#f7ebfc] pb-5'>
       {/* <Helmet>
         <title>Terms & Conditions | Celitix</title>
         <meta name="description" content="Review Celitix’s terms and conditions for using our services and platform. Stay informed about your rights, responsibilities, and service guidelines." /> */}

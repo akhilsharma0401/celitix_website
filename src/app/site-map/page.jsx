@@ -15,6 +15,7 @@ const links = {
     ['book-a-demo', 'Book Demo', 'Celitix Book Demo'],
     ['privacy-policy', 'Privacy Policy', 'Celitix Privacy Policy'],
     ['terms-and-conditions', 'Terms & Conditions', 'Celitix Terms & Conditions'],
+    ['payment-and-cancellation', 'Payment & Cancellation', 'Celitix Payment & Cancellation Policy'],
   ],
   Channels: [
     ['whatsapp-business-platform', 'WhatsApp', 'Celitix WhatsApp'],

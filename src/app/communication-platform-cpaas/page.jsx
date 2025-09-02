@@ -478,12 +478,14 @@ const Landing = () => {
       </div>
       <div className="px-4 lg:px-25 ">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 mb-2 md:mb-8">
-          <div className="flex justify-center order-2 md:order-1 items-start mb-4 md:mb-0 p-5">
+          <div className="flex items-center justify-center order-2 md:order-1  mb-4 md:mb-0 p-5">
             <Image
               src={LANDING}
               alt=""
               role="presentation"
-              className="w-140 h-115"
+              // className="w-140 h-115"
+              height={600}
+              width={600}
             />
           </div>
 

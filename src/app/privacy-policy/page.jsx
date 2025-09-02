@@ -8,7 +8,7 @@ const PrivacyPolicy = () => {
 //     initScrollReveal();
 //   }, []);
   return (
-    <div className='bg-[#f7ebfc]'>
+    <div className='bg-[#f7ebfc] pb-5'>
 
       {/* <Helmet>
         <title>Privacy Policy | Celitix</title>

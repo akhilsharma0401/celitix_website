@@ -37,7 +37,8 @@ export default function RootLayout({ children }) {
         <link rel="icon" href={CELITIX_FAV_ICON} />
       </Head> */}
       <head>
-        <link rel="icon" type="image/svg+xml" href="/assets/Icons/CELITIXFAVICON.svg" />
+        {/* <link rel="icon" type="image/svg+xml" href="/favicon.ico" /> */}
+         <link rel="icon" type="image/svg+xml" href="/assets/Icons/CELITIXFAVICON.svg" />
         {/* <title>Celitix</title> */}
         <link rel="canonical" href="https://www.celitix.com"/>
         

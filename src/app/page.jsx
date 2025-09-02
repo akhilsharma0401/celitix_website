@@ -713,11 +713,10 @@ const Home = () => {
             <button
               key={idx}
               onClick={() => setActiveFeature(idx)}
-              className={`text-left px-4 py-2 rounded-xl font-medium transition-all duration-200 sub-heading ${
-                idx === activeFeature
-                  ? "bg-[#803B96] text-white shadow-md"
-                  : "text-gray-700 hover:bg-[#803B96] hover:text-white hover:shadow"
-              }`}
+              className={`text-left px-4 py-2 rounded-xl font-medium transition-all duration-200 sub-heading ${idx === activeFeature
+                ? "bg-[#803B96] text-white shadow-md"
+                : "text-gray-700 hover:bg-[#803B96] hover:text-white hover:shadow"
+                }`}
             >
               {feature}
             </button>
@@ -729,7 +728,7 @@ const Home = () => {
             src={image[activeFeature]}
             alt="Preview"
             className="w-[260px] sm:w-[300px] drop-shadow-md hover:scale-105 transition-transform duration-300"
-            // loading="auto"
+          // loading="auto"
           />
         </div>
 
@@ -948,14 +947,15 @@ const Home = () => {
   };
 
   const hero = "/assets/videos/mainvideo.mp4";
+  const heroNew = "/assets/videos/hero-new.mp4";
   return (
     <>
       {/* <ChatLauncher /> */}
       <Seo title={metaData.title} description={metaData.description} />
       <div className="bg-[#f6edf9] relative">
-        
 
-       
+
+
         {/* <OurClientele num={5} /> */}
 
         {/* <Header /> */}
@@ -965,6 +965,69 @@ const Home = () => {
         <link rel="preload" as="image" href={homehero} crossorigin="anonymous" />
       </Helmet> */}
         {/* 1nd */}
+
+
+        {/* 1nd */}
+        {/* <section className="relative isolate overflow-hidden bg-[#F3ECF9] pt-20 md:pt-24">
+        
+          <div className="grid grid-cols-1 items-center gap-6 px-5 py-16 md:grid-cols-2 md:py-20 lg:gap-16 lg:px-22">
+       
+            <div className="text-center md:text-left">
+              <h1 className="heading mb-1 text-4xl font-semibold text-gray-900 md:mb-10 md:text-5xl lg:text-7xl">
+                <span className="block">All-in-One</span>
+                <span className="block">Communication</span>
+                <span className="block">Platform</span>
+              </h1>
+
+              <p className="sub-heading mb-1 text-md font-semibold text-gray-700 md:mb-10 md:text-lg lg:text-2xl">
+                Capture leads. Manage CRM. Engage, sell, support – all in one place!
+              </p>
+
+              <div className="mt-8">
+                <UniversalButton
+                  label="Talk to Expert"
+                  variant="brutal"
+                  className="mb-2 border-[#9B44B6] bg-[#9B44B6] px-3 py-2 font-semibold text-white hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6]"
+                  onClick={handleShowFormPopup}
+                />
+                <FormPopup visible={openDialog} onHide={handleCloseDialog} />
+              </div>
+            </div>
+
+           
+            <div className="relative">
+             
+              <div className="relative z-10 mx-auto w-full rounded-3xl bg-[#F3ECF9]p-6 shadow-[0_20px_60px_rgba(31,41,55,0.12)] ring-1 ring-white/50 backdrop-blur">
+            
+                <video
+                  className="h-full w-full rounded-2xl"
+                  src={heroNew}
+                  key={heroNew}
+                  loop
+                  muted
+                  autoPlay
+                  playsInline
+                  preload="metadata"
+                  aria-label="All-in-One Communication Platform"
+                />
+              </div>
+
+              
+              <div className="pointer-events-none absolute -right-5 top-20 -z-10 hidden md:block">
+                <div className="h-40 w-10 rounded-full bg-[#9B44B6]" />
+              </div>
+            </div>
+          </div>
+        </section> */}
+
+
+
+
+
+
+
+
+
 
         <div className="md:h-[90vh]">
           <OurClientele num={5} />
@@ -997,8 +1060,6 @@ const Home = () => {
             </div>
           </div>
         </div>
-
-        {/* 1nd */}
         <div className="bg-[#F6EDF9] py-2 sm:py-8 md:pb-10 z-50">
           <div className="lg:px-15 md:px-10 px-2 w-full py-5 md:pb-20">
             <video
@@ -1013,10 +1074,11 @@ const Home = () => {
               title="All-in-One Communication Platform"
               alt="All-in-One Communication Platform"
             >
-              {/* <source src="/assets/videos/Hero.mp4" type="video/mp4" /> */}
+              
             </video>
           </div>
         </div>
+        {/* 1nd */}
         {/* 2nd */}
         <div className="Second bg-[#D8E3F5] py-2 md:py-15">
           {/* <div className="text-center px-4 pb-5 md:pb-10">
@@ -1043,7 +1105,7 @@ const Home = () => {
                     src={logo.src}
                     alt={logo.alt}
                     className="h-16 sm:h-20 md:h-24 w-25 md:w-50 object-contain  hover:grayscale-0 transition duration-1000 ease-in-out"
-                    // loading="auto"
+                  // loading="auto"
                   />
                 </SwiperSlide>
               ))}
@@ -1087,19 +1149,17 @@ const Home = () => {
                       className="transition duration-500 cursor-pointer"
                     >
                       <h3
-                        className={`text-3xl md:text-4xl lg:text-6xl transition-all font-semibold duration-1000 ease-in-out lora ${
-                          isActive ? step.color : "text-gray-600 heading"
-                        } rounded-full p-4`}
+                        className={`text-3xl md:text-4xl lg:text-6xl transition-all font-semibold duration-1000 ease-in-out lora ${isActive ? step.color : "text-gray-600 heading"
+                          } rounded-full p-4`}
                       >
                         {step.title}
                       </h3>
 
                       <div
-                        className={`transition-all duration-1000 ease-in-out transform overflow-hidden ${
-                          isActive
-                            ? "opacity-100 max-h-[200] md:max-h-[250px] translate-y-0 scale-100 rounded-lg p-4"
-                            : "opacity-0 max-h-0 -translate-y-2 scale-95 pointer-events-none"
-                        }`}
+                        className={`transition-all duration-1000 ease-in-out transform overflow-hidden ${isActive
+                          ? "opacity-100 max-h-[200] md:max-h-[250px] translate-y-0 scale-100 rounded-lg p-4"
+                          : "opacity-0 max-h-0 -translate-y-2 scale-95 pointer-events-none"
+                          }`}
                       >
                         <h4 className="text-base lg:text-2xl font-medium text-gray-900 mb-1 sub-heading">
                           {step.subtitle}
@@ -1228,7 +1288,7 @@ const Home = () => {
                     label="Book A Demo"
                     variant="transitionbtn"
                     className="px-4 py-2 rounded-xl text-black-50 bg-white"
-                    // onClick={handleShowFormPopup}
+                  // onClick={handleShowFormPopup}
                   />
                 </motion.div>
 
@@ -1275,11 +1335,10 @@ const Home = () => {
                 <button
                   key={service.id}
                   onClick={() => setActiveTab(service.id)}
-                  className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg mb-2 text-lg text-left transition-all duration-200 sub-heading ${
-                    activeTab === service.id
-                      ? "bg-[#ffffff] text-[#a535d1]"
-                      : "hover:bg-gray-100 text-black sub-heading"
-                  }`}
+                  className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg mb-2 text-lg text-left transition-all duration-200 sub-heading ${activeTab === service.id
+                    ? "bg-[#ffffff] text-[#a535d1]"
+                    : "hover:bg-gray-100 text-black sub-heading"
+                    }`}
                 >
                   <Image
                     src={service.icon}
@@ -1353,11 +1412,10 @@ const Home = () => {
                 <button
                   key={industry}
                   onClick={() => setActiveIndustry(industry)}
-                  className={`px-4 py-2 rounded-full font-medium shrink-0 transition-all duration-200 sub-heading ${
-                    industry === activeIndustry
-                      ? "bg-[#9B44B6] text-white shadow-lg scale-105"
-                      : "text-gray-600 hover:bg-[#9B44B6] hover:text-white hover:shadow"
-                  }`}
+                  className={`px-4 py-2 rounded-full font-medium shrink-0 transition-all duration-200 sub-heading ${industry === activeIndustry
+                    ? "bg-[#9B44B6] text-white shadow-lg scale-105"
+                    : "text-gray-600 hover:bg-[#9B44B6] hover:text-white hover:shadow"
+                    }`}
                 >
                   {industry}
                 </button>
