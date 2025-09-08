@@ -501,6 +501,32 @@ const Header = () => {
                   </div> */}
             </div>
 
+            {/* Solutions */}
+            {/* <div className="relative group cursor-pointer">
+              <div className="flex items-center text-lg gap-2 p-2 popfh rounded-md transition-all duration-300">
+                Solutions
+                <MdKeyboardArrowDown className="block group-hover:hidden transition-transform duration-300" />
+                <MdKeyboardArrowUp className="hidden group-hover:block transition-transform duration-300" />
+              </div>
+              <div className="absolute left-1/2 top-9 mt-2 transform -translate-x-1/2 opacity-0 scale-95 
+          pointer-events-none group-hover:pointer-events-auto group-hover:opacity-100 
+          group-hover:scale-100 transition-all duration-500 ease-out z-50 border border-gray-200 p-2 rounded-md  bg-white w-100">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 rotate-45 bg-white h-4 w-4 border-t border-l border-gray-200  z-[1]"></div>
+                <div className="bg-white border border-gray-200 grid grid-cols-2 rounded-lg shadow-md py-3 px-0 flex-col">
+                  <Link href="/integrations">
+                    <div className="flex flex-col popfh items-center justify-center border-r border-gray-700 m-0">
+                      <ResourcesItem title="Integrations" desc="Learn & Explore" />
+                    </div>
+                  </Link>
+                  <Link href="/custom-applications">
+                    <div className="flex flex-col popfh items-center justify-center">
+                      <ResourcesItem title="Custom Applications" desc="Learn & Explore" />
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            </div> */}
+
             {/* Resources */}
             <div className="relative group cursor-pointer">
               <div className="flex items-center text-lg gap-2 p-2 popfh rounded-md transition-all duration-300">
@@ -750,6 +776,34 @@ const Header = () => {
                 Resources <MdKeyboardArrowDown />
                   </div> */}
             {/* <div className="cursor-pointer">Resources</div> */}
+            {/* <div
+              className="relative group cursor-pointer mb-0"
+              onClick={() => {
+                if (window.innerWidth < 769) setIsResourcesOpen(!isResourcesOpen);
+              }}
+            >
+              <div className="flex items-center text-lg gap-2 p-2 rounded-md transition-all duration-300 cursor-pointer">
+                Solutions <MdKeyboardArrowDown />
+              </div>
+
+              <div
+                className={`bg-white text-black rounded-md z-50
+          transition-all duration-300 ease-in-out 
+        ${isResourcesOpen ? 'block' : 'hidden'} grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 
+          w-full md:w-[800px] max-h-[80vh] overflow-y-auto`}
+              >
+                <Link href="/integrations" onClick={() => setMobileMenuOpen(false)}>
+                  <ResourcesItem title="Integrations" desc="Learn & Explore" />
+                </Link>
+                <Link href="/custom-applications" onClick={() => setMobileMenuOpen(false)}>
+                  <ResourcesItem title="Custom Applications" desc="Learn & Explore" />
+                </Link>
+            
+              </div>
+
+            </div> */}
+
+
             <div
               className="relative group cursor-pointer"
               onClick={() => {

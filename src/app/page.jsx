@@ -65,6 +65,10 @@ import {
   homesecond8,
   homesecond9,
   Inbound_Dialer,
+  mainpagefirst,
+  mainpagefourth,
+  mainpagesecond,
+  mainpagethird,
   Missed_Call_Services,
   Outbound_Dialer,
   ProfessionalServices1,
@@ -968,58 +972,7 @@ const Home = () => {
 
 
         {/* 1nd */}
-        {/* <section className="relative isolate overflow-hidden bg-[#F3ECF9] pt-20 md:pt-24">
         
-          <div className="grid grid-cols-1 items-center gap-6 px-5 py-16 md:grid-cols-2 md:py-20 lg:gap-16 lg:px-22">
-       
-            <div className="text-center md:text-left">
-              <h1 className="heading mb-1 text-4xl font-semibold text-gray-900 md:mb-10 md:text-5xl lg:text-7xl">
-                <span className="block">All-in-One</span>
-                <span className="block">Communication</span>
-                <span className="block">Platform</span>
-              </h1>
-
-              <p className="sub-heading mb-1 text-md font-semibold text-gray-700 md:mb-10 md:text-lg lg:text-2xl">
-                Capture leads. Manage CRM. Engage, sell, support – all in one place!
-              </p>
-
-              <div className="mt-8">
-                <UniversalButton
-                  label="Talk to Expert"
-                  variant="brutal"
-                  className="mb-2 border-[#9B44B6] bg-[#9B44B6] px-3 py-2 font-semibold text-white hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6]"
-                  onClick={handleShowFormPopup}
-                />
-                <FormPopup visible={openDialog} onHide={handleCloseDialog} />
-              </div>
-            </div>
-
-           
-            <div className="relative">
-             
-              <div className="relative z-10 mx-auto w-full rounded-3xl bg-[#F3ECF9]p-6 shadow-[0_20px_60px_rgba(31,41,55,0.12)] ring-1 ring-white/50 backdrop-blur">
-            
-                <video
-                  className="h-full w-full rounded-2xl"
-                  src={heroNew}
-                  key={heroNew}
-                  loop
-                  muted
-                  autoPlay
-                  playsInline
-                  preload="metadata"
-                  aria-label="All-in-One Communication Platform"
-                />
-              </div>
-
-              
-              <div className="pointer-events-none absolute -right-5 top-20 -z-10 hidden md:block">
-                <div className="h-40 w-10 rounded-full bg-[#9B44B6]" />
-              </div>
-            </div>
-          </div>
-        </section> */}
-
 
 
 
@@ -1079,6 +1032,14 @@ const Home = () => {
           </div>
         </div>
         {/* 1nd */}
+
+
+
+
+
+
+
+
         {/* 2nd */}
         <div className="Second bg-[#D8E3F5] py-2 md:py-15">
           {/* <div className="text-center px-4 pb-5 md:pb-10">
@@ -1927,7 +1888,7 @@ const Home = () => {
           </div>
         </div>
       </div> */}
-      </div>
+      </div >
     </>
   );
 };

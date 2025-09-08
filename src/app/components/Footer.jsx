@@ -335,7 +335,7 @@ const Footer = () => {
 
       </div>
       <div className="text-md text-white text-center border-t border-gray-700 py-4">
-        © 2025 Celitix. All rights reserved. Powered by Proactive Professional Services Pvt Ltd |{' '}
+        © 2025 Celitix. All rights reserved. Powered by Proactive Professional Services Pvt Ltd <br />{' '}
         <Link
           href="/terms-and-conditions"
           className="group relative cursor-pointer hover:text-gray-300 transition inline-block"
@@ -357,6 +357,14 @@ const Footer = () => {
           className="group relative cursor-pointer hover:text-gray-300 transition inline-block"
         >
           Payment & Cancellation Policy
+            <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-full"></span>
+          </Link>{' '}
+              |{' '}
+        <Link
+          href="/shipping-and-delivery-policy"
+          className="group relative cursor-pointer hover:text-gray-300 transition inline-block"
+        >
+          Shipping & Delivery Policy
             <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-full"></span>
           </Link>
         </div>

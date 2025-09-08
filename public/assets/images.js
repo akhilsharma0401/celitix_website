@@ -30,11 +30,17 @@ import L1email from "./Icons/whatsapp-business-api-icon.png"
 import L1Appauth from "./Icons/mobile-app-authentication-icon.png"
 import chat from "./videos/CELITIX-FAV-GIF.gif"
 
-
 // header images
 
 // Home
 // 1st
+import mainpagefirst from "./imagesMain/mainpage21.png"
+import mainpagesecond from "./imagesMain/mainpage22.png"
+import mainpagethird from "./imagesMain/mainpage23.png"
+import mainpagefourth from "./imagesMain/mainpage24.png"
+import sms_based from "./imagesMain/sms_based.jpg"
+import employee_cab from "./imagesMain/employee_cab.jpg"
+import Worker_app from "./imagesMain/Worker_app.jpg"
 // import homehero from "./videos/hero.mp4"
 // 1st
 // 2nd
@@ -605,6 +611,13 @@ export {
     // Home Page
     // 1st
     // homehero,
+    mainpagefirst,
+    mainpagesecond,
+    mainpagethird,
+    mainpagefourth,
+    sms_based,
+    employee_cab,
+    Worker_app,
     // 1st
     // 2nd
     homesecond1,
