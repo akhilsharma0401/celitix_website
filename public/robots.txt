@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.celitix.com
+
+# Sitemaps
+Sitemap: https://www.celitix.com/sitemap.xml

@@ -65,6 +65,7 @@ import {
   homesecond8,
   homesecond9,
   Inbound_Dialer,
+  IntegrationRealEstate,
   mainpagefirst,
   mainpagefourth,
   mainpagesecond,
@@ -972,7 +973,183 @@ const Home = () => {
 
 
         {/* 1nd */}
-        
+        <section className="relative isolate overflow-hidden bg-[#F3ECF9] pt-20 md:pt-24">
+          <div className="grid grid-cols-1 items-center gap-6 px-5 py-10 md:grid-cols-2 md:py-20 lg:gap-16 lg:px-28">
+            <div className="text-center md:text-left">
+              <h1 className="heading mb-1 text-4xl font-semibold text-gray-900 md:mb-5 md:text-5xl lg:text-6xl 2xl:text-8xl">
+                <span className="block">All-in-One</span>
+                <span className="block">Communication</span>
+                <span className="block">Platform</span>
+              </h1>
+
+              <p className="sub-heading mb-1 text-md font-semibold text-gray-700 md:mb-5 md:text-lg lg:text-xl 2xl:text-2xl">
+                Capture leads. Manage CRM. Engage, sell, support – all in one place!
+              </p>
+
+              <div className="mt-5">
+                <UniversalButton
+                  label="Talk to Expert"
+                  variant="brutal"
+                  className="mb-2 border-[#9B44B6] bg-[#9B44B6] px-3 py-2 2xl:px-6 2xl:py-4 font-semibold text-white hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] 2xl:text-xl"
+                  onClick={handleShowFormPopup}
+                />
+                <FormPopup visible={openDialog} onHide={handleCloseDialog} />
+              </div>
+            </div>
+            <div className="relative h-full">
+              <div className="relative z-10 mx-auto w-full rounded-3xl bg-[#F3ECF9]p-6 shadow-[0_20px_60px_rgba(31,41,55,0.12)] ring-1 ring-white/50 backdrop-blur">
+                <video
+                  className="h-full w-full rounded-2xl"
+                  src={heroNew}
+                  key={heroNew}
+                  loop
+                  muted
+                  autoPlay
+                  playsInline
+                  preload="metadata"
+                  aria-label="All-in-One Communication Platform"
+                />
+              </div>
+
+
+              <div className="pointer-events-none absolute -right-5 top-20 -z-10 hidden md:block">
+                <div className="h-40 w-10 rounded-full bg-[#9B44B6]" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+
+        <section className="w-full bg-[#F6EDF9] py-8 md:py-16 2xl:py-20">
+          <div className="px-5 md:px-20">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
+
+              {/* WhatsApp Solutions */}
+              <div className="flex flex-col gap-3">
+                <a
+                  href="#"
+                  className="relative w-full inline-flex items-center justify-center gap-2 text-base font-semibold 
+             px-8 py-1 2xl:py-2 rounded-full overflow-hidden
+             border-2 border-[#FFC5C5] text-black group"
+                >
+                  <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
+                    Workflow
+                  </span>
+                  {/* <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white">
+                    →
+                  </span> */}
+                  
+                  <span
+                    className="absolute inset-0 bg-[#FFC5C5] translate-y-full 
+               group-hover:translate-y-0 transition-transform duration-500 ease-in-out"
+                  ></span>
+                </a>
+                <div className="rounded-3xl bg-[#FFC5C5] shadow-sm hover:-translate-y-1 transition">
+                  <Image src={mainpagefirst} alt="WhatsApp Solutions" />
+                </div>
+              </div>
+
+              {/* RCS Solutions */}
+              <div className="flex flex-col gap-3">
+                <a
+                  href="#"
+                  className="relative w-full inline-flex items-center justify-center gap-2 text-base font-semibold 
+             px-8 py-1 2xl:py-2 rounded-full overflow-hidden
+             border-2 border-[#B4E1EE] text-black group"
+                >
+                  <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
+                    AI Chat bot
+                  </span>
+                  {/* <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white">
+                    →
+                  </span> */}
+                  <span
+                    className="absolute inset-0 bg-[#B4E1EE] translate-y-full 
+               group-hover:translate-y-0 transition-transform duration-500 ease-in-out"
+                  ></span>
+                </a>
+                <div className="rounded-3xl bg-[#B4E1EE] shadow-sm hover:-translate-y-1 transition">
+                  <Image src={mainpagesecond} alt="RCS Solutions" />
+                </div>
+              </div>
+
+              {/* Voice Solutions */}
+              <div className="flex flex-col gap-3">
+                <a
+                  href="#"
+                  className="relative w-full inline-flex items-center justify-center gap-2 text-base font-semibold 
+             px-8 py-1 2xl:py-2 rounded-full overflow-hidden
+             border-2 border-[#D3F5BE] text-black group"
+                >
+                  <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
+                    Live Chat
+                  </span>
+                  {/* <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white">
+                    →
+                  </span> */}
+                  <span
+                    className="absolute inset-0 bg-[#D3F5BE] translate-y-full 
+               group-hover:translate-y-0 transition-transform duration-500 ease-in-out"
+                  ></span>
+                </a>
+                <div className="rounded-3xl bg-[#D3F5BE] shadow-sm hover:-translate-y-1 transition">
+                  <Image src={mainpagethird} alt="Voice Solutions" />
+                </div>
+              </div>
+
+              {/* Email OTP */}
+              <div className="flex flex-col gap-3">
+                <a
+                  href="#"
+                  className="relative w-full inline-flex items-center justify-center gap-2 text-base font-semibold 
+             px-8 py-1 2xl:py-2 rounded-full overflow-hidden
+             border-2 border-[#C9D4FF] text-black group"
+                >
+                  <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
+                    Inbox Co-Pilot
+                  </span>
+                  {/* <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white">
+                    →
+                  </span> */}
+                  <span
+                    className="absolute inset-0 bg-[#C9D4FF] translate-y-full 
+               group-hover:translate-y-0 transition-transform duration-500 ease-in-out"
+                  ></span>
+                </a>
+                <div className="rounded-3xl bg-[#C9D4FF] shadow-sm hover:-translate-y-1 transition">
+                  <Image src={mainpagefourth} alt="Email OTP" />
+                </div>
+              </div>
+            </div>
+            {/* Bottom bar with baseline + colored segments */}
+            {/* Bottom bar line with segments */}
+            <div className="relative mt-10 w-full hidden md:hidden lg:block">
+              {/* Purple baseline */}
+              <div className="absolute top-1/2 left-0 w-full h-[2px] bg-purple-500 -translate-y-1/2"></div>
+
+              {/* Colored segments */}
+              <div className="grid grid-cols-4 gap-0 relative z-10">
+                <div className="flex justify-center">
+                  <div className="w-16 sm:w-24 md:w-28 h-[4px] bg-[#FFC5C5] rounded-full"></div>
+                </div>
+                <div className="flex justify-center">
+                  <div className="w-16 sm:w-24 md:w-28 h-[4px] bg-[#B4E1EE] rounded-full"></div>
+                </div>
+                <div className="flex justify-center">
+                  <div className="w-16 sm:w-24 md:w-28 h-[4px] bg-[#C9D4FF] rounded-full"></div>
+                </div>
+                <div className="flex justify-center">
+                  <div className="w-16 sm:w-24 md:w-28 h-[4px] bg-[#D3F5BE] rounded-full"></div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+        </section>
 
 
 
@@ -980,9 +1157,7 @@ const Home = () => {
 
 
 
-
-
-        <div className="md:h-[90vh]">
+        {/* <div className="md:h-[90vh]">
           <OurClientele num={5} />
           <div className="w-full  pt-35 relative z-20 ">
             <div className="text-center px-4 py-2 md:py-20 space-y-4 box-reveal-bottom">
@@ -1030,7 +1205,7 @@ const Home = () => {
               
             </video>
           </div>
-        </div>
+        </div> */}
         {/* 1nd */}
 
 

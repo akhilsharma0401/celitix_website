@@ -502,7 +502,7 @@ const Header = () => {
             </div>
 
             {/* Solutions */}
-            {/* <div className="relative group cursor-pointer">
+            <div className="relative group cursor-pointer">
               <div className="flex items-center text-lg gap-2 p-2 popfh rounded-md transition-all duration-300">
                 Solutions
                 <MdKeyboardArrowDown className="block group-hover:hidden transition-transform duration-300" />
@@ -525,7 +525,7 @@ const Header = () => {
                   </Link>
                 </div>
               </div>
-            </div> */}
+            </div>
 
             {/* Resources */}
             <div className="relative group cursor-pointer">
@@ -776,7 +776,7 @@ const Header = () => {
                 Resources <MdKeyboardArrowDown />
                   </div> */}
             {/* <div className="cursor-pointer">Resources</div> */}
-            {/* <div
+            <div
               className="relative group cursor-pointer mb-0"
               onClick={() => {
                 if (window.innerWidth < 769) setIsResourcesOpen(!isResourcesOpen);
@@ -798,10 +798,10 @@ const Header = () => {
                 <Link href="/custom-applications" onClick={() => setMobileMenuOpen(false)}>
                   <ResourcesItem title="Custom Applications" desc="Learn & Explore" />
                 </Link>
-            
+                {/* <ResourcesItem title="Case Studies" desc="How Celitix Helps" /> */}
               </div>
 
-            </div> */}
+            </div>
 
 
             <div

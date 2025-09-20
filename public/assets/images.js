@@ -30,6 +30,29 @@ import L1email from "./Icons/whatsapp-business-api-icon.png"
 import L1Appauth from "./Icons/mobile-app-authentication-icon.png"
 import chat from "./videos/CELITIX-FAV-GIF.gif"
 
+
+
+// interaction
+import CHAIN from "./mainicons/CHAIN.png"
+import shopify from "./mainicons/shopify.svg"
+import freshdesk from "./mainicons/freshdesk.svg"
+import zoho from "./mainicons/zoho.svg"
+import woo from "./mainicons/woocommerce.svg"
+import IntegrationsCelitix from "./IntegrationsImage/IntegrationsCelitix.png"
+import IntegrationsShopify from "./IntegrationsImage/IntegrationsShopify.png"
+import IntegrationsWoo from "./IntegrationsImage/IntegrationsWoo.png"
+import IntegrationsZoho  from "./IntegrationsImage/IntegrationsZoho.png"
+import IntegrationsSheets from "./IntegrationsImage/IntegrationsSheets.png"
+import IntegrationsSales from "./IntegrationsImage/IntegrationsSales.png"
+import IntegrationsFreshdesk from "./IntegrationsImage/IntegrationsFreshdesk.png"
+import IntegrationsFreshWork from "./IntegrationsImage/IntegrationsFreshWork.png"
+import IntegrationsLeadSquared from "./IntegrationsImage/IntegrationsLeadSquared.png"
+import IntegrationRealEstate from "./IntegrationsImage/IntegrationRealEstate.png"
+import IntegrationFinancial from "./IntegrationsImage/IntegrationFinancial.png"
+import IntegrationProfessional from "./IntegrationsImage/IntegrationProfessional.png"
+import IntegrationCustomer from "./IntegrationsImage/IntegrationCustomer.png"
+import IntegrationTech from "./IntegrationsImage/IntegrationTech.png"
+
 // header images
 
 // Home
@@ -1146,5 +1169,28 @@ export {
 
 
 
-    careers
+    careers,
+
+    // interaction
+    shopify,
+    freshdesk,
+    woo,
+    zoho,
+    IntegrationsCelitix,
+    IntegrationsShopify,
+    IntegrationsWoo,
+    IntegrationsZoho,
+    IntegrationsSheets,
+    IntegrationsSales,
+    IntegrationsLeadSquared,
+    IntegrationsFreshWork,
+    IntegrationsFreshdesk,
+    CHAIN,
+    IntegrationRealEstate,
+    IntegrationFinancial,
+    IntegrationProfessional,
+    IntegrationCustomer,
+    IntegrationTech,
+
+
 }

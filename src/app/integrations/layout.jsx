@@ -1,9 +1,9 @@
 // src/app/cpaas-solutions/layout.js
 export const metadata = {
-  title: "Smart Communication for Education | Celitix",
-  description: "Automate reminders, send updates, and simplify school communication with WhatsApp, SMS, Voice, and more.",
+  title: "Power Growth with Celitix Integrations – Shopify & More.",
+  description: " Connect Shopify, Zoho, Salesforce, Freshdesk & more with Celitix. Automate workflows, sync data, and grow faster without complex setup.",
   alternates: {
-    canonical: "https://www.celitix.com/education-and-edtech",
+    canonical: "https://www.celitix.com/integrations",
   },
 };
 

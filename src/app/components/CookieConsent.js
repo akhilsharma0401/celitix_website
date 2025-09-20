@@ -47,7 +47,7 @@ const CookieConsent = () => {
                 This site uses cookies to enhance your browsing experience. By
                 clicking accept, you consent to our use of cookies as detailed in our{' '}
                 <Link href="/privacy-policy">
-                  <a className="privacy-link">Privacy Policy</a> {/* Use <a> inside <Link> */}
+                  <span className="privacy-link">Privacy Policy</span> 
                 </Link>.
               </p>
             </div>
