@@ -501,8 +501,24 @@ const Header = () => {
                   </div> */}
             </div>
 
-            {/* Solutions */}
+
+            {/* Integrations  */}
             <div className="relative group cursor-pointer">
+              <Link href="/integrations">
+                <div className="flex items-center text-lg popfh gap-2 p-2 rounded-md transition-all duration-300">
+                  Integrations
+                  <MdKeyboardArrowDown className="block group-hover:hidden transition-transform duration-300" />
+                  <MdKeyboardArrowUp className="hidden group-hover:block transition-transform duration-300" />
+                </div>
+              </Link>
+              {/* <div className="absolute left-0 top-full hidden group-hover:grid grid-cols-1 bg-white shadow-lg p-4 rounded-md w-56 z-50">
+                    <ResourcesItem title="Plans" desc="Compare features" />
+                    <ResourcesItem title="Custom Quotes" desc="Enterprise solutions" />
+                  </div> */}
+            </div>
+
+            {/* Solutions */}
+            {/* <div className="relative group cursor-pointer">
               <div className="flex items-center text-lg gap-2 p-2 popfh rounded-md transition-all duration-300">
                 Solutions
                 <MdKeyboardArrowDown className="block group-hover:hidden transition-transform duration-300" />
@@ -525,7 +541,7 @@ const Header = () => {
                   </Link>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Resources */}
             <div className="relative group cursor-pointer">
@@ -772,11 +788,22 @@ const Header = () => {
                 </div>
               </Link>
             </div>
+            
+            <div
+              className="relative group cursor-pointer mb-0"
+
+            >
+              <Link href="/integrations" onClick={() => setMobileMenuOpen(false)}>
+                <div className="flex items-center text-lg gap-2 p-2 rounded-md transition-all duration-300 cursor-pointer">
+                  Integrations <MdKeyboardArrowDown />
+                </div>
+              </Link>
+            </div>
             {/* <div className="flex items-center text-lg gap-2 p-2 rounded-md transition-all duration-300 cursor-pointer">
                 Resources <MdKeyboardArrowDown />
                   </div> */}
             {/* <div className="cursor-pointer">Resources</div> */}
-            <div
+            {/* <div
               className="relative group cursor-pointer mb-0"
               onClick={() => {
                 if (window.innerWidth < 769) setIsResourcesOpen(!isResourcesOpen);
@@ -798,10 +825,10 @@ const Header = () => {
                 <Link href="/custom-applications" onClick={() => setMobileMenuOpen(false)}>
                   <ResourcesItem title="Custom Applications" desc="Learn & Explore" />
                 </Link>
-                {/* <ResourcesItem title="Case Studies" desc="How Celitix Helps" /> */}
+                
               </div>
 
-            </div>
+            </div> */}
 
 
             <div

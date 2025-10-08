@@ -402,7 +402,7 @@ export default function Page() {
             {/* Right: Circles + SVG chain */}
             <div className="relative flex items-center justify-center">
               {/* Left circle */}
-              <div className="rounded-full bg-white shadow-[0_8px_30px_rgba(0,0,0,0.02)] ring-1 ring-black/5 w-44 h-44 sm:w-52 sm:h-52 lg:w-60 lg:h-60 grid place-items-center border-5 border-gray-300">
+              <div className="rounded-full bg-white shadow-[0_25px_60px_rgba(50,50,0,0.09)] ring-1 ring-black/5 w-44 h-44 sm:w-52 sm:h-52 lg:w-60 lg:h-60 grid place-items-center ">
                 <Image
                   src={IntegrationsCelitix}
                   alt="Celitix"
@@ -412,7 +412,7 @@ export default function Page() {
 
               <div
                 aria-hidden="true"
-                className="h-10 sm:h-10 w-10 lg:w-20 chain-anim "
+                className="h-10 sm:h-9 w-10 lg:w-20 chain-anim "
                 style={{
                   backgroundImage: `url(${CHAIN.src})`,
                   backgroundRepeat: "repeat-x",
@@ -427,7 +427,7 @@ export default function Page() {
               />
 
               {/* Right circle (slider) */}
-              <div className="rounded-full bg-white shadow-[0_8px_30px_rgba(0,0,0,0.08)] ring-1 ring-black/5 w-44 h-44 sm:w-52 sm:h-52 lg:w-60 lg:h-60 grid place-items-center overflow-hidden border-5 border-gray-300">
+              <div className="rounded-full bg-white shadow-[0_25px_60px_rgba(50,50,0,0.09)] ring-1 ring-black/5 w-44 h-44 sm:w-52 sm:h-52 lg:w-60 lg:h-60 grid place-items-center overflow-hidden ">
                 <AnimatePresence mode="wait" initial={false}>
                   <MotionImage
                     key={index}

@@ -1028,13 +1028,12 @@ const Home = () => {
 
               {/* WhatsApp Solutions */}
               <div className="flex flex-col gap-3">
-                <a
-                  href="#"
+                <div
                   className="relative w-full inline-flex items-center justify-center gap-2 text-base font-semibold 
              px-8 py-1 2xl:py-2 rounded-full overflow-hidden
              border-2 border-[#FFC5C5] text-black group"
                 >
-                  <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
+                  <span className="relative z-10 transition-colors duration-300 group-hover:text-[#a35c5c]">
                     Workflow
                   </span>
                   {/* <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white">
@@ -1045,7 +1044,7 @@ const Home = () => {
                     className="absolute inset-0 bg-[#FFC5C5] translate-y-full 
                group-hover:translate-y-0 transition-transform duration-500 ease-in-out"
                   ></span>
-                </a>
+                </div>
                 <div className="rounded-3xl bg-[#FFC5C5] shadow-sm hover:-translate-y-1 transition">
                   <Image src={mainpagefirst} alt="WhatsApp Solutions" />
                 </div>
@@ -1053,13 +1052,12 @@ const Home = () => {
 
               {/* RCS Solutions */}
               <div className="flex flex-col gap-3">
-                <a
-                  href="#"
+                <div
                   className="relative w-full inline-flex items-center justify-center gap-2 text-base font-semibold 
              px-8 py-1 2xl:py-2 rounded-full overflow-hidden
              border-2 border-[#B4E1EE] text-black group"
                 >
-                  <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
+                  <span className="relative z-10 transition-colors duration-300 group-hover:text-[#4a7783]">
                     AI Chat bot
                   </span>
                   {/* <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white">
@@ -1069,7 +1067,7 @@ const Home = () => {
                     className="absolute inset-0 bg-[#B4E1EE] translate-y-full 
                group-hover:translate-y-0 transition-transform duration-500 ease-in-out"
                   ></span>
-                </a>
+                </div>
                 <div className="rounded-3xl bg-[#B4E1EE] shadow-sm hover:-translate-y-1 transition">
                   <Image src={mainpagesecond} alt="RCS Solutions" />
                 </div>
@@ -1077,13 +1075,12 @@ const Home = () => {
 
               {/* Voice Solutions */}
               <div className="flex flex-col gap-3">
-                <a
-                  href="#"
+                <div
                   className="relative w-full inline-flex items-center justify-center gap-2 text-base font-semibold 
              px-8 py-1 2xl:py-2 rounded-full overflow-hidden
              border-2 border-[#D3F5BE] text-black group"
                 >
-                  <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
+                  <span className="relative z-10 transition-colors duration-300 group-hover:text-[#5b8342]">
                     Live Chat
                   </span>
                   {/* <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white">
@@ -1093,7 +1090,7 @@ const Home = () => {
                     className="absolute inset-0 bg-[#D3F5BE] translate-y-full 
                group-hover:translate-y-0 transition-transform duration-500 ease-in-out"
                   ></span>
-                </a>
+                </div>
                 <div className="rounded-3xl bg-[#D3F5BE] shadow-sm hover:-translate-y-1 transition">
                   <Image src={mainpagethird} alt="Voice Solutions" />
                 </div>
@@ -1101,13 +1098,12 @@ const Home = () => {
 
               {/* Email OTP */}
               <div className="flex flex-col gap-3">
-                <a
-                  href="#"
+                <div
                   className="relative w-full inline-flex items-center justify-center gap-2 text-base font-semibold 
              px-8 py-1 2xl:py-2 rounded-full overflow-hidden
              border-2 border-[#C9D4FF] text-black group"
                 >
-                  <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
+                  <span className="relative z-10 transition-colors duration-300 group-hover:text-[#6977ad]">
                     Inbox Co-Pilot
                   </span>
                   {/* <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white">
@@ -1117,7 +1113,7 @@ const Home = () => {
                     className="absolute inset-0 bg-[#C9D4FF] translate-y-full 
                group-hover:translate-y-0 transition-transform duration-500 ease-in-out"
                   ></span>
-                </a>
+                </div>
                 <div className="rounded-3xl bg-[#C9D4FF] shadow-sm hover:-translate-y-1 transition">
                   <Image src={mainpagefourth} alt="Email OTP" />
                 </div>
@@ -1150,9 +1146,6 @@ const Home = () => {
           </div>
 
         </section>
-
-
-
 
 
 
@@ -1207,13 +1200,6 @@ const Home = () => {
           </div>
         </div> */}
         {/* 1nd */}
-
-
-
-
-
-
-
 
         {/* 2nd */}
         <div className="Second bg-[#D8E3F5] py-2 md:py-15">
