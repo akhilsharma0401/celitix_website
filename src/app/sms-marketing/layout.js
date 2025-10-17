@@ -1,7 +1,7 @@
 // src/app/cpaas-solutions/layout.js
 export const metadata = {
-  title: "SMS Marketing & OTP Platform | Celitix",
-  description: "Reach anyone, anywhere, instantly. Use Celitix’s SMS platform to deliver OTPs, alerts, and promotional messages and drive results.",
+  title: "Bulk SMS Services & SMS Marketing API | Celitix",
+  description: "Send bulk SMS, automate text marketing, and integrate fast with our SMS API. Celitix powers SMS marketing & OTP delivery at scale.",
   alternates: {
     canonical: "https://www.celitix.com/sms-marketing",
   },

@@ -554,9 +554,9 @@ const Product = () => {
       <div className="bg-[#F7EBFC] py-2 md:py-10 px-6 sm:px-10">
         {/* Heading */}
         <div className="flex items-center justify-center mb-15">
-          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-black text-center heading">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-black text-center heading">
             One Platform,<span className="text-transparent bg-clip-text  bg-gradient-to-r from-[#2b40b0] to-[#36bae2]"> Endless Possibilities </span>
-          </h1>
+          </h2>
         </div>
 
         {/* Content */}
@@ -665,9 +665,9 @@ const Product = () => {
       <div className="bg-[#F7EBFC] py-2 md:py-10 px-6 sm:px-10">
         {/* Heading */}
         <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 heading">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 heading">
             Services Offered Across Industries
-          </h1>
+          </h2>
         </div>
 
         {/* Tabs */}

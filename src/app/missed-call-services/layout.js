@@ -1,7 +1,7 @@
 // src/app/cpaas-solutions/layout.js
 export const metadata = {
   title: "Missed Call Services for Lead Gen & Engagement | Celitix",
-  description: "Capture leads, trigger SMS or WhatsApp, and automate responses using Celitix’s Missed Call Services.",
+  description: "Grow your business with a powerful missed call service from Celitix. Convert every missed call into a lead and keep your customers connected.",
   alternates: {
     canonical: "https://www.celitix.com/missed-call-services",
   },

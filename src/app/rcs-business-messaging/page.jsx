@@ -236,7 +236,7 @@ const Rcs = () => {
       <section className="bg-[#f7ebfc] py-2 md:py-10 px-4 sm:px-6 lg:px-25">
         <div className="text-center px-1 md:px-4 pb-5 md:pb-15">
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-gray-900 popf heading">
-            Rich Promotions, Half the Price
+            Unlock Powerful RCS Chat Promotions at Half the Price
           </h2>
         </div>
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 items-start justify-center">

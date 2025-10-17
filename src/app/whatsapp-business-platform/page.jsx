@@ -208,11 +208,12 @@ const WhatsApp = () => {
             <div className='box-reveal-left space-y-6'>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl heading  font-bold text-gray-900 popf leading-tight">
-                Stay <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]"> Connected </span> on WhatsApp
+                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]">  WhatsApp Business API: </span> Connect, Automate & Grow Your Business
+
               </h1>
 
               <p className="text-gray-600  text-base md:text-lg  max-w-md">
-                Let customers come to you using the official WhatsApp Business API. Be present on the world’s biggest messaging app.
+                Reach customers where they already are with the official WhatsApp Business API—on the world’s most popular messaging app.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -429,7 +430,8 @@ const WhatsApp = () => {
                   Build Custom Flows
                 </h3>
                 <p className="text-md text-gray-800 leading-relaxed pera">
-                  Craft custom workflows using chatbots, buttons, and rich media. Integrate other channels to guide users from hello to checkout.
+                 Create custom workflows using WhatsApp chatbots, buttons, and rich media. Guide users from the first click to checkout using advanced WhatsApp API tools.
+
                 </p>
               </div>
             </div>
@@ -448,7 +450,7 @@ const WhatsApp = () => {
                   Do More With Less
                 </h3>
                 <p className="text-md text-gray-800 leading-relaxed pera">
-                  Customers can discover, ask, and order via WhatsApp. Manage sales and support across every direct channel from one dashboard.
+                  Let customers discover, ask, and order via WhatsApp chatbot. Manage conversations, sales, and support from one dashboard with smart WhatsApp sender software.
                 </p>
               </div>
             </div>
@@ -467,7 +469,7 @@ const WhatsApp = () => {
                   Scale Smart, Stay Ready
                 </h3>
                 <p className="text-md text-gray-800 leading-relaxed pera">
-                  Peak sales for seasonal spikes or scale down to save resources. Integrate, add or remove channels and work more efficiently.
+                  Send messages in bulk with bulk sender WhatsApp tools. Add or remove channels, automate campaigns with WhatsApp AI chatbot, and scale as your business grows.
                 </p>
               </div>
             </div>

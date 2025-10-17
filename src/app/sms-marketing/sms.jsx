@@ -92,29 +92,29 @@ const Sms = () => {
 
   const faqs = [
     {
-      question: "How is Celitix’s SMS different?",
+      question: "How can I integrate SMS functionality into my website or app?",
       answer:
-        "Celitix lets you automate, segment, and track SMS campaigns. It's smarter and more effective than basic SMS tools.",
+        " You can easily integrate SMS features using Celitix’s SMS API. Our developer-friendly API allows you to automate sending of bulk SMS, OTPs, and transactional messages directly from your website, CRM, or app. With detailed documentation and support, integration is fast and secure.",
     },
     {
-      question: "What kind of messages can I send?",
+      question: "What’s the difference between bulk SMS and text marketing?",
       answer:
-        "You can send transactional alerts (like OTPs or booking updates), promotional messages, service reminders, and more.",
+        "Bulk SMS refers to sending a high volume of messages at once, typically for alerts or notifications. Text marketing, on the other hand, involves more personalized, targeted messaging to engage customers, promote offers, or build loyalty. Celitix supports both — so you can communicate at scale or 1-on-1.",
     },
     {
-      question: "Can I integrate it with my CRM or app?",
+      question: "How do I ensure my SMS campaigns comply with regulations?",
       answer:
-        "Yes! Celitix offers API access to connect with your systems and automate SMS flows.",
+        "To run compliant SMS marketing campaigns, always obtain user consent before sending messages. Celitix helps you follow guidelines like DND (Do Not Disturb) filters, opt-out management, and time restrictions — especially important in countries like India where bulk SMS services are regulated by TRAI.",
     },
     {
-      question: "Does SMS still work without internet?",
+      question: "Can I schedule SMS campaigns in advance?",
       answer:
-        "Yes. SMS is delivered over mobile networks and works on all devices, with or without data.",
+        "Yes! With Celitix’s bulk SMS platform, you can schedule campaigns for future delivery — perfect for sending messages at the right time, even if you're offline. Whether it's a marketing campaign or a system-generated alert, scheduling helps improve response rates and engagement.",
     },
     {
-      question: "Can I track SMS campaign results?",
+      question: " How can SMS marketing help recover abandoned carts in e-commerce?",
       answer:
-        "Yes. Use Celitix’s analytics to see delivery, open rates, and link clicks. ",
+        "SMS marketing can be used to re-engage customers who left items in their cart without purchasing. By integrating our SMS API with your e-commerce platform, you can automatically send reminder texts, discount codes, or limited-time offers — helping boost conversions and reduce cart abandonment.",
     },
   ];
   // 8rd
@@ -150,7 +150,7 @@ const Sms = () => {
             </span>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl heading font-bold text-gray-900 popf leading-tight">
-              Reach<span className="text-transparent bg-clip-text  bg-gradient-to-r from-[#2b40b0] to-[#36bae2]">  Instantly </span> with SMS
+               Powerful SMS Marketing &<span className="text-transparent bg-clip-text  bg-gradient-to-r from-[#2b40b0] to-[#36bae2]">  Bulk SMS Services  </span> Bulk SMS Services 
             </h1>
 
             <p className="text-gray-600 text-base md:text-lg max-w-md pera">

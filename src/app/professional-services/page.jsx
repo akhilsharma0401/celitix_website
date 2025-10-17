@@ -499,9 +499,9 @@ const ServiceBased = () => {
 
         {/* Heading */}
         <div className="text-center mb-12">
-          <h1 className="text-2xl md:text-4xl lg:text-5xl heading font-bold text-gray-800">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl heading font-bold text-gray-800">
             Use Cases Across Industries
-          </h1>
+          </h2>
         </div>
 
         {/* Tabs */}

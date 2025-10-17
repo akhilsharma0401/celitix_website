@@ -1,7 +1,7 @@
 // src/app/cpaas-solutions/layout.js
 export const metadata = {
-  title: " 2 Way SMS Platform | Celitix",
-  description: "Enable real-time, two-way communication via SMS. Use Celitix’s 2 Way SMS to automate replies, collect feedback, and create seamless customer journeys.",
+  title: "SMS 2-Way Messaging API & Platform | Celitix",
+  description: "Empower your business with conversational messaging. Use two-way SMS to boost engagement, handle support, and close leads faster.",
   alternates: {
     canonical: "https://www.celitix.com/two-way-sms",
   },

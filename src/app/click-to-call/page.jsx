@@ -161,7 +161,7 @@ const ClickTwoCall = () => {
             </span>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 heading leading-tight">
-              Connect<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]"> Instantly </span>with Click to Call
+              Instant<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]"> Voice Support </span>with Click to Call
             </h1>
 
             <p className="text-gray-600 text-base md:text-lg max-w-md pera">
@@ -201,7 +201,7 @@ const ClickTwoCall = () => {
       <section className="bg-[#f7ebfc] py-2 md:py-10 px-4 sm:px-6 lg:px-25">
         <div className="text-center px-1 md:px-4 pb-5 md:pb-15">
           <h2 className="text-2xl md:text-4xl lg:text-5xl heading font-semibold text-gray-900">
-            Why Dial When You Can Click?
+            Turn Clicks into Conversations with Click to Call
           </h2>
         </div>
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 items-start justify-center ">

@@ -52,11 +52,11 @@ export async function generateMetadata({ params }) {
 
   return {
     title: isKnownCity
-      ? `SMS Marketing & OTP Platform in ${formattedCity}`
-      : `SMS Marketing & OTP Platform | Celitix`,
+      ? ` Bulk SMS Services & SMS Marketing API in ${formattedCity}`
+      : ` Bulk SMS Services & SMS Marketing API | Celitix`,
     description: isKnownCity
-      ? `Reach anyone, anywhere, instantly right from ${formattedCity}. Use Celitix’s SMS platform to deliver OTPs, alerts, and promotional messages and drive results.`
-      : `Reach anyone, anywhere, instantly. Use Celitix’s SMS platform to deliver OTPs, alerts, and promotional messages and drive results.`,
+      ? `Send bulk SMS, automate text marketing, and integrate fast with our SMS API ${formattedCity}. Celitix powers SMS marketing & OTP delivery at scale.`
+      : `Send bulk SMS, automate text marketing, and integrate fast with our SMS API. Celitix powers SMS marketing & OTP delivery at scale.`,
     alternates: {
       canonical: city
         ? `https://www.celitix.com/sms-marketing/${city}`

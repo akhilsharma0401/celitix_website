@@ -1,7 +1,7 @@
 // src/app/cpaas-solutions/layout.js
 export const metadata = {
-  title: "Power Growth with Celitix Integrations – Shopify & More.",
-  description: " Connect Shopify, Zoho, Salesforce, Freshdesk & more with Celitix. Automate workflows, sync data, and grow faster without complex setup.",
+  title: " eCommerce Growth with Celitix: Shopify & Apps",
+  description: "Revolutionize business messaging with Celitix’s omnichannel AI solution. Automate chats, manage workflows, and integrate across Shopify, WhatsApp & more.",
   alternates: {
     canonical: "https://www.celitix.com/integrations",
   },

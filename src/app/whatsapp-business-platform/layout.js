@@ -1,7 +1,7 @@
 // src/app/cpaas-solutions/layout.js
 export const metadata = {
   title: "WhatsApp Business API & Chatbots | Celitix",
-  description: "Use WhatsApp to grow your business. Reach new heights with Celitix’s enterprise messaging solutions. Chatbots, Click to WhatsApp ads, CRM, & more.",
+  description: "Enhance your marketing with WhatsApp ads, AI chatbots, and CRM solutions powered by WhatsApp API to automate messaging and boost customer loyalty.",
   alternates: {
     canonical: "https://www.celitix.com/whatsapp-business-platform",
   },
