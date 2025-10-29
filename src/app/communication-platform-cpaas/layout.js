@@ -1,7 +1,7 @@
 // src/app/cpaas-solutions/layout.js
 export const metadata = {
-  title: "All-in-One Communication Platform",
-  description: "Discover how Celitix helps businesses boost engagement and automate customer communication through WhatsApp API, Bulk SMS, IVR, and smart automation tools.",
+  title: "Celitix | CPaaS Platform for WhatsApp, SMS & Voice Services",
+  description: " Power your business communication with Celitix CPaaS — offering WhatsApp, SMS, and Voice services to connect, engage, and grow effortlessly.",
   alternates: {
     canonical: "https://celitix.com/communication-platform-cpaas",
   },

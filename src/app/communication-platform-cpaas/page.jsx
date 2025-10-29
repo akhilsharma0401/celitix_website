@@ -463,12 +463,12 @@ const Landing = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-        >
+        > 
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold text-gray-900 heading">
-            All-in-One
+            CPaaS Platform for 
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]">
               {" "}
-              Communication Platform{" "}
+              WhatsApp, RCS & Voice Call Service{" "}
             </span>
           </h1>
           <p className="text-black-700 text-md md:text-xl mb-5">
