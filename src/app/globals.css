@@ -687,3 +687,30 @@ Hide scrollbar track .custom-scrollbar::-webkit-scrollbar-track {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+.rt-component-section {
+    background-color: var(--color--white);
+    color: var(--color--body-font-dark);
+    width: 100%;
+    padding: 80px 15px;
+    font-family: Outfit, sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 29px;
+    position: relative;
+}
+
+
+
+
+

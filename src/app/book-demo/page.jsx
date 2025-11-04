@@ -389,14 +389,12 @@ const BookDemo = () => {
                                         onBlur={handleEmailBlur}
                                         disabled={isOtpVerified}
                                     />
-
                                 </div>
                                 <div>
                                     <label className="block font-medium text-gray-700 mb-1">
                                         Phone Number <span className="text-red-500">*</span>
                                     </label>
                                     <div className="flex gap-2">
-
                                         <input
                                             type="text"
                                             className="w-full border border-gray-300 rounded-md p-2.5 focus:ring-2 focus:ring-blue-500 outline-none"

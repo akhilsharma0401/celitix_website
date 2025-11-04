@@ -1629,7 +1629,7 @@ const Pricing = () => {
     // 2) Other channels: tiered INR + convert
     const ALL_RATES = {
       RCS:       [[100000,0.20],[500000,0.18],[Infinity,0.16]],
-      SMS:       [[100000,0.12],[500000,0.10],[Infinity,0.09]],
+      SMS:       [[50000,0.15],[100000,0.12],[500000,0.10],[Infinity,0.09]],
       EmailOTP:  [[Infinity,0.05]],
       Outbound:  [[100000,0.20],[500000,0.18],[Infinity,0.16]],
       clicktocall:[[100000,0.20],[500000,0.18],[Infinity,0.16]],
