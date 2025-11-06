@@ -140,7 +140,7 @@ export default function RootLayout({ children }) {
         <CookieConsent />
         <main>{children}</main>
         <Footer />
-        {/* <ChatLauncher /> */}
+        <ChatLauncher />
       </body>
     </html>
   );
