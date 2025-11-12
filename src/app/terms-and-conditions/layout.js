@@ -1,7 +1,7 @@
 // src/app/cpaas-solutions/layout.js
 export const metadata = {
   title: "Terms & Conditions | Celitix",
-  description: "Review Celitix’s terms and conditions for using our services and platform. Stay informed about your rights, responsibilities, and service guidelines. ",
+  description: "Read Celitix’s Terms & Conditions outlining user responsibilities, API usage, payment terms, and legal policies for secure and transparent service access.",
   alternates: {
     canonical: "https://www.celitix.com/terms-and-conditions",
   },
