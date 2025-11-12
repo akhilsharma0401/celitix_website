@@ -22,7 +22,7 @@
 
 
 
-export const Seo = ({ title, description, link }) => {
+export const Seo = ({ title, description, canonical }) => {
     
 
   // Rebuild query string if present
@@ -30,13 +30,14 @@ export const Seo = ({ title, description, link }) => {
   const metadata = {
     title: `${title}`,
     description: `${description}`,
+    canonical: `${canonical}`,
   };
  
   return (
     <>
       <title>{metadata.title}</title>
       <meta name="description" content={metadata.description} />
-       <link rel="canonical" href={link} />
+       <link rel="canonical" href={metadata.canonical} />
     </>
   );
 };

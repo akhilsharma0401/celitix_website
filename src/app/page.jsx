@@ -129,6 +129,9 @@ const Home = () => {
     title: "Celitix ",
     description:
       "One Cloud-Powered Dashboard for All Your Business Communication. Unified Sales, Support, & Service.",
+      
+    canonical: "https://www.celitix.com",
+  
   };
   const [isVisible, setIsVisible] = useState(false);
   // 1nd
@@ -956,7 +959,7 @@ const Home = () => {
   return (
     <>
       {/* <ChatLauncher /> */}
-      <Seo title={metaData.title} description={metaData.description} />
+      <Seo title={metaData.title} description={metaData.description} canonical={metaData.canonical} />
       <div className="bg-[#f6edf9] relative">
 
 
