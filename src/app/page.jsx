@@ -2,8 +2,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-import { motion } from "framer-motion";
 import "swiper/css";
+import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
@@ -129,9 +129,9 @@ const Home = () => {
     title: "Celitix ",
     description:
       "One Cloud-Powered Dashboard for All Your Business Communication. Unified Sales, Support, & Service.",
-      
+
     canonical: "https://www.celitix.com",
-  
+
   };
   const [isVisible, setIsVisible] = useState(false);
   // 1nd
@@ -1042,7 +1042,7 @@ const Home = () => {
                   {/* <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white">
                     →
                   </span> */}
-                  
+
                   <span
                     className="absolute inset-0 bg-[#FFC5C5] translate-y-full 
                group-hover:translate-y-0 transition-transform duration-500 ease-in-out"
@@ -1413,14 +1413,14 @@ const Home = () => {
                     label="Book A Demo"
                     variant="transitionbtn"
                     className="px-4 py-2 rounded-xl text-black-50 bg-white"
-                  // onClick={handleShowFormPopup}
+                    onClick={handleShowFormPopup}
                   />
                 </motion.div>
 
-                {/* <FormPopup
-                visible={openDialog}
-                onHide={handleCloseDialog}
-              /> */}
+                <FormPopup
+                  visible={openDialog}
+                  onHide={handleCloseDialog}
+                />
 
                 {/* <UniversalButton label="Book A Demo" variant="brutal" className='bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 font-semibold hover:bg-white hover:text-black 
               hover:shadow-[4px_4px_0px_#9B44B6]'/> */}

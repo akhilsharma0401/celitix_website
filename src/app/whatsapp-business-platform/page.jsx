@@ -12,6 +12,7 @@ import Link from "next/link";
 import FaqItem from '../components/Faq';
 import FormPopup from '../components/FormPopup';
 import UniversalButton from '../components/UniversalButton';
+import { useRouter } from "next/navigation";
 
 
 
@@ -62,7 +63,7 @@ const WhatsApp = () => {
   ];
 
   const scrollRef = useRef(null);
-
+ const router = useRouter();
   const scroll = (direction) => {
     const container = scrollRef.current;
     const cardWidth = container?.firstChild?.offsetWidth || 300;
@@ -222,6 +223,12 @@ const WhatsApp = () => {
                   label="Book Demo"
                   variant="brutal"
                   className="bg-[#9B44B6] border-[#9B44B6] text-white px-5 py-2 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6]"
+                     onClick={() => router.push("/book-demo")}
+                />
+                {/* <UniversalButton
+                  label="Book Demo"
+                  variant="brutal"
+                  className="bg-[#9B44B6] border-[#9B44B6] text-white px-5 py-2 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6]"
                   onClick={handleShowFormPopup}
                 />
                 
@@ -229,7 +236,7 @@ const WhatsApp = () => {
                 <FormPopup
                   visible={openDialog}
                   onHide={handleCloseDialog}
-                />
+                /> */}
 
                  <Link href="https://wa.me/917230000091" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                 <UniversalButton
