@@ -10,17 +10,18 @@ import Cookies from "js-cookie"
 import toast from "react-hot-toast";
 
 
-async function generateSessionId() {
-  try {
-    const res = await axios.get("https://instamailz.in/session/new")
-    Cookies.set('session_id', res?.data?.sessionId, { expires: 1 })
-    return res?.data?.sessionId
-  }
-  catch (e) {
-    toast.error("Error generating session id. Please try again later.");
-  }
-}
-
+// async function generateSessionId() {
+//   try {
+//     const res = await axios.get(`${process.env.NEXT_PUBLIC_CHAT_URL}/generateSession`)
+//     console.log("ENV:", process.env.NEXT_PUBLIC_CHAT_URL);
+//     console.log("res", res)
+//     Cookies.set('session_id', res?.data?.sessionId, { expires: 1 })
+//     return res?.data?.sessionId
+//   }
+//   catch (e) {
+//     toast.error("Error generating session id. Please try again later.");
+//   }
+// }
 
 
 function TypingText({ text, onComplete }) {
@@ -53,8 +54,6 @@ export default function ChatWindow({ onClose }) {
   }, [messages]);
 
   const sendMessage = async () => {
-
-
     if (!input.trim()) return;
     setMessages((m) => [...m, { from: "user", text: input }]);
     setInput("");
@@ -65,13 +64,13 @@ export default function ChatWindow({ onClose }) {
       session_id = await generateSessionId()
     }
     try {
-      const res = await fetch("https://instamailz.in/chat", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_CHAT_URL}/chat`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "x-api-key": "YmcD26P9FrIx",
+          "x-session-id": session_id
         },
-        body: JSON.stringify({ question: input, sessionId: session_id }),
+        body: JSON.stringify({ question: input }),
       });
       const { answer } = await res.json();
       setMessages((m) => {
@@ -86,6 +85,43 @@ export default function ChatWindow({ onClose }) {
       ]);
     }
   };
+
+  const getMessage = async () => {
+    try {
+      let session_id = Cookies.get("session_id");
+
+      const res = await fetch(`${process.env.NEXT_PUBLIC_CHAT_URL}/chat`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "x-session-id": session_id,
+        },
+      });
+
+      const { data } = await res.json();
+      console.log("bot response", data)
+      if (!data) return;
+
+      const formattedMessages = data.flatMap((item) => [
+        { from: "user", text: item.question },
+        { from: "bot", text: item.answer }
+      ]);
+
+      setMessages((prev) => [
+        prev[0],           // keep the welcome message
+        ...formattedMessages
+      ]);
+
+
+    } catch (err) {
+      console.error("Chat API error:", err);
+    }
+  };
+
+
+  useEffect(() => {
+    getMessage();
+  }, [])
 
   return (
     <div className="flex h-full flex-col">

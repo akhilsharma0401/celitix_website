@@ -7,11 +7,30 @@ import { motion, AnimatePresence } from "framer-motion";
 import ChatWindow from "./ChatWindow";
 import { CELITIX_FAV_ICON, chat } from "../../../../public/assets/images";
 import Image from 'next/image';
+import axios from "axios";
+import Cookies from "js-cookie";
+import toast from "react-hot-toast";
 export default function ChatLauncher() {
   const [open, setOpen] = useState(false);
 
-  
-   const [showBubble, setShowBubble] = useState(true);
+
+  const [showBubble, setShowBubble] = useState(true);
+
+  async function generateSessionId() {
+    try {
+      const res = await axios.get(`${process.env.NEXT_PUBLIC_CHAT_URL}/generateSession`)
+      console.log("res", res)
+      Cookies.set('session_id', res?.data?.sessionId, { expires: 1 })
+      return res?.data?.sessionId
+    }
+    catch (e) {
+      toast.error("Error generating session id. Please try again later.");
+    }
+  }
+  useEffect(() => {
+    if (!open) return
+    generateSessionId()
+  }, [open])
 
   // Toggle bubble visibility every 5 seconds
   useEffect(() => {
@@ -36,7 +55,7 @@ export default function ChatLauncher() {
 
   return (
     <>
-     <AnimatePresence>
+      <AnimatePresence>
         {!open && showBubble && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -48,7 +67,7 @@ export default function ChatLauncher() {
             <div className="bg-gradient-to-r from-purple-600 to-pink-500 rounded-full px-3 py-1 text-xs font-semibold text-white uppercase tracking-wide">
               Need help?
             </div>
-            
+
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: [0, 1, 0] }}
@@ -60,31 +79,31 @@ export default function ChatLauncher() {
       </AnimatePresence>
       {/* Floating toggle button */}
       <button
-      onClick={() => setOpen((v) => !v)}
-      className="fixed bottom-6 right-6 z-50 flex bg-[#9B44B6] items-center justify-center rounded-full  text-white shadow-xl  transition-transform"
-      aria-label={open ? "Close chat" : "Open chat"}
-    >
-      {open ? (
-        <FiX size={28} />
-      ) : (
-        // Option A: Next.js Image
-        <Image
-          src={chat}
-          alt="Celitix"
-          width={65}
-          height={65}
-          priority
-        />
+        onClick={() => setOpen((v) => !v)}
+        className="fixed bottom-6 right-6 z-50 flex bg-[#9B44B6] items-center justify-center rounded-full  text-white shadow-xl  transition-transform"
+        aria-label={open ? "Close chat" : "Open chat"}
+      >
+        {open ? (
+          <FiX size={28} />
+        ) : (
+          // Option A: Next.js Image
+          <Image
+            src={chat}
+            alt="Celitix"
+            width={65}
+            height={65}
+            priority
+          />
 
-        /* Option B: plain <img>
-        <img
-          src={CELITIX_FAV_ICON_SRC}
-          alt="Celitix"
-          className="w-7 h-7 object-contain"
-        />
-        */
-      )}
-    </button>
+          /* Option B: plain <img>
+          <img
+            src={CELITIX_FAV_ICON_SRC}
+            alt="Celitix"
+            className="w-7 h-7 object-contain"
+          />
+          */
+        )}
+      </button>
 
       {/* Chat panel */}
       <AnimatePresence>
@@ -97,7 +116,11 @@ export default function ChatLauncher() {
             exit={{ opacity: 0, y: 50 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
-            <ChatWindow onClose={() => setOpen(false)} />
+            <ChatWindow onClose={() => {
+              setOpen(false)
+
+              generateSessionId()
+            }} />
           </motion.div>
         )}
       </AnimatePresence>
