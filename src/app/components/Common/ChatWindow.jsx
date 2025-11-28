@@ -173,6 +173,17 @@ export default function ChatWindow({ onClose }) {
                   <TypingText text={msg.text} />
                 )}
               </div>
+
+
+
+              {/* <div
+                className={`max-w-[70%] px-4 py-2 text-sm leading-snug whitespace-pre-wrap break-words ${msg.from === "user"
+                    ? "bg-[#873bcae7] text-white rounded-l-lg rounded-tr-lg shadow-lg sub-heading"
+                    : "bg-gray-100 text-gray-800 rounded-r-lg rounded-bl-lg shadow sub-heading text-wrap whitespace-pre-wrap"
+                  }`}
+              >
+                {msg.text}
+              </div> */}
             </motion.div>
           ))}
         </AnimatePresence>
