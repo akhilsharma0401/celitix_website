@@ -30,7 +30,6 @@
     "react-hot-toast": "^2.5.2",
     "react-icons": "^5.5.0",
     "react-lottie": "^1.2.10",
-    "sitemap-generator": "^7.5.2",
     "swiper": "^11.2.8"
   },
   "devDependencies": {
