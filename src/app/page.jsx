@@ -126,9 +126,9 @@ const Home = () => {
   // }, []);
 
   const metaData = {
-    title: "Celitix ",
+    title: "Celitix – All-in-One CPaaS for WhatsApp, SMS & Voice",
     description:
-      "One Cloud-Powered Dashboard for All Your Business Communication. Unified Sales, Support, & Service.",
+      "Celitix offers a unified platform for WhatsApp, SMS, voice and chat automation. Boost customer engagement, streamline workflows and grow your business.",
 
     canonical: "https://www.celitix.com",
 
