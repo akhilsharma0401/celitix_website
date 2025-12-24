@@ -1,7 +1,7 @@
 // src/app/cpaas-solutions/layout.js
 export const metadata = {
-  title: "Smart Communication for Real Estate & Construction | Celitix",
-  description: "Follow up faster, schedule site visits, and manage leads easily. Celitix helps real estate teams communicate on WhatsApp, SMS, Voice, and more.",
+  title: "Construction & Real Estate with SMS, WhatsApp API Services",
+  description: "SMS and WhatsApp API services for construction & real estate to manage leads, automate notifications, site visits, bookings & customer updates.",
   alternates: {
     canonical: "https://www.celitix.com/construction-and-real-estate",
   },

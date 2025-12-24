@@ -200,7 +200,7 @@ const Product = () => {
   ];
 
   const industryRoutes = {
-    Ecommerce: '/retail-and-ecommerce',
+    "E-Commerce": '/retail-and-ecommerce',
     Healthcare: '/healthcare',
     Finance: '/financial-services',
     Education: '/education-and-edtech',
@@ -692,7 +692,7 @@ const Product = () => {
           {/* Left Text Section */}
           <div className="lg:w-1/2 lg:text-left">
             <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-4 sub-heading">
-              {tabContent[activeTabs]?.title || "Ecommerce"}
+              {tabContent[activeTabs]?.title || "E-Commerce"}
             </h2>
             <p className="text-lg text-gray-600 pera mb-6">
               {tabContent[activeTabs]?.description || "Recover abandoned carts, automate updates, and turn broadcasts into conversations with Click-to-WhatsApp ads."}

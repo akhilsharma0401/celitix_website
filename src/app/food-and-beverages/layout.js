@@ -1,7 +1,7 @@
 // src/app/cpaas-solutions/layout.js
 export const metadata = {
-  title: "Growth Platform for Food, Delivery & Retail Brands | Celitix",
-  description: "Boost loyalty, manage orders, & engage customers. Celitix helps restaurants, cloud kitchens, bakeries, and food retailers grow with smarter communication.",
+  title: "Food & Beverage with Customer Call & Message Services",
+  description: "Power food & beverage brands with Celitix call and message services to manage orders, customer support, delivery updates, feedback, and engagement.",
   alternates: {
     canonical: "https://www.celitix.com/food-and-beverages",
   },

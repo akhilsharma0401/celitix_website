@@ -1,7 +1,7 @@
 // src/app/cpaas-solutions/layout.js
 export const metadata = {
-  title: "Smart Communication for Professional Services | Celitix",
-  description: "Handle leads, manage appointments, send updates, and grow your services business faster with Celitix, across WhatsApp, SMS, Voice, and more.",
+  title: "SMS & Call Services for Professional Services | Celitix",
+  description: "Empower professional services with Celitix SMS and call solutions to manage client communication, alerts, reminders, follow-ups, and support efficiently.",
   alternates: {
     canonical: "https://www.celitix.com/professional-services",
   },

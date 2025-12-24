@@ -324,7 +324,8 @@ const content = tabContent[activeTabs] || {};
               className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg object-contain box-reveal-bottom"
               loading="eager"
               // fetchpriority="high"
-              crossorigin="anonymous"
+              crossOrigin="anonymous"
+
               title='ECommerce'
             />
           </div>

@@ -1,7 +1,7 @@
 // src/app/cpaas-solutions/layout.js
 export const metadata = {
-  title: "Patient Engagement & Communication Platform | Celitix",
-  description: "Manage appointments, send test results, verify identities, and streamline patient communication across WhatsApp, SMS, RCS, Voice, and more with Celitix.",
+  title: "Healthcare Communication & Patient Engagement Platform",
+  description: "Transform patient engagement with faster reminders, simplified appointment flows, secure verification, and effortless digital communication through the Celitix platform.",
   alternates: {
     canonical: "https://www.celitix.com/healthcare",
   },

@@ -748,11 +748,11 @@ const Home = () => {
             {descriptions[activeFeature]}
           </p>
           <UniversalButton
-            label={desbutton[activeFeature]}
-            variant="brutal"
-            className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-2 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6]"
-            onClick={() => handleFeatureRedirect(activeIndustry, activeFeature)}
-          />
+  label={desbutton[activeFeature]}
+  variant="brutal"
+  className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-2 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6]"
+  onClick={() => handleFeatureRedirect(activeIndustry, activeFeature)}
+/>
           {/* <button className="bg-[#F2542D] text-white px-6 py-2 rounded-xl font-semibold hover:bg-[#d84323] transition">
             {desbutton[activeFeature]}
           </button> */}
@@ -776,79 +776,40 @@ const Home = () => {
     );
   };
 
-  const handleFeatureRedirect = (industry, index) => {
-    const routes = {
-      Ecommerce: [
-        "/retail-and-ecommerce",
-        "/retail-and-ecommerce",
-        "/retail-and-ecommerce",
-        "/retail-and-ecommerce",
-        "/retail-and-ecommerce",
-        "/retail-and-ecommerce",
-      ],
-      Healthcare: [
-        "/healthcare",
-        "/healthcare",
-        "/healthcare",
-        "/healthcare",
-        "/healthcare",
-      ],
-      Finance: [
-        "/financial-services",
-        "/financial-services",
-        "/financial-services",
-        "/financial-services",
-        "/financial-services",
-      ],
-      Education: [
-        "/education-and-edtech",
-        "/education-and-edtech",
-        "/education-and-edtech",
-        "/education-and-edtech",
-        "/education-and-edtech",
-      ],
-      Travel: [
-        "/travel-and-tourism",
-        "/travel-and-tourism",
-        "/travel-and-tourism",
-        "/travel-and-tourism",
-        "/travel-and-tourism",
-      ],
-      RealEstateConstruction: [
-        "/construction-and-real-estate",
-        "/construction-and-real-estate",
-        "/construction-and-real-estate",
-        "/construction-and-real-estate",
-        "/construction-and-real-estate",
-      ],
-      FoodBeverage: [
-        "/food-and-beverages",
-        "/food-and-beverages",
-        "/food-and-beverages",
-        "/food-and-beverages",
-        "/food-and-beverages",
-      ],
-      ProfessionalServices: [
-        "/professional-services",
-        "/professional-services",
-        "/professional-services",
-        "/professional-services",
-        "/professional-services",
-      ],
-      TechStartups: [
-        "/tech-startups",
-        "/tech-startups",
-        "/tech-startups",
-        "/tech-startups",
-        "/tech-startups",
-        "/tech-startups",
-      ],
-    };
+  const INDUSTRY_ROUTE_KEY_MAP = {
+  "E-Commerce": "Ecommerce",
+  Healthcare: "Healthcare",
+  BFSI: "Finance",
+  Education: "Education",
+  Travel: "Travel",
+  "Real Estate": "RealEstateConstruction",
+  "Food Industry": "FoodBeverage",
+  "Service-Based": "ProfessionalServices",
+  "Tech Startups": "TechStartups",
+};
 
-    const route = routes[industry]?.[index];
-    if (route) router.push(route);
-    else console.warn("No route defined for:", industry, index);
+  const handleFeatureRedirect = (industry, index) => {
+  const routes = {
+    Ecommerce: ["/retail-and-ecommerce"],
+    Healthcare: ["/healthcare"],
+    Finance: ["/financial-services"],
+    Education: ["/education-and-edtech"],
+    Travel: ["/travel-and-tourism"],
+    RealEstateConstruction: ["/construction-and-real-estate"],
+    FoodBeverage: ["/food-and-beverages"],
+    ProfessionalServices: ["/professional-services"],
+    TechStartups: ["/tech-startups"],
   };
+
+  const routeKey = INDUSTRY_ROUTE_KEY_MAP[industry];
+  const route = routes[routeKey]?.[0];
+
+  if (route) {
+    router.push(route);
+  } else {
+    console.warn("No route found for:", industry, index);
+  }
+};
 
   const [activeIndustry, setActiveIndustry] = useState("E-Commerce");
   const { image, features, descriptions, desbutton, title } =
