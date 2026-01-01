@@ -241,13 +241,16 @@ const Footer = () => {
           </div>
 
           <div>
-            <Link
+            {/* <Link
               href="https://www.facebook.com/business/partner-directory/search?solution_type=messaging&ref=pd_home_hero_cta&id=8342781115823000&section=overview"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Image src={METAWHITE} alt="Meta Tech Partner" className="cursor-pointer" />
-            </Link>
+            </Link> */}
+          
+              <Image src={METAWHITE} alt="Meta Tech Partner" className="cursor-pointer" />
+           
           </div>
         </div>
 
