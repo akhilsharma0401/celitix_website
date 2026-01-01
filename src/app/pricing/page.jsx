@@ -1563,17 +1563,17 @@ const Pricing = () => {
   // WhatsApp-only rate slabs by currency & template type
   const WHATSAPP_RATES = {
     inr: {
-      WhatsApp_Marketing: [[Infinity, 0.85]],
+      WhatsApp_Marketing: [[Infinity, 0.92]],
       WhatsApp_Utility: [[Infinity, 0.15]],
       WhatsApp_Authentication: [[Infinity, 0.15]],
     },
     usd: {
-      WhatsApp_Marketing: [[Infinity, 0.0107]],
+      WhatsApp_Marketing: [[Infinity, 0.0118]],
       WhatsApp_Utility: [[Infinity, 0.0014]],
       WhatsApp_Authentication: [[Infinity, 0.0014]],
     },
     eur: {
-      WhatsApp_Marketing: [[Infinity, 0.0090]],
+      WhatsApp_Marketing: [[Infinity, 0.0099]],
       WhatsApp_Utility: [[Infinity, 0.0012]],
       WhatsApp_Authentication: [[Infinity, 0.0012]],
     },
