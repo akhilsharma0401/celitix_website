@@ -559,7 +559,7 @@ const Healthcare = () => {
       </section>
       {/* 6th */}
       {/* 7th */}
-      <div className="min-h-screen bg-[#f7ebfc] flex justify-center items-center py-8 md:py-15 px-4">
+      <div className=" bg-[#f7ebfc] flex justify-center items-center py-8 md:py-15 px-4">
         <div className="w-full max-w-4xl bg-[#F7F4F9] border border-[#D1CDE3] rounded-xl p-6 shadow-lg">
           <h2 className="text-2xl md:text-4xl heading font-semibold text-center text-gray-900 popf mb-8">
             Celitix For Healthcare FAQs

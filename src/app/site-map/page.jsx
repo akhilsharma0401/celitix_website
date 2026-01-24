@@ -53,14 +53,14 @@ export default function Sitemap() {
     <div>
     <section className="sitemap-section w-full bg-[#f6edf9] pt-20">
       <div className="sitemap-container px-4 py-2 md:py-20">
-        <h1 className="text-4xl md:text-5xl text-center text-gray-900 heading md:mb-10 mb-1">Explore Our Site</h1>
+        <h1 className="text-4xl md:text-5xl text-center text-gray-900 heading md:mb-10 mb-1">Explore Our Celitix Site</h1>
         <div className="sitemap-grid">
           {Object.entries(links).map(([category, items]) => (
             <div key={category} className="sitemap-card">
               <div className="sitemap-card-content">
                 <div className="sitemap-title-wrapper">
                   <span className="sitemap-accent-bar" />
-                  <span className="sitemap-title-text heading">{category}</span>
+                  <h2 className="sitemap-title-text heading">{category}</h2>
                 </div>
                 <ul className="sitemap-list">
                   {items.map(([href, label, aria]) => (

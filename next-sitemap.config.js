@@ -10,10 +10,19 @@
 // };
 /** @type {import('next-sitemap').IConfig} */
 // const { smskey, rcskey, whatsappkey } = require("./src/app/lib/cities.js");
+
+
 module.exports = {
   siteUrl: "https://www.celitix.com",
   generateRobotsTxt: true,
   sitemapSize: 7000,
+
+  exclude: [
+    "/terms-and-conditions",
+    "/privacy-policy",
+    "/payment-and-cancellation",
+    "/shipping-and-delivery-policy",
+  ],
 
   additionalPaths: async (config) => {
     // const data = [

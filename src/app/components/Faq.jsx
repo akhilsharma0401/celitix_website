@@ -42,9 +42,9 @@ const FaqItem = ({ question, answer, isOpen, onClick }) => {
         <div className="py-4">
           {Array.isArray(answer) ? (
             answer.map((line, idx) => (
-              <p key={idx} className="mb-2 leading-relaxed">
+              <span key={idx} className="mb-2 leading-relaxed">
                 {line}
-              </p>
+              </span>
             ))
           ) : (
             <p className="leading-relaxed">{answer}</p>
