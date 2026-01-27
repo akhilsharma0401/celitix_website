@@ -1,0 +1,1124 @@
+import { createwhatsapptemplatescelitix } from "../../public/assets/images";
+
+export const tutorialData = [
+  {
+    id: 1,
+    slug: "whatsapp-business-api",
+    title: "WhatsApp Business API and What Is It About?",
+    intro: `
+In today’s fast-paced digital world, customers expect quick, reliable, and personalized communication. WhatsApp Business API is Meta’s solution designed to help businesses communicate with customers at scale in a secure and compliant way.
+Unlike the WhatsApp Business App, which is meant for small businesses, the WhatsApp Business API is built for medium and large enterprises that need automation, system integrations, and high-volume messaging.
+`,
+
+
+
+    sections: [
+      {
+        question: "What Is WhatsApp Business API?",
+        answer:
+          "WhatsApp Business API allows businesses to send and receive messages programmatically through WhatsApp. It enables companies to automate conversations, send notifications, run campaigns, and manage customer support using a single WhatsApp number. The API cannot be downloaded like an app and must be accessed through an official Meta Business Solution Provider (BSP) such as Celitix. Business verification by Meta is required.",
+      },
+      {
+        question: "How WhatsApp Business API Works",
+        list: [
+          "Customers can message your business at any time",
+          "Businesses can reply freely within the 24-hour customer service window",
+          "To initiate conversations or message customers outside this window, pre-approved message templates must be used",
+          "All templates are reviewed and approved by Meta to ensure quality and prevent spam",
+        ],
+      },
+      {
+        question: "Key Features of WhatsApp Business API",
+        list: [
+          "Automated notifications such as order confirmations, payment alerts, and delivery updates",
+          "Bulk messaging using approved templates",
+          "Chatbots and auto-reply capabilities",
+          "Multi-agent support using a single WhatsApp number",
+          "Integration with CRM, ERP, and other business systems",
+          "Detailed analytics for message delivery, reads, and responses",
+        ],
+      },
+      {
+        question: "Who Should Use WhatsApp Business API?",
+        list: [
+          "E-commerce and retail businesses",
+          "Banking and financial services",
+          "Healthcare and education platforms",
+          "Logistics, travel, and service providers",
+          "Enterprises requiring secure and scalable communication",
+        ],
+      },
+      {
+        question: "Why Choose WhatsApp Business API?",
+        list: [
+          "Improve customer engagement and response time",
+          "Deliver important information instantly",
+          "Automate repetitive communication",
+          "Maintain brand credibility with verified business messaging",
+          "Scale communication while staying compliant with Meta policies",
+        ],
+      },
+      {
+        question: "WhatsApp Business API with Celitix",
+        list: [
+          "Business verification and onboarding",
+          "Template creation and approval",
+          "Campaign setup and automation",
+          "Dashboard-based chat and campaign management",
+          "Ongoing support and compliance guidance",
+        ],
+      },
+      {
+        question: "Conclusion",
+        answer:
+          "WhatsApp Business API is a powerful communication tool that enables businesses to connect with customers on one of the world’s most trusted messaging platforms. By combining automation, scalability, and compliance, it helps businesses build meaningful and efficient customer conversations. For organizations looking to grow and streamline communication, WhatsApp Business API is the future of business messaging.",
+      },
+    ],
+  },
+  {
+    id: 2,
+    slug: "whatsapp-approval-time",
+    title: "WhatsApp Business API Approval Timeline",
+    intro: `Applying for the WhatsApp Business API is an essential step for businesses that want to communicate with customers at scale. One of the most common questions is how long the approval process takes. While timelines may vary, the process is usually straightforward if all requirements are met in advance.
+    On average, WhatsApp Business API approval takes between 3 to 10 working days. In some cases, businesses can get approved even faster.`,
+
+    sections: [
+      {
+        question: "Approval Timeline Overview",
+        answer: `The approval process involves multiple stages, each handled by Meta:`,
+      },
+      {
+        question: "1. Meta Business Manager Verification",
+        answer: `Before applying for WhatsApp Business API, your Meta Business Manager account must be verified. Meta reviews your legal business details and documents such as GST, PAN, or company registration proof.
+      (Estimated time: 2–5 working days.)
+      `,
+      },
+      {
+        question: "2. WhatsApp Business API Onboarding",
+        answer: `Once business verification is complete, onboarding begins through an official Business Solution Provider (BSP) like Celitix. This includes linking your Business Manager, registering your display name, and verifying your phone number via OTP or call.
+        (Estimated time: 1–2 working days.)
+      `,
+      },
+      {
+        question: "3. Message Template Approval",
+        answer: `To send outbound messages, businesses must submit message templates for Meta’s approval. Utility templates are usually approved quickly if they follow guidelines.
+        (Estimated time: a few minutes to 24 hours.)
+      `,
+      },
+      {
+        question: "What Can Speed Up Approval?",
+        list: [
+          "A verified Meta Business Manager",
+          "A live and professional business website",
+          "Matching business details across documents and website",
+          "A fresh phone number not previously used on WhatsApp",
+          "Clear and compliant message templates",
+        ],
+      },
+      {
+        question: "What Can Cause Delays?",
+        list: [
+          "Incorrect or mismatched business information",
+          "Incomplete or unclear documents",
+          "Phone numbers already linked to WhatsApp",
+          "Incorrect template categories",
+        ],
+      },
+      {
+        question: "Conclusion",
+        answer: `
+        In most cases, WhatsApp Business API approval is completed within 3 to 10 working days. Businesses that prepare in advance and follow Meta’s guidelines can get approved faster and start engaging customers on WhatsApp without delays.
+      `,
+      },
+    ],
+  },
+  {
+    id: 3,
+    slug: "multiple-whatsapp-api",
+    title: "Can a Business Have Access to Multiple WhatsApp Business APIs?",
+    intro: `
+As businesses grow, their communication needs often expand across multiple teams, departments, regions, or brands. This leads to a common question: Can a business have access to multiple WhatsApp Business APIs? The short answer is yes—a business can use multiple WhatsApp Business API numbers, provided Meta’s guidelines are followed.
+`,
+    sections: [
+      {
+        question: "Understanding Multiple WhatsApp Business APIs",
+        answer: `
+WhatsApp Business API is linked to a phone number, not directly to a business entity. This means a single business can register multiple phone numbers under the same Meta Business Manager or across multiple Business Managers, depending on the use case.
+Each phone number represents a separate WhatsApp Business API account with its own messaging limits, templates, and quality rating.
+        `,
+      },
+      {
+        question: "When Do Businesses Need Multiple WhatsApp Business APIs?",
+        answer: `Businesses commonly use multiple WhatsApp Business API numbers for:`,
+        list: [
+          "Different departments such as sales, support, and operations",
+          "Multiple brands under the same parent company",
+          "Regional or country-specific communication",
+          "High message volume handling and load distribution",
+          "Separate use cases like campaigns vs. customer support",
+          "Using multiple numbers helps organize communication and improves customer experience",
+        ],
+      },
+      {
+        question: "Meta Requirements for Multiple API Numbers",
+        answer: `To access multiple WhatsApp Business APIs, businesses must:`,
+        list: [
+          "Have a verified Meta Business Manager",
+          "Use unique and dedicated phone numbers for each API",
+          "Ensure each number is not previously used on WhatsApp",
+          "Maintain clear customer opt-in for all messaging",
+          "Follow Meta’s messaging and template policies",
+          "Meta may review the business use case before approving additional numbers",
+        ],
+      },
+      {
+        question: "Benefits of Using Multiple WhatsApp Business APIs",
+        list: [
+          "Better message routing and department-wise management",
+          "Higher messaging capacity through multiple numbers",
+          "Improved customer response times",
+          "Easier tracking and reporting per use case",
+          "Reduced risk by isolating communication streams",
+        ],
+      },
+      {
+        question: "Conclusion",
+        answer: `
+          Yes, businesses can have access to multiple WhatsApp Business APIs by registering multiple phone numbers under Meta’s guidelines. When implemented correctly, this approach helps scale communication efficiently, improves organization, and supports business growth—while staying fully compliant with Meta policies.
+        `,
+      },
+    ],
+  },
+  {
+    id: 4,
+    slug: "phone-number-rules",
+    title: "Phone Number Rules to Apply for WhatsApp Business API",
+    intro: `Having the right phone number is a key requirement to get approved for the WhatsApp Business API. WhatsApp enforces strict rules to ensure verification is smooth, communication is secure, and accounts remain compliant. Understanding these rules helps businesses avoid delays and start messaging customers efficiently.
+    `,
+    sections: [
+      {
+        question: "Dedicated Phone Number",
+        answer: `The phone number must be dedicated exclusively to your WhatsApp Business API account. It cannot be used simultaneously on the WhatsApp Messenger or WhatsApp Business App. Using a number already linked to another WhatsApp account can cause setup conflicts and delay approval.
+        `,
+      },
+      {
+        question: "Fresh or Converted Number",
+        answer: `You can Either use:`,
+        list: [
+          "A new number that has never been registered on WhatsApp.",
+          "An existing number, after permanently deleting the WhatsApp account linked to it.",
+          "Once deleted, the number becomes eligible for API verification.",
+        ],
+      },
+      {
+        question: "Active and Accessible",
+        answer: `The number must be active and capable of receiving SMS or voice calls, as WhatsApp sends a verification code during setup. Without access to the code, verification cannot be completed.
+        `,
+      },
+      {
+        question: "International Format",
+        answer: `Numbers must be entered in international format, including the country code. For example, an Indian number would be +91 9876543210. Correct formatting ensures messages and verification codes are delivered properly.
+        `,
+      },
+      {
+        question: "One Number per API Account",
+        answer: `Each phone number can only be linked to one WhatsApp Business API account. It cannot be used for multiple accounts, even for different departments or brands.
+        `,
+      },
+      {
+        question: "Long-term Use",
+        answer: `Choose a number that can be maintained long-term, as frequent changes can confuse customers and affect credibility. Once registered, the number becomes your official WhatsApp communication channel.
+        `,
+      },
+      {
+        question: "Conclusion",
+        answer: `To summarize, WhatsApp Business API requires a dedicated, active, and correctly formatted phone number that is either new or cleared from previous WhatsApp use. Following these rules ensures smooth verification and allows your business to start engaging customers quickly and securely.
+        `,
+      },
+    ],
+  },
+  {
+    id: 5,
+    slug: "how-to-apply-whatsapp-api",
+    title: "How to Apply for WhatsApp Business API",
+    sections: [
+      {
+        question: "1. Prepare Your Business Essentials",
+        answer: `Before beginning the API onboarding, make sure you have:`,
+        list: [
+          "A registered business entity with legal documents (GST certificate, PAN, or other registration).",
+          "A professional business email and website (not generic Gmail/Yahoo).",
+          "A Facebook Business Manager account set up and verified.",
+          "A phone number dedicated for API use (not currently used with WhatsApp).",
+        ],
+      },
+      {
+        question: "2. Create & Verify Meta Business Manager",
+        answer: `This is compulsory—Meta must verify your business before API access:`,
+        list: [
+          "Log in to Facebook Business Manager (business.facebook.com).",
+          "Go to Business Settings > Business Info.",
+          "Upload legal documents and verify your business identity.",
+          "Ensure the business verification status shows “Verified.”",
+          "NOTE: This verifies your business with Meta and lets a (Business Solution Provider) BSP act on your behalf."
+        ],
+
+      },
+      {
+        question: "3. Contact Celitix (BSP)",
+        answer: `Celitix acts as your official WhatsApp Business Solution Provider (BSP). We facilitate onboarding, approval, compliance checks, and provide the API dashboard tools you need.
+        Contact us through Celitix website form or support email/phone (as visible on our site).
+        You’ll typically share:
+        `,
+        list: [
+          "Business name & legal documents",
+          "Meta Business Manager ID",
+          "Dedicated phone number for WhatsApp API",
+          "Use case (notifications, support, campaigns, chatbots)",
+        ],
+      },
+      {
+        question: "4. Register & Verify Your API Phone Number",
+        answer: `Your phone number must be:
+        - Dedicated and not used on any WhatsApp app
+        - Capable of receiving SMS/calls for verification
+        The BSP (Celitix) will prompt you to verify this number. You’ll receive a code via SMS or call to confirm the number and connect it to the WhatsApp Business API system.
+        `,
+      },
+      {
+        question: "5. Set up Messaging Templates & Features",
+        answer: `Message templates are pre-approved messages used to start a conversation or send notifications outside the 24-hour window.
+Common types include:`,
+        list: [
+          "Utility – order confirmations, delivery updates, payment alerts",
+          "Marketing – offers, promotions, reminders",
+          "Authentication – OTP, verification codes",
+        ],
+        note: "Templates must be approved by Meta before use.",
+      },
+      {
+        question: "6. Integrate & Configure Your Tools",
+        answer: `Celitix provides an interface/dashboard that makes these steps easier without deep programming knowledge. 
+        After API access is approved:`,
+        list: [
+          "Connect WhatsApp API to your CRM (like Zoho, Freshdesk, Shopify)",
+          "Build automation like chatbots, auto-responses, menus, etc.",
+          "Configure bulk campaign settings and notification triggers.",
+        ],
+      },
+      {
+        question: "7. Go Live",
+        answer: `Once configured and tested:
+- Launch WhatsApp messaging flows
+- Monitor analytics & engagement
+- Start sending automated notifications, promotions, and support messages
+NOTE: Celitix support team assists throughout this transition.
+        `,
+      },
+      {
+        question: "8. Tips for Faster Approval",
+        list: [
+          "Verify Meta Business Manager with correct and matching business details",
+          "Use a new, dedicated phone number not previously used on WhatsApp",
+          "Maintain a live, clear business website with proper info",
+          "Submit compliant message templates (start with Utility category)",
+          "Ensure a clear customer opt-in process is in place",
+        ],
+      },
+    ],
+  },
+  {
+    id: 6,
+    slug: "facebook-business-verification",
+    title: "Steps to Verify Your Facebook Business Manager Account",
+    intro: `To successfully verify your Facebook Business Manager account, ensure you have the following documents and details ready:
+- Business Information: Official Business Name, Address, and Contact Details
+- Legal Address Proof: Valid legal documents confirming your company address (GST certificate, company registration certificate)
+- Business Website: Link to your official business website
+- Proof of Business Ownership or Access: Official business email address (matching your domain)
+    `,
+    sections: [
+      {
+        question: "1. Log in to Facebook Business Manager",
+        answer: `Go to business.facebook.com and log in to your account.`,
+      },
+      {
+        question: "2. Select Your Business Account",
+        answer: `Choose the Facebook Business Manager account you want to verify.`,
+      },
+      {
+        question: "3. Open Security Center",
+        answer: `On the left-hand menu, click on Security Center.`,
+      },
+      {
+        question: "4. Start the Verification Process",
+        answer: `Click the 'Start Verification' button to begin.`,
+      },
+      {
+        question: "5. Begin Verification",
+        answer: `Click 'Get Started',
+         select your country,
+         fill in your business details such as name, address, and contact info.`,
+      },
+      {
+        question: "6. Confirm Your Business Information",
+        answer: `If your company appears in the list, select it.
+           If it doesn’t, click ‘Organization not listed’ and upload the required documents (like GST, UDHYAM or registration certificate).`,
+      },
+      {
+        question: "7. Choose a Contact Method",
+        answer: `Select how you want to receive the verification code: email, phone call, or text message.`,
+      },
+      {
+        question: "8. Enter the Verification Code",
+        answer: `Once you receive the code, enter it to complete the process.`,
+      },
+
+    ],
+  },
+  {
+    id: 7,
+    slug: "troubleshoot-disabled-account",
+    title: "Troubleshoot a Disabled or Restricted Account",
+    intro: `1. On your computer, visit the Meta Business Support Home page.
+  2. In the Account Overview section, select the restricted account you want to fix.
+  3. Find what you can do section and follow the suggested steps. You may be asked to:
+     Confirm your identity
+   Complete business verification
+   Secure your account
+   Request a review
+   NOTE: Only account admins can request a review. Accounts disabled for more than 180 days are permanently deactivated and cannot be recovered.`,
+
+    sections: [
+      {
+        question: "Confirm your identity:",
+        answer: `Go to Business Support Home and click Account Status Overview from the left menu.
+        Select the restricted account and follow the on-screen steps.
+        You may need to provide:
+Your account email address
+A mobile number for SMS
+A valid photo ID (passport or driver’s license)
+A linked payment method
+Once confirmed, your account will be reinstated. If not, return to the "What you can do" section for further steps.
+NOTE: You may need to complete the process within a set time limit.`,
+      },
+
+      {
+        question: "Complete business verification: ",
+        answer: `If we detect unusual activity on your account, we may ask you to verify it's really you. You'll see either Start verification or Request review, based on the situation.`,
+      },
+
+      {
+        question: "If you see Start verification:",
+        answer: `Go to what you can do in Business Support Home and click Start verification.
+        1.	Follow the steps and provide:
+        •	Account email
+        •	Photo ID (e.g., passport or driving license)
+        •	Linked payment method
+        2.	After successful verification, your account may be reinstated.`,
+      },
+
+      {
+        question: "If you see Request review:",
+        answer: `1.	Click Secure your account in What you can do.
+        Follow the steps, which may include:`,
+        list: [
+          "Enabling two-factor authentication",
+          "Verifying your email via a unique link",
+          "Requesting approval from someone with full access",
+          "Once completed, your account may be reinstated.",
+        ],
+      },
+
+      {
+        question: "Secure your account: ",
+        answer: `If your business portfolio is over 90 days old, you may be required to enable two-factor authentication. Without it, access to Business Manager Tools may be restricted.
+        To enable it:`,
+        list: [
+          "In Business Support Home, go to Account status overview.",
+          "Select the restricted account.",
+          "Click Secure your account in What you can do section.",
+          "Follow the on-screen steps.",
+          "Once enabled, your account will be reinstated.",
+        ],
+      },
+
+      {
+        question: "Request a review: ",
+        answer: `If your account is restricted due to a policy violation, you may have the option to request a review. If you believe the restriction is a mistake, we recommend submitting a review request. We'll reassess your account to decide if the restriction should remain. Note that you can only request a review a limited number of times, and the decision after review is final.`,
+      },
+
+    ],
+  },
+  {
+    id: 8,
+    slug: "pre-requisites-whatsapp-api",
+    title: "Pre-Requisites to Apply for WhatsApp Business API via Celitix",
+    intro: `You need a WhatsApp Business API account to access WhatsApp campaigns, automation, and all advanced Celitix features.
+  That’s why applying for the WhatsApp Business API through Celitix is mandatory.
+  Pre-requisites to Apply for WhatsApp Business API (via Celitix)`,
+
+    sections: [
+      {
+        question: "1. A BUSINESS WEBSITE",
+        list: [
+          "A live and valid business website is required for WhatsApp Business API approval",
+          "Your website should clearly represent your business and its services.",
+        ]
+      },
+
+      {
+        question: "2. A FRESH PHONE NUMBER",
+        list: [
+          "You must have an active phone number that is not currently registered with any WhatsApp account.",
+          "You may use an existing number only if the WhatsApp app/account on it is permanently deleted",
+          "Contain privacy policy and terms (recommended)",
+          "The number should be available to receive SMS or call for verification",
+        ],
+        answer: `Once these requirements are ready, you can apply for WhatsApp Business API with Celitix and proceed with onboarding smoothly.`,
+      },
+    ],
+  },
+  {
+    id: 9,
+    slug: "integrate-facebook-celitix",
+    title: "Integrate Business Facebook Account with Celitix",
+
+
+    sections: [
+      {
+        question: "1.	Go to business.facebook.com",
+        list: [
+          "Log in to your Facebook account.",
+          "Navigate to Business Info and check if your email is verified.",
+        ],
+      },
+
+      {
+        question: "2. Log in to Your Celitix Account",
+        list: [
+          "Go to the WhatsApp section.",
+          "Click on Manage WABA.",
+        ],
+      },
+
+      {
+        question: "3. Start Creating Your WABA",
+        list: [
+          "Click on Create WABA.",
+          "Log in with your Facebook account.",
+        ],
+      },
+
+      {
+        question: "4. Begin the Setup Process",
+        answer: `Click Get Started to begin the WABA onboarding process.`,
+      },
+
+      {
+        question: "5. Fill Out Business Information",
+        list: [
+          "Enter details like your business portfolio, name, website, and country.",
+          "Click Next to proceed.",
+        ],
+      },
+      {
+        question: "6.	Choose or Create Your WhatsApp Business Account",
+        list: [
+          "You can select an existing account or create a new one.",
+          "Click next once selected.",
+        ],
+      },
+
+      {
+        question: "7. Set Up WhatsApp Business Profile",
+        list: [
+          "Enter your Business Account Name, Display Name, and choose a Category that best describes your business. ",
+          "Click Next to continue.",
+        ],
+        answer: `NOTE: The Display Name should have a relationship with your business and should not violate WhatsApp policies.
+      `
+      },
+
+      {
+        question: "8.	Add a phone number for WhatsApp",
+        list: [
+          "Go to add a new number",
+          "Choose how you would like to verify your number via text or phone call.",
+          "Click next to receive OTP.",
+        ],
+      },
+
+      {
+        question: "9. Enter OTP",
+        list: [
+          "Meta will verify and enter the otp",
+          "Click next to complete the phone number verification process.",
+        ],
+      },
+
+      {
+        question: "10. Finish Integration",
+        list: [
+          "Once number is verified, Meta completes the linking process.",
+          "Click finish to complete WABA creation.",
+        ],
+      },
+    ],
+  },
+  {
+    id: 10,
+    slug: "whatsapp-messaging-limits",
+    title: "WhatsApp Business API Messaging Limits (as per Meta Guidelines)",
+
+    intro: `When using the WhatsApp Business API, Meta applies messaging limits to every business account. These limits control how many unique customers you can message in a 24-hour period and are designed to ensure high-quality, non-spam communication.
+  Understanding these limits will help you plan campaigns better and scale smoothly.`,
+
+    sections: [
+      {
+        question: "What Are Messaging Limits?",
+        answer: `Messaging limits define the maximum number of unique users a business can message within 24 hours using template messages (outside the 24-hour service window).
+      These limits are managed entirely by Meta and increase automatically based on account performance.
+      `,
+      },
+
+      {
+        question: "Messaging Limits Based on Account Status",
+
+      },
+
+      {
+        question: "1. Unverified Business Account (250 Messages / Day)",
+        list: [
+          "Applicable when Meta Business Manager is not verified",
+          "Can message up to 250 unique users in 24 hours",
+          "Suitable for testing and initial setup",
+        ],
+      },
+
+      {
+        question: "2. Verified Business Account (1,000 Messages / Day)",
+        list: [
+          "Once your business verification is approved by Meta",
+          "Messaging limit increases to 1,000 unique users per day",
+          "This is the first major milestone for scaling communication",
+        ],
+      },
+
+      {
+        question: "3. Active Campaign Usage (10,000 Messages / Day)",
+        list: [
+          "After sending messages regularly",
+          "Maintaining good quality rating",
+          "Receiving positive user engagement (reads, replies, low blocks)",
+          "Meta automatically upgrades your limit to 10,000 unique users per day",
+        ],
+      },
+
+      {
+        question: "4. High-Volume Trusted Sender (100,000+ Messages / Day)",
+        list: [
+          "Achieved after consistent usage at lower tiers",
+          "High message delivery rate",
+          "Low block/report rate",
+          "Strong customer engagement",
+          "At this stage, your business is considered highly trusted by Meta.",
+        ],
+      },
+
+      {
+        question: "How Meta Decides to Increase Limits",
+        list: [
+          "Business verification status",
+          "Message delivery and read rates",
+          "Customer replies and engagement",
+          "Low spam reports or blocks",
+          "Consistent campaign activity",
+        ],
+      },
+
+      {
+        question: "Benefits of Higher Messaging Limits",
+        list: [
+          "Reach more customers faster",
+          "Run large-scale campaigns",
+          "Send bulk alerts and notifications",
+          "Improve customer engagement",
+          "Scale communication safely",
+          "Build trust with Meta and customers",
+        ],
+        answer: `Higher limits also indicate better account health and improve long-term deliverability.
+      Messaging limits are controlled solely by Meta. Celitix only facilitates WhatsApp Business API access and campaign execution; limit upgrades depend on Meta’s automated evaluation system.`,
+      },
+    ],
+  },
+  {
+    id: 11,
+    slug: "whatsapp-display-name-rules",
+    title: "Display Name Rules to Apply for WhatsApp Business API",
+
+    intro: `The WhatsApp Business API display name is an important element of your business identity. It is the name customers see when they receive a message from your business on WhatsApp. A clear and compliant display name helps build trust, improves brand recognition, and ensures smooth approval during onboarding.
+    To maintain a secure and transparent messaging environment, WhatsApp has defined specific guidelines that businesses must follow when choosing a display name.`,
+
+    sections: [
+      {
+        question: "Compliance with WhatsApp Policies",
+        answer: `All display names must comply with WhatsApp’s Business and Commerce policies. The name should not contain misleading information, restricted terms, or promotional language. Using the display name to advertise offers, discounts, or marketing messages is not allowed. Non-compliance with these policies can lead to rejection, delays, or even account suspension. Following WhatsApp’s guidelines ensures that your business maintains a credible presence on the platform.`,
+      },
+
+      {
+        question: "Accurate and Clear Representation of Your Business",
+        answer: `Your display name should accurately represent your business and clearly identify who you are. Customers should be able to recognize your brand immediately when they receive a message. Generic or unclear names may confuse users and are often rejected during the approval process. A clear and recognizable display name helps build customer confidence and strengthens brand trust.`,
+
+      },
+
+      {
+        question: "Consistency with Legal Name and External Branding",
+        answer: `The display name must have a clear relationship with your registered legal business name. It should also be consistent with your external branding, including your official website, Facebook Business Manager, and business documentation. Any mismatch across platforms can raise verification concerns and delay approval. Consistent branding not only improves approval chances but also reinforces your brand identity across all customer touch points.`,
+      },
+
+      {
+        question: "Conclusion",
+        answer: `Choosing the right WhatsApp Business API display name is a small but critical step in the onboarding process. By ensuring policy compliance, accurately representing your business, and maintaining consistency with your legal name and branding, businesses can achieve faster approvals and build lasting trust with their customers on WhatsApp.
+        NOTE: For more details on WhatsApp Business display name guidelines, please refer to Meta’s official documentation:`,
+        link: "https://www.facebook.com/business/help/2058515294227817?id=2129163877102343",
+      },
+
+
+    ],
+  },
+  {
+    id: 12,
+    slug: "how-to-change-whatsapp-display-name",
+    title: "How to Change Your WhatsApp Business Display Name",
+
+    intro: `Your WhatsApp Business display name is the name customers see when they receive messages from your business on WhatsApp. It plays an important role in building trust, maintaining brand identity, and ensuring a professional presence on the platform. Meta allows businesses to update their display name, but the change must follow specific guidelines and approval steps.`,
+
+    sections: [
+      {
+        question: "When Can You Change Your Display Name?",
+        answer: `Businesses may need to update their display name due to rebranding, legal name changes, or corrections to the existing name. Any change request must be submitted through the Meta Business Manager or WhatsApp Manager associated with your WhatsApp Business Account (WABA).`,
+      },
+
+      {
+        question: "How the Display Name Change Process Works",
+        answer: `To update the display name, the request is submitted within the WhatsApp Manager. Once submitted, Meta reviews the new display name to ensure it complies with WhatsApp policies. During this review process, the updated name is not visible to customers until it is approved.
+        Approval timelines may vary, as the review is handled directly by Meta. Until approval is completed, the current display name remains active.`,
+
+      },
+
+      {
+        question: "Important Guidelines to Follow",
+        answer: `The updated display name must clearly represent your business and should have a direct relationship with your legal business name. It should remain consistent with your external branding, including your official website and business documentation. Promotional language, emojis, special characters, or misleading terms are not permitted and may lead to rejection.`,
+      },
+
+      {
+        question: "Why Approval Matters",
+        answer: `Meta’s approval process ensures authenticity and protects users from misleading or fraudulent communication. Following the official guidelines increases the chances of faster approval and avoids unnecessary delays.
+
+        NOTE: For complete and up-to-date information on changing your WhatsApp Business display name, please refer to Meta’s official documentation:`,
+        link: "https://www.facebook.com/business/help/378834799515077",
+      },
+
+
+    ],
+  },
+  {
+    id: 13,
+    slug: "whatsapp-quality-rating",
+    title: "WhatsApp Business Phone Number’s Quality Rating",
+
+    intro: `When you use the WhatsApp Business API to reach customers, WhatsApp monitors how recipients respond to your messages. One of the key metrics it tracks is the phone number’s quality rating — a measure of how well your messages are received by your audience. This rating directly affects your messaging capabilities and your ability to grow on the platform.`,
+
+    sections: [
+      {
+        question: "What Is Quality Rating?",
+        answer: `The quality rating represents how your recent messages have been perceived by users over a rolling seven-day period. WhatsApp evaluates feedback signals such as:`,
+        list: [
+          "How often users block your number",
+          "Report reasons when users block or report messages",
+          "Other actions indicating negative feedback",
+        ]
+      },
+
+      {
+        question: "Based on these signals, WhatsApp categorizes the quality of your phone number into three states:",
+        list: [
+          "Green (High quality) – Strong message reception",
+          "Yellow (Medium quality) – Acceptable but needs improvement",
+          "Red (Low quality) – Poor user reception",
+        ]
+
+      },
+
+      {
+        question: "How Quality Rating Affects Your Account",
+        answer: `Your quality rating influences your messaging limits and status:`,
+        list: [
+          "A high-quality rating helps maintain or improve your messaging tiers and access to features.",
+          "If the rating drops to low, your phone number may be marked as Flagged. This means messaging limits cannot be increased until quality improves.",
+          "When quality remains low for too long, messaging limits may be reduced, restricting the number of unique customers you can message daily.",
+        ]
+      },
+
+      {
+        question: "How to Maintain a Strong Quality Rating",
+        list: [
+          "To keep your WhatsApp number in good standing:",
+          "Send messages only to users who have opted in to receive them.",
+          "Ensure all messages follow WhatsApp’s Business and Messaging Policies.",
+          "Avoid overly frequent or promotional messaging.",
+          "Personalize your content to make it relevant and useful.",
+        ]
+      },
+      {
+        question: "Why Quality Rating Matters",
+        answer: `Maintaining a high quality rating is essential not just for compliance, but also for effective and trusted communication with your audience. It safeguards your reach, preserves your messaging limits, and ensures your business can continue engaging customers through WhatsApp without interruption.
+
+        NOTE: For complete and up-to-date information on changing your WhatsApp Business display name, please refer to Meta’s official documentation:`,
+        link: "https://www.facebook.com/business/help/896873687365001?locale=en_GB",
+      },
+
+
+    ],
+  },
+  {
+    id: 14,
+    slug: "whatsapp-template-guidelines",
+    title: "WhatsApp Template Message Guidelines by Meta",
+
+    sections: [
+      {
+        question: "What Is a WhatsApp Template Message?",
+        answer: `WhatsApp allows businesses to freely reply to customers within 24 hours of the customer’s last message. This time period is known as the customer service window.
+        Once this 24-hour window expires, businesses are not allowed to send regular messages. To re-initiate communication, they must use a WhatsApp Template Message, which requires prior approval from Meta (WhatsApp).
+        This system exists to protect users from spam and to ensure that businesses communicate responsibly on WhatsApp.`,
+      },
+
+      {
+        question: "When Are WhatsApp Template Messages Used?",
+        list: [
+          "Template messages are commonly used for:",
+          "Promotional campaigns and offers",
+          "Product launches and announcements",
+          "Abandoned cart reminders",
+          "Order updates and alerts",
+          "Festive greetings and newsletters",
+          "Any message sent outside the 24-hour window must be a pre-approved template.",
+        ]
+
+      },
+
+      {
+        question: "Do WhatsApp Template Messages Require Approval?",
+        answer: `Yes. Every template message is reviewed by the WhatsApp team before it can be used.
+        Templates are approved only if:`,
+        list: [
+          "The content follows WhatsApp’s policies",
+          "The language is clear and professional",
+          "There are no spelling or grammatical errors",
+          "The message intent is easy to understand",
+          "Templates that do not follow guidelines may be rejected"
+        ]
+      },
+
+      {
+        question: "Content Rules You Must Follow",
+        list: [
+          "WhatsApp does not allow templates that include:",
+          "Threatening, abusive, or intimidating language",
+          "Messages pressuring users with legal or financial threats",
+          "Requests for sensitive personal data such as card details, PINs, or passwords",
+          "While surveys and polls are allowed, data collection through template messages is strictly restricted.",
+        ]
+      },
+      {
+        question: "Formatting Rules for WhatsApp Template Messages",
+        list: [
+          "To improve approval chances, follow these formatting rules",
+          "Start with a greeting, such as “Hello {{1}}” or “Hi there”",
+          "Clearly state the purpose of the message in the opening line",
+          "Use variables correctly ({{1}}, {{2}}) without breaking lines",
+          "Always include an opt-out option in the footer (e.g., “Reply STOP to unsubscribe”)",
+          "Proofread carefully for spelling and grammar",
+          "Ensure the selected language matches the message content",
+          "Avoid mixing languages (e.g., Hinglish or Spanglish)",
+          "Do not use URL shorteners; links should belong to your business domain",
+          "Avoid extra spaces, double line breaks, or unnecessary formatting",
+          "Do not use emojis in Quick Reply buttons",
+          "Phone numbers in Call-to-Action buttons must include the country code (without +)",
+        ]
+      },
+      {
+        question: "Final Note",
+        answer: `Following WhatsApp’s template message guidelines helps ensure faster approvals, better delivery rates, and long-term account health. Well-structured and compliant templates not only get approved easily but also build trust with your customers.`
+      },
+
+
+    ],
+  },
+  {
+    id: 15,
+    slug: "whatsapp-templates-disabled",
+    title: "Why WhatsApp Templates Get Disabled by Meta",
+    intro: `Sometimes, while using the WhatsApp Business API, you may notice that a message template which was previously approved is now marked as Disabled by Meta. This status means the template can no longer be used to send messages, even though it still appears in your dashboard.
+  This action is taken directly by Meta’s automated systems and is not controlled by your WhatsApp Business Solution Provider.`,
+
+    sections: [
+      {
+        question: "Why Does Meta Disable WhatsApp Templates?",
+        answer: `Templates are disabled when Meta detects patterns that may negatively impact user experience. Common triggers include:`,
+        list: [
+          "High number of users blocking or reporting messages",
+          "Messages being sent without proper customer opt-in",
+          "Repeated use of promotional language in non-marketing templates",
+          "Low engagement or poor response rates",
+          "Misuse of variables that changes the meaning of the message",
+          "Even approved templates are continuously monitored, and violations over time can result in disabling.",
+        ]
+      },
+
+      {
+        question: "What Changes After a Template Is Disabled?",
+        answer: `Once disabled:`,
+        list: [
+          "The template cannot be used for new messages",
+          "Campaigns using that template may fail",
+          "Message quality rating may be affected",
+          "Messaging limits may grow slower",
+          "The template remains visible only for reference.",
+        ]
+
+      },
+
+      {
+        question: "Can a Disabled Template Be Re-Enabled?",
+        answer: `In most cases, disabled templates cannot be restored. Meta recommends creating a new template with revised content that fully complies with current guidelines.`,
+
+      },
+
+      {
+        question: "How to Prevent Templates from Being Disabled",
+        answer: `To maintain healthy templates:`,
+        list: [
+          "Message only users who have clearly opted in",
+          "Choose the correct template category",
+          "Keep messages relevant and non-spammy",
+          "Avoid sending too many messages in a short time",
+          "Regularly monitor delivery, read, and block rates",
+        ]
+      },
+      {
+        question: "Key Takeaway",
+        answer: `A disabled template is not a system error—it’s a signal from Meta to improve message quality and user relevance. Businesses that focus on permission-based, meaningful communication are far less likely to face template disabling.`
+      },
+
+
+    ],
+  },
+  {
+    id: 16,
+    slug: "avoid-whatsapp-template-rejection",
+    title: "How to Avoid WhatsApp Template Rejection",
+    intro: `WhatsApp message templates are reviewed by Meta to ensure a safe and relevant experience for users. Template rejection usually happens when the content does not meet Meta’s guidelines. By following a few best practices, businesses can significantly improve their approval rate.`,
+
+    sections: [
+      {
+        question: "Use Clear and Relevant Message Content",
+        answer: `Templates should clearly explain the purpose of the message. Avoid vague wording, misleading claims, or unnecessary promotional language. Messages must match the selected category—marketing, utility, or authentication.`,
+      },
+
+      {
+        question: "Get Proper User Opt-In",
+        answer: `Meta strictly requires user consent before sending template messages. If users receive messages without opt-in, it can lead to rejections, low quality ratings, or even account restrictions.`,
+      },
+
+      {
+        question: "Avoid Promotional Content in Utility Templates",
+        answer: `Utility templates should only contain transactional or service-related information like order updates, delivery status, or payment confirmations. Promotional phrases, discounts, or offers should be used only in marketing templates.`,
+
+      },
+
+      {
+        question: "Use Variables Correctly",
+        answer: `Variables should be placed logically and must not change the intent of the message. Do not use variables to insert promotional or misleading content, phone numbers, or URLs that alter the message meaning.`,
+      },
+      {
+        question: "Follow Formatting and Language Rules",
+        answer: `Do not use excessive capitalization, symbols, emojis, or shortened URLs. Messages should be grammatically correct, easy to read, and written in a professional tone.`
+      },
+      {
+        question: "Monitor User Feedback",
+        answer: `High block or report rates affect template approval. Sending relevant and timely messages improves engagement and reduces the risk of rejection.`
+      },
+      {
+        question: "Final Note",
+        answer: `WhatsApp template approval depends on clarity, compliance, and user relevance. Businesses that follow Meta’s guidelines and prioritize user experience face fewer rejections and enjoy smoother campaign execution.`
+      },
+
+
+    ],
+  },
+  {
+    id: 17,
+    slug: "whatsapp-template-examples-by-industry",
+    title: "Examples of WhatsApp Templates for Different Industries",
+
+    intro: `WhatsApp Template Messages help businesses send important notifications to customers even after the 24-hour messaging window has closed. These messages must be pre-approved by Meta and are commonly used for transactional, utility, and promotional communication. Below are examples of how different industries effectively use WhatsApp templates, along with sample messages.`,
+
+    sections: [
+      {
+        question: "E-Commerce & Retail",
+        answer: `Retail and e-commerce brands use templates to share order confirmations, shipping updates, delivery alerts, and offers. These messages keep customers informed and reduce support queries.
+  Example:
+  “Hello {{1}}, your order {{2}} has been shipped and is expected to arrive by {{3}}. Track your order here: {{4}}.”`,
+      },
+
+      {
+        question: "Banking & Financial Services",
+        answer: `Banks and fintech companies rely on WhatsApp templates for secure and time-sensitive updates such as OTPs, transaction alerts, and account notifications.
+        Example:
+        “Dear {{1}}, your OTP for a transaction of ₹{{2}} is {{3}}. Please do not share this code with anyone.”`,
+      },
+
+      {
+        question: "Healthcare",
+        answer: `Healthcare providers use templates to remind patients about appointments, lab reports, or follow-ups, ensuring better attendance and timely care.
+        Example:
+        “Hi {{1}}, this is a reminder for your appointment with Dr. {{2}} on {{3}} at {{4}}.”`,
+      },
+
+      {
+        question: "Education & Training",
+        answer: `Educational institutions send templates for class schedules, exam alerts, admission updates, and fee reminders.
+        Example:
+        “Hello {{1}}, your {{2}} class is scheduled on {{3}} at {{4}}. Please join on time.”`,
+      },
+
+      {
+        question: "Travel & Hospitality",
+        answer: `Travel and hospitality businesses use templates for booking confirmations, check-in details, and travel updates.
+        Example:
+        “Hi {{1}}, your booking at {{2}} is confirmed from {{3}} to {{4}}. We look forward to welcoming you.”
+        Using industry-specific WhatsApp templates ensures clear communication, higher engagement, and full compliance with Meta’s guidelines.`,
+      },
+    ],
+  },
+  {
+    id: 18,
+    slug: "create-whatsapp-templates-celitix",
+    title: "Step-by-Step Guide to Create WhatsApp Templates with Celitix",
+
+    sections: [
+      {
+        question: "Step-by-Step Guide",
+        image: createwhatsapptemplatescelitix,
+        alt: "Create WhatsApp Templates with Celitix",
+        answer: `Step 1: Select your WABA Account.
+
+        Step 2: Select your category, whether you want template to be approved under marketing, utility or authentication.
+
+        NOTE: Marketing: Promotional messages meant to upsell, announce offers, product updates, or re-engage customers.
+
+        Example: Get 20% off your next purchase!
+
+        Utility: Transactional or service-related messages that provide updates or information requested by the user.
+
+        Example: Your order #1234 has been shipped.
+
+        Authentication: Messages used for security and verification, like sending OTPs or login codes.
+
+        Example: Your verification code is 678910.
+
+        Step 3: Select template type whether it is text, image, video, document, and carousel.
+
+        Step 4: Need to select language.
+
+        Step 5: Mention template name.
+
+        Step 6: Mention template header, it is totally optional and it is a top section of a WhatsApp message template and also useful to highlight the main purpose of template and its length should be 60 characters.
+
+        Step 7: Type your template under 1024 character length; you can add up to 10 variables under template.
+
+        Step 8: Mention template footer, it is totally optional basically it is used for brief notes like short reminders. (Reply ‘STOP’ to unsubscribe)
+
+        Step 9: Select interactive actions which let users engage directly with your message.
+  `,
+      },
+
+      {
+        question: "Call to Actions:",
+        list: [
+          "Phone Call: Lets users tap to call a number",
+          "URL: Opens a website when tapped. Useful for promotions, support, or product pages.",
+        ]
+      },
+      {
+        question: "Quick Replies:",
+        list: [
+          "Great for collecting feedback or guiding next steps (e.g., “Yes”, “No”, “More info”).",
+        ]
+      },
+      {
+        question: "Flow: ",
+        list: [
+          "Flow in Interactive Actions lets users follow a guided, step-by-step journey inside WhatsApp, such as booking, form filling, or support.",
+          "It helps businesses automate conversations and collect inputs without manual replies.",
+        ]
+      },
+    ],
+  },
+  {
+    id: 19,
+    slug: "best-practices-high-template-approval",
+    title: "Best Practices for High Template Approval Rate",
+    sections: [
+      {
+        question: "BEST PRACTICES FOR HIGH TEMPLATE APPROVAL RATE",
+        answer: `Getting your WhatsApp message templates approved by Meta is a critical step in using the WhatsApp Business API effectively. Since templates are reviewed to prevent spam and ensure a good user experience, following the right practices can significantly improve your approval rate. Below are some proven best practices to help your templates get approved faster and with fewer rejections.
+    
+    Start with a clear and specific purpose. The first line of your template should clearly explain why you are messaging the user—whether it’s an order update, appointment reminder, or service alert. Vague or misleading messages often get rejected because they appear promotional or spam-like.
+    
+    Always use simple, professional language. Avoid exaggerated marketing terms such as “Buy now,” “Limited offer,” or “Hurry up” unless the template is explicitly promotional and allowed. Proofread your content carefully, as spelling or grammatical errors can negatively impact approval.
+    
+    Follow proper formatting rules. Use variables correctly (e.g., {{1}}, {{2}}) with proper spacing and context. Each variable should add value and must not be placed randomly or on separate lines. Incorrect variable usage is one of the most common reasons for rejection.
+    
+    Ensure policy compliance at all times. WhatsApp does not allow threatening language, misleading claims, or requests for sensitive personal data such as OTPs, card details, or passwords through non-OTP templates. Your message should always feel safe and respectful to the recipient.
+    
+    Include a clear opt-out option in the footer, such as “Reply STOP to unsubscribe.” This shows that your business respects user consent and aligns with Meta’s messaging guidelines.
+    
+    Lastly, match the language selection with your content. Submitting English content under another language category—or mixing languages—will result in rejection.
+  `,
+      },
+    ],
+  },
+  {
+    id: 20,
+    slug: "whatsapp-opt-in-rules",
+    title: "WhatsApp Opt-In Rules",
+    intro: `WhatsApp follows a strict opt-in policy to protect users from unwanted or spam communication. For businesses using the WhatsApp Business API, obtaining clear and valid user consent is mandatory before sending any messages. Understanding what Meta allows—and what it doesn’t—helps businesses stay compliant and maintain a healthy quality rating.`,
+    sections: [
+      {
+        question: "What Meta Allows",
+        answer: `Meta allows businesses to message users only after they have explicitly opted in. Opt-in can be collected through multiple channels such as website forms, mobile apps, WhatsApp chat widgets, SMS, email, IVR calls, or in-store QR codes. The opt-in request must clearly mention that the user is agreeing to receive messages on WhatsApp from your business.
+    
+   Consent should be explicit and informed. This means the user must knowingly take an action, such as ticking a checkbox or sending a keyword like “START” on WhatsApp. The opt-in message should also specify the type of messages the user will receive—such as order updates, reminders, or promotional alerts.
+    
+    Meta also allows businesses to re-engage users within the 24-hour customer service window after the user sends a message, without requiring a template.`,
+      },
+      {
+        question: "What Meta Does NOT Allow",
+        answer: `Meta strictly prohibits implied or automatic opt-ins. purchasing a product, sharing a phone number, or agreeing to general terms and conditions does not count as valid WhatsApp consent. Pre-checked boxes and hidden opt-in language are also not allowed.
+    
+        Sending messages to scraped, purchased, or third-party contact lists is a direct violation of WhatsApp policies. Businesses are also not allowed to continue messaging users who have opted out or blocked the business.
+    
+        Additionally, opt-ins collected for one brand or purpose cannot be reused for another brand or unrelated communication.`,
+      },
+      {
+        question: "Why Opt-In Compliance Matters",
+        answer: `Following WhatsApp opt-in rules reduces message blocks, improves delivery rates, and protects your business account from quality downgrades or bans. A transparent opt-in process builds trust and ensures long-term success on WhatsApp Business API.`,
+      },
+    ],
+  }
+
+];

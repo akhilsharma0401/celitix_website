@@ -601,6 +601,12 @@ import DashboredLanding from "./imagesMain/DashboredLanding.png"
 import OmnichannelLanding from "./imagesMain/OmnichannelLanding.png"
 // landingpage
 
+// tutorial
+import tutorialhero from "./imagesMain/tutorialhero.png"
+import createwhatsapptemplatescelitix from "./imagesMain/create-whatsapp-templates-celitix.jpg"
+
+// tutorial
+
 export {
     chat,
     // careerr
@@ -1192,5 +1198,9 @@ export {
     IntegrationCustomer,
     IntegrationTech,
 
-
+        // Tutorial
+        tutorialhero,
+        createwhatsapptemplatescelitix,
+        // Tutorial
+        
 }
