@@ -391,7 +391,7 @@ NOTE: Celitix support team assists throughout this transition.
 
     sections: [
       {
-        question: "Confirm your identity:",
+        question: "Confirm your identity",
         answer: `Go to Business Support Home and click Account Status Overview from the left menu.
         Select the restricted account and follow the on-screen steps.
         You may need to provide:
@@ -404,12 +404,12 @@ NOTE: You may need to complete the process within a set time limit.`,
       },
 
       {
-        question: "Complete business verification: ",
+        question: "Complete business verification ",
         answer: `If we detect unusual activity on your account, we may ask you to verify it's really you. You'll see either Start verification or Request review, based on the situation.`,
       },
 
       {
-        question: "If you see Start verification:",
+        question: "If you see Start verification",
         answer: `Go to what you can do in Business Support Home and click Start verification.
         1.	Follow the steps and provide:
         •	Account email
@@ -419,7 +419,7 @@ NOTE: You may need to complete the process within a set time limit.`,
       },
 
       {
-        question: "If you see Request review:",
+        question: "If you see Request review",
         answer: `1.	Click Secure your account in What you can do.
         Follow the steps, which may include:`,
         list: [
@@ -431,7 +431,7 @@ NOTE: You may need to complete the process within a set time limit.`,
       },
 
       {
-        question: "Secure your account: ",
+        question: "Secure your account",
         answer: `If your business portfolio is over 90 days old, you may be required to enable two-factor authentication. Without it, access to Business Manager Tools may be restricted.
         To enable it:`,
         list: [
@@ -444,7 +444,7 @@ NOTE: You may need to complete the process within a set time limit.`,
       },
 
       {
-        question: "Request a review: ",
+        question: "Request a review",
         answer: `If your account is restricted due to a policy violation, you may have the option to request a review. If you believe the restriction is a mistake, we recommend submitting a review request. We'll reassess your account to decide if the restriction should remain. Note that you can only request a review a limited number of times, and the decision after review is final.`,
       },
 
@@ -1047,20 +1047,20 @@ NOTE: You may need to complete the process within a set time limit.`,
       },
 
       {
-        question: "Call to Actions:",
+        question: "Call to Actions",
         list: [
           "Phone Call: Lets users tap to call a number",
           "URL: Opens a website when tapped. Useful for promotions, support, or product pages.",
         ]
       },
       {
-        question: "Quick Replies:",
+        question: "Quick Replies",
         list: [
           "Great for collecting feedback or guiding next steps (e.g., “Yes”, “No”, “More info”).",
         ]
       },
       {
-        question: "Flow: ",
+        question: "Flow ",
         list: [
           "Flow in Interactive Actions lets users follow a guided, step-by-step journey inside WhatsApp, such as booking, form filling, or support.",
           "It helps businesses automate conversations and collect inputs without manual replies.",

@@ -177,7 +177,7 @@ const Header = () => {
             </Link>
           </div>
 
-          <nav className="hidden lg:flex flex-1 justify-center gap-1 text-sm font-medium text-black items-center">
+          <nav className="hidden xl:flex flex-1 justify-center gap-1 text-sm font-medium text-black items-center">
             {/* <div className="flex items-center text-lg gap-2 p-2 rounded-md transition-all duration-300 cursor-pointer">Home</div> */}
             {/* Cpaas */}
             <div className="relative group cursor-pointer">
@@ -591,7 +591,7 @@ const Header = () => {
             </div> */}
           </nav>
 
-          <div className="hidden lg:flex flex-shrink-0 gap-3">
+          <div className="hidden xl:flex flex-shrink-0 gap-3">
             {/* <Link  href="/book-a-demo"> */}
             <UniversalButton label="Book Demo" variant="brutal" className='bg-[#9B44B6] border-[#9B44B6] text-white px-2 py-1 font-semibold hover:bg-white hover:text-black 
               hover:shadow-[4px_4px_0px_#9B44B6]'  onClick={handleShowFormPopup} />
@@ -623,7 +623,7 @@ const Header = () => {
           {/* <div className="md:hidden text-2xl cursor-pointer" onClick={hrefggleMenu}>
                 {mobileMenuOpen ? <FaTimes /> : <FaBars />}
               </div> */}
-          <div className="lg:hidden text-2xl cursor-pointer">
+          <div className="xl:hidden text-2xl cursor-pointer">
             <label className="hamburger">
               {/* Controlled by your mobileMenuOpen state */}
               <input
@@ -641,7 +641,7 @@ const Header = () => {
         </div>
 
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-white shadow-md px-4 pt-2 -mt-2 pb-4 space-y-3 text-sm font-medium text-black transition-all duration-300 rounded-b-2xl overflow-y-auto">
+          <div className="xl:hidden bg-white shadow-md px-4 pt-2 -mt-2 pb-4 space-y-3 text-sm font-medium text-black transition-all duration-300 rounded-b-2xl overflow-y-auto">
             <div
               className="relative group cursor-pointer mb-0"
 

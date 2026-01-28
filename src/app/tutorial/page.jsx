@@ -154,7 +154,7 @@ import {
     FiArrowRight,
 } from "react-icons/fi";
 import UniversalButton from "../components/UniversalButton";
-import { tutorialhero } from "../../../public/assets/images";
+import { CTALASTIMAGE, tutorialhero } from "../../../public/assets/images";
 import Image from "next/image";
 import FormPopup from "../components/FormPopup";
 
@@ -336,22 +336,7 @@ const cards = [
         color: "from-blue-500 to-cyan-500",
         slug: "sms",
     },
-    {
-        icon: <FiGrid />,
-        category: "SMS Gateway",
-        title: "OTP SMS",
-        desc: "Instant OTP delivery for login and verification.",
-        color: "from-sky-500 to-blue-500",
-        slug: "otp-sms",
-    },
-    {
-        icon: <FiUsers />,
-        category: "RCS Messaging",
-        title: "RCS Business Messaging",
-        desc: "Rich media messages with branding and buttons.",
-        color: "from-indigo-600 to-blue-500",
-        slug: "rcs",
-    },
+
     {
         icon: <FiBarChart2 />,
         category: "RCS Messaging",
@@ -360,38 +345,7 @@ const cards = [
         color: "from-indigo-600 to-blue-500",
         slug: "rcs-analytics",
     },
-    {
-        icon: <FiFileText />,
-        category: "SMS Gateway",
-        title: "Bulk SMS Service",
-        desc: "High-delivery promotional and transactional SMS platform.",
-        color: "from-blue-500 to-cyan-500",
-        slug: "sms",
-    },
-    {
-        icon: <FiGrid />,
-        category: "SMS Gateway",
-        title: "OTP SMS",
-        desc: "Instant OTP delivery for login and verification.",
-        color: "from-sky-500 to-blue-500",
-        slug: "otp-sms",
-    },
-    {
-        icon: <FiUsers />,
-        category: "RCS Messaging",
-        title: "RCS Business Messaging",
-        desc: "Rich media messages with branding and buttons.",
-        color: "from-indigo-600 to-blue-500",
-        slug: "rcs",
-    },
-    {
-        icon: <FiBarChart2 />,
-        category: "RCS Messaging",
-        title: "RCS Analytics",
-        desc: "Track open rates and customer interactions.",
-        color: "from-indigo-600 to-blue-500",
-        slug: "rcs-analytics",
-    },
+
 ];
 
 export default function Page() {
@@ -422,7 +376,7 @@ export default function Page() {
     return (
         <>
             <section className="bg-[#f7ebfc] pt-25 md:pt-35 px-4 sm:px-6 lg:px-20">
-                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10 pb-5 lg:pb-20 py-5 md:py-10">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10 pb-5 lg:pb-16 py-5 md:py-10">
 
                     {/* Left Content */}
                     <div className="space-y-6 box-reveal-left">
@@ -434,33 +388,14 @@ export default function Page() {
 
 
                         <h1 className="text-4xl md:text-5xl lg:text-5xl heading  font-bold text-gray-900 popf leading-tight">
-                            Tutorials & Learning Hub
+                            Explore Celitix Communication Guides and Tutorials
                         </h1>
 
                         <p className="text-gray-600  text-base md:text-lg  max-w-lg">
-                            Step-by-step guides, hands-on tutorials, and practical examples
-                            to help you master tools, technologies, and workflows faster.
+                            A Gateway to Guides and Tutorials for Using Celitix’s Omnichannel Communication Platform, Helping Businesses Understand and Implement Messaging and Engagement Tools.
                         </p>
 
-                        {/* Search Bar (Optional) */}
-                        <div className="relative max-w-md mb-8 p-[2px] rounded-xl bg-gradient-to-r from-purple-500 to-pink-500">
-                            <div className="relative bg-white rounded-xl">
-                                <input
-                                    type="text"
-                                    placeholder="Search tutorials..."
-                                    value={searchTerm}
-                                    onChange={(e) => setSearchTerm(e.target.value)}
-                                    className="
-        w-full pl-12 pr-4 py-3
-        rounded-xl
-        focus:outline-none
-      "
-                                />
-                                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
-                                    <SearchIcon fontSize="small" />
-                                </span>
-                            </div>
-                        </div>
+
 
 
                         {/* CTA */}
@@ -494,39 +429,68 @@ export default function Page() {
 
 
             {/* <div className="bg-gradient-to-br from-purple-50 via-white to-violet-50 min-h-screen px-6 py-16"> */}
-            <div className="bg-[#f7ebfc] min-h-screen px-6 pb-5 md:pb-16">
+            <div className="bg-[#f7ebfc] min-h-screen px-6 pb-5 md:pb-20">
 
                 {/* Header */}
-                <div className="text-center mb-10">
-                    <h2 className="text-2xl md:text-4xl heading lg:text-5xl font-semibold text-gray-900 mb-3">
-                        Explore Celitix Tutorial
-                    </h2>
-                    <p className="text-sm md:text-xl sub-heading text-gray-700">
-                        Powerful communication tools for your business
-                    </p>
-                </div>
+
 
                 {/* Tabs */}
-                <div className="flex flex-wrap justify-center gap-4 mb-16">
+                <div>
+                    {/* Tabs */}
+                    <div className="flex flex-wrap justify-center gap-4 py-6 overflow-x-auto scrollbar-hide px-2">
 
-                    {tabs.map((tab) => (
-                        <button
-                            key={tab}
-                            onClick={() => setActiveTab(tab)}
-                            className={`
+                        {tabs.map((tab) => (
+                            <button
+                                key={tab}
+                                onClick={() => setActiveTab(tab)}
+                                className={`
               px-6 py-2.5 rounded-full font-medium border-2 transition-all
               
               ${activeTab === tab
-                                    ? "bg-purple-600 text-white border-purple-600 shadow-lg scale-105"
-                                    : "bg-white text-purple-600 border-purple-400 hover:bg-purple-50"
-                                }
+                                        ? "bg-purple-600 text-white border-purple-600 shadow-lg scale-105"
+                                        : "bg-white text-purple-600 border-purple-400 hover:bg-purple-50"
+                                    }
             `}
-                        >
-                            {tab}
-                        </button>
-                    ))}
+                            >
+                                {tab}
+                            </button>
+                        ))}
 
+                    </div>
+
+                    {/* Search */}
+                    <div className="text-center mb-10">
+
+                        <div className="relative max-w-md mx-auto mb-8 p-[2px] rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 shadow-md">
+
+                            <div className="relative bg-white rounded-xl">
+
+                                <input
+                                    type="text"
+                                    placeholder="Search tutorials..."
+                                    value={searchTerm}
+                                    onChange={(e) => setSearchTerm(e.target.value)}
+                                    className="
+            w-full pl-12 pr-4 py-3
+            rounded-xl text-sm
+            focus:outline-none focus:ring-2 focus:ring-purple-400
+            transition-all
+          "
+                                />
+
+                                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+                                    <SearchIcon fontSize="small" />
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
                 </div>
+
+
+
 
                 {/* Cards Grid */}
                 <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10">
@@ -585,6 +549,39 @@ export default function Page() {
 
                 </div>
 
+            </div>
+
+
+            <div className="flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-[#A05CD7] to-[#4B0FA6] px-6 md:px-12 py-5 md:py-15">
+                {/* Left Image with Icons */}
+                <div className="relative w-full md:w-1/2 flex justify-center mb-10 md:mb-0">
+                    <Image
+                        src={CTALASTIMAGE}
+                        alt="Customer Support"
+                        className="z-10 w-full sm:w-72 md:w-80 lg:w-[440px] object-contain lg:absolute top-0 md:-top-55"
+                    />
+                </div>
+
+                {/* Right Content */}
+                <div className="w-full md:w-1/2 text-center md:text-left">
+                    <h2 className="text-white text-2xl heading sm:text-3xl md:text-4xl font-bold mb-4">
+                        Elevate Your Customer Experience
+                    </h2>
+                    <p className="text-gray-200 text-sm sm:text-base md:text-lg sub-heading font-light mb-6 max-w-xl">
+                        Go beyond the ordinary and connect with your target groups to grow your business.
+                    </p>
+                    <UniversalButton
+                        label="Book  Demo"
+                        variant="transitionbtn"
+                        className="px-4 py-2 rounded-xl text-black bg-white sm:px-4 sm:py-2 "
+                        onClick={handleShowFormPopup}
+                    />
+
+                    <FormPopup
+                        visible={openDialog}
+                        onHide={handleCloseDialog}
+                    />
+                </div>
             </div>
         </>
 
