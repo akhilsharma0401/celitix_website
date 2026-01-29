@@ -1,4 +1,4 @@
-import { createwhatsapptemplatescelitix } from "../../public/assets/images";
+import { aichatbotswhatsapp, createwhatsapptemplatescelitix, enhancecustomerengagementwithwhatsapplivech, enhancecustomerengagementwithwhatsapplivechaton, enhancecustomerengagementwithwhatsapplivechatoncelitix, explanationofnodestocreatechatbots, mmliteinwhatsappbusinessapi, samplewhatsappbotandhowtocreateitusingcelitix, whatsappmanageflowincelitix } from "../../public/assets/images";
 
 export const tutorialData = [
   {
@@ -1119,6 +1119,349 @@ NOTE: You may need to complete the process within a set time limit.`,
         answer: `Following WhatsApp opt-in rules reduces message blocks, improves delivery rates, and protects your business account from quality downgrades or bans. A transparent opt-in process builds trust and ensures long-term success on WhatsApp Business API.`,
       },
     ],
-  }
+  },
+  {
+    id: 21,
+    slug: "chatbots-whatsapp",
+    title: "Chatbots on WhatsApp: How They Work",
+    sections: [
+      {
+        question: "AI Chatbots on WhatsApp",
+        image: aichatbotswhatsapp,
+        answer: `Chatbots on WhatsApp are redefining how businesses engage, convert, and retain customers. With the WhatsApp Business API powered by Celitix, brands can turn everyday conversations into high-impact marketing and support experiences.
+    
+   WhatsApp chatbots works by instantly responding to customer messages using intelligent automation. When a user sends a message, the chatbots analyzes it to understand intent—such as product inquiries, pricing requests, booking confirmations, or support needs. Based on this, the chatbots delivers personalized, relevant responses in real time.
+    
+   What makes WhatsApp chatbots a powerful marketing tool is their ability to guide customers through pre-designed conversation flows. Using interactive buttons, lists, and smart flows, businesses can lead users toward actions like browsing products, capturing leads, booking demos, making payments, or completing purchases—without leaving WhatsApp.
+    
+    Chatbots also enable hyper-personalized marketing. By integrating with CRMs and backend systems, chatbots can use customer data to send targeted messages, product recommendations, reminders, and follow-ups at the right moment. This significantly improves open rates, engagement, and conversions compared to traditional channels like email or SMS.
+    
+    Another major advantage is 24/7 availability. AI chatbots ensure instant responses at any time, eliminating delays and keeping customers engaged throughout their buying journey. For complex queries, the chatbots can seamlessly hand over the conversation to a live agent, ensuring a smooth and human touch when needed.
+    
+    With Celitix, businesses can build scalable, secure, and AI-driven WhatsApp chatbots that automate conversations, drive conversions, and create meaningful customer relationships—helping brands grow faster on the world’s most popular messaging platform.`,
+      }, ,
+    ],
+  },
+  {
+    id: 22,
+    slug: "whatsapp-chatbot-use-cases",
+    title: "Use Cases Of WhatsApp Chatbots For Businesses",
+    intro: `WhatsApp chatbots have become a must-have solution for businesses looking to scale customer communication and increase conversions. Powered by the WhatsApp Business API, AI-driven chatbots help brands automate conversations, reduce response time, and deliver personalized experiences. With Celitix WhatsApp Business API solutions, businesses can turn WhatsApp into a powerful sales and engagement channel.`,
+    sections: [
+      {
+        question: "Customer Support Automation",
+        answer: `One of the most impactful use cases of WhatsApp chatbots is customer support automation. Chatbots can instantly handle FAQs, order tracking, delivery updates, refunds, and service requests. By using WhatsApp customer support automation, businesses can reduce support costs while offering 24/7 assistance and faster resolutions.`,
+      },
+      {
+        question: "Lead Generation and Sales Qualification",
+        answer: `WhatsApp chatbots play a crucial role in lead generation on WhatsApp. Businesses can capture leads from click-to-WhatsApp ads, websites, and landing pages, automatically qualify prospects, and push high-intent leads to sales teams. This speeds up follow-ups and significantly improves conversion rates.`,
+      },
+      {
+        question: "Sales, Product Discovery, and Payments",
+        answer: `With WhatsApp chatbots for sales, customers can browse products, view pricing, receive recommendations, and complete purchases using interactive buttons and flows. Integrated WhatsApp payment and checkout solutions further simplify the buying journey, driving higher revenue directly from chat.`,
+      },
+      {
+        question: "Appointment Booking and Reminders",
+        answer: `Businesses in healthcare, education, and real estate use WhatsApp chatbot appointment booking to schedule meetings, send confirmations, and share automated reminders—reducing no-shows and manual effort.`,
+      },
+      {
+        question: "Marketing Campaigns and Customer Retention",
+        answer: `By integrating with CRM systems, WhatsApp chatbots enable WhatsApp marketing automation. Businesses can send personalized offers, abandoned cart reminders, renewal alerts, and re-engagement campaigns, resulting in higher open rates and repeat sales.`,
+      },
+      {
+        question: "OTP Verification and Feedback Collection",
+        answer: `Chatbots also support WhatsApp OTP verification, user authentication, and customer feedback collection, ensuring secure and seamless interactions.
+        
+        With Celitix WhatsApp chatbots solutions, businesses can automate sales, improve engagement, and maximize ROI—making WhatsApp their highest-converting communication channel.`,
+      },
+    ],
+  },
+  {
+    id: 23,
+    slug: "ai-chatbots-whatsapp-how-they-work",
+    title: "AI Chatbots on WhatsApp: How They Work",
+    sections: [
+      {
+        question: "AI Chatbots on WhatsApp ",
+        answer: `Chatbots on WhatsApp help businesses automate conversations, improve customer engagement, and drive faster conversions. Powered by the WhatsApp Business API, AI WhatsApp chatbots enable real-time, personalized communication at scale. With Celitix WhatsApp Business API and Chatbots Builder, businesses can easily design, deploy, and manage intelligent WhatsApp chatbots without complex coding.
+    
+   Chatbots on WhatsApp work using a visual chatbots flow builder. Businesses can create automated journeys by connecting different nodes such as text messages, images, videos, lists, buttons, CTAs, documents, and flows. These nodes guide customers step by step, making conversations simple, interactive, and action-driven.
+    
+   A chatbots journey usually starts with starting keywords like hi, testing or how can we help? . Once triggered, the chatbots responds instantly and uses AI and predefined logic to understand customer intent. Based on the response, users are guided through interactive lists and flows, helping them browse services, share details, or take the next action without manual support.
+    
+    Celitix also allows businesses to create multiple WhatsApp bots for different use cases such as customer service bots, lead generation bots, or industry-specific bots. All bots can be managed from a single dashboard under Manage Bots, making operations smooth and scalable.
+    
+    For complex queries, AI chatbots support agent handover, seamlessly transferring conversations to a live agent when human assistance is required. This ensures a perfect balance between automation and personalized support.
+    
+    AI WhatsApp chatbots can also be integrated with CRM systems, APIs, and backend platforms, enabling features like lead capture, appointment booking, order tracking, OTP verification, and real-time updates.
+    
+    With Celitix AI-powered WhatsApp chatbots, businesses can automate support, increase engagement, reduce response time, and turn WhatsApp into a high-converting sales and communication channel.`,
+      }, ,
+    ],
+  },
+  {
+    id: 24,
+    slug: "explanation-of-nodes-to-create-chatbots",
+    title: "Explanation Of Nodes To Create Chatbots On Celitix",
+    sections: [
+      {
+        question: "Explanation Of Nodes To Create Chatbots On Celitix ",
+        image: explanationofnodestocreatechatbots,
+        answer: `Creating an effective WhatsApp chatbots requires the right set of building blocks. With Celitix’s WhatsApp Chatbots Builder, businesses can design intelligent, automated conversations using a wide range of nodes—without any coding. Each node plays a specific role in shaping the chatbots journey and delivering a seamless customer experience.
+    
+   Every chatbots flow begins with the Start Node, which triggers the bot when users send predefined keywords like Hi, Hello, or Support. Once triggered, the chatbots uses Text Nodes to send messages such as greetings, instructions, or confirmations.
+    
+    To make conversations more engaging, Celitix offers rich media nodes. The Image, Video, Document, and Audio nodes allow businesses to share product images, demo videos, brochures, invoices, voice notes, and more—directly on WhatsApp.
+    
+    For guided and interactive conversations, Button and List Nodes are used. Buttons provide quick clickable options, while lists display multiple choices in an organized format, helping users navigate services or products effortlessly.
+    
+    When automation needs a human touch, the Agent Node enables smooth handover to a live agent. This ensures complex queries are handled personally without breaking the conversation flow. The CTA URL Node helps drive users to websites, payment pages, or landing pages with a single click.
+    
+    Celitix also supports advanced automation through Template Nodes for WhatsApp-approved messages, Flow Nodes to connect or reuse chatbots journeys, and GoTo Nodes to redirect users across different paths.
+    
+    For data-driven use cases, the API Node integrates the chatbots with CRM systems, databases, or third-party tools, while the Answer Node captures user inputs like names, phone numbers, or preferences. The Location Node helps collect or share location details for deliveries or store visits.
+    
+    Using these powerful nodes, businesses can build scalable, interactive, and conversion-focused WhatsApp chatbots with Celitix, transforming WhatsApp into a smart automation and engagement channel.`,
+      }, ,
+    ],
+  },
+  {
+    id: 25,
+    slug: "sample-whatsapp-bot-create-celitix",
+    title: "Sample Whatsapp Bot And How To Create It Using Celitix",
+    intro: `To understand how a WhatsApp chatbots works in real life, let’s look at a sample Lead Generation & Customer Support Bot created using the Celitix WhatsApp chatbots Builder.`,
+    sections: [
+      {
+        image: samplewhatsappbotandhowtocreateitusingcelitix,
+        question: "Step 1: Start Node (Trigger)",
+        answer: `The chatbots is triggered when a user sends keywords like Hi, Hello, or Interested on WhatsApp. This activates the bot instantly without any manual intervention.`,
+      },
+      {
+        question: "Step 2: Text Node (Welcome Message)",
+        answer: `The bot sends a welcome message:
+        
+        “Hello! Welcome to Celitix. How can we help you today?”`,
+      },
+      {
+        question: "Step 3: List Node (Main Menu)",
+        answer: `The chatbots displays a list of options:
+        
+        •	Product Information
+        •	Talk to Sales
+        •	Customer Support
+        •	Our Office Location
+        
+        This helps users choose without typing long messages.`,
+      },
+      {
+        question: "Step 4: Flow Node (Based on Selection)",
+        answer: `Each option is connected to a Flow Node:`,
+        list: [
+          "Product Information → Shares details using Text, Image, and Document nodes",
+          "Talk to Sales → Captures user details using the Answer Node",
+          "Customer Support → Connects to FAQs or support flow",
+          "Office Location → Sends address using the Location Node",
+        ],
+      },
+      {
+        question: "Step 5: Button & CTA URL Nodes",
+        answer: `For sales-related queries, the chatbots displays buttons like:
+        
+        •	Request a Demo
+        •	Visit Website
+
+        The CTA URL Node redirects users to a landing page or payment link.`,
+      },
+      {
+        question: "Step 6: Agent Node (Human Handover)",
+        answer: `If the user needs personalized assistance, the chatbots transfers the conversation to a live agent using the Agent Node, ensuring a smooth human touch.`,
+      },
+      {
+        question: "Step 7: API Node (Optional Automation)",
+        answer: `The API Node can be used to push captured leads into a CRM or fetch real-time data like order status or appointment confirmation.`,
+      },
+      {
+        question: "Result",
+        answer: `This sample WhatsApp chatbots automates lead capture, answers customer queries, and routes conversations intelligently—saving time while improving engagement.
+        
+        With Celitix, businesses can build similar WhatsApp chatbots in minutes and turn everyday conversations into high-converting customer journeys.`,
+      },
+    ],
+  },
+  {
+    id: 26,
+    slug: "whatsapp-automation-vs-manual-messaging",
+    title: "Whatsapp Automation Vs Manual Messaging Which Is Better For Businesses",
+    sections: [
+      {
+        question: "Whatsapp Automation Vs Manual Messaging ",
+        answer: `WhatsApp has become a primary communication channel for businesses, making it essential to choose between WhatsApp automation and manual WhatsApp messaging. Understanding the difference helps businesses improve customer engagement, reduce response time, and scale operations efficiently.
+    
+ Manual WhatsApp messaging relies on human agents to reply to customer queries individually. While it allows personalized conversations, it comes with major limitations. Response delays, limited working hours, high manpower costs, and inconsistent messaging often impact customer experience. Manual messaging may work for small businesses with low query volumes, but it becomes difficult to manage as customer interactions grow.
+    
+    WhatsApp automation, powered by the WhatsApp Business API, enables businesses to automate conversations using AI chatbots and predefined flows. Automated WhatsApp chatbots can instantly respond to FAQs, share order status, send OTPs, collect leads, schedule appointments, and trigger notifications—24/7 without human intervention. This result in faster response times, improved customer satisfaction, and reduced operational costs.
+    
+    From a scalability perspective, WhatsApp automation clearly outperforms manual messaging. Automated systems can handle thousands of conversations simultaneously, ensuring consistent messaging and seamless customer journeys. Businesses can also integrate WhatsApp automation with CRM systems, payment gateways, and backend platforms to enable WhatsApp marketing automation, customer support automation, and sales automation.
+    
+    Importantly, WhatsApp automation does not eliminate human interaction. With features like agent handover, complex or sensitive queries can be transferred to live agents at any stage of the conversation. This hybrid approach combines automation efficiency with a human touch.
+    
+    In conclusion, while manual WhatsApp messaging may suit limited use cases, WhatsApp automation is the smarter choice for growing businesses. By adopting automated WhatsApp solutions, businesses can increase engagement, boost conversions, and deliver a superior customer experience on the world’s most popular messaging platform.`,
+      }, ,
+    ],
+  },
+  {
+    id: 27,
+    slug: "enhance-customer-engagement-with-whatsapp-live-chat-on-celitix",
+    title: "Enhance Customer Engagement With Whatsapp Live Chat On Celitix",
+    intro: `In today’s fast-paced digital world, instant and personalized communication is key to improving customer experience. Celitix offers a powerful Live Chat feature for WhatsApp, enabling businesses to engage with customers in real time. This tool is designed to streamline communication, ensure quick responses, and maintain a professional customer support experience.`,
+    sections: [
+      {
+        image: enhancecustomerengagementwithwhatsapplivechatoncelitix,
+        question: "Manage Canned Messages",
+        answer: `Celitix allows you to create, manage, and organize canned messages — pre-saved responses that save time and maintain consistency in your conversations.
+        
+        •	Add/Edit Messages: Easily add a message label and content for frequent queries.
+        •	Your Canned Messages: Quickly access and reuse pre-saved messages like greetings, FAQs, or standard replies to common questions.
+        
+        This feature ensures that your team can respond professionally without typing repetitive messages, improving efficiency and customer satisfaction.`,
+      },
+      {
+        question: "Agent Settings",
+        image: enhancecustomerengagementwithwhatsapplivechaton,
+        answer: `With Celitix’s WhatsApp Live Chat, you can automate your customer interaction with customizable Agent Settings:`,
+        list: [
+          "Welcome Message: Automatically greet new customers with a personalized welcome message",
+          "Agent Inactive Timings: Notify users when your team is unavailable, providing clarity on support hours.",
+          "Agent Change: Send automated messages when a chat is reassigned or an agent becomes inactive, keeping the user informed throughout their interaction.",
+          "These automated settings reduce response delays and ensure customers always feel attended to, even outside business hours.",
+        ],
+      },
+      {
+        question: "Live Chat Dashboard",
+        image: enhancecustomerengagementwithwhatsapplivech,
+        answer: `The Live Chat dashboard provides a real-time view of all active and inactive conversations:
+
+        •	Active Chats: Monitor ongoing conversations and respond instantly.
+      •	Unread Messages: Stay on top of customer queries without missing any messages.
+•	Agent Controls: Manage, filter, or assign chats to different agents efficiently.
+•	Blocked Users: Protect your team by managing users who have violated guidelines.
+        
+        This centralized platform allows teams to deliver seamless support across multiple WhatsApp accounts, all from a single interface.`,
+
+      },
+      {
+        question: "Benefits of WhatsApp Live Chat with Celitix",
+        answer: `Quick and professional responses using canned messages.
+
+        •	Improved customer satisfaction through timely updates and notifications.
+        •	Centralized management of all customer interactions.
+        •	Efficient agent workflow with real-time monitoring and automation.
+        
+        Celitix’s WhatsApp Live Chat feature is a complete solution for businesses aiming to enhance customer engagement, reduce response time, and deliver exceptional support experiences.`,
+      },
+    ],
+  },
+  {
+    id: 28,
+    slug: "manage-whatsapp-automation-flows-with-celitix",
+    title: "Manage Whatsapp Automation Flows With Celitix",
+    intro: `The Manage Flow option in Celitix enables businesses to design, control, and optimize automated WhatsApp conversation journeys with ease. This powerful feature allows you to build interactive workflows that guide users step-by-step, ensuring quick responses, better engagement, and a consistent customer experience.`,
+    sections: [
+      {
+        question: "Visual Flow Builder",
+        answer: `Celitix provides an intuitive drag-and-drop flow builder that makes automation simple, even for non-technical users. You can start creating a flow from scratch and visually map the entire customer journey. The canvas helps you organize each step clearly, making it easy to understand how messages and actions are connected.`,
+      },
+      {
+        question: "Rich Message Components",
+        answer: `With Manage Flow, you can add multiple elements such as text messages, buttons, lists, images, documents, and media to create engaging WhatsApp interactions. These components help businesses present information clearly and allow users to respond quickly using predefined options instead of typing messages manually.`,
+      },
+      {
+        question: "User Inputs and Conditions",
+        answer: `The flow builder supports user input fields like text input, dropdowns, radio buttons, and checkboxes. Based on user responses, you can apply conditions and switches to route the conversation dynamically. This ensures that customers receive relevant replies tailored to their selections or queries.`,
+      },
+      {
+        question: "Automation and Smart Actions",
+        answer: `Celitix also allows you to include automation actions such as API calls, opt-in management, data capture, and external link redirections. These actions help businesses automate lead collection, appointment booking, support requests, and more—without manual intervention.`,
+      },
+      {
+        question: "Easy Management and Optimization",
+        answer: `Flows can be easily saved, edited, tested, and published from a single dashboard. Businesses can modify flows anytime to match changing requirements or improve performance. This flexibility ensures that WhatsApp communication remains up to date and effective.
+        
+        With Celitix’s Manage Flow for WhatsApp, businesses can automate conversations, reduce response time, and deliver personalized customer journeys—making WhatsApp a powerful channel for support, sales, and engagement.`,
+      },
+    ],
+  },
+  {
+    id: 29,
+    slug: "whatsapp-manage-flow-in-celitix",
+    title: "Whatsapp Manage Flow In Celitix Automate Customer Conversations Easily",
+    intro: `The WhatsApp Manage Flow feature in Celitix helps businesses automate customer conversations using a powerful and easy-to-use visual flow builder. With this feature, companies can design structured WhatsApp automation flows that improve response time, reduce manual effort, and enhance customer engagement.`,
+    sections: [
+      {
+        image: whatsappmanageflowincelitix,
+        question: "Visual Drag-and-Drop WhatsApp Flow Builder",
+        answer: `Celitix offers a drag-and-drop flow builder for WhatsApp, allowing users to create automation flows without any coding. Businesses can visually map the entire conversation journey, starting from a welcome message and moving through multiple interaction steps.`,
+      },
+      {
+        question: "Rich Text Messaging Components",
+        answer: `The Manage Flow option supports multiple text components, including headings, subheadings, body text, and captions. These elements help deliver clear, professional, and well-structured WhatsApp messages, ensuring better readability and customer understanding.`,
+      },
+      {
+        question: "User Input and Interactive Reply Options",
+        answer: `Celitix enables businesses to collect customer responses using text input fields, buttons, dropdowns, radio buttons, and checkboxes. These interactive options make conversations faster and more user-friendly while guiding customers to the right information.`,
+      },
+      {
+        question: "Media Sharing on WhatsApp Automation Flows",
+        answer: `Businesses can share images, videos, documents, and image carousels within WhatsApp flows. This is ideal for sending product catalogs, brochures, policy documents, or promotional creatives directly to customers.`,
+      },
+      {
+        question: "Automation Actions and Integrations",
+        answer: `The Manage Flow feature supports automated actions such as embedded links, opt-in capture, button actions, and API integrations. These tools help automate lead generation, appointment bookings, and backend processes seamlessly.`,
+      },
+      {
+        question: "Conditional Logic for Personalized WhatsApp Journeys",
+        answer: `Using conditions, if-else logic, and switch flows, businesses can deliver personalized responses based on user selections. This ensures each customer receives relevant and accurate information.`,
+      },
+      {
+        question: "Easy Flow Management and Publishing",
+        answer: `WhatsApp automation flows can be saved, edited, tested, and published instantly, allowing businesses to update customer journeys anytime.
+        
+        With Celitix WhatsApp Manage Flow, businesses can automate conversations, improve customer experience, and scale WhatsApp communication efficiently.`,
+      },
+    ],
+  },
+  {
+    id: 30,
+    slug: "mm-lite-in-whatsapp-business-api",
+    title: "MM Lite In Whatsapp Business Api",
+    intro: `MM Lite is a lightweight messaging middleware that plays an important role in enabling efficient communication through the WhatsApp Business API. It acts as a bridge between WhatsApp and business systems, ensuring smooth message processing, automation, and delivery while maintaining compliance with Meta’s policies.`,
+    sections: [
+      {
+        image: mmliteinwhatsappbusinessapi,
+        question: "Centralized Message Management",
+        answer: `MM Lite manages all incoming and outgoing WhatsApp messages in a structured and reliable manner. It ensures messages are delivered to the appropriate automation flow, chatbot, or live agent based on predefined rules. This centralized message handling helps businesses maintain consistency, accuracy, and faster response times across customer interactions.`,
+      },
+      {
+        question: "Support for WhatsApp Automation",
+        answer: `MM Lite enables businesses to execute automated WhatsApp conversations, including session-based messaging and approved template messages. It supports transactional, notification, and service-based communication while reducing manual intervention. This makes it easier for businesses to handle high volumes of customer messages efficiently.`,
+      },
+      {
+        question: "Seamless Integration with Business Systems",
+        answer: `MM Lite integrates smoothly with CRMs, chatbots, and backend platforms, allowing businesses to synchronize customer data and conversation history. This integration ensures a unified view of customer interactions and supports better decision-making and service delivery.`,
+      },
+      {
+        question: "Compliance with WhatsApp Business API Policies",
+        answer: `One of the key benefits of MM Lite is its role in maintaining WhatsApp Business API compliance. It helps manage session windows, template usage, and message flow rules, minimizing the risk of policy violations or message rejections.`,
+      },
+      {
+        question: "Scalability and Performance",
+        answer: `Designed to be lightweight and scalable, MM Lite supports high message throughput without compromising performance. It is suitable for businesses of all sizes, from growing startups to large enterprises handling large-scale WhatsApp communication.`,
+      },
+      {
+        question: "Conclusion",
+        answer: `MM Lite in WhatsApp Business API is essential for structured messaging, automation, system integration, and compliance. By simplifying message management and improving scalability, MM Lite helps businesses deliver reliable, efficient, and policy-compliant communication on WhatsApp.`,
+      },
+    ],
+  },
 
 ];

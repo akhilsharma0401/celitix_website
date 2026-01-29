@@ -94,8 +94,8 @@ export default function SpecificTutorial({ params }) {
                     src={section.image}
                     alt={section.alt || "Tutorial image"}
                     width={800}
-                    height={500}
-                    className="w-full h-auto mb-4 rounded-lg shadow-md"
+                    height={300}
+                    className="w-full h-100 object-contain mb-4 rounded-lg shadow-md"
                   />
                 )}
 

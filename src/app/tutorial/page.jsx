@@ -329,6 +329,86 @@ const cards = [
         slug: "whatsapp-opt-in-rules",
     },
     {
+        icon: <FiBookOpen />,
+        category: "WhatsApp API",
+        title: "Chatbots on WhatsApp: How They Work",
+        desc: "Run marketing campaigns and customer engagement on WhatsApp.",
+        color: "from-green-600 to-teal-500",
+        slug: "chatbots-whatsapp",
+    },
+    {
+        icon: <FiBookOpen />,
+        category: "WhatsApp API",
+        title: "Use Cases Of WhatsApp Chatbots For Businesses",
+        desc: "Run marketing campaigns and customer engagement on WhatsApp.",
+        color: "from-green-600 to-teal-500",
+        slug: "whatsapp-chatbot-use-cases",
+    },
+    {
+        icon: <FiBookOpen />,
+        category: "WhatsApp API",
+        title: "AI CHATBOTS ON WHATSAPP: HOW THEY WORK",
+        desc: "Run marketing campaigns and customer engagement on WhatsApp.",
+        color: "from-green-600 to-teal-500",
+        slug: "ai-chatbots-whatsapp-how-they-work",
+    },
+    {
+        icon: <FiBookOpen />,
+        category: "WhatsApp API",
+        title: "Explanation Of Nodes To Create Chatbots On Celitix",
+        desc: "Run marketing campaigns and customer engagement on WhatsApp.",
+        color: "from-green-600 to-teal-500",
+        slug: "explanation-of-nodes-to-create-chatbots",
+    },
+    {
+        icon: <FiBookOpen />,
+        category: "WhatsApp API",
+        title: "Sample Whatsapp Bot And How To Create It Using Celitix",
+        desc: "Run marketing campaigns and customer engagement on WhatsApp.",
+        color: "from-green-600 to-teal-500",
+        slug: "sample-whatsapp-bot-create-celitix",
+    },
+    {
+        icon: <FiBookOpen />,
+        category: "WhatsApp API",
+        title: "Whatsapp Automation Vs Manual Messaging Which Is Better For Businesses",
+        desc: "Run marketing campaigns and customer engagement on WhatsApp.",
+        color: "from-green-600 to-teal-500",
+        slug: "whatsapp-automation-vs-manual-messaging",
+    },
+    {
+        icon: <FiBookOpen />,
+        category: "WhatsApp API",
+        title: "Enhance Customer Engagement With Whatsapp Live Chat On Celitix",
+        desc: "Run marketing campaigns and customer engagement on WhatsApp.",
+        color: "from-green-600 to-teal-500",
+        slug: "enhance-customer-engagement-with-whatsapp-live-chat-on-celitix",
+    },
+    {
+        icon: <FiBookOpen />,
+        category: "WhatsApp API",
+        title: "Manage Whatsapp Automation Flows With Celitix",
+        desc: "Run marketing campaigns and customer engagement on WhatsApp.",
+        color: "from-green-600 to-teal-500",
+        slug: "manage-whatsapp-automation-flows-with-celitix",
+    },
+    {
+        icon: <FiBookOpen />,
+        category: "WhatsApp API",
+        title: "Whatsapp Manage Flow In Celitix Automate Customer Conversations Easily",
+        desc: "Run marketing campaigns and customer engagement on WhatsApp.",
+        color: "from-green-600 to-teal-500",
+        slug: "whatsapp-manage-flow-in-celitix",
+    },
+    {
+        icon: <FiBookOpen />,
+        category: "WhatsApp API",
+        title: "MM Lite In Whatsapp Business Api",
+        desc: "Run marketing campaigns and customer engagement on WhatsApp.",
+        color: "from-green-600 to-teal-500",
+        slug: "mm-lite-in-whatsapp-business-api",
+    },
+    {
         icon: <FiFileText />,
         category: "SMS Gateway",
         title: "Bulk SMS Service",
@@ -422,11 +502,6 @@ export default function Page() {
 
                 </div>
             </section>
-
-
-
-
-
 
             {/* <div className="bg-gradient-to-br from-purple-50 via-white to-violet-50 min-h-screen px-6 py-16"> */}
             <div className="bg-[#f7ebfc] min-h-screen px-6 pb-5 md:pb-20">

@@ -604,6 +604,15 @@ import OmnichannelLanding from "./imagesMain/OmnichannelLanding.png"
 // tutorial
 import tutorialhero from "./imagesMain/tutorialhero.png"
 import createwhatsapptemplatescelitix from "./imagesMain/create-whatsapp-templates-celitix.jpg"
+import aichatbotswhatsapp from "./imagesMain/aichatbotswhatsapp.png"
+import explanationofnodestocreatechatbots from "./imagesMain/explanationofnodestocreatechatbots.png"
+import samplewhatsappbotandhowtocreateitusingcelitix from "./imagesMain/samplewhatsappbotandhowtocreateitusingcelitix.png"
+import enhancecustomerengagementwithwhatsapplivechatoncelitix from "./imagesMain/enhancecustomerengagementwithwhatsapplivechatoncelitix.png"
+import enhancecustomerengagementwithwhatsapplivechaton from "./imagesMain/enhancecustomerengagementwithwhatsapplivechaton.png"
+import enhancecustomerengagementwithwhatsapplivech from "./imagesMain/enhancecustomerengagementwithwhatsapplivech.png"
+import whatsappmanageflowincelitix from "./imagesMain/whatsappmanageflowincelitix.png"
+import mmliteinwhatsappbusinessapi from "./imagesMain/mmliteinwhatsappbusinessapi.png"
+
 
 // tutorial
 
@@ -1201,6 +1210,14 @@ export {
         // Tutorial
         tutorialhero,
         createwhatsapptemplatescelitix,
+        aichatbotswhatsapp,
+        explanationofnodestocreatechatbots,
+        samplewhatsappbotandhowtocreateitusingcelitix,
+        enhancecustomerengagementwithwhatsapplivechatoncelitix,
+        enhancecustomerengagementwithwhatsapplivechaton,
+        enhancecustomerengagementwithwhatsapplivech,
+        whatsappmanageflowincelitix,
+        mmliteinwhatsappbusinessapi,
         // Tutorial
         
 }
