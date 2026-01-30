@@ -616,6 +616,12 @@ import mmliteinwhatsappbusinessapi from "./imagesMain/mmliteinwhatsappbusinessap
 
 // tutorial
 
+// WhatsappChatbot
+import WhatsappChatbot from "./imagesMain/WhatsappChatbot.jpg"
+import AssistCustomers from "./imagesMain/AssistCustomers.jpg"
+
+// WhatsappChatbot
+
 export {
     chat,
     // careerr
@@ -1219,5 +1225,10 @@ export {
         whatsappmanageflowincelitix,
         mmliteinwhatsappbusinessapi,
         // Tutorial
+
+        // WhatsappChatbot
+        WhatsappChatbot,
+        AssistCustomers,
+        // WhatsappChatbot
         
 }

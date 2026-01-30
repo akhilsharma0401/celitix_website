@@ -248,6 +248,7 @@ const cards = [
         color: "from-green-600 to-teal-500",
         slug: "whatsapp-messaging-limits",
     },
+
     {
         icon: <FiBookOpen />,
         category: "WhatsApp API",
@@ -328,6 +329,7 @@ const cards = [
         color: "from-green-600 to-teal-500",
         slug: "whatsapp-opt-in-rules",
     },
+
     {
         icon: <FiBookOpen />,
         category: "WhatsApp API",
@@ -408,6 +410,88 @@ const cards = [
         color: "from-green-600 to-teal-500",
         slug: "mm-lite-in-whatsapp-business-api",
     },
+    
+    {
+        icon: <FiBookOpen />,
+        category: "WhatsApp API",
+        title: "What Are WhatsApp Template Messages?",
+        desc: "Run marketing campaigns and customer engagement on WhatsApp.",
+        color: "from-green-600 to-teal-500",
+        slug: "what-are-whatsapp-template-messages",
+    },
+    {
+        icon: <FiBookOpen />,
+        category: "WhatsApp API",
+        title: "Key Points While Drafting WhatsApp Business Message Templates",
+        desc: "Run marketing campaigns and customer engagement on WhatsApp.",
+        color: "from-green-600 to-teal-500",
+        slug: "key-points-while-drafting-whatsapp-business-message-templates",
+    },
+    {
+        icon: <FiBookOpen />,
+        category: "WhatsApp API",
+        title: "WhatsApp Template Messages for E-Commerce",
+        desc: "Run marketing campaigns and customer engagement on WhatsApp.",
+        color: "from-green-600 to-teal-500",
+        slug: "whatsapp-template-messages-for-ecommerce",
+    },
+    {
+        icon: <FiBookOpen />,
+        category: "WhatsApp API",
+        title: "WhatsApp Template Messages for Education Industry",
+        desc: "Run marketing campaigns and customer engagement on WhatsApp.",
+        color: "from-green-600 to-teal-500",
+        slug: "whatsapp-template-messages-for-education-industry",
+    },
+    {
+        icon: <FiBookOpen />,
+        category: "WhatsApp API",
+        title: "WhatsApp Template Messages for Financial Institutions",
+        desc: "Run marketing campaigns and customer engagement on WhatsApp.",
+        color: "from-green-600 to-teal-500",
+        slug: "whatsapp-template-messages-for-financial-institutions",
+    },
+    {
+        icon: <FiBookOpen />,
+        category: "WhatsApp API",
+        title: "WhatsApp Template Messages for Events & Webinars",
+        desc: "Run marketing campaigns and customer engagement on WhatsApp.",
+        color: "from-green-600 to-teal-500",
+        slug: "whatsapp-template-messages-for-events-and-webinars",
+    },
+    {
+        icon: <FiBookOpen />,
+        category: "WhatsApp API",
+        title: "WhatsApp Template Messages for Travel & Tourism",
+        desc: "Run marketing campaigns and customer engagement on WhatsApp.",
+        color: "from-green-600 to-teal-500",
+        slug: "whatsapp-template-messages-for-travel-and-tourism",
+    },
+    {
+        icon: <FiBookOpen />,
+        category: "WhatsApp API",
+        title: "WhatsApp Template Messages for Insurance",
+        desc: "Run marketing campaigns and customer engagement on WhatsApp.",
+        color: "from-green-600 to-teal-500",
+        slug: "whatsapp-template-messages-for-insurance",
+    },
+    {
+        icon: <FiBookOpen />,
+        category: "WhatsApp API",
+        title: "WhatsApp Template Messages for Real Estate",
+        desc: "Run marketing campaigns and customer engagement on WhatsApp.",
+        color: "from-green-600 to-teal-500",
+        slug: "whatsapp-template-messages-for-real-estate",
+    },
+    {
+        icon: <FiBookOpen />,
+        category: "WhatsApp API",
+        title: "WhatsApp Business Template Messages for Healthcare",
+        desc: "Run marketing campaigns and customer engagement on WhatsApp.",
+        color: "from-green-600 to-teal-500",
+        slug: "whatsapp-business-template-messages-for-healthcare",
+    },
+
     {
         icon: <FiFileText />,
         category: "SMS Gateway",
@@ -416,7 +500,6 @@ const cards = [
         color: "from-blue-500 to-cyan-500",
         slug: "sms",
     },
-
     {
         icon: <FiBarChart2 />,
         category: "RCS Messaging",

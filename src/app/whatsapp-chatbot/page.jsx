@@ -4,7 +4,7 @@ import Image from 'next/image'
 import UniversalButton from '../components/UniversalButton'
 import { useRouter } from "next/navigation";
 import FaqItem from '../components/Faq';
-import { CTALASTIMAGE, Ecommerce, Ecommerce1, Education, Finance, FoodBeverage, Healthcare, Hospitality, ProfessionalServices, RealEstateConstruction, TechStartups } from '../../../public/assets/images';
+import { AssistCustomers, CTALASTIMAGE, Ecommerce, Ecommerce1, Education, Finance, FoodBeverage, Healthcare, Hospitality, ProfessionalServices, RealEstateConstruction, TechStartups, WhatsappChatbot } from '../../../public/assets/images';
 import FormPopup from '../components/FormPopup';
 
 
@@ -213,7 +213,7 @@ const page = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10 pb-5 lg:pb-20">
 
           {/* LEFT CONTENT */}
-          <div className='box-reveal-left space-y-6'>
+          <div className='box-reveal-left space-y-5'>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl heading  font-bold text-gray-900 popf leading-tight">Grow Your Business with
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]">  WhatsApp Chatbots </span>
@@ -255,7 +255,7 @@ const page = () => {
             {/* Main Image */}
             <div className="relative rounded-3xl overflow-hidden shadow-xl">
               <Image
-                src="/hero-image.png"
+                src={WhatsappChatbot}
                 alt="WhatsApp Chatbot"
                 width={420}
                 height={520}
@@ -386,10 +386,10 @@ const page = () => {
             <div className="rounded-3xl bg-gradient-to-br from-purple-100 via-purple-50 to-blue-100 p-8 shadow-lg">
 
               <Image
-                src="/chatbot-flow.png"
+                src={AssistCustomers}
                 alt="No-code chatbot flow"
                 width={520}
-                height={320}
+                height={250}
                 className="mx-auto"
                 priority
               />

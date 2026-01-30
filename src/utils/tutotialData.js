@@ -1464,4 +1464,1051 @@ NOTE: You may need to complete the process within a set time limit.`,
     ],
   },
 
+  {
+    id: 31,
+    slug: "what-are-whatsapp-template-messages",
+    title: "What Are WhatsApp Template Messages?",
+    intro: `WhatsApp Template Messages are pre-approved message formats that businesses use on the WhatsApp Business API to send messages to customers outside the 24-hour customer service window. Since WhatsApp is a personal communication channel, Meta requires businesses to get these messages approved in advance to ensure relevance, clarity, and policy compliance.
+    
+    In simple terms, whenever a business wants to initiate a conversation or reconnect with a customer after 24 hours, it must use a WhatsApp template message.`,
+    sections: [
+      {
+        question: "Why WhatsApp Template Messages Are Required",
+        answer: `WhatsApp enforces strict rules to protect users from spam and unwanted communication. Template messages act as a safeguard by ensuring that all outbound business messages follow Meta’s content guidelines and are sent only to users who have provided explicit opt-in consent.
+        
+        This approval-based system helps maintain message quality and builds trust between businesses and customers. Once approved, a template can be reused multiple times without requiring repeated approvals, making it suitable for automation and large-scale messaging.`,
+      },
+      {
+        question: "How WhatsApp Template Messages Work",
+        answer: `Businesses submit their message content to Meta for review through their WhatsApp Business API provider. During the review process, Meta checks the wording, intent, and compliance with WhatsApp policies. Approved templates are assigned a unique name and can then be triggered through APIs, chatbots, or campaign tools.
+        
+        Templates also allow limited personalization using placeholders; ensuring messages remain consistent while still feeling relevant to the recipient.`,
+      },
+      {
+        question: "Key Benefits for Businesses",
+        answer: `WhatsApp template messages help businesses deliver important information reliably and on time. They improve message deliverability, reduce the risk of account restrictions, and enable seamless communication workflows. Because templates follow a fixed and approved format, they are less likely to be flagged or rejected, ensuring smooth message delivery.`,
+      },
+      {
+        question: "Conclusion",
+        answer: `WhatsApp Template Messages are essential for compliant business communication on WhatsApp. They allow businesses to proactively reach customers in a controlled, trusted, and scalable manner, making them a foundational element of any WhatsApp Business API strategy.`,
+      },
+    ],
+  },
+  {
+    id: 32,
+    slug: "key-points-while-drafting-whatsapp-business-message-templates",
+    title: "Key Points While Drafting WhatsApp Business Message Templates",
+    sections: [
+      {
+        question: "Key Points While Drafting WhatsApp",
+        answer: `Drafting effective WhatsApp Business message templates is crucial for approval, delivery, and customer engagement. Since these templates are reviewed by Meta before use, even small mistakes in wording or formatting can lead to rejection. Keeping a few best practices in mind can significantly improve approval rates and message performance.
+        
+        One proven approach is to start your message with a polite and contextual opening line such as “Thanks for your enquiry” or “Thanks for registering for our event.” Such openings immediately establish relevance and make the message feel expected rather than promotional. This approach has consistently worked well for many WhatsApp Business API users.
+        
+        Formatting plays an important role in making templates more engaging. WhatsApp allows the use of bold, italics, and ~strikethrough~ text within templates. When used correctly, formatting helps highlight key information and improves readability. However, incorrect or broken formatting can cause template rejection, so it’s important to follow WhatsApp’s text rules carefully.
+        
+        Emojis are another effective way to personalize templates and make them feel more conversational. When used in moderation, emojis can improve open rates and make messages appear friendly and human. Overusing emojis, however, may negatively impact approval or customer perception, so balance is essential.
+        
+        WhatsApp also allows businesses to add Call-to-Action (CTA) or Quick Reply buttons to templates. These buttons help users take immediate action, such as visiting a website or confirming an update. Each button has a strict character limit of 20 characters, so the text must be short, clear, and action-oriented.
+        
+        While adding links, businesses must ensure they use full and valid URLs. URL shorteners are not allowed in WhatsApp templates and often result in rejection. Always use trusted and clearly identifiable links.
+        
+        In conclusion, well-drafted WhatsApp message templates combine polite language, clean formatting, thoughtful personalization, and strict compliance with WhatsApp guidelines. Following these key points helps ensure faster approvals, better engagement, and smoother communication with customers.`,
+      },
+    ],
+  },
+  {
+    id: 33,
+    slug: "whatsapp-template-messages-for-ecommerce",
+    title: "WhatsApp Template Messages for E-Commerce",
+    intro: `WhatsApp Template Messages are a powerful tool for ecommerce businesses to communicate with customers at every stage of the buying journey. From recovering lost sales to improving post-purchase experience, these templates help brands send timely, compliant, and high-engagement messages at scale using the WhatsApp Business API.
+    
+   Below are the most effective WhatsApp template message use cases for ecommerce, along with sample formats you can use on your website.`,
+    sections: [
+      {
+        question: "1. Abandoned Cart Reminders",
+        answer: `Hi [User Name],
+
+        You recently added items to your cart on [Brand Name] but did not complete the purchase.
+
+        You can continue your checkout using the link below.
+        
+        CTA – Buy Now`,
+      },
+      {
+        question: "2. Order Confirmation WhatsApp Template Message",
+        answer: `Hello [Name],
+        
+        Your order [Order No.] for [Product Name] amounting to [Amount] has been successfully confirmed.
+        
+        We will notify you once your order is shipped.
+        
+        Hello [Name],
+        
+        Thank you for shopping with [Brand Name].
+        
+        Your order for [Product Name] has been confirmed.
+        
+        Estimated delivery date: [Date].`,
+      },
+      {
+        question: "3. Order Confirmation + Upsell",
+        answer: `Hi [Name],
+        
+        Your order [Order No.] amounting to [Amount] has been confirmed.
+        
+        You may also explore related products available on our website.
+        
+        Use code [Code] to receive [Discount] off on your next purchase.
+        
+        Button – Visit Website`,
+      },
+      {
+        question: "4. Shipping WhatsApp Template Message",
+        answer: `Hi [Name],
+        
+        Your order [Product Name] from [Brand Name] has been shipped.
+        
+        You can track the shipment using the link below.
+        
+        CTA – Track Order
+        
+        Hi [Name],
+        
+        Your order from [Brand Name] is out for delivery.
+        
+        Expected delivery time: [Time].
+        
+        Button – Track Order`,
+      },
+      {
+        question: "5. Return to Origin",
+        answer: `Hi [Name],
+        
+        Your order for [Product Name] has been confirmed.
+        
+       To avoid delays, you may complete the payment online using the link below.
+        
+        Use code [Code] if applicable.
+
+        Button – Pay Now
+        
+        Hi [Name],
+        
+  Your order from [Brand Name] is currently being processed.
+        
+        You may complete the payment via UPI using the link below.
+        
+        Button – Pay Now`,
+      },
+      {
+        question: "6. Product Feedback WhatsApp Template Message",
+        answer: `Hi [Name],
+        
+        We hope you received your [Product Name] purchased on [Date].
+        
+        Please share your experience by selecting an option below.
+        
+        Quick Replies:
+
+        Satisfied
+        
+        Very Satisfied
+        
+        Not Satisfied`,
+      },
+      {
+        question: "7. Order Cancellation WhatsApp Template Message",
+        answer: `Hi [Name],
+        
+        Your order [Order No.] amounting to [Amount] has been cancelled successfully.
+        
+        We’d appreciate your feedback to help us improve our services.
+        
+        CTA – Share Feedback`,
+      },
+      {
+        question: "8. Cross-Selling WhatsApp Business Message Template",
+        answer: `Hi [Name],
+        
+        Your order for [Product Name] is being processed.
+        
+        You may also view other related products available on our website.
+        
+        CTA – View Products`,
+      },
+      {
+        question: "9. Festive + Promotional Offer WhatsApp Template Message",
+        answer: `Hi [Name],
+        
+        Greetings from [Brand Name] on the occasion of [Occasion].
+        
+        You can enjoy [Discount Percentage] off on selected products for a limited time.
+        
+        Offer valid until [Date].
+        
+        CTA – Shop Now`,
+      },
+      {
+        question: "10. New Product Launch",
+        answer: `Hi [Name],
+        
+        We are pleased to announce the launch of our new product [Product Name].
+        
+        You can explore product details using the link below.
+        
+        CTA – Explore Now`,
+      },
+    ],
+  },
+  {
+    id: 34,
+    slug: "whatsapp-template-messages-for-education-industry",
+    title: "WhatsApp Template Messages for Education Industry",
+    intro: `WhatsApp Template Messages help educational institutions communicate important updates to students, parents, and prospects in a compliant and reliable way. From admissions to course updates, these templates ensure timely delivery while following Meta’s messaging policies.`,
+    sections: [
+      {
+        question: "1. Enquiry Follow-Up / Lead Acknowledgement",
+        answer: `Hi [User Name],
+
+        Thank you for your enquiry with [Institute Name].
+
+        Our team will share the required course details with you shortly.`,
+      },
+      {
+        question: "2. Admission Confirmation WhatsApp Template Message",
+        answer: `Hello [Name],
+        
+        Your admission for [Course Name] at [Institute Name] has been successfully confirmed.
+        
+        Further details will be shared with you soon.
+        
+        Hello [Name],
+        
+        We’re pleased to confirm your enrollment in [Course Name].
+        
+        Your course start date is [Date].`,
+      },
+      {
+        question: "3. Application Status Update",
+        answer: `Hi [Name],
+        
+        Your application for [Course Name] is currently under review.
+        
+        We will notify you once there is an update.
+
+        Hi [Name],
+        
+        Your application status for [Course Name] has been updated.
+
+        Please check the details using the link below.
+        
+        CTA – View Status`,
+      },
+      {
+        question: "4. Class Schedule / Session Reminder",
+        answer: `Hi [Name],
+        
+        This is a reminder for your upcoming session of [Course Name].
+        
+        Date: [Date]
+        
+       Time: [Time]
+        
+      Hi [Name],
+        
+        Your class for [Course Name] is scheduled today at [Time].
+        
+        Please ensure timely attendance.`,
+      },
+      {
+        question: "5. Fee Payment Reminder",
+        answer: `Hi [Name],
+        
+        This is a reminder regarding the pending fee for [Course Name].
+        
+       You may complete the payment using the link below.
+        
+        Button – Pay Now
+
+     Hi [Name],
+        
+        Your fee payment for [Course Name] is due on [Date].
+        
+        Please complete the payment to avoid any disruption.`,
+      },
+      {
+        question: "6. Examination / Assessment Notification",
+        answer: `Hi [Name],
+        
+     Your examination for [Course Name] is scheduled on [Date].
+        
+        Please refer to the portal for detailed instructions.
+        
+        Hi [Name],
+
+        Assessment details for [Course Name] are now available.
+
+       Click below to view the information.
+        
+        CTA – View Details`,
+      },
+      {
+        question: "7. Result / Performance Update",
+        answer: `Hi [Name],
+        
+        Your results for [Course Name] have been published.
+        
+        You can view them using the link below.
+        
+        CTA – View Results`,
+      },
+      {
+        question: "8. Course Upgrade / Cross-Enrollment",
+        answer: `Hi [Name],
+        
+        Based on your enrollment in [Current Course], you may be eligible for [Suggested Course].
+        
+        You can view the course details below.
+        
+        CTA – View Course`,
+      },
+      {
+        question: "9. Holiday / Important Announcement",
+        answer: `Hi [Name],
+        
+        Please note that [Institute Name] will remain closed on [Date] due to [Reason].
+        
+        Regular classes will resume as scheduled.`,
+      },
+      {
+        question: "10. New Course Launch / Batch Announcement",
+        answer: `Hi [Name],
+        
+        [Institute Name] is launching a new batch for [Course Name] starting on [Date].
+        
+        You can view the course details using the link below.
+        
+        CTA – Explore Course`,
+      },
+    ],
+  },
+  {
+    id: 35,
+    slug: "whatsapp-template-messages-for-financial-institutions",
+    title: "WhatsApp Template Messages for Financial Institutions",
+    intro: `WhatsApp Template Messages enable financial institutes to share important, time-sensitive information with customers in a secure and compliant manner. From account updates to payment reminders, these templates help maintain trust while ensuring adherence to Meta’s messaging policies.`,
+    sections: [
+      {
+        question: "1. Lead Acknowledgement / Enquiry Confirmation",
+        answer: `Hi [User Name],
+
+        Thank you for your enquiry with [Institution Name].
+
+        Our representative will contact you shortly with the required details.`,
+      },
+      {
+        question: "2. Account Opening / Service Activation Confirmation",
+        answer: `Hello [Name],
+        
+        Your account with [Institution Name] has been successfully activated.
+        
+        You can now access our services as per the shared guidelines.
+        
+        Hello [Name],
+        
+        We’re pleased to confirm the activation of your requested service.
+        
+        For further details, please refer to the link below.
+        
+        CTA – View Details`,
+      },
+      {
+        question: "3. KYC / Document Submission Reminder",
+        answer: `Hi [Name],
+        
+        Your KYC verification for [Service Name] is pending.
+        
+        Please submit the required documents to avoid service interruption.
+
+        Hi [Name],
+        
+        This is a reminder to complete your KYC process with [Institution Name].
+
+        You may upload the documents using the link below.
+        
+        CTA – Upload Documents`,
+      },
+      {
+        question: "4. Transaction / Payment Confirmation",
+        answer: `Hi [Name],
+        
+        Your payment of [Amount] towards [Service Name] has been successfully received.
+        
+        Transaction Reference: [Transaction ID].
+        
+      Hi [Name],
+        
+        This message confirms your recent transaction with [Institution Name].
+        
+        Please retain this for your records.`,
+      },
+      {
+        question: "5. Payment Due / EMI Reminder",
+        answer: `Hi [Name],
+        
+        This is a reminder that your payment for [Service Name] of [Amount] is due on [Date].
+        
+       Please complete the payment to avoid late charges.
+        
+        Hi [Name],
+        
+        Your upcoming EMI of [Amount] is scheduled on [Date].
+        
+        You can make the payment using the link below.
+        
+        Button – Pay Now`,
+      },
+      {
+        question: "6. Loan / Policy Status Update",
+        answer: `Hi [Name],
+        
+     The status of your [Loan/Policy Name] application has been updated.
+        
+       Please check the details using the link below.
+        
+        CTA – View Status`,
+      },
+      {
+        question: "7. Renewal Reminder",
+        answer: `Hi [Name],
+        
+        Your [Policy/Plan Name] is due for renewal on [Date].
+        
+        Renewing on time helps ensure uninterrupted coverage.
+        
+        Hi [Name],
+        
+        This is a reminder to renew your [Service Name] with [Institution Name].
+        
+        You may proceed using the link below.
+        
+        CTA – Renew Now`,
+      },
+      {
+        question: "8. Service Upgrade / Cross-Sell Message",
+        answer: `Hi [Name],
+        
+        Based on your current service with [Institution Name], you may be eligible for [Service Name].
+        
+        You can review the details using the link below.
+        
+        CTA – View Offer`,
+      },
+      {
+        question: "9. Important Alert / Regulatory Update",
+        answer: `Hi [Name],
+        
+        We would like to inform you about an important update related to [Service Name].
+        
+        Please review the details carefully.`,
+      },
+      {
+        question: "10. Customer Feedback / Support Follow-Up",
+        answer: `Hi [Name],
+        
+        We hope your recent interaction with [Institution Name] met your expectations.
+        
+        Please share your feedback to help us improve our services.
+        
+        Quick Replies:
+        
+        Satisfied
+        
+        Neutral
+        
+        Not Satisfied`,
+      },
+    ],
+  },
+  {
+    id: 36,
+    slug: "whatsapp-template-messages-for-events-and-webinars",
+    title: "WhatsApp Template Messages for Events & Webinars",
+    intro: `WhatsApp Template Messages help event organizers and webinar hosts communicate timely updates to registered participants in a clear and compliant manner. From registration confirmation to post-event follow-ups, these templates ensure reliable communication while meeting Meta’s messaging policies.`,
+    sections: [
+      {
+        question: "1. Registration Confirmation",
+        answer: `Hi [User Name],
+
+       Thank you for registering for [Event/Webinar Name].
+
+        Your registration has been successfully confirmed.`,
+      },
+      {
+        question: "2. Event Details & Access Information",
+        answer: `Hello [Name],
+        
+        Here are the details for [Event/Webinar Name]:
+        
+        Date: [Date]
+
+        Time: [Time]
+
+        Venue/Link: [Location / Access Link]
+        
+        Hello [Name],
+        
+        You can access [Event/Webinar Name] using the link below.
+        
+        Please keep this message for reference.
+        
+        CTA – Join Event`,
+      },
+      {
+        question: "3. Event Reminder Notification",
+        answer: `Hi [Name],
+        
+        This is a reminder for [Event/Webinar Name] scheduled on [Date] at [Time].
+        
+       We look forward to your participation.
+
+        Hi [Name],
+        
+        Event/Webinar Name will begin shortly.
+
+        Please use the link below to join on time.
+        
+        CTA – Join Now`,
+      },
+      {
+        question: "4. Speaker / Agenda Update",
+        answer: `Hi [Name],
+        
+        The agenda for [Event/Webinar Name] has been updated.
+        
+        You can review the latest details using the link below.
+        
+      CTA – View Agenda`,
+      },
+      {
+        question: "5. Reschedule / Cancellation Update",
+        answer: `Hi [Name],
+        
+        Please note that [Event/Webinar Name] has been rescheduled.
+        
+       Updated Date & Time: [Date / Time].
+        
+        Hi [Name],
+        
+        We regret to inform you that [Event/Webinar Name] has been cancelled.
+        
+        We apologize for any inconvenience caused.`,
+      },
+      {
+        question: "6. Attendance Confirmation / Check-In",
+        answer: `Hi [Name],
+        
+     We noticed you registered for [Event/Webinar Name].
+        
+       Please confirm your availability by selecting an option below.
+        
+        Quick Replies:
+        
+        Attending
+        
+        Not Attending`,
+      },
+      {
+        question: "7. Post-Event Thank You Message",
+        answer: `Hi [Name],
+        
+       Thank you for attending [Event/Webinar Name].
+        
+        We hope you found the session informative.`,
+      },
+      {
+        question: "8. Recording / Presentation Sharing",
+        answer: `Hi [Name],
+        
+        The recording and presentation from [Event/Webinar Name] are now available.
+        
+        You can access them using the link below.
+        
+        CTA – View Recording`,
+      },
+      {
+        question: "9. Feedback Collection",
+        answer: `Hi [Name],
+        
+        We’d appreciate your feedback on [Event/Webinar Name].
+        
+        Please share your experience by selecting an option below.
+        
+        Quick Replies:
+        
+        Excellent
+        
+        Good
+        
+        Needs Improvement`,
+      },
+      {
+        question: "10. Upcoming Event / Webinar Invitation",
+        answer: `Hi [Name],
+        
+        Based on your interest in our previous event, you may like [Upcoming Event/Webinar Name].
+        
+        You can view the details using the link below.
+        
+        CTA – View Details`,
+      },
+    ],
+  },
+  {
+    id: 37,
+    slug: "whatsapp-template-messages-for-travel-and-tourism",
+    title: "WhatsApp Template Messages for Travel & Tourism",
+    intro: `WhatsApp Template Messages help travel agencies, tour operators, and hospitality businesses share booking updates, travel details, and important alerts with customers in a timely and compliant manner. These templates ensure smooth communication before, during, and after the travel journey while adhering to Meta’s messaging policies.`,
+    sections: [
+      {
+        question: "1. Enquiry Acknowledgement / Lead Confirmation",
+        answer: `Hi [Name],,
+
+       Thank you for your enquiry with [Travel Company Name].
+
+        Our team will share the requested travel details shortly.`,
+      },
+      {
+        question: "2. Booking Confirmation WhatsApp Template Message",
+        answer: `Hello [Name],
+        
+        Your booking [Booking ID] with [Travel Company Name] has been successfully confirmed.
+        
+        Travel details will be shared with you soon.
+        
+        Hello [Name],
+        
+        We’re pleased to confirm your booking for [Package / Hotel / Flight Name].
+        
+        Travel date: [Date].`,
+      },
+      {
+        question: "3. Payment Confirmation",
+        answer: `Hi [Name],
+        
+        We have received your payment of [Amount] for [Booking ID].
+        
+       Thank you for choosing [Travel Company Name].`,
+      },
+      {
+        question: "4. Travel Itinerary / Document Sharing",
+        answer: `Hi [Name],
+        
+        Your travel itinerary for [Trip Name] is ready.
+        
+        You can view or download the details using the link below.
+        
+      CTA – View Itinerary`,
+      },
+      {
+        question: "5. Travel Reminder / Departure Notification",
+        answer: `Hi [Name],
+        
+        This is a reminder for your upcoming trip with [Travel Company Name].
+        
+       Departure date: [Date].
+        
+        Hi [Name],
+        
+        Your journey for [Trip Name] is scheduled to begin shortly.
+        
+        Please ensure you arrive on time.`,
+      },
+      {
+        question: "6. Check-In / Boarding Information",
+        answer: `Hi [Name],
+        
+        Online check-in for your [Flight / Train / Bus] is now available.
+        
+       Please complete the process using the link below.
+        
+        CTA – Check In`,
+      },
+      {
+        question: "7. Travel Update / Delay Notification",
+        answer: `Hi [Name],
+        
+       There has been an update to your travel schedule for [Trip Name].
+        
+        Please review the latest information using the link below.
+        
+        CTA – View Update`,
+      },
+      {
+        question: "8. Upsell / Add-On Services",
+        answer: `Hi [Name],
+        
+        You may enhance your trip by adding [Service Name] to your booking.
+        
+        View available options using the link below.
+        
+        CTA – View Add-Ons`,
+      },
+      {
+        question: "9. Post-Travel Feedback",
+        answer: `Hi [Name],
+        
+        We hope you enjoyed your trip with [Travel Company Name].
+        
+        Please share your feedback to help us improve our services.
+        
+        Quick Replies:
+        
+       Satisfied
+        
+        Very Satisfied
+        
+        Not Satisfied`,
+      },
+      {
+        question: "10. Upcoming Offers / Repeat Travel Invitation",
+        answer: `Hi [Name],
+        
+        Based on your recent trip, you may be interested in our upcoming travel packages.
+        
+        View details using the link below.
+        
+        CTA – View Packages`,
+      },
+    ],
+  },
+  {
+    id: 38,
+    slug: "whatsapp-template-messages-for-insurance",
+    title: "WhatsApp Template Messages for Insurance",
+    intro: `WhatsApp Template Messages enable insurance companies and agents to share important policy-related information with customers in a secure, timely, and compliant manner. From policy confirmations to renewal reminders and claim updates, these templates ensure clear communication while adhering to Meta’s messaging policies.`,
+    sections: [
+      {
+        question: "1. Enquiry Acknowledgement / Lead Confirmation",
+        answer: `Hi [Name],
+
+       Thank you for your enquiry with [Insurance Company Name].
+
+        Our representative will contact you shortly with the required information.`,
+      },
+      {
+        question: "2. Policy Issuance Confirmation",
+        answer: `Hello [Name],
+        
+        Your insurance policy [Policy Number] has been successfully issued.
+        
+        Policy details will be shared with you shortly.
+        
+        Hello [Name],
+        
+        We’re pleased to confirm the activation of your [Policy Type] policy with [Insurance Company Name].`,
+      },
+      {
+        question: "3. Premium Payment Confirmation",
+        answer: `Hi [Name],
+        
+        We have received your premium payment of [Amount] for policy [Policy Number].
+        
+       Thank you for your payment.`,
+      },
+      {
+        question: "4. Premium Due / Renewal Reminder",
+        answer: `Hi [Name],
+        
+        This is a reminder that the premium for your [Policy Type] policy is due on [Date].
+        
+        Please make the payment to ensure uninterrupted coverage.
+        
+        Hi [Name],
+      
+        Your policy [Policy Number] is due for renewal on [Date].
+      
+        You can proceed with renewal using the link below.
+      
+        CTA – Renew Now`,
+      },
+      {
+        question: "5. Policy Document Sharing",
+        answer: `Hi [Name],
+
+          Your policy document for [Policy Type] is now available.
+
+          You can view or download it using the link below.
+
+        CTA – View Policy`,
+      },
+      {
+        question: "6. Claim Registration Confirmation",
+        answer: `Hello [Name],
+
+          Your insurance claim for policy [Policy Number] has been successfully registered.
+
+          Claim Reference Number: [Claim ID].`,
+      },
+      {
+        question: "7. Claim Status Update",
+        answer: `Hi [Name],
+        
+       The status of your insurance claim [Claim ID] has been updated.
+        
+        Please check the details using the link below.
+        
+        CTA – View Claim Status`,
+      },
+      {
+        question: "8. Claim Settlement Notification",
+        answer: `Hi [Name],
+        
+        Your insurance claim [Claim ID] has been processed successfully.
+        
+        Settlement details will be shared as per policy terms.`,
+      },
+      {
+        question: "9. Policy Upgrade / Cross-Sell Message",
+        answer: `Hi [Name],
+        
+        Based on your existing policy with [Insurance Company Name], you may be eligible for an additional coverage option.
+        
+        You can review the details using the link below.
+        
+        CTA – View Options`,
+      },
+      {
+        question: "10. Customer Feedback / Service Follow-Up",
+        answer: `Hi [Name],
+        
+        We hope your recent interaction with [Insurance Company Name] was satisfactory.
+        
+        Please share your feedback to help us improve our services.
+        
+        Quick Replies:
+        
+        Satisfied
+        
+        Neutral
+        
+        Not Satisfied`,
+      },
+    ],
+  },
+  {
+    id: 39,
+    slug: "whatsapp-template-messages-for-real-estate",
+    title: "WhatsApp Template Messages for Real Estate",
+    intro: `WhatsApp Template Messages help real estate developers, brokers, and property consultants communicate efficiently with prospects and customers. From enquiry acknowledgements to site visit confirmations and booking updates, these templates ensure timely, clear, and policy-compliant communication on WhatsApp.`,
+    sections: [
+      {
+        question: "1.	Enquiry Acknowledgement / Lead Confirmation",
+        answer: `Hi [Name],
+
+       Thank you for your enquiry regarding [Project / Property Name].
+
+        Our team will share the required details with you shortly.`,
+      },
+      {
+        question: "2.	Property Details / Brochure Sharing",
+        answer: `Hello [Name],
+        
+        Here are the details for [Project / Property Name] as requested.
+        
+        You can view the brochure using the link below.
+        
+        CTA – View Details`,
+      },
+      {
+        question: "3.	Site Visit Confirmation",
+        answer: `Hi [Name],
+        
+       Your site visit for [Project / Property Name] has been scheduled.
+        
+       Date: [Date]
+       
+       Time: [Time]`,
+      },
+      {
+        question: "4.	Site Visit Reminder",
+        answer: `Hi [Name],
+        
+       This is a reminder for your scheduled site visit to [Project / Property Name] on [Date] at [Time].
+        
+        We look forward to meeting you.`,
+      },
+      {
+        question: "5.	Booking Confirmation WhatsApp Template Message",
+        answer: `Hi [Name],
+
+        Your booking for [Project / Property Name] has been successfully confirmed.
+
+        Booking Reference: [Booking ID].`,
+      },
+      {
+        question: "6.	Payment Acknowledgement / Due Reminder",
+        answer: `Hello [Name],
+
+        We have received your payment of [Amount] for [Project / Property Name].
+
+        Thank you for your payment.
+
+        Hi [Name],
+
+      This is a reminder regarding the pending payment of [Amount] for [Project / Property Name] due on [Date].`,
+      },
+      {
+        question: "7.	Construction / Project Status Update",
+        answer: `Hi [Name],
+        
+       Here is the latest construction update for [Project / Property Name].
+        
+        You can view the details using the link below.
+        
+        CTA – View Update`,
+      },
+      {
+        question: "8.	Agreement / Document Sharing",
+        answer: `Hi [Name],
+        
+        Your agreement document for [Project / Property Name] is now available.
+        
+        Please review it using the link below.
+        
+        CTA – View Document`,
+      },
+      {
+        question: "9.	Possession / Handover Update",
+        answer: `Hi [Name],
+        
+        We would like to inform you that the possession process for [Project / Property Name] is scheduled on [Date].
+        
+        Further details will be shared shortly.`,
+      },
+      {
+        question: "10.	Customer Feedback / Follow-Up",
+        answer: `Hi [Name],
+        
+        We hope your experience with [Project / Property Name] has been satisfactory.
+        
+        Please share your feedback to help us serve you better.
+        
+        Quick Replies:
+        
+        Satisfied
+        
+        Neutral
+        
+        Not Satisfied`,
+      },
+    ],
+  },
+  {
+    id: 40,
+    slug: "whatsapp-business-template-messages-for-healthcare",
+    title: "WhatsApp Business Template Messages for Healthcare",
+    intro: `WhatsApp Business Template Messages help hospitals, clinics, diagnostic centers, and healthcare providers communicate important and time-sensitive information to patients in a secure and compliant manner. These templates are designed to share operational updates while respecting patient privacy and Meta’s healthcare messaging policies.`,
+    sections: [
+      {
+        question: "1. Appointment Booking Confirmation",
+        answer: `Hi [Patient Name],
+
+       Your appointment with [Doctor / Department Name] at [Hospital / Clinic Name] has been confirmed.
+
+        Appointment Date: [Date]
+        
+        Time: [Time]`,
+      },
+      {
+        question: "2. Appointment Reminder",
+        answer: `Hello [Patient Name],
+        
+        This is a reminder for your upcoming appointment at [Hospital / Clinic Name] on [Date] at [Time].
+        
+        Please arrive on time.`,
+      },
+      {
+        question: "3. Appointment Reschedule / Cancellation Update",
+        answer: `Hi [Patient Name],
+        
+       Your appointment scheduled on [Date] has been rescheduled.
+        
+       Updated Date & Time: [Date / Time].
+       
+       Hi [Patient Name],
+       
+       We regret to inform you that your appointment scheduled on [Date] has been cancelled.
+       
+       Please contact us to reschedule.`,
+      },
+      {
+        question: "4. Test / Lab Report Availability",
+        answer: `Hello [Patient Name],
+        
+       Your test report from [Lab / Hospital Name] is now available.
+        
+        You can view or download it using the link below.
+        
+        CTA – View Report`,
+      },
+      {
+        question: "5. Prescription / Medication Reminder",
+        answer: `Hi [Patient Name],
+
+        This is a reminder to follow the prescribed medication schedule shared during your recent consultation.
+
+        Please consult your doctor if you have any concerns.`,
+      },
+      {
+        question: "6. Vaccination / Health Check-Up Reminder",
+        answer: `Hello [Patient Name],
+
+        This is a reminder for your scheduled vaccination / health check-up at [Clinic Name] on [Date].
+
+        Please carry the required documents.`,
+      },
+      {
+        question: "7. Payment Confirmation / Billing Update",
+        answer: `Hi [Patient Name],
+        
+       We have received your payment of [Amount] for services at [Hospital / Clinic Name].
+        
+        Thank you for your visit.`,
+      },
+      {
+        question: "8. Follow-Up Consultation Reminder",
+        answer: `Hello [Patient Name],
+        
+        This is a reminder for your follow-up consultation with [Doctor Name] on [Date].
+        
+        Please confirm your availability.`,
+      },
+      {
+        question: "9. Hospital / Clinic Announcement",
+        answer: `Hi [Patient Name],
+        
+        Please note that [Hospital / Clinic Name] will remain closed on [Date] due to [Reason].
+        
+        Regular services will resume as scheduled.`,
+      },
+      {
+        question: "10. Patient Feedback / Experience Survey",
+        answer: `Hello [Patient Name],
+        
+        We hope your recent visit to [Hospital / Clinic Name] was satisfactory.
+        
+        Please share your feedback to help us improve our services.
+        
+        Quick Replies:
+        
+        Satisfied
+        
+        Neutral
+        
+        Not Satisfied`,
+      },
+    ],
+  },
 ];
