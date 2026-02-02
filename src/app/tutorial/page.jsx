@@ -492,22 +492,22 @@ const cards = [
         slug: "whatsapp-business-template-messages-for-healthcare",
     },
 
-    {
-        icon: <FiFileText />,
-        category: "SMS Gateway",
-        title: "Bulk SMS Service",
-        desc: "High-delivery promotional and transactional SMS platform.",
-        color: "from-blue-500 to-cyan-500",
-        slug: "sms",
-    },
-    {
-        icon: <FiBarChart2 />,
-        category: "RCS Messaging",
-        title: "RCS Analytics",
-        desc: "Track open rates and customer interactions.",
-        color: "from-indigo-600 to-blue-500",
-        slug: "rcs-analytics",
-    },
+    // {
+    //     icon: <FiFileText />,
+    //     category: "SMS Gateway",
+    //     title: "Bulk SMS Service",
+    //     desc: "High-delivery promotional and transactional SMS platform.",
+    //     color: "from-blue-500 to-cyan-500",
+    //     slug: "sms",
+    // },
+    // {
+    //     icon: <FiBarChart2 />,
+    //     category: "RCS Messaging",
+    //     title: "RCS Analytics",
+    //     desc: "Track open rates and customer interactions.",
+    //     color: "from-indigo-600 to-blue-500",
+    //     slug: "rcs-analytics",
+    // },
 
 ];
 
