@@ -119,6 +119,7 @@ import FaqItem from "./components/Faq";
 import { Seo } from "@/utils/seo";
 import ChatWindow from "./components/Common/ChatWindow";
 import ChatLauncher from "./components/Common/ChatLauncher";
+import FeatureShowcase from "./components/FeatureShowcase";
 const Home = () => {
   const router = useRouter();
   // useEffect(() => {
@@ -325,6 +326,69 @@ const Home = () => {
         desc: "Verify users with pre-made HTML email templates. Great for onboarding authentication flows and MFA.",
         ButtonName: "Check It Out",
       },
+    },
+  ];
+
+  const feature2 = [
+    {
+      name: "WhatsApp Business Platform",
+      icon: Reachwhatsappicon,
+      image: WhatsApp_Business_Platform,
+      desc: "Leverage the world’s #1 messaging app. With advanced features like Chatbots, Click-to-WhatsApp ads, Branded Profiles and more.",
+    },
+    {
+      name: "RCS Business Messaging",
+      icon: ReachRCS,
+      image: RCS_Business_Messaging,
+      desc: "Rich, interactive messaging on native mobile apps. Shoot epic promotions, update and support users with action buttons, rich media and more!",
+    },
+    {
+      name: "SMS Solutions",
+      icon: ReachSMS,
+      image: SMS_Marketing,
+      desc: "Perfect for urgent updates and reliable delivery. OTPs, Transactional messages, Bulk Promotions and API Integrations.",
+    },
+    {
+      name: "2 Way SMS",
+      icon: Reachwaytosms,
+      image: Two_Way_SMS,
+      desc: "Create engaging, interactive SMS campaigns. Take votes, run quizzes, get confirmations and generate leads!",
+    },
+    {
+      name: "Inbound Dialer",
+      icon: Reachinboundcalling,
+      image: Inbound_Dialer,
+      desc: "Never miss a call again with customisable IVR menus, smart routing and call records. Perfect for customer support helplines.",
+    },
+    {
+      name: "Outbound Dialer",
+      icon: ReachObd,
+      image: Outbound_Dialer,
+      desc: "Start conversations with bulk voice call campaigns and IVR integrations. Pre-record audios in local languages or use AI-generated text-to-speech.",
+    },
+    {
+      name: "Click to Call",
+      icon: Reachclicktocall,
+      image: Click_to_Call,
+      desc: "Enhance your app or site’s user experience (UX). Let customers and agents connect effortlessly over voice call with secure number masking.",
+    },
+    {
+      name: "Missed Call Services",
+      icon: ReachMissedcall,
+      image: Missed_Call_Services,
+      desc: "Get leads, votes or confirmations with a dedicated missed call number. Auto trigger opt-ins, callbacks or custom actions when users call.",
+    },
+    {
+      name: "App Authenticator",
+      icon: ReachApp,
+      image: App_Authenticator,
+      desc: "Verify users without OTPs. Frictionless security that’s user-friendly and easier for your dev team.",
+    },
+    {
+      name: "Email OTP",
+      icon: Reachemail,
+      image: Email_Solutions,
+      desc: "Verify users with pre-made HTML email templates. Great for onboarding authentication flows and MFA.",
     },
   ];
   const [activeTab, setActiveTab] = useState(1);
@@ -748,11 +812,11 @@ const Home = () => {
             {descriptions[activeFeature]}
           </p>
           <UniversalButton
-  label={desbutton[activeFeature]}
-  variant="brutal"
-  className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-2 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6]"
-  onClick={() => handleFeatureRedirect(activeIndustry, activeFeature)}
-/>
+            label={desbutton[activeFeature]}
+            variant="brutal"
+            className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-2 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6]"
+            onClick={() => handleFeatureRedirect(activeIndustry, activeFeature)}
+          />
           {/* <button className="bg-[#F2542D] text-white px-6 py-2 rounded-xl font-semibold hover:bg-[#d84323] transition">
             {desbutton[activeFeature]}
           </button> */}
@@ -777,39 +841,39 @@ const Home = () => {
   };
 
   const INDUSTRY_ROUTE_KEY_MAP = {
-  "E-Commerce": "Ecommerce",
-  Healthcare: "Healthcare",
-  BFSI: "Finance",
-  Education: "Education",
-  Travel: "Travel",
-  "Real Estate": "RealEstateConstruction",
-  "Food Industry": "FoodBeverage",
-  "Service-Based": "ProfessionalServices",
-  "Tech Startups": "TechStartups",
-};
-
-  const handleFeatureRedirect = (industry, index) => {
-  const routes = {
-    Ecommerce: ["/retail-and-ecommerce"],
-    Healthcare: ["/healthcare"],
-    Finance: ["/financial-services"],
-    Education: ["/education-and-edtech"],
-    Travel: ["/travel-and-tourism"],
-    RealEstateConstruction: ["/construction-and-real-estate"],
-    FoodBeverage: ["/food-and-beverages"],
-    ProfessionalServices: ["/professional-services"],
-    TechStartups: ["/tech-startups"],
+    "E-Commerce": "Ecommerce",
+    Healthcare: "Healthcare",
+    BFSI: "Finance",
+    Education: "Education",
+    Travel: "Travel",
+    "Real Estate": "RealEstateConstruction",
+    "Food Industry": "FoodBeverage",
+    "Service-Based": "ProfessionalServices",
+    "Tech Startups": "TechStartups",
   };
 
-  const routeKey = INDUSTRY_ROUTE_KEY_MAP[industry];
-  const route = routes[routeKey]?.[0];
+  const handleFeatureRedirect = (industry, index) => {
+    const routes = {
+      Ecommerce: ["/retail-and-ecommerce"],
+      Healthcare: ["/healthcare"],
+      Finance: ["/financial-services"],
+      Education: ["/education-and-edtech"],
+      Travel: ["/travel-and-tourism"],
+      RealEstateConstruction: ["/construction-and-real-estate"],
+      FoodBeverage: ["/food-and-beverages"],
+      ProfessionalServices: ["/professional-services"],
+      TechStartups: ["/tech-startups"],
+    };
 
-  if (route) {
-    router.push(route);
-  } else {
-    console.warn("No route found for:", industry, index);
-  }
-};
+    const routeKey = INDUSTRY_ROUTE_KEY_MAP[industry];
+    const route = routes[routeKey]?.[0];
+
+    if (route) {
+      router.push(route);
+    } else {
+      console.warn("No route found for:", industry, index);
+    }
+  };
 
   const [activeIndustry, setActiveIndustry] = useState("E-Commerce");
   const { image, features, descriptions, desbutton, title } =
@@ -1250,9 +1314,7 @@ const Home = () => {
                         <h4 className="text-base lg:text-2xl font-medium text-gray-900 mb-1 sub-heading">
                           {step.subtitle}
                         </h4>
-                        {/* <p className="text-gray-600 text-sm lg:text-base leading-relaxed pera">
-            {step.desc}
-          </p> */}
+
                         <ul className="list-disc list-inside text-gray-600 pera space-y-1 mt-2 pl-2">
                           <li>{step.point1}</li>
                           <li>{step.point2}</li>
@@ -1264,51 +1326,95 @@ const Home = () => {
                 })}
               </div>
 
-              {/* <div className=" ">
-              {steps.map((step) => {
-                const isActive = step.id === activeStep;
-                return (
-                  <div
-                    key={step.id}
-                    role="button"
-                    onClick={() => setActiveStep(step.id)}
-                    className="transition duration-500 cursor-pointer"
-                  >
 
-                    <h3
-                      className={`text-3xl md:text-4xl lg:text-6xl mb-2 transition-all font-semibold duration-1000 ease-in-out lora ${isActive ? step.color : "text-gray-600 heading"
-                        }`}
-                    >
-                      {step.title}
-                    </h3>
-
-
-                    <div
-                      className={`transition-all duration-1000 ease-in-out transform overflow-hidden ${isActive
-                        ? "opacity-100 max-h-[200] md:max-h-[170px] translate-y-0 scale-100 mb-3"
-                        : "opacity-0 max-h-0 -translate-y-2 scale-95 pointer-events-none"
-                        }`}
-                    >
-                      <h4 className="text-base lg:text-2xl font-medium text-gray-900 mb-1 sub-heading ">
-                        {step.subtitle}
-                      </h4>
-                      <p className="text-gray-600 text-sm lg:text-base leading-relaxed pera ">
-                        {step.desc}
-                      </p>
-                      <ul className="list-disc list-inside text-gray-600 space-y-1 mt-2 pl-2">
-                        <li>{step.point1}</li>
-                        <li>{step.point2}</li>
-                        <li>{step.point3}</li>
-                      </ul>
-
-                    </div>
-                  </div>
-                );
-              })}
-            </div> */}
             </div>
           </div>
         </div>
+
+        {/* <div className="w-full bg-gradient-to-b from-[#f6edf9] to-white py-5 md:py-20">
+
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+
+
+         
+            <div className="text-center mb-5 md:mb-16">
+
+              <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold heading text-gray-900">
+                How It Works
+              </h2>
+
+              <p className="mt-3 text-gray-600 text-lg max-w-2xl sub-heading mx-auto">
+                A clear step-by-step journey for your users
+              </p>
+
+            </div>
+
+
+            
+            <div className="relative">
+
+
+              
+              <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[2px] bg-purple-200 -translate-x-1/2"></div>
+
+
+              <div className="">
+
+                {steps.map((step, index) => (
+                  <div
+                    key={step.id}
+                    className={`flex flex-col md:flex-row items-center gap-8
+            ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
+                  >
+
+                  
+                    <div className="relative w-full md:w-1/2 aspect-[4/3] rounded-3xl overflow-hidden shadow-xl">
+
+                      <Image
+                        src={step.img || current.img}
+                        alt={step.title}
+                        fill
+                        className="object-cover"
+                      />
+
+                    </div>
+
+
+                   
+                    <div className="w-full md:w-1/2 bg-white rounded-3xl shadow-lg p-6 md:p-8">
+
+
+                      <h3 className="text-xl md:text-2xl lg:text-5xl font-semibold heading text-gray-900 mb-2 lora">
+                        {step.title}
+                      </h3>
+
+
+                      <h4 className="text-gray-700 text-md md:text-lg lg:text-2xl font-medium sub-heading mb-3">
+                        {step.subtitle}
+                      </h4>
+
+
+                      <ul className="list-disc list-inside text-md text-gray-700 pera space-y-1">
+
+                        <li>{step.point1}</li>
+                        <li>{step.point2}</li>
+                        <li>{step.point3}</li>
+
+                      </ul>
+
+                    </div>
+
+                  </div>
+                ))}
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div> */}
+
         {/* 3nd */}
         {/* 4nd */}
         <div className="relative bg-linear-to-r from-[#6b0da1] to-[#8447c6] ">
@@ -1415,7 +1521,7 @@ const Home = () => {
           </div>
 
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-6 md:px-10 my-0 md:mt-10">
-            {/* Service Buttons */}
+
             <div className="bg-[#f7f6f6] rounded-xl shadow-sm p-4 sm:p-6 md:p-8">
               {services.map((service) => (
                 <button
@@ -1436,7 +1542,7 @@ const Home = () => {
               ))}
             </div>
 
-            {/* Active Service Display */}
+
             <div className="flex flex-col items-center justify-center text-center gap-4 px-4 sm:px-6 md:px-10">
               <Image
                 src={activeService.content.image}
@@ -1454,12 +1560,88 @@ const Home = () => {
               hover:shadow-[4px_4px_0px_#9B44B6]"
                 onClick={handleservices}
               />
-              {/* <button className="bg-purple-800 text-white px-6 py-2 rounded-md hover:bg-purple-700 transition">
-              {activeService.content.ButtonName}
-            </button> */}
+
             </div>
           </div>
         </div>
+
+
+
+        {/* <div className="bg-[#f4f7ff] py-2 sm:py-8 md:py-20">
+
+          
+          <div className="text-center px-4 sm:px-6 md:px-8 py-4 md:pb-5">
+            <h2 className="text-2xl md:4xl lg:text-5xl font-semibold text-gray-900 heading">
+              Reach Customers{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]">
+                {" "}
+                Wherever
+              </span>{" "}
+              They Are
+            </h2>
+          </div>
+
+
+          <div className="container mx-auto max-w-6xl px-4 grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-8 my-0 md:mt-10">
+          
+            <div className="bg-white rounded-2xl shadow-lg p-4 space-y-2">
+              {services.map((service) => (
+                <button
+                  key={service.id}
+                  onClick={() => setActiveTab(service.id)}
+                  className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left transition-all duration-300
+                    ${activeTab === service.id
+                      ? "bg-gradient-to-r from-[#E9D5FF] to-[#DBEAFE] text-[#4C1D95] shadow-sm shadow-md"
+                      : "text-gray-700 hover:bg-purple-50"
+                    }`}
+                >
+
+                  <Image
+                    src={service.icon}
+                    alt={service.name}
+                    className="h-6 w-6"
+                  />
+
+                  <span className="font-semibold">
+                    {service.name}
+                  </span>
+
+                </button>
+              ))}
+            </div>
+            <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 flex flex-col items-center text-center">
+              <Image
+                src={activeService.content.image}
+                alt={activeService.name}
+                className="w-full max-w-lg rounded-xl mb-6"
+              />
+
+              <p className="text-gray-600 text-base md:text-lg mb-6 max-w-2xl">
+                {activeService.content.desc}
+              </p>
+
+              <UniversalButton
+                label={activeService.content.ButtonName}
+                variant="brutal"
+                className="bg-[#9B44B6] border-[#9B44B6] text-white px-6 py-2 font-semibold rounded-lg
+        hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] transition"
+                onClick={handleservices}
+              />
+
+            </div>
+
+          </div>
+
+        </div> */}
+
+        {/* <section className=" bg-[#f4f7ff] py-2 sm:py-8 md:py-20">
+          <FeatureShowcase
+  title="Reach Customers"
+  highlight="Wherever They Are"
+  services={services}
+/>
+
+        </section> */}
         {/* 5nd */}
         {/* 6nd */}
         <div className="bg-[#F6EDF9] py-2 md:py-10 px-4 md:px-10 lg:px-20">
