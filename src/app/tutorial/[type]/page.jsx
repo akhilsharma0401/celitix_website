@@ -102,14 +102,16 @@ export default function SpecificTutorial({ params }) {
                   )} */}
 
                   {
-                    images?.length > 0 && images?.map((image) => (
-                      <Image
-                        src={image?.src}
-                        alt={section.alt || "Tutorial image"}
-                        width={800}
-                        height={300}
-                        className="w-full h-100 object-contain mb-4 rounded-lg shadow-md"
-                      />
+                    images?.length > 0 && images?.map((image, index) => (
+                      <div key={index}>
+                        <Image
+                          src={image?.src}
+                          alt={section.alt || "Tutorial image"}
+                          width={800}
+                          height={300}
+                          className="w-full h-100 object-contain mb-4 rounded-lg shadow-md"
+                        />
+                      </div>
                     ))
                   }
 

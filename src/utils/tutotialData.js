@@ -3068,14 +3068,14 @@ NOTE: You may need to complete the process within a set time limit.`,
 
     ],
   },
-  
+
   {
     id: 61,
     slug: "why-businesses-are-replacing-website-chat-to-whatsapp-live-chat",
     title: "Why Businesses Are Replacing Website Chat to WhatsApp Live Chat",
     sections: [
       {
-        question: "Why Businesses Are Replacing Website Chat to WhatsApp Live Chat",
+        question: "Why Businesses Are Replacing",
         answer: `Customer expectations have changed. Today’s users want fast, familiar, and mobile-first communication—and this shift is why many businesses are replacing traditional website chat with WhatsApp Live Chat. Compared to browser-based chat widgets, WhatsApp offers a more personal, reliable, and engaging experience.
         
         One of the biggest reasons is user convenience. Website chat only works when users stay on the site, and conversations often reset if the page is refreshed or the browser is closed. WhatsApp Live Chat, on the other hand, continues seamlessly on the user’s phone. Customers can start a conversation on a website and continue it later without losing context, which significantly improves engagement.
@@ -3125,7 +3125,7 @@ NOTE: You may need to complete the process within a set time limit.`,
     title: "How Instant WhatsApp Replies Increase Lead Conversion Rates",
     sections: [
       {
-        question: "How Instant WhatsApp Replies Increase Lead Conversion Rates",
+        question: "How Instant WhatsApp Replies Increase",
         answer: `In today’s fast-paced digital world, speed is the biggest differentiator in lead conversion. When potential customers reach out, they expect immediate responses—and this is where instant WhatsApp replies outperform traditional channels like email or website chat.
         
         The first reason instant WhatsApp replies boost conversions is reduced response time. Studies consistently show that leads contacted within minutes are far more likely to convert than those contacted hours later. WhatsApp enables businesses to respond instantly through automated greetings, quick replies, or chatbots, ensuring no lead is left waiting. This immediacy keeps prospects engaged while their intent is still high.
@@ -3179,7 +3179,7 @@ NOTE: You may need to complete the process within a set time limit.`,
     title: "Managing Multiple Agents on a Single WhatsApp Business Number",
      intro: `As customer conversations grow, handling WhatsApp chats with a single agent becomes inefficient. Businesses need a smarter way to manage high volumes without missing messages or delaying responses. Celitix enables multiple agents to operate seamlessly on a single WhatsApp Business API number, ensuring faster replies, better coordination, and improved customer experience.`,
     sections: [
-      {image: [managingmultipleagents, managingmultipleagents],
+      {image: [managingmultipleagents, managingmultipleagentson],
         question: "Why Multiple Agents on One WhatsApp Number Matter",
         answer: `WhatsApp is a real-time channel. Customers expect quick responses, whether they’re enquiring about sales, support, or order status. With Celitix, businesses can:
         •	Avoid single-agent bottlenecks
