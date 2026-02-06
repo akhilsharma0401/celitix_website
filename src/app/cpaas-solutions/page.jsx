@@ -24,7 +24,7 @@ import { App_Authenticator, Click_to_Call, Ecommerce, Education, Email_Solutions
 // };
 
 const Product = () => {
-  
+
   // 2nd
   const services = [
     {
@@ -211,7 +211,7 @@ const Product = () => {
     'Tech Startups': '/tech-startups',
   };
 
-//   const router = useRouter();
+  //   const router = useRouter();
 
   const handleLearnMore = () => {
     const route = industryRoutes[activeTabs];
@@ -506,45 +506,93 @@ const Product = () => {
 
       {/* 1st */}
       {/* 2nd */}
-      <div className="bg-[#F7EBFC] py-6 sm:py-8 md:py-10">
-        <div className="text-center px-4 sm:px-6 md:px-8 py-4 pb-0 md:pb-5">
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-gray-900 heading">
-            Reach Customers Wherever They Are
+      <div className="bg-[#F6EDF9] py-2 sm:py-8 md:py-10">
+        <div className="text-center px-4 sm:px-6 md:px-8 py-4 md:py-5">
+          <h2 className="text-2xl md:4xl lg:text-5xl font-semibold text-gray-900 heading">
+            Reach Customers{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]">
+              {" "}
+              Wherever
+            </span>{" "}
+            They Are
           </h2>
         </div>
 
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-6 md:px-10 mt-2 md:mt-10">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-6 md:px-10 my-0 md:mt-10">
 
-          {/* Service Buttons */}
-          <div className="bg-[#f7f6f6] rounded-xl shadow-sm p-4 sm:p-6 md:p-8">
-            {services.map((service) => (
-              <button
-                key={service.id}
-                onClick={() => setActiveTab(service.id)}
-                className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg mb-2 text-lg text-left transition-all duration-200 sub-heading ${activeTab === service.id
-                  ? 'bg-[#ffffff] text-[#a535d1]'
-                  : 'hover:bg-gray-100 text-black sub-heading'
-                  }`}
-              >
-                <Image src={service.icon} alt={service.name} className="h-8 w-8" />
-                <span className="font-medium">{service.name}</span>
-              </button>
-            ))}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+
+            {services.map((service) => {
+              const active = activeTab === service.id;
+
+              return (
+                <div
+                  key={service.id}
+                  onClick={() => setActiveTab(service.id)}
+                  className={`cursor-pointer rounded-xl border p-4 transition-all duration-300 flex items-center gap-4
+        ${active
+                      ? "border-[#9B44B6] bg-[#faf5ff] shadow-lg scale-[1.02]"
+                      : "border-gray-200 bg-white hover:shadow-md hover:scale-[1.01]"
+                    }`}
+                >
+                  {/* Icon Box */}
+                  <div
+                    className={`p-3 rounded-lg
+          ${active
+                        ? "bg-[#9B44B6]/20"
+                        : "bg-gray-100"
+                      }`}
+                  >
+                    <Image
+                      src={service.icon}
+                      alt={service.name}
+                      width={28}
+                      height={28}
+                    />
+                  </div>
+
+                  {/* Text */}
+                  <div>
+                    <h4
+                      className={`text-base md:text-lg font-semibold
+            ${active
+                          ? "text-[#9B44B6]"
+                          : "text-gray-800"
+                        }`}
+                    >
+                      {service.name}
+                    </h4>
+
+                    {/* <p className="text-sm text-gray-500">
+                        {service.shortDesc || "Click to explore this service"}
+                      </p> */}
+                  </div>
+                </div>
+              );
+            })}
+
           </div>
 
-          {/* Active Service Display */}
+
+
           <div className="flex flex-col items-center justify-center text-center gap-4 px-4 sm:px-6 md:px-10">
             <Image
               src={activeService.content.image}
               alt={activeService.name}
               className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl"
             />
-            <p className="text-gray-600 text-base md:text-lg font-medium pera">{activeService.content.desc}</p>
-            <UniversalButton label={activeService.content.ButtonName} variant="brutal" className='bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 font-semibold hover:bg-white hover:text-black 
-              hover:shadow-[4px_4px_0px_#9B44B6]' onClick={handleservices} />
-            {/* <button className="bg-purple-800 text-white px-6 py-2 rounded-md hover:bg-purple-700 transition">
-              {activeService.content.ButtonName}
-            </button> */}
+            <p className="text-gray-600 text-base md:text-lg font-medium pera">
+              {activeService.content.desc}
+            </p>
+
+            <UniversalButton
+              label={activeService.content.ButtonName}
+              variant="brutal"
+              className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 font-semibold hover:bg-white hover:text-black 
+              hover:shadow-[4px_4px_0px_#9B44B6]"
+              onClick={handleservices}
+            />
+
           </div>
         </div>
       </div>
@@ -568,7 +616,7 @@ const Product = () => {
                 src={product3rd}
                 alt="User Communication"
                 className="rounded-lg w-full h-full object-cover"
-                // loading="auto"
+              // loading="auto"
               />
             </div>
           </div>
@@ -716,7 +764,7 @@ const Product = () => {
                 src={tabContent[activeTabs]?.image || "/assets/industries/ecommerce.png"}
                 alt={tabContent[activeTabs]?.title || "Industry"}
                 className="rounded-lg w-full h-full"
-                // loading="auto"
+              // loading="auto"
               />
             </div>
           </div>

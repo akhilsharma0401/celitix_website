@@ -83,53 +83,68 @@ export default function SpecificTutorial({ params }) {
 
             <hr className="my-5" />
 
-            {tutorial.sections.map((section, index) => (
-              <div
-                key={index}
-                id={`section-${index}`}
-                className="mb-8 scroll-mt-32"
-              >
-                {section.image && (
-                  <Image
-                    src={section.image}
-                    alt={section.alt || "Tutorial image"}
-                    width={800}
-                    height={300}
-                    className="w-full h-100 object-contain mb-4 rounded-lg shadow-md"
-                  />
-                )}
+            {tutorial.sections.map((section, index) => {
+              const images = section?.image ? Array.isArray(section.image) ? section.image : [section.image] : [];
+              return (
+                <div
+                  key={index}
+                  id={`section-${index}`}
+                  className="mb-8 scroll-mt-32"
+                >
+                  {/* {section.image && (
+                    <Image
+                      src={section.image}
+                      alt={section.alt || "Tutorial image"}
+                      width={800}
+                      height={300}
+                      className="w-full h-100 object-contain mb-4 rounded-lg shadow-md"
+                    />
+                  )} */}
+
+                  {
+                    images?.length > 0 && images?.map((image) => (
+                      <Image
+                        src={image?.src}
+                        alt={section.alt || "Tutorial image"}
+                        width={800}
+                        height={300}
+                        className="w-full h-100 object-contain mb-4 rounded-lg shadow-md"
+                      />
+                    ))
+                  }
 
 
-                <h2 className="text-xl font-semibold heading text-gray-900 mb-3">
-                  {section.question}
-                </h2>
+                  <h2 className="text-xl font-semibold heading text-gray-900 mb-3">
+                    {section.question}
+                  </h2>
 
-                {section.answer && (
-                  <p className="text-gray-700 leading-relaxed whitespace-pre-line pera p-0 mb-3">
-                    {section.answer}
-                  </p>
-                )}
+                  {section.answer && (
+                    <p className="text-gray-700 leading-relaxed whitespace-pre-line pera p-0 mb-3">
+                      {section.answer}
+                    </p>
+                  )}
 
-                {section.list && (
-                  <ul className="list-disc pl-6 space-y-2 pera text-gray-700">
-                    {section.list.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
-                )}
+                  {section.list && (
+                    <ul className="list-disc pl-6 space-y-2 pera text-gray-700">
+                      {section.list.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  )}
 
-                {section.link && (
-                  <a
-                    href={section.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 font-medium hover:underline"
-                  >
-                    {section.link}
-                  </a>
-                )}
-              </div>
-            ))}
+                  {section.link && (
+                    <a
+                      href={section.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 font-medium hover:underline"
+                    >
+                      {section.link}
+                    </a>
+                  )}
+                </div>
+              )
+            })}
 
           </div>
 

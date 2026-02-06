@@ -1,4 +1,4 @@
-import { aichatbotswhatsapp, createwhatsapptemplatescelitix, enhancecustomerengagementwithwhatsapplivech, enhancecustomerengagementwithwhatsapplivechaton, enhancecustomerengagementwithwhatsapplivechatoncelitix, explanationofnodestocreatechatbots, mmliteinwhatsappbusinessapi, samplewhatsappbotandhowtocreateitusingcelitix, whatsappmanageflowincelitix } from "../../public/assets/images";
+import { aichatbotswhatsapp, celitixworkflowensuring, createwhatsapptemplatescelitix, enhancecustomerengagementwithwhatsapplivech, enhancecustomerengagementwithwhatsapplivechaton, enhancecustomerengagementwithwhatsapplivechatoncelitix, explanationofnodestocreatechatbots, managingmultipleagents, managingmultipleagentson, mmliteinwhatsappbusinessapi, samplewhatsappbotandhowtocreateitusingcelitix, trackroiwiththecelitix, whatsappmanageflowincelitix } from "../../public/assets/images";
 
 export const tutorialData = [
   {
@@ -3066,6 +3066,313 @@ NOTE: You may need to complete the process within a set time limit.`,
         In summary, conversation flows on Celitix feel less robotic when they are conversational, flexible, personalized, and supported by human intervention—turning automation into a genuinely engaging customer experience.`,
       },
 
+    ],
+  },
+  
+  {
+    id: 61,
+    slug: "why-businesses-are-replacing-website-chat-to-whatsapp-live-chat",
+    title: "Why Businesses Are Replacing Website Chat to WhatsApp Live Chat",
+    sections: [
+      {
+        question: "Why Businesses Are Replacing Website Chat to WhatsApp Live Chat",
+        answer: `Customer expectations have changed. Today’s users want fast, familiar, and mobile-first communication—and this shift is why many businesses are replacing traditional website chat with WhatsApp Live Chat. Compared to browser-based chat widgets, WhatsApp offers a more personal, reliable, and engaging experience.
+        
+        One of the biggest reasons is user convenience. Website chat only works when users stay on the site, and conversations often reset if the page is refreshed or the browser is closed. WhatsApp Live Chat, on the other hand, continues seamlessly on the user’s phone. Customers can start a conversation on a website and continue it later without losing context, which significantly improves engagement.
+        
+       Another major advantage is higher open and response rates. Website chat notifications are easy to miss, especially on mobile devices. WhatsApp messages trigger real-time notifications, ensuring faster replies and more meaningful conversations. This makes WhatsApp ideal for sales inquiries, support requests, and lead follow-ups.
+        
+       Businesses also prefer WhatsApp Live Chat for its personal and trusted environment. Customers already use WhatsApp daily to communicate with friends and family, so interacting with brands there feels natural. This familiarity builds trust faster than traditional chat widgets, which often feel anonymous or temporary.
+        
+        From an operational perspective, WhatsApp Live Chat integrates easily with CRMs, ticketing systems, and automation tools. Businesses can combine live agents with chatbots to handle high volumes efficiently—automating common queries while allowing agents to focus on complex issues. Conversation history is saved, enabling better personalization and follow-ups.
+        
+        Additionally, WhatsApp supports rich media and interactivity. Agents can share images, documents, location pins, buttons, and quick replies—capabilities that many website chat tools lack or limit.
+        
+        Finally, WhatsApp Live Chat supports long-term engagement. Businesses can re-engage customers with updates, reminders, and support messages (with opt-in), something website chat cannot do effectively.
+        
+        In conclusion, businesses are moving from website chat to WhatsApp Live Chat because it offers continuity, higher engagement, better trust, and scalable communication—making it a smarter channel for modern customer interaction.`,
+      },
+
+    ],
+  },
+  {
+    id: 62,
+    slug: "whatsapp-chatbot-vs-website-chatbot-what-converts-better",
+    title: "WhatsApp Chatbot vs Website Chatbot: What Converts Better?",
+    sections: [
+      {
+        question: "What Converts Better?",
+        answer: `Chatbots have become a core part of digital customer engagement, but not all chatbots convert equally. Businesses today often face a key question: Should we use a WhatsApp chatbots or a website chatbots? While both have their place, conversion performance differs significantly based on user behavior and channel strengths.
+        
+        A website chatbots is usually the first touch point for new visitors. It helps answer basic questions, guide users to pages, and capture leads while they browse. However, website chatbots are limited by session-based interactions. If a user leaves the website, closes the browser, or switches devices, the conversation often ends. This interruption leads to higher drop-offs, especially on mobile.
+        
+       In contrast, a WhatsApp chatbots operates on a platform users already trust and use daily. Once a user opts in, the conversation continues beyond a single session. Messages are delivered directly to the user’s phone with real-time notifications, resulting in much higher open and response rates. This continuity plays a major role in better conversions.
+        
+       From an engagement perspective, WhatsApp chatbots feel more personal and conversational. Features like quick replies, buttons, media sharing, and interactive flows allow businesses to guide users smoothly toward actions such as booking a demo, making a purchase, or raising a support request. Website chatbots often feel more transactional and less engaging.
+        
+        Another key difference is follow-up capability. Website chatbots struggle to re-engage users once they leave the site. WhatsApp chatbots, with proper opt-in, enable automated follow-ups, reminders, abandoned cart messages, and personalized offers—dramatically improving conversion rates.
+        
+        In terms of trust, users are more likely to respond on WhatsApp than on a website widget, where messages can feel anonymous. This trust translates directly into higher intent and faster decision-making.
+        
+        In conclusion, WhatsApp chatbots generally convert better for lead nurturing, sales, and retention, while website chatbots work best for initial discovery and basic assistance. Businesses that combine both—using website chat to capture leads and WhatsApp to convert them—often see the strongest results.`,
+      },
+
+    ],
+  },
+  {
+    id: 63,
+    slug: "how-instant-whatsapp-replies-increase-lead-conversion-rates",
+    title: "How Instant WhatsApp Replies Increase Lead Conversion Rates",
+    sections: [
+      {
+        question: "How Instant WhatsApp Replies Increase Lead Conversion Rates",
+        answer: `In today’s fast-paced digital world, speed is the biggest differentiator in lead conversion. When potential customers reach out, they expect immediate responses—and this is where instant WhatsApp replies outperform traditional channels like email or website chat.
+        
+        The first reason instant WhatsApp replies boost conversions is reduced response time. Studies consistently show that leads contacted within minutes are far more likely to convert than those contacted hours later. WhatsApp enables businesses to respond instantly through automated greetings, quick replies, or chatbots, ensuring no lead is left waiting. This immediacy keeps prospects engaged while their intent is still high.
+        
+       Instant replies also create a strong first impression. A quick, friendly response signals professionalism, reliability, and customer focus. On a personal platform like WhatsApp, this feels less like talking to a system and more like interacting with a real brand representative—building trust from the very first message.
+        
+       Another key factor is conversation continuity. Unlike website chat sessions that expire, WhatsApp conversations stay active. Instant replies keep the conversations flowing, allowing businesses to guide leads smoothly through questions, product details, pricing, and next steps without interruption. This reduces drop-offs and speeds up decision-making.
+        
+        WhatsApp’s interactive features further enhance conversions. With instant replies combined with buttons, lists, catalogs, and media, businesses can guide leads toward specific actions such as booking a demo, requesting a callback, or making a purchase. This structured yet conversational approach removes friction from the buying journey.
+        
+        Automation also plays a vital role in scalability. With instant auto-responses, businesses can handle high lead volumes 24/7, even outside working hours. Leads generated from ads, websites, or campaigns receive immediate acknowledgment, increasing the chances of conversion without adding pressure on sales teams.
+        
+        Finally, instant replies enable timely follow-ups. Businesses can automatically re-engage leads who don’t respond immediately, share reminders, or offer assistance—keeping the brand top of mind.
+        
+        In summary, instant WhatsApp replies increase lead conversion rates by combining speed, personalization, continuity, and automation—turning high-intent inquiries into real business outcomes faster and more efficiently.`,
+      },
+
+    ],
+  },
+  {
+    id: 64,
+    slug: "reducing-agent-load-using-whatsapp-automation",
+    title: "Reducing Agent Load Using WhatsApp Automation",
+    sections: [
+      {
+        question: "Reducing Agent Load Using WhatsApp Automation",
+        answer: `As customer conversations grow across WhatsApp, managing agent workload becomes a challenge. Celitix helps businesses reduce agent load by combining smart automation with seamless live chat management—ensuring customers get quick responses without overwhelming support teams.
+        
+        One of the most effective features is automated welcome messages. Using Celitix’s agent settings, businesses can instantly greet users when they message for the first time. This sets expectations, captures attention immediately, and reduces pressure on agents to respond to every new chat manually.
+        
+       Celitix also enables automated replies during agent inactivity. With inactive timing and no-response configurations, customers receive instant updates when agents are offline or busy. This prevents repeated follow-ups like “Are you there?” and significantly reduces unnecessary agent interruptions.
+        
+       Another major benefit is handling repetitive queries through automation. Common questions such as business hours, service details, order status, or pricing can be answered automatically using WhatsApp bots and predefined flows. This removes a large volume of repetitive work from agent queues.
+        
+       Smart chat routing and agent reassignment notifications further optimize agent efficiency. When a chat is reassigned or an agent becomes unavailable, Celitix can automatically inform the customer, keeping them engaged without requiring manual intervention from another agent.
+        
+        Celitix also supports pre-qualification before human handover. Automation can collect key details like customer name, issue type, or reference ID before assigning the chat to an agent. This context allows agents to resolve issues faster and handle more conversations in less time.
+        
+        In addition, automated notifications and follow-ups reduce outbound effort. Updates such as ticket status, appointment confirmations, or service alerts can be sent automatically, eliminating repetitive manual messages.
+        
+        Finally, Celitix provides centralized visibility and control. Agents work with better context, fewer interruptions, and structured conversations—leading to faster resolution times and lower burnout.
+        
+        In summary, WhatsApp automation with Celitix reduces agent load by handling first responses, managing off-hour communication, automating FAQs, and streamlining handovers—allowing teams to scale support efficiently while delivering a smooth customer experience.`,
+      },
+
+    ],
+  },
+  {
+    id: 65,
+    slug: "managing-multiple-agents-on-a-single-whatsapp-business-number",
+    title: "Managing Multiple Agents on a Single WhatsApp Business Number",
+     intro: `As customer conversations grow, handling WhatsApp chats with a single agent becomes inefficient. Businesses need a smarter way to manage high volumes without missing messages or delaying responses. Celitix enables multiple agents to operate seamlessly on a single WhatsApp Business API number, ensuring faster replies, better coordination, and improved customer experience.`,
+    sections: [
+      {image: [managingmultipleagents, managingmultipleagents],
+        question: "Why Multiple Agents on One WhatsApp Number Matter",
+        answer: `WhatsApp is a real-time channel. Customers expect quick responses, whether they’re enquiring about sales, support, or order status. With Celitix, businesses can:
+        •	Avoid single-agent bottlenecks
+        •	Reduce response time during peak hours
+        •	Assign conversations to the right department
+        •	Maintain conversation continuity
+        •	All this—without using multiple phone numbers.`,
+      },
+      {
+        question: "How Celitix Enables Multi-Agent WhatsApp Management",
+        answer: `Celitix offers a structured Agent Management and Mapping system that allows businesses to create, assign, and control agent access with ease.`
+      },
+      {
+        question: "1. Add and Manage Agents",
+        answer: `•	From the Manage Agents section, admins can:
+            •	Add agents with name, email, and mobile number
+            •	Assign agents to specific departments
+            •	Set secure login credentials
+            •	Enable automatic or manual chat assignment
+            •	This ensures every agent has the right level of access.`
+      },
+      {
+        question: "2. Smart Chat Assignment Options",
+        answer: `Celitix supports multiple assignment models:
+            •	Auto Assignment – Chats are automatically distributed among available agents
+            •	Manual Assignment – Supervisors assign chats as needed
+            •	All Access – Agents can view and respond to all conversations
+            
+            This flexibility helps businesses adapt based on team size and workload.`
+      },
+      {
+        question: "3. Agent Mapping with WhatsApp Accounts",
+        answer: `Using the Agent Mapping feature:
+            •	Businesses can map agents to specific WhatsApp Business numbers
+            •	Control which agents can access which WhatsApp accounts
+            •	Easily manage multiple WhatsApp channels from one dashboard
+            
+          This is especially useful for enterprises handling multiple brands or regions.`
+      },
+      {
+        question: "Benefits of Using Celitix for Multi-Agent WhatsApp Handling",
+        answer: `•	Centralized Dashboard for all agent conversations
+            •	No Message Overlap or Duplication
+            •	Faster First Response Time (FRT)
+            •	Improved Agent Productivity & Accountability
+            •	Scalable Support Without Adding New Numbers`
+      },
+      {
+        question: "Ideal Use Cases",
+        answer: `•	Customer support teams
+          •	Sales and lead management
+          •	Education institutions
+          •	E-commerce and logistics businesses
+          •	BFSI and healthcare support desks`
+      },
+      {
+        question: "Final Thoughts",
+        answer: `Managing multiple agents on a single WhatsApp Business number doesn’t have to be complex. With Celitix’s agent management, smart assignment, and mapping capabilities, businesses can scale WhatsApp conversations smoothly while delivering consistent, high-quality support.`
+      },
+
+    ],
+  },
+  {
+    id: 66,
+    slug: "track-roi-with-the-celitix-analytics-dashboard",
+    title: "Track ROI with the Celitix Analytics Dashboard",
+     intro: `In today’s digital-first world, businesses rely heavily on messaging platforms like WhatsApp, SMS, RCS, and Email to engage customers. However, running campaigns is only half the job. Understanding what’s working and what’s not is what truly drives growth. This is where the Celitix Analytics Dashboard plays a crucial role.`,
+    sections: [
+      {
+        image: trackroiwiththecelitix,
+        question: "Why Tracking ROI in Messaging Matters",
+        answer: `Every message sent carries a cost and an opportunity. Without proper analytics, businesses struggle to identify high-performing channels, optimize spend, or improve customer engagement. Tracking ROI helps organizations make data-driven decisions, improve conversion rates, and ensure that communication efforts deliver measurable value.`
+      },
+      {
+        question: "Unified Analytics across Multiple Channels",
+        answer: `The Celitix Analytics Dashboard provides a centralized view of all communication channels, including WhatsApp Business API, SMS, RCS, Email, and other messaging services. Instead of switching between platforms, teams can monitor performance from a single dashboard, saving time and improving efficiency.`,
+      },
+      {
+        question: "Key Metrics That Drive Better Decisions",
+        answer: `Celitix highlights the metrics that matter most for business growth, such as message delivery trends, engagement patterns, campaign performance, wallet usage, and customer interaction insights. These analytics enable teams to understand customer behavior and identify areas that need improvement.`
+      },
+      {
+        question: "Real-Time Insights for Faster Optimization",
+        answer: `With real-time performance tracking, businesses can monitor campaigns as they run. This allows teams to spot engagement drops early, refine messaging strategies instantly, and maximize campaign effectiveness. Real-time insights ensure that budgets are spent wisely and returns are optimized.`
+      },
+      {
+        question: "Turning Analytics into Actionable Growth",
+        answer: `The true value of analytics lies in turning data into action. The Celitix dashboard helps businesses track ROI per channel, compare cost versus engagement, and scale strategies that deliver results. By understanding what works best, organizations can plan future campaigns with confidence.`
+      },
+      {
+        question: "Why Businesses Choose Celitix for Analytics",
+        answer: `Celitix offers an easy-to-use, powerful analytics solution designed for marketing, sales, and support teams. With a single dashboard, clear insights, and real-time visibility, businesses can measure performance, improve engagement, and achieve consistent growth.`
+      },
+      {
+        question: "Conclusion",
+        answer: `Tracking ROI doesn’t have to be complex. With the Celitix Analytics Dashboard, businesses gain complete visibility into their messaging performance, enabling smarter decisions and stronger customer engagement. If you want to grow efficiently and make every message count, Celitix analytics is the right place to start.`
+      },
+    ],
+  },
+  {
+    id: 67,
+    slug: "celitix-workflow-ensuring-message-delivery-with-intelligent-channel-switching",
+    title: "Celitix Workflow: Ensuring Message Delivery with Intelligent Channel Switching",
+     intro: `In Celitix, a workflow is a smart, automated message-routing system that ensures your message reaches the customer through the best possible communication channel. Instead of depending on a single channel, workflows intelligently switch between WhatsApp, SMS, and RCS based on delivery status and customer availability.
+     
+     This approach guarantees higher message reach, better reliability, and uninterrupted business communication.`,
+    sections: [
+      {
+        image: celitixworkflowensuring,
+        question: "Why Message Routing Matters",
+        answer: `Customers are not always active on WhatsApp. Some may have limited internet access, disabled notifications, or outdated devices. If businesses rely on only one channel, critical messages may never reach the recipient.
+        
+        Celitix workflows solve this problem by automatically detecting delivery outcomes and triggering fallback channels—ensuring important messages are delivered without manual retries.`
+      },
+      {
+        question: "How a Celitix Workflow Works",
+        answer: `A basic Celitix workflow follows a simple, automated logic:
+        •	A business sends a WhatsApp template message
+        •	Celitix monitors the delivery status
+        •	If the message is not delivered or the user is offline, the workflow triggers an SMS
+        •	If SMS delivery fails, the workflow escalates to RCS
+        •	The customer receives the message on the channel most likely to succeed
+        
+        All of this happens in real time, without any human intervention.`,
+      },
+      {
+        question: "Key Benefits of Using Celitix Workflows",
+        answer: `Celitix workflows help businesses maintain consistent communication while reducing operational effort. By automating message routing, businesses can improve delivery rates, minimize communication failures, and ensure time-sensitive messages are received.
+        
+        Workflows also eliminate the need for manual follow-ups and resends, saving time and resources.`
+      },
+      {
+        question: "Common Use Cases for Celitix Workflows",
+        answer: `With real-time performance tracking, businesses can monitor campaigns as they run. This allows teams to spot engagement drops early, refine messaging strategies instantly, and maximize campaign effectiveness. Real-time insights ensure that budgets are spent wisely and returns are optimized.`
+      },
+      {
+        question: "Turning Analytics into Actionable Growth",
+        answer: `Smart workflows are ideal for:
+          •	OTP and authentication messages
+          •	Transactional alerts and confirmations
+          •	Payment reminders and due notifications
+          •	Appointment reminders
+          •	Order and delivery updates
+          •	These use cases require high reliability, which Celitix workflows are designed to deliver.`
+      },
+      {
+        question: "Why Businesses Choose Celitix for Workflow Automation",
+        answer: `Celitix provides a centralized workflow builder that allows businesses to configure fallback rules easily. With support for multiple communication channels and real-time delivery tracking, Celitix ensures businesses never lose touch with their customers.`
+      },
+      {
+        question: "Conclusion",
+        answer: `A workflow in Celitix is more than automation—it is an intelligent delivery assurance system. By routing messages across WhatsApp, SMS, and RCS based on real-time delivery status, Celitix ensures every message reaches its destination efficiently and reliably.`
+      },
+    ],
+  },
+  {
+    id: 68,
+    slug: "how-whatsapp-messaging-from-google-sheets-works-in-celitix",
+    title: "How WhatsApp Messaging from Google Sheets Works in Celitix",
+     intro: `Celitix connects your Google Sheet data to the WhatsApp Business API through a secure and automated process. Each row in the sheet can be mapped to an approved WhatsApp template.
+     
+     For example, customer name, phone number, order ID, or payment link stored in the sheet can be dynamically inserted into WhatsApp messages. Once triggered, Celitix sends the message automatically—no copy-paste or manual sending required.`,
+    sections: [
+      {
+        question: "Automate Large-Scale Messaging with Accuracy",
+        answer: `Using Celitix eliminates manual errors that occur during bulk messaging. Messages are sent directly from structured Google Sheet data, ensuring consistency and reliability across campaigns.
+        
+        This setup is ideal for sending:
+        •	Payment reminders
+        •	Order and delivery updates
+        •	Event or webinar notifications
+        •	Appointment confirmations
+        
+        All messages are sent through official WhatsApp templates, ensuring compliance with Meta policies.`
+      },
+      {
+        question: "Benefits of Using Celitix for Google Sheets WhatsApp Messaging",
+        answer: `With Celitix, businesses can:
+        •	Send personalized WhatsApp messages in bulk
+        •	Save time by automating repetitive communication
+        •	Use real-time data from Google Sheets
+        •	Track message delivery and performance
+
+        This makes Celitix a powerful solution for operational, marketing, and transactional communication.`,
+      },
+      {
+        question: "Compliance and Security with Celitix",
+        answer: `Celitix ensures that all WhatsApp messages sent from Google Sheets follow Meta’s opt-in and template guidelines. This helps businesses maintain a healthy WhatsApp account quality while delivering consistent customer communication.`
+      },
+      {
+        question: "Conclusion",
+        answer: `Sending WhatsApp messages from Google Sheets becomes simple and scalable with Celitix. By combining spreadsheet-based data with automated WhatsApp messaging, Celitix helps businesses communicate faster, smarter, and more efficiently—without compromising compliance or control.`
+      },
     ],
   },
 

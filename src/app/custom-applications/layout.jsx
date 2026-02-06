@@ -5,6 +5,10 @@ export const metadata = {
   alternates: {
     canonical: "https://www.celitix.com/education-and-edtech",
   },
+   openGraph: {
+  title: "Smart Communication for Education | Celitix",
+  description: "Automate reminders, send updates, and simplify school communication with WhatsApp, SMS, Voice, and more.",
+},
 };
 
 export default function Layout({ children }) {

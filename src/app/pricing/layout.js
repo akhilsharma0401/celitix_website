@@ -5,6 +5,10 @@ export const metadata = {
   alternates: {
     canonical: "https://www.celitix.com/pricing",
   },
+  openGraph: {
+  title: "Pricing | Celitix",
+  description: "Explore the flexible pricing for Celitix, the all-in-one CPaaS platform for messaging & voice calling solutions. Pay only for what you use.",
+},
 };
 
 export default function Layout({ children }) {

@@ -1264,7 +1264,7 @@ const Home = () => {
         </div>
         {/* 2nd */}
         {/* 3nd */}
-        <div className="w-full bg-[#f6edf9] relative lg:h-[400vh]">
+        {/* <div className="w-full bg-[#f6edf9] relative lg:h-[400vh]">
           <div className="absolute inset-0 z-0">
             {steps.map((step) => (
               <div
@@ -1329,32 +1329,32 @@ const Home = () => {
 
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* <div className="w-full bg-gradient-to-b from-[#f6edf9] to-white py-5 md:py-20">
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
 
 
-         
+
             <div className="text-center mb-5 md:mb-16">
 
               <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold heading text-gray-900">
-                How It Works
+                How Celitix Empowers Your Business
               </h2>
 
               <p className="mt-3 text-gray-600 text-lg max-w-2xl sub-heading mx-auto">
-                A clear step-by-step journey for your users
+                Smart tools, seamless automation, and powerful messaging — all in one platform
               </p>
 
             </div>
 
 
-            
+
             <div className="relative">
 
 
-              
+
               <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[2px] bg-purple-200 -translate-x-1/2"></div>
 
 
@@ -1367,7 +1367,7 @@ const Home = () => {
             ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
                   >
 
-                  
+
                     <div className="relative w-full md:w-1/2 aspect-[4/3] rounded-3xl overflow-hidden shadow-xl">
 
                       <Image
@@ -1380,7 +1380,7 @@ const Home = () => {
                     </div>
 
 
-                   
+
                     <div className="w-full md:w-1/2 bg-white rounded-3xl shadow-lg p-6 md:p-8">
 
 
@@ -1414,6 +1414,102 @@ const Home = () => {
           </div>
 
         </div> */}
+
+        <div className="w-full bg-gradient-to-b from-[#f6edf9] to-white py-5 md:py-20">
+
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+
+
+
+            <div className="text-center mb-5 md:mb-16">
+
+              <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold heading text-gray-900">
+                How Celitix Empowers Your Business
+              </h2>
+
+              <p className="mt-3 text-gray-600 text-lg max-w-2xl sub-heading mx-auto">
+                Smart tools, seamless automation, and powerful messaging — all in one platform
+              </p>
+
+            </div>
+
+
+
+            <div className="relative">
+
+              {/* Center Line */}
+              <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[3px] bg-gradient-to-b from-[#36bae2] via-[#9B44B6] to-[#36bae2] -translate-x-1/2"></div>
+
+              {steps.map((step, index) => {
+                const isEven = index % 2 === 0;
+
+                return (
+                  <div
+                    key={step.id}
+                    className={`relative flex flex-col md:flex-row items-center gap-8
+        ${isEven ? "md:flex-row" : "md:flex-row-reverse"}`}
+                  >
+
+                    {/* Timeline Dot */}
+                    <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center justify-center">
+                      <motion.div
+                        animate={{
+                          scale: [1, 1.3, 1],
+                          boxShadow: [
+                            // "0 0 0px #FF4C4C",
+
+                            // 4C6BFF
+                            "0 0 0px #FF4C4C",
+                            "0 0 25px #FF4C4C",
+                            "0 0 0px #FF4C4C",
+                          ],
+                        }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                        // className="absolute w-5 h-5 bg-gradient-to-br from-[#0E76CD] to-[#FF4C4C] border-4 border-white rounded-full"
+                        // 73bbff
+                        className="absolute w-5 h-5 bg-gradient-to-br from-[#0E76CD] to-[#FF4C4C] border-4 border-white rounded-full"
+                      ></motion.div>
+                    </div>
+
+                    {/* Image */}
+                    <div className="relative w-full md:w-1/2 aspect-[4/3] rounded-3xl overflow-hidden shadow-xl">
+                      <Image
+                        src={step.img}
+                        alt={step.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+
+                    {/* Content Card */}
+                    <div className="w-full md:w-1/2 bg-white rounded-3xl shadow-lg p-6 md:p-8">
+
+                      <h3 className="text-xl md:text-2xl lg:text-4xl font-bold text-gray-900 mb-2">
+                        {step.title}
+                      </h3>
+
+                      <h4 className="text-gray-700 text-md md:text-lg font-medium mb-3">
+                        {step.subtitle}
+                      </h4>
+
+                      <ul className="list-disc list-inside text-gray-700 space-y-1">
+                        <li>{step.point1}</li>
+                        <li>{step.point2}</li>
+                        <li>{step.point3}</li>
+                      </ul>
+
+                    </div>
+
+                  </div>
+                );
+              })}
+
+            </div>
+
+
+          </div>
+
+        </div>
 
         {/* 3nd */}
         {/* 4nd */}
@@ -1508,7 +1604,7 @@ const Home = () => {
         </div>
         {/* 4nd */}
         {/* 5nd */}
-        <div className="bg-[#F6EDF9] py-2 sm:py-8 md:py-10">
+        {/* <div className="bg-[#F6EDF9] py-2 sm:py-8 md:py-10">
           <div className="text-center px-4 sm:px-6 md:px-8 py-4 md:py-5">
             <h2 className="text-2xl md:4xl lg:text-5xl font-semibold text-gray-900 heading">
               Reach Customers{" "}
@@ -1563,13 +1659,106 @@ const Home = () => {
 
             </div>
           </div>
+        </div> */}
+
+
+
+        <div className="bg-[#F6EDF9] py-2 sm:py-8 md:py-10">
+          <div className="text-center px-4 sm:px-6 md:px-8 py-4 md:py-5">
+            <h2 className="text-2xl md:4xl lg:text-5xl font-semibold text-gray-900 heading">
+              Reach Customers{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]">
+                {" "}
+                Wherever
+              </span>{" "}
+              They Are
+            </h2>
+          </div>
+
+          <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-6 md:px-10 my-0 md:mt-10">
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+
+              {services.map((service) => {
+                const active = activeTab === service.id;
+
+                return (
+                  <div
+                    key={service.id}
+                    onClick={() => setActiveTab(service.id)}
+                    className={`cursor-pointer rounded-xl border p-4 transition-all duration-300 flex items-center gap-4
+        ${active
+                        ? "border-[#9B44B6] bg-[#faf5ff] shadow-lg scale-[1.02]"
+                        : "border-gray-200 bg-white hover:shadow-md hover:scale-[1.01]"
+                      }`}
+                  >
+                    {/* Icon Box */}
+                    <div
+                      className={`p-3 rounded-lg
+          ${active
+                          ? "bg-[#9B44B6]/20"
+                          : "bg-gray-100"
+                        }`}
+                    >
+                      <Image
+                        src={service.icon}
+                        alt={service.name}
+                        width={28}
+                        height={28}
+                      />
+                    </div>
+
+                    {/* Text */}
+                    <div>
+                      <h4
+                        className={`text-base md:text-lg font-semibold
+            ${active
+                            ? "text-[#9B44B6]"
+                            : "text-gray-800"
+                          }`}
+                      >
+                        {service.name}
+                      </h4>
+
+                      {/* <p className="text-sm text-gray-500">
+                        {service.shortDesc || "Click to explore this service"}
+                      </p> */}
+                    </div>
+                  </div>
+                );
+              })}
+
+            </div>
+
+
+
+            <div className="flex flex-col items-center justify-center text-center gap-4 px-4 sm:px-6 md:px-10">
+              <Image
+                src={activeService.content.image}
+                alt={activeService.name}
+                className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl"
+              />
+              <p className="text-gray-600 text-base md:text-lg font-medium pera">
+                {activeService.content.desc}
+              </p>
+
+              <UniversalButton
+                label={activeService.content.ButtonName}
+                variant="brutal"
+                className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 font-semibold hover:bg-white hover:text-black 
+              hover:shadow-[4px_4px_0px_#9B44B6]"
+                onClick={handleservices}
+              />
+
+            </div>
+          </div>
         </div>
 
 
 
         {/* <div className="bg-[#f4f7ff] py-2 sm:py-8 md:py-20">
 
-          
+
           <div className="text-center px-4 sm:px-6 md:px-8 py-4 md:pb-5">
             <h2 className="text-2xl md:4xl lg:text-5xl font-semibold text-gray-900 heading">
               Reach Customers{" "}
@@ -1583,7 +1772,7 @@ const Home = () => {
 
 
           <div className="container mx-auto max-w-6xl px-4 grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-8 my-0 md:mt-10">
-          
+
             <div className="bg-white rounded-2xl shadow-lg p-4 space-y-2">
               {services.map((service) => (
                 <button

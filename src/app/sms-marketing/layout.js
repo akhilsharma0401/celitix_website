@@ -5,6 +5,10 @@ export const metadata = {
   alternates: {
     canonical: "https://www.celitix.com/sms-marketing",
   },
+   openGraph: {
+  title: "Bulk SMS Services & SMS Marketing API | Celitix",
+  description: "Send bulk SMS, automate text marketing, and integrate fast with our SMS API. Celitix powers SMS marketing & OTP delivery at scale.",
+},
 };
 
 export default function Layout({ children }) {

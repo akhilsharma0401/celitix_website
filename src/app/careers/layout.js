@@ -5,6 +5,10 @@ export const metadata = {
   alternates: {
     canonical: "https://www.celitix.com/careers",
   },
+  openGraph: {
+  title: "Careers at Celitix | Join Our Team",
+  description: "Explore career opportunities at Celitix. Work with a team that's building the future of customer communication in India.",
+},
 };
 
 export default function Layout({ children }) {

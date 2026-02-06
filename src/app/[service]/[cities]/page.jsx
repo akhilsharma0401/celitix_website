@@ -18,6 +18,10 @@ export default async function Cities({ params }) {
     link: cities
       ? `https://www.celitix.com/sms-marketing/${cities}`
       : `https://www.celitix.com/sms-marketing`,
+      openGraph: {
+  title: `SMS Marketing & OTP Platform in ${formattedCity}`,
+  description: `Reach anyone, anywhere, instantly right from ${formattedCity}. Use Celitix’s SMS platform to deliver OTPs, alerts, and promotional messages and drive results.`,
+},
   };
   const WhatsAppCitiesMeta = {
     title: `WhatsApp Business API & Chatbots in ${formattedCity}`,
@@ -25,6 +29,10 @@ export default async function Cities({ params }) {
     link: cities
       ? `https://www.celitix.com/whatsapp-business-platform/${cities}`
       : `https://www.celitix.com/whatsapp-business-platform`,
+      openGraph: {
+  title: `WhatsApp Business API & Chatbots in ${formattedCity}`,
+  description: `Use WhatsApp to grow your ${formattedCity} business. Reach new heights with Celitix’s enterprise messaging solutions. Chatbots, Click to WhatsApp ads, CRM, & more.`,
+},
   };
 
   const RcsCitiesMeta = {
@@ -33,6 +41,11 @@ export default async function Cities({ params }) {
     link: cities
       ? `https://www.celitix.com/rcs-business-messaging/${cities}`
       : `https://www.celitix.com/rcs-business-messaging`,
+
+      openGraph: {
+  title: `RCS Business Messaging in ${formattedCity}`,
+  description: `Break free from the limitations of SMS marketing in ${formattedCity}. Engage users with buttons, media, and branded messages via Celitix’s RCS platform.`,
+},
   };
 
   // //
@@ -49,6 +62,7 @@ export default async function Cities({ params }) {
           title={SMSCitiesMeta.title}
           description={SMSCitiesMeta.description}
           link={SMSCitiesMeta.link}
+          openGraph ={SMSCitiesMeta.openGraph.title}
         />
         <Sms />
       </>
@@ -69,6 +83,7 @@ export default async function Cities({ params }) {
           title={WhatsAppCitiesMeta.title}
           description={WhatsAppCitiesMeta.description}
           link={WhatsAppCitiesMeta.link}
+          openGraph ={WhatsAppCitiesMeta.openGraph.title}
         />
         <WhatsApp />
       </>
@@ -81,6 +96,7 @@ export default async function Cities({ params }) {
           title={RcsCitiesMeta.title}
           description={RcsCitiesMeta.description}
           link={RcsCitiesMeta.link}
+          openGraph ={RcsCitiesMeta.openGraph.title}
         />
         <Rcs />
       </>

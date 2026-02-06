@@ -5,6 +5,10 @@ export const metadata = {
   alternates: {
     canonical: "https://www.celitix.com/terms-and-conditions",
   },
+   openGraph: {
+  title: "Terms & Conditions | Celitix",
+  description: "Read Celitix’s Terms & Conditions outlining user responsibilities, API usage, payment terms, and legal policies for secure and transparent service access.",
+},
 };
 
 export default function Layout({ children }) {

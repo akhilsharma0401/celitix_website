@@ -612,6 +612,10 @@ import enhancecustomerengagementwithwhatsapplivechaton from "./imagesMain/enhanc
 import enhancecustomerengagementwithwhatsapplivech from "./imagesMain/enhancecustomerengagementwithwhatsapplivech.png"
 import whatsappmanageflowincelitix from "./imagesMain/whatsappmanageflowincelitix.png"
 import mmliteinwhatsappbusinessapi from "./imagesMain/mmliteinwhatsappbusinessapi.png"
+import managingmultipleagents from "./imagesMain/managingmultipleagents.png"
+import managingmultipleagentson from "./imagesMain/managingmultipleagentson.png"
+import trackroiwiththecelitix from "./imagesMain/trackroiwiththecelitix.png"
+import celitixworkflowensuring from "./imagesMain/celitixworkflowensuring.png"
 
 
 // tutorial
@@ -1224,6 +1228,10 @@ export {
         enhancecustomerengagementwithwhatsapplivech,
         whatsappmanageflowincelitix,
         mmliteinwhatsappbusinessapi,
+        managingmultipleagentson,
+        managingmultipleagents,
+        trackroiwiththecelitix,
+        celitixworkflowensuring,
         // Tutorial
 
         // WhatsappChatbot

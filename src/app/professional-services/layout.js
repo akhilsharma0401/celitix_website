@@ -5,6 +5,10 @@ export const metadata = {
   alternates: {
     canonical: "https://www.celitix.com/professional-services",
   },
+  openGraph: {
+  title: "SMS & Call Services for Professional Services | Celitix",
+  description: "Empower professional services with Celitix SMS and call solutions to manage client communication, alerts, reminders, follow-ups, and support efficiently.",
+},
 };
 
 export default function Layout({ children }) {

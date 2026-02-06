@@ -5,6 +5,10 @@ export const metadata = {
   alternates: {
     canonical: "https://www.celitix.com/tech-startups",
   },
+   openGraph: {
+  title: "Customer Engagement Platform for Tech Startups | Celitix",
+  description: "Speed up onboarding, automate support, and scale customer engagement. Celitix helps tech startups connect smarter across channels.",
+},
 };
 
 export default function Layout({ children }) {

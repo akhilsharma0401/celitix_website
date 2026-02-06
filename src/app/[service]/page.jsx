@@ -16,23 +16,34 @@ export default async function SMS({ params }) {
       "Break free from the limitations of SMS marketing. Engage users with buttons, media, and branded messages via Celitix’s RCS platform.",
     link: `https://www.celitix.com/${service}`,
 
+    openGraph: {
+  title: "RCS Business Messaging | Celitix",
+  description: "Break free from the limitations of SMS marketing. Engage users with buttons, media, and branded messages via Celitix’s RCS platform.",
+},
   };
   const WhatsAppMetaData = {
     title: `WhatsApp Business API & Chatbots | Celitix`,
     description: `Use WhatsApp to grow your business. Reach new heights with Celitix’s enterprise messaging solutions. Chatbots, Click to WhatsApp ads, CRM, & more.`,
     link: `https://www.celitix.com/${service}`,
+    openGraph: {
+  title: "WhatsApp Business API & Chatbots | Celitix",
+  description: "Use WhatsApp to grow your business. Reach new heights with Celitix’s enterprise messaging solutions. Chatbots, Click to WhatsApp ads, CRM, & more.",
+},
   };
   const SMSMetaData = {
     title: "SMS Marketing & OTP Platform | Celitix",
-    description:
-      "Reach anyone, anywhere, instantly. Use Celitix’s SMS platform to deliver OTPs, alerts, and promotional messages and drive results.",
+    description:"Reach anyone, anywhere, instantly. Use Celitix’s SMS platform to deliver OTPs, alerts, and promotional messages and drive results.",
     link: `https://www.celitix.com/${service}`,
+    openGraph: {
+  title: "SMS Marketing & OTP Platform | Celitix",
+  description: "Reach anyone, anywhere, instantly. Use Celitix’s SMS platform to deliver OTPs, alerts, and promotional messages and drive results.",
+},
   };
 
   if (smskey?.includes(service)) {
     return (
       <>
-        <Seo title={SMSMetaData.title} description={SMSMetaData.description} link={SMSMetaData.link} />
+        <Seo title={SMSMetaData.title} description={SMSMetaData.description} link={SMSMetaData.link} openGraph={SMSMetaData.openGraph.title}/>
         <Sms />
       </>
     );
@@ -40,7 +51,7 @@ export default async function SMS({ params }) {
   if (rcskey?.includes(service)) {
     return (
       <>
-        <Seo title={RCSMetaData.title} description={RCSMetaData.description} link={RCSMetaData.link} />
+        <Seo title={RCSMetaData.title} description={RCSMetaData.description} link={RCSMetaData.link} openGraph={RCSMetaData.openGraph.title}/>
         <Rcs />
       </>
     );
@@ -52,6 +63,7 @@ export default async function SMS({ params }) {
           title={WhatsAppMetaData.title}
           description={WhatsAppMetaData.description}
           link={WhatsAppMetaData.link}
+          openGraph={WhatsAppMetaData.openGraph.title}
         />
         <WhatsApp />
       </>

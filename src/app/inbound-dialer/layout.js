@@ -5,6 +5,10 @@ export const metadata = {
   alternates: {
     canonical: "https://www.celitix.com/inbound-dialer",
   },
+  openGraph: {
+  title: "Inbound Dialer(IBD) & IVR Solutions | Celitix",
+  description: "Boost efficiency using inbound dialers and integrated voice response. Route calls automatically, cut hold times, and enhance customer care.",
+},
 };
 
 export default function Layout({ children }) {

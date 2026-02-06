@@ -62,6 +62,14 @@ export async function generateMetadata({ params }) {
         ? `https://www.celitix.com/sms-marketing/${city}`
         : `https://www.celitix.com/sms-marketing`,
     },
+    openGraph: {
+  title: isKnownCity
+      ? ` Bulk SMS Services & SMS Marketing API in ${formattedCity}`
+      : ` Bulk SMS Services & SMS Marketing API | Celitix`,
+  description: isKnownCity
+      ? `Send bulk SMS, automate text marketing, and integrate fast with our SMS API ${formattedCity}. Celitix powers SMS marketing & OTP delivery at scale.`
+      : `Send bulk SMS, automate text marketing, and integrate fast with our SMS API. Celitix powers SMS marketing & OTP delivery at scale.`,
+},
   };
 }
 

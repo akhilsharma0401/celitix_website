@@ -491,6 +491,7 @@ const cards = [
         color: "from-green-600 to-teal-500",
         slug: "whatsapp-business-template-messages-for-healthcare",
     },
+
     {
         icon: <FiBookOpen />,
         category: "WhatsApp API",
@@ -571,6 +572,7 @@ const cards = [
         color: "from-green-600 to-teal-500",
         slug: "limitations-of-whatsapp-co-existence-before-onboarding",
     },
+
     {
         icon: <FiBookOpen />,
         category: "WhatsApp API",
@@ -650,6 +652,71 @@ const cards = [
         desc: "Run marketing campaigns and customer engagement on WhatsApp.",
         color: "from-green-600 to-teal-500",
         slug: "designing-non-robotic-conversation-flows-on-celitix",
+    },
+    
+    {
+        icon: <FiBookOpen />,
+        category: "WhatsApp API",
+        title: "Why Businesses Are Replacing Website Chat to WhatsApp Live Chat",
+        desc: "Run marketing campaigns and customer engagement on WhatsApp.",
+        color: "from-green-600 to-teal-500",
+        slug: "why-businesses-are-replacing-website-chat-to-whatsapp-live-chat",
+    },
+    {
+        icon: <FiBookOpen />,
+        category: "WhatsApp API",
+        title: "WhatsApp Chatbot vs Website Chatbot: What Converts Better?",
+        desc: "Run marketing campaigns and customer engagement on WhatsApp.",
+        color: "from-green-600 to-teal-500",
+        slug: "whatsapp-chatbot-vs-website-chatbot-what-converts-better",
+    },
+    {
+        icon: <FiBookOpen />,
+        category: "WhatsApp API",
+        title: "How Instant WhatsApp Replies Increase Lead Conversion Rates",
+        desc: "Run marketing campaigns and customer engagement on WhatsApp.",
+        color: "from-green-600 to-teal-500",
+        slug: "how-instant-whatsapp-replies-increase-lead-conversion-rates",
+    },
+    {
+        icon: <FiBookOpen />,
+        category: "WhatsApp API",
+        title: "Reducing Agent Load Using WhatsApp Automation",
+        desc: "Run marketing campaigns and customer engagement on WhatsApp.",
+        color: "from-green-600 to-teal-500",
+        slug: "reducing-agent-load-using-whatsapp-automation",
+    },
+    {
+        icon: <FiBookOpen />,
+        category: "WhatsApp API",
+        title: "Managing Multiple Agents on a Single WhatsApp Business Number",
+        desc: "Run marketing campaigns and customer engagement on WhatsApp.",
+        color: "from-green-600 to-teal-500",
+        slug: "managing-multiple-agents-on-a-single-whatsapp-business-number",
+    },
+    {
+        icon: <FiBookOpen />,
+        category: "WhatsApp API",
+        title: "Track ROI with the Celitix Analytics Dashboard",
+        desc: "Run marketing campaigns and customer engagement on WhatsApp.",
+        color: "from-green-600 to-teal-500",
+        slug: "track-roi-with-the-celitix-analytics-dashboard",
+    },
+    {
+        icon: <FiBookOpen />,
+        category: "WhatsApp API",
+        title: "Celitix Workflow: Ensuring Message Delivery with Intelligent Channel Switching",
+        desc: "Run marketing campaigns and customer engagement on WhatsApp.",
+        color: "from-green-600 to-teal-500",
+        slug: "celitix-workflow-ensuring-message-delivery-with-intelligent-channel-switching",
+    },
+    {
+        icon: <FiBookOpen />,
+        category: "WhatsApp API",
+        title: "How WhatsApp Messaging from Google Sheets Works in Celitix",
+        desc: "Run marketing campaigns and customer engagement on WhatsApp.",
+        color: "from-green-600 to-teal-500",
+        slug: "how-whatsapp-messaging-from-google-sheets-works-in-celitix",
     },
 
     // {

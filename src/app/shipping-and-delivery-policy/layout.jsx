@@ -4,6 +4,10 @@ export const metadata = {
   alternates: {
     canonical: "https://www.celitix.com/shipping-and-delivery-policy",
   },
+   openGraph: {
+  title: "Shipping & Delivery Policy | Celitix",
+  description: "Review Celitix’s terms and conditions for using our services and platform. Stay informed about your rights, responsibilities, and service guidelines.",
+},
 };
 
 export default function Layout({ children }) {

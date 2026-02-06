@@ -23,7 +23,7 @@
 
 
 export const Seo = ({ title, description, canonical }) => {
-    
+
 
   // Rebuild query string if present
 
@@ -31,13 +31,19 @@ export const Seo = ({ title, description, canonical }) => {
     title: `${title}`,
     description: `${description}`,
     canonical: `${canonical}`,
+    openGraph: {
+    title,
+      description,
+    },
   };
- 
+
   return (
     <>
       <title>{metadata.title}</title>
       <meta name="description" content={metadata.description} />
-       <link rel="canonical" href={metadata.canonical} />
+      <link rel="canonical" href={metadata.canonical} />
+      <meta property="og:title" content={metadata.openGraph.title} />
+      <meta property="og:description" content={metadata.openGraph.description} />
     </>
   );
 };
