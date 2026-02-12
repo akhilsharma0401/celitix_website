@@ -101,7 +101,7 @@ const Landingpagel1 = () => {
     setButtonLabel("Resend");
 
     if (resendTimer === 0) {
-      const res = await sendOtp(phone);
+      const res = await sendOtp(phone, form.firstName);
       if (res?.data?.result !== "success") {
         toast.error("Error Sending OTP. Please try again later.");
       }

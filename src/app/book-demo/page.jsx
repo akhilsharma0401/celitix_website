@@ -142,8 +142,9 @@ const BookDemo = () => {
 
         if (resendTimer > 0) return; // Prevent multiple calls
 
-        const res = await sendOtp(phone);
+        const res = await sendOtp(phone, form.firstName);
 
+        console.log("res", res)
         if (res?.data?.result !== "success") {
             toast.error("Error Sending OTP. Please try again later.");
             return;
@@ -190,24 +191,55 @@ const BookDemo = () => {
     //     }
     // };
 
+   useEffect(() => {
+  if (!isOtpSent) return;
+  if (!("OTPCredential" in window)) return;
+
+  const controller = new AbortController();
+
+  navigator.credentials
+    .get({
+      otp: { transport: ["sms"] },
+      signal: controller.signal,
+    })
+    .then((otp) => {
+      if (otp?.code) {
+        const otpCode = otp.code.replace(/\D/g, "").slice(0, 6);
+
+        const otpArray = otpCode.split("");
+        setOtp(otpArray);
+
+        handleverifyOtp(otpCode);
+      }
+    })
+    .catch(() => {});
+
+  return () => controller.abort();
+}, [isOtpSent]);
+
     const handleOtpChange = (index, value) => {
-        if (!/^\d?$/.test(value)) return;
+        if (!/^\d*$/.test(value)) return;
+
+        // If user pastes full OTP
+        if (value.length === 6) {
+            const otpArray = value.split("");
+            setOtp(otpArray);
+            handleverifyOtp(value);
+            return;
+        }
 
         const updatedOtp = [...otp];
         updatedOtp[index] = value;
         setOtp(updatedOtp);
 
-        // Move forward
         if (value && index < 5) {
             otpRefs.current[index + 1]?.focus();
         }
 
-        // Move back on delete
         if (!value && index > 0) {
             otpRefs.current[index - 1]?.focus();
         }
 
-        // ✅ Check if all boxes filled
         if (updatedOtp.every((digit) => digit !== "") && !isVerifying) {
             setIsVerifying(true);
             handleverifyOtp(updatedOtp.join(""));
@@ -616,15 +648,16 @@ const BookDemo = () => {
                                     <div className="flex items-center gap-2 flex-wrap mt-2">
                                         {otp.map((digit, index) => (
                                             <input
-                                                key={index}
-                                                ref={(el) => (otpRefs.current[index] = el)}
-                                                type="text"
-                                                maxLength={1}
-                                                inputMode="numeric"
-                                                value={digit}
-                                                onChange={(e) => handleOtpChange(index, e.target.value)}
-                                                className="w-10 h-10 text-center border border-gray-300 rounded"
-                                            />
+  key={index}
+  ref={(el) => (otpRefs.current[index] = el)}
+  type="text"
+  maxLength={1}
+  inputMode="numeric"
+  autoComplete={index === 0 ? "one-time-code" : "off"}
+  value={digit}
+  onChange={(e) => handleOtpChange(index, e.target.value)}
+  className="w-10 h-10 text-center border border-gray-300 rounded"
+/>
                                         ))}
                                     </div>
                                 )}

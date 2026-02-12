@@ -77,10 +77,11 @@ const FormPopup = ({ visible, onHide }) => {
     // Set verified if validations pass
     setButtonLabel("Resend");
 
-    const res = await sendOtp(phone);
-    if (res?.data?.result !== "success") {
-      toast.error("Error Sending OTP. Please try again later.");
-    }
+    const res = await sendOtp(phone, form.firstName);
+    if (!res || res?.data?.result !== "success") {
+  toast.error("Error Sending OTP. Please try again later.");
+  return;
+}
 
     setIsOtpSent(true);
     setResendTimer(30);
