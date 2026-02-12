@@ -191,31 +191,34 @@ const BookDemo = () => {
     //     }
     // };
 
-   useEffect(() => {
-  if (!isOtpSent) return;
-  if (!("OTPCredential" in window)) return;
+    useEffect(() => {
+        if (!isOtpSent) return;
+        if (!("OTPCredential" in window)) return;
 
-  const controller = new AbortController();
+        const controller = new AbortController();
 
-  navigator.credentials
-    .get({
-      otp: { transport: ["sms"] },
-      signal: controller.signal,
-    })
-    .then((otp) => {
-      if (otp?.code) {
-        const otpCode = otp.code.replace(/\D/g, "").slice(0, 6);
+        navigator.credentials
+            .get({
+                otp: { transport: ["sms"] },
+                signal: controller.signal,
+            })
+            .then((otp) => {
+                console.log("otp?.code",otp)
+                if (otp?.code) {
+                    const otpCode = otp.code.replace(/\D/g, "").slice(0, 6);
+                    console.log("otp?.code", otpCode)
 
-        const otpArray = otpCode.split("");
-        setOtp(otpArray);
+                    const otpArray = otpCode.split("");
+                    setOtp(otpArray);
+                    otpRefs.current[otpArray.length - 1]?.focus();
 
-        handleverifyOtp(otpCode);
-      }
-    })
-    .catch(() => {});
+                    handleverifyOtp(otpCode);
+                }
+            })
+            .catch(() => { });
 
-  return () => controller.abort();
-}, [isOtpSent]);
+        return () => controller.abort();
+    }, [isOtpSent]);
 
     const handleOtpChange = (index, value) => {
         if (!/^\d*$/.test(value)) return;
@@ -644,20 +647,26 @@ const BookDemo = () => {
                                     </div>
                                 )}
 
+                                <input
+                                    id="otp-hidden"
+                                    type="text"
+                                    inputMode="numeric"
+                                    autoComplete="one-time-code"
+                                    className="absolute opacity-0 pointer-events-none"
+                                />
                                 {isOtpSent && (
                                     <div className="flex items-center gap-2 flex-wrap mt-2">
                                         {otp.map((digit, index) => (
                                             <input
-  key={index}
-  ref={(el) => (otpRefs.current[index] = el)}
-  type="text"
-  maxLength={1}
-  inputMode="numeric"
-  autoComplete={index === 0 ? "one-time-code" : "off"}
-  value={digit}
-  onChange={(e) => handleOtpChange(index, e.target.value)}
-  className="w-10 h-10 text-center border border-gray-300 rounded"
-/>
+                                                key={index}
+                                                ref={(el) => (otpRefs.current[index] = el)}
+                                                type="text"
+                                                maxLength={1}
+                                                inputMode="numeric"
+                                                value={digit}
+                                                onChange={(e) => handleOtpChange(index, e.target.value)}
+                                                className="w-10 h-10 text-center border border-gray-300 rounded"
+                                            />
                                         ))}
                                     </div>
                                 )}
