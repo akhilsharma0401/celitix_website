@@ -5,12 +5,12 @@ import { pushToDataLayer } from '../../utils/gtm.js';
 import Image from 'next/image';
 import Script from 'next/script';
 const ThankYou = () => {
-  useEffect(() => {
-    pushToDataLayer({
-      event: "thank_you_page",
-      page_path: window.location.pathname,
-    });
-  }, []);
+  // useEffect(() => {
+  //   pushToDataLayer({
+  //     event: "thank_you_page",
+  //     page_path: window.location.pathname,
+  //   });
+  // }, []);
   return (
     <div>
       <Script

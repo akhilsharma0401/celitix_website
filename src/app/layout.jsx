@@ -78,6 +78,8 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-N25JVKV4MH');
           `}
         </Script> */}
+
+
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-1009530955"
           strategy="afterInteractive"
@@ -91,10 +93,6 @@ export default function RootLayout({ children }) {
           `}
         </Script>
 
-       
-
-
-        
 
         {/* Cloudflare Turnstile */}
         <Script

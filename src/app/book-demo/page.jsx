@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -14,9 +14,14 @@ import axios from "axios";
 import { pushToDataLayer } from "../../utils/gtm.js";
 import Script from "next/script";
 
+import { Dialog } from "primereact/dialog";
+import "primereact/resources/themes/lara-light-indigo/theme.css";
+import "primereact/resources/primereact.min.css";
+import "primeicons/primeicons.css";
+
 // const url = import.meta.env.VITE_URL
-    const url = process.env.NEXT_PUBLIC_API_URL;
-    // const url = "https://celitix.com:3001";
+const url = process.env.NEXT_PUBLIC_API_URL;
+// const url = "https://celitix.com:3001";
 const BookDemo = () => {
     const router = useRouter();
     const [form, setForm] = useState({
@@ -42,8 +47,16 @@ const BookDemo = () => {
     const [isFetching, setIsFetching] = useState(false);
 
     const otpRefs = useRef([]);
+    const [isVerifying, setIsVerifying] = useState(false);
+    const [showDialog, setShowDialog] = useState(false);
 
-    
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowDialog(true);
+        }, 8000); // 5 seconds
+
+        return () => clearTimeout(timer);
+    }, []);
 
     const validatePhoneNumber = (phone) => /^[0-9]{10,13}$/.test(phone);
     const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -58,35 +71,97 @@ const BookDemo = () => {
         setIsTouched(true);
     };
 
-    const handlesendOtp = async () => {
-        const phone = form.phone.trim();
-        const email = form.email.trim();
+    // const handlesendOtp = async () => {
+    //     const phone = form.phone.trim();
+    //     const email = form.email.trim();
+
+    //     if (!validatePhoneNumber(phone)) {
+    //         toast.error("Enter a valid phone number.");
+    //         return;
+    //     }
+
+    //     if (!validateEmail(email)) {
+    //         toast.error("Enter a valid email address.");
+    //         return;
+    //     }
+
+    //     // Set verified if validations pass
+    //     setButtonLabel("Resend");
+
+    //     if (resendTimer === 0) {
+    //         ;
+    //         const res = await sendOtp(phone);
+    //         if (res?.data?.result !== "success") {
+    //             toast.error("Error Sending OTP. Please try again later.");
+    //         }
+    //         toast.success("OTP sent successfully!");
+    //         setOtp(Array(6).fill(""));
+    //         setIsOtpSent(true);
+    //         setResendTimer(30);
+    //         startResendTimer();
+    //     }
+    // };
+
+    // const handlesendOtp = async (phoneNumber) => {
+    //     const phone = phoneNumber || form.phone.trim();
+    //     const email = form.email.trim();
+
+    //     if (!validatePhoneNumber(phone)) {
+    //         toast.error("Enter a valid phone number.");
+    //         return;
+    //     }
+
+    //     if (!validateEmail(email)) {
+    //         toast.error("Enter a valid email address.");
+    //         return;
+    //     }
+
+    //     if (resendTimer === 0) {
+    //         const res = await sendOtp(phone);
+
+    //         if (res?.data?.result !== "success") {
+    //             toast.error("Error Sending OTP. Please try again later.");
+    //             return;
+    //         }
+
+    //         toast.success("OTP sent successfully!");
+    //         setOtp(Array(6).fill(""));
+    //         setIsOtpSent(true);
+    //         setResendTimer(30);
+    //         startResendTimer();
+    //     }
+    // };
+
+    const handlesendOtp = async (phoneNumber) => {
+        const phone = phoneNumber || form.phone.trim();
 
         if (!validatePhoneNumber(phone)) {
             toast.error("Enter a valid phone number.");
             return;
         }
 
-        if (!validateEmail(email)) {
-            toast.error("Enter a valid email address.");
+        if (resendTimer > 0) return; // Prevent multiple calls
+
+        const res = await sendOtp(phone);
+
+        if (res?.data?.result !== "success") {
+            toast.error("Error Sending OTP. Please try again later.");
             return;
         }
 
-        // Set verified if validations pass
-        setButtonLabel("Resend");
+        toast.success("OTP sent successfully!");
+        setIsOtpSent(true);
+        setResendTimer(30);
 
-        if (resendTimer === 0) {
-            ;
-            const res = await sendOtp(phone);
-            if (res?.data?.result !== "success") {
-                toast.error("Error Sending OTP. Please try again later.");
-            }
-            toast.success("OTP sent successfully!");
-            setOtp(Array(6).fill(""));
-            setIsOtpSent(true);
-            setResendTimer(30);
-            startResendTimer();
-        }
+        const interval = setInterval(() => {
+            setResendTimer((prev) => {
+                if (prev <= 1) {
+                    clearInterval(interval);
+                    return 0;
+                }
+                return prev - 1;
+            });
+        }, 1000);
     };
 
     const startResendTimer = () => {
@@ -101,53 +176,103 @@ const BookDemo = () => {
         }, 1000);
     };
 
-    const handleOtpChange = (index, value) => {
-        if (/^\d?$/.test(value)) {
-            const updatedOtp = [...otp];
-            updatedOtp[index] = value;
-            setOtp(updatedOtp);
+    // const handleOtpChange = (index, value) => {
+    //     if (/^\d?$/.test(value)) {
+    //         const updatedOtp = [...otp];
+    //         updatedOtp[index] = value;
+    //         setOtp(updatedOtp);
 
-            if (value !== "" && index < otp.length - 1) {
-                otpRefs.current[index + 1].focus();
-            } else if (value === "" && index > 0) {
-                otpRefs.current[index - 1].focus();
-            }
+    //         if (value !== "" && index < otp.length - 1) {
+    //             otpRefs.current[index + 1].focus();
+    //         } else if (value === "" && index > 0) {
+    //             otpRefs.current[index - 1].focus();
+    //         }
+    //     }
+    // };
+
+    const handleOtpChange = (index, value) => {
+        if (!/^\d?$/.test(value)) return;
+
+        const updatedOtp = [...otp];
+        updatedOtp[index] = value;
+        setOtp(updatedOtp);
+
+        // Move forward
+        if (value && index < 5) {
+            otpRefs.current[index + 1]?.focus();
+        }
+
+        // Move back on delete
+        if (!value && index > 0) {
+            otpRefs.current[index - 1]?.focus();
+        }
+
+        // ✅ Check if all boxes filled
+        if (updatedOtp.every((digit) => digit !== "") && !isVerifying) {
+            setIsVerifying(true);
+            handleverifyOtp(updatedOtp.join(""));
         }
     };
 
-    const handleverifyOtp = async () => {
-        const phone = form.phone;
-        const enteredOtp = otp.join("");
-        const res = await verifyOtp({
-            mobile: phone,
-            otp: enteredOtp,
-        });
-        if (res.data.result !== "success") {
-            toast.error("Please enter valid OTP");
-            return;
+    // const handleverifyOtp = async () => {
+    //     const phone = form.phone;
+    //     const enteredOtp = otp.join("");
+    //     const res = await verifyOtp({
+    //         mobile: phone,
+    //         otp: enteredOtp,
+    //     });
+    //     if (res.data.result !== "success") {
+    //         toast.error("Please enter valid OTP");
+    //         return;
+    //     }
+    //     toast.success("OTP Verified successfully");
+
+    //     // setIsOtpVerified(true);
+    //     setIsClicked(true);
+    //     setIsOtpSent(false);
+    //     setIsOtpVerified(true);
+    //     setOtp(Array(6).fill(""));
+    //     // const validOtp = '123456';
+
+    //     // if (enteredOtp.length < 6) {
+    //     //   toast.error('Please enter the complete 6-digit OTP.');
+    //     //   return;
+    //     // }
+
+    //     // if (enteredOtp === validOtp) {
+    //     //   toast.success('OTP Verified Successfully!');
+    //     //   setIsOtpSent(false);
+    //     //   setIsOtpVerified(true);
+    //     //   setOtp(Array(6).fill(''));
+    //     // } else {
+    //     //   toast.error('Invalid OTP. Please try again.');
+    //     // }
+    // };
+
+    const handleverifyOtp = async (autoOtp) => {
+        const enteredOtp = autoOtp || otp.join("");
+
+        if (enteredOtp.length !== 6) return;
+
+        try {
+            const res = await verifyOtp({
+                mobile: form.phone,
+                otp: enteredOtp,
+            });
+
+            if (res?.data?.result !== "success") {
+                toast.error("Invalid OTP");
+                return;
+            }
+
+            toast.success("OTP Verified Successfully");
+
+            setIsOtpSent(false);
+            setIsOtpVerified(true);
+            setOtp(Array(6).fill(""));
+        } catch (err) {
+            toast.error("OTP verification failed");
         }
-        toast.success("OTP Verified successfully");
-
-        // setIsOtpVerified(true);
-        setIsClicked(true);
-        setIsOtpSent(false);
-        setIsOtpVerified(true);
-        setOtp(Array(6).fill(""));
-        // const validOtp = '123456';
-
-        // if (enteredOtp.length < 6) {
-        //   toast.error('Please enter the complete 6-digit OTP.');
-        //   return;
-        // }
-
-        // if (enteredOtp === validOtp) {
-        //   toast.success('OTP Verified Successfully!');
-        //   setIsOtpSent(false);
-        //   setIsOtpVerified(true);
-        //   setOtp(Array(6).fill(''));
-        // } else {
-        //   toast.error('Invalid OTP. Please try again.');
-        // }
     };
 
 
@@ -228,12 +353,12 @@ const BookDemo = () => {
             }
             // setIsSubmitting(true);
             setIsFetching(false);
-            pushToDataLayer({
-                event: "form_submit",
-                form_id: "form_1",
-                form_name: "Form 1",
-                page_path: window.location.pathname,
-            });
+            // pushToDataLayer({
+            //     event: "form_submit",
+            //     form_id: "form_1",
+            //     form_name: "Form 1",
+            //     page_path: window.location.pathname,
+            // });
             // setSubmitLabel("Submitting...");
             toast.success("Form submitted successfully!");
             router.push("/thank-you");
@@ -280,25 +405,25 @@ const BookDemo = () => {
     // 2nd section logos array
     return (
         <>
-         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-1009530955"
-          strategy="afterInteractive"
-        />
-        <Script id="gtag-init" strategy="afterInteractive">
-          {`
+            <Script
+                src="https://www.googletagmanager.com/gtag/js?id=AW-1009530955"
+                strategy="afterInteractive"
+            />
+            <Script id="gtag-init" strategy="afterInteractive">
+                {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){ dataLayer.push(arguments); }
             gtag('js', new Date());
             gtag('config', 'AW-1009530955');
           `}
-        </Script>
+            </Script>
 
             <div className="bg-white pt-25 md:pt-35 py-5 md:py-16 px-1 lg:px-12">
                 <div className="max-w-7xl 2xl:max-w-8xl mx-auto grid lg:grid-cols-2 gap-10">
                     {/* Left Section */}
-                    <div>
+                    <div className="order-2 md:order-1">
                         <div className="px-5">
-                            <p className="inline-block bg-purple-700 text-white text-md sub-heading px-4 py-1 rounded-full uppercase tracking-wide font-bold mb-3">Contact sales</p>
+                            <p className="inline-block bg-purple-700 text-white text-md sub-heading px-4 py-1 rounded-full uppercase tracking-wide font-bold mb-3">Book A Free Demo</p>
                             <h1 className="text-2xl 2xl:text-[42px] md:text-4xl font-bold text-gray-900 mb-6 leading-tight heading">
                                 Unlock Real-Time Engagement with Next-Gen Messaging Solutions—Powered By Celitix.
                             </h1>
@@ -348,68 +473,72 @@ const BookDemo = () => {
                     </div>
 
                     {/* Right Section (Form) */}
-                    <div className="border rounded-xl p-8 shadow-md bg-white">
-                        <form className="space-y-5">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div>
-                                    <label className="block font-medium text-gray-700 mb-1">
-                                        First Name <span className="text-red-500">*</span>
-                                    </label>
-                                    <input
-                                        type="text"
-                                        className="w-full border border-gray-300 rounded-md p-2.5 focus:ring-2 focus:ring-blue-500 outline-none"
-                                        name="fname"
-                                        placeholder="First Name"
-                                        value={form.firstName}
-                                        onChange={(e) =>
-                                            setForm({ ...form, firstName: e.target.value })
-                                        }
-                                    />
+                    <div className="order-1 md:order-2">
+                        {/* <div className=""> */}
+                        <p className="inline-block md:hidden bg-purple-700 text-white text-md sub-heading px-4 py-1 rounded-full uppercase tracking-wide font-bold mb-3">Book A Free Demo</p>
+                        {/* </div> */}
+                        <div className="border rounded-xl p-4 md:p-8 shadow-md bg-white ">
+                            <form className="space-y-5">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label className="block font-medium text-gray-700 mb-1">
+                                            First Name <span className="text-red-500">*</span>
+                                        </label>
+                                        <input
+                                            type="text"
+                                            className="w-full border border-gray-300 rounded-md p-2.5 focus:ring-2 focus:ring-blue-500 outline-none"
+                                            name="fname"
+                                            placeholder="First Name"
+                                            value={form.firstName}
+                                            onChange={(e) =>
+                                                setForm({ ...form, firstName: e.target.value })
+                                            }
+                                        />
+                                    </div>
+                                    <div>
+                                        <label className="block font-medium text-gray-700 mb-1">
+                                            Last Name <span className="text-red-500">*</span>
+                                        </label>
+                                        <input
+                                            type="text"
+                                            className="w-full border border-gray-300 rounded-md p-2.5 focus:ring-2 focus:ring-blue-500 outline-none"
+                                            name="lname"
+                                            placeholder="Last Name"
+                                            value={form.lastName}
+                                            onChange={(e) =>
+                                                setForm({ ...form, lastName: e.target.value })
+                                            }
+                                        />
+                                    </div>
                                 </div>
-                                <div>
-                                    <label className="block font-medium text-gray-700 mb-1">
-                                        Last Name <span className="text-red-500">*</span>
-                                    </label>
-                                    <input
-                                        type="text"
-                                        className="w-full border border-gray-300 rounded-md p-2.5 focus:ring-2 focus:ring-blue-500 outline-none"
-                                        name="lname"
-                                        placeholder="Last Name"
-                                        value={form.lastName}
-                                        onChange={(e) =>
-                                            setForm({ ...form, lastName: e.target.value })
-                                        }
-                                    />
-                                </div>
-                            </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div>
-                                    <label className="block font-medium text-gray-700 mb-1">
-                                        Email Address <span className="text-red-500">*</span>
-                                    </label>
-                                    <input
-                                        type="email"
-                                        className={`w-full rounded-md p-2.5 outline-none focus:ring-2 ${!isTouched
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label className="block font-medium text-gray-700 mb-1">
+                                            Email Address <span className="text-red-500">*</span>
+                                        </label>
+                                        <input
+                                            type="email"
+                                            className={`w-full rounded-md p-2.5 outline-none focus:ring-2 ${!isTouched
                                                 ? "border border-gray-300 focus:ring-blue-300"
                                                 : isValid
                                                     ? "border border-green-500 focus:ring-green-300"
                                                     : "border border-red-500 focus:ring-red-300"
-                                            }`}
-                                        name="email"
-                                        placeholder="Email Address"
-                                        value={form.email}
-                                        onChange={handleEmailChange}
-                                        onBlur={handleEmailBlur}
-                                        disabled={isOtpVerified}
-                                    />
-                                </div>
-                                <div>
-                                    <label className="block font-medium text-gray-700 mb-1">
-                                        Phone Number <span className="text-red-500">*</span>
-                                    </label>
-                                    <div className="flex gap-2">
-                                        <input
+                                                }`}
+                                            name="email"
+                                            placeholder="Email Address"
+                                            value={form.email}
+                                            onChange={handleEmailChange}
+                                            onBlur={handleEmailBlur}
+                                            disabled={isOtpVerified}
+                                        />
+                                    </div>
+                                    <div>
+                                        <label className="block font-medium text-gray-700 mb-1">
+                                            Phone Number <span className="text-red-500">*</span>
+                                        </label>
+                                        <div className="flex gap-2">
+                                            {/* <input
                                             type="text"
                                             className="w-full border border-gray-300 rounded-md p-2.5 focus:ring-2 focus:ring-blue-500 outline-none"
                                             name="phone"
@@ -424,7 +553,8 @@ const BookDemo = () => {
                                                 })
                                             }
                                         />
-                                        {!isClicked && (
+
+                                         {!isClicked && (
                                             <UniversalButton
                                                 label={buttonLabel}
                                                 type="button"
@@ -435,17 +565,71 @@ const BookDemo = () => {
                                                 onClick={handlesendOtp}
                                                 className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 rounded hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] disabled:bg-gray-300 disabled:text-gray-700 disabled:cursor-not-allowed"
                                             />
-                                        )}
-                                    </div>
-                                </div>
+                                        )} */}
 
-                            </div>
-                            {isOtpSent && resendTimer > 0 && (
-                                <div className="text-sm text-gray-600 mt-1">
-                                    Resend in {resendTimer} seconds
+
+
+                                            <input
+                                                type="text"
+                                                className="w-full border border-gray-300 rounded-md p-2.5 focus:ring-2 focus:ring-blue-500 outline-none"
+                                                name="phone"
+                                                placeholder="Phone No."
+                                                disabled={isOtpVerified}
+                                                value={form.phone}
+                                                onChange={(e) => {
+                                                    const cleanedValue = e.target.value.replace(/[^\d]/g, "").slice(0, 10);
+
+                                                    setForm({
+                                                        ...form,
+                                                        phone: cleanedValue,
+                                                    });
+
+                                                    // Auto send OTP when 10 digits entered
+                                                    if (cleanedValue.length === 10 && !isOtpSent) {
+                                                        handlesendOtp(cleanedValue);
+                                                    }
+                                                }}
+                                            />
+
+                                            {isOtpSent && resendTimer === 0 && (
+                                                <UniversalButton
+                                                    label="Resend"
+                                                    type="button"
+                                                    variant="brutal"
+                                                    disabled={!validatePhoneNumber(form.phone)}
+                                                    onClick={() => handlesendOtp(form.phone)}
+                                                    className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 rounded hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6]"
+                                                />
+                                            )}
+
+                                        </div>
+                                    </div>
+
                                 </div>
-                            )}
-                            {isOtpSent && (
+                                {isOtpSent && resendTimer > 0 && (
+                                    <div className="text-sm text-gray-600 mt-1">
+                                        Resend in {resendTimer} seconds
+                                    </div>
+                                )}
+
+                                {isOtpSent && (
+                                    <div className="flex items-center gap-2 flex-wrap mt-2">
+                                        {otp.map((digit, index) => (
+                                            <input
+                                                key={index}
+                                                ref={(el) => (otpRefs.current[index] = el)}
+                                                type="text"
+                                                maxLength={1}
+                                                inputMode="numeric"
+                                                value={digit}
+                                                onChange={(e) => handleOtpChange(index, e.target.value)}
+                                                className="w-10 h-10 text-center border border-gray-300 rounded"
+                                            />
+                                        ))}
+                                    </div>
+                                )}
+
+                                {/* {isOtpSent && (
                                 <div className="flex items-center gap-2 flex-wrap mt-2">
                                     {otp.map((digit, index) => (
                                         <input
@@ -467,82 +651,82 @@ const BookDemo = () => {
                                         className="bg-[#9B44B6] border-[#9B44B6] text-white hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] px-3 py-1 rounded-md mx-1"
                                     />
                                 </div>
-                            )}
+                            )} */}
 
 
 
 
-                            <div>
-                                <label className="block font-medium text-gray-700 mb-1">
-                                    Company Name <span className="text-red-500"></span>
-                                </label>
-                                <input
-                                    type="text"
-                                    className="w-full border border-gray-300 rounded-md p-2.5 focus:ring-2 focus:ring-blue-500 outline-none"
-                                    name="company"
-                                    placeholder="Company Name"
-                                    value={form.company}
-                                    onChange={(e) =>
-                                        setForm({ ...form, company: e.target.value })
-                                    }
-                                />
-                            </div>
-                            <div>
-                                <label className="block font-medium text-gray-700 mb-1">
-                                    Service <span className="text-red-500">*</span>
-                                </label>
-                                <select
-                                    name="service"
-                                    value={form.service}
-                                    onChange={(e) =>
-                                        setForm({ ...form, service: e.target.value })
-                                    }
-                                    className="w-full border border-gray-300 rounded-md p-2.5 focus:ring-2 focus:ring-blue-500 outline-none"
-                                >
-                                    <option value="" disabled>
-                                        Select Service
-                                    </option>
-                                    <option value="WhatsApp Business API">
-                                        WhatsApp Business API
-                                    </option>
-                                    <option value="RCS Business Messaging">
-                                        RCS Business Messaging
-                                    </option>
-                                    <option value="SMS Solution">SMS Solution</option>
-                                    <option value="IVR/Missed Call">
-                                        Virtual Receptionist (IVR)/Missed Call
-                                    </option>
-                                    <option value="User Verification">Chatbot Services</option>
-                                    <option value="API Integration">API Integrations</option>
-                                    <option value="2-way SMS">2 Way SMS (Long/Shortcode)</option>
-                                    <option value="Missed Call Services">
-                                        Missed Call Services
-                                    </option>
-                                    <option value="Other CPaaS Solutions">
-                                        Other CPaaS Solutions
-                                    </option>
-                                </select>
-                            </div>
-                            <div>
-                                <label className="block font-medium text-gray-700 mb-1">
-                                    How can we help you? <span className="text-red-500"></span>
-                                </label>
-                                <textarea
-                                    rows="4"
-                                    className="w-full border border-gray-300 rounded-md p-2.5 focus:ring-2 focus:ring-blue-500 outline-none"
+                                <div>
+                                    <label className="block font-medium text-gray-700 mb-1">
+                                        Company Name <span className="text-red-500"></span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        className="w-full border border-gray-300 rounded-md p-2.5 focus:ring-2 focus:ring-blue-500 outline-none"
+                                        name="company"
+                                        placeholder="Company Name"
+                                        value={form.company}
+                                        onChange={(e) =>
+                                            setForm({ ...form, company: e.target.value })
+                                        }
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block font-medium text-gray-700 mb-1">
+                                        Service <span className="text-red-500">*</span>
+                                    </label>
+                                    <select
+                                        name="service"
+                                        value={form.service}
+                                        onChange={(e) =>
+                                            setForm({ ...form, service: e.target.value })
+                                        }
+                                        className="w-full border border-gray-300 rounded-md p-2.5 focus:ring-2 focus:ring-blue-500 outline-none"
+                                    >
+                                        <option value="" disabled>
+                                            Select Service
+                                        </option>
+                                        <option value="WhatsApp Business API">
+                                            WhatsApp Business API
+                                        </option>
+                                        <option value="RCS Business Messaging">
+                                            RCS Business Messaging
+                                        </option>
+                                        <option value="SMS Solution">SMS Solution</option>
+                                        <option value="IVR/Missed Call">
+                                            Virtual Receptionist (IVR)/Missed Call
+                                        </option>
+                                        <option value="User Verification">Chatbot Services</option>
+                                        <option value="API Integration">API Integrations</option>
+                                        <option value="2-way SMS">2 Way SMS (Long/Shortcode)</option>
+                                        <option value="Missed Call Services">
+                                            Missed Call Services
+                                        </option>
+                                        <option value="Other CPaaS Solutions">
+                                            Other CPaaS Solutions
+                                        </option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label className="block font-medium text-gray-700 mb-1">
+                                        How can we help you? <span className="text-red-500"></span>
+                                    </label>
+                                    <textarea
+                                        rows="4"
+                                        className="w-full border border-gray-300 rounded-md p-2.5 focus:ring-2 focus:ring-blue-500 outline-none"
 
-                                    name="message"
-                                    placeholder="How can we help you?"
-                                    value={form.message}
-                                    onChange={(e) => setForm({ ...form, message: e.target.value })}
-                                />
-                            </div>
+                                        name="message"
+                                        placeholder="How can we help you?"
+                                        value={form.message}
+                                        onChange={(e) => setForm({ ...form, message: e.target.value })}
+                                    />
+                                </div>
 
-                            <div className="">
-                                <TurnstileComponent onChange={handleTurnstileChange} />
-                            </div>
+                                <div className="">
+                                    <TurnstileComponent onChange={handleTurnstileChange} />
+                                </div>
 
-                            {/* <button
+                                {/* <button
                                 type="submit"
                                 className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-md transition"
                                 disabled={isFetching}
@@ -550,17 +734,17 @@ const BookDemo = () => {
                             >
                                 {isFetching ? "Submitting..." : "Submit"}
                             </button> */}
-                            <UniversalButton
-                                // label={submitLabel} // Dynamically change the label based on the state
-                                label={isFetching ? "Submitting..." : "Contact Sales"}
-                                type="submit"
-                                variant="brutal"
-                                className="bg-[#9B44B6] border-[#9B44B6] text-white hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] px-4 py-2 rounded-md w-full  font-medium  transition"
-                                disabled={isFetching}
-                                onClick={handleSubmit}
-                            />
+                                <UniversalButton
+                                    // label={submitLabel} // Dynamically change the label based on the state
+                                    label={isFetching ? "Submitting..." : "Book A Free Demo"}
+                                    type="submit"
+                                    variant="brutal"
+                                    className="bg-[#9B44B6] border-[#9B44B6] text-white hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] px-4 py-2 rounded-md w-full  font-medium  transition"
+                                    disabled={isFetching}
+                                    onClick={handleSubmit}
+                                />
 
-                            {/* <p className="text-xs text-gray-500 mt-3">
+                                {/* <p className="text-xs text-gray-500 mt-3">
                                 You can unsubscribe or update your preferences at any time. Your
                                 personal data will be processed in accordance with the{" "}
                                 <a
@@ -571,7 +755,8 @@ const BookDemo = () => {
                                 </a>
                                 .
                             </p> */}
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -611,6 +796,301 @@ const BookDemo = () => {
                     </Swiper>
                 </div>
             </div>
+            <Dialog
+                header="Book A Free Demo"
+                visible={showDialog}
+                style={{ width: "90vw", maxWidth: "700px" }}
+                onHide={() => setShowDialog(false)}
+                modal
+                draggable={false}
+                resizable={false}
+                className="rounded-xl"
+            >
+                <div className="border rounded-xl p-4 md:p-6 shadow-md bg-white">
+                    <form className="space-y-5" onSubmit={handleSubmit}>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label className="block font-medium text-gray-700 mb-1">
+                                    First Name <span className="text-red-500">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    className="w-full border border-gray-300 rounded-md p-2.5 focus:ring-2 focus:ring-blue-500 outline-none"
+                                    name="fname"
+                                    placeholder="First Name"
+                                    value={form.firstName}
+                                    onChange={(e) =>
+                                        setForm({ ...form, firstName: e.target.value })
+                                    }
+                                />
+                            </div>
+                            <div>
+                                <label className="block font-medium text-gray-700 mb-1">
+                                    Last Name <span className="text-red-500">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    className="w-full border border-gray-300 rounded-md p-2.5 focus:ring-2 focus:ring-blue-500 outline-none"
+                                    name="lname"
+                                    placeholder="Last Name"
+                                    value={form.lastName}
+                                    onChange={(e) =>
+                                        setForm({ ...form, lastName: e.target.value })
+                                    }
+                                />
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label className="block font-medium text-gray-700 mb-1">
+                                    Email Address <span className="text-red-500">*</span>
+                                </label>
+                                <input
+                                    type="email"
+                                    className={`w-full rounded-md p-2.5 outline-none focus:ring-2 ${!isTouched
+                                        ? "border border-gray-300 focus:ring-blue-300"
+                                        : isValid
+                                            ? "border border-green-500 focus:ring-green-300"
+                                            : "border border-red-500 focus:ring-red-300"
+                                        }`}
+                                    name="email"
+                                    placeholder="Email Address"
+                                    value={form.email}
+                                    onChange={handleEmailChange}
+                                    onBlur={handleEmailBlur}
+                                    disabled={isOtpVerified}
+                                />
+                            </div>
+                            <div>
+                                <label className="block font-medium text-gray-700 mb-1">
+                                    Phone Number <span className="text-red-500">*</span>
+                                </label>
+                                <div className="flex gap-2">
+                                    {/* <input
+                                            type="text"
+                                            className="w-full border border-gray-300 rounded-md p-2.5 focus:ring-2 focus:ring-blue-500 outline-none"
+                                            name="phone"
+                                            placeholder="Phone No."
+                                            disabled={isOtpVerified}
+                                            value={form.phone}
+                                            onChange={(e) =>
+                                                setForm({
+                                                    ...form,
+                                                    phone: e.target.value.replace(/[^\d]/g, "").slice(0, 13),
+                                                    isOtpVerified: false,
+                                                })
+                                            }
+                                        />
+
+                                         {!isClicked && (
+                                            <UniversalButton
+                                                label={buttonLabel}
+                                                type="button"
+                                                variant="brutal"
+                                                disable={
+                                                    !validatePhoneNumber(form.phone) || resendTimer > 0
+                                                }
+                                                onClick={handlesendOtp}
+                                                className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 rounded hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] disabled:bg-gray-300 disabled:text-gray-700 disabled:cursor-not-allowed"
+                                            />
+                                        )} */}
+
+
+
+                                    <input
+                                        type="text"
+                                        className="w-full border border-gray-300 rounded-md p-2.5 focus:ring-2 focus:ring-blue-500 outline-none"
+                                        name="phone"
+                                        placeholder="Phone No."
+                                        disabled={isOtpVerified}
+                                        value={form.phone}
+                                        onChange={(e) => {
+                                            const cleanedValue = e.target.value.replace(/[^\d]/g, "").slice(0, 10);
+
+                                            setForm({
+                                                ...form,
+                                                phone: cleanedValue,
+                                            });
+
+                                            // Auto send OTP when 10 digits entered
+                                            if (cleanedValue.length === 10 && !isOtpSent) {
+                                                handlesendOtp(cleanedValue);
+                                            }
+                                        }}
+                                    />
+
+                                    {isOtpSent && resendTimer === 0 && (
+                                        <UniversalButton
+                                            label="Resend"
+                                            type="button"
+                                            variant="brutal"
+                                            disabled={!validatePhoneNumber(form.phone)}
+                                            onClick={() => handlesendOtp(form.phone)}
+                                            className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 rounded hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6]"
+                                        />
+                                    )}
+
+                                </div>
+                            </div>
+
+                        </div>
+                        {isOtpSent && resendTimer > 0 && (
+                            <div className="text-sm text-gray-600 mt-1">
+                                Resend in {resendTimer} seconds
+                            </div>
+                        )}
+
+                        {isOtpSent && (
+                            <div className="flex items-center gap-2 flex-wrap mt-2">
+                                {otp.map((digit, index) => (
+                                    <input
+                                        key={index}
+                                        ref={(el) => (otpRefs.current[index] = el)}
+                                        type="text"
+                                        maxLength={1}
+                                        inputMode="numeric"
+                                        value={digit}
+                                        onChange={(e) => handleOtpChange(index, e.target.value)}
+                                        className="w-10 h-10 text-center border border-gray-300 rounded"
+                                    />
+                                ))}
+                            </div>
+                        )}
+
+                        {/* {isOtpSent && (
+                                <div className="flex items-center gap-2 flex-wrap mt-2">
+                                    {otp.map((digit, index) => (
+                                        <input
+                                            key={index}
+                                            ref={(el) => (otpRefs.current[index] = el)}
+                                            type="text"
+                                            maxLength={1}
+                                            inputMode="numeric"
+                                            value={digit}
+                                            onChange={(e) => handleOtpChange(index, e.target.value)}
+                                            className="w-10 h-10 text-center border border-gray-300 rounded"
+                                        />
+                                    ))}
+                                    <UniversalButton
+                                        label="Submit"
+                                        variant="brutal"
+                                        type="button"
+                                        onClick={handleverifyOtp}
+                                        className="bg-[#9B44B6] border-[#9B44B6] text-white hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] px-3 py-1 rounded-md mx-1"
+                                    />
+                                </div>
+                            )} */}
+
+
+
+
+                        <div>
+                            <label className="block font-medium text-gray-700 mb-1">
+                                Company Name <span className="text-red-500"></span>
+                            </label>
+                            <input
+                                type="text"
+                                className="w-full border border-gray-300 rounded-md p-2.5 focus:ring-2 focus:ring-blue-500 outline-none"
+                                name="company"
+                                placeholder="Company Name"
+                                value={form.company}
+                                onChange={(e) =>
+                                    setForm({ ...form, company: e.target.value })
+                                }
+                            />
+                        </div>
+                        <div>
+                            <label className="block font-medium text-gray-700 mb-1">
+                                Service <span className="text-red-500">*</span>
+                            </label>
+                            <select
+                                name="service"
+                                value={form.service}
+                                onChange={(e) =>
+                                    setForm({ ...form, service: e.target.value })
+                                }
+                                className="w-full border border-gray-300 rounded-md p-2.5 focus:ring-2 focus:ring-blue-500 outline-none"
+                            >
+                                <option value="" disabled>
+                                    Select Service
+                                </option>
+                                <option value="WhatsApp Business API">
+                                    WhatsApp Business API
+                                </option>
+                                <option value="RCS Business Messaging">
+                                    RCS Business Messaging
+                                </option>
+                                <option value="SMS Solution">SMS Solution</option>
+                                <option value="IVR/Missed Call">
+                                    Virtual Receptionist (IVR)/Missed Call
+                                </option>
+                                <option value="User Verification">Chatbot Services</option>
+                                <option value="API Integration">API Integrations</option>
+                                <option value="2-way SMS">2 Way SMS (Long/Shortcode)</option>
+                                <option value="Missed Call Services">
+                                    Missed Call Services
+                                </option>
+                                <option value="Other CPaaS Solutions">
+                                    Other CPaaS Solutions
+                                </option>
+                            </select>
+                        </div>
+                        <div>
+                            <label className="block font-medium text-gray-700 mb-1">
+                                How can we help you? <span className="text-red-500"></span>
+                            </label>
+                            <textarea
+                                rows="4"
+                                className="w-full border border-gray-300 rounded-md p-2.5 focus:ring-2 focus:ring-blue-500 outline-none"
+
+                                name="message"
+                                placeholder="How can we help you?"
+                                value={form.message}
+                                onChange={(e) => setForm({ ...form, message: e.target.value })}
+                            />
+                        </div>
+
+                        <div className="">
+                            <TurnstileComponent onChange={handleTurnstileChange} />
+                        </div>
+
+                        {/* <button
+                                type="submit"
+                                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-md transition"
+                                disabled={isFetching}
+                                onClick={handleSubmit}
+                            >
+                                {isFetching ? "Submitting..." : "Submit"}
+                            </button> */}
+                        <div className="inline-block">
+
+                            <UniversalButton
+                                // label={submitLabel} // Dynamically change the label based on the state
+                                label={isFetching ? "Submitting..." : "Book A Free Demo"}
+                                type="submit"
+                                variant="brutal"
+                                className="bg-[#9B44B6] border-[#9B44B6] text-white hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] px-4 py-2 rounded-md w-full  font-medium  transition"
+                                disabled={isFetching}
+                                onClick={handleSubmit}
+                            />
+                        </div>
+
+                        {/* <p className="text-xs text-gray-500 mt-3">
+                                You can unsubscribe or update your preferences at any time. Your
+                                personal data will be processed in accordance with the{" "}
+                                <a
+                                    href="#"
+                                    className="text-blue-600 underline hover:text-blue-800"
+                                >
+                                    Celitix Privacy Notice
+                                </a>
+                                .
+                            </p> */}
+
+                    </form>
+                </div>
+            </Dialog>
         </>
     );
 };
