@@ -12,6 +12,7 @@ import { sendOtp, verifyOtp } from "../../utils/Otp";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { pushToDataLayer } from "../../utils/gtm.js";
+import Script from "next/script";
 
 // const url = import.meta.env.VITE_URL
     const url = process.env.NEXT_PUBLIC_API_URL;
@@ -279,6 +280,19 @@ const BookDemo = () => {
     // 2nd section logos array
     return (
         <>
+         <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-1009530955"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){ dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'AW-1009530955');
+          `}
+        </Script>
+
             <div className="bg-white pt-25 md:pt-35 py-5 md:py-16 px-1 lg:px-12">
                 <div className="max-w-7xl 2xl:max-w-8xl mx-auto grid lg:grid-cols-2 gap-10">
                     {/* Left Section */}

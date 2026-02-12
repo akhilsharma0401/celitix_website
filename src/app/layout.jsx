@@ -66,7 +66,7 @@ export default function RootLayout({ children }) {
         />
         {/* <!-- End Google Tag Manager --> */}
 
-        <Script
+        {/* <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-N25JVKV4MH"
           strategy="afterInteractive"
         />
@@ -77,7 +77,24 @@ export default function RootLayout({ children }) {
             gtag('js', new Date());
             gtag('config', 'G-N25JVKV4MH');
           `}
+        </Script> */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-1009530955"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){ dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'AW-1009530955');
+          `}
         </Script>
+
+       
+
+
+        
 
         {/* Cloudflare Turnstile */}
         <Script
