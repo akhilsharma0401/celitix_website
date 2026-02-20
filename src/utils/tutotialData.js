@@ -1,4 +1,4 @@
-import { aichatbotswhatsapp, celitixworkflowensuring, createwhatsapptemplatescelitix, enhancecustomerengagementwithwhatsapplivech, enhancecustomerengagementwithwhatsapplivechaton, enhancecustomerengagementwithwhatsapplivechatoncelitix, explanationofnodestocreatechatbots, managingmultipleagents, managingmultipleagentson, mmliteinwhatsappbusinessapi, samplewhatsappbotandhowtocreateitusingcelitix, trackroiwiththecelitix, whatsappmanageflowincelitix } from "../../public/assets/images";
+import { aichatbotswhatsapp, celitixworkflowensuring, createwhatsapptemplatescelitix, enhancecustomerengagementwithwhatsapplivech, enhancecustomerengagementwithwhatsapplivechaton, enhancecustomerengagementwithwhatsapplivechatoncelitix, explanationofnodestocreatechatbots, launchhighconverting, managingmultipleagents, managingmultipleagentson, mmliteinwhatsappbusinessapi, samplewhatsappbotandhowtocreateitusingcelitix, smsandrcsdiff, trackroiwiththecelitix, whatsappmanageflowincelitix } from "../../public/assets/images";
 
 export const tutorialData = [
   {
@@ -3177,9 +3177,10 @@ NOTE: You may need to complete the process within a set time limit.`,
     id: 65,
     slug: "managing-multiple-agents-on-a-single-whatsapp-business-number",
     title: "Managing Multiple Agents on a Single WhatsApp Business Number",
-     intro: `As customer conversations grow, handling WhatsApp chats with a single agent becomes inefficient. Businesses need a smarter way to manage high volumes without missing messages or delaying responses. Celitix enables multiple agents to operate seamlessly on a single WhatsApp Business API number, ensuring faster replies, better coordination, and improved customer experience.`,
+    intro: `As customer conversations grow, handling WhatsApp chats with a single agent becomes inefficient. Businesses need a smarter way to manage high volumes without missing messages or delaying responses. Celitix enables multiple agents to operate seamlessly on a single WhatsApp Business API number, ensuring faster replies, better coordination, and improved customer experience.`,
     sections: [
-      {image: [managingmultipleagents, managingmultipleagentson],
+      {
+        image: [managingmultipleagents, managingmultipleagentson],
         question: "Why Multiple Agents on One WhatsApp Number Matter",
         answer: `WhatsApp is a real-time channel. Customers expect quick responses, whether they’re enquiring about sales, support, or order status. With Celitix, businesses can:
         •	Avoid single-agent bottlenecks
@@ -3246,7 +3247,7 @@ NOTE: You may need to complete the process within a set time limit.`,
     id: 66,
     slug: "track-roi-with-the-celitix-analytics-dashboard",
     title: "Track ROI with the Celitix Analytics Dashboard",
-     intro: `In today’s digital-first world, businesses rely heavily on messaging platforms like WhatsApp, SMS, RCS, and Email to engage customers. However, running campaigns is only half the job. Understanding what’s working and what’s not is what truly drives growth. This is where the Celitix Analytics Dashboard plays a crucial role.`,
+    intro: `In today’s digital-first world, businesses rely heavily on messaging platforms like WhatsApp, SMS, RCS, and Email to engage customers. However, running campaigns is only half the job. Understanding what’s working and what’s not is what truly drives growth. This is where the Celitix Analytics Dashboard plays a crucial role.`,
     sections: [
       {
         image: trackroiwiththecelitix,
@@ -3283,7 +3284,7 @@ NOTE: You may need to complete the process within a set time limit.`,
     id: 67,
     slug: "celitix-workflow-ensuring-message-delivery-with-intelligent-channel-switching",
     title: "Celitix Workflow: Ensuring Message Delivery with Intelligent Channel Switching",
-     intro: `In Celitix, a workflow is a smart, automated message-routing system that ensures your message reaches the customer through the best possible communication channel. Instead of depending on a single channel, workflows intelligently switch between WhatsApp, SMS, and RCS based on delivery status and customer availability.
+    intro: `In Celitix, a workflow is a smart, automated message-routing system that ensures your message reaches the customer through the best possible communication channel. Instead of depending on a single channel, workflows intelligently switch between WhatsApp, SMS, and RCS based on delivery status and customer availability.
      
      This approach guarantees higher message reach, better reliability, and uninterrupted business communication.`,
     sections: [
@@ -3339,7 +3340,7 @@ NOTE: You may need to complete the process within a set time limit.`,
     id: 68,
     slug: "how-whatsapp-messaging-from-google-sheets-works-in-celitix",
     title: "How WhatsApp Messaging from Google Sheets Works in Celitix",
-     intro: `Celitix connects your Google Sheet data to the WhatsApp Business API through a secure and automated process. Each row in the sheet can be mapped to an approved WhatsApp template.
+    intro: `Celitix connects your Google Sheet data to the WhatsApp Business API through a secure and automated process. Each row in the sheet can be mapped to an approved WhatsApp template.
      
      For example, customer name, phone number, order ID, or payment link stored in the sheet can be dynamically inserted into WhatsApp messages. Once triggered, Celitix sends the message automatically—no copy-paste or manual sending required.`,
     sections: [
@@ -3375,5 +3376,275 @@ NOTE: You may need to complete the process within a set time limit.`,
       },
     ],
   },
+
+
+
+  {
+    id: 69,
+    slug: "what-is-rcs-messaging",
+    title: "What Is RCS Messaging?",
+    sections: [
+      {
+        question: "What Is RCS Messaging",
+        answer: `RCS Messaging, or Rich Communication Services, is the next generation of traditional SMS. It upgrades basic text messaging into a rich, interactive, and branded communication channel that allows businesses to engage customers in a more dynamic way. Designed to replace outdated SMS limitations, RCS delivers a modern messaging experience directly inside the default Android messaging app.
+        
+        Backed by Google and supported by mobile operators worldwide, RCS enables businesses to send multimedia messages such as high-quality images, videos, GIFs, carousels, and clickable buttons. Unlike SMS, which is limited to plain text and basic links, RCS offers interactive features like suggested replies, call-to-action buttons, maps, and integrated browsing — all within a single conversation thread.
+        
+        One of the key advantages of RCS Messaging is brand verification. Businesses can display their official brand name, logo, and verification badge when sending messages. This helps build trust and ensures customers know the message is authentic, reducing spam concerns and increasing engagement rates.
+        
+        RCS also provides advanced analytics such as read receipts, delivery reports, and user interaction tracking. These insights allow businesses to measure campaign performance accurately and optimize communication strategies for better results. Whether it’s sending promotional offers, order confirmations, appointment reminders, or customer support messages, RCS makes communication more engaging and measurable.
+        
+        Another major benefit is that customers do not need to download any additional app to receive RCS messages. The experience works seamlessly within their existing messaging application on supported Android devices, making adoption simple and frictionless.
+        
+        At Celitix, we help businesses leverage RCS Messaging to create interactive campaigns that boost engagement and conversions. As customer expectations continue to evolve, RCS stands out as a powerful and future-ready business messaging solution.`
+      },
+    ],
+  },
+  {
+    id: 70,
+    slug: "why-rcs-is-the-future-of-business-messaging",
+    title: "Why RCS Is the Future of Business Messaging",
+    sections: [
+      {
+        question: "Why RCS Is the Future of Business Messaging",
+        answer: `Customer communication is evolving rapidly. Traditional SMS is no longer enough to capture attention in a digital-first world. This is where RCS (Rich Communication Services) steps in as the future of business messaging.
+        
+        Unlike SMS, RCS allows businesses to send rich, interactive messages that include images, videos, carousels, suggested replies, and call-to-action buttons—all within the native messaging app. Powered by Google and supported by major telecom operators, RCS transforms basic text messages into engaging brand experiences.
+        
+        One of the biggest advantages of RCS is branded messaging. Businesses can display their verified name, logo, and brand colors, which builds trust and reduces spam concerns. Customers feel more confident interacting with a verified business profile compared to an unknown sender ID.
+        
+        RCS also drives higher engagement and conversions. Interactive buttons such as “Buy Now,” “Track Order or “Book Appointment” allows customers to take immediate action without switching apps. This seamless experience improves click-through rates and reduces drop-offs in the customer journey.
+        
+        For industries like retail, banking, travel, and e-commerce, RCS enables personalized campaigns with rich media that feel modern and conversational. From product launches to transactional alerts and customer support, businesses can manage multiple communication needs through one powerful channel.
+        
+        Another key reason RCS is the future is its integration potential. It can work alongside SMS, WhatsApp, and other messaging platforms in an Omni channel strategy—ensuring businesses reach customers on their preferred channels.
+        
+        At Celitix, we believe RCS is not just an upgrade to SMS—it’s a complete transformation of business messaging. As customer expectations grow, interactive and trusted communication will define brand success. RCS delivers exactly that, making it the next big step in digital engagement.`
+      },
+    ],
+  },
+  {
+    id: 71,
+    slug: "rcs-vs-sms-difference-for-businesses",
+    title: "RCS vs. SMS: What’s the Real Difference for Businesses?",
+    sections: [
+      {
+        image: smsandrcsdiff,
+        question: "RCS vs. SMS: Real Difference for Businesses",
+        answer: `For years, SMS has been a reliable channel for business communication. From OTPs to promotional alerts, it has helped brands reach customers instantly. However, as customer expectations evolve, traditional SMS is no longer enough. This is where RCS (Rich Communication Services) changes the game.
+        
+        SMS is limited to plain text and basic links, with a strict character count and no rich media support. It offers no branding, no verification badge, and very limited tracking capabilities. While SMS still delivers strong reach, it lacks the interactive experience that modern customers expect.
+        
+        RCS, powered by Google, upgrades standard messaging into a rich, app-like experience within the default Android messaging app. Businesses can send high-quality images, videos, carousels, and clickable call-to-action buttons. Customers can interact directly with the message using suggested replies, making conversations smoother and faster.
+        
+       One of the biggest differences is branding and trust. With RCS, businesses can display their verified brand name, logo, and authentication badge. This reduces spam concerns and builds credibility instantly. SMS, on the other hand, typically shows only a sender ID without visual brand elements.
+        
+        Another major advantage of RCS is analytics. Businesses can track message delivery, read receipts, and user interactions. SMS provides only basic delivery reports, making campaign performance harder to measure.
+        
+        For promotional campaigns, product launches, flash sales, and customer engagement strategies, RCS offers a richer and more conversion-focused experience. SMS remains useful for simple transactional alerts and broader device compatibility.
+        
+        At Celitix, we help businesses choose the right messaging strategy based on their goals. While SMS ensures reach, RCS delivers engagement, branding, and measurable results — making it the smarter choice for future-ready businesses.`
+      },
+    ],
+  },
+  {
+    id: 72,
+    slug: "how-rcs-messaging-works-on-android",
+    title: "How RCS Messaging Works on Android Devices",
+    sections: [
+      {
+        question: "How RCS Messaging Works on Android Devices",
+        answer: `RCS (Rich Communication Services) is designed to upgrade traditional SMS into a smarter, more interactive messaging experience — especially on Android devices. It works directly within the default messaging application, allowing users to receive rich, branded messages without downloading any additional apps.
+        
+        On Android smartphones, RCS is primarily supported through Google Messages, developed by Google. When RCS is enabled on a device and supported by the mobile operator, the messaging app switches from standard SMS to internet-based messaging. This allows businesses to send rich media content instead of simple text messages.
+        
+        Unlike SMS, which uses traditional telecom networks, RCS uses mobile data or Wi-Fi to deliver messages. This enables advanced features such as high-resolution images, videos, carousels, clickable buttons, suggested replies, maps, and more. Messages appear in a chat-style interface, making business communication feel similar to popular messaging apps.
+        
+       When a business sends an RCS message, customers see the verified brand name, logo, and sometimes a verification badge. This helps build trust and ensures the message is authentic. Users can interact directly within the message by clicking call-to-action buttons like “Buy now,” “Track Order,” or “Book Appointment,” creating a seamless customer journey.
+        
+       RCS also supports real-time features such as typing indicators, read receipts, and detailed delivery reports. For businesses, this means better campaign tracking and performance insights compared to traditional SMS.
+        
+       If a device or network does not support RCS, the message automatically falls back to SMS, ensuring reliable delivery. This makes RCS both innovative and dependable.
+        
+        At Celitix, we help businesses leverage RCS on Android devices to create interactive, conversion-driven campaigns. By combining reach with rich engagement, RCS is redefining how brands connect with customers on mobile.`
+      },
+    ],
+  },
+  {
+    id: 73,
+    slug: "benefits-of-rcs-messaging-for-customer-engagement",
+    title: "Benefits of RCS Messaging for Customer Engagement",
+    sections: [
+      {
+        question: "Benefits of RCS Messaging for Customer Engagement",
+        answer: `Customer engagement today is driven by experience. Modern consumers expect visually rich, interactive, and personalized communication — not just plain text messages. This is where RCS (Rich Communication Services) transforms the way businesses connect with their audience.
+        
+        Unlike traditional SMS, RCS enables brands to send high-quality images, videos, carousels, and clickable buttons directly within the default messaging app on Android devices. Powered by Google, RCS combines the wide reach of SMS with the interactive features of modern messaging platforms.
+        
+        One of the biggest benefits of RCS messaging is higher engagement rates. Visual content naturally captures more attention than text alone. Businesses can showcase products, highlight offers, or present multiple options in a single interactive message. With suggested reply buttons and clear call-to-action options like “Shop Now” or “Book Appointment,” customers can respond instantly without typing, reducing friction and increasing conversions.
+        
+       Another major advantage is verified branding. RCS allows businesses to display their official brand name, logo, and verification badge. This builds trust and reduces the risk of customers ignoring or deleting messages due to spam concerns. A trusted brand presence directly improves open and response rates.
+        
+       RCS also provides advanced analytics such as read receipts, delivery reports, and user interaction tracking. These insights help businesses understand customer behavior and optimize campaigns for better performance. Personalized and data-driven messaging becomes easier and more effective.
+        
+       Additionally, RCS creates a seamless experience. Customers do not need to download a new app — messages appear in their existing messaging interface, making engagement effortless.
+        
+        At Celitix, we help businesses leverage RCS messaging to create impactful and interactive customer journeys. By combining rich media, verified branding, and measurable insights, RCS strengthens customer relationships and drives meaningful engagement in today’s competitive market.`
+      },
+    ],
+  },
+  {
+    id: 74,
+    slug: "driving-higher-ctr-with-rich-media-rcs-messages",
+    title: "Driving Higher CTR with Rich Media RCS Messages",
+    sections: [
+      {
+        question: "Driving Higher CTR with Rich Media RCS Messages",
+        answer: `In today’s competitive digital landscape, grabbing customer attention is harder than ever. Traditional SMS, with plain text and basic links, often struggles to generate meaningful engagement. This is where Rich Communication Services (RCS) transforms business messaging by delivering interactive, media-rich experiences that significantly improve Click-Through Rates (CTR).
+        
+        CTR, or Click-Through Rate, measures the percentage of users who click on a link or call-to-action after receiving a message. The more engaging the message, the higher the chances of interaction. RCS helps businesses boost CTR by combining the reach of SMS with the functionality of modern messaging apps.
+        
+        Unlike SMS, RCS allows brands to send high-resolution images, videos, GIFs, carousels, and interactive buttons directly within the default Android messaging app. Powered by Google, RCS enables businesses to create visually appealing messages that capture attention instantly. Instead of asking users to copy a link or type a reply, brands can include clickable buttons like “Shop now,” “Book Demo,” or “View Offer,” making interaction effortless.
+        
+       Rich media content plays a major role in improving engagement. A product carousel showcasing multiple items, a short demo video, or a visually attractive promotional banner can drive more curiosity and action compared to plain text. Suggested reply buttons further reduce friction by allowing customers to respond with a single tap.
+        
+       Another key advantage is verified branding. With a verified sender profile displaying the brand name and logo, customers are more likely to trust the message and engage with it.
+        
+       At Celitix, we help businesses design RCS campaigns that are visually compelling, strategically structured, and optimized for higher CTR. By leveraging rich media and interactive elements, RCS messaging turns passive recipients into active participants — driving stronger engagement and better campaign performance.`
+      },
+    ],
+  },
+  {
+    id: 75,
+    slug: "how-telecom-operators-enable-rcs-messaging",
+    title: "How Telecom Operators Enable RCS Messaging",
+    intro: `Rich Communication Services (RCS) is redefining business messaging by upgrading traditional SMS into an interactive, media-rich channel. While brands and platforms play a visible role, telecom operators are the backbone that makes RCS messaging possible at scale.`,
+    sections: [
+      {
+        question: "Network Enablement & RCS Support",
+        answer: `Telecom operators first enable RCS on their mobile networks by upgrading infrastructure to support data-based messaging. They adopt the RCS Universal Profile, a global standard that ensures interoperability across devices, networks, and regions. This allows RCS messages to work seamlessly on Android devices using the default messaging app.`
+      },
+      {
+        question: "Message Routing & Capability Detection",
+        answer: `When a business sends an RCS message through an API provider, telecom operators check whether the recipient’s device and network support RCS. If supported, the message is delivered as rich media; if not, operators ensure automatic fallback to SMS, guaranteeing message reach. This intelligent routing is critical for reliable campaign delivery.`
+      },
+      {
+        question: "Authentication & Brand Verification",
+        answer: `Telecom operators work closely with Google and RCS ecosystem partners to enable verified business messaging. This allows brands to display their official name, logo, and verification badge, helping reduce spam and improve customer trust.`
+      },
+      {
+        question: "Quality of Service & Performance",
+        answer: `Operators manage network performance to ensure timely delivery of RCS messages, even when rich media like images or videos are involved. They monitor latency, delivery acknowledgments, and network stability to maintain a high-quality messaging experience.`
+      },
+      {
+        question: "Ecosystem Collaboration",
+        answer: `To scale RCS globally, telecom operators collaborate with device manufacturers, OS providers, and messaging platforms. This coordination ensures consistent RCS features across smartphones, networks, and countries.`
+      },
+      {
+        question: "Why This Matters for Businesses",
+        answer: `Because telecom operators enable secure delivery, fallback, and verification, businesses can confidently use RCS for promotions, alerts, customer support, and transactional communication.
+        
+        At Celitix, we leverage operator-enabled RCS infrastructure to help brands deliver engaging, reliable, and conversion-driven messaging experiences—making RCS a powerful channel for the future of business communication.`
+      },
+    ],
+  },
+  {
+    id: 76,
+    slug: "launch-high-converting-rcs-campaigns-with-celitix",
+    title: "How to Launch High-Converting RCS Campaigns with Celitix",
+    intro: `RCS messaging allows businesses to send interactive, media-rich messages that drive higher engagement and conversions. With Celitix, launching an effective RCS campaign is simple when you follow the right steps.`,
+    sections: [
+      {
+        image: launchhighconverting,
+        question: "Step 1: Select Your Agent",
+        answer: `Log in to your Celitix dashboard and choose the assigned agent for the campaign. This ensures proper tracking and management of outgoing messages.`
+      },
+      {
+        question: "Step 2: Create a Campaign Name",
+        answer: `Enter a clear and organized campaign name. Use names that help you easily identify the purpose, audience, or date of the campaign for future reporting.`
+      },
+      {
+        question: "Step 3: Choose an Approved RCS Template",
+        answer: `Select a pre-approved RCS template from the dropdown. Make sure your template includes:
+        •	Engaging images or rich media
+        •	Clear and concise messaging
+        •	Strong CTA buttons (Buy Now, Learn More, Book Today)
+        •	Well-designed templates directly impact click-through rates (CTR).`
+      },
+      {
+        question: "Step 4: Select Your Audience",
+        answer: `Choose how you want to target users:
+        •	Select existing contact groups
+        •	Import contacts directly
+        •	Segment your audience based on behavior, location, or interests to increase relevance and improve conversions.`
+      },
+      {
+        question: "Step 5: Review the Message Preview",
+        answer: `Before sending, use the live preview feature to check:
+        •	Formatting and layout
+        •	Media quality
+        •	Button placement
+        •	Personalization fields
+        •	This ensures your campaign looks professional and error-free.`
+      },
+      {
+        question: "Step 6: Launch the Campaign",
+        answer: `Once everything is reviewed, click send and launch your RCS campaign.`
+      },
+      {
+        question: "Step 7: Monitor Performance",
+        answer: `Track delivery reports and engagement metrics such as delivered, read, and button clicks. Use this data to optimize future campaigns.
+        
+        By following these steps in Celitix, you can create engaging RCS campaigns that drive higher engagement, stronger customer interaction, and measurable ROI.`
+      },
+    ],
+  },
+  {
+    id: 77,
+    slug: "why-rcs-campaigns-outperform-sms-marketing",
+    title: "Why RCS Campaigns Outperform Traditional SMS Marketing",
+    sections: [
+      {
+        question: "Why RCS Campaigns Outperform Traditional SMS Marketing",
+        answer: `For years, SMS has been a reliable channel for business communication. It offers high open rates and direct customer reach. However, as customer expectations evolve, traditional SMS is no longer enough. RCS (Rich Communication Services) is redefining mobile messaging by delivering interactive, visually engaging experiences that significantly outperform standard SMS marketing.
+        
+        One of the biggest limitations of SMS is its simplicity. SMS supports only plain text and limited character counts. In contrast, RCS allows businesses to send rich media such as high-resolution images, videos, carousels, and clickable buttons. Instead of sending a basic promotional text, brands can now create app-like experiences directly inside the messaging inbox. This dramatically increases engagement and click-through rates (CTR).
+        
+        Another key advantage of RCS is interactivity. SMS requires users to manually click links or reply with keywords. RCS provides built-in action buttons like “Buy now,” “Call,” “Visit Website,” or “Track Order.” These one-tap actions reduce friction in the customer journey, making it easier for users to respond immediately.
+        
+       RCS also offers better branding opportunities. Businesses can display their verified brand name, logo, and profile information within the message thread. This builds trust and reduces the risk of spam perception—something SMS cannot fully address.
+        
+      Additionally, RCS provides advanced analytics. Businesses can track message delivery, reads, and user interactions in real time. SMS typically offers only basic delivery reports, limiting performance insights.
+        
+       Another major benefit is fallback capability. If a user’s device does not support RCS, the message automatically falls back to SMS, ensuring maximum reach.
+       
+       In today’s competitive market, customers expect more than text—they expect experiences. RCS combines the reach of SMS with the engagement of digital advertising, making it a more powerful, interactive, and conversion-driven marketing channel.`
+      },
+    ],
+  },
+  {
+    id: 78,
+    slug: "how-to-personalize-rcs-campaigns-for-better-engagement",
+    title: "How to Personalize RCS Campaigns for Better Engagement",
+    sections: [
+      {
+        question: "How to Personalize RCS Campaigns for Better Engagement",
+        answer: `Personalization is no longer optional in digital marketing—it is expected. Customers respond better to messages that feel relevant, timely, and tailored to their needs. With RCS (Rich Communication Services), businesses can go beyond basic text and create interactive, personalized experiences that significantly boost engagement.
+        
+        The first step to personalizing RCS campaigns is audience segmentation. Instead of sending one generic message to everyone, divide your audience based on behavior, purchase history, location, interests, or engagement patterns. For example, new customers can receive welcome offers, while repeat buyers can receive loyalty rewards. Relevant messaging increases open rates and click-through rates (CTR).
+        
+        Next, use dynamic fields to personalize message content. Address customers by their name, reference their recent purchase, or suggest products based on browsing history. Even small touches like “Hi Rahul, your order is ready” feel more direct and engaging than generic messages.
+        
+       RCS also allows personalization through rich media. You can send product carousels tailored to customer preferences, location-based offers, or event-specific promotions. Interactive buttons such as “Reorder,” “Track Now,” or “Claim Offer” make the experience smoother and action-oriented.
+        
+      Timing plays a critical role as well. Sending messages based on user activity—such as abandoned carts, subscription renewals, or special occasions like birthdays—creates meaningful engagement. Trigger-based campaigns often perform better than bulk promotional messages.
+        
+       Additionally, analyze campaign reports to understand what resonates with different segments. Monitor clicks, read rates, and user interactions to refine future campaigns. Continuous optimization ensures your personalization strategy evolves with customer behavior.
+       
+       When done correctly, personalized RCS campaigns feel less like marketing and more like helpful communication. By combining data insights, interactive features, and targeted messaging, businesses can build stronger customer relationships and drive higher engagement and conversions.`
+      },
+    ],
+  },
+
 
 ];

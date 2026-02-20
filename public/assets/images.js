@@ -41,7 +41,7 @@ import woo from "./mainicons/woocommerce.svg"
 import IntegrationsCelitix from "./IntegrationsImage/IntegrationsCelitix.png"
 import IntegrationsShopify from "./IntegrationsImage/IntegrationsShopify.png"
 import IntegrationsWoo from "./IntegrationsImage/IntegrationsWoo.png"
-import IntegrationsZoho  from "./IntegrationsImage/IntegrationsZoho.png"
+import IntegrationsZoho from "./IntegrationsImage/IntegrationsZoho.png"
 import IntegrationsSheets from "./IntegrationsImage/IntegrationsSheets.png"
 import IntegrationsSales from "./IntegrationsImage/IntegrationsSales.png"
 import IntegrationsFreshdesk from "./IntegrationsImage/IntegrationsFreshdesk.png"
@@ -616,6 +616,8 @@ import managingmultipleagents from "./imagesMain/managingmultipleagents.png"
 import managingmultipleagentson from "./imagesMain/managingmultipleagentson.png"
 import trackroiwiththecelitix from "./imagesMain/trackroiwiththecelitix.png"
 import celitixworkflowensuring from "./imagesMain/celitixworkflowensuring.png"
+import launchhighconverting from "./imagesMain/launchhighconverting.png"
+import smsandrcsdiff from "./imagesMain/smsandrcsdiff.jpg"
 
 
 // tutorial
@@ -625,6 +627,11 @@ import WhatsappChatbot from "./imagesMain/WhatsappChatbot.jpg"
 import AssistCustomers from "./imagesMain/AssistCustomers.jpg"
 
 // WhatsappChatbot
+
+
+// admin
+import adminLogin from "./images/adminLogin.jpg"
+// admin
 
 export {
     chat,
@@ -647,7 +654,7 @@ export {
     Channels,
     rocket,
     Cookieimg,
-   
+
 
     LinkedIn,
     whats,
@@ -708,7 +715,7 @@ export {
     Reachemail,
     ReachRCS,
     Reachwhatsappicon,
-    
+
     //5th
     // 6th
     // Ecommerce
@@ -1073,7 +1080,7 @@ export {
     APIFirstDesign,
     whychoosecelitix,
     developerfocusedplatform,
-    
+
 
     // AUTHENTICATION
     AUTHENTICATION01,
@@ -1160,22 +1167,22 @@ export {
     HEALTH01,
     Education01,
     Finance01,
-    
-    
-    
+
+
+
     // Productpage
     step_by_step_call_management,
     producthero,
     product3rd,
     // Productpage
-    
+
     // landingpage
     landingpageformsection,
     OmnichannelLanding,
     Workflowlanding,
     Customizablelanding,
     DashboredLanding,
-     LANDING,
+    LANDING,
     LANDING2nd,
     LANDINGTHREESECOND,
     LANDINGL2lLAST,
@@ -1189,7 +1196,7 @@ export {
     L1rcs,
     L1whatsapp,
     L1sms,
-    
+
     // landingpage
 
 
@@ -1217,26 +1224,32 @@ export {
     IntegrationCustomer,
     IntegrationTech,
 
-        // Tutorial
-        tutorialhero,
-        createwhatsapptemplatescelitix,
-        aichatbotswhatsapp,
-        explanationofnodestocreatechatbots,
-        samplewhatsappbotandhowtocreateitusingcelitix,
-        enhancecustomerengagementwithwhatsapplivechatoncelitix,
-        enhancecustomerengagementwithwhatsapplivechaton,
-        enhancecustomerengagementwithwhatsapplivech,
-        whatsappmanageflowincelitix,
-        mmliteinwhatsappbusinessapi,
-        managingmultipleagentson,
-        managingmultipleagents,
-        trackroiwiththecelitix,
-        celitixworkflowensuring,
-        // Tutorial
+    // Tutorial
+    tutorialhero,
+    createwhatsapptemplatescelitix,
+    aichatbotswhatsapp,
+    explanationofnodestocreatechatbots,
+    samplewhatsappbotandhowtocreateitusingcelitix,
+    enhancecustomerengagementwithwhatsapplivechatoncelitix,
+    enhancecustomerengagementwithwhatsapplivechaton,
+    enhancecustomerengagementwithwhatsapplivech,
+    whatsappmanageflowincelitix,
+    mmliteinwhatsappbusinessapi,
+    managingmultipleagentson,
+    managingmultipleagents,
+    trackroiwiththecelitix,
+    celitixworkflowensuring,
+    launchhighconverting,
+    smsandrcsdiff,
+    // Tutorial
 
-        // WhatsappChatbot
-        WhatsappChatbot,
-        AssistCustomers,
-        // WhatsappChatbot
+    // WhatsappChatbot
+    WhatsappChatbot,
+    AssistCustomers,
+    // WhatsappChatbot
+
+    // admin
+    adminLogin,
+    // admin
         
 }

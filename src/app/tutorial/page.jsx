@@ -142,7 +142,7 @@
 
 
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import SearchIcon from "@mui/icons-material/Search";
 import {
@@ -653,7 +653,7 @@ const cards = [
         color: "from-green-600 to-teal-500",
         slug: "designing-non-robotic-conversation-flows-on-celitix",
     },
-    
+
     {
         icon: <FiBookOpen />,
         category: "WhatsApp API",
@@ -719,6 +719,94 @@ const cards = [
         slug: "how-whatsapp-messaging-from-google-sheets-works-in-celitix",
     },
 
+    {
+        icon: <FiBarChart2 />,
+        category: "RCS Messaging",
+        title: "What Is RCS Messaging?",
+        desc: "Track open rates and customer interactions.",
+        color: "from-indigo-600 to-blue-500",
+        slug: "what-is-rcs-messaging",
+    },
+    {
+        icon: <FiBarChart2 />,
+        category: "RCS Messaging",
+        title: "Why RCS Is the Future of Business Messaging",
+        desc: "Track open rates and customer interactions.",
+        color: "from-indigo-600 to-blue-500",
+        slug: "why-rcs-is-the-future-of-business-messaging",
+    },
+    {
+        icon: <FiBarChart2 />,
+        category: "RCS Messaging",
+        title: "RCS vs. SMS: What’s the Real Difference for Businesses?",
+        desc: "Track open rates and customer interactions.",
+        color: "from-indigo-600 to-blue-500",
+        slug: "rcs-vs-sms-difference-for-businesses",
+    },
+    {
+        icon: <FiBarChart2 />,
+        category: "RCS Messaging",
+        title: "RCS vs. SMS: What’s the Real Difference for Businesses?",
+        desc: "Track open rates and customer interactions.",
+        color: "from-indigo-600 to-blue-500",
+        slug: "rcs-vs-sms-difference-for-businesses",
+    },
+    {
+        icon: <FiBarChart2 />,
+        category: "RCS Messaging",
+        title: "How RCS Messaging Works on Android Devices",
+        desc: "Track open rates and customer interactions.",
+        color: "from-indigo-600 to-blue-500",
+        slug: "how-rcs-messaging-works-on-android",
+    },
+    {
+        icon: <FiBarChart2 />,
+        category: "RCS Messaging",
+        title: "Benefits of RCS Messaging for Customer Engagement",
+        desc: "Track open rates and customer interactions.",
+        color: "from-indigo-600 to-blue-500",
+        slug: "benefits-of-rcs-messaging-for-customer-engagement",
+    },
+    {
+        icon: <FiBarChart2 />,
+        category: "RCS Messaging",
+        title: "Driving Higher CTR with Rich Media RCS Messages",
+        desc: "Track open rates and customer interactions.",
+        color: "from-indigo-600 to-blue-500",
+        slug: "driving-higher-ctr-with-rich-media-rcs-messages",
+    },
+    {
+        icon: <FiBarChart2 />,
+        category: "RCS Messaging",
+        title: "How Telecom Operators Enable RCS Messaging",
+        desc: "Track open rates and customer interactions.",
+        color: "from-indigo-600 to-blue-500",
+        slug: "how-telecom-operators-enable-rcs-messaging",
+    },
+    {
+        icon: <FiBarChart2 />,
+        category: "RCS Messaging",
+        title: "How to Launch High-Converting RCS Campaigns with Celitix",
+        desc: "Track open rates and customer interactions.",
+        color: "from-indigo-600 to-blue-500",
+        slug: "launch-high-converting-rcs-campaigns-with-celitix",
+    },
+    {
+        icon: <FiBarChart2 />,
+        category: "RCS Messaging",
+        title: "Why RCS Campaigns Outperform Traditional SMS Marketing",
+        desc: "Track open rates and customer interactions.",
+        color: "from-indigo-600 to-blue-500",
+        slug: "why-rcs-campaigns-outperform-sms-marketing",
+    },
+    {
+        icon: <FiBarChart2 />,
+        category: "RCS Messaging",
+        title: "How to Personalize RCS Campaigns for Better Engagement",
+        desc: "Track open rates and customer interactions.",
+        color: "from-indigo-600 to-blue-500",
+        slug: "how-to-personalize-rcs-campaigns-for-better-engagement",
+    },
     // {
     //     icon: <FiFileText />,
     //     category: "SMS Gateway",
@@ -727,15 +815,8 @@ const cards = [
     //     color: "from-blue-500 to-cyan-500",
     //     slug: "sms",
     // },
-    // {
-    //     icon: <FiBarChart2 />,
-    //     category: "RCS Messaging",
-    //     title: "RCS Analytics",
-    //     desc: "Track open rates and customer interactions.",
-    //     color: "from-indigo-600 to-blue-500",
-    //     slug: "rcs-analytics",
-    // },
 
+   
 ];
 
 export default function Page() {
@@ -743,7 +824,8 @@ export default function Page() {
     const [searchTerm, setSearchTerm] = useState("");
     const router = useRouter();
     const [openDialog, setOpenDialog] = useState(false);
-
+    const ITEMS_PER_PAGE = 15;
+    const [currentPage, setCurrentPage] = useState(1);
     const handleShowFormPopup = () => {
         setOpenDialog(true);
     };
@@ -762,6 +844,17 @@ export default function Page() {
 
         return matchTab && matchSearch;
     });
+
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [activeTab, searchTerm]);
+
+    const totalPages = Math.ceil(filteredCards.length / ITEMS_PER_PAGE);
+
+    const paginatedCards = filteredCards.slice(
+        (currentPage - 1) * ITEMS_PER_PAGE,
+        currentPage * ITEMS_PER_PAGE
+    );
 
     return (
         <>
@@ -815,10 +908,6 @@ export default function Page() {
 
             {/* <div className="bg-gradient-to-br from-purple-50 via-white to-violet-50 min-h-screen px-6 py-16"> */}
             <div className="bg-[#f7ebfc] min-h-screen px-6 pb-5 md:pb-20">
-
-                {/* Header */}
-
-
                 {/* Tabs */}
                 <div>
                     {/* Tabs */}
@@ -873,14 +962,10 @@ export default function Page() {
 
                     </div>
                 </div>
-
-
-
-
                 {/* Cards Grid */}
                 <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10">
 
-                    {filteredCards.map((card, index) => (
+                    {paginatedCards.map((card, index) => (
                         <div key={index} className="group h-full">
 
                             {/* Card */}
@@ -931,7 +1016,128 @@ export default function Page() {
 
                         </div>
                     ))}
+                    {/* Pagination */}
 
+                </div>
+                <div>
+                    {totalPages > 1 && (
+                        <div className="flex justify-center items-center gap-2 mt-16 flex-wrap">
+
+                            {/* Prev Button */}
+                            <button
+                                onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                                disabled={currentPage === 1}
+                                className={`px-4 py-2 rounded-lg text-sm font-medium border transition
+                    ${currentPage === 1
+                                        ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                                        : "bg-white text-purple-600 border-purple-400 hover:bg-purple-50"
+                                    }
+                `}
+                            >
+                                Prev
+                            </button>
+
+                            {/* Page Numbers (Updated Logic Here) */}
+                            {/* Page Numbers */}
+                            {/* Page Numbers */}
+                            {/* Page Numbers */}
+                            {/* Page Numbers */}
+                            {/* Page Numbers */}
+                            {(() => {
+                                const pages = [];
+                                const total = totalPages;
+                                const current = currentPage;
+
+                                const add = (num) => {
+                                    if (num >= 1 && num <= total && !pages.includes(num)) {
+                                        pages.push(num);
+                                    }
+                                };
+
+                                // Always show first page
+                                add(1);
+
+                                // CASE 1: current is 1 or 2 → show 1 2 3
+                                if (current <= 2) {
+                                    add(2);
+                                    add(3);
+
+                                    if (total > 5) {
+                                        pages.push("dots");
+                                    }
+                                }
+
+                                // CASE 2: middle pages
+                                else if (current < total - 2) {
+                                    pages.push("dots");
+
+                                    add(current);
+                                    add(current + 1);
+
+                                    pages.push("dots");
+                                }
+
+                                // CASE 3: near end
+                                else {
+                                    pages.push("dots");
+
+                                    add(total - 2);
+                                    add(total - 1);
+                                    add(total);
+                                }
+
+                                // Always ensure last two pages are shown
+                                add(total - 1);
+                                add(total);
+
+                                return pages.map((page, index) => {
+                                    if (page === "dots") {
+                                        return (
+                                            <span key={`dots-${index}`} className="px-2 text-gray-400">
+                                                ...
+                                            </span>
+                                        );
+                                    }
+
+                                    return (
+                                        <button
+                                            key={page}
+                                            onClick={() => setCurrentPage(page)}
+                                            className={`px-4 py-2 rounded-lg text-sm font-medium transition ${current === page
+                                                ? "bg-purple-600 text-white shadow-lg"
+                                                : "bg-white text-purple-600 border border-purple-400 hover:bg-purple-50"
+                                                }`}
+                                        >
+                                            {page}
+                                        </button>
+                                    );
+                                });
+                            })()}
+
+
+
+
+                            { /* <-- Paste code above here --> }
+
+            {/* Next Button */}
+                            <button
+                                onClick={() =>
+                                    setCurrentPage((prev) =>
+                                        Math.min(prev + 1, totalPages)
+                                    )
+                                }
+                                disabled={currentPage === totalPages}
+                                className={`px-4 py-2 rounded-lg text-sm font-medium border transition
+                    ${currentPage === totalPages
+                                        ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                                        : "bg-white text-purple-600 border-purple-400 hover:bg-purple-50"
+                                    }
+                `}
+                            >
+                                Next
+                            </button>
+                        </div>
+                    )}
                 </div>
 
             </div>

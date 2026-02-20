@@ -16,6 +16,7 @@
     "axios": "^1.9.0",
     "dotenv": "^16.5.0",
     "framer-motion": "^12.23.12",
+    "jodit-react": "^5.3.21",
     "js-cookie": "^3.0.5",
     "lottie": "^0.0.1",
     "lucide-react": "^0.542.0",

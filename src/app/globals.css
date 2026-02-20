@@ -716,6 +716,35 @@ Hide scrollbar track .custom-scrollbar::-webkit-scrollbar-track {
 }
 
 
+/* admin blog */
+.inputcls {
+  width: 100%;
+  background: #ffffffb0;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 0.65rem 0.9rem;
+  color: #374151;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 112, 201, 0.05);
+}
 
+.inputcls:focus {
+  outline: none;
+  border-color: #0E76CD;
+  box-shadow: 0 0 0 3px rgba(0, 112, 201, 0.15);
+}
+
+.thmbtn{
+  background-color:#0E76CD;
+  color:#FFF;
+  transition: background-color .25s ease, color .25s ease;
+  cursor: pointer;
+}
+
+.thmbtn:hover{
+  background-color:#03AA67;
+  color:#FFF;
+}
+/* admin blog */
 
 
