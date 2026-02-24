@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useMemo, useState } from "react";
+import React, { Suspense, useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import { MultichannelIntegrationsSms, ThankyouDesktop } from "../../../public/assets/images";
 import UniversalButton from "../components/UniversalButton";
@@ -21,8 +21,8 @@ function formatDate(dateStr) {
         year: "numeric",
     });
 }
-
-export default function Page() {
+export default function Page() { <Suspense fallback={<div>Loading...</div>}> <PageIndex /></Suspense>}
+function PageIndex() {
     const router = useRouter();
     const searchParams = useSearchParams();
 

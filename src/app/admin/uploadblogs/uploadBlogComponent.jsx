@@ -7,8 +7,9 @@ import RichTextEditor from "../components/RichTextEdito";
 import toast from "react-hot-toast";
 import { axiosInstance } from "@/utils/axios";
 
+const UploadBlogComponent = () => <Suspense fallback={<div>Loading...</div>}> <UploadBlogComponentIndex /></Suspense>;
 
-const UploadBlogComponent = () => {
+const UploadBlogComponentIndex = () => {
     const router = useRouter();
     const searchParams = useSearchParams()
     const fileRef = useRef(null);
