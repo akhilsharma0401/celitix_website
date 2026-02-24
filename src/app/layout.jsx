@@ -66,7 +66,7 @@ export default function RootLayout({ children }) {
         />
         {/* <!-- End Google Tag Manager --> */}
 
-        {/* <Script
+        <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-N25JVKV4MH"
           strategy="afterInteractive"
         />
@@ -77,7 +77,7 @@ export default function RootLayout({ children }) {
             gtag('js', new Date());
             gtag('config', 'G-N25JVKV4MH');
           `}
-        </Script> */}
+        </Script>
 
 
         <Script
