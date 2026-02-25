@@ -77,7 +77,7 @@ export default function SpecificTutorial({ params }) {
             </h1>
 
             {/* Intro */}
-            <p className="text-gray-700 leading-relaxed whitespace-pre-line pera">
+            <p className="text-gray-700 leading-relaxed whitespace-pre-line pera text-justify">
               {tutorial.intro}
             </p>
 
@@ -121,13 +121,13 @@ export default function SpecificTutorial({ params }) {
                   </h2>
 
                   {section.answer && (
-                    <p className="text-gray-700 leading-relaxed whitespace-pre-line pera p-0 mb-3">
+                    <p className="text-gray-700 leading-relaxed whitespace-pre-line pera p-0 mb-3 text-justify">
                       {section.answer}
                     </p>
                   )}
 
                   {section.list && (
-                    <ul className="list-disc pl-6 space-y-2 pera text-gray-700">
+                    <ul className="list-disc pl-6 space-y-2 pera text-gray-700 text-justify">
                       {section.list.map((item, i) => (
                         <li key={i}>{item}</li>
                       ))}
@@ -152,13 +152,13 @@ export default function SpecificTutorial({ params }) {
 
         </div>
       </main>
-      <div className="flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-[#A05CD7] to-[#4B0FA6] px-6 md:px-12 py-5 md:py-15">
+      <div className="flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-[#A05CD7] to-[#4B0FA6] px-6 md:px-12 py-5 ">
         {/* Left Image with Icons */}
         <div className="relative w-full md:w-1/2 flex justify-center mb-10 md:mb-0">
           <Image
             src={CTALASTIMAGE}
             alt="Customer Support"
-            className="z-10 w-full sm:w-72 md:w-80 lg:w-[440px] object-contain lg:absolute top-0 md:-top-55"
+            className="z-10 w-full sm:w-72 md:w-80 lg:w-[440px] object-contain  top-0 md:-top-55"
           />
         </div>
 

@@ -127,9 +127,9 @@ const Home = () => {
   // }, []);
 
   const metaData = {
-    title: "Celitix – All-in-One CPaaS for WhatsApp, SMS & Voice",
+    title: "All in one- Cpass solution with WhatsApp API, SMS & RCS",
     description:
-      "Celitix offers a unified platform for WhatsApp, SMS, voice and chat automation. Boost customer engagement, streamline workflows and grow your business.",
+      "Celitix offers a unified platform for WhatsApp API, RCS, SMS, and call services. Boost customer engagement, streamline workflows, and grow your business.",
 
     canonical: "https://www.celitix.com",
 
@@ -942,29 +942,39 @@ const Home = () => {
 
   const faqs = [
     {
-      question: "What is Celitix?",
+      question: "What is Celitix and how does it work?",
       answer:
-        "Celitix is a business communication platform (CPaaS) that connects you with customers across WhatsApp, SMS, RCS, Voice, and more, all from one place.",
+        "Celitix is an advanced omnichannel marketing platform that enables businesses to manage WhatsApp Business API, bulk SMS API, and RCS Business Messaging from a single dashboard with automation, chatbots, and real-time analytics.",
     },
     {
-      question: "Who is Celitix for?",
+      question: "Is Celitix an official WhatsApp Business API provider in India?",
       answer:
-        "It’s for any business that talks to customers: from banks and hospitals to e-commerce brands, service providers, and tech startups.",
+        "Yes, Celitix provides access to the official WhatsApp Business API, allowing businesses in India to send automated notifications, promotional campaigns, transactional alerts, and two-way customer support at scale.",
     },
     {
-      question: "What can Celitix do?",
+      question: "How is Celitix different from other CPaaS platforms?",
       answer:
-        "Celitix lets you automate reminders, send secure updates, support users, and boost engagement using multi-channel messaging.",
+        "Unlike many CPaaS platforms that offer only APIs, Celitix delivers a complete omnichannel messaging ecosystem, including WhatsApp automation software, SMS marketing tools, RCS messaging, CRM integration, and campaign analytics.",
     },
     {
-      question: "How does Celitix help businesses grow?",
+      question: "Can I send bulk SMS and OTP messages using Celitix?",
       answer:
-        "Celitix simplifies communication, reduces manual work and turns routine messages into strategic touchpoints that drive results.",
+        "Yes, Celitix offers a high-delivery bulk SMS marketing platform and SMS API for OTP verification, transactional messaging, and promotional campaigns with real-time tracking and reporting.",
     },
     {
-      question: "How do I get started with Celitix?",
+      question: "Does Celitix support RCS Business Messaging?",
       answer:
-        "Book a quick demo with our team. We’ll show you how it works, how to integrate it with your tools, and help your day-to-day.",
+        "Yes, Celitix provides an advanced RCS Business Messaging platform that enables rich media, interactive buttons, carousels, and branded sender IDs to improve engagement beyond traditional SMS.",
+    },
+    {
+      question: "Is Celitix suitable for e-commerce and enterprise businesses?",
+      answer:
+        "Yes, Celitix is built for ecommerce brands, startups, SMEs, and enterprises that need scalable messaging automation, CRM synchronization, chatbot workflows, and omnichannel customer engagement. ",
+    },
+    {
+      question: "Why choose Celitix over single-channel messaging tools?",
+      answer:
+        "Single-channel tools limit growth. Celitix combines WhatsApp Business API, SMS marketing software, RCS messaging, and automation into one unified platform, helping businesses increase response rates, conversions, and operational efficiency.",
     },
   ];
   // 8rd

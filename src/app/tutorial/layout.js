@@ -1,14 +1,16 @@
 // src/app/cpaas-solutions/layout.js
 export const metadata = {
   title: "CPaaS Tutorials: WhatsApp API, SMS, RCS, Voice & OTP ",
-  description: "Explore CPaaS tutorials covering WhatsApp API, SMS, RCS, Voice, and OTP services to help Indian businesses improve customer communication.",
+  description:
+    "Explore CPaaS tutorials covering WhatsApp API, SMS, RCS, Voice, and OTP services to help Indian businesses improve customer communication.",
   alternates: {
     canonical: "https://www.celitix.com/tutorial",
   },
-   openGraph: {
-  title: "CPaaS Tutorials: WhatsApp API, SMS, RCS, Voice & OTP",
-  description: "Explore CPaaS tutorials covering WhatsApp API, SMS, RCS, Voice, and OTP services to help Indian businesses improve customer communication.",
-},
+  openGraph: {
+    title: "CPaaS Tutorials: WhatsApp API, SMS, RCS, Voice & OTP",
+    description:
+      "Explore CPaaS tutorials covering WhatsApp API, SMS, RCS, Voice, and OTP services to help Indian businesses improve customer communication.",
+  },
 };
 
 export default function Layout({ children }) {
