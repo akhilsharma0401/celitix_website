@@ -7,13 +7,20 @@ import Script from 'next/script';
 const ThankYou = () => {
   // useEffect(() => {
   //   pushToDataLayer({
-  //     event: "thank_you_page",
+  //     event: "conversion",
   //     page_path: window.location.pathname,
   //   });
   // }, []);
+  useEffect(() => {
+  if (typeof window !== "undefined" && window.gtag) {
+    window.gtag('event', 'conversion', {
+      send_to: 'AW-1009530955/eNdDCMzlnfcbEMvwsOED'
+    });
+  }
+}, []);
   return (
     <div>
-      <Script
+      {/* <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-1009530955"
           strategy="afterInteractive"
         />
@@ -25,7 +32,7 @@ const ThankYou = () => {
             gtag('config', 'AW-1009530955');
              gtag('event', 'conversion', {'send_to': 'AW-1009530955/eNdDCMzlnfcbEMvwsOED'});
           `}
-        </Script>
+        </Script> */}
 
 
     
