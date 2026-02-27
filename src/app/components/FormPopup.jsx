@@ -10,6 +10,7 @@ import { Dialog } from "primereact/dialog";
 import { sendOtp, verifyOtp } from "../../utils/Otp";
 import { verifyToken } from "../../utils/VerifyToken";
 import axios from "axios";
+import { axiosInstance } from "@/utils/axios";
 
 const url = process.env.NEXT_PUBLIC_API_URL;
 // const url = "https://celitix.com:3001";
@@ -30,6 +31,7 @@ const FormPopup = ({ visible, onHide }) => {
     message: "",
     consent: false,
   });
+  const [otpId, setOtpId] = useState(null);
 
   // Validation state
   const [isTouched, setIsTouched] = useState(false);
@@ -78,10 +80,14 @@ const FormPopup = ({ visible, onHide }) => {
     setButtonLabel("Resend");
 
     const res = await sendOtp(phone, form.firstName);
-    if (!res || res?.data?.result !== "success") {
-  toast.error("Error Sending OTP. Please try again later.");
-  return;
-}
+
+    console.log(res);
+    if (!res?.status) {
+      toast.error("Error Sending OTP. Please try again later.");
+      return;
+    }
+
+    setOtpId(res.otpId);
 
     setIsOtpSent(true);
     setResendTimer(30);
@@ -128,25 +134,21 @@ const FormPopup = ({ visible, onHide }) => {
     const res = await verifyOtp({
       mobile: phone,
       otp: enteredOtp,
+      otpId: otpId,
     });
-    if (res.data.result !== "success") {
-      toast.error("Please enter valid OTP");
+
+    console.log(res);
+
+    if (!res?.status) {
+      toast.error(res?.message);
       return;
     }
+
     toast.success("OTP Verified successfully");
     setIsOtpVerified(true);
     setIsClicked(true);
     setIsOtpSent(false);
     setOtp(Array(6).fill(""));
-
-    // if (enteredOtp === validOtp) {
-    //   toast.success('OTP Verified Successfully!');
-    //   setIsOtpVerified(true);
-    //   setIsOtpSent(false);
-    //   setOtp(Array(6).fill(''));
-    // } else {
-    //   toast.error('Invalid OTP. Please try again.');
-    // }
   };
 
   const [turnstileResponse, setTurnstileResponse] = useState(null); // To store the Turnstile response token
@@ -186,61 +188,46 @@ const FormPopup = ({ visible, onHide }) => {
 
       if (!captchaVerify?.data?.status) {
         return toast.error(
-          "Unable to verify captcha. Please Contact Site Administrator "
+          "Unable to verify captcha. Please Contact Site Administrator ",
         );
       }
 
       const data = {
-        name: `${firstName} ${lastName}`,
+        // name: `${firstName} ${lastName}`,
+        firstName: firstName,
+        lastName: lastName,
         email: email,
-        phone: phone,
-        company: form.company || "N/A",
+        mobile: phone,
+        companyName: form.company || "N/A",
         service: service,
-        source: "Book Demo",
+        source: "book-demo",
         message: form.message || "N/A",
       };
 
       setIsFetching(true);
+      const res = await axiosInstance.post("/enquiry/contact", data);
 
-      const res = await axios.post(`${url}/save`, data, {
-        headers: {
-          "x-secret-key": process.env.NEXT_PUBLIC_API_KEY,
-        },
-      });
-      if (!res.data.status) {
-        toast.error("Unable to send form data. Please try again later");
-        return;
-      }
-      const sendEmail = await axios.post(`${url}/email`, data, {
-        headers: {
-          "x-secret-key": process.env.NEXT_PUBLIC_API_KEY,
-        },
-      });
-
-      if (!sendEmail.data.status) {
-        toast.error("Unable to send form data. Please try again later");
-        return;
-      }
-      const sendWhatsapp = await axios.post(`${url}/whatsapp`, data, {
-        headers: {
-          "x-secret-key": process.env.NEXT_PUBLIC_API_KEY,
-        },
-      });
-
-      if (!sendWhatsapp?.data?.status) {
-        toast.error("Unable to send form data. Please try again later");
+      if (!res?.data?.status) {
+        toast.error(res?.data?.message);
         return;
       }
 
-      setIsFetching(false);
-      toast.success("Your enquiry has been received.");
-
+      toast.success(res?.data?.message);
       router.push("/thank-you");
+      setForm({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        company: "",
+        service: "",
+        message: "",
+        consent: false,
+      });
       onHide();
     } catch (e) {
       return toast.error("Unable to send form data. Please try again later");
-    }
-    finally{
+    } finally {
       setIsFetching(false);
     }
   };
@@ -324,8 +311,8 @@ const FormPopup = ({ visible, onHide }) => {
                     !isTouched
                       ? "border-gray-300 focus:ring-blue-300"
                       : isValid
-                      ? "border-green-500 focus:ring-green-300"
-                      : "border-red-500 focus:ring-red-300"
+                        ? "border-green-500 focus:ring-green-300"
+                        : "border-red-500 focus:ring-red-300"
                   }`}
                 />
                 <div className="flex gap-2 items-center">

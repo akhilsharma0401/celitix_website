@@ -21,6 +21,7 @@ import {
 
 import axios from "axios";
 import UniversalButton from "../components/UniversalButton";
+import { axiosInstance } from "@/utils/axios";
 // const url = process.env.NEXT_PUBLIC_API_URL
 
 const Careers = () => {
@@ -115,7 +116,7 @@ Interpersonal skills, including the ability to build rapport`,
     selectExpyrs: "",
     consent: false,
   });
-
+  const [otpId, setOtpId] = useState(null);
   const [isTouched, setIsTouched] = useState(false);
   const [isValid, setIsValid] = useState(false);
   const [otp, setOtp] = useState(Array(6).fill(""));
@@ -163,9 +164,12 @@ Interpersonal skills, including the ability to build rapport`,
     if (resendTimer === 0) {
       // const res = await sendOtp
       const res = await sendOtp(phone, form.firstName);
-      if (res?.data?.result !== "success") {
-        toast.error("Error Sending OTP. Please try again later.");
-      }
+     if (!res?.status) {
+      toast.error("Error Sending OTP. Please try again later.");
+      return;
+    }
+
+    setOtpId(res.otpId);
       toast.success("OTP sent successfully!");
       setIsOtpSent(true);
       setResendTimer(30);
@@ -212,9 +216,10 @@ Interpersonal skills, including the ability to build rapport`,
     const res = await verifyOtp({
       mobile: phone,
       otp: enteredOtp,
+      otpId: otpId,
     });
-    if (res.data.result !== "success") {
-      toast.error("Please enter valid OTP");
+     if (!res?.status) {
+      toast.error(res?.message);
       return;
     }
     toast.success("OTP Verified successfully");
@@ -287,51 +292,64 @@ Interpersonal skills, including the ability to build rapport`,
       }
 
       const formData = new FormData();
-      formData.append("name", `${firstName} ${lastName}`);
+      // formData.append("name", `${firstName} ${lastName}`);
+
+      formData.append("firstName", firstName);
+      formData.append("lastName", lastName);
       formData.append("email", email);
-      formData.append("phone", phone);
+      formData.append("mobile", phone);
       formData.append("company", form.company || "N/A");
       formData.append("service", service || "N/A");
       formData.append("message", form.message || "N/A");
       formData.append("source", "careers");
-      formData.append("experience", form.selectExpyrs);
+      formData.append("expInYears", form.selectExpyrs);
       formData.append("designation", form.designation);
-      formData.append("file", resume);
+      formData.append("resume", resume);
+      formData.append("jobTitle", form.designation);
 
-      const res = await axios.post(`${url}/carrer-save`, formData, {
-        headers: {
-          "x-secret-key": process.env.NEXT_PUBLIC_API_KEY,
-        },
-      });
-      if (!res.data.status) {
+      // const res = await axios.post(`${url}/carrer-save`, formData, {
+      //   headers: {
+      //     "x-secret-key": process.env.NEXT_PUBLIC_API_KEY,
+      //   },
+      // });
+      // if (!captchaVerify?.data?.status) {
+      //   return toast.error(
+      //     "Unable to verify captcha. Please Contact Site Administrator ",
+      //   );
+      // }
+
+      // const emailData = {
+      //    firstName: firstName,
+      //   lastName: lastName,
+      //   email,
+      //   phone,
+      //   companyName: form.company || "N/A",
+      //   service: service || "N/A",
+      //   message: form.message || "N/A",
+      //   source: "careers",
+      //   designation: form.designation,
+      //   experience: form.selectExpyrs,
+      //   resume: res.data.fileUrl,
+      // };
+      // setIsFetching(true);
+
+      const res = await axiosInstance.post("/enquiry/carrer", formData);
+
+      if (!res?.data?.status) {
         toast.error("Unable to send form data. Please try again later");
         return;
       }
 
-      const emailData = {
-        name: `${firstName} ${lastName}`,
-        email,
-        phone,
-        company: form.company || "N/A",
-        service: service || "N/A",
-        message: form.message || "N/A",
-        source: "careers",
-        designation: form.designation,
-        experience: form.selectExpyrs,
-        resume: res.data.fileUrl,
-      };
-      setIsFetching(true);
+      // const sendEmail = await axios.post(`${url}/email`, emailData, {
+      //   headers: {
+      //     "x-secret-key": process.env.NEXT_PUBLIC_API_KEY,
+      //   },
+      // });
 
-      const sendEmail = await axios.post(`${url}/email`, emailData, {
-        headers: {
-          "x-secret-key": process.env.NEXT_PUBLIC_API_KEY,
-        },
-      });
-
-      if (!sendEmail.data.status) {
-        toast.error("Unable to send form data. Please try again later");
-        return;
-      }
+      // if (!sendEmail.data.status) {
+      //   toast.error("Unable to send form data. Please try again later");
+      //   return;
+      // }
 
       setIsFetching(false);
       toast.success("Your enquiry has been received.");

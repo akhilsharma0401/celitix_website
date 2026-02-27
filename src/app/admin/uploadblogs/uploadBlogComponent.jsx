@@ -17,7 +17,7 @@ const UploadBlogComponentIndex = () => {
 
 
     const blogId = searchParams.get("id") || null;
-    console.log(blogId)
+
     const isEdit = Boolean(blogId);
 
     const [initializing, setInitializing] = useState(isEdit);
@@ -322,7 +322,7 @@ const UploadBlogComponentIndex = () => {
 
         // UPDATE
         if (isEdit) {
-            fd.append("id", blogId);
+            // fd.append("id", blogId);
 
             const res = await axiosInstance.put("/blog/update", fd, {
                 headers: {

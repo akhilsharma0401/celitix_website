@@ -625,6 +625,9 @@ import smsandrcsdiff from "./imagesMain/smsandrcsdiff.jpg"
 // WhatsappChatbot
 import WhatsappChatbot from "./imagesMain/WhatsappChatbot.jpg"
 import AssistCustomers from "./imagesMain/AssistCustomers.jpg"
+import ChatbotBuilder from "./imagesMain/ChatbotBuilder.jpg"
+import Automation from "./imagesMain/Automation.jpg"
+import SaveTime from "./imagesMain/SaveTime.jpg"
 
 // WhatsappChatbot
 
@@ -1246,6 +1249,9 @@ export {
     // WhatsappChatbot
     WhatsappChatbot,
     AssistCustomers,
+    ChatbotBuilder,
+    Automation,
+    SaveTime,
     // WhatsappChatbot
 
     // admin

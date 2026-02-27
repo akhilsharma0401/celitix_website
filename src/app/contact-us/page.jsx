@@ -16,6 +16,7 @@ import {
   FaPhoneAlt,
   FaEnvelope,
 } from "react-icons/fa";
+import { axiosInstance } from "@/utils/axios";
 // import { Helmet } from 'react-helmet-async';
 
 const ContactUs = () => {
@@ -43,7 +44,7 @@ const ContactUs = () => {
   // const [isSubmitting, setIsSubmitting] = useState(false);
   // const [submitLabel, setSubmitLabel] = useState("Submit");
   const [isFetching, setIsFetching] = useState(false);
-
+  const [otpId, setOtpId] = useState(null);
   const otpRefs = useRef([]);
 
   const url = process.env.NEXT_PUBLIC_API_URL;
@@ -80,9 +81,11 @@ const ContactUs = () => {
 
     if (resendTimer === 0) {
       const res = await sendOtp(phone, form.firstName);
-      if (res?.data?.result !== "success") {
+      if (!res?.status) {
         toast.error("Error Sending OTP. Please try again later.");
+        return;
       }
+      setOtpId(res.otpId);
       toast.success("OTP sent successfully!");
       setOtp(Array(6).fill(""));
       setIsOtpSent(true);
@@ -123,9 +126,10 @@ const ContactUs = () => {
     const res = await verifyOtp({
       mobile: phone,
       otp: enteredOtp,
+      otpId: otpId,
     });
-    if (res.data.result !== "success") {
-      toast.error("Please enter valid OTP");
+    if (!res?.status) {
+      toast.error(res?.message);
       return;
     }
     toast.success("OTP Verified successfully");
@@ -175,69 +179,52 @@ const ContactUs = () => {
 
       if (!consent)
         return toast.error(
-          "You must accept the Terms & Conditions and Privacy Policy."
+          "You must accept the Terms & Conditions and Privacy Policy.",
         );
 
       const captchaVerify = await verifyToken(turnstileResponse);
 
       if (!captchaVerify?.data?.status) {
         return toast.error(
-          "Unable to verify captcha. Please Contact Site Administrator "
+          "Unable to verify captcha. Please Contact Site Administrator ",
         );
       }
 
       const data = {
-        name: `${firstName} ${lastName}`,
+        firstName: firstName,
+        lastName: lastName,
         email: email,
-        phone: phone,
-        company: form.company || "N/A",
+        mobile: phone,
+        companyName: form.company || "N/A",
         service: service,
-        source: "Contact Us Form",
+        source: "contact",
         message: form.message || "N/A",
       };
 
       setIsFetching(true);
+      const res = await axiosInstance.post("/enquiry/contact", data);
 
-      const res = await axios.post(`${url}/save`, data, {
-        headers: {
-          "x-secret-key": process.env.NEXT_PUBLIC_API_KEY,
-        },
-      });
-      if (!res.data.status) {
-        toast.error("Unable to send form data. Please try again later");
+      if (!res?.data?.status) {
+        toast.error(res?.data?.message);
         return;
       }
-      const sendEmail = await axios.post(`${url}/email`, data, {
-        headers: {
-          "x-secret-key": process.env.NEXT_PUBLIC_API_KEY,
-        },
-      });
-
-      if (!sendEmail.data.status) {
-        toast.error("Unable to send form data. Please try again later");
-        return;
-      }
-
-      const sendWhatsapp = await axios.post(`${url}/whatsapp`, data, {
-        headers: {
-          "x-secret-key": process.env.NEXT_PUBLIC_API_KEY,
-        },
-      });
-
-      if (!sendWhatsapp?.data?.status) {
-        toast.error("Unable to send form data. Please try again later");
-        return;
-      }
-
       // setIsSubmitting(true);
       setIsFetching(false);
       // setSubmitLabel("Submitting...");
-      toast.success("Your enquiry has been received.");
+      toast.success(res?.data?.message);
       router.push("/thank-you");
+      setForm( {
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        company: "",
+        service: "",
+        message: "",
+      });
     } catch (e) {
       return toast.error("Unable to send form data. Please try again later");
-    }
-      finally{
+    } finally {
       setIsFetching(false);
     }
   };
@@ -406,8 +393,8 @@ const ContactUs = () => {
                     !isTouched
                       ? "border-gray-300 focus:ring-blue-300"
                       : isValid
-                      ? "border-green-500 focus:ring-green-300"
-                      : "border-red-500 focus:ring-red-300"
+                        ? "border-green-500 focus:ring-green-300"
+                        : "border-red-500 focus:ring-red-300"
                   }`}
                 />
                 <div className="flex gap-2 items-center">

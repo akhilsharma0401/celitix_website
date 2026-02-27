@@ -30,6 +30,7 @@ import { Dialog } from "primereact/dialog";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
+import { axiosInstance } from "@/utils/axios";
 
 // const url = import.meta.env.VITE_URL
 const url = process.env.NEXT_PUBLIC_API_URL;
@@ -57,7 +58,7 @@ const BookDemo = () => {
   // const [isSubmitting, setIsSubmitting] = useState(false);
   // const [submitLabel, setSubmitLabel] = useState("Submit");
   const [isFetching, setIsFetching] = useState(false);
-
+const [otpId, setOtpId] = useState(null);
   const otpRefs = useRef([]);
   const [isVerifying, setIsVerifying] = useState(false);
   const [showDialog, setShowDialog] = useState(false);
@@ -160,11 +161,12 @@ const BookDemo = () => {
 
     const res = await sendOtp(phone, form.firstName);
 
-    console.log("res", res);
-    if (res?.data?.result !== "success") {
+    if (!res?.status) {
       toast.error("Error Sending OTP. Please try again later.");
       return;
     }
+
+    setOtpId(res.otpId);
 
     toast.success("OTP sent successfully!");
     setIsOtpSent(true);
@@ -309,12 +311,13 @@ const BookDemo = () => {
       const res = await verifyOtp({
         mobile: form.phone,
         otp: enteredOtp,
+        otpId: otpId,
       });
 
-      if (res?.data?.result !== "success") {
-        toast.error("Invalid OTP");
-        return;
-      }
+       if (!res?.status) {
+      toast.error(res?.message);
+      return;
+    }
 
       toast.success("OTP Verified Successfully");
 
@@ -360,45 +363,21 @@ const BookDemo = () => {
       // }
 
       const data = {
-        name: `${firstName} ${lastName}`,
+        firstName: firstName,
+        lastName: lastName,
         email: email,
-        phone: phone,
-        company: form.company || "N/A",
+        mobile: phone,
+        companyName: form.company || "N/A",
         service: service,
         message: form.message || "N/A",
-        source: "Book Demo",
+        source: "book-demo",
       };
 
       setIsFetching(true);
+      const res = await axiosInstance.post("/enquiry/contact", data);
 
-      const res = await axios.post(`${url}/save`, data, {
-        headers: {
-          "x-secret-key": process.env.NEXT_PUBLIC_API_KEY,
-        },
-      });
-      if (!res.data.status) {
-        toast.error("Unable to send form data. Please try again later");
-        return;
-      }
-      const sendEmail = await axios.post(`${url}/email`, data, {
-        headers: {
-          "x-secret-key": process.env.NEXT_PUBLIC_API_KEY,
-        },
-      });
-
-      if (!sendEmail.data.status) {
-        toast.error("Unable to send form data. Please try again later");
-        return;
-      }
-
-      const sendWhatsapp = await axios.post(`${url}/whatsapp`, data, {
-        headers: {
-          "x-secret-key": process.env.NEXT_PUBLIC_API_KEY,
-        },
-      });
-
-      if (!sendWhatsapp?.data?.status) {
-        toast.error("Unable to send form data. Please try again later");
+     if (!res?.data?.status) {
+        toast.error(res?.data?.message);
         return;
       }
       // setIsSubmitting(true);
