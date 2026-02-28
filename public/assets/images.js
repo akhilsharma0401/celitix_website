@@ -52,6 +52,7 @@ import IntegrationFinancial from "./IntegrationsImage/IntegrationFinancial.png"
 import IntegrationProfessional from "./IntegrationsImage/IntegrationProfessional.png"
 import IntegrationCustomer from "./IntegrationsImage/IntegrationCustomer.png"
 import IntegrationTech from "./IntegrationsImage/IntegrationTech.png"
+import integrations from "./imagesMain/integrations.png"
 
 // header images
 
@@ -1226,6 +1227,7 @@ export {
     IntegrationProfessional,
     IntegrationCustomer,
     IntegrationTech,
+    integrations,
 
     // Tutorial
     tutorialhero,

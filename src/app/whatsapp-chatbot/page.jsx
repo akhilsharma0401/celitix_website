@@ -302,7 +302,7 @@ const page = () => {
       </section>
 
       <section className="py-20 bg-white md:space-y-20 ">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-2">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-16 items-center mb-5">
           {/* LEFT CONTENT */}
           <div className="space-y-6 box-reveal-left">
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-gray-900 popf heading">
@@ -328,7 +328,7 @@ const page = () => {
 
           {/* RIGHT FLOW DESIGN */}
           <div className="relative">
-            <div className="rounded-3xl h-120 bg-gradient-to-br from-purple-100 via-purple-50 to-blue-100 p-8 shadow-lg">
+            <div className="rounded-lg md:rounded-3xl h-80 md:h-120 bg-gradient-to-br from-purple-100 via-purple-50 to-blue-100 p-4 md:p-8 shadow-lg">
               <Image
                 src={ChatbotBuilder}
                 alt="No-code chatbot flow"
@@ -340,10 +340,10 @@ const page = () => {
             </div>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-2">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-16 items-center mb-5">
           {/* LEFT CONTENT */}
           <div className="relative">
-            <div className="rounded-3xl h-120 bg-gradient-to-br from-purple-100 via-purple-50 to-blue-100 p-8 shadow-lg">
+            <div className="rounded-lg md:rounded-3xl h-80 md:h-120 bg-gradient-to-br from-purple-100 via-purple-50 to-blue-100 p-4 md:p-8 shadow-lg">
               <Image
                 src={Automation}
                 alt="No-code chatbot flow"
@@ -378,7 +378,7 @@ const page = () => {
             </ul>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-2">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-16 items-center mb-5">
           {/* LEFT CONTENT */}
           <div className="space-y-6 box-reveal-left">
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-gray-900 popf heading">
@@ -404,7 +404,7 @@ const page = () => {
 
           {/* RIGHT FLOW DESIGN */}
           <div className="relative">
-            <div className="rounded-3xl h-120 bg-gradient-to-br from-purple-100 via-purple-50 to-blue-100 p-8 shadow-lg">
+            <div className="rounded-lg md:rounded-3xl h-80 md:h-120 bg-gradient-to-br from-purple-100 via-purple-50 to-blue-100 p-4 md:p-8 shadow-lg">
               <Image
                 src={SaveTime}
                 alt="No-code chatbot flow"
@@ -416,10 +416,10 @@ const page = () => {
             </div>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-2">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-16 items-center mb-5">
           {/* LEFT CONTENT */}
           <div className="relative">
-            <div className="rounded-3xl h-120 bg-gradient-to-br from-purple-100 via-purple-50 to-blue-100 p-8 shadow-lg">
+            <div className="rounded-lg md:rounded-3xl h-80 md:h-120 bg-gradient-to-br from-purple-100 via-purple-50 to-blue-100 p-4 md:p-8 shadow-lg">
               <Image
                 src={AssistCustomers}
                 alt="No-code chatbot flow"
@@ -459,7 +459,6 @@ const page = () => {
 
       <section className="bg-[#f7effa] py-20">
         <div className="max-w-7xl mx-auto px-6">
-          {/* Heading */}
           <div className="text-center ">
             <h2 className="text-2xl md:text-4xl lg:text-5xl heading font-semibold text-gray-900 popf">
               Simply Integrate With Your <br className="hidden md:block" />
@@ -471,52 +470,53 @@ const page = () => {
             </p>
           </div>
 
-          {/* Integration Layout */}
-          <div className="relative mt-24">
-            {/* Soft Background Glow */}
+          <div className="relative mt-8 md:mt-16 px-4">
+            {/* Background Glow */}
             <div className="absolute inset-0 -z-10 flex justify-center">
-              <div className="w-[500px] h-[300px] bg-purple-300/20 blur-3xl rounded-full"></div>
+              <div className="w-[300px] md:w-[500px] h-[200px] md:h-[300px] bg-purple-300/20 blur-3xl rounded-full"></div>
             </div>
 
-            <div className="grid grid-cols-12 gap-10 items-center">
-              {/* Left Block */}
-              <div className="col-span-12 md:col-span-5 grid grid-cols-2 gap-6">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 items-center">
+              {/* LEFT SIDE */}
+              <div className="md:col-span-5 grid grid-cols-2 gap-4 md:gap-6">
                 <Tile icon={IntegrationsSales} />
                 <Tile icon={zoho} />
                 <Tile icon={IntegrationsSheets} />
                 <Tile icon={IntegrationsLeadSquared} />
               </div>
 
-              {/* Center Big Tile */}
-              <div className="col-span-12 md:col-span-2 flex justify-center perspective">
+              {/* CENTER CARD */}
+              <div className="md:col-span-2 flex justify-center">
                 <div
-                  className="relative w-48 h-48 
-                      transition-transform duration-700 
-                      transform-style preserve-3d 
-                      hover:rotate-y-180"
+                  className="relative w-40 h-40 md:w-48 md:h-48
+        transition-transform duration-700
+        transform-style preserve-3d
+        hover:rotate-y-180"
                 >
                   {/* Front */}
                   <div
-                    className="absolute inset-0 bg-white rounded-3xl shadow-xl 
-                        flex items-center justify-center 
-                        backface-hidden"
+                    className="absolute inset-0 bg-white rounded-3xl shadow-xl
+          flex items-center justify-center
+          backface-hidden"
                   >
                     <Image
-                      src={IntegrationsShopify}
+                      src={shopify}
                       alt="Shopify Integration"
-                      className="w-20 h-20 object-contain"
+                      className="w-16 h-16 md:w-20 md:h-20 object-contain"
                     />
                   </div>
 
                   {/* Back */}
                   <div
-                    className="absolute inset-0 bg-gradient-to-br 
-                        from-purple-600 to-blue-600 
-                        text-white rounded-3xl shadow-2xl 
-                        flex flex-col items-center justify-center 
-                        rotate-y-180 backface-hidden"
+                    className="absolute inset-0 bg-gradient-to-br
+          from-purple-600 to-blue-600
+          text-white rounded-3xl shadow-2xl
+          flex flex-col items-center justify-center
+          rotate-y-180 backface-hidden p-4 text-center"
                   >
-                    <p className="text-lg font-semibold">Shopify</p>
+                    <p className="text-base md:text-lg font-semibold">
+                      Shopify
+                    </p>
                     <p className="text-xs opacity-80 mt-1">
                       Automate store conversations
                     </p>
@@ -524,8 +524,8 @@ const page = () => {
                 </div>
               </div>
 
-              {/* Right Block */}
-              <div className="col-span-12 md:col-span-5 grid grid-cols-2 gap-6">
+              {/* RIGHT SIDE */}
+              <div className="md:col-span-5 grid grid-cols-2 gap-4 md:gap-6">
                 <Tile icon={IntegrationsFreshWork} />
                 <Tile icon={IntegrationsShopify} />
                 <Tile icon={woo} />
@@ -670,7 +670,7 @@ const page = () => {
           </h2>
         </div>
 
-        <div className="flex overflow-x-auto whitespace-nowrap scrollbar-hide gap-2 mb-2 md:mb-8 lg:justify-center xl:justify-center snap-x snap-mandatory ">
+        <div className="flex overflow-x-auto whitespace-nowrap scrollbar-hide gap-2 mb-2 md:mb-8 xl:justify-center snap-x snap-mandatory ">
           {tabs.map((tab) => (
             <button
               key={tab}
@@ -757,7 +757,7 @@ const page = () => {
   );
   function Tile({ icon }) {
     return (
-      <div className="h-32 bg-white shadow-md rounded-bl-4xl rounded-tr-4xl flex items-center justify-center">
+      <div className="h-32 w-full bg-white shadow-md rounded-bl-4xl rounded-tr-4xl flex items-center justify-center">
         {icon && (
           <Image
             src={icon}

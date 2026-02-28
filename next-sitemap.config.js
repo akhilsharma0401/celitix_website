@@ -22,6 +22,12 @@ module.exports = {
     "/privacy-policy",
     "/payment-and-cancellation",
     "/shipping-and-delivery-policy",
+    "/admin",
+    "/admin/uploadblogs",
+    "/admin/viewAdmin",
+    '/admin*',        
+    '/admin/*',
+    '/admin/**',
   ],
 
   additionalPaths: async (config) => {
