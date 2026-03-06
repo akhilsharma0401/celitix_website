@@ -38,10 +38,13 @@ export default function RootLayout({ children }) {
       </Head> */}
       <head>
         {/* <link rel="icon" type="image/svg+xml" href="/favicon.ico" /> */}
-         <link rel="icon" type="image/svg+xml" href="/assets/Icons/CELITIXFAVICON.svg" />
+        <link
+          rel="icon"
+          type="image/svg+xml"
+          href="/assets/Icons/CELITIXFAVICON.svg"
+        />
         {/* <title>Celitix</title> */}
         {/* <link rel="canonical" href="https://www.celitix.com"/> */}
-        
 
         {/* <!-- Google Tag Manager --> */}
         <Script
@@ -79,7 +82,6 @@ export default function RootLayout({ children }) {
           `}
         </Script>
 
-
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-1009530955"
           strategy="afterInteractive"
@@ -92,7 +94,6 @@ export default function RootLayout({ children }) {
             gtag('config', 'AW-1009530955');
           `}
         </Script>
-
 
         {/* Cloudflare Turnstile */}
         <Script
@@ -137,7 +138,6 @@ export default function RootLayout({ children }) {
             src="https://www.googletagmanager.com/ns.html?id=GTM-MMDW54T8"
             height="0"
             width="0"
-       
           ></iframe>
         </noscript>
 
@@ -146,7 +146,6 @@ export default function RootLayout({ children }) {
           <img
             height="1"
             width="1"
-           
             src="https://www.facebook.com/tr?id=587446320662611&ev=PageView&noscript=1"
           />
         </noscript>

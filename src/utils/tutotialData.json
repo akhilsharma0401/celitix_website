@@ -1,0 +1,233 @@
+[
+  {
+    "slug": "whatsapp-business-api"
+  },
+  {
+    "slug": "whatsapp-approval-time"
+  },
+  {
+    "slug": "multiple-whatsapp-api"
+  },
+  {
+    "slug": "phone-number-rules"
+  },
+  {
+    "slug": "how-to-apply-whatsapp-api"
+  },
+  {
+    "slug": "facebook-business-verification"
+  },
+  {
+    "slug": "troubleshoot-disabled-account"
+  },
+  {
+    "slug": "pre-requisites-whatsapp-api"
+  },
+  {
+    "slug": "integrate-facebook-celitix"
+  },
+  {
+    "slug": "whatsapp-messaging-limits"
+  },
+  {
+    "slug": "whatsapp-display-name-rules"
+  },
+  {
+    "slug": "how-to-change-whatsapp-display-name"
+  },
+  {
+    "slug": "whatsapp-quality-rating"
+  },
+  {
+    "slug": "whatsapp-template-guidelines"
+  },
+  {
+    "slug": "whatsapp-templates-disabled"
+  },
+  {
+    "slug": "avoid-whatsapp-template-rejection"
+  },
+  {
+    "slug": "whatsapp-template-examples-by-industry"
+  },
+  {
+    "slug": "create-whatsapp-templates-celitix"
+  },
+  {
+    "slug": "best-practices-high-template-approval"
+  },
+  {
+    "slug": "whatsapp-opt-in-rules"
+  },
+  {
+    "slug": "chatbots-whatsapp"
+  },
+  {
+    "slug": "whatsapp-chatbot-use-cases"
+  },
+  {
+    "slug": "ai-chatbots-whatsapp-how-they-work"
+  },
+  {
+    "slug": "explanation-of-nodes-to-create-chatbots"
+  },
+  {
+    "slug": "sample-whatsapp-bot-create-celitix"
+  },
+  {
+    "slug": "whatsapp-automation-vs-manual-messaging"
+  },
+  {
+    "slug": "enhance-customer-engagement-with-whatsapp-live-chat-on-celitix"
+  },
+  {
+    "slug": "manage-whatsapp-automation-flows-with-celitix"
+  },
+  {
+    "slug": "whatsapp-manage-flow-in-celitix"
+  },
+  {
+    "slug": "mm-lite-in-whatsapp-business-api"
+  },
+  {
+    "slug": "what-are-whatsapp-template-messages"
+  },
+  {
+    "slug": "key-points-while-drafting-whatsapp-business-message-templates"
+  },
+  {
+    "slug": "whatsapp-template-messages-for-ecommerce"
+  },
+  {
+    "slug": "whatsapp-template-messages-for-education-industry"
+  },
+  {
+    "slug": "whatsapp-template-messages-for-financial-institutions"
+  },
+  {
+    "slug": "whatsapp-template-messages-for-events-and-webinars"
+  },
+  {
+    "slug": "whatsapp-template-messages-for-travel-and-tourism"
+  },
+  {
+    "slug": "whatsapp-template-messages-for-insurance"
+  },
+  {
+    "slug": "whatsapp-template-messages-for-real-estate"
+  },
+  {
+    "slug": "whatsapp-business-template-messages-for-healthcare"
+  },
+  {
+    "slug": "what-happens-when-whatsapp-rating-quality-drops"
+  },
+  {
+    "slug": "how-to-increase-customer-engagement-using-whatsapp"
+  },
+  {
+    "slug": "difference-between-whatsapp-business-app-and-whatsapp-business-api"
+  },
+  {
+    "slug": "what-is-whatsapp-co-existence"
+  },
+  {
+    "slug": "how-whatsapp-co-existence-works"
+  },
+  {
+    "slug": "benefits-of-using-a-co-existence-whatsapp-number-with-celitix"
+  },
+  {
+    "slug": "why-businesses-should-choose-whatsapp-co-existence"
+  },
+  {
+    "slug": "who-can-benefit-from-whatsapp-co-existence-with-celitix"
+  },
+  {
+    "slug": "limitations-of-whatsapp-co-existence-before-onboarding"
+  },
+  {
+    "slug": "why-whatsapp-co-existence-is-ideal-for-growing-businesses"
+  },
+  {
+    "slug": "how-meta-policies-apply-to-co-existence-accounts"
+  },
+  {
+    "slug": "whatsapp-opt-in-rules-for-co-existence-numbers"
+  },
+  {
+    "slug": "how-enterprises-use-whatsapp-business-api-at-scale"
+  },
+  {
+    "slug": "whatsapp-business-api-vs-rcs-messaging-for-businesses"
+  },
+  {
+    "slug": "spam-prevention-on-whatsapp-how-meta-detects-abuse"
+  },
+  {
+    "slug": "best-practices-to-maintain-a-healthy-whatsapp-account"
+  },
+  {
+    "slug": "whatsapp-marketing-funnel-from-lead-capture-to-conversion"
+  },
+  {
+    "slug": "whatsapp-business-api-data-security-and-end-to-end-encryption"
+  },
+  {
+    "slug": "designing-non-robotic-conversation-flows-on-celitix"
+  },
+  {
+    "slug": "why-businesses-are-replacing-website-chat-to-whatsapp-live-chat"
+  },
+  {
+    "slug": "whatsapp-chatbot-vs-website-chatbot-what-converts-better"
+  },
+  {
+    "slug": "how-instant-whatsapp-replies-increase-lead-conversion-rates"
+  },
+  {
+    "slug": "reducing-agent-load-using-whatsapp-automation"
+  },
+  {
+    "slug": "managing-multiple-agents-on-a-single-whatsapp-business-number"
+  },
+  {
+    "slug": "track-roi-with-the-celitix-analytics-dashboard"
+  },
+  {
+    "slug": "celitix-workflow-ensuring-message-delivery-with-intelligent-channel-switching"
+  },
+  {
+    "slug": "how-whatsapp-messaging-from-google-sheets-works-in-celitix"
+  },
+  {
+    "slug": "what-is-rcs-messaging"
+  },
+  {
+    "slug": "why-rcs-is-the-future-of-business-messaging"
+  },
+  {
+    "slug": "rcs-vs-sms-difference-for-businesses"
+  },
+  {
+    "slug": "how-rcs-messaging-works-on-android"
+  },
+  {
+    "slug": "benefits-of-rcs-messaging-for-customer-engagement"
+  },
+  {
+    "slug": "driving-higher-ctr-with-rich-media-rcs-messages"
+  },
+  {
+    "slug": "how-telecom-operators-enable-rcs-messaging"
+  },
+  {
+    "slug": "why-rcs-campaigns-outperform-sms-marketing"
+  },
+  {
+    "slug": "launch-high-converting-rcs-campaigns-with-celitix"
+  },
+  {
+    "slug": "how-to-personalize-rcs-campaigns-for-better-engagement"
+  }
+]

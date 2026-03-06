@@ -11,6 +11,7 @@
 /** @type {import('next-sitemap').IConfig} */
 // const { smskey, rcskey, whatsappkey } = require("./src/app/lib/cities.js");
 
+const tutorials = require("./src/utils/tutotialData.json");
 
 module.exports = {
   siteUrl: "https://www.celitix.com",
@@ -25,9 +26,9 @@ module.exports = {
     "/admin",
     "/admin/uploadblogs",
     "/admin/viewAdmin",
-    '/admin*',        
-    '/admin/*',
-    '/admin/**',
+    "/admin*",
+    "/admin/*",
+    "/admin/**",
   ],
 
   additionalPaths: async (config) => {
@@ -126,7 +127,7 @@ module.exports = {
         lastmod: new Date().toISOString(),
         changefreq: "daily",
         priority: 0.7,
-      }))
+      })),
     );
 
     const smsrootPath = additionalPathsms.flatMap((path) => ({
@@ -142,7 +143,7 @@ module.exports = {
         lastmod: new Date().toISOString(),
         changefreq: "daily",
         priority: 0.7,
-      }))
+      })),
     );
 
     const rcsrootPath = additionalPathrcs.flatMap((path) => ({
@@ -158,11 +159,18 @@ module.exports = {
         lastmod: new Date().toISOString(),
         changefreq: "daily",
         priority: 0.7,
-      }))
+      })),
     );
 
     const whatsapprootPath = additionalPathwhatsapp.flatMap((path) => ({
       loc: `/${path}`,
+      lastmod: new Date().toISOString(),
+      changefreq: "daily",
+      priority: 0.7,
+    }));
+
+    const tutorialsrootPath = tutorials.map((path) => ({
+      loc: `/tutorial/${path.slug}`,
       lastmod: new Date().toISOString(),
       changefreq: "daily",
       priority: 0.7,
@@ -175,6 +183,7 @@ module.exports = {
       ...rcsrootPath,
       ...whatsapppaths,
       ...whatsapprootPath,
+      ...tutorialsrootPath,
     ];
   },
 };

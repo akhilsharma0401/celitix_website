@@ -37,7 +37,10 @@ export const sendOtp = async (phone, name) => {
   try {
     const payload = {
       mobile: phone,
+      name: name,
     };
+
+    console.log(payload);
     const res = await axiosInstance.post("/otp/sendOtp", payload);
 
     return {
