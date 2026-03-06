@@ -166,7 +166,7 @@ const FormPopup = ({ visible, onHide }) => {
         return;
       }
 
-      const { firstName, lastName, email, phone, service } = form;
+      const { firstName, lastName, email, phone, service, message } = form;
 
       if (!firstName.trim()) return toast.error("First Name is required.");
       if (!lastName.trim()) return toast.error("Last Name is required.");
@@ -183,6 +183,9 @@ const FormPopup = ({ visible, onHide }) => {
 
       // if (!isOtpVerified) return toast.error('Please verify your phone number with OTP.');
       if (!service.trim()) return toast.error("Please select a service.");
+
+      if (!message.trim()) return toast.error("Please enter message.");
+      if (message.length < 30 ) return toast.error("Please enter minimum 30 characters.");
 
       const captchaVerify = await verifyToken(turnstileResponse);
 

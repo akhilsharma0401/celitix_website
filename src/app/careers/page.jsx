@@ -261,7 +261,7 @@ Interpersonal skills, including the ability to build rapport`,
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      const { firstName, lastName, name, email, phone, service } = form;
+      const { firstName, lastName, name, email, phone, service, message } = form;
 
       if (!firstName.trim()) return toast.error("First Name is required.");
       if (!lastName.trim()) return toast.error("Last Name is required.");
@@ -282,6 +282,9 @@ Interpersonal skills, including the ability to build rapport`,
       if (!form.selectExpyrs)
         return toast.error("Please select years of experience.");
       if (!resume) return toast.error("Please upload your resume.");
+
+       if (!message.trim()) return toast.error("Please enter message.");
+      if (message.length < 30 ) return toast.error("Please enter minimum 30 characters.");
 
       const captchaVerify = await verifyToken(turnstileResponse);
 
