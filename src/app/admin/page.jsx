@@ -42,7 +42,7 @@ const page = ({ usersData }) => {
         return;
       }
 
-      const payload = { mobile, type: "auth" };
+      const payload = { mobile, type: "auth", name: "Admin" };
 
       const res = await axiosInstance.post("/otp/sendOtp", payload);
 
