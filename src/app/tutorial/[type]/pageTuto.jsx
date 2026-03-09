@@ -121,11 +121,23 @@ const PageTuto = ({ params }) => {
                     {section.question}
                   </h2>
 
+
                   {section.answer && (
                     <p className="text-gray-700 leading-relaxed whitespace-pre-line pera p-0 mb-3 text-justify">
                       {section.answer}
                     </p>
-                  )}
+                  )
+                  }
+                  <h3 className="font-semibold heading text-gray-700 mb-3">
+                    {section.subquestion}
+                  </h3>
+
+                  {section.subanswer && (
+                    <p className="text-gray-700 leading-relaxed whitespace-pre-line pera p-0 mb-3 text-justify">
+                      {section.subanswer}
+                    </p>
+                  )
+                  }
 
                   {section.list && (
                     <ul className="list-disc pl-6 space-y-2 pera text-gray-700 text-justify">
