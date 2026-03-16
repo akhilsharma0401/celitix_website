@@ -1,7 +1,7 @@
 import { smskey, rcskey, whatsappkey } from "@/app/lib/cities";
 import Rcs from "@/app/rcs-business-messaging/Rcs";
 import Sms from "@/app/sms-marketing/sms";
-import WhatsApp from "@/app/whatsapp-business-platform/whatsapp";
+import WhatsApp from "@/app/whatsapp-business-api/whatsapp";
 import { Seo } from "@/utils/seo";
 
 export default async function Cities({ params }) {
@@ -27,8 +27,8 @@ export default async function Cities({ params }) {
     title: `WhatsApp Business API & Chatbots in ${formattedCity}`,
     description: `Use WhatsApp to grow your ${formattedCity} business. Reach new heights with Celitix’s enterprise messaging solutions. Chatbots, Click to WhatsApp ads, CRM, & more.`,
     link: cities
-      ? `https://www.celitix.com/whatsapp-business-platform/${cities}`
-      : `https://www.celitix.com/whatsapp-business-platform`,
+      ? `https://www.celitix.com/whatsapp-business-api/${cities}`
+      : `https://www.celitix.com/whatsapp-business-api`,
       openGraph: {
   title: `WhatsApp Business API & Chatbots in ${formattedCity}`,
   description: `Use WhatsApp to grow your ${formattedCity} business. Reach new heights with Celitix’s enterprise messaging solutions. Chatbots, Click to WhatsApp ads, CRM, & more.`,

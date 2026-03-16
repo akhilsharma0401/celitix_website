@@ -413,7 +413,7 @@ const Landing = () => {
     if (validLabels.includes(btnText)) {
       switch (activeService.id) {
         case 1:
-          router.push("/whatsapp-business-platform");
+          router.push("/whatsapp-business-api");
           break;
         case 2:
           router.push("/rcs-business-messaging");

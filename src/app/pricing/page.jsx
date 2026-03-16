@@ -254,7 +254,7 @@
 //                                 <a href="/rcs-business-messaging" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
 //                                     <Image src={ReachRCS} alt="RCS" className="w-4 h-4 mr-1" /> RCS
 //                                 </a>
-//                                 <a href="/whatsapp-business-platform" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
+//                                 <a href="/whatsapp-business-api" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
 //                                     <Image src={Reachwhatsappicon} alt="WhatsApp" className="w-4 h-4 mr-1" /> WhatsApp
 //                                 </a>
 //                                 <a href="/inbound-dialer" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
@@ -1783,7 +1783,7 @@ const Pricing = () => {
                                 <a href="/rcs-business-messaging" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
                                     <Image src={ReachRCS} alt="RCS" className="w-4 h-4 mr-1" /> RCS
                                 </a>
-                                <a href="/whatsapp-business-platform" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
+                                <a href="/whatsapp-business-api" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
                                     <Image src={Reachwhatsappicon} alt="WhatsApp" className="w-4 h-4 mr-1" /> WhatsApp
                                 </a>
                                 {/* <a href="/inbound-dialer" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">

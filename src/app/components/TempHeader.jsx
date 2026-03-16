@@ -392,7 +392,7 @@ export const TempHeader = () => {
                             <div
                                 className={`bg-white text-black rounded-md z-50 transition-all duration-300 ease-in-out ${isChannelsOpen ? 'block' : 'hidden'} grid sm:grid-cols-2 md:grid-cols-2 w-full md:w-[800px]`}
                             >
-                                <Link href="#" to="/whatsapp-business-platform">
+                                <Link href="#" to="/whatsapp-business-api">
                                     <ChannelItem title="WhatsApp" desc="Most Comprehensive" />
                                 </Link>
                                 <Link href="#" to="/rcs-business-messaging">

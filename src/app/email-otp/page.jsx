@@ -358,7 +358,7 @@ const Email = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-7xl mx-auto mb-12">
           {/* Row 1 */}
-          <Link href="/whatsapp-business-platform" className="flex flex-col items-center bg-white rounded-2xl py-6 hover:shadow-lg transition-shadow">
+          <Link href="/whatsapp-business-api" className="flex flex-col items-center bg-white rounded-2xl py-6 hover:shadow-lg transition-shadow">
             <Image src={WhatsAppicon} alt="WhatsApp" className="w-10 h-10 mb-2 object-contain" />
             <p className="text-sm font-medium text-gray-800">WhatsApp</p>
           </Link>

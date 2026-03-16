@@ -539,7 +539,7 @@ const Sms = ({ params }) => {
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-7xl mx-auto mb-12">
             {/* Row 1 */}
             <Link
-              href="/whatsapp-business-platform"
+              href="/whatsapp-business-api"
               className="flex flex-col items-center bg-white rounded-2xl py-6 hover:shadow-lg transition-shadow"
             >
               <Image

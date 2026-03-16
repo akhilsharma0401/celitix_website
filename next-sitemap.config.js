@@ -113,6 +113,7 @@ module.exports = {
       "whatsapp-web-api",
       "whatsapp-business-messaging",
       "whatsapp-business-platform",
+      
     ];
     const additionalPathrcs = [
       "rcs-message",

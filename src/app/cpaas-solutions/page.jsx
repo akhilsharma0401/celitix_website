@@ -148,7 +148,7 @@ const Product = () => {
     if (validLabels.includes(btnText)) {
       switch (activeService.id) {
         case 1:
-          router.push('/whatsapp-business-platform');
+          router.push('/whatsapp-business-api');
           break;
         case 2:
           router.push('/rcs-business-messaging');
@@ -484,7 +484,7 @@ const Product = () => {
                 />
               </Link>
 
-              {/* <Link href="#" to="/whatsapp-business-platform">
+              {/* <Link href="#" to="/whatsapp-business-api">
                 <UniversalButton label="Chat With Us" variant="brutal" className='bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 font-semibold hover:bg-white hover:text-black 
               hover:shadow-[4px_4px_0px_#9B44B6]'/></Link> */}
             </div>
@@ -695,7 +695,7 @@ const Product = () => {
                 onHide={handleCloseDialog}
               />
 
-              {/* <Link href="#" to="/whatsapp-business-platform">
+              {/* <Link href="#" to="/whatsapp-business-api">
                 <UniversalButton
                   label="Chat With Us"
                   variant="transitionbtn"

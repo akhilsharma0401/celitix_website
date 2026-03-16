@@ -264,7 +264,7 @@ const Footer = () => {
             <div className='grid grid-cols-2 gap-2'>
               <ul className="text-md sub-heading md:mx-auto  sm:mx-0 space-y-3">
                 <li className="group relative cursor-pointer">
-                  <Link href="/whatsapp-business-platform">
+                  <Link href="/whatsapp-business-api">
                     WhatsApp
                     <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-17"></span>
                   </Link>

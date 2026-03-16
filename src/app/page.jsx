@@ -409,7 +409,7 @@ const Home = () => {
     if (validLabels.includes(btnText)) {
       switch (activeService.id) {
         case 1:
-          router.push("/whatsapp-business-platform");
+          router.push("/whatsapp-business-api");
           break;
         case 2:
           router.push("/rcs-business-messaging");
@@ -1014,7 +1014,7 @@ const Home = () => {
         <section className="relative isolate overflow-hidden bg-[#F3ECF9] pt-20 md:pt-24">
           <div className="grid grid-cols-1 items-center gap-6 px-5 py-10 md:grid-cols-2 md:py-20 lg:gap-16 lg:px-28">
             <div className="text-center md:text-left">
-              <h1 className="heading mb-1 text-4xl font-semibold text-gray-900 md:mb-5 md:text-5xl lg:text-6xl 2xl:text-8xl">
+              <h1 className="heading mb-1 text-4xl font-semibold text-gray-900 md:mb-5 md:text-5xl lg:text-6xl 2xl:text-[5.3rem]">
                 <span className="block">All-in-One</span>
                 <span className="block">Communication</span>
                 <span className="block">Platform</span>

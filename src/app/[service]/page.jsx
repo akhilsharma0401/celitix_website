@@ -1,6 +1,6 @@
 import Sms from "../sms-marketing/sms";
 import Rcs from "../rcs-business-messaging/Rcs";
-import WhatsApp from "../whatsapp-business-platform/whatsapp";
+import WhatsApp from "../whatsapp-business-api/whatsapp";
 import { smskey, rcskey, whatsappkey } from "../lib/cities";
 import ErrorPage from "../components/ErrorPage";
 import { Seo } from "@/utils/seo";

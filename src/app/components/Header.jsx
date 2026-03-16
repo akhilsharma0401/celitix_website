@@ -275,7 +275,7 @@ const Header = () => {
 
                   </div> */}
                   <div className="w-full grid grid-cols-1 popfh sm:grid-cols-1 md:grid-cols-1 gap-1 p-1">
-                    <Link href="/whatsapp-business-platform">
+                    <Link href="/whatsapp-business-api">
                       <ChannelItem title="WhatsApp" desc="Most Comprehensive" />
                     </Link>
                     <Link href="/rcs-business-messaging">
@@ -673,7 +673,7 @@ const Header = () => {
           ${isChannelsOpen ? 'block' : 'hidden'} grid sm:grid-cols-2 md:grid-cols-2 w-full md:w-[800px]
       `}
               >
-                <Link href="/whatsapp-business-platform" onClick={() => setMobileMenuOpen(false)}>
+                <Link href="/whatsapp-business-api" onClick={() => setMobileMenuOpen(false)}>
                   <ChannelItem title="WhatsApp" desc="Most Comprehensive" />
                 </Link>
                 <Link href="/rcs-business-messaging" onClick={() => setMobileMenuOpen(false)}>

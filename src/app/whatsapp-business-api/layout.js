@@ -3,7 +3,7 @@ export const metadata = {
   title: "WhatsApp Business API & Chatbots | Celitix",
   description: "Enhance your marketing with WhatsApp ads, AI chatbots, and CRM solutions powered by WhatsApp API to automate messaging and boost customer loyalty.",
   alternates: {
-    canonical: "https://www.celitix.com/whatsapp-business-platform",
+    canonical: "https://www.celitix.com/whatsapp-business-api",
   },
  openGraph: {
   title: "WhatsApp Business API & Chatbots | Celitix",

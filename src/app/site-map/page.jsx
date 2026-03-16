@@ -18,7 +18,7 @@ const links = {
     ['payment-and-cancellation', 'Payment & Cancellation', 'Celitix Payment & Cancellation Policy'],
   ],
   Channels: [
-    ['whatsapp-business-platform', 'WhatsApp', 'Celitix WhatsApp'],
+    ['whatsapp-business-api', 'WhatsApp', 'Celitix WhatsApp'],
     ['rcs-business-messaging', 'RCS', 'Celitix RCS Service'],
     ['sms-marketing', 'SMS', 'Celitix SMS Service'],
     ['two-way-sms', '2 Way SMS', 'Celitix 2-Way SMS'],
