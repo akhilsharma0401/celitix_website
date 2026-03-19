@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import FaqItem from "../components/Faq";
 import {
   AssistCustomers,
+  Automated,
   Automation,
   ChatbotBuilder,
   CTALASTIMAGE,
@@ -17,6 +18,7 @@ import {
   freshdesk,
   Healthcare,
   Hospitality,
+  InstantCustomer,
   IntegrationsFreshdesk,
   IntegrationsFreshWork,
   IntegrationsLeadSquared,
@@ -27,7 +29,9 @@ import {
   RealEstateConstruction,
   SaveTime,
   shopify,
+  SmartLead,
   TechStartups,
+  tutorialhero,
   WhatsappChatbot,
   woo,
   zoho,
@@ -235,7 +239,7 @@ const page = () => {
   ];
   // section 7 FAQ
   return (
-    <div>
+    <div className="bg-[#f7effa]">
       <section className="bg-[#f7ebfc] pt-25 md:pt-40 px-4 sm:px-6 lg:px-20">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10 pb-5 lg:pb-20">
           {/* LEFT CONTENT */}
@@ -301,7 +305,7 @@ const page = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-white md:space-y-20 ">
+      <section className="md:py-16 bg-[#f7effa] md:space-y-20 ">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-16 items-center mb-5">
           {/* LEFT CONTENT */}
           <div className="space-y-6 box-reveal-left">
@@ -457,14 +461,13 @@ const page = () => {
         </div>
       </section>
 
-      <section className="bg-[#f7effa] py-20">
+      <section className="bg-[#f7effa] md:py-10 pb-5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center ">
             <h2 className="text-2xl md:text-4xl lg:text-5xl heading font-semibold text-gray-900 popf">
-              Simply Integrate With Your <br className="hidden md:block" />
-              Current Website Setup
+              Simply Integrate With Your Current Website Setup
             </h2>
-            <p className="text-sm md:text-lg sub-heading text-gray-600 font-light popf mt-2">
+            <p className="text-sm md:text-xl sub-heading text-gray-600 font-light popf mt-2">
               No need to change tools. Blend smoothly with your existing systems
               and add value
             </p>
@@ -536,44 +539,43 @@ const page = () => {
         </div>
       </section>
 
-      <section className="bg-[#f7effa] py-20">
+      <section className="bg-[#f7effa] md:py-20 py-5">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
-          {/* CARD 1 */}
+   
           <div className="relative">
             <div className="relative h-[300px] w-full overflow-hidden border border-gray-300">
               <Image
-                src="/cards/card1.jpg"
+                src={InstantCustomer}
                 alt="Lower interest rates"
                 fill
-                className="object-cover"
+                className="object-cover h-[100px]"
               />
             </div>
 
             <div className="relative -mt-24 mx-4 p-6 bg-[#5fe0c6] border border-gray-800">
               <h3 className="text-lg font-semibold text-gray-900">
-                Lower interest rates
+                Instant Customer Engagement
               </h3>
 
-              <p className="text-sm text-gray-800 mt-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, do
-                eiusmod tempor.
+              <p className="text-sm text-gray-800 mt-2 h-25">
+                Auto-reply WhatsApp chats for instant customer queries. Without any waiting time, take users through product information, support, or bookings.
               </p>
 
-              <button
+              {/* <button
                 className="mt-6 flex items-center justify-between
                                bg-[#1b1b1b] text-white px-4 py-3
                                w-full text-sm font-medium"
               >
                 Learn more <span>→</span>
-              </button>
+              </button> */}
             </div>
           </div>
 
-          {/* CARD 2 */}
+      
           <div className="relative">
             <div className="relative h-[300px] w-full overflow-hidden border border-gray-300">
               <Image
-                src="/cards/card2.jpg"
+                src={SmartLead}
                 alt="Investing made easy"
                 fill
                 className="object-cover"
@@ -582,29 +584,28 @@ const page = () => {
 
             <div className="relative -mt-24 mx-4 p-6 bg-[#f3b43f] border border-gray-800">
               <h3 className="text-lg font-semibold text-gray-900">
-                Investing made easy
+                Smart Lead Qualification
               </h3>
 
-              <p className="text-sm text-gray-800 mt-2">
-                Lorem ipsum dolor sit amet, consectetur elit, do eiusmod tempor
-                incididunt.
+              <p className="text-sm text-gray-800 mt-2 h-25">
+                 Qualify and Capture Leads Automatically with Interactive WhatsApp Flows. Use this opportunity to gather user details, preferences, and requirements before sending them down to your sales team.
               </p>
 
-              <button
+              {/* <button
                 className="mt-6 flex items-center justify-between
                                bg-[#1b1b1b] text-white px-4 py-3
                                w-full text-sm font-medium"
               >
                 Learn more <span>→</span>
-              </button>
+              </button> */}
             </div>
           </div>
 
-          {/* CARD 3 */}
+    
           <div className="relative">
             <div className="relative h-[300px] w-full overflow-hidden border border-gray-300">
               <Image
-                src="/cards/card3.jpg"
+                src={Automated}
                 alt="Send easy payments"
                 fill
                 className="object-cover"
@@ -613,27 +614,26 @@ const page = () => {
 
             <div className="relative -mt-24 mx-4 p-6 bg-[#f6dcd6] border border-gray-800">
               <h3 className="text-lg font-semibold text-gray-900">
-                Send easy payments
+                Automated Business Workflows
               </h3>
 
-              <p className="text-sm text-gray-800 mt-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                tempor incididunt.
+              <p className="text-sm text-gray-800 mt-2 h-25">
+                Connect your WhatsApp chatbot workflows and automate actions like sending notifications, reminders, confirmations, and updates to make your business communication 10X easier.
               </p>
 
-              <button
+              {/* <button
                 className="mt-6 flex items-center justify-between
                                bg-[#1b1b1b] text-white px-4 py-3
                                w-full text-sm font-medium"
               >
                 Learn more <span>→</span>
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
       </section>
 
-      <div className="flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-[#A05CD7] to-[#4B0FA6] px-6 md:px-12 py-5 md:py-15">
+      <div className="flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-[#A05CD7] to-[#4B0FA6] px-6 md:px-12 py-5 md:py-15 md:my-16 my-2">
         {/* Left Image with Icons */}
         <div className="relative w-full md:w-1/2 flex justify-center mb-10 md:mb-0">
           <Image
@@ -695,14 +695,7 @@ const page = () => {
               {tabContent[activeTabs]?.description ||
                 "Recover abandoned carts, automate updates, and turn broadcasts into conversations with Click-to-WhatsApp ads."}
             </p>
-            {/* <div className="mb-6">
-              <p className="font-semibold text-gray-800 text-xl  sub-heading mb-2">Use Cases:</p>
-              <ul className="list-disc list-inside pera text-gray-700 text-base space-y-1">
-                {useCases.map((useCase, idx) => (
-                  <li key={idx}>{useCase}</li>
-                ))}
-              </ul>
-            </div> */}
+
             <UniversalButton
               label={tabContent[activeTabs]?.buttonText || "Learn More"}
               variant="brutal"
@@ -725,7 +718,7 @@ const page = () => {
         </div>
       </div>
 
-      <div className=" bg-[#f7ebfc] flex justify-center items-center py-2 md:py-20 px-4 ">
+      {/* <div className=" bg-[#f7ebfc] flex justify-center items-center py-2 md:py-20 px-4 ">
         <div className="w-full max-w-6xl bg-[#F7F4F9] border border-[#D1CDE3] rounded-xl p-6 shadow-lg">
           <h2 className="text-2xl md:text-4xl heading font-semibold text-center text-gray-900 popf mb-8">
             Celitix For E-commerce FAQs
@@ -752,7 +745,7 @@ const page = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
   function Tile({ icon }) {

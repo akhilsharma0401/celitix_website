@@ -563,6 +563,8 @@ import demo from "./images/demo.png"
 import versatile_sms_api_for_automation from "./images/versatile_sms_api_for_automation.png"
 import voice_solutions_client_engagement from "./images/voice_solutions_client_engagement.png"
 
+
+
 // Product Page  2nd service Images
 import Reach_1 from "./images/Reach-01.png"
 import Reach_2 from "./images/Reach-02.png"
@@ -629,6 +631,9 @@ import AssistCustomers from "./imagesMain/AssistCustomers.jpg"
 import ChatbotBuilder from "./imagesMain/ChatbotBuilder.jpg"
 import Automation from "./imagesMain/Automation.jpg"
 import SaveTime from "./imagesMain/SaveTime.jpg"
+import Automated from "./imagesMain/Automated.jpg"
+import SmartLead from "./imagesMain/SmartLead.jpg"
+import InstantCustomer from "./imagesMain/InstantCustomer.jpg"
 
 // WhatsappChatbot
 
@@ -1096,6 +1101,9 @@ export {
     // AUTHENTICATION
 
 
+ 
+
+
     // Industries
 
     Ecommerce,
@@ -1254,6 +1262,9 @@ export {
     ChatbotBuilder,
     Automation,
     SaveTime,
+    Automated,
+    SmartLead,
+    InstantCustomer,
     // WhatsappChatbot
 
     // admin
