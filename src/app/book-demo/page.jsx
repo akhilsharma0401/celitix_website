@@ -1,10 +1,10 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { Suspense, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import UniversalButton from "../components/UniversalButton";
 import {
   homesecond1,
@@ -35,8 +35,19 @@ import { axiosInstance } from "@/utils/axios";
 // const url = import.meta.env.VITE_URL
 const url = process.env.NEXT_PUBLIC_API_URL;
 // const url = "https://celitix.com:3001";
+
 const BookDemo = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      {" "}
+      <BookDemoPage />
+    </Suspense>
+  );
+};
+
+export const BookDemoPage = () => {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -58,7 +69,7 @@ const BookDemo = () => {
   // const [isSubmitting, setIsSubmitting] = useState(false);
   // const [submitLabel, setSubmitLabel] = useState("Submit");
   const [isFetching, setIsFetching] = useState(false);
-const [otpId, setOtpId] = useState(null);
+  const [otpId, setOtpId] = useState(null);
   const otpRefs = useRef([]);
   const [isVerifying, setIsVerifying] = useState(false);
   const [showDialog, setShowDialog] = useState(false);
@@ -314,10 +325,10 @@ const [otpId, setOtpId] = useState(null);
         otpId: otpId,
       });
 
-       if (!res?.status) {
-      toast.error(res?.message);
-      return;
-    }
+      if (!res?.status) {
+        toast.error(res?.message);
+        return;
+      }
 
       toast.success("OTP Verified Successfully");
 
@@ -356,14 +367,24 @@ const [otpId, setOtpId] = useState(null);
       // if (!isOtpVerified) return toast.error('Please verify your phone number with OTP.');
       if (!service.trim()) return toast.error("Please select a service.");
 
-       if (!message.trim()) return toast.error("Please enter message.");
-            if (message.length < 30 ) return toast.error("Please enter minimum 30 characters.");
+      if (!message.trim()) return toast.error("Please enter message.");
+      if (message.length < 30)
+        return toast.error("Please enter minimum 30 characters.");
 
       // const captchaVerify = await verifyToken(turnstileResponse)
 
       // if (!captchaVerify?.data?.status) {
       //     return toast.error("Unable to verify captcha. Please Contact Site Administrator ")
       // }
+
+      console.log("searchParams", searchParams.get("utm_source"));
+
+      const utmData = {
+        source: searchParams.get("utm_source") || "direct",
+        medium: searchParams.get("utm_medium") || "direct",
+        campaign: searchParams.get("utm_campaign") || "direct",
+        gclid: searchParams.get("gclid") || "direct",
+      };
 
       const data = {
         firstName: firstName,
@@ -374,12 +395,13 @@ const [otpId, setOtpId] = useState(null);
         service: service,
         message: form.message || "N/A",
         source: "book-demo",
+        utmData,
       };
 
       setIsFetching(true);
       const res = await axiosInstance.post("/enquiry/contact", data);
 
-     if (!res?.data?.status) {
+      if (!res?.data?.status) {
         toast.error(res?.data?.message);
         return;
       }
