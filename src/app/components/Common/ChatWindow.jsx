@@ -99,7 +99,6 @@ export default function ChatWindow({ onClose }) {
       });
 
       const { data } = await res.json();
-      console.log("bot response", data)
       if (!data) return;
 
       const formattedMessages = data.flatMap((item) => [

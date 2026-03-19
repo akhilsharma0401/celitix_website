@@ -40,7 +40,6 @@ export const sendOtp = async (phone, name) => {
       name: name,
     };
 
-    console.log(payload);
     const res = await axiosInstance.post("/otp/sendOtp", payload);
 
     return {
@@ -60,8 +59,6 @@ export const sendOtp = async (phone, name) => {
         statusCode: e.response.status,
       };
     }
-
-    console.log(e);
 
     return {
       status: false,

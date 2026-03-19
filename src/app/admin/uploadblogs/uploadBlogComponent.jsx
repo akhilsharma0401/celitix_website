@@ -252,7 +252,7 @@ const UploadBlogComponentIndex = () => {
                 }
 
                 setCategories(blog?.category?.split(",") || []);
-                console.log("formattedData", formattedData);
+
                 setFormData(formattedData);
 
                 const existingImage =

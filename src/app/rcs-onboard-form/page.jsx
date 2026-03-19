@@ -221,7 +221,6 @@ export default function Page() {
         e.preventDefault();
         if (!validate()) return;
 
-        console.log(form, files);
         alert("Submitted 🚀");
     };
 

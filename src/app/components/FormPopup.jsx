@@ -81,7 +81,6 @@ const FormPopup = ({ visible, onHide }) => {
 
     const res = await sendOtp(phone, form.firstName);
 
-    console.log(res);
     if (!res?.status) {
       toast.error("Error Sending OTP. Please try again later.");
       return;
@@ -137,7 +136,6 @@ const FormPopup = ({ visible, onHide }) => {
       otpId: otpId,
     });
 
-    console.log(res);
 
     if (!res?.status) {
       toast.error(res?.message);

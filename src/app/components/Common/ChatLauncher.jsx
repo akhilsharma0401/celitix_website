@@ -19,7 +19,7 @@ export default function ChatLauncher() {
   async function generateSessionId() {
     try {
       const res = await axios.get(`${process.env.NEXT_PUBLIC_CHAT_URL}/generateSession`)
-      console.log("res", res)
+
       Cookies.set('session_id', res?.data?.sessionId, { expires: 1 })
       return res?.data?.sessionId
     }

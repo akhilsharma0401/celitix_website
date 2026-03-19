@@ -232,10 +232,9 @@ export const BookDemoPage = () => {
         signal: controller.signal,
       })
       .then((otp) => {
-        console.log("otp?.code", otp);
         if (otp?.code) {
           const otpCode = otp.code.replace(/\D/g, "").slice(0, 6);
-          console.log("otp?.code", otpCode);
+
 
           const otpArray = otpCode.split("");
           setOtp(otpArray);
@@ -377,7 +376,6 @@ export const BookDemoPage = () => {
       //     return toast.error("Unable to verify captcha. Please Contact Site Administrator ")
       // }
 
-      console.log("searchParams", searchParams.get("utm_source"));
 
       const utmData = {
         source: searchParams.get("utm_source") || "direct",

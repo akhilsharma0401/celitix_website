@@ -111,7 +111,6 @@ const page = () => {
 
       // API call
       const res = await axiosInstance.get("/blog?page=" + targetPage + "&limit=" + PER_PAGE + "&orderBy=desc&role=admin");
-      console.log("Blog fetch response:", res);
 
 
       // Check response
@@ -131,8 +130,6 @@ const page = () => {
         ? res.data.blogs
         : [];
 
-
-      console.log("normalizeBlog", rows.map(normalizeBlog));
       setBlogs(rows.map(normalizeBlog));
 
 

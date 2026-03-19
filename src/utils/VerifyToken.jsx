@@ -16,6 +16,5 @@ export const verifyToken = async (token) => {
 
     const res = await axiosInstance.post("/enquiry/turnstile-verify", data);
 
-    console.log("res", res);
     return res;
 };
