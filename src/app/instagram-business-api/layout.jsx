@@ -1,13 +1,13 @@
 // src/app/cpaas-solutions/layout.js
 export const metadata = {
-  title: "Instagram DMs  for Business Automation with Celitix",
-  description: "Use Instagram DM automation to respond instantly, generate leads, and guide customers through smart conversations with Celitix business messaging tools.",
+  title: "Instagram Automation Platform for Business Growth | Celitix",
+  description: "Automate Instagram DMs, schedule posts, manage multiple accounts, and track performance—all in one dashboard with Celitix. Grow faster with smart automation.",
   alternates: {
     canonical: "https://www.celitix.com/intagram-business-api",
   },
   openGraph: {
-  title: "Instagram DMs  for Business Automation with Celitix",
-  description: "Use Instagram DM automation to respond instantly, generate leads, and guide customers through smart conversations with Celitix business messaging tools.",
+  title: "Instagram Automation Platform for Business Growth | Celitix",
+  description: "Automate Instagram DMs, schedule posts, manage multiple accounts, and track performance—all in one dashboard with Celitix. Grow faster with smart automation.",
 },
 };
 
