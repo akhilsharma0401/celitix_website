@@ -270,7 +270,7 @@ const Page = () => {
       {/* 2st */}
       <section className="bg-[#f7ebfc] py-2 lg:py-10 px-4 sm:px-6 lg:px-25">
         <div className="text-center px-1 md:px-4 pb-5 md:pb-10 lg:pb-15">
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-gray-900 popf heading">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-gray-900 popf heading mb-2">
             Reach Customers Where They Interact
           </h2>
           <p className="text-sm md:text-lg sub-heading max-w-6xl mx-auto text-gray-700 text-justify">

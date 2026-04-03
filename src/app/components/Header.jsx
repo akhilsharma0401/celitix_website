@@ -299,7 +299,7 @@ const Header = () => {
                     <Link href="/whatsapp-business-api">
                       <ChannelItem title="WhatsApp" desc="Most Comprehensive" />
                     </Link>
-                    <Link href="/instagram-business-api">
+                    <Link href="/instagram-business">
                       <ChannelItem title="Instagram" desc="Automate & Scale" />
                       
                     </Link>
@@ -725,7 +725,7 @@ const Header = () => {
                   <ChannelItem title="WhatsApp" desc="Most Comprehensive" />
                 </Link>
                 <Link
-                  href="/instagram-business-api"
+                  href="/instagram-business"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <ChannelItem title="Instagram" desc="Automate & Scale" />
