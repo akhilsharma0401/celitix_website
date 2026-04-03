@@ -4,7 +4,7 @@ import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 // import { Helmet } from 'react-helmet-async';
-import { Authenticationicon, BuildCustomFlows, Chatbots, Click2callicon, ClicktoWhatsAppAds, CTALASTIMAGE, DoMoreWithLess, Emailicon, IBDicon, LiveNotifications, MeetCustomersWhatsapp, METACOLOR, MissedCallicon, MultiAgentLiveChat, OBDicon, PromoteinBulk, RCSicon, RichCampaigns, ScaleSmartStayReady, ShowcaseCatalogues, SMSicon, twoWaySMSicon, WhatsApp_Business_Platform, WhatsAppAPI, WhatsAppicon, whatsChatbot, whatsManageOrders, WhyCelitixWhatsapp } from '../../../public/assets/images';
+import { Authenticationicon, BuildCustomFlows, Chatbots, Click2callicon, ClicktoWhatsAppAds, CTALASTIMAGE, DoMoreWithLess, Emailicon, IBDicon, LiveNotifications, MeetCustomersWhatsapp, METACOLOR, MissedCallicon, MultiAgentLiveChat, OBDicon, PromoteinBulk, RCSicon, RichCampaigns, ScaleSmartStayReady, ShowcaseCatalogues, SMSicon, twoWaySMSicon, WhatsApp_Business_Platform, WhatsAppAPI, WhatsAppAPInew, WhatsAppicon, whatsChatbot, whatsManageOrders, WhyCelitixWhatsapp } from '../../../public/assets/images';
 // import { initScrollReveal } from '../../utils/ScrollReveal';
 import Image from 'next/image';
 import Link from "next/link";
@@ -681,7 +681,7 @@ const WhatsApp = () => {
             {/* Center Image Block */}
             <div className="flex justify-center">
               <Image
-                src={WhatsAppAPI}
+                src={WhatsAppAPInew}
                 alt="Phone Mockup"
                 className="w-[260px] sm:w-[300px] md:w-[320px] lg:w-[350px] object-contain"
               />

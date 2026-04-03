@@ -1,52 +1,60 @@
 "use client";
 import React, { useRef, useState } from "react";
-import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 // import { Helmet } from 'react-helmet-async';
 import {
   Authenticationicon,
-  BuildCustomFlows,
-  Chatbots,
   Click2callicon,
-  ClicktoWhatsAppAds,
+  CommentControl,
+  contentManagement,
+  ContentPostManagement,
+  CreatePublishContent,
   CTALASTIMAGE,
-  DoMoreWithLess,
   Emailicon,
   IBDicon,
-  LiveNotifications,
+  InsightsAnalytics,
+  InsightsandAnalytics,
+  InstagramBusinessPlatform,
+  InstagramLiveChat,
+  instagramlivechat,
+  InstagramWorkflow,
   MeetCustomersWhatsapp,
-  METACOLOR,
   MissedCallicon,
-  MultiAgentLiveChat,
+  MultiAccountManagement,
   OBDicon,
-  PromoteinBulk,
   RCSicon,
+  ReachCustomersinstagram,
   RichCampaigns,
-  ScaleSmartStayReady,
-  ShowcaseCatalogues,
+  SmartCommentModeration,
   SMSicon,
+  StandsOutInstagram,
   twoWaySMSicon,
   WhatsApp_Business_Platform,
   WhatsAppAPI,
-  WhatsAppAPInew,
   WhatsAppicon,
-  whatsChatbot,
-  whatsManageOrders,
-  WhyCelitixWhatsapp,
 } from "../../../public/assets/images";
-// import { initScrollReveal } from '../../utils/ScrollReveal';
 import Image from "next/image";
 import Link from "next/link";
-// import LocationSEO from '../../components/LocationSEO';
 import FaqItem from "../components/Faq";
 import FormPopup from "../components/FormPopup";
 import UniversalButton from "../components/UniversalButton";
+import { useRouter } from "next/navigation";
 
-const WhatsApp = () => {
-  // useEffect(() => {
-  //   initScrollReveal();
-  // }, []);
+const Page = () => {
+  // 3rd
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const handleToggle = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+  const handleMouseEnter = (index) => {
+    setActiveIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    setActiveIndex(null);
+  };
+  // 3rd
   // 7rd
   const blogPosts = [
     {
@@ -89,7 +97,7 @@ const WhatsApp = () => {
   ];
 
   const scrollRef = useRef(null);
-
+  const router = useRouter();
   const scroll = (direction) => {
     const container = scrollRef.current;
     const cardWidth = container?.firstChild?.offsetWidth || 300;
@@ -109,29 +117,40 @@ const WhatsApp = () => {
 
   const faqs = [
     {
-      question: "What is WhatsApp Business Platform (WBP)?",
+      question:
+        "What is Instagram automation, and why is it important for businesses?",
       answer:
-        "Celitix offers a WhatsApp Business Platform (WBP), a.k.a. WhatsApp Business API. It’s an enterprise-grade messaging solution for large-scale WhatsApp marketing. ",
+        "Instagram automation helps businesses instantly respond to messages, manage conversations, and engage users at scale—improving response time, customer experience, and conversions.",
     },
     {
-      question: "How is WhatsApp Business Platform different from the App?",
+      question: "Can I manage multiple Instagram accounts from one platform?",
       answer:
-        "WhatsApp Business App has basic solutions for small business owners. WBPs like Celitix offer advanced features like a shared team inbox, Chatbots, Verified profiles, and more.",
+        "Yes, Celitix allows you to manage multiple Instagram business accounts from a single dashboard, making it ideal for agencies and multi-brand businesses.",
     },
     {
-      question: "What is WhatsApp API?",
+      question: "How does Instagram live chat work?",
       answer:
-        "Other than a user-friendly platform for world-class WhatsApp marketing, Celitix also provides WhatsApp API docs at no extra cost. These enable developers to connect WhatsApp to their app, website or system for bespoke experiences.",
+        "Celitix provides a unified live chat interface where you can reply to DMs in real-time, send media, and manage conversations efficiently within the 24-hour messaging window.",
     },
     {
-      question: "Why do I need Celitix’s WhatsApp Business Platform?",
+      question: "Can I automate replies to Instagram messages and comments?",
       answer:
-        "WhatsApp has the world’s biggest direct messaging user base. Celitix helps companies leverage this platform. With it, brands can connect with their target groups more effectively through better experiences.",
+        "Yes, you can automate replies using workflows, FAQs (icebreakers), and templates. You can also convert comments into private DMs to increase engagement.",
     },
     {
-      question: "How do I get started with WhatsApp Business Platform?",
+      question: "Can I use message templates for Instagram conversations?",
       answer:
-        "Connect with us, and our team will guide you through the process. ",
+        "Yes, Celitix provides ready-to-use templates with dynamic variables to personalize conversations and respond faster while maintaining consistency. ",
+    },
+    {
+      question: "What kind of analytics does Celitix provide?",
+      answer:
+        "Celitix offers advanced analytics including engagement metrics, audience insights, and performance tracking to help you optimize campaigns and improve ROI.",
+    },
+    {
+      question: "How does Celitix help improve Instagram engagement and sales?",
+      answer:
+        "With automation, faster responses, personalized messaging, and real-time interaction, Celitix helps businesses increase engagement, capture leads, and boost conversions.",
     },
   ];
   // 8rd
@@ -149,51 +168,44 @@ const WhatsApp = () => {
   // extra section
 
   const tabs = [
-    { key: "Rich Campaigns", label: "Rich Campaigns" },
-    { key: "Custom Flows", label: "Custom Flows" },
-    { key: "Chatbots", label: "Chatbots" },
-    { key: "Manage Orders", label: "Manage Orders" },
+    { key: "DM Automation", label: "DM Automation" },
+    { key: "Live Chat", label: "Live Chat" },
+    { key: "Comment Control", label: "Comment Control" },
+    { key: "Insights & Analytics", label: "Insights & Analytics" },
   ];
 
   const tabData = {
-    "Rich Campaigns": {
-      heading: "Turn Broadcasts Into Conversations",
+    "DM Automation": {
+      heading: "DM Automation",
       description:
-        "Send or schedule direct promotional messages on WhatsApp. Incorporate rich media like documents, images, audio, & videos. Add action buttons, product lists, and personalised offers to nudge the sale.",
-      buttonText: "Learn More",
-      // If you store a PNG/JPG for “Rich Campaigns”:
-      // image can point to a static image import or an external URL
-      image: RichCampaigns,
+        "You can reply, qualify leads, and help users with smart buttons when you use Instagram DM Automation. With our tool, you can engage users from discovery to purchase, cut down on response time, and never miss a potential customer. With personalized, real-time interactions, you can easily turn your customers' interests into actions.",
+      image: contentManagement,
       isVideo: false,
     },
-    "Custom Flows": {
-      heading: "Perfect Workflows For Any Use Case",
+    "Live Chat": {
+      heading: "Live Chat",
       description:
-        "Every business is different, and so is its process. With Celitix’s user-friendly WhatsApp Flowbuilder, anyone can design their perfect workflow. Use forms, lists, check boxes, and drop-down menus.",
-      buttonText: "Learn More",
-      // This is a video file, so we’ll set isVideo=true:
-      image: "/assets/videos/cust.mp4",
-      isVideo: true,
+        "Provide real-time communication with a consistent Instagram chat interface. Organize conversations with active and inactive filters, check user profiles, and reply immediately within 24 hours. Improve customer experience and engagement by sharing rich media like images, videos, audio, and pre-approved templates.",
+      image: InstagramLiveChat,
+      isVideo: false,
     },
-    Chatbots: {
-      heading: "Engage, Guide & Support Customers",
+    "Comment Control": {
+      heading: "Comment Control",
       description:
-        "Let customers explore your brand at their own pace. Customise one of our pre-built chatbots, or build your own from scratch. Add rich media, videos, documents, and links to create excellent brand experiences.",
-      buttonText: "Get Started",
-      image: "/assets/videos/wbot.mp4",
-      isVideo: true,
+        "Empower your brand interactions with enhanced comment management features. However, you can respond to it publicly or privately, hide or delete unwanted comments, and manage a positive brand image. Go from comments to a DM conversation, as this builds engagement with your audience.",
+      image: CommentControl,
+      isVideo: false,
     },
-    "Manage Orders": {
-      heading: "From Browse To Checkout, on WhatsApp",
+    "Insights & Analytics": {
+      heading: "Insights & Analytics",
       description:
-        "Share your products, let customers browse, choose their items, place orders, and take payments. Smart brands can also set up loyalty programs and take feedback to strengthen customer relationships long-term.",
-      buttonText: "Explore",
-      image: "/assets/videos/word.mp4",
-      isVideo: true,
+        "Analytics dashboards provide you with an in-depth understanding of your Instagram performance. Monitor essential KPIs, understand how your audience behaves, and discover your best-performing content. Leverage filters like timeframe, engagement rate, and demographics to strategize and achieve continued growth.",
+      image: InsightsandAnalytics,
+      isVideo: false,
     },
   };
 
-  const [activeTab, setActiveTab] = useState("Rich Campaigns");
+  const [activeTab, setActiveTab] = useState("DM Automation");
 
   // Destructure the current tab’s data in one go:
   const { heading, description, buttonText, image, isVideo } =
@@ -203,42 +215,29 @@ const WhatsApp = () => {
 
   return (
     <div>
-      {/* <LocationSEO
-        baseTitle="WhatsApp Business API & Chatbots | Celitix"
-        baseDescription="Deploy WhatsApp Business API & Chatbots in CITY—automate customer conversations at scale."
-      /> */}
-
-      {/* <Helmet>
-          <title>WhatsApp Business API & Chatbots | Celitix</title>
-     
-        <meta name="description" content=" Use WhatsApp to grow your business. Reach new heights with Celitix’s enterprise messaging solutions. Chatbots, Click to WhatsApp ads, CRM, & more." />
-        <link rel="preload" as="image" href={WhatsApp_Business_Platform} crossorigin="anonymous" />
-      </Helmet> */}
       {/* 1st */}
       <section className="bg-[#f7ebfc] pt-25 md:pt-35 px-4 sm:px-6 lg:px-20">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10 pb-5 lg:pb-20">
+        <div className="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10 pb-5 lg:pb-20">
           <div className="space-y-6 box-reveal-left">
             <div className="box-reveal-left">
               <span className="inline-block bg-purple-700 text-white text-md sub-heading font-bold px-4 py-1 rounded-full uppercase tracking-wide">
-                WhatsApp Business Platform
+                Instagram Business API
               </span>
-              {/* <Image
-                src={METACOLOR}
-                alt="Meta Tech Partner"
-                className="h-10 md:h-12 object-contain"
-                loading="eager"
-              /> */}
             </div>
 
             <div className="box-reveal-left space-y-6">
-               <h1 className="text-4xl md:text-5xl lg:text-6xl heading  font-bold text-gray-900 popf leading-tight">
-                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]">  WhatsApp Business API: </span> Connect, Automate & Grow Your Business
-
+              <h1 className="text-4xl  lg:text-5xl 2xl:text-6xl heading  font-bold text-gray-900 popf leading-tight">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]">
+                  Grow your business
+                </span>{" "}
+                <br /> with Instagram automation
               </h1>
 
-              <p className="text-gray-600  text-base md:text-lg  max-w-md">
-                Let customers come to you using the official WhatsApp Business
-                API. Be present on the world’s biggest messaging app.
+              <p className="text-gray-600 text-base md:text-lg ">
+                Manage, automate, and grow your Instagram—All in one dashboard
+                with Celitix. Schedule content, automate DMs, manage
+                multi-account workflows, and track performance with real-time
+                analytics.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -250,33 +249,19 @@ const WhatsApp = () => {
                 />
 
                 <FormPopup visible={openDialog} onHide={handleCloseDialog} />
-
-                <Link
-                  href="https://wa.me/917230000091"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="WhatsApp"
-                >
-                  <UniversalButton
-                    label="Chat Now"
-                    variant="brutal"
-                    className="bg-[#9B44B6] border-[#9B44B6] text-white px-5 py-2 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] flex items-center gap-2"
-                    icon={<ArrowRightAltIcon style={{ fontSize: 18 }} />}
-                  />
-                </Link>
               </div>
             </div>
           </div>
 
-          <div className="flex justify-center md:justify-end">
+          <div className="flex justify-center ">
             <Image
-              src={WhatsApp_Business_Platform}
+              src={InstagramBusinessPlatform}
               alt="Whatsapp icon"
               // loading="eager"
               // fetchpriority="high"
               // crossorigin="anonymous"
               title="WhatsApp Business Platform"
-              className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg object-contain box-reveal-bottom"
+              className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg 2xl:max-w-2xl object-contain box-reveal-bottom"
             />
           </div>
         </div>
@@ -286,18 +271,24 @@ const WhatsApp = () => {
       <section className="bg-[#f7ebfc] py-2 lg:py-10 px-4 sm:px-6 lg:px-25">
         <div className="text-center px-1 md:px-4 pb-5 md:pb-10 lg:pb-15">
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-gray-900 popf heading">
-            Meet Customers Where They Are
+            Reach Customers Where They Interact
           </h2>
+          <p className="text-sm md:text-lg sub-heading max-w-6xl mx-auto text-gray-700 text-justify">
+            To find new brands and products, People head to Instagram. Celitix
+            allows you to connect them instantly, respond faster, and automate
+            conversations from one place so that you can enhance engagement and
+            increase conversions.
+          </p>
         </div>
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 items-start justify-center">
+        <div className="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-3 items-start justify-center">
           {/* Left Column */}
           <div className="flex flex-col items-center lg:items-end gap-2 lg:gap-6 md:px-0 px-5 mb-1 md:mb-0">
             {/* Card 1 */}
-            <div className="relative max-w-md w-full ml-0 lg:w-90% lg:ml-10">
+            <div className="relative max-w-lg w-full ml-0 lg:w-90% lg:ml-10">
               <div className="absolute -left-7 top-1/2 -translate-y-1/2 z-10">
                 <div className="w-15 h-15 bg-blue-500  rounded-full shadow-md flex items-center justify-center overflow-hidden">
                   <Image
-                    src={ShowcaseCatalogues}
+                    src={MultiAccountManagement}
                     alt="Showcase-Catalogues"
                     className="w-8 h-8 object-contain"
                     // loading="auto"
@@ -305,22 +296,25 @@ const WhatsApp = () => {
                 </div>
               </div>
               <div className="bg-white border border-black rounded-[20px] p-5 pl-8 relative z-0">
-                <h3 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-4">
-                  Showcase Catalogues
+                <h3 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-2">
+                  Multi-Account Management
                 </h3>
-                <p className="text-md text-black pera ml-4">
-                  Let customers explore your products, place orders, make
-                  payments and get support, all in one place!
+                <p className="text-md text-black pera ml-2 text-justify">
+                  Easily connect, onboard, and manage multiple Instagram
+                  business accounts from a single dashboard. No more switching
+                  tabs or having to log in and out — manage all your brand pages
+                  seamlessly from one place. Best for agencies and companies
+                  managing multiple clients or brands.
                 </p>
               </div>
             </div>
 
             {/* Card 2 */}
-            <div className="relative max-w-md w-full lg:w-90% mr-0 lg:mr-10">
+            <div className="relative max-w-lg w-full lg:w-90% mr-0 lg:mr-10">
               <div className="absolute -left-7 top-1/2 -translate-y-1/2 z-10">
                 <div className="w-15 h-15 bg-blue-500 rounded-full shadow-md flex items-center justify-center overflow-hidden">
                   <Image
-                    src={ClicktoWhatsAppAds}
+                    src={ContentPostManagement}
                     alt="ClicktoWhatsAppAds"
                     className="w-8 h-8 object-contain"
                     // loading="auto"
@@ -328,22 +322,24 @@ const WhatsApp = () => {
                 </div>
               </div>
               <div className="bg-white border border-black rounded-[20px] p-5 pl-8 relative z-0">
-                <h3 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-4">
-                  Click-to-WhatsApp Ads
+                <h3 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-2">
+                  Content & Post Management
                 </h3>
-                <p className="text-md text-black pera ml-4">
-                  Get traffic from social media ads directly to WhatsApp chats.
-                  Turn broadcasts into conversations!
+                <p className="text-md text-black pera ml-2 text-justify">
+                  Effortlessly plan, create, schedule, and manage your Instagram
+                  posts, reels & stories. Measure likes, shares, comments, and
+                  saves in real-time. Plan a uniform strategy throughout your
+                  content and reach the widest audience possible.
                 </p>
               </div>
             </div>
 
             {/* Card 3 */}
-            <div className="relative max-w-md w-full ml-0 lg:w-90% lg:ml-10">
+            <div className="relative max-w-lg w-full ml-0 lg:w-90% lg:ml-10">
               <div className="absolute -left-7 top-1/2 -translate-y-1/2 z-10">
                 <div className="w-15 h-15 bg-blue-500 rounded-full shadow-md flex items-center justify-center overflow-hidden">
                   <Image
-                    src={MultiAgentLiveChat}
+                    src={CreatePublishContent}
                     alt="MultiAgentLiveChat"
                     className="w-8 h-8 object-contain"
                     // loading="auto"
@@ -351,34 +347,36 @@ const WhatsApp = () => {
                 </div>
               </div>
               <div className="bg-white border border-black rounded-[20px] p-5 pl-8 relative z-0">
-                <h4 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-4">
-                  Multi-Agent Live Chat
+                <h4 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-2">
+                  Create & Publish Content
                 </h4>
-                <p className="text-md text-black pera ml-4">
-                  Work together on a shared inbox for sales, support, and
-                  service. Handle all your CRM on WhatsApp.
+                <p className="text-md text-black pera ml-2 text-justify">
+                  Easily create and publish Insta posts, reels & stories, all
+                  from one platform. Plan content ahead of time, keep a steady
+                  posting schedule, and organize your entire content process
+                  efficiently and smoothly.
                 </p>
               </div>
             </div>
           </div>
 
           {/* Center Mobile Mockup */}
-          <div className="flex justify-center order-first md:order-none">
+          <div className="flex justify-center items-center order-first md:order-none h-full">
             <Image
-              src={MeetCustomersWhatsapp} // Replace with your image path
+              src={ReachCustomersinstagram} // Replace with your image path
               alt="Phone Mockup"
-              className="w-[260px] sm:w-[300px] md:w-[340px] lg:w-[380px] object-contain"
+              className=" object-contain"
             />
           </div>
 
           {/* Right Column */}
           <div className="flex flex-col items-center lg:items-start gap-2 lg:gap-6 md:px-0 px-5 mb-1 md:mb-0">
             {/* Card 1 */}
-            <div className="relative max-w-md w-full lg:w-90% lg:mr-10 mr-0">
+            <div className="relative max-w-lg w-full lg:w-90% lg:mr-10 mr-0">
               <div className="absolute -left-7 top-1/2 -translate-y-1/2 z-10">
                 <div className="w-15 h-15 bg-blue-500 rounded-full shadow-md flex items-center justify-center overflow-hidden">
                   <Image
-                    src={Chatbots}
+                    src={instagramlivechat}
                     alt="Chatbots"
                     className="w-8 h-8 object-contain"
                     // loading="auto"
@@ -386,22 +384,24 @@ const WhatsApp = () => {
                 </div>
               </div>
               <div className="bg-white border border-black rounded-[20px] p-5 pl-8 relative z-0">
-                <h4 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-4">
-                  Quick & Easy Chatbots
+                <h4 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-2">
+                  Instagram Live Chat
                 </h4>
-                <p className="text-md text-black pera ml-4">
-                  Use an intuitive, user-friendly flow builder to make your
-                  perfect Chatbot for automatic engagement.
+                <p className="text-md text-black pera ml-2 text-justify">
+                  No language is more engaging than real-time Instagram
+                  messaging. Handle messages within the 24-hour messaging
+                  window, send image/video/template responses, and provide a
+                  smooth customer experience through a unified chat interface.
                 </p>
               </div>
             </div>
 
             {/* Card 2 */}
-            <div className="relative max-w-md w-full lg:w-90% lg:ml-10 ml-0">
+            <div className="relative max-w-lg w-full lg:w-90% lg:ml-10 ml-0">
               <div className="absolute -left-7 top-1/2 -translate-y-1/2 z-10">
                 <div className="w-15 h-15 bg-blue-500 rounded-full shadow-md flex items-center justify-center overflow-hidden">
                   <Image
-                    src={LiveNotifications}
+                    src={InsightsAnalytics}
                     alt="LiveNotifications"
                     className="w-8 h-8 object-contain"
                     // loading="auto"
@@ -409,22 +409,25 @@ const WhatsApp = () => {
                 </div>
               </div>
               <div className="bg-white border border-black rounded-[20px] p-5 pl-8 relative z-0">
-                <h4 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-4">
-                  Live Notifications
+                <h4 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-2">
+                  Insights & Analytics
                 </h4>
-                <p className="text-md text-black pera ml-4">
-                  Share service updates, promotions, abandoned cart messages and
-                  more with links, media and buttons.
+                <p className="text-md text-black pera ml-2 text-justify">
+                  Gain a valuable understanding of the audience and performance
+                  through powerful data-driven insights. Measure analytics for
+                  your account (versus a post). Filter analytics by time frame,
+                  demographics, and engagements: Optimize your Instagram reach,
+                  engagement, and ROI.
                 </p>
               </div>
             </div>
 
             {/* Card 3 */}
-            <div className="relative max-w-md w-full lg:w-90% lg:mr-10 mr-0">
+            <div className="relative max-w-lg w-full lg:w-90% lg:mr-10 mr-0">
               <div className="absolute -left-7 top-1/2 -translate-y-1/2 z-10">
                 <div className="w-15 h-15 bg-blue-500 rounded-full shadow-md flex items-center justify-center overflow-hidden">
                   <Image
-                    src={PromoteinBulk}
+                    src={SmartCommentModeration}
                     alt="PromoteinBulk"
                     className="w-8 h-8 object-contain"
                     // loading="auto"
@@ -432,12 +435,14 @@ const WhatsApp = () => {
                 </div>
               </div>
               <div className="bg-white border border-black rounded-[20px] p-5 pl-8 relative z-0">
-                <h4 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-4">
-                  Promote in Bulk
+                <h4 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-2">
+                  Smart Comment Moderation
                 </h4>
-                <p className="text-md text-black pera ml-4">
-                  Schedule promotional messages to segmented customers in bulk
-                  without getting blocked by Meta.
+                <p className="text-md text-black pera ml-2 text-justify">
+                  Comment system - but with moderation tools of the intelligent
+                  kind! Instantly hide, delete, or respond to comments and turn
+                  high-intent comments into DMs for one-on-one communication.
+                  Design Smart, Clean Boosters to Increase Customer Engagement
                 </p>
               </div>
             </div>
@@ -446,92 +451,92 @@ const WhatsApp = () => {
       </section>
       {/* 2st */}
       {/* 3st */}
-      <section className="bg-[#f7ebfc] py-2 lg:py-10 px-4 sm:px-6 lg:px-20">
-        <div className="text-center px-1 md:px-4 pb-2 md:pb-10">
-          <h2 className="text-2xl md:text-4xl heading lg:text-5xl font-semibold text-gray-900 mb-3">
-            Why Celitix Makes It Better
+      <div className="bg-[#F7EBFC] py-2 md:py-10 px-6 sm:px-10">
+        {/* Heading */}
+        <div className="flex items-center justify-center mb-15">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-black text-center heading">
+            Why Celitix Stands Out
           </h2>
-          <p className="text-sm md:text-xl sub-heading text-gray-700">
-            WhatsApp is powerful. Celitix makes it work for your business.
-          </p>
         </div>
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-12 lg:gap-20">
-          {/* Left Feature Cards */}
-          <div className="flex flex-col gap-6">
-            {/* Card 1 */}
-            <div className="flex items-center gap-4 bg-[#FFFFFF] p-6 rounded-3xl">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-blue-500 rounded-xl sm:rounded-2xl shrink-0 flex items-center justify-center">
-                <Image
-                  src={BuildCustomFlows}
-                  alt="BuildCustomFlows"
-                  className="w-6 h-6 sm:w-8 sm:h-8 object-contain"
-                />
-              </div>
-              <div>
-                <h3 className="text-base sm:text-lg font-bold text-black mb-1 heading">
-                  Build Custom Flows
-                </h3>
-                <p className="text-md text-gray-800 leading-relaxed pera">
-                  Craft custom workflows using chatbots, buttons, and rich
-                  media. Integrate other channels to guide users from hello to
-                  checkout.
-                </p>
-              </div>
-            </div>
 
-            {/* Card 2 */}
-            <div className="flex items-center gap-4 bg-[#FFFFFF] p-6 rounded-3xl">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-blue-500 rounded-xl sm:rounded-2xl shrink-0 flex items-center justify-center">
-                <Image
-                  src={DoMoreWithLess}
-                  alt=""
-                  className="w-6 h-6 sm:w-8 sm:h-8 object-contain"
-                />
-              </div>
-              <div>
-                <h3 className="text-base sm:text-lg font-bold text-black mb-1 heading">
-                  Do More With Less
-                </h3>
-                <p className="text-md text-gray-800 leading-relaxed pera">
-                  Customers can discover, ask, and order via WhatsApp. Manage
-                  sales and support across every direct channel from one
-                  dashboard.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 3 */}
-            <div className="flex items-center gap-4 bg-[#FFFFFF] p-6 rounded-3xl">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-blue-500 rounded-xl sm:rounded-2xl shrink-0 flex items-center justify-center">
-                <Image
-                  src={ScaleSmartStayReady}
-                  alt=""
-                  className="w-6 h-6 sm:w-8 sm:h-8 object-contain"
-                />
-              </div>
-              <div>
-                <h3 className="text-base sm:text-lg font-bold text-black mb-1 heading">
-                  Scale Smart, Stay Ready
-                </h3>
-                <p className="text-md text-gray-800 leading-relaxed pera">
-                  Peak sales for seasonal spikes or scale down to save
-                  resources. Integrate, add or remove channels and work more
-                  efficiently.
-                </p>
-              </div>
+        {/* Content */}
+        <div className="max-w-screen-2xl mx-auto flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0 lg:gap-20 px-8">
+          {/* Left Image Section */}
+          <div className="flex items-center justify-center w-full lg:w-1/2">
+            <div className="w-full h-full my-5">
+              <Image
+                src={StandsOutInstagram}
+                alt="User Communication"
+                className="rounded-lg w-full h-full object-cover"
+                // loading="auto"
+              />
             </div>
           </div>
 
-          {/* Right Image */}
-          <div className="w-full flex justify-center">
-            <Image
-              src={WhyCelitixWhatsapp}
-              alt="Why Celitix Makes It Better"
-              className="w-60 sm:w-80 md:w-[380px] lg:w-[420px] object-contain"
-            />
+          {/* Right Accordion Section */}
+          <div className="lg:w-1/2 text-center lg:text-left">
+            <div className="space-y-4">
+              {[
+                {
+                  title: "Instagram Live Chat Settings",
+                  content:
+                    "Get more control over your Instagram conversations with smart, account-level chat settings built to enhance user interactions. Set up persistent menus that guide users naturally through chats and trigger quick actions using postback responses. Add icebreakers (FAQs) to make it easy for users to start conversations and instantly find answers to common questions, helping boost engagement while reducing response times.",
+                },
+                {
+                  title: "Templates",
+                  content:
+                    "Make conversations more efficient with ready-to-use message templates. Use both generic and button templates, along with dynamic variables, to personalize each interaction. Easily manage your templates by previewing them and adjusting their visibility (hide/unhide), so you can respond faster, stay consistent, and deliver a smoother customer experience.",
+                },
+                {
+                  title: "All-in-One Control",
+                  content:
+                    "A single dashboard to manage your entire Instagram ecosystem. From folks in content creation and publishing to chat management to analytics, everything is integrated into a powerful single platform meant for efficiency and scale.",
+                },
+                {
+                  title: "Faster Engagement",
+                  content:
+                    "Smart automation tools respond to your audience, shining fast. Read every message or comment so that every interaction is timely, relevant, and impactful, leading to better customer satisfaction & higher conversions.",
+                },
+                {
+                  title: "Data-Driven Growth",
+                  content:
+                    "Make smarter decisions with advanced analytics. Use actionable insights to know what converts, refine your campaigns, and confidently scale your presence on Instagram.",
+                },
+              ].map((item, index) => (
+                <div key={index}>
+                  {/* Clickable Title Box */}
+                  <div
+                    onClick={() => handleToggle(index)}
+                    onMouseEnter={() => handleMouseEnter(index)}
+                    onMouseLeave={handleMouseLeave}
+                    className={`cursor-pointer text-white p-4 rounded-xl transition-colors duration-300 ${
+                      activeIndex === index ? "bg-[#8a27c4]" : "bg-[#c376f0]"
+                    }`}
+                  >
+                    <h3 className="font-semibold text-lg md:text-xl lg:text-2xl sub-heading">
+                      {item.title}
+                    </h3>
+                    {/* Expandable Content */}
+                    <div
+                      className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                        activeIndex === index
+                          ? "max-h-46 opacity-100 mt-2"
+                          : "max-h-0 opacity-0"
+                      }`}
+                    >
+                      <div className="bg-white text-black p-4 rounded-xl">
+                        <p className="text-base md:text-lg text-gray-600 font-medium pera">
+                          {item.content}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </section>
+      </div>
       {/* 3st */}
       {/* 4th */}
       <div className="bg-[#f7ebfc] py-2 md:py-10">
@@ -564,89 +569,89 @@ const WhatsApp = () => {
       {/* 4th */}
       {/* extra */}
       <section className="py-2 md:py-10 bg-[#f7ebfc]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl sm:text-3xl text-black md:text-5xl heading text-center mb-6 sm:mb-8">
-            Elevate The Customer Experience
+            Upgrade Your Instagram Experience
           </h2>
 
           <div className="overflow-x-auto flex lg:justify-center justify-start">
             <div className="inline-flex space-x-4 px-4 lg:px-0">
               <button
-                onClick={() => setActiveTab("Rich Campaigns")}
+                onClick={() => setActiveTab("DM Automation")}
                 className={`relative px-4 py-2 uppercase text-xs sm:text-sm tracking-wide transition-colors focus:outline-none whitespace-nowrap rounded-t-xl ${
-                  activeTab === "Rich Campaigns"
+                  activeTab === "DM Automation"
                     ? "text-white bg-[#6E11B0] shadow-lg heading"
                     : "text-gray-800 sub-heading bg-[#E9D4FF] hover:bg-[#e4caff] hover:text-[#6b0da1]"
                 }`}
               >
-                Rich Campaigns
+                DM Automation
               </button>
 
               <button
-                onClick={() => setActiveTab("Custom Flows")}
+                onClick={() => setActiveTab("Live Chat")}
                 className={`relative px-4 py-2 uppercase text-xs sm:text-sm tracking-wide transition-colors focus:outline-none whitespace-nowrap rounded-t-xl ${
-                  activeTab === "Custom Flows"
+                  activeTab === "Live Chat"
                     ? "text-white bg-[#6E11B0] shadow-lg heading"
                     : "text-gray-800 sub-heading bg-[#E9D4FF] hover:bg-[#e4caff] hover:text-[#6b0da1]"
                 }`}
               >
-                Custom Flows
+                Live Chat
               </button>
 
               <button
-                onClick={() => setActiveTab("Chatbots")}
+                onClick={() => setActiveTab("Comment Control")}
                 className={`relative px-4 py-2 uppercase text-xs sm:text-sm tracking-wide transition-colors focus:outline-none whitespace-nowrap rounded-t-xl ${
-                  activeTab === "Chatbots"
+                  activeTab === "Comment Control"
                     ? "text-white bg-[#6E11B0] shadow-lg heading"
                     : "text-gray-800 sub-heading bg-[#E9D4FF] hover:bg-[#e4caff] hover:text-[#6b0da1]"
                 }`}
               >
-                Chatbots
+                Comment Control
               </button>
 
               <button
-                onClick={() => setActiveTab("Manage Orders")}
+                onClick={() => setActiveTab("Insights & Analytics")}
                 className={`relative px-4 py-2 uppercase text-xs sm:text-sm tracking-wide transition-colors focus:outline-none whitespace-nowrap rounded-t-xl ${
-                  activeTab === "Manage Orders"
+                  activeTab === "Insights & Analytics"
                     ? "text-white bg-[#6E11B0] shadow-lg heading"
                     : "text-gray-800 sub-heading bg-[#E9D4FF] hover:bg-[#e4caff] hover:text-[#6b0da1]"
                 }`}
               >
-                Manage Orders
+                Insights & Analytics
               </button>
             </div>
           </div>
 
           {/* Content box */}
           <div className="border border-[#6b0da1] rounded-3xl shadow-inner bg-white">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 p-6 sm:p-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2  p-6 sm:p-8">
               {/* Left side: heading, description, button */}
-              <div className="flex flex-col justify-center space-y-4">
+              <div className="flex flex-col justify-center space-y-4 mb-5 md: mb-0">
                 <h3 className="text-xl sm:text-2xl md:text-3xl font-bold sub-heading text-black">
                   {heading}
                 </h3>
-                <p className="text-gray-700 leading-relaxed pera text-sm sm:text-base">
+                <p className="text-gray-800 leading-relaxed pera text-sm sm:text-base text-justify">
                   {description}
                 </p>
-                <button
-                  className="inline-block px-6 py-2 bg-[#6b0da1] text-white rounded-full w-max hover:bg-[#580a88] transition"
-                  onClick={() => {
-                    // Put your “Learn More” or “Get Started” click handler here.
-                  }}
-                >
-                  {buttonText}
-                </button>
+                {/* <button
+              className="inline-block px-6 py-2 bg-[#6b0da1] text-white rounded-full w-max hover:bg-[#580a88] transition"
+              onClick={() => {
+                // Put your “Learn More” or “Get Started” click handler here.
+              }}
+            >
+              {buttonText}
+            </button> */}
               </div>
 
               {/* Right side: image or video */}
-              <div className="flex justify-center h-96">
+              <div className="flex justify-center w-full">
                 {!isVideo ? (
                   <Image
                     src={image}
                     alt={activeTab}
-                    width={320}
+                    width={420}
                     height={180}
-                    className="w-80 h-auto rounded-lg"
+                    className="w-full h-auto rounded-lg"
                   />
                 ) : (
                   <video
@@ -673,10 +678,10 @@ const WhatsApp = () => {
 
       {/* 5th */}
       <section className=" bg-[#f7ebfc] py-2 md:py-10 px-4 sm:px-6 lg:px-10">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-screen-2xl mx-auto">
           <div className="text-center px-1 md:px-4 pb-2 md:pb-10">
             <h2 className="text-2xl md:text-4xl lg:text-5xl heading font-semibold text-gray-900 popf">
-              WhatsApp API: Integrate. Automate. Scale.
+              Transform Your Instagram Workflow
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 items-center">
@@ -684,13 +689,14 @@ const WhatsApp = () => {
             <div className="space-y-6">
               <div className=" text-left space-y-2">
                 <h3 className="text-base sm:text-lg font-semibold heading">
-                  Connect Your Systems
+                  Engage in Real Time
                 </h3>
                 <ul className="text-gray-700 space-y-2 text-md sub-heading">
                   {[
-                    "Automate lead nurturing, get status updates, & more",
-                    "Sync customer data for smarter, faster replies",
-                    "Add WhatsApp to your website, app, or CRM",
+                    "Instagram chats — active and inactive filters",
+                    "Reply immediately during the 24-hour message period",
+                    "Expertly send photos, videos, audio, and message templates",
+                    "Foster stronger relationships via real-time interaction",
                   ].map((text, i) => (
                     <li
                       key={i}
@@ -708,13 +714,14 @@ const WhatsApp = () => {
 
               <div className=" text-left space-y-2">
                 <h3 className="text-base sm:text-lg font-semibold heading">
-                  Rich Media Experience
+                  Insights & Performance Tracking
                 </h3>
                 <ul className="text-gray-700 space-y-2 text-md sub-heading">
                   {[
-                    "Share catalogues, images, PDFs, or videos in chat",
-                    "Use quick replies and buttons to drive action",
-                    "Create flows that look and feel premium",
+                    "Track account-level and post-level performance metrics",
+                    "Review engagement metrics, post reach, and audience interaction",
+                    "Filter by timeframe, demographics, and interactions",
+                    "Make data-driven decisions, evolving campaigns",
                   ].map((text, i) => (
                     <li
                       key={i}
@@ -734,9 +741,9 @@ const WhatsApp = () => {
             {/* Center Image Block */}
             <div className="flex justify-center">
               <Image
-                src={WhatsAppAPInew}
+                src={InstagramWorkflow}
                 alt="Phone Mockup"
-                className="w-[260px] sm:w-[300px] md:w-[320px] lg:w-[350px] object-contain"
+                className="w-[260px] sm:w-[300px] md:w-[320px] lg:w-[380px] object-contain"
               />
             </div>
 
@@ -744,13 +751,14 @@ const WhatsApp = () => {
             <div className="space-y-6">
               <div className="text-left space-y-2">
                 <h3 className="text-base sm:text-lg font-semibold heading">
-                  Verify, Notify & Update
+                  Comment & Interaction Control
                 </h3>
                 <ul className="text-gray-700 space-y-2 text-md sub-heading">
                   {[
-                    "Keep users updated on orders, bookings, & services",
-                    "Reduce calls and confusion with proactive messages",
-                    "Send OTPs, reminders, and confirmations instantly",
+                    "Moderate comments and smart hide, delete, and reply options",
+                    "Efficiently manage comment threads across posts and reels",
+                    "Transition comments to DMs for higher-level interaction",
+                    "Controlled interactions that protect brand reputation",
                   ].map((text, i) => (
                     <li key={i} className="flex items-center gap-2">
                       <CheckCircleIcon
@@ -765,13 +773,14 @@ const WhatsApp = () => {
 
               <div className="text-left space-y-2">
                 <h3 className="text-base sm:text-lg font-semibold heading">
-                  Omnichannel Journeys
+                  Chat Settings & Automation
                 </h3>
                 <ul className="text-gray-700 space-y-2 text-md sub-heading">
                   {[
-                    "Track and optimise every step from one dashboard",
-                    "Combine WhatsApp with all your other channels",
-                    "Let users choose how they want to connect",
+                    "Improve control with account-level chat settings",
+                    "Create stickybars to enhance user navigation",
+                    "Build automated replies and workflows",
+                    "Include Ice Breakers (FAQs) to help users and serve at speed",
                   ].map((text, i) => (
                     <li key={i} className="flex items-center gap-2">
                       <CheckCircleIcon
@@ -978,78 +987,12 @@ const WhatsApp = () => {
         </div>
       </div>
       {/* 7nd */}
-      {/* 8nd */}
-      {/* <div className="w-full px-4 py-2 md:py-10 bg-[#f7ebfc]">
-        <div className="text-center px-1 md:px-4 pb-5 md:pb-10">
-          <h2 className="text-2xl md:text-4xl heading lg:text-5xl font-semibold text-gray-900 popf">
-            WhatsApp Marketing: Learn More
-          </h2>
-        </div>
-        <div className="max-w-6xl mx-auto relative">
-          <div
-            ref={scrollRef}
-            className="flex md:gap-10 gap-5 overflow-x-auto scroll-smooth custom-scrollbar scrollbar-visible scrollbar-thin scrollbar-thumb-[#7951AD] scrollbar-track-gray-200 pb-8 mx-auto"
-          >
-            {blogPosts.map((post, index) => (
-              <div
-                key={index}
-                className={`snap-start flex-shrink-0 w-[90%] sm:w-[75%] md:w-[50%] lg:w-[33%] xl:w-[30%] rounded-2xl p-6 shadow-md ${post.color}`}
-              >
-                <div className="relative mb-4">
-                  <Image
-                    src={post.img}
-                    alt="blog"
-                    className=" w-full h-40 object-cover border-4 border-white"
-                  />
-                  <div className="absolute top-0 left-0 w-2 h-2 bg-orange-500 rounded-full"></div>
-                  <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-400 rounded-full"></div>
-                </div>
 
-                <p className="text-gray-600 text-sm">{post.date}</p>
-                <h3 className="font-semibold text-lg  sub-heading text-gray-800 mt-2 mb-3 line-clamp-2">
-                  {post.title}
-                </h3>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                  {post.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 text-xs mt-2">
-                  {post.tags.map((tag, idx) => (
-                    <span
-                      key={idx}
-                      className="bg-gray-200 text-gray-800 px-2 py-1 rounded-full"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-
-
-          <div className="absolute -bottom-10 right-4 flex gap-3">
-            <button
-              onClick={() => scroll("left")}
-              className="bg-[#9B44B6] text-white p-2 rounded-full hover:bg-[#7951AD] shadow"
-            >
-              <FaArrowLeft />
-            </button>
-            <button
-              onClick={() => scroll("right")}
-              className="bg-[#9B44B6] text-white p-2 rounded-full hover:bg-[#7951AD] shadow"
-            >
-              <FaArrowRight />
-            </button>
-          </div>
-        </div>
-      </div> */}
-      {/* 8nd */}
-      {/* 9th */}
+      {/* 8th */}
       <div className=" bg-[#f7ebfc] flex justify-center items-center py-2 md:py-20 px-4 ">
-        <div className="w-full max-w-4xl bg-[#F7F4F9] border border-[#D1CDE3] rounded-xl p-6 shadow-lg">
+        <div className="w-full max-w-6xl bg-[#F7F4F9] border border-[#D1CDE3] rounded-xl p-6 shadow-lg">
           <h2 className="text-2xl md:text-4xl heading font-semibold text-center text-gray-900 popf mb-8">
-            WhatsApp FAQs
+            Instagram FAQs
           </h2>
 
           <div className="bg-white rounded-xl py-4 px-2 sm:px-4">
@@ -1074,9 +1017,9 @@ const WhatsApp = () => {
           </div>
         </div>
       </div>
-      {/* 9th */}
+      {/* 8th */}
     </div>
   );
 };
 
-export default WhatsApp;
+export default Page;
