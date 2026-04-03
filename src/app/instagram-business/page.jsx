@@ -221,7 +221,7 @@ const Page = () => {
           <div className="space-y-6 box-reveal-left">
             <div className="box-reveal-left">
               <span className="inline-block bg-purple-700 text-white text-md sub-heading font-bold px-4 py-1 rounded-full uppercase tracking-wide">
-                Instagram Business API
+                Instagram For Business
               </span>
             </div>
 
