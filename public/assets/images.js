@@ -620,7 +620,7 @@ import InstantCustomer from "./imagesMain/InstantCustomer.jpg";
 
 // WhatsappChatbot
 
-// Intagram
+// Instagram
 import ReachCustomersinstagram from "./imagesMain/ReachCustomersinstagram.png";
 import InstagramBusinessPlatform from "./imagesMain/InstagramBusinessPlatform.png";
 import MultiAccountManagement from "./mainicons/MultiAccountManagement.png";
@@ -635,7 +635,7 @@ import InstagramWorkflow from "./imagesMain/InstagramWorkflow.png";
 import InstagramLiveChat from "./imagesMain/InstagramLiveChat.png";
 import CommentControl from "./imagesMain/CommentControl.png";
 import InsightsandAnalytics from "./imagesMain/InsightsandAnalytics.png";
-// Intagram
+// Instagram
 
 // admin
 import adminLogin from "./images/adminLogin.jpg";
@@ -1235,7 +1235,7 @@ export {
   InstantCustomer,
   // WhatsappChatbot
 
-  // Intagram
+  // Instagram
   InstagramBusinessPlatform,
   ReachCustomersinstagram,
   MultiAccountManagement,
@@ -1251,7 +1251,7 @@ export {
   InsightsandAnalytics,
   InstagramWorkflow,
 
-  // Intagram
+  // Instagram
 
   // admin
   adminLogin,

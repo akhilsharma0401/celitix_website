@@ -3,7 +3,7 @@ export const metadata = {
   title: "Instagram Automation Platform for Business Growth | Celitix",
   description: "Automate Instagram DMs, schedule posts, manage multiple accounts, and track performance—all in one dashboard with Celitix. Grow faster with smart automation.",
   alternates: {
-    canonical: "https://www.celitix.com/intagram-business",
+    canonical: "https://www.celitix.com/instagram-business",
   },
   openGraph: {
   title: "Instagram Automation Platform for Business Growth | Celitix",

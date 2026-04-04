@@ -956,6 +956,46 @@ const cards = [
       color: "from-blue-500 to-cyan-500",
       slug: "real-estate-lead-generation-using-bulk-sms",
   },
+  {
+      icon: <FiFileText />,
+      category: "SMS Gateway",
+      title: "Effective SMS Campaign Strategies to Boost Engagement in 2026",
+      desc: "High-delivery promotional and transactional SMS platform.",
+      color: "from-blue-500 to-cyan-500",
+      slug: "effective-sms-campaign-strategies-to-boost-engagement-in-2026",
+  },
+  {
+      icon: <FiFileText />,
+      category: "SMS Gateway",
+      title: "SMS in 2026: Outdated Technology or Underrated Powerhouse?",
+      desc: "High-delivery promotional and transactional SMS platform.",
+      color: "from-blue-500 to-cyan-500",
+      slug: "sms-in-2026-outdated-technology-or-underrated-powerhouse",
+  },
+  {
+      icon: <FiFileText />,
+      category: "SMS Gateway",
+      title: "Interactive SMS: How 2026 Campaigns Are Becoming Two-Way Conversations",
+      desc: "High-delivery promotional and transactional SMS platform.",
+      color: "from-blue-500 to-cyan-500",
+      slug: "interactive-sms-how-2026-campaigns-are-becoming-two-way-conversations",
+  },
+  {
+      icon: <FiFileText />,
+      category: "SMS Gateway",
+      title: "Boost Engagement in 2026: RCS vs SMS for Modern Business Messaging",
+      desc: "High-delivery promotional and transactional SMS platform.",
+      color: "from-blue-500 to-cyan-500",
+      slug: "boost-engagement-in-2026-rcs-vs-sms-for-modern-business-messaging",
+  },
+  {
+      icon: <FiFileText />,
+      category: "SMS Gateway",
+      title: "SMS as a Fallback Channel: Ensuring Message Delivery in a Multi-Channel World",
+      desc: "High-delivery promotional and transactional SMS platform.",
+      color: "from-blue-500 to-cyan-500",
+      slug: "sms-as-a-fallback-channel-ensuring-message-delivery-in-a-multi-channel-world",
+  },
 ];
 
 export default function Page() {
