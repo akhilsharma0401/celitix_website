@@ -284,7 +284,7 @@ Interpersonal skills, including the ability to build rapport`,
       if (!resume) return toast.error("Please upload your resume.");
 
        if (!message.trim()) return toast.error("Please enter message.");
-      if (message.length < 30 ) return toast.error("Please enter minimum 30 characters.");
+      if (message.length < 20 ) return toast.error("Please enter minimum 20 characters.");
 
       const captchaVerify = await verifyToken(turnstileResponse);
 

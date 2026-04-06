@@ -367,8 +367,8 @@ export const BookDemoPage = () => {
       if (!service.trim()) return toast.error("Please select a service.");
 
       if (!message.trim()) return toast.error("Please enter message.");
-      if (message.length < 30)
-        return toast.error("Please enter minimum 30 characters.");
+      if (message.length < 20)
+        return toast.error("Please enter minimum 20 characters.");
 
       // const captchaVerify = await verifyToken(turnstileResponse)
 
