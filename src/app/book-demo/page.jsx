@@ -384,6 +384,11 @@ export const BookDemoPage = () => {
         gclid: searchParams.get("gclid") || "direct",
       };
 
+      let source = "lp-book-demo";
+      if (utmData.source === "direct" || utmData.medium === "direct" || utmData.campaign === "direct" || utmData.gclid === "direct") {
+        source = "book-demo";
+      }
+
       const data = {
         firstName: firstName,
         lastName: lastName,
@@ -391,8 +396,8 @@ export const BookDemoPage = () => {
         mobile: phone,
         companyName: form.company || "N/A",
         service: service,
-        message: form.message || "N/A",
-        source: "lp-book-demo",
+        message: form?.message?.trim() || "N/A",
+        source,
         utmData,
       };
 
