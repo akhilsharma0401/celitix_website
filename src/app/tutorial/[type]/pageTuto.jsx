@@ -140,7 +140,7 @@ const PageTuto = ({ params }) => {
                   }
 
                   {section.list && (
-                    <ul className="list-disc pl-6 space-y-2 pera text-gray-700 text-justify">
+                    <ul className="list-disc pl-6 space-y-2 pera text-gray-700 text-justify mb-1">
                       {section.list.map((item, i) => (
                         <li key={i}>{item}</li>
                       ))}

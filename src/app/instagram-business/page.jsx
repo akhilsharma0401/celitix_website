@@ -273,7 +273,7 @@ const Page = () => {
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-gray-900 popf heading mb-2">
             Reach Customers Where They Interact
           </h2>
-          <p className="text-sm md:text-lg sub-heading max-w-6xl mx-auto text-gray-700 text-justify">
+          <p className="text-sm md:text-lg sub-heading max-w-6xl mx-auto text-gray-700 ">
             To find new brands and products, People head to Instagram. Celitix
             allows you to connect them instantly, respond faster, and automate
             conversations from one place so that you can enhance engagement and
