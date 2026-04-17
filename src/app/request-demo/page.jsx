@@ -379,15 +379,13 @@ export const BookDemoPage = () => {
         source: searchParams.get("utm_source") || "direct",
         medium: searchParams.get("utm_medium") || "direct",
         campaign: searchParams.get("utm_campaign") || "direct",
-        gclid: searchParams.get("gclid") || "direct",
       };
 
       let source = "lp-book-demo-fb";
       if (
         utmData.source === "direct" ||
         utmData.medium === "direct" ||
-        utmData.campaign === "direct" ||
-        utmData.gclid === "direct"
+        utmData.campaign === "direct"
       ) {
         source = "book-demo";
       }
