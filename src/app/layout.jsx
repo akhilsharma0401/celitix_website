@@ -8,6 +8,7 @@ import { CELITIX_FAV_ICON } from "../../public/assets/images.js";
 import Head from "next/head";
 import CookieConsent from "./components/CookieConsent";
 import ChatLauncher from "./components/Common/ChatLauncher";
+import FacebookPixel from "./components/FacebookPixel";
 
 const lora = Lora({
   subsets: ["latin"],
@@ -101,7 +102,7 @@ export default function RootLayout({ children }) {
           async
         />
 
-        <Script id="fb-pixel-init" strategy="afterInteractive">
+        {/* <Script id="fb-pixel-init" strategy="afterInteractive">
           {`
             !function(f,b,e,v,n,t,s){
               if(f.fbq) return;
@@ -129,7 +130,7 @@ export default function RootLayout({ children }) {
             fbq("init", "587446320662611"); 
             fbq("track", "PageView");
           `}
-        </Script>
+        </Script> */}
       </head>
       <body className={`${lora.variable} ${poppins.variable}`}>
         {/* Google Tag Manager (noscript) */}
@@ -149,10 +150,12 @@ export default function RootLayout({ children }) {
             src="https://www.facebook.com/tr?id=587446320662611&ev=PageView&noscript=1"
           />
         </noscript>
+
         <GlobalToaster />
         <Header />
+        <FacebookPixel />
         <CookieConsent />
-        <main>{children}</main>
+          <main>{children}</main>
         <Footer />
         {/* <ChatLauncher /> */}
       </body>

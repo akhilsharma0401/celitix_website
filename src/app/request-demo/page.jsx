@@ -235,7 +235,6 @@ export const BookDemoPage = () => {
         if (otp?.code) {
           const otpCode = otp.code.replace(/\D/g, "").slice(0, 6);
 
-
           const otpArray = otpCode.split("");
           setOtp(otpArray);
           otpRefs.current[otpArray.length - 1]?.focus();
@@ -376,7 +375,6 @@ export const BookDemoPage = () => {
       //     return toast.error("Unable to verify captcha. Please Contact Site Administrator ")
       // }
 
-
       const utmData = {
         source: searchParams.get("utm_source") || "direct",
         medium: searchParams.get("utm_medium") || "direct",
@@ -384,8 +382,13 @@ export const BookDemoPage = () => {
         gclid: searchParams.get("gclid") || "direct",
       };
 
-      let source = "lp-book-demo";
-      if (utmData.source === "direct" || utmData.medium === "direct" || utmData.campaign === "direct" || utmData.gclid === "direct") {
+      let source = "lp-book-demo-fb";
+      if (
+        utmData.source === "direct" ||
+        utmData.medium === "direct" ||
+        utmData.campaign === "direct" ||
+        utmData.gclid === "direct"
+      ) {
         source = "book-demo";
       }
 
@@ -418,7 +421,7 @@ export const BookDemoPage = () => {
       // });
       // setSubmitLabel("Submitting...");
       toast.success("Form submitted successfully!");
-      router.push("/thank-you?source=book-demo");
+      router.push("/thank-you?source=request-demo");
     } catch (e) {
       console.error(e);
       return toast.error("Unable to send form data. Please try again later");
@@ -460,6 +463,44 @@ export const BookDemoPage = () => {
   // 2nd section logos array
   return (
     <>
+      <Script id="fb-pixel-init" strategy="afterInteractive">
+        {`
+            !function(f,b,e,v,n,t,s){
+              if(f.fbq) return;
+              n=f.fbq=function(){
+                n.callMethod
+                  ? n.callMethod.apply(n, arguments)
+                  : n.queue.push(arguments);
+              };
+              if(!f._fbq) f._fbq = n;
+              n.push = n;
+              n.loaded = !0;
+              n.version = "2.0";
+              n.queue = [];
+              t = b.createElement(e);
+              t.async = true;
+              t.src = v;
+              s = b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t, s);
+            }(
+              window,
+              document,
+              "script",
+              "https://connect.facebook.net/en_US/fbevents.js"
+            );
+            fbq("init", "943473661882714"); 
+            fbq("track", "PageView");
+          `}
+      </Script>
+
+      <noscript>
+        <img
+          height="1"
+          width="1"
+          src="https://www.facebook.com/tr?id=943473661882714&ev=PageView&noscript=1"
+        />
+      </noscript>
+
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=AW-1009530955"
         strategy="afterInteractive"

@@ -619,6 +619,9 @@ import SmartLead from "./imagesMain/SmartLead.jpg";
 import InstantCustomer from "./imagesMain/InstantCustomer.jpg";
 
 // WhatsappChatbot
+// LiveChatService
+import LiveChatService from "./imagesMain/LiveChatService.png";
+// LiveChatService
 
 // Instagram
 import ReachCustomersinstagram from "./imagesMain/ReachCustomersinstagram.png";
@@ -1234,6 +1237,10 @@ export {
   SmartLead,
   InstantCustomer,
   // WhatsappChatbot
+
+  // LiveChatService
+  LiveChatService,
+  // LiveChatService
 
   // Instagram
   InstagramBusinessPlatform,

@@ -212,29 +212,40 @@ const page = () => {
 
   const faqs = [
     {
-      question: "Can I send automated cart recovery messages?",
+      question: "What is a WhatsApp chatbot?",
       answer:
-        "Yes. Celitix offers industry-specific, ready-to-use flows including cart recovery via WhatsApp, SMS, RCS, & voice calling.",
+        "A WhatsApp Chatbot is an automated system that interacts with users on WhatsApp to answer queries, capture leads, and guide customers without human intervention.",
     },
     {
-      question: "How does it help with COD verification?",
+      question: "How does a WhatsApp Chatbot work?",
       answer:
-        "Celitix’s IVR, messaging, or OTP solutions can confirm COD orders on delivery or before shipping.",
+        "It does this by using pre-defined workflows or AI to reply immediately to customer messages, automate conversations, and make bookings, support, orders, tracking, etc.",
     },
     {
-      question: "Does Celitix integrate with our e-commerce platform or CRM?",
+      question: "Does WhatsApp chatbot increase sales?",
       answer:
-        "Yes. You can connect with platforms like Shopify or your CRM via API.",
+        "Yes. It includes recommending products, recovering abandoned carts, sending offers, and converting conversations into paying customers— all of which improve conversions and ROI.",
     },
     {
-      question: "What channels are supported?",
+      question: "Is WhatsApp chatbot available via WhatsApp Business API?",
       answer:
-        "Celitix offers SMS, RCS, WhatsApp, Email, Voice, Missed Call, and more. All managed from one dashboard.",
+        "Yes. WhatsApp chatbots work via the official WhatsApp Business API and allow for automation, integrations, and large-scale communication with customers.",
     },
     {
-      question: "Can I support customers after hours?",
+      question:
+        "Is it possible to connect a WhatsApp chatbot to the CRM or website?",
       answer:
-        "Yes. Use auto-replies, IVR menus, or bots to stay available 24/7.",
+        "Yes. Celitix Seams Integrates CRMs, Websites, And Apps For Workflow Automation, Data Syncing And Customer Personalization.",
+    },
+    {
+      question: "Does WhatsApp chatbot offer multi-client & Multi services?",
+      answer:
+        "Absolutely. A chatbot can handle thousands of discussions at once, providing immediate responses and no lost questions.",
+    },
+    {
+      question: "Why Celitix for WhatsApp chatbot solutions?",
+      answer:
+        "Celitix provides Official API access, a no-code chatbot builder, automation workflows with live chat support, and omnichannel communication—all in one platform to grow your business faster.",
     },
   ];
   // section 7 FAQ
@@ -541,7 +552,6 @@ const page = () => {
 
       <section className="bg-[#f7effa] md:py-20 py-5">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
-   
           <div className="relative">
             <div className="relative h-[300px] w-full overflow-hidden border border-gray-300">
               <Image
@@ -558,7 +568,9 @@ const page = () => {
               </h3>
 
               <p className="text-sm text-gray-800 mt-2 h-25">
-                Auto-reply WhatsApp chats for instant customer queries. Without any waiting time, take users through product information, support, or bookings.
+                Auto-reply WhatsApp chats for instant customer queries. Without
+                any waiting time, take users through product information,
+                support, or bookings.
               </p>
 
               {/* <button
@@ -571,7 +583,6 @@ const page = () => {
             </div>
           </div>
 
-      
           <div className="relative">
             <div className="relative h-[300px] w-full overflow-hidden border border-gray-300">
               <Image
@@ -588,7 +599,10 @@ const page = () => {
               </h3>
 
               <p className="text-sm text-gray-800 mt-2 h-25">
-                 Qualify and Capture Leads Automatically with Interactive WhatsApp Flows. Use this opportunity to gather user details, preferences, and requirements before sending them down to your sales team.
+                Qualify and Capture Leads Automatically with Interactive
+                WhatsApp Flows. Use this opportunity to gather user details,
+                preferences, and requirements before sending them down to your
+                sales team.
               </p>
 
               {/* <button
@@ -601,7 +615,6 @@ const page = () => {
             </div>
           </div>
 
-    
           <div className="relative">
             <div className="relative h-[300px] w-full overflow-hidden border border-gray-300">
               <Image
@@ -618,7 +631,9 @@ const page = () => {
               </h3>
 
               <p className="text-sm text-gray-800 mt-2 h-25">
-                Connect your WhatsApp chatbot workflows and automate actions like sending notifications, reminders, confirmations, and updates to make your business communication 10X easier.
+                Connect your WhatsApp chatbot workflows and automate actions
+                like sending notifications, reminders, confirmations, and
+                updates to make your business communication 10X easier.
               </p>
 
               {/* <button
@@ -718,10 +733,10 @@ const page = () => {
         </div>
       </div>
 
-      {/* <div className=" bg-[#f7ebfc] flex justify-center items-center py-2 md:py-20 px-4 ">
+      <div className=" bg-[#f7ebfc] flex justify-center items-center py-2 md:py-20 px-4 ">
         <div className="w-full max-w-6xl bg-[#F7F4F9] border border-[#D1CDE3] rounded-xl p-6 shadow-lg">
           <h2 className="text-2xl md:text-4xl heading font-semibold text-center text-gray-900 popf mb-8">
-            Celitix For E-commerce FAQs
+            Whatsapp Chatbot FAQs
           </h2>
 
           <div className="bg-white rounded-xl py-4 px-2 sm:px-4">
@@ -745,7 +760,7 @@ const page = () => {
             ))}
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
   function Tile({ icon }) {

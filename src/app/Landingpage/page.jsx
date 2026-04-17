@@ -539,7 +539,7 @@ const Landingpage = () => {
       label: "Omnichannel Service",
       title: "Elevate your brand’s presence",
       text: `Win trust with a consistent and cohesive brand experience across channels.
-Connect online platforms to direct communications, reach more people, and let them choose how to interact.`,
+      Connect online platforms to direct communications, reach more people, and let them choose how to interact.`,
       buttonText: "Explore More",
       // replace with your actual SVG or image imports:
       mockup: OmnichannelLanding,
@@ -575,32 +575,8 @@ Connect online platforms to direct communications, reach more people, and let th
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* <div className="bg-[#9B44B6] text-white text-sm md:px-3 px-1 pt-1 pb-0 flex justify-between items-center flex-wrap comicf">
-
-               
-                <div className="flex items-center gap-1 md:gap-2 mb-2">
-                    <FaEnvelope />
-                    <span className='sub-heading'>support@celitix.com</span>
-                </div>
-
-             
-                <div className="flex items-center gap-1 md:gap-2 mb mb-2">
-                    <FaPhoneAlt />
-                    <span className='sub-heading'>+91 968-000-6460</span>
-                </div>
-            </div> */}
-      {/* Navbar */}
-      {/* <header className="w-full py-4 bg-gray-50 shadow">
-                <div className="max-w-7xl mx-auto flex items-center justify-between px-4">
-                    <a href="https://www.celitix.com" target="_blank" rel="noopener noreferrer">
-                        <Image src={celitixheader} alt="Celitix" className="h-10" />
-                    </a>
-                    <Image src={METACOLOR} alt="Meta Tech Partner" className="h-15 w-40" />
-                </div>
-            </header> */}
-
       {/* Hero */}
-      <section className="py-15 pt-25 md:pt-35 bg-gray-50">
+      <section className=" pt-25 md:pt-35 bg-gray-50">
         <div className=" text-center px-4">
           <h1 className="text-3xl md:text-5xl lg:text-6xl heading font-medium text-gray-800 mb-4">
             All-in-One{" "}
@@ -610,7 +586,7 @@ Connect online platforms to direct communications, reach more people, and let th
             </span>{" "}
             for
           </h1>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-semibold heading text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2] h-14 mb-3 md:mb-10">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-semibold heading text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2] h-18 mb-3">
             {text}
           </h2>
 
@@ -628,7 +604,7 @@ Connect online platforms to direct communications, reach more people, and let th
             ))}
           </ul>
 
-          <UniversalButton
+          {/* <UniversalButton
             label="BOOK A DEMO"
             variant="brutal"
             className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-2 font-semibold hover:bg-white hover:text-black 
@@ -636,64 +612,12 @@ Connect online platforms to direct communications, reach more people, and let th
             onClick={() => {
               formRef.current?.scrollIntoView({ behavior: "smooth" });
             }}
-          />
+          /> */}
         </div>
       </section>
 
-      {/* Brands */}
-      {/* <section className="py-12 bg-white">
-        <div className="max-w-4xl mx-auto text-center mb-8">
-          <h2 className="text-2xl font-medium text-gray-800">Trusted by Leaders Across Industries</h2>
-        </div>
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center">
-            {logos.map((src, i) => (
-              <Image
-                key={i}
-                src={src}
-                alt=""
-                className="mx-auto h-16 object-contain"
-                loading="lazy"
-              />
-            ))}
-          </div>
-        </div>
-      </section> */}
-
-      <div className="Second bg-[#D8E8EF] py-5 md:py-10">
-        <div className="text-center px-4 pb-5 md:pb-">
-          <h2 className="text-2xl md:text-5xl heading font-semibold text-gray-900">
-            Trusted by Leaders Across Industries
-          </h2>
-        </div>
-        <div className="w-full carousel-mask px-4">
-          <Swiper
-            modules={[Autoplay]}
-            slidesPerView="auto"
-            spaceBetween={24}
-            loop={true}
-            speed={5000}
-            autoplay={{
-              delay: 0,
-              disableOnInteraction: false,
-            }}
-            allowTouchMove={true}
-          >
-            {[...logos, ...logos].map((logo, index) => (
-              <SwiperSlide key={index} className="SwiperSlide">
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  className="h-16 sm:h-20 md:h-24 w-25 md:w-50 object-contain hover:grayscale-0 transition duration-1000 ease-in-out"
-                  // loading="auto"
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </div>
-
-      <section className="bg-[#F5F8FB] py-2 lg:py-10 px-4 md:px-20">
+          
+      <section className="bg-[#F5F8FB] py-2 lg:pb-10 px-4 md:px-20">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Accordion Column */}
@@ -902,6 +826,39 @@ Connect online platforms to direct communications, reach more people, and let th
           </div>
         </div>
       </section>
+
+      <div className="Second bg-[#D8E8EF] py-5 md:py-10">
+        <div className="text-center px-4 pb-5 md:pb-">
+          <h2 className="text-2xl md:text-5xl heading font-semibold text-gray-900">
+            Trusted by Leaders Across Industries
+          </h2>
+        </div>
+        <div className="w-full carousel-mask px-4">
+          <Swiper
+            modules={[Autoplay]}
+            slidesPerView="auto"
+            spaceBetween={24}
+            loop={true}
+            speed={5000}
+            autoplay={{
+              delay: 0,
+              disableOnInteraction: false,
+            }}
+            allowTouchMove={true}
+          >
+            {[...logos, ...logos].map((logo, index) => (
+              <SwiperSlide key={index} className="SwiperSlide">
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="h-16 sm:h-20 md:h-24 w-25 md:w-50 object-contain hover:grayscale-0 transition duration-1000 ease-in-out"
+                  // loading="auto"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </div>
 
       <section className="py-5 md:py-10 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 text-center">

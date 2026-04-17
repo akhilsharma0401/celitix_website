@@ -4942,7 +4942,8 @@ NOTE: You may need to complete the process within a set time limit.`,
   {
     id: 105,
     slug: "transforming-banking-experience-whatsapp-customer-engagement",
-    title: "Transforming Banking Experiences with WhatsApp: A Smarter Path to Customer ",
+    title:
+      "Transforming Banking Experiences with WhatsApp: A Smarter Path to Customer ",
     sections: [
       {
         question: "Engagement and Growth",
@@ -4956,7 +4957,7 @@ NOTE: You may need to complete the process within a set time limit.`,
       },
       {
         question: "Powering Conversations with Chatbots",
-         answer: `At the heart of WhatsApp banking lies chatbot automation. AI-powered chatbots enable banks to handle large volumes of customer interactions instantly, accurately, and around the clock.
+        answer: `At the heart of WhatsApp banking lies chatbot automation. AI-powered chatbots enable banks to handle large volumes of customer interactions instantly, accurately, and around the clock.
 
          With chatbots, banks can:
 
@@ -5041,7 +5042,8 @@ NOTE: You may need to complete the process within a set time limit.`,
   {
     id: 106,
     slug: "why-whatsapp-bots-matter-2026-smarter-customer-conversations",
-    title: "Why WhatsApp Bots Matter in 2026: Driving Smarter Customer Conversations",
+    title:
+      "Why WhatsApp Bots Matter in 2026: Driving Smarter Customer Conversations",
     intro: `In 2026, customer expectations have changed dramatically. People want instant replies, personalized experiences, and seamless communication — all within the apps they already use daily. This shift has made WhatsApp automation one of the most powerful tools for businesses, and WhatsApp bots are now at the center of modern customer engagement strategies.`,
     sections: [
       {
@@ -5081,8 +5083,8 @@ NOTE: You may need to complete the process within a set time limit.`,
       },
       {
         question: "The Competitive Advantage",
-         answer: `In a crowded digital market, businesses need tools that offer both efficiency and engagement. WhatsApp bots provide exactly that — faster communication, better customer experience, and improved ROI. Companies that adopt this technology early gain a clear competitive edge.`,
-         subquestion: `Conclusion`,
+        answer: `In a crowded digital market, businesses need tools that offer both efficiency and engagement. WhatsApp bots provide exactly that — faster communication, better customer experience, and improved ROI. Companies that adopt this technology early gain a clear competitive edge.`,
+        subquestion: `Conclusion`,
         subanswer: `WhatsApp bots matter because they align perfectly with how modern customers prefer to communicate — fast, simple, and conversational. In 2026, they are not just an automation tool but a core part of business growth, helping brands increase engagement, reduce costs, and drive meaningful customer interactions.`,
       },
     ],
@@ -5090,7 +5092,8 @@ NOTE: You may need to complete the process within a set time limit.`,
   {
     id: 107,
     slug: "whatsapp-bots-chat-automation-revenue-growth",
-    title: "The Rise of WhatsApp Bots: How Chat Automation Drives Revenue Growth",
+    title:
+      "The Rise of WhatsApp Bots: How Chat Automation Drives Revenue Growth",
     intro: `In today’s fast-paced digital economy, businesses are constantly searching for smarter ways to increase revenue while maintaining strong customer relationships. One of the most impactful solutions emerging in 2026 is WhatsApp bot automation. Far beyond simple messaging tools, these bots have evolved into powerful revenue-generating engines that help businesses engage, convert, and retain customers more effectively than ever before.`,
     sections: [
       {
@@ -5182,7 +5185,8 @@ NOTE: You may need to complete the process within a set time limit.`,
   {
     id: 109,
     slug: "building-smarter-chatbots-best-practices-user-experience",
-    title: "Building Smarter Chatbots: 5 Best Practices for Better User Experience",
+    title:
+      "Building Smarter Chatbots: 5 Best Practices for Better User Experience",
     intro: `The best interface is no interface” — a powerful idea by Golden Krishna — perfectly reflects today’s conversational technology. In the world of messaging platforms, users don’t want to navigate complex systems; they want simple, direct interactions. This is why how you communicate is just as important as what you communicate.
     As WhatsApp chatbots continue to grow, their behavior plays a critical role in determining user experience and overall success. Unlike traditional interfaces, chatbots rely entirely on conversation. This means every interaction must feel natural, responsive, and intuitive. At Celitix, we believe that understanding user expectations is the key to building chatbots that truly perform.`,
     sections: [
@@ -5210,7 +5214,7 @@ NOTE: You may need to complete the process within a set time limit.`,
         question: "5. Offer Personalized Experiences",
         answer: `Every user is different. Some prefer detailed updates, while others want only essential information. A good chatbot should allow users to customize their experience based on their preferences.
         For example, users can choose the type of updates they want, how frequently they receive messages, or the kind of information they are interested in. Personalization makes interactions more relevant and engaging.`,
-         subquestion: `Conclusion`,
+        subquestion: `Conclusion`,
         subanswer: `A well-behaved chatbot is not just about automation — it’s about delivering meaningful and seamless conversations. By focusing on clear communication, instant responses, flexibility, user guidance, and personalization, businesses can create chatbots that truly enhance customer experience.
         At Celitix, we help businesses design intelligent WhatsApp chatbot solutions that are built around user needs, ensuring every interaction adds value and drives results.`,
       },
@@ -5267,7 +5271,7 @@ NOTE: You may need to complete the process within a set time limit.`,
           "It’s equally important to provide an easy way for users to opt out. A simple instruction like “Reply STOP to unsubscribe” helps maintain trust and keeps your communication user-friendly.",
           "Lastly, avoid pre-checked boxes or automatic enrollment. Consent should always be a clear and intentional action by the user.",
         ],
-         subquestion: `Conclusion`,
+        subquestion: `Conclusion`,
         subanswer: `SMS consent is the foundation of effective and compliant SMS marketing. In India, with the implementation of DLT systems, businesses must go a step further by using consent templates to properly capture and verify user permissions.
         By prioritizing transparency and following best practices, businesses can not only stay compliant but also build stronger relationships with their customers.
         At Celitix, we believe that responsible communication leads to better engagement and long-term success. When done right, SMS marketing powered by proper consent can become one of your most valuable customer communication channels.`,
@@ -5347,7 +5351,8 @@ NOTE: You may need to complete the process within a set time limit.`,
   {
     id: 112,
     slug: "sms-consent-requirements-india",
-    title: "What Are the Consent Requirements for Different Types of SMS Messages in India?",
+    title:
+      "What Are the Consent Requirements for Different Types of SMS Messages in India?",
     intro: `When it comes to SMS marketing in India, following the correct consent requirements is essential for compliance and successful message delivery. The Telecom Regulatory Authority of India (TRAI) has established clear guidelines under the DLT (Distributed Ledger Technology) framework to regulate how businesses send SMS messages.
     Based on these regulations, SMS messages are divided into three main categories: 2-way SMS, transactional SMS, and promotional SMS. Each type has its own consent requirements and compliance rules.`,
     sections: [
@@ -5355,7 +5360,7 @@ NOTE: You may need to complete the process within a set time limit.`,
         question: "1. 2-Way SMS Consent Requirements",
         answer: `2-way SMS allows businesses to both send and receive messages from customers. Unlike other types, it enables direct interaction, making it ideal for customer support, queries, and engagement.
         To send 2-way SMS in India, businesses must meet the following requirements:`,
-          list: [
+        list: [
           "Register as a Principal Entity (business, legal, or government organization)",
           "Use a registered sender ID (header) with up to 11 alphanumeric characters (e.g., VD-KOTAKB)",
           "Get message content templates approved on the DLT platform",
@@ -5371,7 +5376,7 @@ NOTE: You may need to complete the process within a set time limit.`,
         question: "2. Transactional SMS Consent Requirements",
         answer: `Transactional SMS includes messages that provide important information related to a service or transaction. These messages are non-promotional and are critical for user experience.
         According to TRAI SMS regulations, transactional messages have more relaxed consent requirements:`,
-         list: [
+        list: [
           "Implied consent is sufficient",
           "No opt-out option is required",
           "No time restrictions (can be sent anytime)",
@@ -5427,7 +5432,7 @@ NOTE: You may need to complete the process within a set time limit.`,
       {
         question: "2. Type of Message",
         answer: `The type of SMS being sent plays a major role in determining consent:`,
-         list: [
+        list: [
           "Promotional messages require express consent, where users explicitly agree to receive marketing communication.",
           "Transactional messages may rely on implied consent, as they are triggered by user actions like purchases or service requests.",
           "2-way messages also require proper consent registration, especially when interaction is involved.",
@@ -5441,7 +5446,7 @@ NOTE: You may need to complete the process within a set time limit.`,
       {
         question: "4. Method of Consent Collection",
         answer: `How consent is collected also determines its validity. Common compliant methods include:`,
-         list: [
+        list: [
           "Website forms with opt-in checkboxes",
           "SMS keyword subscriptions (e.g., “Text JOIN”)",
           "Mobile app registrations",
@@ -5461,7 +5466,8 @@ NOTE: You may need to complete the process within a set time limit.`,
   {
     id: 114,
     slug: "sms-consent-legal-requirements-india",
-    title: "What Are the Legal Requirements for Obtaining SMS Consent in India?",
+    title:
+      "What Are the Legal Requirements for Obtaining SMS Consent in India?",
     intro: `For businesses using SMS marketing in India, following legal requirements for SMS consent is essential. The Telecom Regulatory Authority of India (TRAI) has established strict guidelines to protect users from unwanted commercial communication and ensure transparency in messaging practices.
     These rules apply to all businesses sending SMS messages to Indian customers, regardless of industry or size.`,
     sections: [
@@ -5480,7 +5486,7 @@ NOTE: You may need to complete the process within a set time limit.`,
         question: "Express Written Consent Requirement",
         answer: `One of the most important legal requirements is obtaining express written consent from customers before sending promotional SMS.
         This means users must clearly and actively agree to receive marketing messages. Consent can be collected through:`,
-          list: [
+        list: [
           "Website opt-in forms",
           "Signup pages or mobile apps",
           "SMS keyword subscriptions",
@@ -5516,7 +5522,7 @@ NOTE: You may need to complete the process within a set time limit.`,
         The PE-TM chain is the process of linking your business with your SMS provider on the DLT platform. This connection creates a verified path for sending messages to customers.
         
         In simple words, it ensures that:`,
-          list: [
+        list: [
           "Only authorized businesses can send SMS",
           "Messages are sent through approved channels",
         ],
@@ -5552,7 +5558,7 @@ NOTE: You may need to complete the process within a set time limit.`,
         
         Each step in this chain is verified within the DLT system. If any part of the chain is missing or incorrect, the message gets rejected.
         Before sending any SMS, the system checks:`,
-          list: [
+        list: [
           "SMS not getting delivered",
           "Campaign failures",
           "Error codes or message rejection",
@@ -5618,6 +5624,254 @@ NOTE: You may need to complete the process within a set time limit.`,
         question: "Focus on Growth, Leave Compliance to Us",
         answer: `With Celitix, you don’t just get a service provider—you get a complete compliance partner. From quick onboarding to seamless campaign execution, we ensure your messaging infrastructure is reliable, secure, and scalable.
         Let Celitix handle your PE-TM chain setup while you focus on growing your business and reaching your customers effectively.`,
+      },
+    ],
+  },
+
+  //  Nota AI
+
+  {
+    id: 117,
+    slug: "why-dlt-registration-is-necessary-for-sms-service-providers",
+    title: "Why is DLT Registration Necessary for SMS Service Providers?",
+    intro: `In the current times, bulk SMS services continue to be the most popular choice of communication among businesses. Nevertheless, problems such as spamming, fraud, and other kinds of threats to security have been emerging. To address such issues, the Indian government made DLT registration mandatory for all business organizations utilizing SMS services through TRAI guidelines.`,
+    sections: [
+      {
+        question: "Providing Transparency and Security",
+        answer: `DLT provides transparency in the entire process of SMS communication. Companies are required to register their company names, sender IDs, and message formats before transmitting any messages via DLT. This helps telecom companies to verify the authenticity of each SMS.`,
+      },
+      {
+        question: "SMS communication channel",
+        answer: `How Can We Prevent Spamming and SMS Fraud?
+        Before implementing the use of DLT, spam messages and SMS fraud used to be significant problems. Customers frequently encountered unsolicited promotional texts or phishing scams.
+        With DLT registration, only approved templates can reach out to customers. Any unregistered text will not get through the filters. This helps create a safe environment for customers as they are getting only legitimate messages.`,
+      },
+      {
+        question: "Creating Confidence in Customers",
+        answer: `Customer confidence is a key issue when communicating. Once customers see that you have a verified sender ID and use approved templates, they will open your texts and respond.
+        Once a customer trusts you, they will engage in SMS services that include OTPs and alerts. You will also have success in sending promotional offers and messages.`,
+      },
+      {
+        question: "Meeting TRAI Rules",
+        answer: `It is an obligatory step according to TRAI requirements. Non-compliance may cause your messages to get blocked or your service to be disrupted.
+        By using DLT registration, companies avoid possible legal complications and service interruptions. Moreover, it will boost your company’s professionalism.`,
+      },
+      {
+        question: "Efficient SMS Delivery and Performance",
+        answer: `Thanks to pre-defined message templates and validated sender ID numbers, SMS messages can be sent faster and with better performance. The chances of messages  being rejected and filtered out by telecom operators have reduced.
+        This is highly necessary for transactional SMS messages that include one-time passwords, reminders of appointments, and customer service notifications.`,
+      },
+      {
+        question: "Conclusion",
+        answer: `The registration of DLT is mandatory for enterprises using bulk SMS services in India. DLT will help improve the visibility of the business, provide better security, avoid spamming customers, and ensure compliance with guidelines issued by TRAI. For organizations that use Celitix, DLT is not just a necessity but an enabling technology.`,
+      },
+    ],
+  },
+  {
+    id: 118,
+    slug: "challenges-faced-during-dlt-registration",
+    title: "Challenges Faced During DLT Registration",
+    intro: `However, despite being an important process that enables companies to use bulk SMS in India, DLT registration is a difficult task. There are many barriers to overcome in the registration process. By knowing some of these barriers, companies may be able to handle the DLT registration process much more efficiently.`,
+    sections: [
+      {
+        question: "Documentation Problems",
+        answer: `The most typical issue in DLT registration is providing the right documentation. In order to register for bulk SMS service in India, businesses must submit proof of identification in the form of a PAN card and a GST certificate, among other documents.
+        A single error can result in the registration being rejected. The requirement for documentation poses significant challenges to businesses, particularly when it comes to new or small businesses.`,
+      },
+      {
+        question: "Different DLT Platforms",
+        answer: `There are a number of telecom providers in India with their own DLT platforms for registration. This can pose problems for a company as to which DLT platform to use and whether it needs to register on all of them.`,
+      },
+      {
+        question: "Delays in Header and Template Approvals",
+        answer: `Post-registration, organizations will have to wait for the header and SMS template approvals, which might take some extra time owing to the thorough verification carried out by telecom operators.
+        From formatting issues, using prohibited keywords, to ambiguous messaging can cause rejection and re-submission to become necessary, which may delay the campaign delivery.`,
+      },
+      {
+        question: "Difficulties in Understanding Compliance Guidelines",
+        answer: `There are certain guidelines related to promotional, transactional, and service messages set by the DLT guidelines. Many businesses find it difficult to identify which messages fall into which categories.
+        The incorrect categorization of messages or sending messages without permission can lead to blacklisting or even fines. Moreover, keeping track of the changing compliance guidelines becomes an added challenge.`,
+      },
+      {
+        question: "APIs, Templates, and Data Consistency Issues",
+        answer: `Some businesses may need developer assistance to ensure that the API, SMS templates, and user information comply with the DLT guidelines. This would depend on the scale and scope of the project.`,
+      },
+      {
+        question: "Time-Consuming Process",
+        answer: `In summary, the entire DLT registration process is quite time-consuming. From submission to approval, it may take several days or even weeks, depending upon the precision of the application submitted and the operator's turnaround time.`,
+      },
+      {
+        question: "Conclusion",
+        answer: `While DLT registration remains essential to ensure that the SMS communication process is safe and legal, many businesses encounter various obstacles, including problems with paperwork, time-consuming approvals, and technical difficulties. However, knowing about common pitfalls and cooperating with expert SMS providers such as Celitix will help you overcome them easily.`,
+      },
+    ],
+  },
+  {
+    id: 119,
+    slug: "step-by-step-dlt-registration-guide-for-sms-services-in-india",
+    title: "Step-by-Step DLT Registration Guide for SMS Services in India",
+    intro: `With the introduction of DLT registration in India, there is an established procedure that must be followed prior to the launch of any SMS campaign. Regardless of whether you are utilizing bulk SMS services for promotional purposes or transactional communications, it is important to complete the DLT registration process according to TRAI guidelines.`,
+    sections: [
+      {
+        question: "Selecting a DLT Platform",
+        answer: `As the first step, the platform needs to be selected. There are telecom operators such as Airtel, Vodafone Idea, Jio, and BSNL that have their DLT platform on which you can create your account.
+        It is suggested to opt for a single platform initially, but your data will be synchronized among various operators as per your requirement.`,
+      },
+      {
+        question: "Registration of Your Business Entity",
+        answer: `After selecting the platform, you need to register yourself by giving certain details related to your business, such as:`,
+        list: [
+          "Name of your business entity",
+          "PAN number",
+          "GST number",
+          "Address",
+          "Signature of authorized person"
+        ]
+      },
+      {
+        question: "Verification of Your Entity",
+        answer: `Your information will be verified by the telecom operator. The entire process takes some time, depending upon the volume of data submitted. After verification, your entity ID will be generated.`,
+      },
+      {
+        question: "Register Sender ID (Header)",
+        answer: `Next comes registering the header or sender ID. The header refers to the name or number appearing as the sender of your SMS (XYZABC).
+        Headers must be relevant to your company’s name and require approval from the operator.`,
+      },
+      {
+        question: "Submission of SMS Templates",
+        answer: `As per DLT guidelines, all content of SMS should be pre-approved. The required submission of templates for:`,
+        list: [
+          "Transactional SMS (One-Time Passcodes & Alerts)",
+          "Service SMS",
+          "Promotional SMS",
+          "Include variables within brackets in your templates",
+        ]
+      },
+      {
+        question: "Approving SMS Templates",
+        answer: `Upon submission, your templates will be reviewed. Once approved, the templates can be used to send SMS campaigns. In case the templates get rejected, you will have to edit and then submit again.`,
+      },
+      {
+        question: "Mapping with SMS Platform",
+        answer: `Following this step is the mapping of DLT information, such as entity ID, header, and template ID, to your SMS platform, such as Celitix.
+        This step helps in ensuring your SMS campaign is in sync with DLT norms.`,
+      },
+      {
+        question: "Sending SMS Campaigns",
+        answer: `Once done with all the above steps, you can now proceed to send SMS campaigns. It includes:`,
+        list: [
+          "Using approved templates only",
+          "Send to users who have consented",
+          "Follow compliance guidelines",
+        ]
+      },
+      {
+        question: "Conclusion",
+        answer: `The registration of an organization for SMS services using the DLT may appear to be a challenging task at first, but by adhering to a systematic process, it can be accomplished easily. It is not only helpful in terms of legality but also increases efficiency and boosts customer confidence.`,
+      },
+    ],
+  },
+  {
+    id: 220,
+    slug: "impact-of-dlt-on-sms-marketing-and-communications",
+    title: "The Impact of DLT on SMS Marketing and Communications",
+    intro: `The arrival of the DLT registration has made a lot of changes in the realm of SMS marketing and communications. The introduction of security, transparency, and compliance into the system has brought about a revolutionized method of business communications via bulk SMS.`,
+    sections: [
+      {
+        question: "A Safer and More Effective Mode of Communication",
+        answer: `In the past, SMS marketing was associated with unsolicited and scam messages that customers often received from random numbers. It led to the loss of faith among the users in the SMS mode of communication.
+        With the DLT regulation in place, it becomes necessary for businesses to obtain permission and verification before sending messages to users. In this way, the safety and credibility of the SMS channel have been restored by businesses who can now send legitimate messages.`,
+      },
+      {
+        question: "Benefits for Business Owners",
+        answer: `There are various benefits that businesses will enjoy due to DLT regulation in their SMS campaigns:`,
+        list: [
+          "Better Message Delivery: There is a minimal chance of blocking messages because all the messages are sent according to verified templates.",
+          "Higher Customer Engagement: Users will be willing to open legitimate messages.",
+          "Corporate Credibility: Verified messages help build a more trustworthy image for companies.",
+          "Legal Protection: Businesses are free from the threat of any legal troubles.",
+        ]
+      },
+      {
+        question: "Benefits for the Customer",
+        answer: `In addition to this, DLТ has brought the following benefits to the end user as well:`,
+        list: [
+          "Less Spam: The filtering system allows users to receive only relevant messages, with their consent being provided.",
+          "Better Security: It ensures that the message was not sent fraudulently, preventing phishing via text message.",
+          "Better Relevance: The customer receives a relevant message that corresponds to their needs.",
+        ]
+      },
+      {
+        question: "Better Targeting of SMS Campaigns",
+        answer: `Another advantage of DLТ is an enhanced ability of companies to target SMS marketing campaigns. Since the business is required to provide its messages to customers who consented to receiving them, this makes campaigns more targeted.
+        Better targeted campaigns will bring higher conversion rates. In addition, targeted campaigns will be able to bring higher conversion rates.`,
+      },
+      {
+        question: "Tracking of SMS Marketing Campaigns",
+        answer: `Finally, another feature of DLТ is the ability to track SMS campaigns. Every message sent through the system is tied to a certain sender ID and template. This makes it easier for the company to track how well it performs.`,
+      },
+      {
+        question: "Conclusion",
+        answer: `The influence of DLT on the use of SMS marketing and communication in India has been significant. The use of DLT technology has established a safe, trustworthy, and effective framework that is beneficial to both enterprises and their consumers. Thanks to enhanced accuracy, tracking, and trust, DLT technology has transformed SMS marketing into an even more effective medium of communication.
+        For organizations utilizing Celitix for SMS marketing, using DLT technology should be a priority.`,
+      },
+    ],
+  },
+  {
+    id: 221,
+    slug: "cta-whitelisting-in-dlt",
+    title: "CTA Whitelisting in DLT",
+    intro: `With DLT registration now active in India, the use of SMS has become more systematic, secure, and compliant. The most significant part of this new system is CTA (Call to Action) whitelisting because it allows businesses to ensure that the links they share via SMS are safe for their customers.
+    For businesses operating bulk SMS systems, CTA whitelisting is necessary not just to make their activities compliant but also to ensure the success of their campaigns.`,
+    sections: [
+      {
+        question: "CTA Whitelisting with DLT: What It Is and How It Works",
+        answer: `The concept of CTA whitelisting means registering and whitelisting various links that are shared via SMS. The CTAs in question can be phone numbers, websites, or any other links that will prompt users to act in some way.
+        Before businesses send an SMS with a certain CTA in it, they need to whitelist all these CTAs via DLT. Only approved CTAs will be accepted after that.`,
+      },
+      {
+        question: "The Importance of CTA Whitelisting:",
+        answer: `CTA whitelisting is extremely essential for the maintenance of a secure and effective messaging environment:`,
+        list: [
+          "Promotes Security: Helps to prevent fraud and phishing attempts as only verified links are used.",
+          "Makes Sure that Regulations are Followed: Businesses need to adhere to TRAI regulations to evade penalties or message blocks.",
+          "Contributes to Higher Delivery Rates: Messages with whitelisted CTAs are less likely to be blocked by telecommunication operators.",
+          "Benefits Your Customers: Customers gain trust because links are verified, thus leading to more customer engagement.",
+        ]
+      },
+      {
+        question: "The Types of CTA Whitelisting",
+        answer: `CTA whitelisting on DLT platforms includes the following options, depending on the needs of your business:`,
+        list: [
+          "URL: Static Links - for instance, links pointing to your landing pages or homepages.",
+          "URL: Dynamic Links - links carrying variables that help track user behavior.",
+          "WhatsApp Links - click-to-talk function",
+          "App Links/APK - Mobile app download links.",
+          "Phone Numbers/Call Back Number.",
+        ]
+      },
+      {
+        question: "Step-by-step Guide for CTA Whitelisting on DLT Platforms",
+        answer: `Login into your DLT platform (SmartPing, Telecom Operator website, etc.)
+        Go to the CTA Whitelisting section`,
+        subquestion: `Fill in the necessary information`,
+        subanswer: `1. CTA Name
+        2. CTA Type
+        3. CTA Input (URL/Number)
+        4. Select sub-type (Static or Dynamic)
+        5. Submit your request for validation
+        6. Upon approval, link the CTA to SMS templates
+        7. This way, you will ensure the usage of all links for communication is officially approved.
+        8. Best Practices to Follow:
+        9. Always use your company domain.
+        10. Try to avoid URL shorteners unless approved by DLT.
+        11. CTA content should be consistent with SMS.
+        12. Register domains beforehand to save your time.
+        13. Double-check all info before submitting the request.`,
+      },
+      {
+        question: "Conclusion",
+        answer: `CTA Whitelisting is a key element of the DLT SMS Ecosystem in India. CTA helps establish secure communication with the customers, boost delivery rates, and build the brand's reputation. For companies that use Celitix for their SMS communication, adherence to the above CTA Whitelisting guide is important both from the point of view of compliance and efficiency.`,
       },
     ],
   },

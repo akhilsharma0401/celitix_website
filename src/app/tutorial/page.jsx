@@ -1108,6 +1108,49 @@ const cards = [
       color: "from-blue-500 to-cyan-500",
       slug: "how-celitix-simplifies-pe-tm-chain-setup",
   },
+
+
+  // Nota AI
+   {
+      icon: <FiFileText />,
+      category: "SMS Gateway",
+      title: "Why is DLT Registration Necessary for SMS Service Providers?",
+      desc: "High-delivery promotional and transactional SMS platform.",
+      color: "from-blue-500 to-cyan-500",
+      slug: "why-dlt-registration-is-necessary-for-sms-service-providers",
+  },
+   {
+      icon: <FiFileText />,
+      category: "SMS Gateway",
+      title: "Challenges Faced During DLT Registration",
+      desc: "High-delivery promotional and transactional SMS platform.",
+      color: "from-blue-500 to-cyan-500",
+      slug: "challenges-faced-during-dlt-registration",
+  },
+   {
+      icon: <FiFileText />,
+      category: "SMS Gateway",
+      title: "Step-by-Step DLT Registration Guide for SMS Services in India",
+      desc: "High-delivery promotional and transactional SMS platform.",
+      color: "from-blue-500 to-cyan-500",
+      slug: "step-by-step-dlt-registration-guide-for-sms-services-in-india",
+  },
+   {
+      icon: <FiFileText />,
+      category: "SMS Gateway",
+      title: "The Impact of DLT on SMS Marketing and Communications",
+      desc: "High-delivery promotional and transactional SMS platform.",
+      color: "from-blue-500 to-cyan-500",
+      slug: "impact-of-dlt-on-sms-marketing-and-communications",
+  },
+   {
+      icon: <FiFileText />,
+      category: "SMS Gateway",
+      title: "CTA Whitelisting in DLT",
+      desc: "High-delivery promotional and transactional SMS platform.",
+      color: "from-blue-500 to-cyan-500",
+      slug: "cta-whitelisting-in-dlt",
+  },
 ];
 
 export default function Page() {

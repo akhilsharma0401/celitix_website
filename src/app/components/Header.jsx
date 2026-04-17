@@ -213,7 +213,7 @@ const Header = () => {
               >
                 <div className="absolute top-0 left-1/4 -translate-x-1/2 -translate-y-2 rotate-45 bg-white h-4 w-4 border-t border-l border-gray-200 z-[1]"></div>
 
-                <div className="absolute -left-32 top-full bg-white text-black border border-gray-200 shadow-lg p-6 rounded-md w-65 ">
+                <div className="absolute -left-32 top-full  bg-white text-black border border-gray-200 shadow-lg p-6 rounded-md w-65 ">
                   <div className="w-full bg-white border border-gray-200 rounded-lg shadow-md p-6 text-gray-800 hover:shadow-lg transition duration-300 ease-in-out">
                     {/* Icon or Emoji */}
                     <div className="flex items-center gap-2 mb-4">
@@ -246,6 +246,17 @@ const Header = () => {
                       />
                     </Link>
                   </div>
+                  {/* <div className="w-full grid grid-cols-1 popfh sm:grid-cols-1 md:grid-cols-1 gap-1 p-1">
+                    <Link href="/whatsapp-business-api">
+                      <ChannelItem title="WhatsApp" desc="Most Comprehensive" />
+                    </Link>
+                    <Link href="/instagram-business">
+                      <ChannelItem title="Instagram" desc="Automate & Scale" />
+                    </Link>
+                    <Link href="/rcs-business-messaging">
+                      <ChannelItem title="RCS" desc="Least Competitive" />
+                    </Link>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -301,7 +312,6 @@ const Header = () => {
                     </Link>
                     <Link href="/instagram-business">
                       <ChannelItem title="Instagram" desc="Automate & Scale" />
-                      
                     </Link>
                     <Link href="/rcs-business-messaging">
                       <ChannelItem title="RCS" desc="Least Competitive" />
