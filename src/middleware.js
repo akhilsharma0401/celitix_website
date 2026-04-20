@@ -1,37 +1,27 @@
+// middleware.js  ← must be at project root OR src/middleware.js if using src/ dir
+
 import { NextResponse } from "next/server";
 
-// Middleware to check for secretKey in API requests
-export async function middleware(request) {
+export async function middleware(request) {   // ← must be named "middleware"
+  console.log("proxy");
 
-  // if (request.nextUrl.pathname === "/api/ip") {
-  //   return NextResponse.next();
-  // }
-  // if (!request.nextUrl.pathname.startsWith("/api")) {
-  //   return NextResponse.next();
-  // }
+  const { method, url, headers } = request;
+  const ip = headers.get("x-forwarded-for") || "-";
+  const timestamp = new Date().toISOString();
 
-  // const secretKey =
-  //   request.headers.get("x-secret-key") ||
-  //   request.nextUrl.searchParams.get("secretKey");
-
-  // const expectedSecretKey = process.env.API_SECRET_KEY;
-
-  // if (!secretKey || secretKey !== expectedSecretKey) {
-  //   return new NextResponse(
-  //     JSON.stringify({
-  //       message: "Unauthorized: Invalid or missing secret key",
-  //       status: false,
-  //     }),
-  //     {
-  //       status: 401,
-  //       headers: { "Content-Type": "application/json" },
-  //     }
-  //   );
-  // }
+  if (!url.includes("/api/log")) {
+    fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/log`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ timestamp, method, url, ip }),
+    }).catch(() => {});
+  }
 
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: ["/api/:path*"],
+  matcher: [
+    "/((?!_next/static|_next/image|favicon.ico|.*\\.well-known.*|.*\\..*).*)",
+  ],
 };

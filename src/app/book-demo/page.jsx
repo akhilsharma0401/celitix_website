@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import UniversalButton from "../components/UniversalButton";
 import {
   homesecond1,
@@ -48,6 +48,7 @@ const BookDemo = () => {
 export const BookDemoPage = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
+   const pathname = usePathname();
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -235,7 +236,6 @@ export const BookDemoPage = () => {
         if (otp?.code) {
           const otpCode = otp.code.replace(/\D/g, "").slice(0, 6);
 
-
           const otpArray = otpCode.split("");
           setOtp(otpArray);
           otpRefs.current[otpArray.length - 1]?.focus();
@@ -342,6 +342,8 @@ export const BookDemoPage = () => {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
+      const url = `${window.location.origin}${pathname}${searchParams}`
+
 
       if (!isOtpVerified) {
         toast.error("Please verify the otp before submitting the form.");
@@ -376,16 +378,21 @@ export const BookDemoPage = () => {
       //     return toast.error("Unable to verify captcha. Please Contact Site Administrator ")
       // }
 
-
       const utmData = {
         source: searchParams.get("utm_source") || "direct",
         medium: searchParams.get("utm_medium") || "direct",
         campaign: searchParams.get("utm_campaign") || "direct",
         gclid: searchParams.get("gclid") || "direct",
+        url
       };
 
       let source = "lp-book-demo";
-      if (utmData.source === "direct" || utmData.medium === "direct" || utmData.campaign === "direct" || utmData.gclid === "direct") {
+      if (
+        utmData.source === "direct" ||
+        utmData.medium === "direct" ||
+        utmData.campaign === "direct" ||
+        utmData.gclid === "direct"
+      ) {
         source = "book-demo";
       }
 
@@ -420,7 +427,7 @@ export const BookDemoPage = () => {
       toast.success("Form submitted successfully!");
       router.push("/thank-you?source=book-demo");
     } catch (e) {
-      console.error(e);
+      console.log(e);
       return toast.error("Unable to send form data. Please try again later");
     } finally {
       setIsFetching(false);

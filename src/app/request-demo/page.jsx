@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import UniversalButton from "../components/UniversalButton";
 import {
   homesecond1,
@@ -48,6 +48,7 @@ const BookDemo = () => {
 export const BookDemoPage = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
+     const pathname = usePathname();
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -375,10 +376,13 @@ export const BookDemoPage = () => {
       //     return toast.error("Unable to verify captcha. Please Contact Site Administrator ")
       // }
 
+       const url = `${window.location.origin}${pathname}${searchParams}`;
+
       const utmData = {
         source: searchParams.get("utm_source") || "direct",
         medium: searchParams.get("utm_medium") || "direct",
         campaign: searchParams.get("utm_campaign") || "direct",
+        url
       };
 
       let source = "lp-book-demo-fb";
