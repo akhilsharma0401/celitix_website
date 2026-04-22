@@ -17,7 +17,8 @@ import  facebook  from '../../../public/assets/Icons/Facebook_Icon.png';
 import  LinkedIn  from '../../../public/assets/Icons/LinkedIn_Icon.png';
 import  twitter  from '../../../public/assets/Icons/twitter_Icon.png';
 import  whats  from '../../../public/assets/Icons/WhatsApp.svg';
-import  footerBatch  from '../../../public/assets/mainicons/BATCH01.svg';
+// import  footerBatch  from '../../../public/assets/mainicons/BATCH01.svg';
+import footerBatch from "../../../public/assets/imagesMain/BATCH.svg";
 
 // import { celitixfooter, facebook, footerBatch, instagram, LinkedIn, METAWHITE, twitter, whats, YouTube } from '@/assets/images';
 const Footer = () => {
