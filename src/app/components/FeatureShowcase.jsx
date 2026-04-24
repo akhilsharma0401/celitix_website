@@ -341,16 +341,16 @@ const FeatureShowcase = ({ title, highlight, services }) => {
     setActiveIndex(index);
   };
 
-  const handleservices = () => {
+   const handleservices = () => {
     const btnText = activeService.content.ButtonName.trim();
+
     const validLabels = [
       "Start Now",
       "Check It Out",
       "Learn More",
       "Explore",
-      "Explore ",
       "Get Started",
-      "Know More ",
+      "Know More",
     ];
 
     if (validLabels.includes(btnText)) {
@@ -358,33 +358,43 @@ const FeatureShowcase = ({ title, highlight, services }) => {
         case 1:
           router.push("/whatsapp-business-api");
           break;
+
         case 2:
           router.push("/rcs-business-messaging");
           break;
+
         case 3:
           router.push("/sms-marketing");
           break;
+
         case 4:
           router.push("/two-way-sms");
           break;
+
         case 5:
           router.push("/inbound-dialer");
           break;
+
         case 6:
           router.push("/outbound-dialer");
           break;
+
         case 7:
           router.push("/click-to-call");
           break;
+
         case 8:
           router.push("/missed-call-services");
           break;
+
         case 9:
           router.push("/user-verification");
           break;
+
         case 10:
           router.push("/email-otp");
           break;
+
         default:
           console.log("No route defined for this service");
       }

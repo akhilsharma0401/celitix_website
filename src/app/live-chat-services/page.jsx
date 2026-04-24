@@ -32,6 +32,9 @@ import {
   WhatsApp_Business_Platform,
   WhatsAppAPI,
   WhatsAppicon,
+  LiveChatEfficiently,
+  LiveChatCelitixLive,
+  LiveChatAcrossChannels,
 } from "../../../public/assets/images";
 import Image from "next/image";
 import Link from "next/link";
@@ -39,9 +42,7 @@ import FaqItem from "../components/Faq";
 import FormPopup from "../components/FormPopup";
 import UniversalButton from "../components/UniversalButton";
 import { useRouter } from "next/navigation";
-
 const Page = () => {
-  
   // 3rd
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -179,8 +180,8 @@ const Page = () => {
       heading: "WhatsApp Live Chat",
       description:
         "Provide instant connections through WhatsApp Live Chat and ensure that every conversation that takes place is swift, seamless, and authentic. From inquiry about services to support needs, your team will be able to provide immediate responses to customers at all times without any delay. You can also transfer updates, files, documents, pictures, or any other piece of important information through chat in an easy and seamless manner, thus making every communication swift and hassle-free. Instant replies and pre-formatted messages make every conversation professional and effective.",
-        buttonText: "Explore",
-         routerlink: "/whatsapp-live-chat", 
+      buttonText: "Explore",
+      routerlink: "/whatsapp-live-chat",
       image: contentManagement,
       isVideo: false,
     },
@@ -188,8 +189,8 @@ const Page = () => {
       heading: "Instagram Live Chat ",
       description:
         "Communicate and connect with your audience directly using Instagram Live Chat, where your brand is getting the most attention. Manage Instagram messages easily and engage users instantly through Instagram Live Chat by responding to every message without a single delay. This way, you can convert every conversation or query into meaningful engagement and guide users to make further inquiries, book products or services, or even make purchases.",
-        buttonText: "Explore",
-        routerlink: "/instagram-live-chat", 
+      buttonText: "Explore",
+      routerlink: "/instagram-live-chat",
       image: InstagramLiveChat,
       isVideo: false,
     },
@@ -197,8 +198,8 @@ const Page = () => {
       heading: "RCS Live Chat",
       description:
         "Sending rich interactive conversations instead of plain text. RCS Live Chat allows sending rich, engaging messages with images and videos, buttons, and interactive content in the message that users can actually interact with in their chat. This helps make conversations more intuitive and action-oriented, enabling customers to quickly explore options, make decisions, and take actions without leaving the chat. As a result, we have an enticing, more sultry, better messaging experience where both user satisfaction and conversion rates are improved.",
-        buttonText: "Explore",
-          routerlink: "/rcs-live-chat",  
+      buttonText: "Explore",
+      routerlink: "/rcs-live-chat",
       image: CommentControl,
       isVideo: false,
     },
@@ -210,8 +211,8 @@ const Page = () => {
   const { heading, description, buttonText, image, isVideo, routerlink } =
     tabData[activeTab];
 
-
   // extra section
+  // const LiveChatAcross = "/assets/videos/LiveChatAcrossChannels.mp4";
 
   return (
     <div>
@@ -363,8 +364,16 @@ const Page = () => {
 
           {/* Center Mobile Mockup */}
           <div className="flex justify-center items-center order-first md:order-none h-full">
+            {/* <video
+              src={LiveChatAcrossChannels}
+              className="object-contain"
+              autoPlay
+              muted
+              loop
+            /> */}
+
             <Image
-              src={ReachCustomersinstagram} // Replace with your image path
+              src={LiveChatAcrossChannels} // Replace with your image path
               alt="Phone Mockup"
               className=" object-contain"
             />
@@ -468,7 +477,7 @@ const Page = () => {
           <div className="flex items-center justify-center w-full lg:w-1/2">
             <div className="w-full h-full my-5">
               <Image
-                src={StandsOutInstagram}
+                src={LiveChatCelitixLive}
                 alt="User Communication"
                 className="rounded-lg w-full h-full object-cover"
                 // loading="auto"
@@ -616,11 +625,11 @@ const Page = () => {
                   {description}
                 </p>
                 <button
-              className="inline-block px-6 py-2 bg-[#6b0da1] text-white rounded-full w-max hover:bg-[#580a88] transition"
-              onClick={() => router.push(routerlink)}
-            >
-              {buttonText}
-            </button>
+                  className="inline-block px-6 py-2 bg-[#6b0da1] text-white rounded-full w-max hover:bg-[#580a88] transition"
+                  onClick={() => router.push(routerlink)}
+                >
+                  {buttonText}
+                </button>
               </div>
 
               {/* Right side: image or video */}
@@ -725,7 +734,7 @@ const Page = () => {
             {/* Center Image Block */}
             <div className="flex justify-center">
               <Image
-                src={InstagramWorkflow}
+                src={LiveChatEfficiently}
                 alt="Phone Mockup"
                 className="w-[260px] sm:w-[300px] md:w-[320px] lg:w-[380px] object-contain"
               />

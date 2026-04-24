@@ -1,16 +1,68 @@
-"use client"
-import React, { useRef, useState } from 'react';
-import UniversalButton from '../components/UniversalButton';
+"use client";
+import React, { useRef, useState } from "react";
+import UniversalButton from "../components/UniversalButton";
 // import TwoWaySms from './channels/TwoWaySms';
-import Image from 'next/image';
-import FaqItem from '../components/Faq';
+import Image from "next/image";
+import FaqItem from "../components/Faq";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 // import { Helmet } from 'react-helmet-async';
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import FormPopup from "../components/FormPopup"
-import { blog1, blog2, blog3, blog4, Reach_1, Reach_2, Reach_3, Reach_4, Reach_5, Reach_6, Reach_7, Reach_8, Reach_9, Reach_10, automated_event_communication, step_by_step_call_management, HEALTH01, Education01, Finance01 } from '../../../public/assets/images';;
-import { App_Authenticator, Click_to_Call, Ecommerce, Education, Email_Solutions, Finance, FoodBeverage, Healthcare, Hospitality, Inbound_Dialer, Missed_Call_Services, Outbound_Dialer, product3rd, producthero, ProfessionalServices, RCS_Business_Messaging, ReachApp, Reachclicktocall, Reachemail, Reachinboundcalling, ReachMissedcall, ReachObd, ReachRCS, ReachSMS, Reachwaytosms, Reachwhatsappicon, RealEstateConstruction, SMS_Marketing, TechStartups, Two_Way_SMS, WhatsApp_Business_Platform } from '../../../public/assets/images';
+import FormPopup from "../components/FormPopup";
+import {
+  blog1,
+  blog2,
+  blog3,
+  blog4,
+  Reach_1,
+  Reach_2,
+  Reach_3,
+  Reach_4,
+  Reach_5,
+  Reach_6,
+  Reach_7,
+  Reach_8,
+  Reach_9,
+  Reach_10,
+  automated_event_communication,
+  step_by_step_call_management,
+  HEALTH01,
+  Education01,
+  Finance01,
+} from "../../../public/assets/images";
+import {
+  App_Authenticator,
+  Click_to_Call,
+  Ecommerce,
+  Education,
+  Email_Solutions,
+  Finance,
+  FoodBeverage,
+  Healthcare,
+  Hospitality,
+  Inbound_Dialer,
+  Missed_Call_Services,
+  Outbound_Dialer,
+  product3rd,
+  producthero,
+  ProfessionalServices,
+  RCS_Business_Messaging,
+  ReachApp,
+  Reachclicktocall,
+  Reachemail,
+  Reachinboundcalling,
+  ReachMissedcall,
+  ReachObd,
+  ReachRCS,
+  ReachSMS,
+  Reachwaytosms,
+  Reachwhatsappicon,
+  RealEstateConstruction,
+  SMS_Marketing,
+  TechStartups,
+  Two_Way_SMS,
+  WhatsApp_Business_Platform,
+} from "../../../public/assets/images";
 
 // import { tourism } from "@/assets/images"
 // import {real_estate} from "@/assets/images"
@@ -24,107 +76,106 @@ import { App_Authenticator, Click_to_Call, Ecommerce, Education, Email_Solutions
 // };
 
 const Product = () => {
-
   // 2nd
   const services = [
     {
       id: 1,
-      name: 'WhatsApp Business Platform',
+      name: "WhatsApp Business Platform",
       icon: Reachwhatsappicon,
       content: {
         image: WhatsApp_Business_Platform,
-        desc: 'Leverage the world’s #1 messaging app. With advanced features like Chatbots, Click-to-WhatsApp ads, Branded Profiles and more.',
-        ButtonName: 'Start Now',
+        desc: "Leverage the world’s #1 messaging app. With advanced features like Chatbots, Click-to-WhatsApp ads, Branded Profiles and more.",
+        ButtonName: "Start Now",
       },
     },
     {
       id: 2,
-      name: 'RCS Business Messaging',
+      name: "RCS Business Messaging",
       icon: ReachRCS,
       content: {
         image: RCS_Business_Messaging,
-        desc: 'Rich, interactive messaging on native mobile apps. Shoot epic promotions, update and support users with action buttons, rich media and more!',
-        ButtonName: 'Explore',
+        desc: "Rich, interactive messaging on native mobile apps. Shoot epic promotions, update and support users with action buttons, rich media and more!",
+        ButtonName: "Explore",
       },
     },
     {
       id: 3,
-      name: 'SMS Solutions',
+      name: "SMS Solutions",
       icon: ReachSMS,
       content: {
         image: SMS_Marketing,
-        desc: 'Perfect for urgent updates and reliable delivery. OTPs, Transactional messages, Bulk Promotions and API Integrations.',
-        ButtonName: 'Learn More',
+        desc: "Perfect for urgent updates and reliable delivery. OTPs, Transactional messages, Bulk Promotions and API Integrations.",
+        ButtonName: "Learn More",
       },
     },
     {
       id: 4,
-      name: '2 Way SMS',
+      name: "2 Way SMS",
       icon: Reachwaytosms,
       content: {
         image: Two_Way_SMS,
-        desc: 'Create engaging, interactive SMS campaigns. Take votes, run quizzes, get confirmations and generate leads!',
-        ButtonName: 'Get Started',
+        desc: "Create engaging, interactive SMS campaigns. Take votes, run quizzes, get confirmations and generate leads!",
+        ButtonName: "Get Started",
       },
     },
     {
       id: 5,
-      name: 'Inbound Dialer',
+      name: "Inbound Dialer",
       icon: Reachinboundcalling,
       content: {
         image: Inbound_Dialer,
-        desc: 'Never miss a call again with customisable IVR menus, smart routing and call records. Perfect for customer support helplines.',
-        ButtonName: 'Learn More',
+        desc: "Never miss a call again with customisable IVR menus, smart routing and call records. Perfect for customer support helplines.",
+        ButtonName: "Learn More",
       },
     },
     {
       id: 6,
-      name: 'Outbound Dialer',
+      name: "Outbound Dialer",
       icon: ReachObd,
       content: {
         image: Outbound_Dialer,
-        desc: 'Start conversations with bulk voice call campaigns and IVR integrations. Pre-record audios in local languages or use AI-generated text-to-speech.',
-        ButtonName: 'Explore ',
+        desc: "Start conversations with bulk voice call campaigns and IVR integrations. Pre-record audios in local languages or use AI-generated text-to-speech.",
+        ButtonName: "Explore ",
       },
     },
     {
       id: 7,
-      name: 'Click to Call',
+      name: "Click to Call",
       icon: Reachclicktocall,
       content: {
         image: Click_to_Call,
-        desc: 'Enhance your app or site’s user experience (UX). Let customers and agents connect effortlessly over voice call with secure number masking.',
-        ButtonName: 'Know More ',
+        desc: "Enhance your app or site’s user experience (UX). Let customers and agents connect effortlessly over voice call with secure number masking.",
+        ButtonName: "Know More ",
       },
     },
     {
       id: 8,
-      name: 'Missed Call Services',
+      name: "Missed Call Services",
       icon: ReachMissedcall,
       content: {
         image: Missed_Call_Services,
-        desc: 'Get leads, votes or confirmations with a dedicated missed call number. Auto trigger opt-ins, callbacks or custom actions when users call.',
-        ButtonName: 'Start Now',
+        desc: "Get leads, votes or confirmations with a dedicated missed call number. Auto trigger opt-ins, callbacks or custom actions when users call.",
+        ButtonName: "Start Now",
       },
     },
     {
       id: 9,
-      name: 'App Authenticator',
+      name: "App Authenticator",
       icon: ReachApp,
       content: {
         image: App_Authenticator,
-        desc: 'Verify users without OTPs. Frictionless security that’s user-friendly and easier for your dev team.',
-        ButtonName: 'Explore',
+        desc: "Verify users without OTPs. Frictionless security that’s user-friendly and easier for your dev team.",
+        ButtonName: "Explore",
       },
     },
     {
       id: 10,
-      name: 'Email OTP',
+      name: "Email OTP",
       icon: Reachemail,
       content: {
         image: Email_Solutions,
-        desc: 'Verify users with pre-made HTML email templates. Great for onboarding authentication flows and MFA.',
-        ButtonName: 'Check It Out',
+        desc: "Verify users with pre-made HTML email templates. Great for onboarding authentication flows and MFA.",
+        ButtonName: "Check It Out",
       },
     },
   ];
@@ -134,51 +185,59 @@ const Product = () => {
   const handleservices = () => {
     const btnText = activeService.content.ButtonName.trim();
 
-
     const validLabels = [
-      'Start Now',
-      'Check It Out',
-      'Learn More',
-      'Explore',
-      'Explore ',
-      'Get Started',
-      'Know More ',
+      "Start Now",
+      "Check It Out",
+      "Learn More",
+      "Explore",
+      "Get Started",
+      "Know More",
     ];
 
     if (validLabels.includes(btnText)) {
       switch (activeService.id) {
         case 1:
-          router.push('/whatsapp-business-api');
+          router.push("/whatsapp-business-api");
           break;
+
         case 2:
-          router.push('/rcs-business-messaging');
+          router.push("/rcs-business-messaging");
           break;
+
         case 3:
-          router.push('/sms-marketing');
+          router.push("/sms-marketing");
           break;
+
         case 4:
-          router.push('/two-way-sms');
+          router.push("/two-way-sms");
           break;
+
         case 5:
-          router.push('/inbound-dialer');
+          router.push("/inbound-dialer");
           break;
+
         case 6:
-          router.push('/outbound-dialer');
+          router.push("/outbound-dialer");
           break;
+
         case 7:
-          router.push('/click-to-call');
+          router.push("/click-to-call");
           break;
+
         case 8:
-          router.push('/missed-call-services');
+          router.push("/missed-call-services");
           break;
+
         case 9:
-          router.push('/user-verification');
+          router.push("/user-verification");
           break;
+
         case 10:
-          router.push('/email-otp');
+          router.push("/email-otp");
           break;
+
         default:
-          console.log('No route defined for this service');
+          console.log("No route defined for this service");
       }
     }
   };
@@ -195,20 +254,27 @@ const Product = () => {
   const [activeTabs, setActiveTabs] = useState("E-Commerce");
 
   const tabs = [
-    "E-Commerce", "Healthcare", "Finance", "Education", "Hospitality",
-    "Real Estate", "Food & Beverage", "Professional Services", "Tech Startups"
+    "E-Commerce",
+    "Healthcare",
+    "Finance",
+    "Education",
+    "Hospitality",
+    "Real Estate",
+    "Food & Beverage",
+    "Professional Services",
+    "Tech Startups",
   ];
 
   const industryRoutes = {
-    "E-Commerce": '/retail-and-ecommerce',
-    Healthcare: '/healthcare',
-    Finance: '/financial-services',
-    Education: '/education-and-edtech',
-    Hospitality: '/travel-and-tourism',
-    'Real Estate': '/construction-and-real-estate',
-    'Food & Beverage': '/food-and-beverages',
-    'Professional Services': '/professional-services',
-    'Tech Startups': '/tech-startups',
+    "E-Commerce": "/retail-and-ecommerce",
+    Healthcare: "/healthcare",
+    Finance: "/financial-services",
+    Education: "/education-and-edtech",
+    Hospitality: "/travel-and-tourism",
+    "Real Estate": "/construction-and-real-estate",
+    "Food & Beverage": "/food-and-beverages",
+    "Professional Services": "/professional-services",
+    "Tech Startups": "/tech-startups",
   };
 
   //   const router = useRouter();
@@ -218,109 +284,116 @@ const Product = () => {
     if (route) {
       router.push(route);
     } else {
-      console.warn('No route defined for:', activeTabs);
+      console.warn("No route defined for:", activeTabs);
     }
   };
 
   const tabContent = {
-    'E-Commerce': {
+    "E-Commerce": {
       title: "E-Commerce",
-      description: "Carts get left, but not for long! Our flows sing a comeback song. From browse to buy, we help you try, retarget smart and amplify. Turn broadcasts into conversations with Click-to-WhatsApp ads. ",
+      description:
+        "Carts get left, but not for long! Our flows sing a comeback song. From browse to buy, we help you try, retarget smart and amplify. Turn broadcasts into conversations with Click-to-WhatsApp ads. ",
       useCases: [
         "Recover abandoned carts",
         "Automate order & delivery updates",
-        "Trigger re-engagement via SMS or WhatsApp"
+        "Trigger re-engagement via SMS or WhatsApp",
       ],
 
       buttonText: "Learn More",
       image: Ecommerce,
-
     },
     Healthcare: {
       title: "Healthcare",
-      description: "A missed reminder or lost file? Not on our watch. We make healthcare timely, secure, and in style, so your patients feel peace, not panic. Secure, automatic, and patient-friendly!",
+      description:
+        "A missed reminder or lost file? Not on our watch. We make healthcare timely, secure, and in style, so your patients feel peace, not panic. Secure, automatic, and patient-friendly!",
       useCases: [
         "Appointment & test result alerts",
         "Prescription refill reminders",
-        "Feedback or follow-up via SMS "
+        "Feedback or follow-up via SMS ",
       ],
       buttonText: "Learn More",
       image: Healthcare,
-
     },
     Finance: {
       title: "Finance",
-      description: "From KYC to claims that fly, we help banks and insurers simplify. Trust is built on clear updates and smooth flows. We deliver both. Keep customers updated and take care of logistics from one place.",
+      description:
+        "From KYC to claims that fly, we help banks and insurers simplify. Trust is built on clear updates and smooth flows. We deliver both. Keep customers updated and take care of logistics from one place.",
       useCases: [
         "OTP and silent authentications",
         "Transaction & policy alerts",
-        "KYC nudges via WhatsApp or RCS"
+        "KYC nudges via WhatsApp or RCS",
       ],
       buttonText: "Learn More",
       image: Finance,
     },
     Education: {
       title: "Education",
-      description: "Classroom to home, everyone’s informed. No missed fees, no lost results, just smoother learning, start to end. With better communication, students listen, remember, and participate.",
+      description:
+        "Classroom to home, everyone’s informed. No missed fees, no lost results, just smoother learning, start to end. With better communication, students listen, remember, and participate.",
       useCases: [
         "Exam & result notifications",
         "Fee due & payment reminders",
-        "Student engagement surveys"
+        "Student engagement surveys",
       ],
       buttonText: "Learn More",
       image: Education,
     },
     Hospitality: {
       title: "Hospitality",
-      description: "Before check-in or after checkout, offer a quality of service that speaks for itself. Delight your guests with thoughtful nudges, and they’ll remember the stay. Upgrade the guest experience.",
+      description:
+        "Before check-in or after checkout, offer a quality of service that speaks for itself. Delight your guests with thoughtful nudges, and they’ll remember the stay. Upgrade the guest experience.",
       useCases: [
         "Booking confirmations & itinerary updates",
         "In-stay service requests",
-        "Post-visit feedback collection"
+        "Post-visit feedback collection",
       ],
       buttonText: "Learn More",
-      image: Hospitality,  // Corrected image
+      image: Hospitality, // Corrected image
     },
     "Real Estate": {
       title: "Real Estate & Construction",
-      description: "From visiting a plot to closing deals, it's all about timing. We help you chase less, close more, and keep buyers in the loop, every step. Organise your sales process and achieve more with less. ",
+      description:
+        "From visiting a plot to closing deals, it's all about timing. We help you chase less, close more, and keep buyers in the loop, every step. Organise your sales process and achieve more with less. ",
       useCases: [
         "Site visit scheduling",
         "Project milestone updates",
-        "Lead follow-ups via WhatsApp"
+        "Lead follow-ups via WhatsApp",
       ],
       buttonText: "Learn More",
       image: RealEstateConstruction, // Corrected image
     },
     "Food & Beverage": {
       title: "Food & Beverage",
-      description: "Empty tables or full hearts? With us, it’s always the latter. Whether it’s orders or loyalty, the perfect recipe = automation with a human touch. Grow your business with technology!",
+      description:
+        "Empty tables or full hearts? With us, it’s always the latter. Whether it’s orders or loyalty, the perfect recipe = automation with a human touch. Grow your business with technology!",
       useCases: [
         "Reservation confirmations",
         "Loyalty rewards via SMS",
-        "Campaigns for special menus or offers"
+        "Campaigns for special menus or offers",
       ],
       buttonText: "Learn More",
       image: FoodBeverage, // Corrected image
     },
     "Professional Services": {
       title: "Professional Services",
-      description: "From consulting to clinics, workflows matter. We help you handle more clients, less chaos, without hiring more hands. Your network is your net worth. Organise contacts and stay connected. ",
+      description:
+        "From consulting to clinics, workflows matter. We help you handle more clients, less chaos, without hiring more hands. Your network is your net worth. Organise contacts and stay connected. ",
       useCases: [
         "Automated appointment bookings",
         "Service alerts and follow-ups",
-        "Campaigns for lead generation"
+        "Campaigns for lead generation",
       ],
       buttonText: "Learn More",
       image: ProfessionalServices,
     },
     "Tech Startups": {
       title: "Tech Startups",
-      description: "Speed is key, but so is trust. With Celitix, scale doesn’t break service, it builds it. Deliver faster, support smarter, grow leaner. Build a brand with a consistent omnichannel customer experience.",
+      description:
+        "Speed is key, but so is trust. With Celitix, scale doesn’t break service, it builds it. Deliver faster, support smarter, grow leaner. Build a brand with a consistent omnichannel customer experience.",
       useCases: [
         "App onboarding via token-based flows",
         "Support workflows over WhatsApp",
-        "Multi-channel user engagement"
+        "Multi-channel user engagement",
       ],
       buttonText: "Learn More",
       image: TechStartups, // Corrected image
@@ -328,19 +401,14 @@ const Product = () => {
   };
 
   const content = tabContent[activeTabs] || {};
-  const {
-    title,
-    description,
-    useCases,
-    buttonText,
-    image
-  } = content;
+  const { title, description, useCases, buttonText, image } = content;
   // 5rd
   // 6rd
   const blogPosts = [
     {
       date: "September 16, 2024",
-      title: "Generative AI security: How to keep your chatbot healthy and your platform protected",
+      title:
+        "Generative AI security: How to keep your chatbot healthy and your platform protected",
       description:
         "Discover essential strategies to secure AI chatbots from evolving GenAI threats. Learn how to protect your AI investments now and keep them healthy and thriving.",
       tags: ["BLOG", "GENRATIVE AI", "CUSTOMER SECURITY", "BEST PRACTICES"],
@@ -412,7 +480,8 @@ const Product = () => {
         "Yes. From reminders and alerts to onboarding, KYC, support and marketing campaigns. Use pre-set or dynamic workflows based on your data, triggers and user actions.",
     },
     {
-      question: "Can I integrate Celitix CPaaS with my existing CRM or backend?",
+      question:
+        "Can I integrate Celitix CPaaS with my existing CRM or backend?",
       answer:
         "Absolutely. Celitix provides flexible APIs and webhooks that connect with your CRM, ERP or any internal tool, so you can sync data, trigger messages and personalise communication.",
     },
@@ -430,30 +499,18 @@ const Product = () => {
 
   // 7rd
 
-
-
-
   const [openDialog, setOpenDialog] = useState(false);
 
   const handleShowFormPopup = () => {
     setOpenDialog(true);
-  }
+  };
 
   const handleCloseDialog = () => {
     setOpenDialog(false);
-  }
-
-
-
-
-
-
-
-
+  };
 
   return (
     <div>
-
       {/* <Helmet>
         <title> Celitix CPaaS Solutions: Messaging, Voice & Email</title>
         <meta name="description" content="Explore Celitix’s CPaaS suite: WhatsApp, SMS, Voice, Email, and OTP. Automate, scale, and unify all customer communication in one dashboard." />
@@ -468,11 +525,16 @@ const Product = () => {
             </span> */}
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight heading">
-              A Better Way To<span className="text-transparent bg-clip-text  bg-gradient-to-r from-[#2b40b0] to-[#36bae2]"> Communicate </span>
+              A Better Way To
+              <span className="text-transparent bg-clip-text  bg-gradient-to-r from-[#2b40b0] to-[#36bae2]">
+                {" "}
+                Communicate{" "}
+              </span>
             </h1>
 
             <p className="text-gray-600 text-base md:text-lg max-w-md pera">
-              With an Omni-Channel approach, save time & money while getting better results with a single CPaaS solution.
+              With an Omni-Channel approach, save time & money while getting
+              better results with a single CPaaS solution.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -497,7 +559,7 @@ const Product = () => {
               loading="eager"
               // fetchpriority="high"
               // crossorigin="anonymous"
-              title='Connect Instantly with Click to Call'
+              title="Connect Instantly with Click to Call"
               className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg object-contain box-reveal-bottom"
             />
           </div>
@@ -519,9 +581,7 @@ const Product = () => {
         </div>
 
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-6 md:px-10 my-0 md:mt-10">
-
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-
             {services.map((service) => {
               const active = activeTab === service.id;
 
@@ -530,18 +590,16 @@ const Product = () => {
                   key={service.id}
                   onClick={() => setActiveTab(service.id)}
                   className={`cursor-pointer rounded-xl border p-4 transition-all duration-300 flex items-center gap-4
-        ${active
-                      ? "border-[#9B44B6] bg-[#faf5ff] shadow-lg scale-[1.02]"
-                      : "border-gray-200 bg-white hover:shadow-md hover:scale-[1.01]"
-                    }`}
+        ${
+          active
+            ? "border-[#9B44B6] bg-[#faf5ff] shadow-lg scale-[1.02]"
+            : "border-gray-200 bg-white hover:shadow-md hover:scale-[1.01]"
+        }`}
                 >
                   {/* Icon Box */}
                   <div
                     className={`p-3 rounded-lg
-          ${active
-                        ? "bg-[#9B44B6]/20"
-                        : "bg-gray-100"
-                      }`}
+          ${active ? "bg-[#9B44B6]/20" : "bg-gray-100"}`}
                   >
                     <Image
                       src={service.icon}
@@ -555,10 +613,7 @@ const Product = () => {
                   <div>
                     <h4
                       className={`text-base md:text-lg font-semibold
-            ${active
-                          ? "text-[#9B44B6]"
-                          : "text-gray-800"
-                        }`}
+            ${active ? "text-[#9B44B6]" : "text-gray-800"}`}
                     >
                       {service.name}
                     </h4>
@@ -570,10 +625,7 @@ const Product = () => {
                 </div>
               );
             })}
-
           </div>
-
-
 
           <div className="flex flex-col items-center justify-center text-center gap-4 px-4 sm:px-6 md:px-10">
             <Image
@@ -592,7 +644,6 @@ const Product = () => {
               hover:shadow-[4px_4px_0px_#9B44B6]"
               onClick={handleservices}
             />
-
           </div>
         </div>
       </div>
@@ -603,7 +654,11 @@ const Product = () => {
         {/* Heading */}
         <div className="flex items-center justify-center mb-15">
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-black text-center heading">
-            One Platform,<span className="text-transparent bg-clip-text  bg-gradient-to-r from-[#2b40b0] to-[#36bae2]"> Endless Possibilities </span>
+            One Platform,
+            <span className="text-transparent bg-clip-text  bg-gradient-to-r from-[#2b40b0] to-[#36bae2]">
+              {" "}
+              Endless Possibilities{" "}
+            </span>
           </h2>
         </div>
 
@@ -616,7 +671,7 @@ const Product = () => {
                 src={product3rd}
                 alt="User Communication"
                 className="rounded-lg w-full h-full object-cover"
-              // loading="auto"
+                // loading="auto"
               />
             </div>
           </div>
@@ -627,37 +682,45 @@ const Product = () => {
               {[
                 {
                   title: "Omnichannel Dashboard",
-                  content: "Manage all your direct communication from one place. Save time and improve results with a consistent brand experience across channels.",
+                  content:
+                    "Manage all your direct communication from one place. Save time and improve results with a consistent brand experience across channels.",
                 },
                 {
                   title: "Automated Workflows",
-                  content: "Reduce your workload with automated communication workflows. Do CRM, build customer journeys and track everything along the way.",
+                  content:
+                    "Reduce your workload with automated communication workflows. Do CRM, build customer journeys and track everything along the way.",
                 },
                 {
                   title: "Multi-Agent Dashboard",
-                  content: "Simplify sales, support and service for you and your team. Label chats, track performance and respond faster together.",
+                  content:
+                    "Simplify sales, support and service for you and your team. Label chats, track performance and respond faster together.",
                 },
                 {
                   title: "Optimise & Scale",
-                  content: "Scale up or down, switch channels as needed. Test what works using analytics and grow with data-driven decisions.",
+                  content:
+                    "Scale up or down, switch channels as needed. Test what works using analytics and grow with data-driven decisions.",
                 },
               ].map((item, index) => (
                 <div key={index}>
                   {/* Clickable Title Box */}
                   <div
                     onClick={() => handleToggle(index)}
-                    className={`cursor-pointer text-white p-4 rounded-xl transition-colors duration-300 ${activeIndex === index ? 'bg-[#8a27c4]' : 'bg-[#c376f0]'
-                      }`}
+                    className={`cursor-pointer text-white p-4 rounded-xl transition-colors duration-300 ${
+                      activeIndex === index ? "bg-[#8a27c4]" : "bg-[#c376f0]"
+                    }`}
                   >
-                    <h3 className="font-semibold text-lg md:text-xl lg:text-2xl sub-heading">{item.title}</h3>
+                    <h3 className="font-semibold text-lg md:text-xl lg:text-2xl sub-heading">
+                      {item.title}
+                    </h3>
                     {/* Expandable Content */}
                     {activeIndex === index && (
                       <div className="bg-white text-black p-4 rounded-xl mt-2">
-                        <p className='text-base md:text-lg text-gray-600 font-medium pera'>{item.content}</p>
+                        <p className="text-base md:text-lg text-gray-600 font-medium pera">
+                          {item.content}
+                        </p>
                       </div>
                     )}
                   </div>
-
                 </div>
               ))}
             </div>
@@ -667,9 +730,8 @@ const Product = () => {
       {/* 3nd */}
 
       {/* 4nd */}
-      <div className='bg-[#f7ebfc] py-10 md:py-16 pt-10 md:pt-16 '>
+      <div className="bg-[#f7ebfc] py-10 md:py-16 pt-10 md:pt-16 ">
         <div className=" bg-linear-to-r from-[#6b0da1] to-[#8447c6] grid grid-cols-1 md:grid-cols-2 h-auto py-10 px-6 md:px-15 rounded-3xl shadow-2xl w-full sm:w-11/12 md:w-11/12 mx-auto items-center gap-8">
-
           {/* Left Section */}
           <div className="flex flex-col justify-center text-center md:text-left">
             <h2 className="text-4xl font-bold text-white sm:text-3xl md:text-4xl heading">
@@ -683,17 +745,13 @@ const Product = () => {
           {/* Right Section */}
           <div className="flex justify-center md:justify-end ">
             <div className="flex flex-col sm:flex-row gap-6 items-center">
-
               <UniversalButton
                 label="Contact us"
                 variant="transitionbtn"
                 className="px-4 py-2 rounded-full text-gray-900 bg-white hover:bg-gray-200 transition-all duration-300 "
                 onClick={handleShowFormPopup}
               />
-              <FormPopup
-                visible={openDialog}
-                onHide={handleCloseDialog}
-              />
+              <FormPopup visible={openDialog} onHide={handleCloseDialog} />
 
               {/* <Link href="#" to="/whatsapp-business-api">
                 <UniversalButton
@@ -704,7 +762,6 @@ const Product = () => {
               </Link> */}
             </div>
           </div>
-
         </div>
       </div>
       {/* 4nd */}
@@ -724,16 +781,16 @@ const Product = () => {
             <button
               key={tab}
               onClick={() => setActiveTabs(tab)}
-              className={`py-2 px-4 rounded-lg text-md font-semibold shrink-0 snap-center sub-heading ${activeTabs === tab
-                ? 'bg-purple-800 text-white'
-                : 'bg-white text-black hover:bg-purple-200'
-                } transition-all duration-300`}
+              className={`py-2 px-4 rounded-lg text-md font-semibold shrink-0 snap-center sub-heading ${
+                activeTabs === tab
+                  ? "bg-purple-800 text-white"
+                  : "bg-white text-black hover:bg-purple-200"
+              } transition-all duration-300`}
             >
               {tab}
             </button>
           ))}
         </div>
-
 
         {/* Tab Content */}
         <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-start justify-between space-y-8 lg:space-y-0 lg:gap-12 px-4 sm:px-8 lg:px-20 py-2 md:py-5">
@@ -743,28 +800,39 @@ const Product = () => {
               {tabContent[activeTabs]?.title || "E-Commerce"}
             </h2>
             <p className="text-lg text-gray-600 pera mb-6">
-              {tabContent[activeTabs]?.description || "Recover abandoned carts, automate updates, and turn broadcasts into conversations with Click-to-WhatsApp ads."}
+              {tabContent[activeTabs]?.description ||
+                "Recover abandoned carts, automate updates, and turn broadcasts into conversations with Click-to-WhatsApp ads."}
             </p>
             <div className="mb-6">
-              <p className="font-semibold text-gray-800 text-xl  sub-heading mb-2">Use Cases:</p>
+              <p className="font-semibold text-gray-800 text-xl  sub-heading mb-2">
+                Use Cases:
+              </p>
               <ul className="list-disc list-inside pera text-gray-700 text-base space-y-1">
                 {useCases.map((useCase, idx) => (
                   <li key={idx}>{useCase}</li>
                 ))}
               </ul>
             </div>
-            <UniversalButton label={tabContent[activeTabs]?.buttonText || "Learn More"} variant="brutal" className='bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 font-semibold hover:bg-white hover:text-black 
-              hover:shadow-[4px_4px_0px_#9B44B6]'  onClick={handleLearnMore} />
+            <UniversalButton
+              label={tabContent[activeTabs]?.buttonText || "Learn More"}
+              variant="brutal"
+              className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 font-semibold hover:bg-white hover:text-black 
+              hover:shadow-[4px_4px_0px_#9B44B6]"
+              onClick={handleLearnMore}
+            />
           </div>
 
           {/* Right Image Section */}
           <div className="lg:w-1/2 flex justify-center ">
             <div className="w-full lg:w-80 xl:w-90 2xl:w-120 h-auto">
               <Image
-                src={tabContent[activeTabs]?.image || "/assets/industries/ecommerce.png"}
+                src={
+                  tabContent[activeTabs]?.image ||
+                  "/assets/industries/ecommerce.png"
+                }
                 alt={tabContent[activeTabs]?.title || "Industry"}
                 className="rounded-lg w-full h-full"
-              // loading="auto"
+                // loading="auto"
               />
             </div>
           </div>
@@ -819,7 +887,6 @@ const Product = () => {
               </div>
             ))}
           </div>
-
 
           <div className="absolute -bottom-10 right-4 flex gap-3">
             <button

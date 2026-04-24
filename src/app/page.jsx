@@ -132,7 +132,6 @@ const Home = () => {
       "Celitix offers a unified platform for WhatsApp API, RCS, SMS, and call services. Boost customer engagement, streamline workflows, and grow your business.",
 
     canonical: "https://www.celitix.com",
-
   };
   const [isVisible, setIsVisible] = useState(false);
   // 1nd
@@ -211,7 +210,7 @@ const Home = () => {
           }
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
 
     steps.forEach((step) => {
@@ -396,14 +395,14 @@ const Home = () => {
   // btn
   const handleservices = () => {
     const btnText = activeService.content.ButtonName.trim();
+
     const validLabels = [
       "Start Now",
       "Check It Out",
       "Learn More",
       "Explore",
-      "Explore ",
       "Get Started",
-      "Know More ",
+      "Know More",
     ];
 
     if (validLabels.includes(btnText)) {
@@ -411,33 +410,43 @@ const Home = () => {
         case 1:
           router.push("/whatsapp-business-api");
           break;
+
         case 2:
           router.push("/rcs-business-messaging");
           break;
+
         case 3:
           router.push("/sms-marketing");
           break;
+
         case 4:
           router.push("/two-way-sms");
           break;
+
         case 5:
           router.push("/inbound-dialer");
           break;
+
         case 6:
           router.push("/outbound-dialer");
           break;
+
         case 7:
           router.push("/click-to-call");
           break;
+
         case 8:
           router.push("/missed-call-services");
           break;
+
         case 9:
           router.push("/user-verification");
           break;
+
         case 10:
           router.push("/email-otp");
           break;
+
         default:
           console.log("No route defined for this service");
       }
@@ -785,10 +794,11 @@ const Home = () => {
             <button
               key={idx}
               onClick={() => setActiveFeature(idx)}
-              className={`text-left px-4 py-2 rounded-xl font-medium transition-all duration-200 sub-heading ${idx === activeFeature
-                ? "bg-[#803B96] text-white shadow-md"
-                : "text-gray-700 hover:bg-[#803B96] hover:text-white hover:shadow"
-                }`}
+              className={`text-left px-4 py-2 rounded-xl font-medium transition-all duration-200 sub-heading ${
+                idx === activeFeature
+                  ? "bg-[#803B96] text-white shadow-md"
+                  : "text-gray-700 hover:bg-[#803B96] hover:text-white hover:shadow"
+              }`}
             >
               {feature}
             </button>
@@ -800,7 +810,7 @@ const Home = () => {
             src={image[activeFeature]}
             alt="Preview"
             className="w-[260px] sm:w-[300px] drop-shadow-md hover:scale-105 transition-transform duration-300"
-          // loading="auto"
+            // loading="auto"
           />
         </div>
 
@@ -947,7 +957,8 @@ const Home = () => {
         "Celitix is an advanced omnichannel marketing platform that enables businesses to manage WhatsApp Business API, bulk SMS API, and RCS Business Messaging from a single dashboard with automation, chatbots, and real-time analytics.",
     },
     {
-      question: "Is Celitix an official WhatsApp Business API provider in India?",
+      question:
+        "Is Celitix an official WhatsApp Business API provider in India?",
       answer:
         "Yes, Celitix provides access to the official WhatsApp Business API, allowing businesses in India to send automated notifications, promotional campaigns, transactional alerts, and two-way customer support at scale.",
     },
@@ -994,11 +1005,12 @@ const Home = () => {
   return (
     <>
       {/* <ChatLauncher /> */}
-      <Seo title={metaData.title} description={metaData.description} canonical={metaData.canonical} />
+      <Seo
+        title={metaData.title}
+        description={metaData.description}
+        canonical={metaData.canonical}
+      />
       <div className="bg-[#f6edf9] relative">
-
-
-
         {/* <OurClientele num={5} /> */}
 
         {/* <Header /> */}
@@ -1008,7 +1020,6 @@ const Home = () => {
         <link rel="preload" as="image" href={homehero} crossorigin="anonymous" />
       </Helmet> */}
         {/* 1nd */}
-
 
         {/* 1nd */}
         <section className="relative isolate overflow-hidden bg-[#F3ECF9] pt-20 md:pt-24">
@@ -1021,7 +1032,8 @@ const Home = () => {
               </h1>
 
               <p className="sub-heading mb-1 text-md font-semibold text-gray-700 md:mb-5 md:text-lg lg:text-xl 2xl:text-2xl">
-                Capture leads. Manage CRM. Engage, sell, support – all in one place!
+                Capture leads. Manage CRM. Engage, sell, support – all in one
+                place!
               </p>
 
               <div className="mt-5">
@@ -1049,7 +1061,6 @@ const Home = () => {
                 />
               </div>
 
-
               <div className="pointer-events-none absolute -right-5 top-20 -z-10 hidden md:block">
                 <div className="h-40 w-10 rounded-full bg-[#9B44B6]" />
               </div>
@@ -1057,13 +1068,9 @@ const Home = () => {
           </div>
         </section>
 
-
-
-
         <section className="w-full bg-[#F6EDF9] py-8 md:py-16 2xl:py-20">
           <div className="px-5 md:px-20">
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
-
               {/* WhatsApp Solutions */}
               <div className="flex flex-col gap-3">
                 <div
@@ -1179,14 +1186,8 @@ const Home = () => {
                 </div>
               </div>
             </div>
-
-
           </div>
-
         </section>
-
-
-
 
         {/* <div className="md:h-[90vh]">
           <OurClientele num={5} />
@@ -1265,7 +1266,7 @@ const Home = () => {
                     src={logo.src}
                     alt={logo.alt}
                     className="h-16 sm:h-20 md:h-24 w-25 md:w-50 object-contain  hover:grayscale-0 transition duration-1000 ease-in-out"
-                  // loading="auto"
+                    // loading="auto"
                   />
                 </SwiperSlide>
               ))}
@@ -1426,27 +1427,19 @@ const Home = () => {
         </div> */}
 
         <div className="w-full bg-gradient-to-b from-[#f6edf9] to-white py-5 md:py-20">
-
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-
-
-
             <div className="text-center mb-5 md:mb-16">
-
               <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold heading text-gray-900">
                 How Celitix Empowers Your Business
               </h2>
 
               <p className="mt-3 text-gray-600 text-lg max-w-2xl sub-heading mx-auto">
-                Smart tools, seamless automation, and powerful messaging — all in one platform
+                Smart tools, seamless automation, and powerful messaging — all
+                in one platform
               </p>
-
             </div>
 
-
-
             <div className="relative">
-
               {/* Center Line */}
               <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[3px] bg-gradient-to-b from-[#36bae2] via-[#9B44B6] to-[#36bae2] -translate-x-1/2"></div>
 
@@ -1459,7 +1452,6 @@ const Home = () => {
                     className={`relative flex flex-col md:flex-row items-center gap-8
         ${isEven ? "md:flex-row" : "md:flex-row-reverse"}`}
                   >
-
                     {/* Timeline Dot */}
                     <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center justify-center">
                       <motion.div
@@ -1493,7 +1485,6 @@ const Home = () => {
 
                     {/* Content Card */}
                     <div className="w-full md:w-1/2 bg-white rounded-3xl shadow-lg p-6 md:p-8">
-
                       <h3 className="text-xl md:text-2xl lg:text-4xl font-bold text-gray-900 mb-2">
                         {step.title}
                       </h3>
@@ -1507,18 +1498,12 @@ const Home = () => {
                         <li>{step.point2}</li>
                         <li>{step.point3}</li>
                       </ul>
-
                     </div>
-
                   </div>
                 );
               })}
-
             </div>
-
-
           </div>
-
         </div>
 
         {/* 3nd */}
@@ -1590,10 +1575,7 @@ const Home = () => {
                   />
                 </motion.div>
 
-                <FormPopup
-                  visible={openDialog}
-                  onHide={handleCloseDialog}
-                />
+                <FormPopup visible={openDialog} onHide={handleCloseDialog} />
 
                 {/* <UniversalButton label="Book A Demo" variant="brutal" className='bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 font-semibold hover:bg-white hover:text-black 
               hover:shadow-[4px_4px_0px_#9B44B6]'/> */}
@@ -1671,8 +1653,6 @@ const Home = () => {
           </div>
         </div> */}
 
-
-
         <div className="bg-[#F6EDF9] py-2 sm:py-8 md:py-10">
           <div className="text-center px-4 sm:px-6 md:px-8 py-4 md:py-5">
             <h2 className="text-2xl md:4xl lg:text-5xl font-semibold text-gray-900 heading">
@@ -1686,9 +1666,7 @@ const Home = () => {
           </div>
 
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-6 md:px-10 my-0 md:mt-10">
-
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-
               {services.map((service) => {
                 const active = activeTab === service.id;
 
@@ -1697,18 +1675,16 @@ const Home = () => {
                     key={service.id}
                     onClick={() => setActiveTab(service.id)}
                     className={`cursor-pointer rounded-xl border p-4 transition-all duration-300 flex items-center gap-4
-        ${active
-                        ? "border-[#9B44B6] bg-[#faf5ff] shadow-lg scale-[1.02]"
-                        : "border-gray-200 bg-white hover:shadow-md hover:scale-[1.01]"
-                      }`}
+        ${
+          active
+            ? "border-[#9B44B6] bg-[#faf5ff] shadow-lg scale-[1.02]"
+            : "border-gray-200 bg-white hover:shadow-md hover:scale-[1.01]"
+        }`}
                   >
                     {/* Icon Box */}
                     <div
                       className={`p-3 rounded-lg
-          ${active
-                          ? "bg-[#9B44B6]/20"
-                          : "bg-gray-100"
-                        }`}
+          ${active ? "bg-[#9B44B6]/20" : "bg-gray-100"}`}
                     >
                       <Image
                         src={service.icon}
@@ -1722,10 +1698,7 @@ const Home = () => {
                     <div>
                       <h4
                         className={`text-base md:text-lg font-semibold
-            ${active
-                            ? "text-[#9B44B6]"
-                            : "text-gray-800"
-                          }`}
+            ${active ? "text-[#9B44B6]" : "text-gray-800"}`}
                       >
                         {service.name}
                       </h4>
@@ -1737,10 +1710,7 @@ const Home = () => {
                   </div>
                 );
               })}
-
             </div>
-
-
 
             <div className="flex flex-col items-center justify-center text-center gap-4 px-4 sm:px-6 md:px-10">
               <Image
@@ -1759,12 +1729,9 @@ const Home = () => {
               hover:shadow-[4px_4px_0px_#9B44B6]"
                 onClick={handleservices}
               />
-
             </div>
           </div>
         </div>
-
-
 
         {/* <div className="bg-[#f4f7ff] py-2 sm:py-8 md:py-20">
 
@@ -1879,10 +1846,11 @@ const Home = () => {
                 <button
                   key={industry}
                   onClick={() => setActiveIndustry(industry)}
-                  className={`px-4 py-2 rounded-full font-medium shrink-0 transition-all duration-200 sub-heading ${industry === activeIndustry
-                    ? "bg-[#9B44B6] text-white shadow-lg scale-105"
-                    : "text-gray-600 hover:bg-[#9B44B6] hover:text-white hover:shadow"
-                    }`}
+                  className={`px-4 py-2 rounded-full font-medium shrink-0 transition-all duration-200 sub-heading ${
+                    industry === activeIndustry
+                      ? "bg-[#9B44B6] text-white shadow-lg scale-105"
+                      : "text-gray-600 hover:bg-[#9B44B6] hover:text-white hover:shadow"
+                  }`}
                 >
                   {industry}
                 </button>
@@ -2394,7 +2362,7 @@ const Home = () => {
           </div>
         </div>
       </div> */}
-      </div >
+      </div>
     </>
   );
 };

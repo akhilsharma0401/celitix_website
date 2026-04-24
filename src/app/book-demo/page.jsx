@@ -397,12 +397,12 @@ export const BookDemoPage = () => {
       }
 
       const data = {
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        mobile: phone,
-        companyName: form.company || "N/A",
-        service: service,
+        firstName: firstName.trim(),
+        lastName: lastName.trim(),
+        email: email.trim(),
+        mobile: phone.trim(),
+        companyName: form.company.trim() || "N/A",
+        service: service.trim(),
         message: form?.message?.trim() || "N/A",
         source,
         utmData,

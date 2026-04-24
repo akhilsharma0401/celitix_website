@@ -74,8 +74,9 @@ const ThankYouPage = () => {
           </noscript>
         </>
       ) : (
-        <Script id="fb-pixel-init" strategy="afterInteractive">
-          {`
+        <>
+          <Script id="fb-pixel-init" strategy="afterInteractive">
+            {`
         !function(f,b,e,v,n,t,s){
           if(f.fbq) return;
           n=f.fbq=function(){
@@ -95,9 +96,19 @@ const ThankYouPage = () => {
           s.parentNode.insertBefore(t, s);
         }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
         fbq("init", "587446320662611"); 
-        fbq("track", "PageView");
+        fbq('track', ‘L’ead);
       `}
-        </Script>
+          </Script>
+
+          <noscript>
+            <img
+              height="1"
+              width="1"
+              src="https://www.facebook.com/tr?id=587446320662611&ev=PageView&noscript=1"
+              className="hidden"
+            />
+          </noscript>
+        </>
       )}
 
       <Script

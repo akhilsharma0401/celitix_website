@@ -621,6 +621,9 @@ import InstantCustomer from "./imagesMain/InstantCustomer.jpg";
 // WhatsappChatbot
 // LiveChatService
 import LiveChatService from "./imagesMain/LiveChatService.png";
+import LiveChatEfficiently from "./imagesMain/LiveChatEfficiently.png";
+import LiveChatCelitixLive from "./imagesMain/LiveChatCelitixLive.png";
+import LiveChatAcrossChannels from "./videos/LiveChatAcrossChannels.gif";
 // LiveChatService
 
 // Instagram
@@ -1240,6 +1243,9 @@ export {
 
   // LiveChatService
   LiveChatService,
+  LiveChatAcrossChannels,
+  LiveChatEfficiently,
+  LiveChatCelitixLive,
   // LiveChatService
 
   // Instagram
