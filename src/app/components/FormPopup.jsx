@@ -284,7 +284,10 @@ const FormPopup = ({ visible, onHide }) => {
                   placeholder="First Name"
                   value={form.firstName}
                   onChange={(e) =>
-                    setForm({ ...form, firstName: e.target.value })
+                    setForm({
+        ...form,
+        firstName: e.target.value.replace(/[^A-Za-z ]/g, ""),
+      })
                   }
                   className="w-full border border-gray-300 rounded-md p-2"
                 />
@@ -294,7 +297,10 @@ const FormPopup = ({ visible, onHide }) => {
                   placeholder="Last Name"
                   value={form.lastName}
                   onChange={(e) =>
-                    setForm({ ...form, lastName: e.target.value })
+                   setForm({
+        ...form,
+        lastName: e.target.value.replace(/[^A-Za-z ]/g, ""),
+      })
                   }
                   className="w-full border border-gray-300 rounded-md p-2"
                 />

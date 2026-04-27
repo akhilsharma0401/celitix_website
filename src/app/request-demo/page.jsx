@@ -48,7 +48,7 @@ const BookDemo = () => {
 export const BookDemoPage = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
-     const pathname = usePathname();
+  const pathname = usePathname();
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -376,13 +376,13 @@ export const BookDemoPage = () => {
       //     return toast.error("Unable to verify captcha. Please Contact Site Administrator ")
       // }
 
-       const url = `${window.location.origin}${pathname}${searchParams}`;
+      const url = `${window.location.origin}${pathname}${searchParams}`;
 
       const utmData = {
         source: searchParams.get("utm_source") || "direct",
         medium: searchParams.get("utm_medium") || "direct",
         campaign: searchParams.get("utm_campaign") || "direct",
-        url
+        url,
       };
 
       let source = "lp-book-demo-fb";
@@ -597,7 +597,10 @@ export const BookDemoPage = () => {
                       placeholder="First Name"
                       value={form.firstName}
                       onChange={(e) =>
-                        setForm({ ...form, firstName: e.target.value })
+                        setForm({
+                          ...form,
+                          firstName: e.target.value.replace(/[^A-Za-z ]/g, ""),
+                        })
                       }
                     />
                   </div>
@@ -612,7 +615,10 @@ export const BookDemoPage = () => {
                       placeholder="Last Name"
                       value={form.lastName}
                       onChange={(e) =>
-                        setForm({ ...form, lastName: e.target.value })
+                        setForm({
+                          ...form,
+                          lastName: e.target.value.replace(/[^A-Za-z ]/g, ""),
+                        })
                       }
                     />
                   </div>

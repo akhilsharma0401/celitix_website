@@ -363,27 +363,34 @@ const ContactUs = () => {
                 className="space-y-4 bg-white border border-gray-300 rounded-xl p-4 md:p-6 shadow-sm"
               >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <input
-                    type="text"
-                    name="fname"
-                    placeholder="First Name"
-                    value={form.firstName}
-                    onChange={(e) =>
-                      setForm({ ...form, firstName: e.target.value })
-                    }
-                    className="w-full border border-gray-300 rounded-md p-2"
-                  />
-                  <input
-                    type="text"
-                    name="lname"
-                    placeholder="Last Name"
-                    value={form.lastName}
-                    onChange={(e) =>
-                      setForm({ ...form, lastName: e.target.value })
-                    }
-                    className="w-full border border-gray-300 rounded-md p-2"
-                  />
-                </div>
+  <input
+    type="text"
+    name="fname"
+    placeholder="First Name"
+    value={form.firstName}
+    onChange={(e) =>
+      setForm({
+        ...form,
+        firstName: e.target.value.replace(/[^A-Za-z ]/g, ""),
+      })
+    }
+    className="w-full border border-gray-300 rounded-md p-2"
+  />
+
+  <input
+    type="text"
+    name="lname"
+    placeholder="Last Name"
+    value={form.lastName}
+    onChange={(e) =>
+      setForm({
+        ...form,
+        lastName: e.target.value.replace(/[^A-Za-z ]/g, ""),
+      })
+    }
+    className="w-full border border-gray-300 rounded-md p-2"
+  />
+</div>
 
                 <input
                   type="text"

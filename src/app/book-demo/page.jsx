@@ -48,7 +48,7 @@ const BookDemo = () => {
 export const BookDemoPage = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
-   const pathname = usePathname();
+  const pathname = usePathname();
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -342,8 +342,7 @@ export const BookDemoPage = () => {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      const url = `${window.location.origin}${pathname}${searchParams}`
-
+      const url = `${window.location.origin}${pathname}${searchParams}`;
 
       if (!isOtpVerified) {
         toast.error("Please verify the otp before submitting the form.");
@@ -383,7 +382,7 @@ export const BookDemoPage = () => {
         medium: searchParams.get("utm_medium") || "direct",
         campaign: searchParams.get("utm_campaign") || "direct",
         gclid: searchParams.get("gclid") || "direct",
-        url
+        url,
       };
 
       let source = "lp-book-demo";
@@ -560,7 +559,10 @@ export const BookDemoPage = () => {
                       placeholder="First Name"
                       value={form.firstName}
                       onChange={(e) =>
-                        setForm({ ...form, firstName: e.target.value })
+                        setForm({
+                          ...form,
+                          firstName: e.target.value.replace(/[^A-Za-z ]/g, ""),
+                        })
                       }
                     />
                   </div>
@@ -575,7 +577,10 @@ export const BookDemoPage = () => {
                       placeholder="Last Name"
                       value={form.lastName}
                       onChange={(e) =>
-                        setForm({ ...form, lastName: e.target.value })
+                        setForm({
+                          ...form,
+                          lastName: e.target.value.replace(/[^A-Za-z ]/g, ""),
+                        })
                       }
                     />
                   </div>

@@ -164,12 +164,12 @@ Interpersonal skills, including the ability to build rapport`,
     if (resendTimer === 0) {
       // const res = await sendOtp
       const res = await sendOtp(phone, form.firstName);
-     if (!res?.status) {
-      toast.error("Error Sending OTP. Please try again later.");
-      return;
-    }
+      if (!res?.status) {
+        toast.error("Error Sending OTP. Please try again later.");
+        return;
+      }
 
-    setOtpId(res.otpId);
+      setOtpId(res.otpId);
       toast.success("OTP sent successfully!");
       setIsOtpSent(true);
       setResendTimer(30);
@@ -218,7 +218,7 @@ Interpersonal skills, including the ability to build rapport`,
       otp: enteredOtp,
       otpId: otpId,
     });
-     if (!res?.status) {
+    if (!res?.status) {
       toast.error(res?.message);
       return;
     }
@@ -261,7 +261,8 @@ Interpersonal skills, including the ability to build rapport`,
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      const { firstName, lastName, name, email, phone, service, message } = form;
+      const { firstName, lastName, name, email, phone, service, message } =
+        form;
 
       if (!firstName.trim()) return toast.error("First Name is required.");
       if (!lastName.trim()) return toast.error("Last Name is required.");
@@ -283,14 +284,15 @@ Interpersonal skills, including the ability to build rapport`,
         return toast.error("Please select years of experience.");
       if (!resume) return toast.error("Please upload your resume.");
 
-       if (!message.trim()) return toast.error("Please enter message.");
-      if (message.length < 20 ) return toast.error("Please enter minimum 20 characters.");
+      if (!message.trim()) return toast.error("Please enter message.");
+      if (message.length < 20)
+        return toast.error("Please enter minimum 20 characters.");
 
       const captchaVerify = await verifyToken(turnstileResponse);
 
       if (!captchaVerify?.data?.status) {
         return toast.error(
-          "Unable to verify captcha. Please Contact Site Administrator "
+          "Unable to verify captcha. Please Contact Site Administrator ",
         );
       }
 
@@ -359,8 +361,7 @@ Interpersonal skills, including the ability to build rapport`,
       router.push("/thank-you");
     } catch (e) {
       return toast.error("Unable to send form data. Please try again later");
-    }
-      finally{
+    } finally {
       setIsFetching(false);
     }
   };
@@ -645,7 +646,10 @@ Interpersonal skills, including the ability to build rapport`,
                       placeholder="First Name"
                       value={form.firstName}
                       onChange={(e) =>
-                        setForm({ ...form, firstName: e.target.value })
+                        setForm({
+                          ...form,
+                          firstName: e.target.value.replace(/[^A-Za-z ]/g, ""),
+                        })
                       }
                       className="w-full border border-gray-300 rounded-md p-2"
                     />
@@ -656,7 +660,10 @@ Interpersonal skills, including the ability to build rapport`,
                       placeholder="Last Name"
                       value={form.lastName}
                       onChange={(e) =>
-                        setForm({ ...form, lastName: e.target.value })
+                        setForm({
+                          ...form,
+                          lastName: e.target.value.replace(/[^A-Za-z ]/g, ""),
+                        })
                       }
                       className="w-full border border-gray-300 rounded-md p-2"
                     />
@@ -674,8 +681,8 @@ Interpersonal skills, including the ability to build rapport`,
                       !isTouched
                         ? "border-gray-300 focus:ring-blue-300"
                         : isValid
-                        ? "border-green-500 focus:ring-green-300"
-                        : "border-red-500 focus:ring-red-300"
+                          ? "border-green-500 focus:ring-green-300"
+                          : "border-red-500 focus:ring-red-300"
                     }`}
                   />
 
