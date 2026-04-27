@@ -35,6 +35,15 @@ import {
   LiveChatEfficiently,
   LiveChatCelitixLive,
   LiveChatAcrossChannels,
+  WhatsAppLiveChat,
+  LiveInstagramChat,
+  RCSLiveChat,
+  instagramlivechaticons,
+  WhatsAppLiveChaticon,
+  RCSLiveChatExperienceicon,
+  SmartChatAutomationicon,
+  MultiAgentLiveChaticon,
+  RealTimeNotificationsicon,
 } from "../../../public/assets/images";
 import Image from "next/image";
 import Link from "next/link";
@@ -182,7 +191,7 @@ const Page = () => {
         "Provide instant connections through WhatsApp Live Chat and ensure that every conversation that takes place is swift, seamless, and authentic. From inquiry about services to support needs, your team will be able to provide immediate responses to customers at all times without any delay. You can also transfer updates, files, documents, pictures, or any other piece of important information through chat in an easy and seamless manner, thus making every communication swift and hassle-free. Instant replies and pre-formatted messages make every conversation professional and effective.",
       buttonText: "Explore",
       routerlink: "/whatsapp-live-chat",
-      image: contentManagement,
+      image: WhatsAppLiveChat,
       isVideo: false,
     },
     "Instagram Live Chat ": {
@@ -191,7 +200,7 @@ const Page = () => {
         "Communicate and connect with your audience directly using Instagram Live Chat, where your brand is getting the most attention. Manage Instagram messages easily and engage users instantly through Instagram Live Chat by responding to every message without a single delay. This way, you can convert every conversation or query into meaningful engagement and guide users to make further inquiries, book products or services, or even make purchases.",
       buttonText: "Explore",
       routerlink: "/instagram-live-chat",
-      image: InstagramLiveChat,
+      image: LiveInstagramChat,
       isVideo: false,
     },
     "RCS Live Chat": {
@@ -200,7 +209,8 @@ const Page = () => {
         "Sending rich interactive conversations instead of plain text. RCS Live Chat allows sending rich, engaging messages with images and videos, buttons, and interactive content in the message that users can actually interact with in their chat. This helps make conversations more intuitive and action-oriented, enabling customers to quickly explore options, make decisions, and take actions without leaving the chat. As a result, we have an enticing, more sultry, better messaging experience where both user satisfaction and conversion rates are improved.",
       buttonText: "Explore",
       routerlink: "/rcs-live-chat",
-      image: CommentControl,
+          //  image: CommentControl,
+      image: RCSLiveChat,
       isVideo: false,
     },
   };
@@ -291,7 +301,7 @@ const Page = () => {
               <div className="absolute -left-7 top-1/2 -translate-y-1/2 z-10">
                 <div className="w-15 h-15 bg-blue-500  rounded-full shadow-md flex items-center justify-center overflow-hidden">
                   <Image
-                    src={MultiAccountManagement}
+                    src={WhatsAppLiveChaticon}
                     alt="Showcase-Catalogues"
                     className="w-8 h-8 object-contain"
                     // loading="auto"
@@ -317,7 +327,7 @@ const Page = () => {
               <div className="absolute -left-7 top-1/2 -translate-y-1/2 z-10">
                 <div className="w-15 h-15 bg-blue-500 rounded-full shadow-md flex items-center justify-center overflow-hidden">
                   <Image
-                    src={ContentPostManagement}
+                    src={RCSLiveChatExperienceicon}
                     alt="ClicktoWhatsAppAds"
                     className="w-8 h-8 object-contain"
                     // loading="auto"
@@ -341,7 +351,7 @@ const Page = () => {
               <div className="absolute -left-7 top-1/2 -translate-y-1/2 z-10">
                 <div className="w-15 h-15 bg-blue-500 rounded-full shadow-md flex items-center justify-center overflow-hidden">
                   <Image
-                    src={CreatePublishContent}
+                    src={SmartChatAutomationicon}
                     alt="MultiAgentLiveChat"
                     className="w-8 h-8 object-contain"
                     // loading="auto"
@@ -364,14 +374,6 @@ const Page = () => {
 
           {/* Center Mobile Mockup */}
           <div className="flex justify-center items-center order-first md:order-none h-full">
-            {/* <video
-              src={LiveChatAcrossChannels}
-              className="object-contain"
-              autoPlay
-              muted
-              loop
-            /> */}
-
             <Image
               src={LiveChatAcrossChannels} // Replace with your image path
               alt="Phone Mockup"
@@ -386,7 +388,7 @@ const Page = () => {
               <div className="absolute -left-7 top-1/2 -translate-y-1/2 z-10">
                 <div className="w-15 h-15 bg-blue-500 rounded-full shadow-md flex items-center justify-center overflow-hidden">
                   <Image
-                    src={instagramlivechat}
+                    src={instagramlivechaticons}
                     alt="Chatbots"
                     className="w-8 h-8 object-contain"
                     // loading="auto"
@@ -411,7 +413,7 @@ const Page = () => {
               <div className="absolute -left-7 top-1/2 -translate-y-1/2 z-10">
                 <div className="w-15 h-15 bg-blue-500 rounded-full shadow-md flex items-center justify-center overflow-hidden">
                   <Image
-                    src={InsightsAnalytics}
+                    src={MultiAgentLiveChaticon}
                     alt="LiveNotifications"
                     className="w-8 h-8 object-contain"
                     // loading="auto"
@@ -436,7 +438,7 @@ const Page = () => {
               <div className="absolute -left-7 top-1/2 -translate-y-1/2 z-10">
                 <div className="w-15 h-15 bg-blue-500 rounded-full shadow-md flex items-center justify-center overflow-hidden">
                   <Image
-                    src={SmartCommentModeration}
+                    src={RealTimeNotificationsicon}
                     alt="PromoteinBulk"
                     className="w-8 h-8 object-contain"
                     // loading="auto"

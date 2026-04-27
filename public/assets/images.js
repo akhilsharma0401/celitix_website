@@ -624,6 +624,15 @@ import LiveChatService from "./imagesMain/LiveChatService.png";
 import LiveChatEfficiently from "./imagesMain/LiveChatEfficiently.png";
 import LiveChatCelitixLive from "./imagesMain/LiveChatCelitixLive.png";
 import LiveChatAcrossChannels from "./videos/LiveChatAcrossChannels.gif";
+import WhatsAppLiveChat from "./imagesMain/WhatsAppLiveChat.png";
+import LiveInstagramChat from "./imagesMain/LiveInstagramChat.png";
+import RCSLiveChat from "./imagesMain/RCSLiveChat.png";
+import instagramlivechaticons from "./mainicons/instagramlivechaticons.png";
+import WhatsAppLiveChaticon from "./mainicons/WhatsAppLiveChaticon.png";
+import RCSLiveChatExperienceicon from "./mainicons/RCSLiveChatExperienceicon.png";
+import SmartChatAutomationicon from "./mainicons/SmartChatAutomationicon.png";
+import MultiAgentLiveChaticon from "./mainicons/MultiAgentLiveChaticon.png";
+import RealTimeNotificationsicon from "./mainicons/RealTimeNotificationsicon.png";
 // LiveChatService
 
 // Instagram
@@ -1244,8 +1253,18 @@ export {
   // LiveChatService
   LiveChatService,
   LiveChatAcrossChannels,
+  instagramlivechaticons,
   LiveChatEfficiently,
+  SmartChatAutomationicon,
+  MultiAgentLiveChaticon,
+  RealTimeNotificationsicon,
+  LiveInstagramChat,
+  WhatsAppLiveChat,
+  RCSLiveChat,
   LiveChatCelitixLive,
+  WhatsAppLiveChaticon,
+  RCSLiveChatExperienceicon,
+
   // LiveChatService
 
   // Instagram

@@ -1538,10 +1538,15 @@ const Pricing = () => {
       WhatsApp_Utility: [[Infinity, 0.0576]],
       WhatsApp_Authentication: [[Infinity, 0.0576]],
     },
+    thb: {
+      WhatsApp_Marketing: [[Infinity, 2.26]],
+      WhatsApp_Utility: [[Infinity, 0.32]],
+      WhatsApp_Authentication: [[Infinity, 0.32]],
+    },
   };
 
   const [currency, setCurrency] = useState("inr");
-  const options = ["inr", "usd", "eur", "aed"];
+  const options = ["inr", "usd", "eur", "aed", "thb"];
 
   const [openDialog, setOpenDialog] = useState(false);
   const handleShowFormPopup = () => setOpenDialog(true);
@@ -1666,7 +1671,7 @@ const Pricing = () => {
 
   // Currency formatter
   const formatCurrency = (amount, currency) => {
-    const symbols = { inr: "₹", usd: "$", eur: "€", aed:"AED" };
+    const symbols = { inr: "₹", usd: "$", eur: "€", aed: "AED", thb: "฿" };
     return `${symbols[currency] || ""}${amount.toFixed(4)}`;
   };
 
@@ -1999,9 +2004,11 @@ const Pricing = () => {
                           <div className="text-lg font-bold text-blue-800">
                             Total: {formatCurrency(total, currency)}
                           </div>
-                          <span className="text-xs text-gray-500">
+                          {currency == "inr" && (
+                            <span className="text-xs text-gray-500">
                             (+18 % GST)
                           </span>
+                          )}
                         </div>
                       </div>
 
