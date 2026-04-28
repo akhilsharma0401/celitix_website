@@ -625,6 +625,7 @@ export const BookDemoPage = () => {
                           firstName: e.target.value.replace(/[^A-Za-z ]/g, ""),
                         })
                       }
+                      disabled={isOtpVerified}
                     />
                   </div>
                   <div>
@@ -666,7 +667,7 @@ export const BookDemoPage = () => {
                       value={form.email}
                       onChange={handleEmailChange}
                       onBlur={handleEmailBlur}
-                      disabled={isOtpVerified}
+                      // disabled={isOtpVerified}
                     />
                   </div>
                   <div>

@@ -322,6 +322,7 @@ const FormPopup = ({ visible, onHide }) => {
                     })
                   }
                   className="w-full border border-gray-300 rounded-md p-2"
+                  disabled={isOtpVerified}
                 />
                 <input
                   type="text"
@@ -345,7 +346,7 @@ const FormPopup = ({ visible, onHide }) => {
                   value={form.email}
                   onChange={handleEmailChange}
                   onBlur={handleEmailBlur}
-                  disabled={isOtpVerified}
+                  // disabled={isOtpVerified}
                   className={`w-full rounded-md p-2 border focus:outline-none focus:ring-2 ${
                     !isTouched
                       ? "border-gray-300 focus:ring-blue-300"
