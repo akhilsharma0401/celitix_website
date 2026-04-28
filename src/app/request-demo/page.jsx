@@ -161,7 +161,23 @@ export const BookDemoPage = () => {
   //     }
   // };
 
+  useEffect(() => {
+    // if (form.firstName && form.phone) {
+    //   handlesendOtp(form.phone);
+    // }
+
+    if (!form.firstName || !form.phone) return;
+
+    const timer = setTimeout(() => {
+      handlesendOtp(form.phone);
+    }, 800);
+
+    return () => clearTimeout(timer);
+  }, [form.firstName]);
+
   const handlesendOtp = async (phoneNumber) => {
+    if (!form.firstName)
+      return toast.error("Please enter your name before sending OTP.");
     const phone = phoneNumber || form.phone.trim();
 
     if (!validatePhoneNumber(phone)) {
@@ -343,11 +359,6 @@ export const BookDemoPage = () => {
     try {
       e.preventDefault();
 
-      if (!isOtpVerified) {
-        toast.error("Please verify the otp before submitting the form.");
-        return;
-      }
-
       const { firstName, lastName, email, phone, service, message } = form;
 
       if (!firstName.trim()) return toast.error("First Name is required.");
@@ -367,8 +378,13 @@ export const BookDemoPage = () => {
       if (!service.trim()) return toast.error("Please select a service.");
 
       if (!message.trim()) return toast.error("Please enter message.");
-      if (message.length < 20)
-        return toast.error("Please enter minimum 20 characters.");
+      // if (message.length < 20)
+      //   return toast.error("Please enter minimum 20 characters.");
+
+      if (!isOtpVerified) {
+        toast.error("Please verify the otp before submitting the form.");
+        return;
+      }
 
       // const captchaVerify = await verifyToken(turnstileResponse)
 
@@ -462,6 +478,13 @@ export const BookDemoPage = () => {
     { src: homesecond10, alt: "Yahoo" },
     { src: homesecond11, alt: "Luna" },
   ];
+
+  async function handleEditPhoneNo() {
+    setForm((prev) => ({ ...prev, phone: "" }));
+    setResendTimer(60);
+    setIsOtpSent(false);
+    setIsOtpVerified(false);
+  }
   // 2nd section logos array
   return (
     <>
@@ -687,6 +710,8 @@ export const BookDemoPage = () => {
                         placeholder="Phone No."
                         disabled={isOtpVerified}
                         value={form.phone}
+                        maxLength={10}
+                        readOnly={isOtpSent}
                         onChange={(e) => {
                           const cleanedValue = e.target.value
                             .replace(/[^\d]/g, "")
@@ -703,6 +728,17 @@ export const BookDemoPage = () => {
                           }
                         }}
                       />
+
+                      {isOtpSent && (
+                        <UniversalButton
+                          label="Edit"
+                          type="button"
+                          variant="brutal"
+                          // disabled={!validatePhoneNumber(form.phone)}
+                          onClick={handleEditPhoneNo}
+                          className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 rounded hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6]"
+                        />
+                      )}
 
                       {isOtpSent && resendTimer === 0 && (
                         <UniversalButton
@@ -834,9 +870,13 @@ export const BookDemoPage = () => {
                     name="message"
                     placeholder="How can we help you?"
                     value={form.message}
-                    onChange={(e) =>
-                      setForm({ ...form, message: e.target.value })
-                    }
+                    onChange={(e) => {
+                      const cleaned = e.target.value
+                        .replace(/\n/g, "")
+                        .replace(/[^a-zA-Z0-9 .,?!'-]/g, "");
+                      setForm({ ...form, message: cleaned });
+                    }}
+                    maxLength={30}
                   />
                 </div>
 

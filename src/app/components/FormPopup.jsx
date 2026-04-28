@@ -61,20 +61,36 @@ const FormPopup = ({ visible, onHide }) => {
     setIsTouched(true);
   };
 
+  useEffect(() => {
+    // if (form.firstName && form.phone) {
+    //   handlesendOtp(form.phone);
+    // }
+
+    if (!form.firstName || !form.phone) return;
+
+    const timer = setTimeout(() => {
+      handlesendOtp(form.phone);
+    }, 800);
+
+    return () => clearTimeout(timer);
+  }, [form.firstName]);
   // OTP logic
-  const handlesendOtp = async () => {
-    const phone = form.phone.trim();
-    const email = form.email.trim();
+  const handlesendOtp = async (phoneNo) => {
+    if (!form.firstName)
+      return toast.error("Please enter your name before sending OTP.");
+
+    const phone = phoneNo.trim();
+    // const email = form.email.trim();
 
     if (!validatePhoneNumber(phone)) {
       toast.error("Enter a valid phone number.");
       return;
     }
 
-    if (!validateEmail(email)) {
-      toast.error("Enter a valid email address.");
-      return;
-    }
+    // if (!validateEmail(email)) {
+    //   toast.error("Enter a valid email address.");
+    //   return;
+    // }
 
     // Set verified if validations pass
     setButtonLabel("Resend");
@@ -107,35 +123,44 @@ const FormPopup = ({ visible, onHide }) => {
   };
 
   const handleOtpChange = (index, value) => {
-    if (/^\d?$/.test(value)) {
-      const updatedOtp = [...otp];
-      updatedOtp[index] = value;
-      setOtp(updatedOtp);
+    if (!/^\d*$/.test(value)) return;
 
-      if (value !== "" && index < otp.length - 1) {
-        otpRefs.current[index + 1]?.focus();
-      } else if (value === "" && index > 0) {
-        otpRefs.current[index - 1]?.focus();
-      }
-    }
-  };
-
-  const handleverifyOtp = async () => {
-    const enteredOtp = otp.join("");
-    const validOtp = "123456"; // Replace with real OTP logic
-    const phone = form.phone.trim();
-
-    if (enteredOtp.length < 6) {
-      toast.error("Please enter the complete 6-digit OTP.");
+    // If user pastes full OTP
+    if (value.length === 6) {
+      const otpArray = value.split("");
+      setOtp(otpArray);
+      handleverifyOtp(value);
       return;
     }
+
+    const updatedOtp = [...otp];
+    updatedOtp[index] = value;
+    setOtp(updatedOtp);
+
+    if (value && index < 5) {
+      otpRefs.current[index + 1]?.focus();
+    }
+
+    if (!value && index > 0) {
+      otpRefs.current[index - 1]?.focus();
+    }
+
+    if (updatedOtp.every((digit) => digit !== "") && !isVerifying) {
+      setIsVerifying(true);
+      handleverifyOtp(updatedOtp.join(""));
+    }
+  };
+  const handleverifyOtp = async () => {
+    const enteredOtp = otp.join("");
+
+    if (enteredOtp.length !== 6) return;
+    const phone = form.phone.trim();
 
     const res = await verifyOtp({
       mobile: phone,
       otp: enteredOtp,
       otpId: otpId,
     });
-
 
     if (!res?.status) {
       toast.error(res?.message);
@@ -159,11 +184,6 @@ const FormPopup = ({ visible, onHide }) => {
     try {
       e.preventDefault();
 
-      if (!isOtpVerified) {
-        toast.error("Please verify the otp before submitting the form.");
-        return;
-      }
-
       const { firstName, lastName, email, phone, service, message } = form;
 
       if (!firstName.trim()) return toast.error("First Name is required.");
@@ -183,7 +203,13 @@ const FormPopup = ({ visible, onHide }) => {
       if (!service.trim()) return toast.error("Please select a service.");
 
       if (!message.trim()) return toast.error("Please enter message.");
-      if (message.length < 20 ) return toast.error("Please enter minimum 20 characters.");
+      // if (message.length < 20)
+      //   return toast.error("Please enter minimum 20 characters.");
+
+      if (!isOtpVerified) {
+        toast.error("Please verify the otp before submitting the form.");
+        return;
+      }
 
       const captchaVerify = await verifyToken(turnstileResponse);
 
@@ -233,6 +259,12 @@ const FormPopup = ({ visible, onHide }) => {
     }
   };
 
+  async function handleEditPhoneNo() {
+    setForm((prev) => ({ ...prev, phone: "" }));
+    setResendTimer(60);
+    setIsOtpSent(false);
+    setIsOtpVerified(false);
+  }
   return (
     <Dialog
       visible={visible}
@@ -285,9 +317,9 @@ const FormPopup = ({ visible, onHide }) => {
                   value={form.firstName}
                   onChange={(e) =>
                     setForm({
-        ...form,
-        firstName: e.target.value.replace(/[^A-Za-z ]/g, ""),
-      })
+                      ...form,
+                      firstName: e.target.value.replace(/[^A-Za-z ]/g, ""),
+                    })
                   }
                   className="w-full border border-gray-300 rounded-md p-2"
                 />
@@ -297,10 +329,10 @@ const FormPopup = ({ visible, onHide }) => {
                   placeholder="Last Name"
                   value={form.lastName}
                   onChange={(e) =>
-                   setForm({
-        ...form,
-        lastName: e.target.value.replace(/[^A-Za-z ]/g, ""),
-      })
+                    setForm({
+                      ...form,
+                      lastName: e.target.value.replace(/[^A-Za-z ]/g, ""),
+                    })
                   }
                   className="w-full border border-gray-300 rounded-md p-2"
                 />
@@ -329,18 +361,37 @@ const FormPopup = ({ visible, onHide }) => {
                     placeholder="Phone No."
                     disabled={isOtpVerified}
                     value={form.phone}
-                    onChange={(e) =>
+                    readOnly={isOtpSent}
+                    maxLength={10}
+                    onChange={(e) => {
+                      const cleanedValue = e.target.value
+                        .replace(/[^\d]/g, "")
+                        .slice(0, 10);
+
                       setForm({
                         ...form,
-                        phone: e.target.value
-                          .replace(/[^\d]/g, "")
-                          .slice(0, 13),
+                        phone: cleanedValue,
                         isOtpVerified: false,
-                      })
-                    }
+                      });
+
+                      if (cleanedValue.length === 10 && !isOtpSent) {
+                        handlesendOtp(cleanedValue);
+                      }
+                    }}
                     className="form-input w-full border border-gray-300 rounded-md p-2"
                   />
-                  {!isClicked && (
+
+                  {isOtpSent && (
+                    <UniversalButton
+                      label="Edit"
+                      type="button"
+                      variant="brutal"
+                      // disabled={!validatePhoneNumber(form.phone)}
+                      onClick={handleEditPhoneNo}
+                      className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 rounded hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6]"
+                    />
+                  )}
+                  {/* {!isClicked && (
                     <UniversalButton
                       label={buttonLabel}
                       type="button"
@@ -351,7 +402,7 @@ const FormPopup = ({ visible, onHide }) => {
                       onClick={handlesendOtp}
                       className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 rounded hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] disabled:bg-gray-300 disabled:text-gray-700 disabled:cursor-not-allowed"
                     />
-                  )}
+                  )} */}
                 </div>
               </div>
 
@@ -375,13 +426,13 @@ const FormPopup = ({ visible, onHide }) => {
                       className="w-10 h-10 text-center border border-gray-300 rounded"
                     />
                   ))}
-                  <UniversalButton
+                  {/* <UniversalButton
                     label="Submit"
                     variant="brutal"
                     type="button"
                     onClick={handleverifyOtp}
                     className="bg-[#9B44B6] border-[#9B44B6] text-white hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] px-3 py-1 rounded-md mx-1"
-                  />
+                  /> */}
                 </div>
               )}
 
@@ -434,7 +485,13 @@ const FormPopup = ({ visible, onHide }) => {
                 name="message"
                 placeholder="How can we help you?"
                 value={form.message}
-                onChange={(e) => setForm({ ...form, message: e.target.value })}
+                onChange={(e) => {
+                  const cleaned = e.target.value
+                    .replace(/\n/g, "")
+                    .replace(/[^a-zA-Z0-9 .,?!'-]/g, "");
+                  setForm({ ...form, message: cleaned });
+                }}
+                maxLength={30}
                 className="form-textarea w-full border border-gray-300 rounded-md p-2"
               />
               <div className="">
