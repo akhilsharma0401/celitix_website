@@ -45,6 +45,7 @@ const FormPopup = ({ visible, onHide }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [buttonLabel, setButtonLabel] = useState("Verify");
   const [isFetching, setIsFetching] = useState(false);
+  const [isVerifying, setIsVerifying] = useState(false);
 
   // Regex validators
   const validatePhoneNumber = (phone) => /^[0-9]{10,13}$/.test(phone);
@@ -126,6 +127,7 @@ const FormPopup = ({ visible, onHide }) => {
     if (!/^\d*$/.test(value)) return;
 
     // If user pastes full OTP
+
     if (value.length === 6) {
       const otpArray = value.split("");
       setOtp(otpArray);
@@ -146,19 +148,17 @@ const FormPopup = ({ visible, onHide }) => {
     }
 
     if (updatedOtp.every((digit) => digit !== "") && !isVerifying) {
+      console.log("updatedOtp", updatedOtp);
       setIsVerifying(true);
       handleverifyOtp(updatedOtp.join(""));
     }
   };
-  const handleverifyOtp = async () => {
-    const enteredOtp = otp.join("");
-
-    if (enteredOtp.length !== 6) return;
+  const handleverifyOtp = async (otp) => {
     const phone = form.phone.trim();
 
     const res = await verifyOtp({
       mobile: phone,
-      otp: enteredOtp,
+      otp,
       otpId: otpId,
     });
 
@@ -413,6 +413,13 @@ const FormPopup = ({ visible, onHide }) => {
                 </div>
               )}
 
+              <input
+                id="otp-hidden"
+                type="text"
+                inputMode="numeric"
+                autoComplete="one-time-code"
+                className="absolute opacity-0 pointer-events-none"
+              />
               {isOtpSent && (
                 <div className="flex items-center gap-2 flex-wrap mt-2">
                   {otp.map((digit, index) => (
