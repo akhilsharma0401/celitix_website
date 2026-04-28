@@ -61,7 +61,7 @@ const ThankYouPage = () => {
               "https://connect.facebook.net/en_US/fbevents.js"
             );
             fbq("init", "943473661882714"); 
-            fbq("track", "PageView");
+            fbq('track', 'Lead');
           `}
           </Script>
 
@@ -96,7 +96,7 @@ const ThankYouPage = () => {
           s.parentNode.insertBefore(t, s);
         }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
         fbq("init", "587446320662611"); 
-        fbq('track', ‘L’ead);
+         fbq("track", "PageView");
       `}
           </Script>
 
