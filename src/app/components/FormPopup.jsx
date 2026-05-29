@@ -153,6 +153,55 @@ const FormPopup = ({ visible, onHide }) => {
       handleverifyOtp(updatedOtp.join(""));
     }
   };
+
+  const handlePaste = (e) => {
+    e.preventDefault();
+
+    const pastedData = e.clipboardData.getData("text").trim().slice(0, 6);
+
+    if (!/^\d+$/.test(pastedData)) return;
+
+    const otpArray = pastedData.split("");
+
+    const updatedOtp = [...otp];
+
+    otpArray.forEach((digit, index) => {
+      updatedOtp[index] = digit;
+    });
+
+    setOtp(updatedOtp);
+
+    // Focus last filled input
+    otpRefs.current[otpArray.length - 1]?.focus();
+
+    // Auto verify
+    if (otpArray.length === 6) {
+      setIsVerifying(true);
+      handleverifyOtp(otpArray.join(""));
+    }
+  };
+
+  const handleKeyDown = (index, e) => {
+    if (e.key === "Backspace") {
+      e.preventDefault();
+
+      const updatedOtp = [...otp];
+
+      if (updatedOtp[index]) {
+        updatedOtp[index] = "";
+        setOtp(updatedOtp);
+        return;
+      }
+
+      if (index > 0) {
+        updatedOtp[index - 1] = "";
+        setOtp(updatedOtp);
+
+        otpRefs.current[index - 1]?.focus();
+      }
+    }
+  };
+
   const handleverifyOtp = async (otp) => {
     const phone = form.phone.trim();
 
@@ -429,18 +478,14 @@ const FormPopup = ({ visible, onHide }) => {
                       type="text"
                       maxLength={1}
                       inputMode="numeric"
+                      autoComplete="one-time-code"
                       value={digit}
                       onChange={(e) => handleOtpChange(index, e.target.value)}
+                      onPaste={handlePaste}
+                      onKeyDown={(e) => handleKeyDown(index, e)}
                       className="w-10 h-10 text-center border border-gray-300 rounded"
                     />
                   ))}
-                  {/* <UniversalButton
-                    label="Submit"
-                    variant="brutal"
-                    type="button"
-                    onClick={handleverifyOtp}
-                    className="bg-[#9B44B6] border-[#9B44B6] text-white hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] px-3 py-1 rounded-md mx-1"
-                  /> */}
                 </div>
               )}
 

@@ -4,6 +4,7 @@ import celitixfooter from "./mainicons/celitix-cpaas-solution-logo-footer.svg";
 import Cookieimg from "./imagesMain/Cookie.svg";
 import footerBatch from "./mainicons/BATCH01.svg";
 import METAWHITE from "./mainicons/MetaLogowhite.png";
+import METAWHITENew from "./mainicons/METAWHITENew.png";
 import Industries from "./mainicons/Industries.png";
 import Channels from "./mainicons/Channels.png";
 import comingSoon from "./mainicons/comingSoon.png";
@@ -623,6 +624,7 @@ import InstantCustomer from "./imagesMain/InstantCustomer.jpg";
 import LiveChatService from "./imagesMain/LiveChatService.png";
 import LiveChatEfficiently from "./imagesMain/LiveChatEfficiently.png";
 import LiveChatCelitixLive from "./imagesMain/LiveChatCelitixLive.png";
+import WebsiteLiveChat from "./imagesMain/WebsiteLiveChat.png";
 import LiveChatAcrossChannels from "./videos/LiveChatAcrossChannels.gif";
 import WhatsAppLiveChat from "./imagesMain/WhatsAppLiveChat.png";
 import LiveInstagramChat from "./imagesMain/LiveInstagramChat.png";
@@ -633,7 +635,72 @@ import RCSLiveChatExperienceicon from "./mainicons/RCSLiveChatExperienceicon.png
 import SmartChatAutomationicon from "./mainicons/SmartChatAutomationicon.png";
 import MultiAgentLiveChaticon from "./mainicons/MultiAgentLiveChaticon.png";
 import RealTimeNotificationsicon from "./mainicons/RealTimeNotificationsicon.png";
+import WebsiteLiveChaticon from "./mainicons/WebsiteLiveChaticon.png";
 // LiveChatService
+
+// WhatsAppLiveChatService
+import WhatsAppLiveChatService from "./imagesMain/WhatsAppLiveChatService.png";
+import MeetCustomersWhere from "./imagesMain/MeetCustomersWhere.png";
+import WhatsAppLiveChatEngage from "./imagesMain/WhatsAppLiveChatEngage.png";
+import WhatsappLiveChatCelitixLive from "./imagesMain/WhatsappLiveChatCelitixLive.png";
+import AIChatbotLiveAgentHandover from "./imagesMain/AIChatbotLiveAgentHandover.png";
+import InternalNotesTeamCollaborationTools from "./imagesMain/InternalNotesTeamCollaborationTools.png";
+import CustomerConversationTracking from "./imagesMain/CustomerConversationTracking.png";
+import AdvancedChatSegmentation from "./imagesMain/AdvancedChatSegmentation.png";
+import WhatsAppLiveChatSupport from "./mainicons/WhatsAppLiveChatSupport.png";
+import MultipleAgentsOnWhatsApp from "./mainicons/MultipleAgentsOnWhatsApp.png";
+import ChatsAndAutomateThem from "./mainicons/ChatsAndAutomateThem.png";
+import FromClickToWhatsApp from "./mainicons/FromClickToWhatsApp.png";
+import RichMediaAndInteractiveMessages from "./mainicons/RichMediaAndInteractiveMessages.png";
+import StayingInTouchWith from "./mainicons/StayingInTouchWith.png";
+// WhatsAppLiveChatService
+
+// InstagramLiveChatService
+import InstagramLiveChatService from "./imagesMain/InstagramLiveChatService.png";
+import TurnsEveryMessage from "./imagesMain/TurnsEveryMessage.png";
+import InstagramLiveChatMakesBetter from "./imagesMain/InstagramLiveChatMakesBetter.png";
+import Turneveryintorealconversation from "./imagesMain/Turneveryintorealconversation.png";
+import InstagramInsightinsideyourlivechat from "./imagesMain/InstagramInsightinsideyourlivechat.png";
+import BuiltInInstagramIceBreakers from "./imagesMain/BuiltInInstagramIceBreakers.png";
+import IstagramAdvancedChatSegmentation from "./imagesMain/IstagramAdvancedChatSegmentation.png";
+import InstagramLiveChatEngage from "./imagesMain/InstagramLiveChatEngage.png";
+import UnifiedInstagramInbox from "./mainicons/UnifiedInstagramInbox.png";
+import CannedReplies from "./mainicons/CannedReplies.png";
+import Userprofileinsights from "./mainicons/Userprofileinsights.png";
+import Buttontemplates from "./mainicons/Buttontemplates.png";
+import hourwindowtracker from "./mainicons/hourwindowtracker.png";
+import Multiaccountsupport from "./mainicons/Multiaccountsupport.png";
+// InstagramLiveChatService
+
+// Website live chat
+import WebsitelivechatService from "./imagesMain/WebsitelivechatService.png";
+import UnlockPowerfulWebsite from "./imagesMain/UnlockPowerfulWebsite.png";
+import WhyBusinessesWebsite from "./imagesMain/WhyBusinessesWebsite.png";
+import CompleteWebsiteLiveChatSolution from "./imagesMain/CompleteWebsiteLiveChatSolution.png";
+import EngagementOnArrival from "./mainicons/EngagementOnArrival.png";
+import PromptUserActions from "./mainicons/PromptUserActions.png";
+import ConversationsWithStyle from "./mainicons/ConversationsWithStyle.png";
+import ChatbotAgentCollaboration from "./mainicons/ChatbotAgentCollaboration.png";
+import IntelligentLeadRouting from "./mainicons/IntelligentLeadRouting.png";
+import ConvertVisitorstoCustomers from "./mainicons/ConvertVisitorstoCustomers.png";
+// Website live chat
+
+// RCS Live Chat
+import RCSLiveChatService from "./imagesMain/RCSLiveChatService.png";
+import WhatMakesCelitixRCSLiveChatStandOut from "./imagesMain/WhatMakesCelitixRCSLiveChatStandOut.png";
+import EngagingRCSLiveChat from "./imagesMain/EngagingRCSLiveChat.png";
+import RichMediaInteractiveMessages from "./imagesMain/RichMediaInteractiveMessages.png";
+import PredesignedMessageTemplates from "./imagesMain/PredesignedMessageTemplates.png";
+import SpeedDialMessagesExpedite from "./imagesMain/SpeedDialMessagesExpedite.png";
+import EnhancedRCSChatSegmentation from "./imagesMain/EnhancedRCSChatSegmentation.png";
+import RCSLiveChatThat from "./imagesMain/RCSLiveChatThat.png";
+import RealTimeRCSLiveChat from "./mainicons/RealTimeRCSLiveChat.png";
+import MultiAgentRCSChatBox from "./mainicons/MultiAgentRCSChatBox.png";
+import ActiveInactiveChatsBetterManagement from "./mainicons/ActiveInactiveChatsBetterManagement.png";
+import IntelligentChatRoutingRCSAutomation from "./mainicons/IntelligentChatRoutingRCSAutomation.png";
+import PredefinedCannedMessagesCommands from "./mainicons/PredefinedCannedMessagesCommands.png";
+import RCSRichMessagingCapabilities from "./mainicons/RCSRichMessagingCapabilities.png";
+// RCS Live Chat
 
 // Instagram
 import ReachCustomersinstagram from "./imagesMain/ReachCustomersinstagram.png";
@@ -669,6 +736,7 @@ export {
   celitixfooter,
   footerBatch,
   METAWHITE,
+  METAWHITENew,
   Industries,
   Channels,
   rocket,
@@ -1264,8 +1332,74 @@ export {
   LiveChatCelitixLive,
   WhatsAppLiveChaticon,
   RCSLiveChatExperienceicon,
+  WebsiteLiveChaticon,
+  WebsiteLiveChat,
 
   // LiveChatService
+
+  // WhatsAppLiveChatService
+  WhatsAppLiveChatService,
+  MeetCustomersWhere,
+  WhatsAppLiveChatEngage,
+  WhatsappLiveChatCelitixLive,
+  WhatsAppLiveChatSupport,
+  MultipleAgentsOnWhatsApp,
+  ChatsAndAutomateThem,
+  FromClickToWhatsApp,
+  RichMediaAndInteractiveMessages,
+  StayingInTouchWith,
+  AIChatbotLiveAgentHandover,
+  InternalNotesTeamCollaborationTools,
+  CustomerConversationTracking,
+  AdvancedChatSegmentation,
+  // WhatsAppLiveChatService
+
+  // InstagramLiveChatService
+  InstagramLiveChatService,
+  InstagramLiveChatMakesBetter,
+  TurnsEveryMessage,
+  Turneveryintorealconversation,
+  InstagramInsightinsideyourlivechat,
+  BuiltInInstagramIceBreakers,
+  IstagramAdvancedChatSegmentation,
+  InstagramLiveChatEngage,
+  UnifiedInstagramInbox,
+  CannedReplies,
+  Userprofileinsights,
+  Buttontemplates,
+  hourwindowtracker,
+  Multiaccountsupport,
+  // InstagramLiveChatService
+
+  // Website live chat
+  WebsitelivechatService,
+  UnlockPowerfulWebsite,
+  WhyBusinessesWebsite,
+  CompleteWebsiteLiveChatSolution,
+  EngagementOnArrival,
+  PromptUserActions,
+  ConversationsWithStyle,
+  ChatbotAgentCollaboration,
+  IntelligentLeadRouting,
+  ConvertVisitorstoCustomers,
+  // Website live chat
+
+  // RCS Live Chat
+  RCSLiveChatService,
+  WhatMakesCelitixRCSLiveChatStandOut,
+  EngagingRCSLiveChat,
+  RichMediaInteractiveMessages,
+  PredesignedMessageTemplates,
+  SpeedDialMessagesExpedite,
+  EnhancedRCSChatSegmentation,
+  RCSLiveChatThat,
+  RealTimeRCSLiveChat,
+  MultiAgentRCSChatBox,
+  ActiveInactiveChatsBetterManagement,
+  IntelligentChatRoutingRCSAutomation,
+  PredefinedCannedMessagesCommands,
+  RCSRichMessagingCapabilities,
+  // RCS Live Chat
 
   // Instagram
   InstagramBusinessPlatform,

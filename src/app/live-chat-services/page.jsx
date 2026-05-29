@@ -44,6 +44,8 @@ import {
   SmartChatAutomationicon,
   MultiAgentLiveChaticon,
   RealTimeNotificationsicon,
+  WebsiteLiveChat,
+  WebsiteLiveChaticon,
 } from "../../../public/assets/images";
 import Image from "next/image";
 import Link from "next/link";
@@ -128,40 +130,40 @@ const Page = () => {
 
   const faqs = [
     {
+      question: "What is a live chat service?",
+      answer:
+        "Live chat service is a solution that enables businesses to communicate with their customers instantly and effectively via WhatsApp, Instagram, and RCS from a single dashboard.",
+    },
+    {
+      question: "How does Celitix's live chat service work?",
+      answer:
+        "Celitix's live chat service consolidates all conversations within a single inbox for faster responses and team collaboration.",
+    },
+    {
       question:
-        "What is Instagram automation, and why is it important for businesses?",
+        "What channels are available for the Celitix live chat service?",
       answer:
-        "Instagram automation helps businesses instantly respond to messages, manage conversations, and engage users at scale—improving response time, customer experience, and conversions.",
+        "Celitix supports WhatsApp, Instagram, RCS, SMS, and other channels so that businesses can consolidate their conversations without needing to move between platforms.",
     },
     {
-      question: "Can I manage multiple Instagram accounts from one platform?",
+      question: "Is it possible to automate a live chat service?",
       answer:
-        "Yes, Celitix allows you to manage multiple Instagram business accounts from a single dashboard, making it ideal for agencies and multi-brand businesses.",
+        "Yes, Celitix live chat service allows you to automate your customer queries using chatbots, quick replies, and workflows.",
     },
     {
-      question: "How does Instagram live chat work?",
+      question: "How does live chat service increase conversions?",
       answer:
-        "Celitix provides a unified live chat interface where you can reply to DMs in real-time, send media, and manage conversations efficiently within the 24-hour messaging window.",
+        "Live chat service helps convert more leads because it allows for faster responses and personalized interactions.",
     },
     {
-      question: "Can I automate replies to Instagram messages and comments?",
+      question: "Can multiple agents take care of live chats simultaneously?",
       answer:
-        "Yes, you can automate replies using workflows, FAQs (icebreakers), and templates. You can also convert comments into private DMs to increase engagement.",
+        "Yes, Celitix's live chat service allows multiple agents to collaborate on conversations, share chats, and handle customer queries effectively.",
     },
     {
-      question: "Can I use message templates for Instagram conversations?",
+      question: "Why should I opt for Celitix live chat service?",
       answer:
-        "Yes, Celitix provides ready-to-use templates with dynamic variables to personalize conversations and respond faster while maintaining consistency. ",
-    },
-    {
-      question: "What kind of analytics does Celitix provide?",
-      answer:
-        "Celitix offers advanced analytics including engagement metrics, audience insights, and performance tracking to help you optimize campaigns and improve ROI.",
-    },
-    {
-      question: "How does Celitix help improve Instagram engagement and sales?",
-      answer:
-        "With automation, faster responses, personalized messaging, and real-time interaction, Celitix helps businesses increase engagement, capture leads, and boost conversions.",
+        "Celitix live chat service is a comprehensive solution that provides everything businesses need from a live chat service under one roof.",
     },
   ];
   // 8rd
@@ -182,6 +184,7 @@ const Page = () => {
     { key: "WhatsApp Live Chat", label: "WhatsApp Live Chat" },
     { key: "Instagram Live Chat ", label: "Instagram Live Chat " },
     { key: "RCS Live Chat", label: "RCS Live Chat" },
+    { key: "Website Live Chat", label: "Website Live Chat" },
   ];
 
   const tabData = {
@@ -209,8 +212,18 @@ const Page = () => {
         "Sending rich interactive conversations instead of plain text. RCS Live Chat allows sending rich, engaging messages with images and videos, buttons, and interactive content in the message that users can actually interact with in their chat. This helps make conversations more intuitive and action-oriented, enabling customers to quickly explore options, make decisions, and take actions without leaving the chat. As a result, we have an enticing, more sultry, better messaging experience where both user satisfaction and conversion rates are improved.",
       buttonText: "Explore",
       routerlink: "/rcs-live-chat",
-          //  image: CommentControl,
+      //  image: CommentControl,
       image: RCSLiveChat,
+      isVideo: false,
+    },
+    "Website Live Chat": {
+      heading: "Website Live Chat",
+      description:
+        "Turn your website traffic into real conversations with a powerful website live chat solution powered by AI and human agents. Instantly engage every visitor with smart, personalized greetings that capture attention from the very first interaction. With intelligent lead qualification, your website's live chat identifies user intent and guides visitors with the right responses at the right moment.",
+      buttonText: "Explore",
+      routerlink: "/website-live-chat",
+      //  image: CommentControl,
+      image: WebsiteLiveChat,
       isVideo: false,
     },
   };
@@ -238,12 +251,12 @@ const Page = () => {
 
             <div className="box-reveal-left space-y-6">
               <h1 className="text-4xl  lg:text-5xl 2xl:text-6xl heading  font-bold text-gray-900 popf leading-tight">
-                Real-Time{" "}
+                Multi-Channel{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]">
                   Live Chat
                 </span>{" "}
                 <br />
-                for Modern Customer Communication
+                Support for Customer Conversions
               </h1>
 
               <p className="text-gray-600 text-base md:text-lg ">
@@ -360,13 +373,13 @@ const Page = () => {
               </div>
               <div className="bg-white border border-black rounded-[20px] p-5 pl-8 relative z-0">
                 <h4 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-2">
-                  Smart Chat Automation
+                  Multi-Agent Live Chat
                 </h4>
                 <p className="text-md text-black pera ml-2 text-justify">
-                  Use chatbots and workflows to automate repetitive
-                  conversations. Respond via instant replies, capture leads
-                  while you sleep for 24/7 availability without lifting a
-                  finger.
+                  Common Team Inbox for all conversations across WhatsApp,
+                  Instagram Live Chat, Website Live Chat and RCS. Each message is addressed
+                  quickly and professionally — assign chats, collaborate
+                  efficiently.
                 </p>
               </div>
             </div>
@@ -422,13 +435,13 @@ const Page = () => {
               </div>
               <div className="bg-white border border-black rounded-[20px] p-5 pl-8 relative z-0">
                 <h4 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-2">
-                  Multi-Agent Live Chat
+                  Smart Chat Automation
                 </h4>
                 <p className="text-md text-black pera ml-2 text-justify">
-                  Common Team Inbox for all conversations across WhatsApp,
-                  Instagram Live Chat, and RCS. Each message is addressed
-                  quickly and professionally — assign chats, collaborate
-                  efficiently.
+                  Use chatbots and workflows to automate repetitive
+                  conversations. Respond via instant replies, capture leads
+                  while you sleep for 24/7 availability without lifting a
+                  finger.
                 </p>
               </div>
             </div>
@@ -438,7 +451,7 @@ const Page = () => {
               <div className="absolute -left-7 top-1/2 -translate-y-1/2 z-10">
                 <div className="w-15 h-15 bg-blue-500 rounded-full shadow-md flex items-center justify-center overflow-hidden">
                   <Image
-                    src={RealTimeNotificationsicon}
+                    src={WebsiteLiveChaticon}
                     alt="PromoteinBulk"
                     className="w-8 h-8 object-contain"
                     // loading="auto"
@@ -447,12 +460,10 @@ const Page = () => {
               </div>
               <div className="bg-white border border-black rounded-[20px] p-5 pl-8 relative z-0">
                 <h4 className="text-base sm:text-lg font-bold text-black mb-1 heading ml-2">
-                  Real-Time Notifications
+                  Website Live Chat
                 </h4>
                 <p className="text-md text-black pera ml-2 text-justify">
-                  Get real-time notifications for every new message, on all
-                  channels. Empower your team to respond promptly and ensure
-                  zero customer queries or opportunities are missed.
+                  Live Chat for Websites allows you to connect and interact with your website visitors on a real-time basis. This tool enables you to instantly respond to all queries, intelligently qualify leads, and take your visitors on their customer journey through customized interaction sessions.
                 </p>
               </div>
             </div>
@@ -612,12 +623,22 @@ const Page = () => {
               >
                 RCS Live Chat
               </button>
+              <button
+                onClick={() => setActiveTab("Website Live Chat")}
+                className={`relative px-4 py-2 uppercase text-xs sm:text-sm tracking-wide transition-colors focus:outline-none whitespace-nowrap rounded-t-xl ${
+                  activeTab === "Website Live Chat"
+                    ? "text-white bg-[#6E11B0] shadow-lg heading"
+                    : "text-gray-800 sub-heading bg-[#E9D4FF] hover:bg-[#e4caff] hover:text-[#6b0da1]"
+                }`}
+              >
+                Website Live Chat
+              </button>
             </div>
           </div>
 
           {/* Content box */}
           <div className="border border-[#6b0da1] rounded-3xl shadow-inner bg-white">
-            <div className="grid grid-cols-1 lg:grid-cols-2  p-6 sm:p-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 p-6 sm:p-8">
               {/* Left side: heading, description, button */}
               <div className="flex flex-col justify-center space-y-4 mb-5 md: mb-0">
                 <h3 className="text-xl sm:text-2xl md:text-3xl font-bold sub-heading text-black">
@@ -627,7 +648,7 @@ const Page = () => {
                   {description}
                 </p>
                 <button
-                  className="inline-block px-6 py-2 bg-[#6b0da1] text-white rounded-full w-max hover:bg-[#580a88] transition"
+                  className="inline-block px-6 py-2 bg-[#6b0da1] text-white rounded-full w-max hover:bg-[#580a88] transition cursor-pointer"
                   onClick={() => router.push(routerlink)}
                 >
                   {buttonText}
@@ -987,7 +1008,7 @@ const Page = () => {
       <div className=" bg-[#f7ebfc] flex justify-center items-center py-2 md:py-20 px-4 ">
         <div className="w-full max-w-6xl bg-[#F7F4F9] border border-[#D1CDE3] rounded-xl p-6 shadow-lg">
           <h2 className="text-2xl md:text-4xl heading font-semibold text-center text-gray-900 popf mb-8">
-            Instagram FAQs
+            Live Chat FAQs
           </h2>
 
           <div className="bg-white rounded-xl py-4 px-2 sm:px-4">

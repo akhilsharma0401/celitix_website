@@ -270,14 +270,14 @@ const page = () => {
               effortlessly.
             </p>
 
-            <UniversalButton
+            {/* <UniversalButton
               label="Book Demo"
               variant="brutal"
               className="bg-[#9B44B6] border-[#9B44B6] text-white px-5 py-2 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6]"
               onClick={() => routermain.push("/book-demo")}
-            />
+            /> */}
 
-            {/* <UniversalButton
+            <UniversalButton
                   label="Book Demo"
                   variant="brutal"
                   className="bg-[#9B44B6] border-[#9B44B6] text-white px-5 py-2 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6]"
@@ -288,7 +288,7 @@ const page = () => {
                 <FormPopup
                   visible={openDialog}
                   onHide={handleCloseDialog}
-                /> */}
+                />
           </div>
 
           {/* RIGHT IMAGE */}
@@ -310,8 +310,8 @@ const page = () => {
               Chatbot
             </div>
 
-            <div className="absolute right-4 bottom-24 bg-[#5c6ac4] w-40 h-10 rounded-xl shadow-md" />
-            <div className="absolute right-4 bottom-12 bg-[#5c6ac4] w-48 h-10 rounded-xl shadow-md" />
+            {/* <div className="absolute right-4 bottom-24 bg-[#5c6ac4] w-40 h-10 rounded-xl shadow-md" />
+            <div className="absolute right-4 bottom-12 bg-[#5c6ac4] w-48 h-10 rounded-xl shadow-md" /> */}
           </div>
         </div>
       </section>

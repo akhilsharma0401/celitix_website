@@ -1103,7 +1103,7 @@ const Home = () => {
              border-2 border-[#B4E1EE] text-black group"
                 >
                   <span className="relative z-10 transition-colors duration-300 group-hover:text-[#4a7783]">
-                    AI Chat bot
+                    AI Chatbot
                   </span>
                   {/* <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white">
                     →
@@ -1125,9 +1125,11 @@ const Home = () => {
              px-8 py-1 2xl:py-2 rounded-full overflow-hidden
              border-2 border-[#D3F5BE] text-black group"
                 >
-                  <span className="relative z-10 transition-colors duration-300 group-hover:text-[#5b8342]">
-                    Live Chat
-                  </span>
+                  <Link href="/live-chat-services">
+                    <span className="relative z-10 transition-colors duration-300 group-hover:text-[#5b8342]">
+                      Live Chat
+                    </span>
+                  </Link>
                   {/* <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white">
                     →
                   </span> */}

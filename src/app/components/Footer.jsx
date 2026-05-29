@@ -1,49 +1,50 @@
-"use client"
-import React from 'react';
+"use client";
+import React from "react";
 // import  motion  from 'framer-motion';
-import Link from 'next/link';
-import Image from 'next/image';
-import  celitixfooter  from '../../../public/assets/mainicons/celitix-cpaas-solution-logo-footer.svg';
+import Link from "next/link";
+import Image from "next/image";
+import celitixfooter from "../../../public/assets/mainicons/celitix-cpaas-solution-logo-footer.svg";
 import {
   FaPaperPlane,
   FaMapMarkerAlt,
   FaPhoneAlt,
-  FaEnvelope
-} from 'react-icons/fa';
-import  instagram  from '../../../public/assets/Icons/Instagram_icon.png';
-import  METAWHITE  from '../../../public/assets/mainicons/MetaLogowhite.png';
-import  YouTube  from '../../../public/assets/Icons/Youtube.png';
-import  facebook  from '../../../public/assets/Icons/Facebook_Icon.png';
-import  LinkedIn  from '../../../public/assets/Icons/LinkedIn_Icon.png';
-import  twitter  from '../../../public/assets/Icons/twitter_Icon.png';
-import  whats  from '../../../public/assets/Icons/WhatsApp.svg';
+  FaEnvelope,
+} from "react-icons/fa";
+import instagram from "../../../public/assets/Icons/Instagram_icon.png";
+import METAWHITE from "../../../public/assets/mainicons/MetaLogowhite.png";
+import YouTube from "../../../public/assets/Icons/Youtube.png";
+import facebook from "../../../public/assets/Icons/Facebook_Icon.png";
+import LinkedIn from "../../../public/assets/Icons/LinkedIn_Icon.png";
+import twitter from "../../../public/assets/Icons/twitter_Icon.png";
+import whats from "../../../public/assets/Icons/WhatsApp.svg";
 // import  footerBatch  from '../../../public/assets/mainicons/BATCH01.svg';
 import footerBatch from "../../../public/assets/imagesMain/BATCH.svg";
+import { METAWHITENew } from "../../../public/assets/images";
 
 // import { celitixfooter, facebook, footerBatch, instagram, LinkedIn, METAWHITE, twitter, whats, YouTube } from '@/assets/images';
 const Footer = () => {
   return (
     <footer className=" bg-black lora">
       <div className="  text-white grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-6 py-12 rounded-[10px]">
-
         <div>
           {/* <Link to="/"> */}
-            <Image
-              src={celitixfooter}
-              alt="Celitix CPaaS Solution Logo" title='Celitix CPaaS Solution Logo'
-              width={200}
-              // className="mt-2 cursor-pointer"
-              // width="180"
-              // height="50"
-            />
+          <Image
+            src={celitixfooter}
+            alt="Celitix CPaaS Solution Logo"
+            title="Celitix CPaaS Solution Logo"
+            width={200}
+            // className="mt-2 cursor-pointer"
+            // width="180"
+            // height="50"
+          />
           {/* </Link> */}
           {/* <img src="src\assets\Icons\celitix-cpaas-solution-logo-footer.svg" alt="Solution Logo" className="mb-4" width="180px" height="50" /> */}
           <p className="text-md leading-relaxed sub-heading mt-4">
-            An omnichannel communication platform that drives growth through simplified workflows, automation & strengthening relationships.
+            An omnichannel communication platform that drives growth through
+            simplified workflows, automation & strengthening relationships.
           </p>
 
-
-          <div className='lg:mx-auto md:mx-0 sm:mx-0 mt-5'>
+          <div className="lg:mx-auto md:mx-0 sm:mx-0 mt-5">
             <h4 className="font-semibold sub-heading mb-2">Stay in Touch</h4>
             <ul className="text-sm sub-heading space-y-3">
               <Link
@@ -54,11 +55,12 @@ const Footer = () => {
                 <li className="flex items-start gap-2 cursor-pointer">
                   <FaMapMarkerAlt className="mt-1" />
 
-                  <p className='leading-relaxed pera'>Proactive Professional Services Pvt. Ltd. <br />
-                    22, 3rd Floor, Biswa Nagar,
-                    New Sanganer Road,<br />
-                    Jaipur, Rajasthan, India - 302019</p>
-
+                  <p className="leading-relaxed pera">
+                    Proactive Professional Services Pvt. Ltd. <br />
+                    22, 3rd Floor, Biswa Nagar, New Sanganer Road,
+                    <br />
+                    Jaipur, Rajasthan, India - 302019
+                  </p>
                 </li>
               </Link>
 
@@ -77,7 +79,11 @@ const Footer = () => {
             <h4 className="font-semibold mt-4">Social</h4>
             <div className="flex gap-4 items-center mt-2">
               {/* Instagram */}
-              <Link href="https://www.instagram.com/celitix.official" target="_blank" rel="noopener noreferrer">
+              <Link
+                href="https://www.instagram.com/celitix.official"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Image
                   src={instagram}
                   alt="Instagram"
@@ -88,16 +94,37 @@ const Footer = () => {
               </Link>
 
               {/* Facebook */}
-              <Link href="https://www.facebook.com/celitix.official" target="_blank" rel="noopener noreferrer">
-                <Image src={facebook} alt="Facebook" className="w-6 h-6 transition-transform duration-300 ease-in-out hover:scale-125" />
+              <Link
+                href="https://www.facebook.com/celitix.official"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src={facebook}
+                  alt="Facebook"
+                  className="w-6 h-6 transition-transform duration-300 ease-in-out hover:scale-125"
+                />
               </Link>
 
               {/* LinkedIn */}
-              <Link href="https://www.linkedin.com/company/celitix/" target="_blank" rel="noopener noreferrer">
-                <Image src={LinkedIn} alt="LinkedIn" className="w-6 h-6 transition-transform duration-300 ease-in-out hover:scale-125" />
+              <Link
+                href="https://www.linkedin.com/company/celitix/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src={LinkedIn}
+                  alt="LinkedIn"
+                  className="w-6 h-6 transition-transform duration-300 ease-in-out hover:scale-125"
+                />
               </Link>
 
-              <Link href="https://x.com/celitix" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <Link
+                href="https://x.com/celitix"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter"
+              >
                 <Image
                   src={twitter}
                   alt="Twitter"
@@ -106,7 +133,12 @@ const Footer = () => {
               </Link>
 
               {/* YouTube  */}
-              <Link href="https://www.youtube.com/@celitix" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <Link
+                href="https://www.youtube.com/@celitix"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+              >
                 <Image
                   src={YouTube}
                   alt="YouTube"
@@ -115,7 +147,12 @@ const Footer = () => {
               </Link>
 
               {/* WhatsApp  */}
-              <Link href="https://wa.me/917230000091" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <Link
+                href="https://wa.me/917230000091"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+              >
                 <Image
                   src={whats}
                   alt="WhatsApp"
@@ -127,26 +164,17 @@ const Footer = () => {
         </div>
 
         {/* Company &  (2-in-1 column) */}
-        <div className="grid grid-cols-2">
-          <div className='md:mx-auto sm:mx-0'>
-            <h4 className="font-semibold group relative cursor-pointer heading mb-2 ">Company <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-18"></span></h4>
-            <ul className="text-md sub-heading space-y-3">
+        <div className="grid grid-cols-2 gap-0 md:gap-5">
+          <div className="md:mx-auto sm:mx-0">
+            <h4 className="font-semibold group relative cursor-pointer text-lg heading mb-2 ">
+              Company
+              {/* <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-18"></span> */}
+            </h4>
+            <ul className="text-md sub-heading space-y-2">
               <li className="group relative cursor-pointer">
                 <Link href="/">
                   Home
                   <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-10"></span>
-                </Link>
-              </li>
-              <li className="group relative cursor-pointer">
-                <Link href="/contact-us">
-                  Contact Us
-                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-19"></span>
-                </Link>
-              </li>
-              <li className="group relative cursor-pointer">
-                <Link href="/pricing">
-                  Pricing
-                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-11"></span>
                 </Link>
               </li>
               <li className="group relative cursor-pointer">
@@ -161,8 +189,41 @@ const Footer = () => {
                   <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-11"></span>
                 </Link>
               </li>
+              <li className="group relative cursor-pointer">
+                <Link href="/pricing">
+                  Pricing
+                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-11"></span>
+                </Link>
+              </li>
+              <li className="group relative cursor-pointer">
+                <Link href="/live-chat-services">
+                  Live Chat
+                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-18"></span>
+                </Link>
+              </li>
+              <li className="group relative cursor-pointer">
+                <Link href="/integrations">
+                  Integrations
+                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-11"></span>
+                </Link>
+              </li>
+              <li className="group relative cursor-pointer">
+                <Link href="/whatsapp-chatbot">
+                  WhatsApp Chatbots
+                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-38"></span>
+                </Link>
+              </li>
+              <li className="group relative cursor-pointer">
+                <Link href="/contact-us">
+                  Contact Us
+                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-19"></span>
+                </Link>
+              </li>
             </ul>
-            <h4 className="font-semibold group relative cursor-pointer heading mb-2 mt-5">Resources<span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-20"></span></h4>
+            <h4 className="font-semibold group relative cursor-pointer text-lg  heading mb-2 mt-5">
+              Resources
+              <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-20"></span>
+            </h4>
             <ul className="text-md sub-heading space-y-3">
               <li className="group relative cursor-pointer">
                 <Link href="https://blog.celitix.com">
@@ -172,18 +233,25 @@ const Footer = () => {
               </li>
               <li className="group relative cursor-pointer">
                 <Link href="/site-map">
-                   Sitemap
+                  Sitemap
+                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-15"></span>
+                </Link>
+              </li>
+              <li className="group relative cursor-pointer">
+                <Link href="/tutorial">
+                  Tutorial
                   <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-15"></span>
                 </Link>
               </li>
             </ul>
           </div>
 
-          <div className='md:mx-auto sm:mx-0'>
-            <h4 className="font-semibold group relative cursor-pointer heading mb-2">Industries
-              <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-20"></span>
+          <div className="md:mx-auto sm:mx-0">
+            <h4 className="font-semibold group relative cursor-pointer text-lg  heading mb-2">
+              Industries
+              {/* <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-20"></span> */}
             </h4>
-            <ul className="text-md sub-heading space-y-3">
+            <ul className="text-md sub-heading space-y-3 mb-2">
               <li className="group relative cursor-pointer">
                 <Link href="/retail-and-ecommerce">
                   ECommerce
@@ -239,19 +307,21 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-          </div>
-
-          <div>
-            {/* <Link
+            <div>
+              {/* <Link
               href="https://www.facebook.com/business/partner-directory/search?solution_type=messaging&ref=pd_home_hero_cta&id=8342781115823000&section=overview"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Image src={METAWHITE} alt="Meta Tech Partner" className="cursor-pointer" />
             </Link> */}
-          
-              <Image src={METAWHITE} alt="Meta Tech Partner" className="cursor-pointer" />
-           
+
+              <Image
+                src={METAWHITENew}
+                alt="Meta Tech Partner"
+                className="cursor-pointer"
+              />
+            </div>
           </div>
         </div>
 
@@ -259,15 +329,24 @@ const Footer = () => {
         <div className="grid grid-cols-1">
           {/* Channels */}
           <div>
-            <h4 className="font-semibold heading group relative cursor-pointer text-center mb-2">Channels<span
-              className="block h-0.5 bg-white absolute text-center left-5/12 bottom-0 w-0 transition-all duration-300 group-hover:w-18"
-            ></span></h4>
-            <div className='grid grid-cols-2 gap-2'>
+            <h4 className="font-semibold heading group relative cursor-pointer text-lg  text-center mb-2">
+              Channels
+              {/* <span
+              className="block h-0.5 bg-white absolute text-center left-5/12 bottom-0 w-0 transition-all duration-300 group-hover:w-22"
+            ></span> */}
+            </h4>
+            <div className="grid grid-cols-2 gap-2">
               <ul className="text-md sub-heading md:mx-auto  sm:mx-0 space-y-3">
                 <li className="group relative cursor-pointer">
                   <Link href="/whatsapp-business-api">
                     WhatsApp
-                    <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-17"></span>
+                    <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-19"></span>
+                  </Link>
+                </li>
+                <li className="group relative cursor-pointer">
+                  <Link href="/instagram-business">
+                    Instagram
+                    <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-19"></span>
                   </Link>
                 </li>
                 <li className="group relative cursor-pointer">
@@ -294,7 +373,6 @@ const Footer = () => {
                     <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-6"></span>
                   </Link>
                 </li>
-
               </ul>
               <ul className="text-md sub-heading md:mx-auto sm:mx-0 space-y-3">
                 <li className="group relative cursor-pointer ">
@@ -324,57 +402,55 @@ const Footer = () => {
                 </li>
                 <li className="group relative cursor-pointer ">
                   <Link href="/email-otp">
-                    Email OTP
+                    Email
                     <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-16"></span>
                   </Link>
                 </li>
-
               </ul>
             </div>
           </div>
-          <div className='mx-5 flex justify-center mt-5'>
+          <div className="mx-5 flex justify-center mt-5">
             <Image src={footerBatch} alt="Batch" />
           </div>
         </div>
-
       </div>
       <div className="text-md text-white text-center border-t border-gray-700 py-4">
-        © 2025 Celitix. All rights reserved. Powered by Proactive Professional Services Pvt Ltd <br />{' '}
+        © 2025 Celitix. All rights reserved. Powered by Proactive Professional
+        Services Pvt Ltd <br />{" "}
         <Link
           href="/terms-and-conditions"
           className="group relative cursor-pointer hover:text-gray-300 transition inline-block"
         >
           Terms & Conditions
           <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-full"></span>
-        </Link>{' '}
-        |{' '}
+        </Link>{" "}
+        |{" "}
         <Link
           href="/privacy-policy"
           className="group relative cursor-pointer hover:text-gray-300 transition inline-block"
         >
           Privacy Policy
-            <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-full"></span>
-          </Link>{' '}
-              |{' '}
+          <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-full"></span>
+        </Link>{" "}
+        |{" "}
         <Link
           href="/payment-and-cancellation"
           className="group relative cursor-pointer hover:text-gray-300 transition inline-block"
         >
           Payment & Cancellation Policy
-            <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-full"></span>
-          </Link>{' '}
-              |{' '}
+          <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-full"></span>
+        </Link>{" "}
+        |{" "}
         <Link
           href="/shipping-and-delivery-policy"
           className="group relative cursor-pointer hover:text-gray-300 transition inline-block"
         >
           Shipping & Delivery Policy
-            <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-full"></span>
-          </Link>
-        </div>
-
-            </footer>
-        );
+          <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-full"></span>
+        </Link>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;

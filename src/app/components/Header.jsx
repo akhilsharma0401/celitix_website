@@ -33,6 +33,8 @@ import Healthcareicon from "../../../public/assets/mainicons/Healthcare.png";
 import RealEstateicon from "../../../public/assets/mainicons/Real-Estate.png";
 import ServiceBasedicon from "../../../public/assets/mainicons/Service-Based.png";
 import TechStartupsicon from "../../../public/assets/mainicons/Tech-Startups.png";
+import livechatservicesicon from "../../../public/assets/mainicons/livechatservicesicon.png";
+import WhatsAppChatboticon from "../../../public/assets/mainicons/WhatsAppChatboticon.png";
 import Image from "next/image";
 import {
   ContactUsicon,
@@ -52,6 +54,8 @@ const Header = () => {
   //   const navigate = useNavigate();
 
   const iconMap = {
+    "WhatsApp Chatbot": <Image src={WhatsAppChatboticon} alt="SMS" className="w-6 h-6 mt-1" />,
+    "Live Chat": <Image src={livechatservicesicon} alt="SMS" className="w-6 h-6 mt-1" />,
     SMS: <Image src={SMSicon} alt="SMS" className="w-6 h-6 mt-1" />,
     "2 Way SMS": (
       <Image src={twoWaySMSicon} alt="SMS" className="w-6 h-6 mt-1" />
@@ -213,7 +217,7 @@ const Header = () => {
               >
                 <div className="absolute top-0 left-1/4 -translate-x-1/2 -translate-y-2 rotate-45 bg-white h-4 w-4 border-t border-l border-gray-200 z-[1]"></div>
 
-                <div className="absolute -left-32 top-full  bg-white text-black border border-gray-200 shadow-lg p-6 rounded-md w-65 ">
+                <div className="absolute -left-32 top-full flex  bg-white text-black border border-gray-200 shadow-lg p-6 rounded-md w-[520px] gap-5">
                   <div className="w-full bg-white border border-gray-200 rounded-lg shadow-md p-6 text-gray-800 hover:shadow-lg transition duration-300 ease-in-out">
                     {/* Icon or Emoji */}
                     <div className="flex items-center gap-2 mb-4">
@@ -246,29 +250,29 @@ const Header = () => {
                       />
                     </Link>
                   </div>
-                  {/* <div className="w-full grid grid-cols-1 popfh sm:grid-cols-1 md:grid-cols-1 gap-1 p-1">
-                    <Link href="/whatsapp-business-api">
-                      <ChannelItem title="WhatsApp" desc="Most Comprehensive" />
+                  <div className="w-full grid grid-cols-1 popfh sm:grid-cols-1 md:grid-cols-1 gap-1 p-1 h-0">
+                    <Link href="/whatsapp-chatbot">
+                      <ChannelItem title="WhatsApp Chatbot" desc="Most Comprehensive" />
                     </Link>
-                    <Link href="/instagram-business">
-                      <ChannelItem title="Instagram" desc="Automate & Scale" />
+                    <Link href="/live-chat-services">
+                      <ChannelItem title="Live Chat" desc="Automate & Scale" />
                     </Link>
-                    <Link href="/rcs-business-messaging">
+                    {/* <Link href="/rcs-business-messaging">
                       <ChannelItem title="RCS" desc="Least Competitive" />
-                    </Link>
-                  </div> */}
+                    </Link> */}
+                  </div>
                 </div>
               </div>
             </div>
 
             <div className="relative group cursor-pointer">
-              <Link href="/cpaas-solutions">
-                <div className="popfh flex items-center text-lg gap-2 p-2 rounded-md transition-all duration-300 cursor-pointer">
-                  Channels
-                  <MdKeyboardArrowDown className="block group-hover:hidden  transition-transform duration-300" />
-                  <MdKeyboardArrowUp className="hidden group-hover:block transition-transform duration-300" />
-                </div>
-              </Link>
+              {/* <Link href="/cpaas-solutions"> */}
+              <div className="popfh flex items-center text-lg gap-2 p-2 rounded-md transition-all duration-300 cursor-pointer">
+                Channels
+                <MdKeyboardArrowDown className="block group-hover:hidden  transition-transform duration-300" />
+                <MdKeyboardArrowUp className="hidden group-hover:block transition-transform duration-300" />
+              </div>
+              {/* </Link> */}
               <div
                 className="absolute left-1/2 top-9 mt-2 transform -translate-x-1/2 opacity-0 scale-95 
               pointer-events-none group-hover:pointer-events-auto group-hover:opacity-100 

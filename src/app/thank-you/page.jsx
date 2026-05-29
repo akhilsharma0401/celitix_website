@@ -50,7 +50,7 @@ const ThankYouPage = () => {
               n.version = "2.0";
               n.queue = [];
               t = b.createElement(e);
-              t.async = true;
+              t.async = !0;
               t.src = v;
               s = b.getElementsByTagName(e)[0];
               s.parentNode.insertBefore(t, s);
@@ -69,6 +69,7 @@ const ThankYouPage = () => {
             <img
               height="1"
               width="1"
+              className="hidden"
               src="https://www.facebook.com/tr?id=943473661882714&ev=PageView&noscript=1"
             />
           </noscript>

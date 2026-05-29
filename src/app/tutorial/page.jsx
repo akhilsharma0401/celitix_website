@@ -147,7 +147,7 @@ import Image from "next/image";
 import FormPopup from "../components/FormPopup";
 
 /* Tabs */
-const tabs = ["All", "WhatsApp API", "SMS Gateway", "RCS Messaging"];
+const tabs = ["All", "WhatsApp API", "SMS Gateway", "RCS Messaging", "Live-Chat"];
 
 /* Cards */
 const cards = [
@@ -1150,6 +1150,87 @@ const cards = [
       desc: "High-delivery promotional and transactional SMS platform.",
       color: "from-blue-500 to-cyan-500",
       slug: "cta-whitelisting-in-dlt",
+  },
+
+   {
+      icon: <FiFileText />,
+      category: "Live-Chat",
+      title: "Elevating Customer Engagement with Live Chat in WhatsApp Business API",
+      desc: "High-delivery promotional and transactional SMS platform.",
+      color: "from-blue-500 to-cyan-500",
+      slug: "elevating-customer-engagement-with-live-chat-in-whatsapp-business-api",
+  },
+   {
+      icon: <FiFileText />,
+      category: "Live-Chat",
+      title: "Seamless Live Chat Setup Using WhatsApp Business API",
+      desc: "High-delivery promotional and transactional SMS platform.",
+      color: "from-blue-500 to-cyan-500",
+      slug: "seamless-live-chat-setup-using-whatsapp-business-api",
+  },
+   {
+      icon: <FiFileText />,
+      category: "Live-Chat",
+      title: "Exploring the Live Chat Dashboard in WhatsApp Business API",
+      desc: "High-delivery promotional and transactional SMS platform.",
+      color: "from-blue-500 to-cyan-500",
+      slug: "exploring-the-live-chat-dashboard-in-whatsapp-business-api",
+  },
+   {
+      icon: <FiFileText />,
+      category: "Live-Chat",
+      title: "Optimizing Chat Distribution in WhatsApp Business API for Premium Customer Support",
+      desc: "High-delivery promotional and transactional SMS platform.",
+      color: "from-blue-500 to-cyan-500",
+      slug: "optimizing-chat-distribution-in-whatsapp-business-api-for-premium-customer-support",
+  },
+   {
+      icon: <FiFileText />,
+      category: "Live-Chat",
+      title: "Enhancing Live Chat Efficiency with Quick Replies in WhatsApp Business API",
+      desc: "High-delivery promotional and transactional SMS platform.",
+      color: "from-blue-500 to-cyan-500",
+      slug: "enhancing-live-chat-efficiency-with-quick-replies-in-whatsapp-business-api",
+  },
+   {
+      icon: <FiFileText />,
+      category: "Live-Chat",
+      title: "Enhancing Customer Communication with Media in Live Chat",
+      desc: "High-delivery promotional and transactional SMS platform.",
+      color: "from-blue-500 to-cyan-500",
+      slug: "enhancing-customer-communication-with-media-in-live-chat",
+  },
+   {
+      icon: <FiFileText />,
+      category: "Live-Chat",
+      title: "Live Chat vs Chatbot: Choosing the Right Approach for Customer Conversations",
+      desc: "High-delivery promotional and transactional SMS platform.",
+      color: "from-blue-500 to-cyan-500",
+      slug: "live-chat-vs-chatbot-choosing-the-right-approach-for-customer-conversations",
+  },
+   {
+      icon: <FiFileText />,
+      category: "Live-Chat",
+      title: "How to Drive Sales through Live Chat Effectively",
+      desc: "High-delivery promotional and transactional SMS platform.",
+      color: "from-blue-500 to-cyan-500",
+      slug: "how-to-drive-sales-through-live-chat-effectively",
+  },
+   {
+      icon: <FiFileText />,
+      category: "Live-Chat",
+      title: "Efficiently Managing High-Volume Customer Conversations",
+      desc: "High-delivery promotional and transactional SMS platform.",
+      color: "from-blue-500 to-cyan-500",
+      slug: "efficiently-managing-high-volume-customer-conversations",
+  },
+   {
+      icon: <FiFileText />,
+      category: "Live-Chat",
+      title: "Elevating Message Quality on WhatsApp: Best Practices for Compliance and Customer Trust",
+      desc: "High-delivery promotional and transactional SMS platform.",
+      color: "from-blue-500 to-cyan-500",
+      slug: "elevating-message-quality-on-whatsapp-best-practices-for-compliance-and-customer-trust",
   },
 ];
 

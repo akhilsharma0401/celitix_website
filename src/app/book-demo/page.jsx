@@ -237,29 +237,69 @@ export const BookDemoPage = () => {
   //     }
   // };
 
+  // useEffect(() => {
+  //   if (!isOtpSent) return;
+  //   if (!("OTPCredential" in window)) return;
+
+  //   const controller = new AbortController();
+
+  //   navigator.credentials
+  //     .get({
+  //       otp: { transport: ["sms"] },
+  //       signal: controller.signal,
+  //     })
+  //     .then((otp) => {
+  //       if (otp?.code) {
+  //         const otpCode = otp.code.replace(/\D/g, "").slice(0, 6);
+
+  //         const otpArray = otpCode.split("");
+  //         setOtp(otpArray);
+  //         otpRefs.current[otpArray.length - 1]?.focus();
+
+  //         handleverifyOtp(otpCode);
+  //       }
+  //     })
+  //     .catch(() => {});
+
+  //   return () => controller.abort();
+  // }, [isOtpSent]);
+
   useEffect(() => {
     if (!isOtpSent) return;
+
     if (!("OTPCredential" in window)) return;
 
     const controller = new AbortController();
 
-    navigator.credentials
-      .get({
-        otp: { transport: ["sms"] },
-        signal: controller.signal,
-      })
-      .then((otp) => {
-        if (otp?.code) {
-          const otpCode = otp.code.replace(/\D/g, "").slice(0, 6);
+    const getOtp = async () => {
+      try {
+        const otpCredential = await navigator.credentials.get({
+          otp: { transport: ["sms"] },
+          signal: controller.signal,
+        });
+
+        if (otpCredential?.code) {
+          const otpCode = otpCredential.code.replace(/\D/g, "").slice(0, 6);
 
           const otpArray = otpCode.split("");
+
           setOtp(otpArray);
+
+          // Focus last input
           otpRefs.current[otpArray.length - 1]?.focus();
 
-          handleverifyOtp(otpCode);
+          // Auto verify
+          if (!isVerifying) {
+            setIsVerifying(true);
+            handleverifyOtp(otpCode);
+          }
         }
-      })
-      .catch(() => {});
+      } catch (err) {
+        console.log("OTP Auto-read failed:", err);
+      }
+    };
+
+    getOtp();
 
     return () => controller.abort();
   }, [isOtpSent]);
@@ -290,6 +330,54 @@ export const BookDemoPage = () => {
     if (updatedOtp.every((digit) => digit !== "") && !isVerifying) {
       setIsVerifying(true);
       handleverifyOtp(updatedOtp.join(""));
+    }
+  };
+
+  const handlePaste = (e) => {
+    e.preventDefault();
+
+    const pastedData = e.clipboardData.getData("text").trim().slice(0, 6);
+
+    if (!/^\d+$/.test(pastedData)) return;
+
+    const otpArray = pastedData.split("");
+
+    const updatedOtp = [...otp];
+
+    otpArray.forEach((digit, index) => {
+      updatedOtp[index] = digit;
+    });
+
+    setOtp(updatedOtp);
+
+    // Focus last filled input
+    otpRefs.current[otpArray.length - 1]?.focus();
+
+    // Auto verify
+    if (otpArray.length === 6) {
+      setIsVerifying(true);
+      handleverifyOtp(otpArray.join(""));
+    }
+  };
+
+  const handleKeyDown = (index, e) => {
+    if (e.key === "Backspace") {
+      e.preventDefault();
+
+      const updatedOtp = [...otp];
+
+      if (updatedOtp[index]) {
+        updatedOtp[index] = "";
+        setOtp(updatedOtp);
+        return;
+      }
+
+      if (index > 0) {
+        updatedOtp[index - 1] = "";
+        setOtp(updatedOtp);
+
+        otpRefs.current[index - 1]?.focus();
+      }
     }
   };
 
@@ -479,8 +567,8 @@ export const BookDemoPage = () => {
   ];
 
   async function handleEditPhoneNo() {
-    setForm((prev) => ({ ...prev, phone: "" }));
-    setResendTimer(60);
+    // setForm((prev) => ({ ...prev, phone: "" }));
+    setResendTimer(0);
     setIsOtpSent(false);
     setIsOtpVerified(false);
   }
@@ -738,6 +826,9 @@ export const BookDemoPage = () => {
                         inputMode="numeric"
                         value={digit}
                         onChange={(e) => handleOtpChange(index, e.target.value)}
+                        onPaste={handlePaste}
+                        autoComplete="one-time-code"
+                        onKeyDown={(e) => handleKeyDown(index, e)}
                         className="w-10 h-10 text-center border border-gray-300 rounded"
                       />
                     ))}
@@ -985,34 +1076,7 @@ export const BookDemoPage = () => {
                   Phone Number <span className="text-red-500">*</span>
                 </label>
                 <div className="flex gap-2">
-                  {/* <input
-                                            type="text"
-                                            className="w-full border border-gray-300 rounded-md p-2.5 focus:ring-2 focus:ring-blue-500 outline-none"
-                                            name="phone"
-                                            placeholder="Phone No."
-                                            disabled={isOtpVerified}
-                                            value={form.phone}
-                                            onChange={(e) =>
-                                                setForm({
-                                                    ...form,
-                                                    phone: e.target.value.replace(/[^\d]/g, "").slice(0, 13),
-                                                    isOtpVerified: false,
-                                                })
-                                            }
-                                        />
-
-                                         {!isClicked && (
-                                            <UniversalButton
-                                                label={buttonLabel}
-                                                type="button"
-                                                variant="brutal"
-                                                disable={
-                                                    !validatePhoneNumber(form.phone) || resendTimer > 0
-                                                }
-                                                onClick={handlesendOtp}
-                                                className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 rounded hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] disabled:bg-gray-300 disabled:text-gray-700 disabled:cursor-not-allowed"
-                                            />
-                                        )} */}
+                
 
                   <input
                     type="text"
@@ -1067,36 +1131,15 @@ export const BookDemoPage = () => {
                     maxLength={1}
                     inputMode="numeric"
                     value={digit}
+                    autoComplete="one-time-code"
                     onChange={(e) => handleOtpChange(index, e.target.value)}
+                    onPaste={handlePaste}
+                    onKeyDown={(e) => handleKeyDown(index, e)}
                     className="w-10 h-10 text-center border border-gray-300 rounded"
                   />
                 ))}
               </div>
             )}
-
-            {/* {isOtpSent && (
-                                <div className="flex items-center gap-2 flex-wrap mt-2">
-                                    {otp.map((digit, index) => (
-                                        <input
-                                            key={index}
-                                            ref={(el) => (otpRefs.current[index] = el)}
-                                            type="text"
-                                            maxLength={1}
-                                            inputMode="numeric"
-                                            value={digit}
-                                            onChange={(e) => handleOtpChange(index, e.target.value)}
-                                            className="w-10 h-10 text-center border border-gray-300 rounded"
-                                        />
-                                    ))}
-                                    <UniversalButton
-                                        label="Submit"
-                                        variant="brutal"
-                                        type="button"
-                                        onClick={handleverifyOtp}
-                                        className="bg-[#9B44B6] border-[#9B44B6] text-white hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] px-3 py-1 rounded-md mx-1"
-                                    />
-                                </div>
-                            )} */}
 
             <div>
               <label className="block font-medium text-gray-700 mb-1">
