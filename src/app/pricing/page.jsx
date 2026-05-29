@@ -1939,7 +1939,7 @@ const Pricing = () => {
             (t.to_minutes === null || value <= t.to_minutes),
         );
 
-        const totalPrice = parseFloat(tier?.rate);
+        const totalPrice = parseFloat(tier?.rate)* value;
         total = totalPrice + totalPrice * 0.05;
       }
     } else {
@@ -2013,7 +2013,6 @@ const Pricing = () => {
 
   useEffect(() => {
     if (channel === "WhatsApp" || channel === "SMS") {
-      
       fetchPricing(channel, market, currency);
     }
   }, [channel, market, currency]);
@@ -2034,8 +2033,6 @@ const Pricing = () => {
 
   return (
     <>
-     
-
       {/* 1st */}
       <section className="bg-[#f7ebfc] pt-25 md:pt-35 px-4 sm:px-6 lg:px-20">
         <div className="max-w-7xl mx-auto items-center pb-5 md:pb-10">
@@ -2068,7 +2065,7 @@ const Pricing = () => {
       </section>
       {/* 1st */}
       {/* 2rd */}
-      <section className="bg-[#f7ebfc] py-0 md:py-5 lg:py-20">
+      <section className="bg-[#f7ebfc] py-0 md:py-5 lg:py-10">
         <div className="flex flex-wrap lg:flex-nowrap w-full gap-6 md:px-16">
           <div className="flex flex-col bg-white rounded-xl shadow p-6 w-full lg:w-1/3">
             <h3 className="text-xl heading font-semibold mb-1">

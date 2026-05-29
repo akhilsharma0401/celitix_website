@@ -227,7 +227,7 @@ const Page = () => {
     <div>
       {/* 1st */}
       <section className="bg-[#f7ebfc] pt-25 md:pt-35 px-4 sm:px-6 lg:px-20">
-        <div className="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10 pb-5 lg:pb-20">
+        <div className="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10 pb-5 lg:pb-10">
           <div className="space-y-6 box-reveal-left">
             <div className="box-reveal-left">
               <span className="inline-block bg-purple-700 text-white text-md sub-heading font-bold px-4 py-1 rounded-full uppercase tracking-wide">
@@ -464,7 +464,7 @@ const Page = () => {
       {/* 3st */}
       <div className="bg-[#F7EBFC] py-2 md:py-16 px-6 sm:px-10">
         {/* Heading */}
-        <div className="text-center px-1 md:px-4 pb-5 md:pb-8 lg:pb-8">
+        <div className="text-center px-1 md:px-4 pb-5">
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-black text-center heading mb-2">
             Why Celitix's Instagram Live Chat Makes It Better
           </h2>
