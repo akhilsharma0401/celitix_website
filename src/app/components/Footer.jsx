@@ -174,25 +174,25 @@ const Footer = () => {
               <li className="group relative cursor-pointer">
                 <Link href="/">
                   Home
-                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-10"></span>
+                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-11"></span>
                 </Link>
               </li>
               <li className="group relative cursor-pointer">
                 <Link href="/about-us">
                   About
-                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-10"></span>
+                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-11"></span>
                 </Link>
               </li>
               <li className="group relative cursor-pointer">
                 <Link href="/careers">
                   Career
-                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-11"></span>
+                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-12"></span>
                 </Link>
               </li>
               <li className="group relative cursor-pointer">
                 <Link href="/pricing">
                   Pricing
-                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-11"></span>
+                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-13"></span>
                 </Link>
               </li>
               <li className="group relative cursor-pointer">
@@ -204,7 +204,7 @@ const Footer = () => {
               <li className="group relative cursor-pointer">
                 <Link href="/integrations">
                   Integrations
-                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-11"></span>
+                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-23"></span>
                 </Link>
               </li>
               <li className="group relative cursor-pointer">
@@ -216,13 +216,13 @@ const Footer = () => {
               <li className="group relative cursor-pointer">
                 <Link href="/contact-us">
                   Contact Us
-                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-19"></span>
+                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-21"></span>
                 </Link>
               </li>
             </ul>
             <h4 className="font-semibold group relative cursor-pointer text-lg  heading mb-2 mt-5">
               Resources
-              <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-20"></span>
+              <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-22"></span>
             </h4>
             <ul className="text-md sub-heading space-y-3">
               <li className="group relative cursor-pointer">
@@ -255,13 +255,13 @@ const Footer = () => {
               <li className="group relative cursor-pointer">
                 <Link href="/retail-and-ecommerce">
                   ECommerce
-                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-20"></span>
+                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-23"></span>
                 </Link>
               </li>
               <li className="group relative cursor-pointer">
                 <Link href="/healthcare">
                   Healthcare
-                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-18"></span>
+                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-20"></span>
                 </Link>
               </li>
               <li className="group relative cursor-pointer">
@@ -273,37 +273,37 @@ const Footer = () => {
               <li className="group relative cursor-pointer">
                 <Link href="/education-and-edtech">
                   Education
-                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-17"></span>
+                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-19"></span>
                 </Link>
               </li>
               <li className="group relative cursor-pointer">
                 <Link href="/travel-and-tourism">
                   Tourism
-                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-14"></span>
+                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-15"></span>
                 </Link>
               </li>
               <li className="group relative cursor-pointer">
                 <Link href="/construction-and-real-estate">
                   Real Estate
-                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-19"></span>
+                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-21"></span>
                 </Link>
               </li>
               <li className="group relative cursor-pointer">
                 <Link href="/food-and-beverages">
                   Food Production
-                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-27"></span>
+                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-31"></span>
                 </Link>
               </li>
               <li className="group relative cursor-pointer">
                 <Link href="/professional-services">
                   Service-Based
-                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-24"></span>
+                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-27"></span>
                 </Link>
               </li>
               <li className="group relative cursor-pointer">
                 <Link href="/tech-startups">
                   Tech Startups
-                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-22"></span>
+                  <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-26"></span>
                 </Link>
               </li>
             </ul>
@@ -352,7 +352,7 @@ const Footer = () => {
                 <li className="group relative cursor-pointer">
                   <Link href="/rcs-business-messaging">
                     RCS
-                    <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-7"></span>
+                    <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-8"></span>
                   </Link>
                 </li>
                 <li className="group relative cursor-pointer">
@@ -364,7 +364,7 @@ const Footer = () => {
                 <li className="group relative cursor-pointer">
                   <Link href="/two-way-sms">
                     2 Way SMS
-                    <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-18"></span>
+                    <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-21"></span>
                   </Link>
                 </li>
                 <li className="group relative cursor-pointer ">
@@ -384,26 +384,26 @@ const Footer = () => {
                 <li className="group relative cursor-pointer ">
                   <Link href="/missed-call-services">
                     Missed Call
-                    <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-19"></span>
+                    <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-21"></span>
                   </Link>
                 </li>
                 <li className="group relative cursor-pointer ">
                   <Link href="/click-to-call">
                     Click2Call
-                    <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-16"></span>
+                    <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-19"></span>
                   </Link>
                 </li>
 
                 <li className="group relative cursor-pointer ">
                   <Link href="/user-verification">
                     Authentication
-                    <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-24"></span>
+                    <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-28"></span>
                   </Link>
                 </li>
                 <li className="group relative cursor-pointer ">
                   <Link href="/email-otp">
                     Email
-                    <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-16"></span>
+                    <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-10"></span>
                   </Link>
                 </li>
               </ul>

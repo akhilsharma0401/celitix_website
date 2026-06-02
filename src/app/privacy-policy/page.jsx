@@ -1,15 +1,14 @@
-"use client"
-import React, { useEffect } from 'react'
+"use client";
+import React, { useEffect } from "react";
 // import { Helmet } from 'react-helmet-async'
 // import { initScrollReveal } from '../utils/ScrollReveal'
 
 const PrivacyPolicy = () => {
-//   useEffect(() => {
-//     initScrollReveal();
-//   }, []);
+  //   useEffect(() => {
+  //     initScrollReveal();
+  //   }, []);
   return (
-    <div className='bg-[#f7ebfc] pb-5'>
-
+    <div className="bg-[#f7ebfc] pb-5">
       {/* <Helmet>
         <title>Privacy Policy | Celitix</title>
         <meta name="description" content="Your privacy matters. Read how Celitix collects, uses, and protects your personal information while delivering seamless communication experiences." />
@@ -20,7 +19,10 @@ const PrivacyPolicy = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-1 items-center justify-center pb-2">
           <div className="space-y-6 box-reveal-bottom">
             <h1 className="text-4xl md:text-5xl lg:text-6xl heading font-bold text-center text-gray-900 leading-tight">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]"> Privacy Policy </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]">
+                {" "}
+                Privacy Policy{" "}
+              </span>
             </h1>
           </div>
 
@@ -39,38 +41,331 @@ const PrivacyPolicy = () => {
       </section>
       {/* 1st */}
       {/* 2st */}
-      <div className='bg-linear-to-r from-[#2b3fb067] to-[#36bae270] rounded-xl p-2 md:m-15'>
-        <div className='p-10 border bg-white border-gray-300 rounded-lg shadow-sm m-5'>
-          <h2 className='text-xl md:text-3xl lg:text-3xl font-semibold text-gray-900 heading'>Privacy Statement</h2>
-          <p className='text-gray-700 text-base md:text-lg pera lg:text-lg mt-2'>This Privacy Statement applies to the celitix.com Web Site, Content, Products, and Services and governs data collection and usage. By using celitix.com Website, Content, Products, and/or Services, you consent to the data practices described in this Privacy Statement.</p>
-          <h2 className='text-xl md:text-3xl lg:text-3xl font-semibold text-gray-900 heading mt-3'>1.1 Privacy Policy Overview</h2>
-          <p className='text-gray-700 text-base md:text-lg pera lg:text-lg mt-2'>We contact our customers in relation to the services they have requested and/or informational mail. We do not sell contact information of our users. We place third party advertisement banners on some of our pages. These ads are served by such providers as google adsense. Placing these ads helps us keep providing certain content and services free of charge. If you click on these ads, you may be directed to a third party web site, and you may be prompted by a third party to enter personal or other information. EIIM has no control over visitor’s interaction with third party ads and/or web sites, and we have no information about their information policies. For any third party services linked to or advertised on our web site, you must refer to their own policies and terms of use. We have no responsibility whatsoever for any third party services that may be linked to, or advertised on our web site, and their information practices. More information about our Privacy Policy is in the following sections.</p>
-          <h2 className='text-xl md:text-3xl lg:text-3xl font-semibold text-gray-900 heading mt-3'>1.2 Collection of Information</h2>
-          <p className='text-gray-700 text-base md:text-lg pera lg:text-lg mt-2'>When you purchase services from celitix.com, or contact celitix.com, celitix.com obtains personally identifiable information such as your e-mail address, name, contact address and/or telephone number. Your name and email address may also have to be obtained in order to send you informational email (Collectively the “Personal Information”).</p>
-          <p className='text-gray-700 text-base md:text-lg pera lg:text-lg mt-2'>Anonymous information about your network, hardware, software and Web Site usage activity that is automatically collected by celitix.com can include, without limitation, your IP address, your device type, your browser information, domain names, access times, referring web sites addresses, Website pages you visit. Your responses to celitix.com questionnaires, surveys, and your personality assessment scores may be anonymously collected by celitix.com. celitix.com may also collect anonymous demographic information, which is not unique to you, such as your country, city, zip code, age, gender, occupation, and preferences. (Collectively the “Anonymous Information”)</p>
-          <p className='text-gray-700 text-base md:text-lg pera lg:text-lg mt-2'>Your name, email address, responses to may be saved in the celitix.com back end system.</p>
-          <p className='text-gray-700 text-base md:text-lg pera lg:text-lg mt-2'>celitix.com may refer, advertise, and/or offer for sale, via its Web Site, Content or Services, certain Third Party Services, including, without limitation, Linked Sites, and Ads presented by third parties. An example of Ads, without limitation, is an advertisement banner of an educational institution, or Ads served by Google Ad Sense. If you click Ads, you may be directed to a Third Party web site, and prompted by a Third Party to enter personal and other information. celitix.com has no control over the Third Party Services and over visitor’s interaction with them. Terms of use, privacy and information policies of the Third Party Services are not covered by our policies.</p>
-          <h2 className='text-xl md:text-3xl lg:text-3xl font-semibold text-gray-900 heading mt-3'>1.3 Use of Personal Information</h2>
-          <p className='text-gray-700 text-base md:text-lg pera lg:text-lg mt-2'>The Personal Information is collected by celitix.com to deliver services that you have purchased and/or requested from celitix.com, provide guidance, and provide customer support to you. celitix.com may use your contact information to inform you of other products or services available from celitix.com and its affiliates. celitix.com may also contact you via surveys to conduct research about your opinion of current services or of potential new services that may be offered.</p>
-          <p className='text-gray-700 text-base md:text-lg pera lg:text-lg mt-2'>celitix.com may share your contact information with trusted partners to send you email regarding the service you have requested, or provide customer support, or arrange for deliveries. All such third parties are prohibited from using your personal information except to provide these services to celitix.com and its clients.</p>
-          <p className='text-gray-700 text-base md:text-lg pera lg:text-lg mt-2'>celitix.com will disclose your personal information, without notice, only if required to do so by law or in the good faith belief that such action is necessary to: (a) conform to the edicts of the law or comply with legal process served on celitix.com or the Web Site; (b) protect and defend the rights or property of celitix.com and, (c) act under exigent circumstances to protect the personal safety of users of celitix.com.</p>
+      <div className="bg-linear-to-r from-[#2b3fb067] to-[#36bae270] rounded-xl p-2 md:m-15">
+        <div className="p-10 border bg-white border-gray-300 rounded-lg shadow-sm m-5">
+          <h2 className="text-xl md:text-3xl lg:text-3xl font-semibold text-gray-900 heading">
+            Privacy Statement
+          </h2>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-2">
+            Welcome to Celitix, operated by Proactive Professional Services Pvt
+            Ltd (“Celitix”, “we”, “our”, or “us”).
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-2">
+            This Privacy Policy explains how we collect, use, process, store,
+            disclose, and protect personal and business information when you
+            access or use our website, platform, dashboards, APIs, communication
+            services, applications, or related services.
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-2">
+            By using Celitix services, you agree to the practices described in
+            this Privacy Policy.
+          </p>
 
-          <h2 className='text-xl md:text-3xl lg:text-3xl font-semibold text-gray-900 heading mt-3'>1.4 Use of Anonymous Information</h2>
-          <p className='text-gray-700 text-base md:text-lg pera lg:text-lg mt-2'>The Anonymous Information is used by celitix.com for the operation, maintaining the quality, enhancements and analysis regarding use, of the celitix.com Website, Content, Products, and Services, and for research. The Anonymous Information may be collected by celitix.com or its service providers (e.g., Google Analytics or Google Ad Sense). The content and Ads that appear on the Web Site’s pages may be customized based on the information about the pages you visit, your geographic location based on your IP address, and/or results of your personality assessment. You grant celitix.com an irrevocable, perpetual, royalty-free right and license to use the Anonymous Information for, without limitation, quality assurance, personalizing content, research, marketing, new content, products and services.</p>
-          <h2 className='text-xl md:text-3xl lg:text-3xl font-semibold text-gray-900 heading mt-3'>1.5 Use of Cookies</h2>
-          <p className='text-gray-700 text-base md:text-lg pera lg:text-lg mt-2'>When you visit the Web Site, we or one of our third party service providers (e.g., Google Analytics) place a text file called a “cookie” in the browser directory of your computer’s hard drive. The Web Site uses cookies to help you personalize your online experience and provide certain features. Cookies cannot be used to run programs or deliver viruses to your computer. Cookies are uniquely assigned to your browser, and can only be read by a web server in the domain that issued the cookie. One of the primary purposes of cookies is to provide a convenience feature. The purpose of a cookie is to tell the web server that you have returned to a specific page, or have been authenticated, or to personalize content based on result of a personality test you take on the Web Site, or recall your specific information on subsequent visits. You have the ability to accept or decline cookies via your browser. Most web browsers automatically accept cookies, but you can usually modify your browser setting to decline cookies if you prefer, or delete cookies after using the Web Site. Some browsers may provide “privacy” or “incognito” mode in which cookies are automatically deleted after closing the browser. If you choose to decline cookies, you will not be able to use certain features and fully experience the interactive features of the Web Site.</p>
-          <h2 className='text-xl md:text-3xl lg:text-3xl font-semibold text-gray-900 heading mt-3'>1.6 Security of Personal Information</h2>
-          <p className='text-gray-700 text-base md:text-lg pera lg:text-lg mt-2'>celitix.com takes steps to secure personal information from unauthorized access, use or disclosure. celitix.com keeps the personally identifiable information you provide on computers in a controlled environment, protected from unauthorized access, use or disclosure. While we strive to use commercially acceptable means to protect your personal information, we cannot guarantee its absolute security.</p>
-          <h2 className='text-xl md:text-3xl lg:text-3xl font-semibold text-gray-900 heading mt-3'>1.7 Payment</h2>
-          <p className='text-gray-700 text-base md:text-lg pera lg:text-lg mt-2'>We use Razorpay for processing payments. We/Razorpay do not store your card data on their servers. The data is encrypted through the Payment Card Industry Data Security Standard (PCI-DSS) when processing payment. Your purchase transaction data is only used as long as is necessary to complete your purchase transaction. After that is complete, your purchase transaction information is not saved.</p>
-          <p className='text-gray-700 text-base md:text-lg pera lg:text-lg mt-2'>Our payment gateway adheres to the standards set by PCI-DSS as managed by the PCI Security Standards Council, which is a joint effort of brands like Visa, MasterCard, American Express and Discover.</p>
-          <p className='text-gray-700 text-base md:text-lg pera lg:text-lg mt-2'>PCI-DSS requirements help ensure the secure handling of credit card information. <br />
-            For more insight, you may also want to read terms and conditions of razorpay on <a href="https://razorpay.com" target="_blank" aria-label="Razorpay" className='text-blue-500' title="razorpay.com">https://razorpay.com</a>
-          </p>  </div>
+          <h3 className="text-xl md:text-3xl lg:text-3xl font-semibold text-gray-900 heading mt-3">
+            1. Information We Collect
+          </h3>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-2">
+            We may collect information including:
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg">
+            - Name <br />
+            - Company name <br />
+            - Email address
+            <br />
+            - Phone number
+            <br />
+            - Billing information
+            <br />
+            - Business registration information <br />- Login credentials
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-2">
+            Platform & Technical Information
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-2">
+            We may automatically collect:
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg">
+            - IP address <br />
+            - Browser type <br />
+            - Device information
+            <br />
+            - Operating system
+            <br />
+            - API usage data
+            <br />
+            - Log files <br />
+            - Session activity
+            <br />- Usage analytics
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-2">
+            Communication & Messaging Data
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-2">
+            When using Celitix communication services, we may process
+            operational messaging data including:
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg">
+            - Sender information <br />
+            - Recipient details
+            <br />
+            - Delivery reports
+            <br />
+            - Campaign metadata
+            <br />
+            - Templates and communication content
+            <br />
+            - API requests and responses
+            <br />
+            - Usage statistics
+            <br />- Message routing and performance information
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-1">
+            Such information is processed solely for service delivery,
+            analytics, monitoring, troubleshooting, security, compliance, and
+            platform improvement purposes.
+          </p>
+
+          <h3 className="text-xl md:text-3xl lg:text-3xl font-semibold text-gray-900 heading mt-3">
+            2. How We Use Information
+          </h3>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-2">
+            We may use collected information to:
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg">
+            - Provide and operate Celitix services <br />
+            - Process transactions and billing <br />
+            - Email addressEnable messaging and communication delivery
+            <br />
+            - Authenticate accounts and users
+            <br />
+            - Provide customer support and onboarding
+            <br />
+            - Monitor service performance and security
+            <br />
+            - Detect fraud, abuse, or unauthorized activities
+            <br />
+            - Improve platform functionality and user experience
+            <br />- Comply with legal, regulatory, telecom, and platform
+            obligations
+          </p>
+
+          <h3 className="text-xl md:text-3xl lg:text-3xl font-semibold text-gray-900 heading mt-3">
+            3. Communication Services & User Responsibility
+          </h3>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-1">
+            Celitix provides communication infrastructure and engagement
+            services including WhatsApp Business API, SMS, OTP, RCS, Email,
+            Voice, IVR, Chatbots, Live Chat, APIs, and automation tools.
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-2">
+            Users are solely responsible for:
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg">
+            - Obtaining required customer consent and opt-ins;
+            <br />
+            - Maintaining unsubscribe and opt-out mechanisms where applicable;{" "}
+            <br />
+            - Ensuring lawful communication practices;
+            <br />- Compliance with WhatsApp, Meta, Google, telecom, DLT, TRAI,
+            carrier, and applicable regulations.
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-1">
+            Celitix does not independently verify consent obtained by Users.
+          </p>
+
+          <h3 className="text-xl md:text-3xl lg:text-3xl font-semibold text-gray-900 heading mt-3">
+            4. Third-Party Platforms & Service Providers
+          </h3>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-2">
+            Certain Celitix services rely on third-party providers, including:
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg">
+            - Meta / WhatsApp
+            <br />
+            - Google RCS Business Messaging <br />
+            - Telecom operators & carriers
+            <br />
+            - SMS aggregators
+            <br />
+            - Email delivery providers
+            <br />
+            - Cloud hosting and infrastructure providers
+            <br />- Analytics and security providers
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-1">
+            Information processed through these services may also be subject to
+            the privacy policies, operational practices, and compliance
+            requirements of those third parties.
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-1">
+            Celitix is not responsible for the privacy practices of external
+            platforms.
+          </p>
+
+          <h3 className="text-xl md:text-3xl lg:text-3xl font-semibold text-gray-900 heading mt-3">
+            5. Cookies & Analytics
+          </h3>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-2">
+            Our website and services may use cookies, analytics tools, tracking
+            technologies, and similar mechanisms to:
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg">
+            - Improve website functionality
+            <br />
+            - Analyze usage patterns <br />
+            - Enhance platform performance
+            <br />
+            - Maintain security and authentication
+            <br />- Personalize user experience
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-1">
+            You may manage cookie preferences through your browser settings.
+          </p>
+
+          <h3 className="text-xl md:text-3xl lg:text-3xl font-semibold text-gray-900 heading mt-3">
+            6. Data Sharing & Disclosure
+          </h3>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-1">
+            We do not sell personal information.
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-2">
+            We may share information where reasonably necessary with:
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg">
+            - Technology providers
+            <br />
+            - Telecom operators and communication partners
+            <br />
+            - Cloud infrastructure vendors
+            <br />
+            - Payment processors
+            <br />
+            - Regulatory authorities where legally required
+            <br />- Service providers supporting our operations
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-1">
+            Information may also be disclosed to comply with legal obligations,
+            security requirements, fraud prevention, or enforcement actions.
+          </p>
+
+          <h3 className="text-xl md:text-3xl lg:text-3xl font-semibold text-gray-900 heading mt-3">
+            7. Data Retention
+          </h3>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-2">
+            We retain information for as long as reasonably necessary for:
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg">
+            - Service delivery
+            <br />
+            - Security monitoring
+            <br />
+            - Billing and accounting
+            <br />
+            - Platform operations
+            <br />
+            - Legal and regulatory compliance
+            <br />- Audit and dispute resolution purposes
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-1">
+            Retention periods may vary depending on service type, legal
+            requirements, or operational needs.
+          </p>
+
+          <h3 className="text-xl md:text-3xl lg:text-3xl font-semibold text-gray-900 heading mt-3">
+            8. Data Security
+          </h3>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-1">
+            Celitix implements commercially reasonable technical,
+            organizational, and security measures designed to protect
+            information against unauthorized access, misuse, disclosure,
+            alteration, or destruction.
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-2">
+            These measures may include:
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg">
+            - Access controls
+            <br />
+            - Authentication systems
+            <br />
+            - Infrastructure monitoring
+            <br />
+            - Encryption mechanisms
+            <br />- Security reviews and safeguards
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-1">
+            However, no digital transmission or storage system can guarantee
+            absolute security.
+          </p>
+
+          <h3 className="text-xl md:text-3xl lg:text-3xl font-semibold text-gray-900 heading mt-3">
+            9. International Processing
+          </h3>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-1">
+            Depending on the services used, information may be processed,
+            transferred, stored, or accessed by third-party providers operating
+            across different jurisdictions.
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-1">
+            By using Celitix services, you acknowledge such processing where
+            necessary for service delivery and platform operations.
+          </p>
+
+          <h3 className="text-xl md:text-3xl lg:text-3xl font-semibold text-gray-900 heading mt-3">
+            10. User Rights
+          </h3>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-2">
+            Subject to applicable laws, Users may request:
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg">
+            - Access to their information
+            <br />
+            - Correction or update of inaccurate information
+            <br />
+            - Deletion requests where legally permissible
+            <br />- Withdrawal of consent where applicable
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-1">
+            Requests may be submitted through our contact channels.
+          </p>
+
+          <h3 className="text-xl md:text-3xl lg:text-3xl font-semibold text-gray-900 heading mt-3">
+            11. Policy Updates
+          </h3>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-1">
+            Celitix may update or revise this Privacy Policy periodically.
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-1">
+            Updated versions shall become effective upon publication on our
+            website.
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-1">
+            Continued use of our services constitutes acceptance of the updated
+            Privacy Policy.
+          </p>
+
+          <h2 className="text-xl md:text-3xl lg:text-3xl font-semibold text-gray-900 heading mt-3">
+            12. Contact Information
+          </h2>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-2">
+            Proactive Professional Services Pvt Ltd <br />
+            22, 3rd Floor, Biswa Nagar, New Sanganer Road, Jaipur, Rajasthan,
+            India
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg mt-2">
+            Website: https://www.celitix.com <br />
+            Email: tech@ppspl.io <br />
+            Phone: +91 9680006460
+          </p>
+          <p className="text-gray-700 text-base md:text-lg pera lg:text-lg">
+            For privacy, compliance, or data-related inquiries, please contact
+            us using the details above.
+          </p>
+        </div>
       </div>
       {/* 2st */}
     </div>
-  )
-}
+  );
+};
 
-export default PrivacyPolicy
+export default PrivacyPolicy;

@@ -1938,7 +1938,7 @@ const Home = () => {
         {/* 7nd */}
         {/* 8nd */}
         <div className=" bg-[#F6EDF9] flex justify-center items-center py-2 md:py-15 px-4">
-          <div className="w-full max-w-4xl bg-[#F7F4F9] border border-[#D1CDE3] rounded-xl p-6 shadow-lg">
+          <div className="w-full max-w-6xl bg-[#F7F4F9] border border-[#D1CDE3] rounded-xl p-6 shadow-lg">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-center text-gray-900 heading mb-8">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]">
                 {" "}
