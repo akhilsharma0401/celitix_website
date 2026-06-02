@@ -6,7 +6,7 @@ export const metadata = {
     canonical: "https://www.celitix.com/live-chat-services",
   },
   openGraph: {
-  title: "Live Chat for WhatsApp, Instagram & RCS | Celitix",
+  title: "The Best AI Live Chat Software for Business | Celitix",
   description: "Live chat service to manage customer conversations, assign agents, automate replies, and improve response time with a powerful all-in-one platform by Celitix.",
 },
 };

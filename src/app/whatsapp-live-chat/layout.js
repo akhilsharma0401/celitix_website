@@ -6,7 +6,7 @@ export const metadata = {
     canonical: "https://www.celitix.com/whatsapp-live-chat",
   },
   openGraph: {
-  title: "WhatsApp Live Chat Service Platform | Celitix",
+  title: "Live Chat Integrations for WhatsApp Business",
   description: "Boost customer engagement with WhatsApp Live Chat Service by Celitix. Manage live chats, automation, and multi-agent customer support from one platform.",
 },
 };
