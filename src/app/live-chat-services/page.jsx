@@ -377,9 +377,9 @@ const Page = () => {
                 </h4>
                 <p className="text-md text-black pera ml-2 text-justify">
                   Common Team Inbox for all conversations across WhatsApp,
-                  Instagram Live Chat, Website Live Chat and RCS. Each message is addressed
-                  quickly and professionally — assign chats, collaborate
-                  efficiently.
+                  Instagram Live Chat, Website Live Chat and RCS. Each message
+                  is addressed quickly and professionally — assign chats,
+                  collaborate efficiently.
                 </p>
               </div>
             </div>
@@ -463,7 +463,11 @@ const Page = () => {
                   Website Live Chat
                 </h4>
                 <p className="text-md text-black pera ml-2 text-justify">
-                  Live Chat for Websites allows you to connect and interact with your website visitors on a real-time basis. This tool enables you to instantly respond to all queries, intelligently qualify leads, and take your visitors on their customer journey through customized interaction sessions.
+                  Live Chat for Websites allows you to connect and interact with
+                  your website visitors on a real-time basis. This tool enables
+                  you to instantly respond to all queries, intelligently qualify
+                  leads, and take your visitors on their customer journey
+                  through customized interaction sessions.
                 </p>
               </div>
             </div>
@@ -647,12 +651,12 @@ const Page = () => {
                 <p className="text-gray-800 leading-relaxed pera text-sm sm:text-base text-justify">
                   {description}
                 </p>
-                <button
+                <Link
+                  href={routerlink}
                   className="inline-block px-6 py-2 bg-[#6b0da1] text-white rounded-full w-max hover:bg-[#580a88] transition cursor-pointer"
-                  onClick={() => router.push(routerlink)}
                 >
                   {buttonText}
-                </button>
+                </Link>
               </div>
 
               {/* Right side: image or video */}
