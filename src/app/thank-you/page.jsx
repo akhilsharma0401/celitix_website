@@ -21,6 +21,8 @@ const ThankYouPage = () => {
   const facebookPixelId = isRequestDemoLead
     ? "943473661882714"
     : "587446320662611";
+  const facebookEventName = isRequestDemoLead ? "Lead" : "PageView";
+  const facebookEventKey = `celitix-fb-${facebookPixelId}-${facebookEventName}`;
 
   useEffect(() => {
     if (typeof window !== "undefined" && window.gtag) {
@@ -32,20 +34,36 @@ const ThankYouPage = () => {
 
   const trackFacebookEvent = useCallback(() => {
     if (
-      hasTrackedFacebookEvent.current ||
       typeof window === "undefined" ||
       !window.fbq
     ) {
       return;
     }
 
+    if (hasTrackedFacebookEvent.current || window[facebookEventKey]) return;
+
     window.fbq("init", facebookPixelId);
-    window.fbq("track", isRequestDemoLead ? "Lead" : "PageView");
+    window.fbq("track", facebookEventName);
+    window[facebookEventKey] = true;
     hasTrackedFacebookEvent.current = true;
-  }, [facebookPixelId, isRequestDemoLead]);
+  }, [facebookEventKey, facebookEventName, facebookPixelId]);
 
   useEffect(() => {
     trackFacebookEvent();
+
+    if (hasTrackedFacebookEvent.current) return;
+
+    let attempts = 0;
+    const interval = window.setInterval(() => {
+      attempts += 1;
+      trackFacebookEvent();
+
+      if (hasTrackedFacebookEvent.current || attempts >= 20) {
+        window.clearInterval(interval);
+      }
+    }, 250);
+
+    return () => window.clearInterval(interval);
   }, [trackFacebookEvent]);
 
   return (
@@ -81,6 +99,11 @@ const ThankYouPage = () => {
               "script",
               "https://connect.facebook.net/en_US/fbevents.js"
             );
+            if (!window["celitix-fb-943473661882714-Lead"]) {
+              fbq("init", "943473661882714");
+              fbq("track", "Lead");
+              window["celitix-fb-943473661882714-Lead"] = true;
+            }
           `}
           </Script>
 
@@ -119,6 +142,11 @@ const ThankYouPage = () => {
           s = b.getElementsByTagName(e)[0];
           s.parentNode.insertBefore(t, s);
         }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+        if (!window["celitix-fb-587446320662611-PageView"]) {
+          fbq("init", "587446320662611");
+          fbq("track", "PageView");
+          window["celitix-fb-587446320662611-PageView"] = true;
+        }
       `}
           </Script>
 
