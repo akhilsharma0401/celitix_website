@@ -1,5 +1,5 @@
 "use client";
-import { Suspense, useEffect } from "react";
+import { Suspense, useCallback, useEffect, useRef } from "react";
 import { ThankyouDesktop, ThankyouMobile } from "../../../public/assets/images";
 import { pushToDataLayer } from "../../utils/gtm.js";
 import Image from "next/image";
@@ -16,14 +16,14 @@ const ThankYou = () => {
 const ThankYouPage = () => {
   const params = useSearchParams();
   const source = params.get("source");
+  const hasTrackedFacebookEvent = useRef(false);
+  const isRequestDemoLead = source === "request-demo";
+  const facebookPixelId = isRequestDemoLead
+    ? "943473661882714"
+    : "587446320662611";
+  const facebookEventName = isRequestDemoLead ? "Lead" : "PageView";
+  const facebookEventKey = `celitix-fb-${facebookPixelId}-${facebookEventName}`;
 
-  console.log("source", source);
-  // useEffect(() => {
-  //   pushToDataLayer({
-  //     event: "conversion",
-  //     page_path: window.location.pathname,
-  //   });
-  // }, []);
   useEffect(() => {
     if (typeof window !== "undefined" && window.gtag) {
       window.gtag("event", "conversion", {
@@ -31,11 +31,50 @@ const ThankYouPage = () => {
       });
     }
   }, []);
+
+  const trackFacebookEvent = useCallback(() => {
+    if (
+      typeof window === "undefined" ||
+      !window.fbq
+    ) {
+      return;
+    }
+
+    if (hasTrackedFacebookEvent.current || window[facebookEventKey]) return;
+
+    window.fbq("init", facebookPixelId);
+    window.fbq("track", facebookEventName);
+    window[facebookEventKey] = true;
+    hasTrackedFacebookEvent.current = true;
+  }, [facebookEventKey, facebookEventName, facebookPixelId]);
+
+  useEffect(() => {
+    trackFacebookEvent();
+
+    if (hasTrackedFacebookEvent.current) return;
+
+    let attempts = 0;
+    const interval = window.setInterval(() => {
+      attempts += 1;
+      trackFacebookEvent();
+
+      if (hasTrackedFacebookEvent.current || attempts >= 20) {
+        window.clearInterval(interval);
+      }
+    }, 250);
+
+    return () => window.clearInterval(interval);
+  }, [trackFacebookEvent]);
+
   return (
     <div>
       {source === "request-demo" ? (
         <>
-          <Script id="fb-pixel-init" strategy="afterInteractive">
+          <Script
+            id="request-demo-fb-pixel-init"
+            strategy="afterInteractive"
+            onReady={trackFacebookEvent}
+          >
             {`
             !function(f,b,e,v,n,t,s){
               if(f.fbq) return;
@@ -60,8 +99,11 @@ const ThankYouPage = () => {
               "script",
               "https://connect.facebook.net/en_US/fbevents.js"
             );
-            fbq("init", "943473661882714"); 
-            fbq('track', 'Lead');
+            if (!window["celitix-fb-943473661882714-Lead"]) {
+              fbq("init", "943473661882714");
+              fbq("track", "Lead");
+              window["celitix-fb-943473661882714-Lead"] = true;
+            }
           `}
           </Script>
 
@@ -70,13 +112,17 @@ const ThankYouPage = () => {
               height="1"
               width="1"
               className="hidden"
-              src="https://www.facebook.com/tr?id=943473661882714&ev=PageView&noscript=1"
+              src="https://www.facebook.com/tr?id=943473661882714&ev=Lead&noscript=1"
             />
           </noscript>
         </>
       ) : (
         <>
-          <Script id="fb-pixel-init" strategy="afterInteractive">
+          <Script
+            id="thank-you-fb-pixel-init"
+            strategy="afterInteractive"
+            onReady={trackFacebookEvent}
+          >
             {`
         !function(f,b,e,v,n,t,s){
           if(f.fbq) return;
@@ -96,8 +142,11 @@ const ThankYouPage = () => {
           s = b.getElementsByTagName(e)[0];
           s.parentNode.insertBefore(t, s);
         }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
-        fbq("init", "587446320662611"); 
-         fbq("track", "PageView");
+        if (!window["celitix-fb-587446320662611-PageView"]) {
+          fbq("init", "587446320662611");
+          fbq("track", "PageView");
+          window["celitix-fb-587446320662611-PageView"] = true;
+        }
       `}
           </Script>
 
