@@ -35,6 +35,10 @@ import ServiceBasedicon from "../../../public/assets/mainicons/Service-Based.png
 import TechStartupsicon from "../../../public/assets/mainicons/Tech-Startups.png";
 import livechatservicesicon from "../../../public/assets/mainicons/livechatservicesicon.png";
 import WhatsAppChatboticon from "../../../public/assets/mainicons/WhatsAppChatboticon.png";
+import RCSLiveChaticon from "../../../public/assets/mainicons/RCSLiveChaticon.png";
+import WebsiteLiveChaticonss from "../../../public/assets/mainicons/WebsiteLiveChaticonss.png";
+import InstagramLiveChaticon from "../../../public/assets/mainicons/InstagramLiveChaticon.png";
+import WhatsAppLiveChaticonss from "../../../public/assets/mainicons/WhatsAppLiveChaticonss.png";
 import Image from "next/image";
 import {
   ContactUsicon,
@@ -54,8 +58,24 @@ const Header = () => {
   //   const navigate = useNavigate();
 
   const iconMap = {
-    "WhatsApp Chatbot": <Image src={WhatsAppChatboticon} alt="SMS" className="w-6 h-6 mt-1" />,
-    "Live Chat": <Image src={livechatservicesicon} alt="SMS" className="w-6 h-6 mt-1" />,
+    "WhatsApp Live Chat": (
+      <Image src={WhatsAppLiveChaticonss} alt="SMS" className="w-6 h-6 mt-1" />
+    ),
+    "Instagram Live Chat": (
+      <Image src={InstagramLiveChaticon} alt="SMS" className="w-6 h-6 mt-1" />
+    ),
+    "Website Live Chat": (
+      <Image src={WebsiteLiveChaticonss} alt="SMS" className="w-6 h-6 mt-1" />
+    ),
+    "RCS Live Chat": (
+      <Image src={RCSLiveChaticon} alt="SMS" className="w-6 h-6 mt-1" />
+    ),
+    "WhatsApp Chatbot": (
+      <Image src={WhatsAppChatboticon} alt="SMS" className="w-6 h-6 mt-1" />
+    ),
+    "Live Chat": (
+      <Image src={livechatservicesicon} alt="SMS" className="w-6 h-6 mt-1" />
+    ),
     SMS: <Image src={SMSicon} alt="SMS" className="w-6 h-6 mt-1" />,
     "2 Way SMS": (
       <Image src={twoWaySMSicon} alt="SMS" className="w-6 h-6 mt-1" />
@@ -112,7 +132,7 @@ const Header = () => {
     >
       <div className="text-[#9B44B6] text-2xl">{iconMap[title]}</div>
       <div>
-        <div className="font-semibold">{title}</div>
+        <div className="font-semibold text-nowrap">{title}</div>
         <div className="text-sm text-gray-600">{desc}</div>
       </div>
     </div>
@@ -160,6 +180,22 @@ const Header = () => {
   const handleCloseDialog = () => {
     setopenDialog(false);
   };
+
+  const [isLiveChatHovered, setIsLiveChatHovered] = useState(false);
+  const [showSubmenu, setShowSubmenu] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsLiveChatHovered(true);
+
+    setTimeout(() => {
+      setShowSubmenu(true);
+    }, 300); // width animation duration ke barabar
+  };
+
+  const handleMouseLeave = () => {
+    setShowSubmenu(false);
+    setIsLiveChatHovered(false);
+  };
   return (
     <>
       {/* <Helmet>
@@ -202,7 +238,7 @@ const Header = () => {
           <nav className="hidden xl:flex flex-1 justify-center gap-1 text-sm font-medium text-black items-center">
             {/* <div className="flex items-center text-lg gap-2 p-2 rounded-md transition-all duration-300 cursor-pointer">Home</div> */}
             {/* Cpaas */}
-            <div className="relative group cursor-pointer">
+            {/* <div className="relative group cursor-pointer">
               <Link href="/cpaas-solutions">
                 <div className="popfh flex items-center text-lg gap-2 p-2 rounded-md transition-all duration-300 cursor-pointer">
                   CPaaS
@@ -219,7 +255,7 @@ const Header = () => {
 
                 <div className="absolute -left-32 top-full flex  bg-white text-black border border-gray-200 shadow-lg p-6 rounded-md w-[520px] gap-5">
                   <div className="w-full bg-white border border-gray-200 rounded-lg shadow-md p-6 text-gray-800 hover:shadow-lg transition duration-300 ease-in-out">
-                    {/* Icon or Emoji */}
+                    
                     <div className="flex items-center gap-2 mb-4">
                       <div className="w-10 h-10 flex items-center justify-center bg-indigo-100 text-indigo-600 rounded-full text-xl font-bold">
                         <Image
@@ -235,12 +271,7 @@ const Header = () => {
                       Explore our omnichannel communication solutions
                     </p>
 
-                    {/* <a
-                           
-                        className="text-indigo-600 text-sm font-semibold hover:underline"
-                                 >
-                              Overview &rarr;
-                                </a> */}
+                  
 
                     <Link href="/cpaas-solutions">
                       <UniversalButton
@@ -257,9 +288,118 @@ const Header = () => {
                     <Link href="/live-chat-services">
                       <ChannelItem title="Live Chat" desc="Automate & Scale" />
                     </Link>
-                    {/* <Link href="/rcs-business-messaging">
-                      <ChannelItem title="RCS" desc="Least Competitive" />
-                    </Link> */}
+                    
+                  </div>
+                </div>
+              </div>
+            </div> */}
+
+            <div className="relative group cursor-pointer">
+              <Link href="/cpaas-solutions">
+                <div className="popfh flex items-center text-lg gap-2 p-2 rounded-md transition-all duration-300 cursor-pointer">
+                  CPaaS
+                  <MdKeyboardArrowDown className="block group-hover:hidden transition-transform duration-300" />
+                  <MdKeyboardArrowUp className="hidden group-hover:block transition-transform duration-300" />
+                </div>
+              </Link>
+              <div
+                className="absolute left-1/2 top-9 mt-2 transform -translate-x-1/2 opacity-0 scale-95 
+                pointer-events-none group-hover:pointer-events-auto group-hover:opacity-100 
+                group-hover:scale-100 transition-all duration-500 ease-out z-50"
+              >
+                <div className="absolute top-0 left-1/4 -translate-x-1/2 -translate-y-2 rotate-45 bg-white h-4 w-4 border-t border-l border-gray-200 z-[1]"></div>
+
+                <div
+                  className={`absolute -left-32 top-full flex bg-white text-black border border-gray-200 shadow-lg p-6 rounded-md overflow-visible transition-all duration-300 gap-5 ${
+                    isLiveChatHovered ? "w-[750px]" : "w-[520px]"
+                  }`}
+                >
+                  {/* Column 1 - CPaaS info */}
+                  <div className="w-60 h-60 bg-white border border-gray-200 rounded-lg shadow-md p-6 text-gray-800 hover:shadow-lg transition duration-300 ease-in-out flex-shrink-0">
+                    <div className="flex items-center gap-2 mb-4">
+                      <div className="w-10 h-10 flex items-center justify-center bg-indigo-100 text-indigo-600 rounded-full text-xl font-bold">
+                        <Image
+                          src={Channels}
+                          alt="Channels"
+                          className="w-6 h-6"
+                        />
+                      </div>
+                      <h2 className="text-lg popfh font-bold">CPaaS</h2>
+                    </div>
+                    <p className="text-sm text-gray-600 mb-4 popfh leading-relaxed">
+                      Explore our omnichannel communication solutions
+                    </p>
+                    <Link href="/cpaas-solutions">
+                      <UniversalButton
+                        label="Overview →"
+                        variant="brutal"
+                        className="bg-[#9B44B6] border-[#9B44B6] text-white px-2 py-1 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] lora mb-2"
+                      />
+                    </Link>
+                  </div>
+
+                  {/* Column 2 - Menu items */}
+                  <div className="w-52 h-auto flex flex-col popfh gap-1 p-1 flex-shrink-0 justify-start">
+                    <div className="flex gap-1">
+                      {/* Column 2 - Menu items */}
+                      <div className="w-52 h-auto flex flex-col popfh gap-1 p-1 flex-shrink-0 justify-start">
+                        <div
+                          className={`rounded-md transition-all duration-200 ${isLiveChatHovered ? "bg-gray-100" : ""}`}
+                          onMouseEnter={handleMouseEnter}
+                          onMouseLeave={handleMouseLeave}
+                        >
+                          <Link href="/live-chat-services">
+                            <ChannelItem
+                              title="Live Chat"
+                              desc="Automate & Scale"
+                            />
+                          </Link>
+                        </div>
+                        <div onMouseLeave={() => setIsLiveChatHovered(false)}>
+                          <Link href="/whatsapp-chatbot">
+                            <ChannelItem
+                              title="WhatsApp Chatbot"
+                              desc="Most Comprehensive"
+                            />
+                          </Link>
+                        </div>
+                      </div>
+                      {/* Column 3 - Live Chat submenu */}
+                      <div
+                        className={`flex flex-col popfh gap-1 p-1 transition-all duration-300 flex-shrink-0 items-start justify-start w-full h-0 ${
+                          isLiveChatHovered
+                            ? "w-full h-auto opacity-100 pointer-events-auto"
+                            : "w-0 h-0 opacity-0 pointer-events-none overflow-hidden"
+                        }`}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                      >
+                        <Link href="/instagram-live-chat">
+                          <ChannelItem
+                            title="Instagram Live Chat"
+                            desc="Social First"
+                          />
+                        </Link>
+                        <Link href="/whatsapp-live-chat">
+                          <ChannelItem
+                            title="WhatsApp Live Chat"
+                            desc="Most Popular"
+                          />
+                        </Link>
+                        <Link href="/website-live-chat">
+                          <ChannelItem
+                            title="Website Live Chat"
+                            desc="Convert Visitors"
+                          />
+                        </Link>
+                        <Link href="/rcs-live-chat">
+                          <ChannelItem
+                            title="RCS Live Chat"
+                            desc="Next Gen Messaging"
+                          />
+                        </Link>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -381,8 +521,8 @@ const Header = () => {
               {/* Dropdown Wrapper */}
               <div
                 className="absolute left-1/2 top-9 mt-2 transform -translate-x-1/2 opacity-0 scale-95 
-          pointer-events-none group-hover:pointer-events-auto group-hover:opacity-100 
-          group-hover:scale-100 transition-all duration-500 ease-out z-50 "
+                pointer-events-none group-hover:pointer-events-auto group-hover:opacity-100 
+                group-hover:scale-100 transition-all duration-500 ease-out z-50 "
               >
                 {/* Arrow */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 rotate-45 bg-white h-4 w-4 border-t border-l border-gray-200  z-[1]"></div>

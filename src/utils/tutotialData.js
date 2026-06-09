@@ -31,6 +31,12 @@ Unlike the WhatsApp Business App, which is meant for small businesses, the Whats
         question: "What Is WhatsApp Business API?",
         answer:
           "WhatsApp Business API allows businesses to send and receive messages programmatically through WhatsApp. It enables companies to automate conversations, send notifications, run campaigns, and manage customer support using a single WhatsApp number. The API cannot be downloaded like an app and must be accessed through an official Meta Business Solution Provider (BSP) such as Celitix. Business verification by Meta is required.",
+            keywords: [
+          {
+            word: "WhatsApp Business API ",
+            url: "https://www.celitix.com/whatsapp-business-api",
+          },
+        ],
       },
       {
         question: "How WhatsApp Business API Works",
@@ -104,8 +110,14 @@ Unlike the WhatsApp Business App, which is meant for small businesses, the Whats
       {
         question: "1. Meta Business Manager Verification",
         answer: `Before applying for WhatsApp Business API, your Meta Business Manager account must be verified. Meta reviews your legal business details and documents such as GST, PAN, or company registration proof.
-      (Estimated time: 2–5 working days.)
-      `,
+      (Estimated time: 2–5 working days.)`,
+      keywords: [
+          {
+            word: "WhatsApp Business API",
+            url: "https://www.celitix.com/whatsapp-business-api",
+          },
+        ],
+        
       },
       {
         question: "2. WhatsApp Business API Onboarding",
@@ -144,7 +156,9 @@ Unlike the WhatsApp Business App, which is meant for small businesses, the Whats
         In most cases, WhatsApp Business API approval is completed within 3 to 10 working days. Businesses that prepare in advance and follow Meta’s guidelines can get approved faster and start engaging customers on WhatsApp without delays.
       `,
       },
+      
     ],
+    
   },
   {
     id: 3,
@@ -160,6 +174,12 @@ As businesses grow, their communication needs often expand across multiple teams
 WhatsApp Business API is linked to a phone number, not directly to a business entity. This means a single business can register multiple phone numbers under the same Meta Business Manager or across multiple Business Managers, depending on the use case.
 Each phone number represents a separate WhatsApp Business API account with its own messaging limits, templates, and quality rating.
         `,
+         keywords: [
+          {
+            word: "WhatsApp Business API",
+            url: "https://www.celitix.com/whatsapp-business-api",
+          },
+        ],
       },
       {
         question: "When Do Businesses Need Multiple WhatsApp Business APIs?",
@@ -172,6 +192,7 @@ Each phone number represents a separate WhatsApp Business API account with its o
           "Separate use cases like campaigns vs. customer support",
           "Using multiple numbers helps organize communication and improves customer experience",
         ],
+       
       },
       {
         question: "Meta Requirements for Multiple API Numbers",
@@ -209,11 +230,23 @@ Each phone number represents a separate WhatsApp Business API account with its o
     title: "Phone Number Rules to Apply for WhatsApp Business API",
     intro: `Having the right phone number is a key requirement to get approved for the WhatsApp Business API. WhatsApp enforces strict rules to ensure verification is smooth, communication is secure, and accounts remain compliant. Understanding these rules helps businesses avoid delays and start messaging customers efficiently.
     `,
+     keywords: [
+          {
+            word: "WhatsApp Business API",
+            url: "https://www.celitix.com/whatsapp-business-api",
+          },
+        ],
     sections: [
       {
         question: "Dedicated Phone Number",
         answer: `The phone number must be dedicated exclusively to your WhatsApp Business API account. It cannot be used simultaneously on the WhatsApp Messenger or WhatsApp Business App. Using a number already linked to another WhatsApp account can cause setup conflicts and delay approval.
         `,
+         keywords: [
+          {
+            word: "WhatsApp Business API",
+            url: "https://www.celitix.com/whatsapp-business-api",
+          },
+        ],
       },
       {
         question: "Fresh or Converted Number",
