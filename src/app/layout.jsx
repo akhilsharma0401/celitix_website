@@ -150,12 +150,16 @@ export default function RootLayout({ children }) {
             src="https://www.facebook.com/tr?id=587446320662611&ev=PageView&noscript=1"
           />
         </noscript>
-
+        <script
+          src="./widget.js"
+          data-widget-id={`${process.env.NEXT_PUBLIC_WIDGET_ID}`}
+          async
+        ></script>
         <GlobalToaster />
         <Header />
         <FacebookPixel />
         <CookieConsent />
-          <main>{children}</main>
+        <main>{children}</main>
         <Footer />
         {/* <ChatLauncher /> */}
       </body>

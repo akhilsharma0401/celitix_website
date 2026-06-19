@@ -1688,6 +1688,7 @@ const Pricing = () => {
 
   const CHANNEL_ICONS = {
     WhatsApp: Reachwhatsappicon,
+    "WhatsApp Calling": Reachwhatsappicon,
     RCS: ReachRCS,
     SMS: ReachSMS,
     Authenticator: ReachApp,
@@ -1713,10 +1714,6 @@ const Pricing = () => {
     {
       label: "Authentication",
       value: "Authentication",
-    },
-    {
-      label: "Calling",
-      value: "Calling",
     },
   ]);
   const options = ["inr", "usd"];
@@ -1825,10 +1822,7 @@ const Pricing = () => {
   function calculateTotal(val, currency, channelKey) {
     if (channelKey.startsWith("WhatsApp_")) {
       const slabs = WHATSAPP_RATES[currency]?.[channelKey] || [];
-      const rate =
-        slabs.find(([limit]) => val <= limit)?.[1] ??
-        0(([limit]) => val <= limit)?.[1] ??
-        0;
+      const rate = slabs.find(([limit]) => val <= limit)?.[1] ?? 0;
       return val * rate;
     }
 
@@ -1922,26 +1916,21 @@ const Pricing = () => {
 
     let data = [];
     let total = 0;
-    if (market == "whatsapp" && whatsAppType !== "Calling") {
+    if (market == "whatsapp" && channel === "WhatsApp Calling") {
+      const minutes = Number(value || 0);
+      const tier = callingData.find(
+        (t) =>
+          minutes >= t.from_minutes &&
+          (t.to_minutes === null || minutes <= t.to_minutes),
+      );
+      const totalPrice = Number.parseFloat(tier?.rate || 0) * minutes;
+      total = totalPrice + totalPrice * 0.05;
+    } else if (market == "whatsapp") {
       data = apiData?.[0];
       const wpType = whatsAppType?.toLowerCase();
-      const totalPrice = parseFloat(data?.[wpType]) * value;
+      const totalPrice =
+        Number.parseFloat(data?.[wpType] || 0) * Number(value || 0);
       total = totalPrice + totalPrice * 0.05;
-    } else if (market == "whatsapp" && whatsAppType == "Calling") {
-      if (value == 0) {
-        total = 0;
-      } else {
-        data = apiData?.[0];
-
-        const tier = callingData.find(
-          (t) =>
-            value >= t.from_minutes &&
-            (t.to_minutes === null || value <= t.to_minutes),
-        );
-
-        const totalPrice = parseFloat(tier?.rate)* value;
-        total = totalPrice + totalPrice * 0.05;
-      }
     } else {
       total = amount;
     }
@@ -1952,13 +1941,14 @@ const Pricing = () => {
   const channelKey = getChannelKey(channel, whatsAppType);
 
   const total =
-    channel !== "WhatsApp" && calculateTotal(value, currency, channelKey);
+    channel !== "WhatsApp" &&
+    channel !== "WhatsApp Calling" &&
+    calculateTotal(value, currency, channelKey);
 
   const baseWhatsAppTypes = [
     { label: "Marketing", value: "Marketing" },
     { label: "Utility", value: "Utility" },
     { label: "Authentication", value: "Authentication" },
-    { label: "Calling", value: "Calling" },
   ];
   const fetchPricing = async (type, market, currency) => {
     try {
@@ -2012,8 +2002,11 @@ const Pricing = () => {
   };
 
   useEffect(() => {
-    if (channel === "WhatsApp" || channel === "SMS") {
-      fetchPricing(channel, market, currency);
+    const pricingChannel =
+      channel === "WhatsApp Calling" ? "WhatsApp" : channel;
+
+    if (pricingChannel === "WhatsApp" || pricingChannel === "SMS") {
+      fetchPricing(pricingChannel, market, currency);
     }
   }, [channel, market, currency]);
 
@@ -2164,6 +2157,12 @@ const Pricing = () => {
                     setChannel(selectedChannel);
                     setValue(0);
 
+                    if (selectedChannel === "WhatsApp Calling") {
+                      setWhatsAppType("Calling");
+                    } else if (selectedChannel === "WhatsApp") {
+                      setWhatsAppType("Marketing");
+                    }
+
                     if (selectedChannel === "SMS") {
                       if (market === "India") {
                         setCurrency("inr");
@@ -2175,10 +2174,11 @@ const Pricing = () => {
                     }
                   }}
                 >
-                  <option value="WhatsApp">WhatsApp</option>
+                  <option value="WhatsApp Message">WhatsApp Message</option>
+                  <option value="WhatsApp Calling">WhatsApp Calling</option>
                   <option value="RCS">RCS</option>
                   <option value="SMS">SMS</option>
-                  <option value="Outbound">Outbound Dialer</option>
+                  <option value="Outbound">OBD (Voice Call)</option>
                 </select>
 
                 <select
@@ -2237,7 +2237,7 @@ const Pricing = () => {
                   }}
                   className="bg-white border w-full md:w-60 border-blue-300 text-blue-800 font-medium rounded-lg px-4 py-2 shadow-sm"
                 >
-                  {channel === "WhatsApp"
+                  {channel === "WhatsApp" || channel === "WhatsApp Calling"
                     ? whatsappCurrencies.map((cur) => (
                         <option key={cur.code} value={cur.code}>
                           {cur.label}
@@ -2285,19 +2285,118 @@ const Pricing = () => {
                           </button>
                         ))}
                       </div>
-
                       {/* ← Your existing slider/currency block */}
                       <div className="mt-10 flex flex-col md:flex-row gap-6 items-center justify-center">
                         <div className="w-full md:w-2/3">
                           <label className="text-sm font-semibold text-gray-600 mb-1 flex justify-between">
-                            {whatsAppType === "Calling"
-                              ? "Minutes Volume"
-                              : "Message Volume"}
+                            Message Volume
                             <span className="text-xs text-gray-500">
-                              {value}{" "}
-                              {whatsAppType === "Calling"
-                                ? "minutes"
-                                : "messages"}
+                              {value} messages
+                            </span>
+                          </label>
+                          <div className="relative w-full">
+                            <input
+                              type="range"
+                              min="0"
+                              max="1000000"
+                              value={value}
+                              onChange={(e) => setValue(Number(e.target.value))}
+                              className="w-full h-2 rounded-full appearance-none cursor-pointer"
+                              style={{
+                                background: `linear-gradient(to right, #2563eb ${percent}%, #d1d5db ${percent}%)`,
+                              }}
+                            />
+                            <div className="absolute top-2 left-0 w-full h-6 pointer-events-none">
+                              {ticks.map((tick) => (
+                                <button
+                                  key={tick}
+                                  onClick={() => setValue(tick)}
+                                  style={{
+                                    left: `${(tick / 1000000) * 100}%`,
+                                    transform: "translateX(-50%)",
+                                  }}
+                                  className="absolute top-2.5 w-1 h-3 bg-blue-500 rounded-full pointer-events-auto shadow-md"
+                                />
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+
+                        <input
+                          type="number"
+                          min="0"
+                          max="1000000"
+                          value={value}
+                          onChange={handleChange}
+                          className="text-center text-blue-800 bg-white border border-blue-300 font-semibold px-4 py-2 rounded-lg w-32 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        />
+                      </div>
+
+                      <div className="mt-6 flex items-center justify-end gap-4">
+                        <div className="flex items-baseline justify-center gap-2">
+                          <div className="text-lg font-bold text-blue-800">
+                            Total: {formatCurrency(0, currency, "whatsapp")}
+                          </div>
+                          {currency == "inr" && (
+                            <span className="text-xs text-gray-500">
+                              (+18 % GST)
+                            </span>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="flex justify-end mt-2 md:mt-5">
+                        <UniversalButton
+                          label="Get a Quote"
+                          variant="brutal"
+                          className="bg-[#9B44B6] border-[#9B44B6] text-white px-5 py-1 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6]"
+                          onClick={handleShowFormPopup}
+                        />
+
+                        <FormPopup
+                          visible={openDialog}
+                          onHide={handleCloseDialog}
+                        />
+                      </div>
+
+                      <style jsx>{`
+                        input[type="range"]::-webkit-slider-thumb {
+                          appearance: none;
+                          height: 10px;
+                          width: 10px;
+                          //   background: #1e40af;
+                          border-radius: 50%;
+                          cursor: pointer;
+                        }
+                        input[type="range"]::-moz-range-thumb {
+                          height: 16px;
+                          width: 16px;
+                          background: #1e40af;
+                          border-radius: 50%;
+                          cursor: pointer;
+                        }
+                      `}</style>
+                    </>
+                  )}
+                  {channel === "WhatsApp Calling" && (
+                    <>
+                      <div className="flex items-center gap-2 mb-2">
+                        <Image
+                          src={CHANNEL_ICONS[channel]}
+                          alt={channel}
+                          className="w-10 h-10"
+                        />
+                        <h5 className="text-lg font-semibold text-blue-700">
+                          {channel} Pricing
+                        </h5>
+                      </div>
+                      {/* ← Your existing slider/currency block */}
+                      <div className="mt-10 flex flex-col md:flex-row gap-6 items-center justify-center">
+                        <div className="w-full md:w-2/3">
+                          <label className="text-sm font-semibold text-gray-600 mb-1 flex justify-between">
+                            Minutes Volume
+                            <span className="text-xs text-gray-500">
+                              {value} minutes
                             </span>
                           </label>
                           <div className="relative w-full">
@@ -2606,13 +2705,13 @@ const Pricing = () => {
                           className="w-10 h-10"
                         />
                         <h5 className="text-lg font-semibold text-blue-700">
-                          Outbound Dialer Pricing
+                          OBD Pricing
                         </h5>
                       </div>
                       <div className="mt-10 flex flex-col md:flex-row gap-6 items-center justify-center">
                         <div className="w-full md:w-2/3">
                           <label className="text-sm font-semibold text-gray-600 mb-1 flex justify-between">
-                            credit Volume
+                            Credit Volume
                             <span className="text-xs text-gray-500">
                               {value} voice credit
                             </span>

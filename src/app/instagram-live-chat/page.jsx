@@ -575,10 +575,10 @@ const Page = () => {
       {/* 4th */}
 
       {/* extra */}
-      <section className="w-full py-10 bg-[#f7ebfc]">
+      <section className="w-full bg-[#f7ebfc] px-4 py-10 sm:px-6 md:py-16 lg:px-10">
         <div className="max-w-screen-2xl mx-auto">
-          <div className="text-center px-1 md:px-4 pb-2 md:pb-16">
-            <h2 className="text-2xl md:text-4xl lg:text-5xl heading font-semibold text-gray-900 mb-2">
+          <div className="text-center max-w-4xl mx-auto mb-8 md:mb-12">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl heading font-semibold text-gray-900 mb-3">
               Elevate The Customer Experience
             </h2>
             {/* <p className="text-sm md:text-lg sub-heading max-w-6xl mx-auto text-gray-700 ">
@@ -586,19 +586,19 @@ const Page = () => {
               team complete control over every customer interaction.
             </p> */}
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-8">
             {/* CARD 1 */}
-            <div className="bg-[#bbebe3] rounded-[28px] overflow-hidden min-h-[420px]">
-              <div className="flex flex-col lg:flex-row h-full">
+            <div className="group bg-[#bbebe3] rounded-[24px] overflow-hidden shadow-[0_18px_45px_rgba(15,23,42,0.08)] border border-white/80 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_55px_rgba(15,23,42,0.14)]">
+              <div className="flex flex-col md:flex-row h-full">
                 {/* LEFT */}
-                <div className="w-full lg:w-[48%] p-6 md:p-8">
+                <div className="w-full md:w-[52%] p-6 sm:p-7 lg:p-8">
                   {/* <div className="text-3xl mb-5">🟩</div> */}
 
-                  <h2 className="text-[24px] leading-[1.1] font-bold text-[#0b1633] heading mb-5">
+                  <h2 className="text-xl sm:text-2xl leading-tight font-bold text-[#0b1633] heading mb-4">
                     Turn every DM into a real conversation
                   </h2>
 
-                  <p className="text-[16px] md:text-[18px] leading-[1.6] text-[#111827] pera text-justify">
+                  <p className="text-sm sm:text-base md:text-[17px] leading-relaxed text-[#111827] pera text-justify hyphens-auto">
                     Track all your Instagram direct messages with one efficient
                     inbox. Respond instantly. Assign chats to the right agent.
                     Quickly check unread messages. Help clients with text,
@@ -607,29 +607,29 @@ const Page = () => {
                 </div>
 
                 {/* RIGHT */}
-                <div className="w-full lg:w-[52%] relative min-h-[260px] lg:min-h-full">
+                <div className="w-full md:w-[48%] relative min-h-[220px] sm:min-h-[260px] md:min-h-full bg-white/35">
                   <Image
                     src={Turneveryintorealconversation}
                     alt="Feature 1"
                     fill
-                    className="object-contain p-4 md:p-6"
+                    className="object-contain p-5 md:p-7 transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
               </div>
             </div>
 
             {/* CARD 2 */}
-            <div className="bg-[#dbe2f7] rounded-[28px] overflow-hidden min-h-[420px]">
-              <div className="flex flex-col lg:flex-row h-full">
+            <div className="group bg-[#dbe2f7] rounded-[24px] overflow-hidden shadow-[0_18px_45px_rgba(15,23,42,0.08)] border border-white/80 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_55px_rgba(15,23,42,0.14)]">
+              <div className="flex flex-col md:flex-row h-full">
                 {/* LEFT */}
-                <div className="w-full lg:w-[48%] p-6 md:p-8">
+                <div className="w-full md:w-[52%] p-6 sm:p-7 lg:p-8">
                   {/* <div className="text-3xl mb-5">❓</div> */}
 
-                  <h2 className="text-[24px] leading-[1.1] font-bold text-[#0b1633] heading mb-5">
+                  <h2 className="text-xl sm:text-2xl leading-tight font-bold text-[#0b1633] heading mb-4">
                     Instagram Insights inside your live chat
                   </h2>
 
-                  <p className="text-[16px] md:text-[18px] leading-[1.6] text-[#111827] pera text-justify">
+                  <p className="text-sm sm:text-base md:text-[17px] leading-relaxed text-[#111827] pera text-justify hyphens-auto">
                     Every Instagram conversation includes built-in profile
                     information. The user can see the follower and following
                     counts and whether they follow your business account. This
@@ -639,29 +639,29 @@ const Page = () => {
                 </div>
 
                 {/* RIGHT */}
-                <div className="w-full lg:w-[52%] relative min-h-[260px] lg:min-h-full">
+                <div className="w-full md:w-[48%] relative min-h-[220px] sm:min-h-[260px] md:min-h-full bg-white/35">
                   <Image
                     src={InstagramInsightinsideyourlivechat}
                     alt="Feature 2"
                     fill
-                    className="object-contain p-4 md:p-6"
+                    className="object-contain p-5 md:p-7 transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
               </div>
             </div>
 
             {/* CARD 3 */}
-            <div className="bg-[#f1e3ed] rounded-[28px] overflow-hidden min-h-[420px]">
-              <div className="flex flex-col lg:flex-row h-full">
+            <div className="group bg-[#f1e3ed] rounded-[24px] overflow-hidden shadow-[0_18px_45px_rgba(15,23,42,0.08)] border border-white/80 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_55px_rgba(15,23,42,0.14)]">
+              <div className="flex flex-col md:flex-row h-full">
                 {/* LEFT */}
-                <div className="w-full lg:w-[48%] p-6 md:p-8">
+                <div className="w-full md:w-[52%] p-6 sm:p-7 lg:p-8">
                   {/* <div className="text-3xl mb-5">💬</div> */}
 
-                  <h2 className="text-[24px] leading-[1.1] font-bold text-[#0b1633] heading mb-5">
+                  <h2 className="text-xl sm:text-2xl leading-tight font-bold text-[#0b1633] heading mb-4">
                     Built-In Instagram Ice Breakers
                   </h2>
 
-                  <p className="text-[16px] md:text-[18px] leading-[1.6] text-[#111827] pera text-justify">
+                  <p className="text-sm sm:text-base md:text-[17px] leading-relaxed text-[#111827] pera text-justify hyphens-auto">
                     Ice Breakers are built-in prompt options that appear to
                     users or followers when they open your Instagram DM. Celitix
                     conversation offers customers a clear starting point, lowers
@@ -672,45 +672,44 @@ const Page = () => {
                 </div>
 
                 {/* RIGHT */}
-                <div className="w-full lg:w-[52%] relative min-h-[260px] lg:min-h-full">
+                <div className="w-full md:w-[48%] relative min-h-[220px] sm:min-h-[260px] md:min-h-full bg-white/35">
                   <Image
                     src={BuiltInInstagramIceBreakers}
                     alt="Feature 3"
                     fill
-                    className="object-contain p-4 md:p-6"
+                    className="object-contain p-5 md:p-7 transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
               </div>
             </div>
 
             {/* CARD 4 */}
-            <div className="bg-[#efe2c6] rounded-[28px] overflow-hidden min-h-[420px]">
-              <div className="flex flex-col lg:flex-row h-full">
+            <div className="group bg-[#efe2c6] rounded-[24px] overflow-hidden shadow-[0_18px_45px_rgba(15,23,42,0.08)] border border-white/80 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_55px_rgba(15,23,42,0.14)]">
+              <div className="flex flex-col md:flex-row h-full">
                 {/* LEFT */}
-                <div className="w-full lg:w-[48%] p-6 md:p-8">
+                <div className="w-full md:w-[52%] p-6 sm:p-7 lg:p-8">
                   {/* <div className="text-3xl mb-5">🏆</div> */}
 
-                  <h2 className="text-[24px] leading-[1.1] font-bold text-[#0b1633] heading mb-5">
+                  <h2 className="text-xl sm:text-2xl leading-tight font-bold text-[#0b1633] heading mb-4">
                     Advanced Chat. Segmentation
                   </h2>
 
-                  <p className="text-[16px] md:text-[18px] leading-[1.6] text-[#111827] pera text-justify">
-                    Ice Breakers are built-in prompt options that appear to
-                    users or followers when they open your Instagram DM. Celitix
-                    conversation offers customers a clear starting point, lowers
-                    hesitation, and allows users to get structured, actionable
-                    messages right from the first interaction. No more blank
-                    openers. No more hesitation.
+                  <p className="text-sm sm:text-base md:text-[17px] leading-relaxed text-[#111827] pera text-justify hyphens-auto">
+                    It is a feature that organizes incoming conversations into
+                    smart groups based on user behavior, interests, queries, or
+                    stage in the customer journey. Instead of handling all chats
+                    in one inbox, businesses can filter and prioritize messages
+                    like new leads, existing customers, or support queries.
                   </p>
                 </div>
 
                 {/* RIGHT */}
-                <div className="w-full lg:w-[52%] relative min-h-[260px] lg:min-h-full">
+                <div className="w-full md:w-[48%] relative min-h-[220px] sm:min-h-[260px] md:min-h-full bg-white/35">
                   <Image
                     src={IstagramAdvancedChatSegmentation}
                     alt="Feature 4"
                     fill
-                    className="object-contain p-4 md:p-6"
+                    className="object-contain p-5 md:p-7 transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
               </div>

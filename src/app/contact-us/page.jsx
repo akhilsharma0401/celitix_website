@@ -245,10 +245,10 @@ const ContactUs = () => {
         <title>Contact Celitix | Get in Touch for Demos, Support & Sales</title>
         <meta name="description" content="Reach out to Celitix for product demos, pricing details, technical support, or partnership queries. Our team is here to help you connect better." />
       </Helmet> */}
-      <div className="px-4 py-12 lg:px-25 pt-25 md:pt-30">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8 mb-2 md:mb-8">
-          <div>
-            <div className="relative bg-[#F9F4FF] shadow-sm rounded-xl overflow-hidden mb-2 md:mb-8">
+      <div className="px-4 pb-12 pt-25 sm:px-6 md:pt-30 lg:px-25">
+        <div className="grid grid-cols-1 items-stretch gap-5 md:grid-cols-2 md:gap-8 mb-2 md:mb-8">
+          <div className="flex h-full flex-col gap-5 md:gap-8">
+            <div className="relative flex-1 bg-[#F9F4FF] shadow-sm rounded-xl overflow-hidden">
               {/* Decorative SVG */}
               <div className="absolute inset-0 pointer-events-none">
                 <svg
@@ -268,15 +268,15 @@ const ContactUs = () => {
                 </svg>
               </div>
 
-              <div className="relative max-w-6xl mx-auto px-6 py-5">
+              <div className="relative max-w-6xl mx-auto h-full px-4 py-6 sm:px-6 md:py-8">
                 {/* Header & Contact Info */}
                 <motion.div
-                  className="text-center mb-3 space-y-4"
+                  className="flex h-full flex-col justify-center text-center space-y-4"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <h1 className="text-5xl md:text-5xl font-semibold text-gray-900 heading mb-5">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-gray-900 heading mb-4 md:mb-5">
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]">
                       Contact Us{" "}
                     </span>
@@ -288,10 +288,10 @@ const ContactUs = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <li className="flex items-start gap-2 cursor-pointer">
-                        <FaMapMarkerAlt className="mt-2" />
+                      <li className="flex items-start gap-3 cursor-pointer">
+                        <FaMapMarkerAlt className="mt-2 shrink-0" />
 
-                        <p className="leading-relaxed text-left pera text-lg">
+                        <p className="leading-relaxed text-left pera text-sm sm:text-base lg:text-lg">
                           Proactive Professional Services Pvt. Ltd. <br />
                           22, 3rd Floor, Biswa Nagar, New Sanganer Road,
                           <br />
@@ -303,8 +303,8 @@ const ContactUs = () => {
                       </li>
                     </a>
                   </ul>
-                  <div className="flex flex-wrap justify-start items-center sub-heading space-x-6 text-black-700">
-                    <a href="support@celitix.com" className=" transition">
+                  <div className="flex flex-col sm:flex-row flex-wrap justify-center md:justify-start items-start sm:items-center gap-3 sm:gap-5 sub-heading text-black-700">
+                    <a href="mailto:support@celitix.com" className="transition">
                       <li className="flex sub-heading  items-center gap-2 mb-1">
                         <FaEnvelope /> <span>support@celitix.com</span>
                       </li>
@@ -327,12 +327,12 @@ const ContactUs = () => {
               </div>
             </div>
             <motion.div
-              className="space-y-8"
+              className="flex-1"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="bg-white rounded-2xl shadow-lg p-5">
+              <div className="h-full bg-white rounded-2xl shadow-lg p-5 sm:p-6">
                 <h2 className="text-2xl font-bold text-gray-800 mb-4">
                   Boost Engagement. Simplify Communication.
                 </h2>
@@ -346,6 +346,8 @@ const ContactUs = () => {
                     "Personalized automations & workflows.",
                     "Seamless omnichannel experience.",
                     "Real-time analytics & insights.",
+                    "Instant customer engagement across channels.",
+                    "Secure, scalable, and enterprise-ready communication.",
                   ].map((text, idx) => (
                     <div key={idx} className="flex items-start space-x-3">
                       <CheckCircleIcon className="text-green-500 mt-1" />
@@ -356,11 +358,11 @@ const ContactUs = () => {
               </div>
             </motion.div>
           </div>
-          <div>
-            <div className="bg-[#F9F4FF] border-gray-300 rounded-xl p-1 md:p-6 shadow-sm">
+          <div className="h-full">
+            <div className="h-full bg-[#F9F4FF] border-gray-300 rounded-xl p-1 md:p-6 shadow-sm">
               <form
                 onSubmit={handleSubmit}
-                className="space-y-4 bg-white border border-gray-300 rounded-xl p-4 md:p-6 shadow-sm"
+                className="flex h-full flex-col space-y-4 bg-white border border-gray-300 rounded-xl p-4 md:p-6 shadow-sm"
               >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
   <input
@@ -408,7 +410,7 @@ const ContactUs = () => {
                         : "border-red-500 focus:ring-red-300"
                   }`}
                 />
-                <div className="flex gap-2 items-center">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
                   <input
                     type="text"
                     name="phone"
@@ -435,7 +437,7 @@ const ContactUs = () => {
                         !validatePhoneNumber(form.phone) || resendTimer > 0
                       }
                       onClick={handlesendOtp}
-                      className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 rounded hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] disabled:bg-gray-300 disabled:text-gray-700 disabled:cursor-not-allowed"
+                      className="w-full sm:w-auto bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 rounded hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] disabled:bg-gray-300 disabled:text-gray-700 disabled:cursor-not-allowed"
                     />
                   )}
                 </div>
@@ -457,7 +459,7 @@ const ContactUs = () => {
                         inputMode="numeric"
                         value={digit}
                         onChange={(e) => handleOtpChange(index, e.target.value)}
-                        className="w-10 h-10 text-center border border-gray-300 rounded"
+                        className="w-9 h-10 sm:w-10 text-center border border-gray-300 rounded"
                       />
                     ))}
                     <UniversalButton
@@ -465,7 +467,7 @@ const ContactUs = () => {
                       variant="brutal"
                       type="button"
                       onClick={handleverifyOtp}
-                      className="bg-[#9B44B6] border-[#9B44B6] text-white hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] px-3 py-1 rounded-md mx-1"
+                      className="bg-[#9B44B6] border-[#9B44B6] text-white hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] px-3 py-1 rounded-md"
                     />
                   </div>
                 )}
@@ -524,7 +526,7 @@ const ContactUs = () => {
                   onChange={(e) =>
                     setForm({ ...form, message: e.target.value })
                   }
-                  className="form-textarea w-full border border-gray-300 rounded-md p-2"
+                  className="form-textarea w-full min-h-28 border border-gray-300 rounded-md p-2"
                 />
 
                 <div className="flex items-start gap-2 mb-4">

@@ -126,7 +126,7 @@ const Page = () => {
                 Convert Visitors Into Customers
               </h1>
 
-              <p className="text-gray-600 text-base md:text-lg ">
+              <p className="text-gray-600 text-base md:text-lg text-justify">
                 Capture the attention of your visitors the very first time they
                 come across your website through a smart live chat system meant
                 for instant interaction. Interact immediately with inquiries,

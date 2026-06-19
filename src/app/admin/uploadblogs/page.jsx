@@ -232,7 +232,7 @@ function BlogUploadFormInner() {
           shortDesc: blog.shortDesc || blog.short_description || "",
           content: blog.content || blog.body || "",
           category:
-            [" blog?.category ? blog?.category : "],
+            blog?.category ? blog?.category : "",
           tags: blog.tags || "",
           author:
             (blog.author && (blog.author.name || blog.author)) ||

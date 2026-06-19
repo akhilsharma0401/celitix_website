@@ -6,7 +6,25 @@ import UniversalButton from "../components/UniversalButton";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
-import { CHAIN, CTALASTIMAGE, IntegrationCustomer, IntegrationFinancial, IntegrationProfessional, IntegrationRealEstate, IntegrationsCelitix, IntegrationsFreshdesk, IntegrationsFreshWork, IntegrationsLeadSquared, IntegrationsSales, IntegrationsSheets, IntegrationsShopify, IntegrationsWoo, IntegrationsZoho, IntegrationTech, RichCampaigns, } from "../../../public/assets/images";
+import {
+  CHAIN,
+  CTALASTIMAGE,
+  IntegrationCustomer,
+  IntegrationFinancial,
+  IntegrationProfessional,
+  IntegrationRealEstate,
+  IntegrationsCelitix,
+  IntegrationsFreshdesk,
+  IntegrationsFreshWork,
+  IntegrationsLeadSquared,
+  IntegrationsSales,
+  IntegrationsSheets,
+  IntegrationsShopify,
+  IntegrationsWoo,
+  IntegrationsZoho,
+  IntegrationTech,
+  RichCampaigns,
+} from "../../../public/assets/images";
 import FaqItem from "../components/Faq";
 import FormPopup from "../components/FormPopup";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -17,7 +35,9 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 export default function Page() {
-  {/* scetion 1 */ }
+  {
+    /* scetion 1 */
+  }
   // Slider config
   const MotionImage = motion(Image);
   const logos = [
@@ -37,7 +57,10 @@ export default function Page() {
 
   useEffect(() => {
     if (logos.length <= 1) return;
-    const id = setInterval(() => setIndex((i) => (i + 1) % logos.length), interval);
+    const id = setInterval(
+      () => setIndex((i) => (i + 1) % logos.length),
+      interval,
+    );
     return () => clearInterval(id);
   }, [interval, logos.length]);
 
@@ -49,8 +72,12 @@ export default function Page() {
     center: { [axis]: 0, opacity: 1 },
     exit: { [axis]: -sign * 24, opacity: 0 },
   };
-  {/* scetion 1 */ }
-  {/* scetion 2 */ }
+  {
+    /* scetion 1 */
+  }
+  {
+    /* scetion 2 */
+  }
   const logotwos = [
     { src: IntegrationsSales, alt: "Salesforce" },
     { src: IntegrationsWoo, alt: "WooCommerce" },
@@ -70,8 +97,12 @@ export default function Page() {
     { src: IntegrationsFreshdesk, alt: "IntegrationsFreshdesk" },
   ];
   const loop = [...logotwos, ...logotwos];
-  {/* scetion 2 */ }
-  {/* scetion 3 */ }
+  {
+    /* scetion 2 */
+  }
+  {
+    /* scetion 3 */
+  }
   const cards = [
     {
       id: 1,
@@ -153,43 +184,86 @@ export default function Page() {
 
   const handlePrev = () => setPage((p) => (p > 0 ? p - 1 : totalPages - 1));
   const handleNext = () => setPage((p) => (p < totalPages - 1 ? p + 1 : 0));
-  {/* scetion 3 */ }
-  {/* scetion 4 */ }
+  {
+    /* scetion 3 */
+  }
+  {
+    /* scetion 4 */
+  }
   const slidesData = [
     {
       top: "Shopify",
-      heading: "Automate  customer communication -Connect your Shopify store with Celitix",
+      heading:
+        "Automate  customer communication -Connect your Shopify store with Celitix",
       logo: IntegrationsShopify,
       title: "Shopify",
       cards: [
-        { title: "New Order", desc: "Instantly notify your customers the moment an order is placed." },
-        { title: "COD Order", desc: "Send secure OTP-based COD verification messages." },
-        { title: "Fulfilled / Shipped Order", desc: "Keep customers engaged with real-time shipping alerts." },
-        { title: "Cancelled Order", desc: "Notify customers immediately if an order is cancelled." },
+        {
+          title: "New Order",
+          desc: "Instantly notify your customers the moment an order is placed.",
+        },
+        {
+          title: "COD Order",
+          desc: "Send secure OTP-based COD verification messages.",
+        },
+        {
+          title: "Fulfilled / Shipped Order",
+          desc: "Keep customers engaged with real-time shipping alerts.",
+        },
+        {
+          title: "Cancelled Order",
+          desc: "Notify customers immediately if an order is cancelled.",
+        },
       ],
     },
     {
       top: "Zoho CRM",
-      heading: "Automate  customer communication - Connect your Zoho CRM store with Celitix",
+      heading:
+        "Automate  customer communication - Connect your Zoho CRM store with Celitix",
       logo: IntegrationsZoho,
       title: "Zoho CRM",
       cards: [
-        { title: "Create Contact", desc: "Add new customer contacts instantly and keep your database updated in real time." },
-        { title: "Create Lead", desc: "Capture leads directly into Zoho CRM for faster follow-ups and conversions." },
-        { title: "Update Lead", desc: "Easily update lead details and track progress as they move through the sales funnel." },
-        { title: "Create Deal", desc: "Generate new deals effortlessly to manage opportunities and close sales faster." },
+        {
+          title: "Create Contact",
+          desc: "Add new customer contacts instantly and keep your database updated in real time.",
+        },
+        {
+          title: "Create Lead",
+          desc: "Capture leads directly into Zoho CRM for faster follow-ups and conversions.",
+        },
+        {
+          title: "Update Lead",
+          desc: "Easily update lead details and track progress as they move through the sales funnel.",
+        },
+        {
+          title: "Create Deal",
+          desc: "Generate new deals effortlessly to manage opportunities and close sales faster.",
+        },
       ],
     },
     {
       top: "Woo Commerce",
-      heading: "Automate  customer communication -Connect your Woo Commer store with Celitix",
+      heading:
+        "Automate  customer communication -Connect your Woo Commer store with Celitix",
       logo: IntegrationsWoo,
       title: "Woo Commerce",
       cards: [
-        { title: "OTP before COD Confirmation", desc: "Send one-tap OTP to confirm COD orders and cut RTO/fraud." },
-        { title: "Successful Checkout", desc: "Share order confirmation, invoice/summary, and next steps instantly." },
-        { title: "Return Request", desc: "Acknowledge requests, share instructions, and track status updates." },
-        { title: "Out for Delivery", desc: "Proactive delivery alerts with live tracking/support options." },
+        {
+          title: "OTP before COD Confirmation",
+          desc: "Send one-tap OTP to confirm COD orders and cut RTO/fraud.",
+        },
+        {
+          title: "Successful Checkout",
+          desc: "Share order confirmation, invoice/summary, and next steps instantly.",
+        },
+        {
+          title: "Return Request",
+          desc: "Acknowledge requests, share instructions, and track status updates.",
+        },
+        {
+          title: "Out for Delivery",
+          desc: "Proactive delivery alerts with live tracking/support options.",
+        },
       ],
     },
     {
@@ -198,58 +272,122 @@ export default function Page() {
       logo: IntegrationsFreshdesk,
       title: "Freshdesk",
       cards: [
-        { title: "Task Created", desc: "Automatically generate tasks from tickets to ensure nothing slips through the cracks." },
-        { title: "Schedule a Meeting", desc: "Set up meetings with customers directly from ticket interactions for faster resolution." },
-        { title: "Send Meeting Summary", desc: "Share detailed meeting summaries and resolutions instantly via WhatsApp or SMS." },
-        { title: "Synchronize Status", desc: "Sync ticket and task statuses across Freshdesk and Celitix to maintain a unified view." },
+        {
+          title: "Task Created",
+          desc: "Automatically generate tasks from tickets to ensure nothing slips through the cracks.",
+        },
+        {
+          title: "Schedule a Meeting",
+          desc: "Set up meetings with customers directly from ticket interactions for faster resolution.",
+        },
+        {
+          title: "Send Meeting Summary",
+          desc: "Share detailed meeting summaries and resolutions instantly via WhatsApp or SMS.",
+        },
+        {
+          title: "Synchronize Status",
+          desc: "Sync ticket and task statuses across Freshdesk and Celitix to maintain a unified view.",
+        },
       ],
     },
     {
       top: "Sales Force",
-      heading: "Automate  customer communication -Connect your Sales Force with Celitix",
+      heading:
+        "Automate  customer communication -Connect your Sales Force with Celitix",
       logo: IntegrationsSales,
       title: "Sales Force",
       cards: [
-        { title: "Salesforce CRM", desc: "Celitix + Salesforce – Sync customer data and streamline workflows with real-time integration." },
-        { title: "Lead Management", desc: "Capture and update leads directly from WhatsApp/SMS conversations." },
-        { title: "Contact Sync", desc: " Maintain a unified view by syncing contacts and accounts seamlessly." },
-        { title: "Deal Management", desc: "Create and update deals automatically as customer interactions progress." },
+        {
+          title: "Salesforce CRM",
+          desc: "Celitix + Salesforce – Sync customer data and streamline workflows with real-time integration.",
+        },
+        {
+          title: "Lead Management",
+          desc: "Capture and update leads directly from WhatsApp/SMS conversations.",
+        },
+        {
+          title: "Contact Sync",
+          desc: " Maintain a unified view by syncing contacts and accounts seamlessly.",
+        },
+        {
+          title: "Deal Management",
+          desc: "Create and update deals automatically as customer interactions progress.",
+        },
       ],
     },
     {
       top: "Google Sheets",
-      heading: "Automate  customer communication -Connect your Google Sheets with Celitix",
+      heading:
+        "Automate  customer communication -Connect your Google Sheets with Celitix",
       logo: IntegrationsSheets,
       title: "Google Sheets",
       cards: [
-        { title: "Lead Follow-up", desc: "Record and track lead follow-ups in Sheets to ensure timely engagement and faster conversions." },
-        { title: "Conversion Tracking", desc: " Monitor campaign conversions in real time and measure ROI directly from your customer interactions." },
-        { title: "Lead Data Management", desc: " Store, organize, and update all lead information in one place for a unified view." },
-        { title: "Report Automation", desc: "Generate auto-updated reports from Sheets to share insights on leads, conversions, and team performance." },
+        {
+          title: "Lead Follow-up",
+          desc: "Record and track lead follow-ups in Sheets to ensure timely engagement and faster conversions.",
+        },
+        {
+          title: "Conversion Tracking",
+          desc: " Monitor campaign conversions in real time and measure ROI directly from your customer interactions.",
+        },
+        {
+          title: "Lead Data Management",
+          desc: " Store, organize, and update all lead information in one place for a unified view.",
+        },
+        {
+          title: "Report Automation",
+          desc: "Generate auto-updated reports from Sheets to share insights on leads, conversions, and team performance.",
+        },
       ],
     },
     {
       top: "LeadSquared CRM ",
-      heading: "Automate  customer communication -Connect your LeadSquared with Celitix",
+      heading:
+        "Automate  customer communication -Connect your LeadSquared with Celitix",
       logo: IntegrationsLeadSquared,
       title: "LeadSquared CRM ",
       cards: [
-        { title: "Broadcast Campaigns", desc: "Send offers, promotions, and updates to thousands of users instantly through WhatsApp & SMS." },
-        { title: "Automated Reminders", desc: "Set up payment reminders, event updates, and follow-ups without manual effort." },
-        { title: "Customer Support", desc: "Resolve queries faster with integrated live chat and Professional Services connected to LeadSquared." },
-        { title: "Data Synchronization", desc: "Sync customer data between Celitix and LeadSquared to maintain a single source of truth." },
+        {
+          title: "Broadcast Campaigns",
+          desc: "Send offers, promotions, and updates to thousands of users instantly through WhatsApp & SMS.",
+        },
+        {
+          title: "Automated Reminders",
+          desc: "Set up payment reminders, event updates, and follow-ups without manual effort.",
+        },
+        {
+          title: "Customer Support",
+          desc: "Resolve queries faster with integrated live chat and Professional Services connected to LeadSquared.",
+        },
+        {
+          title: "Data Synchronization",
+          desc: "Sync customer data between Celitix and LeadSquared to maintain a single source of truth.",
+        },
       ],
     },
     {
       top: "FreshWork CRM",
-      heading: "Automate  customer communication -Connect your FreshWork CRM  with Celitix",
+      heading:
+        "Automate  customer communication -Connect your FreshWork CRM  with Celitix",
       logo: IntegrationsFreshWork,
       title: "FreshWorkCRM",
       cards: [
-        { title: "Lead Capture", desc: "Auto-create leads in Freshworks CRM from inbound WhatsApp/SMS interactions." },
-        { title: "Data Sync", desc: "Keep contacts, accounts, and deal records up to date across Freshworks and Celitix." },
-        { title: "Task Automation", desc: "Generate follow-up tasks and reminders automatically from conversations." },
-        { title: "Support Integration", desc: "Manage tickets and customer queries with instant updates via WhatsApp & SMS." },
+        {
+          title: "Lead Capture",
+          desc: "Auto-create leads in Freshworks CRM from inbound WhatsApp/SMS interactions.",
+        },
+        {
+          title: "Data Sync",
+          desc: "Keep contacts, accounts, and deal records up to date across Freshworks and Celitix.",
+        },
+        {
+          title: "Task Automation",
+          desc: "Generate follow-up tasks and reminders automatically from conversations.",
+        },
+        {
+          title: "Support Integration",
+          desc: "Manage tickets and customer queries with instant updates via WhatsApp & SMS.",
+        },
       ],
     },
     // add 6 more here
@@ -258,83 +396,104 @@ export default function Page() {
   const activeSlide = slidesData[activeIndex];
 
   const ICONS = [
-    { src: "/assets/IntegrationsImage/SHOPI.png", size: 84, initial: { x: 50, y: -280, rotate: -12 } },
-    { src: "/assets/IntegrationsImage/FRESH.png", size: 92, initial: { z: 50, y: -0, rotate: 8 } },
+    {
+      src: "/assets/IntegrationsImage/SHOPI.png",
+      size: 84,
+      initial: { x: 50, y: -280, rotate: -12 },
+    },
+    {
+      src: "/assets/IntegrationsImage/FRESH.png",
+      size: 92,
+      initial: { z: 50, y: -0, rotate: 8 },
+    },
     // { src: "./assets/Icons/WhatsApp.svg", size: 120, initial: { x: 0, y: 0, rotate: 0 } },
   ];
-  {/* scetion 4 */ }
-  {/* scetion 5 */ }
-  const tabs = [
-    { key: 'Real Estate', label: 'Real Estate' },
-    { key: 'Financial Services', label: 'Financial Services' },
-    { key: 'Professional Services', label: 'Professional Services' },
-    { key: 'Customer Support', label: 'Customer Support' },
-    { key: 'Tech Startups', label: 'Tech Startups' },
-  ]
+  {
+    /* scetion 4 */
+  }
+  {
+    /* scetion 5 */
+  }
+  const TABS = [
+    "Real Estate",
+    "Financial Services",
+    "Professional Services",
+    "Customer Support",
+    "Tech Startups",
+  ];
 
   const tabData = {
-    'Real Estate': {
-      heading: 'Real Estate',
+    "Real Estate": {
+      heading: "Real Estate",
       description:
-        ' Use LeadSquared & Salesforce to capture property leads, sync contacts, and automate deal follow-ups. Manage site visits and track progress in real time.',
-      buttonText: 'Learn More',
+        "Use LeadSquared & Salesforce to capture property leads, sync contacts, and automate deal follow-ups, ensuring no opportunity is missed. Streamline site visit scheduling, track customer interactions, and monitor sales progress in real time. Automatically qualify leads, prioritize high-intent buyers, and nurture prospects with personalized communication. Gain complete visibility into your sales pipeline, improve team productivity, and accelerate property conversions with a unified real estate CRM workflow.",
+      buttonText: "Learn More",
       // If you store a PNG/JPG for “Rich Campaigns”:
       // image can point to a static image import or an external URL
       image: IntegrationRealEstate,
       isVideo: false,
     },
-    'Financial Services': {
-      heading: 'Financial Services',
+    "Financial Services": {
+      heading: "Financial Services",
       description:
-        'Connect Zoho CRM & Google Sheets to automate lead entry, manage KYC workflows, and track payment reminders with secure, compliance-ready processes.',
-      buttonText: 'Learn More',
+        "Connect Zoho CRM & Google Sheets to automate lead entry, manage KYC workflows, and track payment reminders with secure, compliance-ready processes. Streamline customer onboarding, reduce manual data entry, and ensure accurate record management across teams. Automate follow-ups for loan applications, insurance inquiries, and financial products while maintaining complete visibility into customer interactions. Improve operational efficiency, enhance customer experience, and stay compliant with industry regulations through centralized workflow automation.",
+      buttonText: "Learn More",
       // This is a video file, so we’ll set isVideo=true:
       image: IntegrationFinancial,
       isVideo: true,
     },
-    'Professional Services': {
-      heading: 'Professional Services',
+    "Professional Services": {
+      heading: "Professional Services",
       description:
-        ' Integrate Freshworks & Zoho CRM to manage client leads, automate task assignments, and sync data for smooth workflows across consulting or agency work.',
-      buttonText: 'Get Started',
+        "Integrate Freshworks & Zoho CRM to manage client leads, automate task assignments, and sync data for smooth workflows across consulting or agency work. Centralize client communication, track project progress, and ensure timely follow-ups from a single platform. Automate routine administrative tasks, improve team collaboration, and maintain complete visibility into ongoing engagements. Deliver faster responses, enhance client satisfaction, and scale operations efficiently without increasing manual workload.",
+      buttonText: "Get Started",
       image: IntegrationProfessional,
       isVideo: true,
     },
-    'Customer Support': {
-      heading: 'Customer Support',
+    "Customer Support": {
+      heading: "Customer Support",
       description:
-        ' Use Freshdesk & Freshworks to auto-generate tickets, send instant updates, and manage customer conversations with built-in workflows and chatbots.',
-      buttonText: 'Explore',
+        "Customer Support Use Freshdesk & Freshworks to auto-generate tickets, send instant updates, and manage customer conversations with built-in workflows and chatbots. Centralize support requests from multiple channels, ensuring faster response times and consistent customer experiences. Automate ticket routing, escalation, and follow-ups to improve agent productivity and reduce resolution times. Gain real-time visibility into support performance, customer satisfaction, and service efficiency through comprehensive reporting and analytics.",
+      buttonText: "Explore",
       image: IntegrationCustomer,
       isVideo: true,
     },
-    'Tech Startups': {
-      heading: 'Tech Startups',
+    "Tech Startups": {
+      heading: "Tech Startups",
       description:
-        'Leverage Salesforce, Zoho CRM, & Google Sheets to automate onboarding, manage investor/partner pipelines, and scale sales campaigns with data-driven insights.',
-      buttonText: 'Explore',
+        "Leverage Salesforce, Zoho CRM, & Google Sheets to automate onboarding, manage investor/partner pipelines, and scale sales campaigns with data-driven insights. Streamline communication across teams, reduce manual workload, and improve decision-making with real-time analytics. Build faster, operate smarter, and accelerate your startup growth with efficient automation systems.",
+      buttonText: "Explore",
       image: IntegrationTech,
       isVideo: true,
     },
-  }
+  };
 
   const [activeTab, setActiveTab] = useState("Real Estate");
 
   // Destructure the current tab’s data in one go:
-  const { heading, description, buttonText, image, isVideo } = tabData[activeTab];
-  {/* scetion 5 */ }
-  {/* scetion 6 */ }
+  const { heading, description, buttonText, image, isVideo } =
+    tabData[activeTab];
+  {
+    /* scetion 5 */
+  }
+  {
+    /* scetion 6 */
+  }
   const [openDialog, setOpenDialog] = useState(false);
 
   const handleShowFormPopup = () => {
     setOpenDialog(true);
-  }
+  };
 
   const handleCloseDialog = () => {
     setOpenDialog(false);
+  };
+  {
+    /* scetion 6 */
   }
-  {/* scetion 6 */ }
-  {/* scetion 7 */ }
+  {
+    /* scetion 7 */
+  }
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggle = (index) => {
@@ -343,7 +502,8 @@ export default function Page() {
 
   const faqs = [
     {
-      question: "Can I integrate Celitix enterprise messaging solutions with Shopify, WooCommerce, Zoho CRM, Freshdesk and other CRM?",
+      question:
+        "Can I integrate Celitix enterprise messaging solutions with Shopify, WooCommerce, Zoho CRM, Freshdesk and other CRM?",
       answer:
         "Yes. Celitix offers native integrations with these platforms to automate workflows, sync data, and improve efficiency.",
     },
@@ -368,7 +528,9 @@ export default function Page() {
         "Instant ticket updates on WhatsApp, faster responses to boost customer satisfaction.",
     },
   ];
-  {/* scetion 7 */ }
+  {
+    /* scetion 7 */
+  }
   return (
     <>
       {/* scetion 1 */}
@@ -377,13 +539,18 @@ export default function Page() {
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
             {/* Left: Text */}
             <div>
-
               <h1 className="text-2xl md:text-5xl lg:text-5xl heading font-bold text-gray-900 popf leading-tight">
-                Power Growth with Celitix  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]"> Integrations </span> – Shopify, Zoho &amp; More.
+                Power Growth with Celitix{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2b40b0] to-[#36bae2]">
+                  {" "}
+                  Integrations{" "}
+                </span>{" "}
+                – Shopify, Zoho &amp; More.
               </h1>
               <p className="mt-4 text-gray-600 text-md md:text-xl sub-heading max-w-xl">
-                Connect Shopify, Zoho, Salesforce, Freshdesk &amp; more with Celitix.
-                Automate tasks, streamline workflows, and scale your business with ease.
+                Connect Shopify, Zoho, Salesforce, Freshdesk &amp; more with
+                Celitix. Automate tasks, streamline workflows, and scale your
+                business with ease.
               </p>
               <div className="mt-6">
                 <UniversalButton
@@ -392,10 +559,7 @@ export default function Page() {
                   className="bg-[#9B44B6] border-[#9B44B6] text-white px-5 py-2 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6]"
                   onClick={handleShowFormPopup}
                 />
-                <FormPopup
-                  visible={openDialog}
-                  onHide={handleCloseDialog}
-                />
+                <FormPopup visible={openDialog} onHide={handleCloseDialog} />
               </div>
             </div>
 
@@ -432,18 +596,17 @@ export default function Page() {
                   <MotionImage
                     key={index}
                     src={logos[index]?.src}
-                    alt={logos[index]?.alt || 'logo'}
+                    alt={logos[index]?.alt || "logo"}
                     className="max-w-[70%] max-h-[70%] object-contain "
                     variants={variants}
                     initial="enter"
                     animate="center"
                     exit="exit"
-                    transition={{ duration: 0.55, ease: 'easeOut' }}
+                    transition={{ duration: 0.55, ease: "easeOut" }}
                   />
                 </AnimatePresence>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -451,16 +614,22 @@ export default function Page() {
       {/* scetion 2 */}
       <section className="py-8 md:py-20 bg-[linear-gradient(232deg,rgba(201,204,245,1)_0%,rgba(250,237,237,1)_72%,rgba(201,204,245,1)_100%)]">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-extrabold heading md:text-5xl text-gray-800 mb-1 md:mb-5">Integrations</h2>
+          <h2 className="text-3xl font-extrabold heading md:text-5xl text-gray-800 mb-1 md:mb-5">
+            Integrations
+          </h2>
           <p className="mt-3 sub-heading text-md md:text-xl mb-1 md:mb-5">
-            Manage customer conversations and business data in one place with Celitix.
+            Manage customer conversations and business data in one place with
+            Celitix.
           </p>
 
           {/* Slider row */}
           <div className="relative mt-8">
             {/* Edge fade so tiles vanish nicely at sides */}
             <div className="overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-              <ul role="list" className="track flex items-center gap-4 will-change-transform py-1">
+              <ul
+                role="list"
+                className="track flex items-center gap-4 will-change-transform py-1"
+              >
                 {loop.map((item, i) => (
                   <li
                     key={i}
@@ -469,7 +638,6 @@ export default function Page() {
                     <Image
                       src={item.src}
                       alt={item.alt}
-
                       width={96}
                       height={96}
                       className="h-8 sm:h-15 object-contain  transition"
@@ -483,26 +651,32 @@ export default function Page() {
 
         {/* Inline keyframes so you don't need Tailwind config */}
         <style jsx>{`
-        .track {
-          width: max-content;
-          animation: integrations-scroll 18s linear infinite;
-        }
-        .track:hover { animation-play-state: paused; }
-        @keyframes integrations-scroll {
-          from { transform: translate3d(0, 0, 0); }
-          to   { transform: translate3d(-50%, 0, 0); } 
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .track { animation: none; }
-        }
-      `}</style>
+          .track {
+            width: max-content;
+            animation: integrations-scroll 18s linear infinite;
+          }
+          .track:hover {
+            animation-play-state: paused;
+          }
+          @keyframes integrations-scroll {
+            from {
+              transform: translate3d(0, 0, 0);
+            }
+            to {
+              transform: translate3d(-50%, 0, 0);
+            }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .track {
+              animation: none;
+            }
+          }
+        `}</style>
       </section>
       {/* scetion 2 */}
       {/* scetion 3 */}
       <section className="relative w-full bg-purple-50 py-8 md:pt-20 px-4 md:px-20">
         <div className="mx-auto lg:max-w-5xl 2xl:max-w-7xl text-center">
-
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 transition-all mt-5">
             {cards
               .slice(page * itemsPerPage, page * itemsPerPage + itemsPerPage)
@@ -519,24 +693,21 @@ export default function Page() {
                       height={80}
                     />
                   </div>
-                  <h3 className="font-semibold heading text-xl">{card.title}</h3>
+                  <h3 className="font-semibold heading text-xl">
+                    {card.title}
+                  </h3>
                   <p className="text-md sub-heading mt-2 flex-1">{card.desc}</p>
-                  <Link
-                    href={card.link}
-
-                  >
+                  <Link href={card.link}>
                     <UniversalButton
                       label="Learn More"
                       variant="brutal"
                       className="bg-[#9B44B6] border-[#9B44B6] text-white px-3 py-1 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6] mt-2"
-
                     />
                   </Link>
                 </div>
               ))}
           </div>
 
- 
           <button
             onClick={handlePrev}
             className="absolute left-2 md:left-10 lg:left-20 xl:left-30 top-1/2 -translate-y-1/2 rounded-full bg-white shadow p-2 hover:bg-gray-100"
@@ -550,20 +721,19 @@ export default function Page() {
             <ChevronRight />
           </button>
 
-          
           <div className="flex justify-center mt-6 gap-2">
             {Array.from({ length: totalPages }).map((_, i) => (
               <button
                 key={i}
                 onClick={() => setPage(i)}
-                className={`w-3 h-3 rounded-full ${page === i ? "bg-purple-600" : "bg-purple-300"
-                  }`}
+                className={`w-3 h-3 rounded-full ${
+                  page === i ? "bg-purple-600" : "bg-purple-300"
+                }`}
               />
             ))}
           </div>
         </div>
         <div className="hidden xl:block w-full">
-
           <motion.div
             animate={{ rotate: 360 }}
             transition={{
@@ -581,7 +751,7 @@ export default function Page() {
               />
             </div>
           </motion.div>
-           {/* {ICONS.map((icon, i) => (
+          {/* {ICONS.map((icon, i) => (
             <motion.img
               key={i}
               src={icon.src}
@@ -728,9 +898,8 @@ export default function Page() {
         </div>
       </section> */}
       {/* scetion 3 */}
-      <div className='bg-[#f7ebfc] py-2 md:py-16'>
+      <div className="bg-[#f7ebfc] py-2 md:py-16">
         <div className=" bg-linear-to-r from-[#6b0da1] to-[#8447c6] grid grid-cols-1 md:grid-cols-2 h-auto py-10 px-6 sm:px-8 rounded-3xl  w-full sm:w-11/12 md:w-11/12 mx-auto items-center gap-8">
-
           {/* Left Section */}
           <div className="flex flex-col justify-center text-center md:text-left">
             <h2 className="text-4xl sm:text-3xl heading md:text-4xl font-bold text-white popf ">
@@ -738,7 +907,6 @@ export default function Page() {
             </h2>
             <p className="text-sm md:text-lg sub-heading text-white font-light popf mt-2">
               Connect with our Team to help your business grow.
-
             </p>
           </div>
 
@@ -752,14 +920,9 @@ export default function Page() {
                 onClick={handleShowFormPopup}
               />
 
-
-              <FormPopup
-                visible={openDialog}
-                onHide={handleCloseDialog}
-              />
+              <FormPopup visible={openDialog} onHide={handleCloseDialog} />
             </div>
           </div>
-
         </div>
       </div>
       {/* scetion 4 */}
@@ -767,7 +930,9 @@ export default function Page() {
         <div className="max-w-6xl 2xl:max-w-7xl mx-auto px-6 pb-0 md:pb-16">
           {/* Dynamic heading from active slide */}
           <div className="text-center mb-8">
-            <h2 className="heading text-2xl md:text-4xl mb-2">{activeSlide.top}</h2>
+            <h2 className="heading text-2xl md:text-4xl mb-2">
+              {activeSlide.top}
+            </h2>
             <h3 className="text-[20px] text-md sub-heading md:text-xl text-gray-900">
               {activeSlide.heading}
             </h3>
@@ -790,7 +955,13 @@ export default function Page() {
                   {/* Center Logo */}
                   <div className="order-5 md:order-none md:row-span-2 md:col-start-2 md:row-start-1 flex items-center justify-center">
                     <div className="h-44 w-44 md:h-72 md:w-72 rounded-full bg-white shadow-2xl border-5 border-gray-100 flex flex-col items-center justify-center mb-10">
-                      <Image src={slide.logo} alt={slide.title} width={200} height={200} className="transition-transform duration-300 hover:scale-110" />
+                      <Image
+                        src={slide.logo}
+                        alt={slide.title}
+                        width={200}
+                        height={200}
+                        className="transition-transform duration-300 hover:scale-110"
+                      />
                       {/* <span className="text-xl font-semibold text-gray-800 mt-2">{slide.title}</span> */}
                     </div>
                   </div>
@@ -808,110 +979,75 @@ export default function Page() {
             ))}
           </Swiper>
         </div>
-
       </section>
       {/* scetion 4 */}
       {/* scetion 5 */}
-      <section className="py-8 md:py-10 bg-[#f7ebfc]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-2 md:mb-15">
-          <h2 className="text-2xl sm:text-3xl text-black md:text-5xl heading text-center mb-6 sm:mb-8">
+      <section className="pb-10 md:pb-20 bg-[#f7ebfc]">
+        {/* Narrower container so the section no longer stretches too wide */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl text-black md:text-5xl heading text-center mb-8 sm:mb-10">
             Use Cases Across Industries
           </h2>
 
-          <div className="overflow-x-auto flex lg:justify-center justify-start">
-            <div className="inline-flex space-x-4 px-4 lg:px-0">
-              <button
-                onClick={() => setActiveTab('Real Estate')}
-                className={`relative px-4 py-2 uppercase text-xs sm:text-sm tracking-wide transition-colors focus:outline-none  whitespace-nowrap rounded-t-xl ${activeTab === 'Real Estate'
-                  ? 'text-white bg-[#6E11B0] shadow-lg heading'
-                  : 'text-gray-800 sub-heading bg-[#E9D4FF] hover:bg-[#e4caff] hover:text-[#6b0da1]'
+          {/* Tabs now wrap + center instead of scrolling wide */}
+          <div className="flex flex-wrap justify-center gap-3 mb-8">
+            {TABS.map((name) => {
+              const isActive = activeTab === name;
+              return (
+                <button
+                  key={name}
+                  onClick={() => setActiveTab(name)}
+                  className={`px-5 py-2.5 uppercase text-xs sm:text-sm tracking-wide rounded-full transition-colors focus:outline-none ${
+                    isActive
+                      ? "text-white bg-[#6E11B0] shadow-md heading"
+                      : "text-gray-800 sub-heading bg-[#E9D4FF] hover:bg-[#e4caff] hover:text-[#6b0da1]"
                   }`}
-              >
-                Real Estate
-              </button>
-
-              <button
-                onClick={() => setActiveTab('Financial Services')}
-                className={`relative px-4 py-2 uppercase text-xs sm:text-sm tracking-wide transition-colors focus:outline-none whitespace-nowrap rounded-t-xl ${activeTab === 'Financial Services'
-                  ? 'text-white bg-[#6E11B0] shadow-lg heading'
-                  : 'text-gray-800 sub-heading bg-[#E9D4FF] hover:bg-[#e4caff] hover:text-[#6b0da1]'
-                  }`}
-              >
-                Financial Services
-              </button>
-
-              <button
-                onClick={() => setActiveTab('Professional Services')}
-                className={`relative px-4 py-2 uppercase text-xs sm:text-sm tracking-wide transition-colors focus:outline-none whitespace-nowrap rounded-t-xl ${activeTab === 'Professional Services'
-                  ? 'text-white bg-[#6E11B0] shadow-lg heading'
-                  : 'text-gray-800 sub-heading bg-[#E9D4FF] hover:bg-[#e4caff] hover:text-[#6b0da1]'
-                  }`}
-              >
-                Professional Services
-              </button>
-
-              <button
-                onClick={() => setActiveTab('Customer Support')}
-                className={`relative px-4 py-2 uppercase text-xs sm:text-sm tracking-wide transition-colors focus:outline-none whitespace-nowrap rounded-t-xl ${activeTab === 'Customer Support'
-                  ? 'text-white bg-[#6E11B0] shadow-lg heading'
-                  : 'text-gray-800 sub-heading bg-[#E9D4FF] hover:bg-[#e4caff] hover:text-[#6b0da1]'
-                  }`}
-              >
-                Customer Support
-              </button>
-
-              <button
-                onClick={() => setActiveTab('Tech Startups')}
-                className={`relative px-4 py-2 uppercase text-xs sm:text-sm tracking-wide transition-colors focus:outline-none whitespace-nowrap rounded-t-xl ${activeTab === 'Tech Startups'
-                  ? 'text-white bg-[#6E11B0] shadow-lg heading'
-                  : 'text-gray-800 sub-heading bg-[#E9D4FF] hover:bg-[#e4caff] hover:text-[#6b0da1]'
-                  }`}
-              >
-                Tech Startups
-              </button>
-            </div>
+                >
+                  {name}
+                </button>
+              );
+            })}
           </div>
 
-          {/* Content box */}
-          <div className="border border-[#6b0da1] rounded-3xl shadow-inner bg-white">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 p-6 sm:p-8">
-              {/* Left side: heading, description, button */}
-              <div className="flex flex-col justify-center space-y-4">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold sub-heading text-black">
+          {/* Content box — image side now has a filled lavender panel, no empty space */}
+          <div className="border border-[#e3cdf3] rounded-3xl bg-white overflow-hidden shadow-sm">
+            <div className="grid grid-cols-1 lg:grid-cols-2">
+              {/* Left: heading, description, button */}
+              <div className="flex flex-col justify-center space-y-5 p-8 sm:p-10">
+                <h3 className="text-2xl md:text-3xl font-bold sub-heading text-black">
                   {heading}
                 </h3>
-                <p className="text-gray-700 leading-relaxed pera text-md md:text-lg">
+                <p className="text-gray-700 leading-relaxed pera text-md md:text-lg text-justify">
                   {description}
                 </p>
                 <button
-                  className="inline-block px-6 py-2 bg-[#6b0da1] text-white rounded-full w-max hover:bg-[#580a88] transition"
+                  className="inline-block px-7 py-2.5 bg-[#6b0da1] text-white rounded-full w-max hover:bg-[#580a88] transition"
                   onClick={() => {
-                    // Put your “Learn More” or “Get Started” click handler here.
+                    // Put your "Learn More" or "Get Started" click handler here.
                   }}
                 >
                   {buttonText}
                 </button>
               </div>
 
-              {/* Right side: image or video */}
-              <div className="flex justify-center h-96">
-               
-                  <Image
-                    src={image}
-                    alt={activeTab}
-                    width={320}
-                    height={180}
-                    className="w-80 h-auto rounded-lg"
-                  />
-                
+              {/* Right: image inside a soft lavender panel that fills the column */}
+              <div className="flex items-center justify-center bg-[#f3e6fb]">
+                <Image
+                  src={image}
+                  alt={activeTab}
+                  width={420}
+                  height={200}
+                  className="w-full max-w-sm h-auto rounded-2xl"
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
+
       {/* scetion 5 */}
       {/* scetion 6 */}
-      <div className="flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-[#A05CD7] to-[#4B0FA6] px-6 md:px-12 py-5 md:py-15">
+      <div className="flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-[#A05CD7] to-[#4B0FA6] px-6 md:px-12 py-5 md:py-20">
         {/* Left Image with Icons */}
         <div className="relative w-full md:w-1/2 flex justify-center mb-10 md:mb-0">
           <Image
@@ -936,10 +1072,7 @@ export default function Page() {
             onClick={handleShowFormPopup}
           />
 
-          <FormPopup
-            visible={openDialog}
-            onHide={handleCloseDialog}
-          />
+          <FormPopup visible={openDialog} onHide={handleCloseDialog} />
         </div>
       </div>
       {/* scetion 6 */}

@@ -143,13 +143,13 @@ const Page = () => {
         "RCS Live Chat has interactive messaging such as images, videos, buttons, branded sender identity, and rich customer interactions, while traditional SMS does not provide those.",
     },
     {
-      question: "Can businesses automate conversations using Celitix RCS Live Chat?",
+      question:
+        "Can businesses automate conversations using Celitix RCS Live Chat?",
       answer:
         "Yes. Celitix enables businesses to automate conversations by using Chat Workflows, auto-responses, intelligent routing, triggers, and messaging automation.",
     },
     {
-      question:
-        "Who should use Celitix RCS Live Chat?",
+      question: "Who should use Celitix RCS Live Chat?",
       answer:
         "Celitix RCS Live Chat is a great product for the eCommerce/retail, healthcare, finance, travel, and hospitality industries, as well as education and customer service teams, which are looking to improve communication with their customers.",
     },
@@ -578,10 +578,10 @@ const Page = () => {
       {/* 4th */}
 
       {/* extra */}
-      <section className="w-full py-10 bg-[#f7ebfc]">
+      <section className="w-full bg-[#f7ebfc] px-4 py-10 sm:px-6 md:py-16 lg:px-10">
         <div className="max-w-screen-2xl mx-auto">
-          <div className="text-center px-1 md:px-4 pb-2 md:pb-16">
-            <h2 className="text-2xl md:text-4xl lg:text-5xl heading font-semibold text-gray-900 mb-2">
+          <div className="text-center max-w-4xl mx-auto mb-8 md:mb-12">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl heading font-semibold text-gray-900 mb-3">
               Advanced Features of Celitix RCS Chat
             </h2>
             {/* <p className="text-sm md:text-lg sub-heading max-w-6xl mx-auto text-gray-700 ">
@@ -589,19 +589,19 @@ const Page = () => {
               team complete control over every customer interaction.
             </p> */}
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-8">
             {/* CARD 1 */}
-            <div className="bg-[#bbebe3] rounded-[28px] overflow-hidden">
-              <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
+            <div className="group bg-[#bbebe3] rounded-[24px] overflow-hidden shadow-[0_18px_45px_rgba(15,23,42,0.08)] border border-white/80 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_55px_rgba(15,23,42,0.14)]">
+              <div className="flex flex-col md:flex-row h-full">
                 {/* LEFT */}
-                <div className="w-full p-6 md:p-8">
+                <div className="w-full md:w-[52%] p-6 sm:p-7 lg:p-8">
                   {/* <div className="text-3xl mb-5">🟩</div> */}
 
-                  <h2 className="text-[24px] leading-[1.1] font-bold text-[#0b1633] heading mb-5">
+                  <h2 className="text-xl sm:text-2xl leading-tight font-bold text-[#0b1633] heading mb-4">
                     Rich Media & Interactive Messages for Maximum Engagement
                   </h2>
 
-                  <p className="text-[16px] md:text-[18px] leading-[1.6] text-[#111827] pera text-justify">
+                  <p className="text-sm sm:text-base md:text-[17px] leading-relaxed text-[#111827] pera text-justify hyphens-auto">
                     Use RCS rich media messages, which include pictures, video
                     clips, carousel, and interactive buttons. Create immersive
                     conversations with the help of advanced RCS messaging
@@ -610,29 +610,29 @@ const Page = () => {
                 </div>
 
                 {/* RIGHT */}
-                <div className="relative w-full min-h-[300px] lg:min-h-full">
+                <div className="w-full md:w-[48%] relative min-h-[220px] sm:min-h-[260px] md:min-h-full bg-white/35">
                   <Image
                     src={RichMediaInteractiveMessages}
                     alt="Feature 1"
                     fill
-                    className="object-contain p-4 md:p-6"
+                    className="object-contain p-5 md:p-7 transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
               </div>
             </div>
 
             {/* CARD 2 */}
-            <div className="bg-[#dbe2f7] rounded-[28px] overflow-hidden ">
-              <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
+            <div className="group bg-[#dbe2f7] rounded-[24px] overflow-hidden shadow-[0_18px_45px_rgba(15,23,42,0.08)] border border-white/80 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_55px_rgba(15,23,42,0.14)]">
+              <div className="flex flex-col md:flex-row h-full">
                 {/* LEFT */}
-                <div className="w-full  p-6 md:p-8">
+                <div className="w-full md:w-[52%] p-6 sm:p-7 lg:p-8">
                   {/* <div className="text-3xl mb-5">❓</div> */}
 
-                  <h2 className="text-[24px] leading-[1.1] font-bold text-[#0b1633] heading mb-5">
+                  <h2 className="text-xl sm:text-2xl leading-tight font-bold text-[#0b1633] heading mb-4">
                     Pre-designed Message Templates for Consistent Communication
                   </h2>
 
-                  <p className="text-[16px] md:text-[18px] leading-[1.6] text-[#111827] pera text-justify">
+                  <p className="text-sm sm:text-base md:text-[17px] leading-relaxed text-[#111827] pera text-justify hyphens-auto">
                     Communicate consistently by sending pre-defined RCS message
                     templates to your customers. Personalize each message with
                     dynamic data to create customized content.
@@ -640,59 +640,59 @@ const Page = () => {
                 </div>
 
                 {/* RIGHT */}
-                <div className="relative w-full min-h-[300px] lg:min-h-full">
+                <div className="w-full md:w-[48%] relative min-h-[220px] sm:min-h-[260px] md:min-h-full bg-white/35">
                   <Image
                     src={PredesignedMessageTemplates}
                     alt="Feature 1"
                     fill
-                    className="object-contain p-4 md:p-6"
+                    className="object-contain p-5 md:p-7 transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
               </div>
             </div>
 
             {/* CARD 3 */}
-            <div className="bg-[#f1e3ed] rounded-[28px] overflow-hidden ">
-              <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
+            <div className="group bg-[#f1e3ed] rounded-[24px] overflow-hidden shadow-[0_18px_45px_rgba(15,23,42,0.08)] border border-white/80 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_55px_rgba(15,23,42,0.14)]">
+              <div className="flex flex-col md:flex-row h-full">
                 {/* LEFT */}
-                <div className="w-full p-6 md:p-8">
+                <div className="w-full md:w-[52%] p-6 sm:p-7 lg:p-8">
                   {/* <div className="text-3xl mb-5">💬</div> */}
 
-                  <h2 className="text-[24px] leading-[1.1] font-bold text-[#0b1633] heading mb-5">
+                  <h2 className="text-xl sm:text-2xl leading-tight font-bold text-[#0b1633] heading mb-4">
                     Speed Dial Messages to Expedite Message Delivery
                   </h2>
 
-                  <p className="text-[16px] md:text-[18px] leading-[1.6] text-[#111827] pera text-justify">
+                  <p className="text-sm sm:text-base md:text-[17px] leading-relaxed text-[#111827] pera text-justify hyphens-auto">
                     Speed up agent response time by allowing them to use the RCS
                     speed dial option to quickly send message templates, media,
-                    and messages.
+                    and messages. This ensures faster, consistent communication and improves overall customer engagement efficiency.
                   </p>
                 </div>
 
                 {/* RIGHT */}
-                <div className="relative w-full min-h-[300px] lg:min-h-full">
+                <div className="w-full md:w-[48%] relative min-h-[220px] sm:min-h-[260px] md:min-h-full bg-white/35">
                   <Image
                     src={SpeedDialMessagesExpedite}
                     alt="Feature 1"
                     fill
-                    className="object-contain p-4 md:p-6"
+                    className="object-contain p-5 md:p-7 transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
               </div>
             </div>
 
             {/* CARD 4 */}
-            <div className="bg-[#efe2c6] rounded-[28px] overflow-hidden">
-              <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
+            <div className="group bg-[#efe2c6] rounded-[24px] overflow-hidden shadow-[0_18px_45px_rgba(15,23,42,0.08)] border border-white/80 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_55px_rgba(15,23,42,0.14)]">
+              <div className="flex flex-col md:flex-row h-full">
                 {/* LEFT */}
-                <div className="w-full p-6 md:p-8">
+                <div className="w-full md:w-[52%] p-6 sm:p-7 lg:p-8">
                   {/* <div className="text-3xl mb-5">🏆</div> */}
 
-                  <h2 className="text-[24px] leading-[1.1] font-bold text-[#0b1633] heading mb-5">
+                  <h2 className="text-xl sm:text-2xl leading-tight font-bold text-[#0b1633] heading mb-4">
                     Enhanced RCS Chat Segmentation & Chat Management
                   </h2>
 
-                  <p className="text-[16px] md:text-[18px] leading-[1.6] text-[#111827] pera text-justify">
+                  <p className="text-sm sm:text-base md:text-[17px] leading-relaxed text-[#111827] pera text-justify hyphens-auto">
                     Segregate conversations through filtering based on
                     active/inactive, assigned/unassigned, and unread chats. Use
                     chat management systems to segment customers according to
@@ -701,12 +701,12 @@ const Page = () => {
                 </div>
 
                 {/* RIGHT */}
-                <div className="relative w-full min-h-[300px] lg:min-h-full">
+                <div className="w-full md:w-[48%] relative min-h-[220px] sm:min-h-[260px] md:min-h-full bg-white/35">
                   <Image
                     src={EnhancedRCSChatSegmentation}
                     alt="Feature 1"
                     fill
-                    className="object-contain p-4 md:p-6"
+                    className="object-contain p-5 md:p-7 transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
               </div>

@@ -126,8 +126,7 @@ const Page = () => {
         "WhatsApp Live Chat makes customer support better. It does this by letting businesses reply to customers away. This means issues get solved faster. Businesses can also have personalized conversations with customers. All of this happens in time on WhatsApp, which is what customers like to use.",
     },
     {
-      question:
-        "Can multiple agents manage WhatsApp customer chats?",
+      question: "Can multiple agents manage WhatsApp customer chats?",
       answer:
         "Yes, multiple agents can handle customer chats at the same time. They use an inbox for this. This way, no messages get missed.",
     },
@@ -142,7 +141,8 @@ const Page = () => {
         "Yes, WhatsApp Live Chat works with chatbots and automation. It can even automate some tasks. Help qualify leads. It also has features to engage with customers.",
     },
     {
-      question: "What is the difference between WhatsApp Business App and WhatsApp Business API?",
+      question:
+        "What is the difference between WhatsApp Business App and WhatsApp Business API?",
       answer:
         "The WhatsApp Business App is for businesses. The WhatsApp Business API is for businesses. It has features like automation and integration with other systems. It also works with agents.",
     },
@@ -373,7 +373,7 @@ const Page = () => {
           {/* Center Mobile Mockup */}
           <div className="flex justify-center items-center order-first md:order-none h-full">
             <Image
-              src={MeetCustomersWhere} 
+              src={MeetCustomersWhere}
               alt="Phone Mockup"
               className=" object-contain"
             />
@@ -459,7 +459,7 @@ const Page = () => {
           </div>
         </div>
       </section>
-      
+
       {/* <section className="relative bg-[#f7ebfc] py-10 px-4 overflow-hidden">
         <div className="text-center max-w-5xl mx-auto mb-6 relative z-10">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#140a2e] leading-tight heading">
@@ -730,94 +730,106 @@ const Page = () => {
       {/* 4th */}
 
       {/* extra */}
-      <section className="w-full py-10 bg-[#f7ebfc]">
+      <section className="w-full bg-[#f7ebfc] px-4 py-10 sm:px-6 md:py-16 lg:px-10">
         <div className="max-w-screen-2xl mx-auto">
-          <div className="text-center px-1 md:px-4 pb-2 md:pb-16">
-            <h2 className="text-2xl md:text-4xl lg:text-5xl heading font-semibold text-gray-900 mb-2">
+          <div className="text-center max-w-4xl mx-auto mb-8 md:mb-12">
+            {/* <span className="inline-flex items-center justify-center rounded-full bg-white px-4 py-1.5 text-xs sm:text-sm font-semibold uppercase tracking-wide text-[#6b0da1] shadow-sm mb-4 sub-heading">
+              Customer support suite
+            </span> */}
+            <h2 className="text-2xl md:text-4xl lg:text-5xl heading font-semibold text-gray-900 mb-3">
               Elevate The Customer Experience
             </h2>
-            {/* <p className="text-sm md:text-lg sub-heading max-w-6xl mx-auto text-gray-700 ">
+            {/* <p className="text-sm md:text-lg sub-heading text-gray-700">
               Handle conversations faster, automate responses, and give your
               team complete control over every customer interaction.
             </p> */}
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-8">
             {/* CARD 1 */}
-            <div className="bg-[#bbebe3] rounded-[28px] overflow-hidden min-h-[420px]">
-              <div className="flex flex-col lg:flex-row h-full">
+            <div className="group bg-[#bbebe3] rounded-[24px] overflow-hidden shadow-[0_18px_45px_rgba(15,23,42,0.08)] border border-white/80 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_55px_rgba(15,23,42,0.14)]">
+              <div className="flex flex-col md:flex-row h-full">
                 {/* LEFT */}
-                <div className="w-full lg:w-[48%] p-6 md:p-8">
+                <div className="w-full md:w-[52%] p-6 sm:p-7 lg:p-8">
                   {/* <div className="text-3xl mb-5">🟩</div> */}
 
-                  <h2 className="text-[24px] leading-[1.1] font-bold text-[#0b1633] heading mb-5">
+                  {/* <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white text-sm font-bold text-[#007e6f] shadow-sm mb-5">
+                    01
+                  </span> */}
+                  <h2 className="text-xl sm:text-2xl leading-tight font-bold text-[#0b1633] heading mb-4">
                     AI Chatbot + Live Agent Handover
                   </h2>
 
-                  <p className="text-[16px] md:text-[18px] leading-[1.6] text-[#111827] pera text-justify">
+                  <p className="text-sm sm:text-base md:text-[17px] leading-relaxed text-[#111827] pera text-justify hyphens-auto">
                     We can use WhatsApp to combine the power of automation with
                     support. The AI Chatbot can handle frequently asked
                     questions and find new leads. Then it can transfer complex
                     questions to live agents. This way, we can resolve issues
-                    faster. Make the customer experience better.
+                    faster and make the customer experience better.
                   </p>
                 </div>
 
                 {/* RIGHT */}
-                <div className="w-full lg:w-[52%] relative min-h-[260px] lg:min-h-full">
+                <div className="w-full md:w-[48%] relative min-h-[220px] sm:min-h-[260px] md:min-h-full bg-white/35">
                   <Image
                     src={AIChatbotLiveAgentHandover}
                     alt="Feature 1"
                     fill
-                    className="object-contain p-4 md:p-6"
+                    className="object-contain p-5 md:p-7 transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
               </div>
             </div>
 
             {/* CARD 2 */}
-            <div className="bg-[#dbe2f7] rounded-[28px] overflow-hidden min-h-[420px]">
-              <div className="flex flex-col lg:flex-row h-full">
+            <div className="group bg-[#dbe2f7] rounded-[24px] overflow-hidden shadow-[0_18px_45px_rgba(15,23,42,0.08)] border border-white/80 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_55px_rgba(15,23,42,0.14)]">
+              <div className="flex flex-col md:flex-row h-full">
                 {/* LEFT */}
-                <div className="w-full lg:w-[48%] p-6 md:p-8">
+                <div className="w-full md:w-[52%] p-6 sm:p-7 lg:p-8">
                   {/* <div className="text-3xl mb-5">❓</div> */}
 
-                  <h2 className="text-[24px] leading-[1.1] font-bold text-[#0b1633] heading mb-5">
+                  {/* <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white text-sm font-bold text-[#2b40b0] shadow-sm mb-5">
+                    02
+                  </span> */}
+                  <h2 className="text-xl sm:text-2xl leading-tight font-bold text-[#0b1633] heading mb-4">
                     Internal Notes & Team Collaboration Tools
                   </h2>
 
-                  <p className="text-[16px] md:text-[18px] leading-[1.6] text-[#111827] pera text-justify">
+                  <p className="text-sm sm:text-base md:text-[17px] leading-relaxed text-[#111827] pera text-justify hyphens-auto">
                     Our team can work better with tools like internal notes,
                     tags, and mentions. Agents can share information, update the
                     status, and work together effectively. This helps our team
-                    communicate better, make mistakes, and handle customers
+                    communicate better, reduce mistakes, and handle customers
                     better.
                   </p>
                 </div>
 
                 {/* RIGHT */}
-                <div className="w-full lg:w-[52%] relative min-h-[260px] lg:min-h-full">
+                <div className="w-full md:w-[48%] relative min-h-[220px] sm:min-h-[260px] md:min-h-full bg-white/35">
                   <Image
                     src={InternalNotesTeamCollaborationTools}
                     alt="Feature 2"
                     fill
-                    className="object-contain p-4 md:p-6"
+                    className="object-contain p-5 md:p-7 transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
               </div>
             </div>
 
             {/* CARD 3 */}
-            <div className="bg-[#f1e3ed] rounded-[28px] overflow-hidden min-h-[420px]">
-              <div className="flex flex-col lg:flex-row h-full">
+            <div className="group bg-[#f1e3ed] rounded-[24px] overflow-hidden shadow-[0_18px_45px_rgba(15,23,42,0.08)] border border-white/80 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_55px_rgba(15,23,42,0.14)]">
+              <div className="flex flex-col md:flex-row h-full">
                 {/* LEFT */}
-                <div className="w-full lg:w-[48%] p-6 md:p-8">
+                <div className="w-full md:w-[52%] p-6 sm:p-7 lg:p-8">
                   {/* <div className="text-3xl mb-5">💬</div> */}
 
-                  <h2 className="text-[24px] leading-[1.1] font-bold text-[#0b1633] heading mb-5">
+                  {/* <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white text-sm font-bold text-[#a3336f] shadow-sm mb-5">
+                    03
+                  </span> */}
+                  <h2 className="text-xl sm:text-2xl leading-tight font-bold text-[#0b1633] heading mb-4">
                     Customer Conversation Tracking
                   </h2>
 
-                  <p className="text-[16px] md:text-[18px] leading-[1.6] text-[#111827] pera text-justify">
+                  <p className="text-sm sm:text-base md:text-[17px] leading-relaxed text-[#111827] pera text-justify hyphens-auto">
                     We can see everything about our customers with conversation
                     tracking and customer relationship management integration.
                     We can look at customer profiles, chat history, and
@@ -827,45 +839,47 @@ const Page = () => {
                 </div>
 
                 {/* RIGHT */}
-                <div className="w-full lg:w-[52%] relative min-h-[260px] lg:min-h-full">
+                <div className="w-full md:w-[48%] relative min-h-[220px] sm:min-h-[260px] md:min-h-full bg-white/35">
                   <Image
                     src={CustomerConversationTracking}
                     alt="Feature 3"
                     fill
-                    className="object-contain p-4 md:p-6"
+                    className="object-contain p-5 md:p-7 transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
               </div>
             </div>
 
             {/* CARD 4 */}
-            <div className="bg-[#efe2c6] rounded-[28px] overflow-hidden min-h-[420px]">
-              <div className="flex flex-col lg:flex-row h-full">
+            <div className="group bg-[#efe2c6] rounded-[24px] overflow-hidden shadow-[0_18px_45px_rgba(15,23,42,0.08)] border border-white/80 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_55px_rgba(15,23,42,0.14)]">
+              <div className="flex flex-col md:flex-row h-full">
                 {/* LEFT */}
-                <div className="w-full lg:w-[48%] p-6 md:p-8">
+                <div className="w-full md:w-[52%] p-6 sm:p-7 lg:p-8">
                   {/* <div className="text-3xl mb-5">🏆</div> */}
 
-                  <h2 className="text-[24px] leading-[1.1] font-bold text-[#0b1633] heading mb-5">
-                    Advanced Chat. Segmentation
+                  {/* <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white text-sm font-bold text-[#8a6214] shadow-sm mb-5">
+                    04
+                  </span> */}
+                  <h2 className="text-xl sm:text-2xl leading-tight font-bold text-[#0b1633] heading mb-4">
+                    Advanced Chat Segmentation
                   </h2>
 
-                  <p className="text-[16px] md:text-[18px] leading-[1.6] text-[#111827] pera text-justify">
+                  <p className="text-sm sm:text-base md:text-[17px] leading-relaxed text-[#111827] pera text-justify hyphens-auto">
                     We can organize our conversations better with filters like
                     inactive, assigned, and unread chats. We can also group our
                     customers based on how they behave, what they like, or how
                     they interact with us. This helps us talk to our customers
-                    in a targeted way, which is really useful for businesses
-                    that handle a lot of chats every day.
+                    in a targeted way, which is really useful for businesses.
                   </p>
                 </div>
 
                 {/* RIGHT */}
-                <div className="w-full lg:w-[52%] relative min-h-[260px] lg:min-h-full">
+                <div className="w-full md:w-[48%] relative min-h-[220px] sm:min-h-[260px] md:min-h-full bg-white/35">
                   <Image
                     src={AdvancedChatSegmentation}
                     alt="Feature 4"
                     fill
-                    className="object-contain p-4 md:p-6"
+                    className="object-contain p-5 md:p-7 transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
               </div>
