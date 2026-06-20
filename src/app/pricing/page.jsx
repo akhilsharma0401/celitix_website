@@ -1687,7 +1687,7 @@ const Pricing = () => {
   ];
 
   const CHANNEL_ICONS = {
-    WhatsApp: Reachwhatsappicon,
+    "WhatsApp Message": Reachwhatsappicon,
     "WhatsApp Calling": Reachwhatsappicon,
     RCS: ReachRCS,
     SMS: ReachSMS,
@@ -1723,9 +1723,8 @@ const Pricing = () => {
   const handleCloseDialog = () => setOpenDialog(false);
 
   // ────────────────────────────────────────────────────────────────────────────
-  // State & initial setup
   const [value, setValue] = useState(0);
-  const [channel, setChannel] = useState("WhatsApp");
+  const [channel, setChannel] = useState("WhatsApp Message");
   const [whatsAppType, setWhatsAppType] = useState("Marketing");
   const [rates, setRates] = useState({ usd: 1 / 75, eur: 1 / 90 });
   const ticks = [200000, 400000, 600000, 800000];
@@ -1788,21 +1787,21 @@ const Pricing = () => {
     },
   };
 
-  // Fetch live exchange rates
-  useEffect(() => {
-    fetch(
-      "https://v6.exchangerate-api.com/v6/26e0264a2658e739860a6998/latest/USD",
-    )
-      .then((res) => res.json())
-      .then((data) =>
-        setRates({
-          usd: 1,
-          eur: data.conversion_rates.EUR,
-          inr: data.conversion_rates.INR,
-        }),
-      )
-      .catch((err) => console.error("Failed to fetch rates", err));
-  }, []);
+  // // Fetch live exchange rates
+  // useEffect(() => {
+  //   fetch(
+  //     "https://v6.exchangerate-api.com/v6/26e0264a2658e739860a6998/latest/USD",
+  //   )
+  //     .then((res) => res.json())
+  //     .then((data) =>
+  //       setRates({
+  //         usd: 1,
+  //         eur: data.conversion_rates.EUR,
+  //         inr: data.conversion_rates.INR,
+  //       }),
+  //     )
+  //     .catch((err) => console.error("Failed to fetch rates", err));
+  // }, []);
 
   // Input handler
   const handleChange = (e) => {
@@ -1814,7 +1813,7 @@ const Pricing = () => {
   const percent = (value / 1_000_000) * 100;
 
   function getChannelKey(channel, whatsAppType) {
-    if (channel === "WhatsApp") return `WhatsApp_${whatsAppType}`;
+    if (channel === "WhatsApp Message") return `WhatsApp_${whatsAppType}`;
     return channel.replace(/\s+/g, "_");
   }
 
@@ -1894,7 +1893,7 @@ const Pricing = () => {
   }
 
   // Currency formatter
-  const formatCurrency = (amount, currency, market = "") => {
+  const formatCurrency = (amount, currency) => {
     // const symbols = { inr: "₹", usd: "$", eur: "€", aed: "AED", thb: "฿" };
     const symbols = {
       ars: "ARS ",
@@ -1916,7 +1915,7 @@ const Pricing = () => {
 
     let data = [];
     let total = 0;
-    if (market == "whatsapp" && channel === "WhatsApp Calling") {
+    if (channel === "WhatsApp Calling") {
       const minutes = Number(value || 0);
       const tier = callingData.find(
         (t) =>
@@ -1925,7 +1924,7 @@ const Pricing = () => {
       );
       const totalPrice = Number.parseFloat(tier?.rate || 0) * minutes;
       total = totalPrice + totalPrice * 0.05;
-    } else if (market == "whatsapp") {
+    } else if (channel === "WhatsApp Message") {
       data = apiData?.[0];
       const wpType = whatsAppType?.toLowerCase();
       const totalPrice =
@@ -1941,7 +1940,7 @@ const Pricing = () => {
   const channelKey = getChannelKey(channel, whatsAppType);
 
   const total =
-    channel !== "WhatsApp" &&
+    channel !== "WhatsApp Message" &&
     channel !== "WhatsApp Calling" &&
     calculateTotal(value, currency, channelKey);
 
@@ -1952,11 +1951,11 @@ const Pricing = () => {
   ];
   const fetchPricing = async (type, market, currency) => {
     try {
-      type = type?.toLowerCase();
-      const searchQuery =
-        type === "whatsapp"
-          ? `?type=${type}&country=${market}&currency=${currency}`
-          : `?type=${type}&country=${market}`;
+      const isWhatsAppMessage = type === "WhatsApp Message";
+      const normalizedType = type?.toLowerCase();
+      const searchQuery = isWhatsAppMessage
+        ? `?type=whatsapp&country=${market}&currency=${currency}`
+        : `?type=${normalizedType}&country=${market}`;
       const pricingRes = await axiosInstance.get(`/pricing${searchQuery}`);
 
       const data =
@@ -1967,7 +1966,7 @@ const Pricing = () => {
           ? pricingRes?.data?.callingData
           : [];
 
-      if (type == "whatsapp") {
+      if (isWhatsAppMessage) {
         const hasIntl =
           data?.[0]?.authentication_intl != null &&
           data?.[0]?.authentication_intl !== "";
@@ -2003,9 +2002,9 @@ const Pricing = () => {
 
   useEffect(() => {
     const pricingChannel =
-      channel === "WhatsApp Calling" ? "WhatsApp" : channel;
+      channel === "WhatsApp Calling" ? "WhatsApp Message" : channel;
 
-    if (pricingChannel === "WhatsApp" || pricingChannel === "SMS") {
+    if (pricingChannel === "WhatsApp Message" || pricingChannel === "SMS") {
       fetchPricing(pricingChannel, market, currency);
     }
   }, [channel, market, currency]);
@@ -2159,7 +2158,7 @@ const Pricing = () => {
 
                     if (selectedChannel === "WhatsApp Calling") {
                       setWhatsAppType("Calling");
-                    } else if (selectedChannel === "WhatsApp") {
+                    } else if (selectedChannel === "WhatsApp Message") {
                       setWhatsAppType("Marketing");
                     }
 
@@ -2237,7 +2236,8 @@ const Pricing = () => {
                   }}
                   className="bg-white border w-full md:w-60 border-blue-300 text-blue-800 font-medium rounded-lg px-4 py-2 shadow-sm"
                 >
-                  {channel === "WhatsApp" || channel === "WhatsApp Calling"
+                  {channel === "WhatsApp Message" ||
+                  channel === "WhatsApp Calling"
                     ? whatsappCurrencies.map((cur) => (
                         <option key={cur.code} value={cur.code}>
                           {cur.label}
@@ -2252,7 +2252,7 @@ const Pricing = () => {
               </div>
               {channel && (
                 <div className="mt-6 bg-white rounded-xl p-5 border border-blue-200 shadow-inner max-w-3xl mx-auto text-left">
-                  {channel === "WhatsApp" && (
+                  {channel === "WhatsApp Message" && (
                     <>
                       <div className="flex items-center gap-2 mb-2">
                         <Image
