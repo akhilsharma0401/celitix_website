@@ -226,7 +226,7 @@ const Footer = () => {
             </h4>
             <ul className="text-md sub-heading space-y-3">
               <li className="group relative cursor-pointer">
-                <Link href="https://blog.celitix.com">
+                <Link href="/blog">
                   Blog
                   <span className="block h-0.5 bg-white absolute left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-8"></span>
                 </Link>
