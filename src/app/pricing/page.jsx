@@ -1699,7 +1699,6 @@ const Pricing = () => {
     Twoway: Reachwaytosms,
     clicktocall: Reachclicktocall,
   };
-  // WhatsApp-only rate slabs by currency & template type
 
   const [currency, setCurrency] = useState("inr");
   const [whatsappTypeList, setWhatsAppTypeList] = useState([
@@ -1787,23 +1786,6 @@ const Pricing = () => {
     },
   };
 
-  // // Fetch live exchange rates
-  // useEffect(() => {
-  //   fetch(
-  //     "https://v6.exchangerate-api.com/v6/26e0264a2658e739860a6998/latest/USD",
-  //   )
-  //     .then((res) => res.json())
-  //     .then((data) =>
-  //       setRates({
-  //         usd: 1,
-  //         eur: data.conversion_rates.EUR,
-  //         inr: data.conversion_rates.INR,
-  //       }),
-  //     )
-  //     .catch((err) => console.error("Failed to fetch rates", err));
-  // }, []);
-
-  // Input handler
   const handleChange = (e) => {
     const raw = e.target.value;
     if (raw === "" || /^\d+$/.test(raw)) {
@@ -1817,7 +1799,6 @@ const Pricing = () => {
     return channel.replace(/\s+/g, "_");
   }
 
-  // Calculate total cost
   function calculateTotal(val, currency, channelKey) {
     if (channelKey.startsWith("WhatsApp_")) {
       const slabs = WHATSAPP_RATES[currency]?.[channelKey] || [];
@@ -1825,7 +1806,6 @@ const Pricing = () => {
       return val * rate;
     }
 
-    // 2) Other channels: tiered INR + convert
     const ALL_RATES = {
       RCS: [
         [100000, 0.2],
@@ -1894,7 +1874,6 @@ const Pricing = () => {
 
   // Currency formatter
   const formatCurrency = (amount, currency) => {
-    // const symbols = { inr: "₹", usd: "$", eur: "€", aed: "AED", thb: "฿" };
     const symbols = {
       ars: "ARS ",
       aud: "A$",
@@ -1979,16 +1958,6 @@ const Pricing = () => {
               ]
             : baseWhatsAppTypes,
         );
-        // setWhatsAppTypeList((prevList) => {
-        //   const alreadyHas = prevList.some(
-        //     (t) => t.value === "authentication_intl",
-        //   );
-        //   if (alreadyHas) return prevList;
-        //   return [
-        //     ...prevList,
-        //     { label: "International", value: "authentication_intl" },
-        //   ];
-        // });
       }
 
       setCallingData(callingData);
@@ -2012,13 +1981,11 @@ const Pricing = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const rowsPerPage = 10;
 
-  // 🔹 Pagination Logic
   const indexOfLastRow = currentPage * rowsPerPage;
   const indexOfFirstRow = indexOfLastRow - rowsPerPage;
   const currentRows = apiData?.slice(indexOfFirstRow, indexOfLastRow);
   const totalPages = Math.ceil(apiData?.length / rowsPerPage);
 
-  // 🔹 Reset page on market change
   useEffect(() => {
     setCurrentPage(1);
   }, [market]);
@@ -2049,7 +2016,6 @@ const Pricing = () => {
                 className="bg-[#9B44B6] border-[#9B44B6] text-white px-5 py-2 font-semibold hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_#9B44B6]"
                 onClick={handleShowFormPopup}
               />
-
               <FormPopup visible={openDialog} onHide={handleCloseDialog} />
             </div>
           </div>
@@ -2115,30 +2081,13 @@ const Pricing = () => {
                 />{" "}
                 WhatsApp
               </a>
-              {/* <a href="/inbound-dialer" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
-                                    <Image src={Reachinboundcalling} alt="IBD" className="w-4 h-4 mr-1" /> IBD
-                                </a> */}
+
               <a
                 href="/outbound-dialer"
                 className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100"
               >
                 <Image src={ReachObd} alt="OBD" className="w-4 h-4 mr-1" /> OBD
               </a>
-              {/* <a href="/missed-call-services" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
-                                    <Image src={ReachMissedcall} alt="Missed Call" className="w-4 h-4 mr-1" /> Missed Call
-                                </a>
-                                <a href="/two-way-sms" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
-                                    <Image src={Reachwaytosms} alt="2 Way SMS" className="w-4 h-4 mr-1" /> 2 Way SMS
-                                </a>
-                                <a href="/click-to-call" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
-                                    <Image src={Reachclicktocall} alt="Click 2 Call" className="w-4 h-4 mr-1" /> Click 2 Call
-                                </a>
-                                <a href="/email-otp" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
-                                    <Image src={Reachemail} alt="Email" className="w-4 h-4 mr-1" /> Email
-                                </a>
-                                <a href="/user-verification" className="flex heading items-center border border-gray-300 rounded px-2 py-1 text-xs text-gray-700 hover:bg-gray-100">
-                                    <Image src={ReachApp} alt="Authentication" className="w-4 h-4 mr-1" /> Authentication
-                                </a> */}
             </div>
           </div>
 
@@ -2185,20 +2134,6 @@ const Pricing = () => {
                   onChange={(e) => {
                     const selectedMarket = e.target.value;
                     setMarket(selectedMarket);
-                    // setWhatsAppTypeList([
-                    //   {
-                    //     label: "Marketing",
-                    //     value: "Marketing",
-                    //   },
-                    //   {
-                    //     label: "Utility",
-                    //     value: "Utility",
-                    //   },
-                    //   {
-                    //     label: "Authentication",
-                    //     value: "Authentication",
-                    //   },
-                    // ]);
                     if (channel === "SMS") {
                       if (selectedMarket === "India") {
                         setCurrency("inr");
@@ -2219,20 +2154,6 @@ const Pricing = () => {
                   value={currency}
                   onChange={(e) => {
                     setCurrency(e.target.value);
-                    // setWhatsAppTypeList([
-                    //   {
-                    //     label: "Marketing",
-                    //     value: "Marketing",
-                    //   },
-                    //   {
-                    //     label: "Utility",
-                    //     value: "Utility",
-                    //   },
-                    //   {
-                    //     label: "Authentication",
-                    //     value: "Authentication",
-                    //   },
-                    // ]);
                   }}
                   className="bg-white border w-full md:w-60 border-blue-300 text-blue-800 font-medium rounded-lg px-4 py-2 shadow-sm"
                 >
@@ -2378,6 +2299,7 @@ const Pricing = () => {
                       `}</style>
                     </>
                   )}
+
                   {channel === "WhatsApp Calling" && (
                     <>
                       <div className="flex items-center gap-2 mb-2">
@@ -2812,14 +2734,12 @@ const Pricing = () => {
           (apiData?.length > 0 ? (
             <>
               <div className="max-w-4xl mx-auto text-center mb-12 px-4">
-                {/* SMALL LABEL */}
                 <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-sky-50 border border-sky-100 mb-4">
                   <span className="text-xs font-semibold tracking-[0.2em] uppercase text-sky-700">
                     SMS Pricing
                   </span>
                 </div>
 
-                {/* MAIN HEADING */}
                 <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
                   Global operator-wise SMS pricing for{" "}
                   <span className="bg-gradient-to-r from-[#2b40b0] via-[#4f6ef7] to-[#36bae2] bg-clip-text text-transparent">
@@ -2827,7 +2747,6 @@ const Pricing = () => {
                   </span>
                 </h1>
 
-                {/* SUB HEADING */}
                 <p className="mt-5 text-lg text-slate-500 leading-relaxed max-w-2xl mx-auto">
                   Explore operator-wise SMS pricing across multiple telecom
                   networks. Compare rates, country codes, and carriers
@@ -2835,7 +2754,6 @@ const Pricing = () => {
                 </p>
               </div>
               <div className="mt-8 max-w-7xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
-                {/* HEADER (LIGHT DARK) */}
                 <div className="px-5 py-4 bg-slate-600 text-white border-b border-slate-700">
                   <h2 className="text-lg font-semibold tracking-wide">
                     Pricing for <span className="text-sky-300">{market}</span>
@@ -2845,10 +2763,8 @@ const Pricing = () => {
                   </p>
                 </div>
 
-                {/* TABLE */}
                 <div className="overflow-x-auto">
                   <table className="w-full min-w-[980px] text-sm text-left table-fixed border-collapse">
-                    {/* FIX COLUMN WIDTH */}
                     <colgroup>
                       <col className="w-[140px]" />
                       <col className="w-[330px]" />
@@ -2858,7 +2774,6 @@ const Pricing = () => {
                       <col className="w-[130px]" />
                     </colgroup>
 
-                    {/* TABLE HEADER */}
                     <thead className="bg-slate-50 text-slate-700 uppercase text-xs border-b border-slate-200">
                       <tr>
                         <th className="px-4 py-3">Country</th>
@@ -2870,7 +2785,6 @@ const Pricing = () => {
                       </tr>
                     </thead>
 
-                    {/* TABLE BODY */}
                     <tbody>
                       {currentRows.map((row) => (
                         <tr
@@ -2920,7 +2834,6 @@ const Pricing = () => {
                   </table>
                 </div>
 
-                {/* PAGINATION */}
                 <div className="flex justify-center items-center gap-2 p-4 bg-slate-50 border-t border-slate-100">
                   <button
                     onClick={() =>
@@ -2955,7 +2868,6 @@ const Pricing = () => {
                   </button>
                 </div>
 
-                {/* RESULT COUNT */}
                 <p className="text-sm text-slate-500 text-center pb-4 bg-slate-50">
                   Showing {indexOfFirstRow + 1}–
                   {Math.min(indexOfLastRow, apiData.length)} of {apiData.length}{" "}
@@ -2966,14 +2878,12 @@ const Pricing = () => {
           ) : (
             <>
               <div className="max-w-4xl mx-auto text-center mb-12 px-4">
-                {/* SMALL LABEL */}
                 <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-sky-50 border border-sky-100 mb-4">
                   <span className="text-xs font-semibold tracking-[0.2em] uppercase text-sky-700">
                     SMS Pricing
                   </span>
                 </div>
 
-                {/* MAIN HEADING */}
                 <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
                   Global operator-wise SMS pricing for{" "}
                   <span className="bg-gradient-to-r from-[#2b40b0] via-[#4f6ef7] to-[#36bae2] bg-clip-text text-transparent">
@@ -2981,18 +2891,14 @@ const Pricing = () => {
                   </span>
                 </h1>
 
-                {/* SUB HEADING */}
                 <p className="mt-5 text-lg text-slate-500 leading-relaxed max-w-2xl mx-auto">
                   Explore operator-wise SMS pricing across multiple telecom
                   networks. Compare rates, country codes, and carriers
                   effortlessly in one place.
                 </p>
               </div>
-
-              {/* EMPTY STATE */}
               <div className="max-w-xl mx-auto mt-10">
                 <div className="rounded-2xl border border-slate-200 bg-white/80 backdrop-blur-sm shadow-sm px-8 py-12 text-center">
-                  {/* ICON */}
                   <div className="w-16 h-16 mx-auto mb-5 rounded-full bg-slate-100 flex items-center justify-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -3015,8 +2921,6 @@ const Pricing = () => {
                       />
                     </svg>
                   </div>
-
-                  {/* MESSAGE */}
                   <h3 className="text-xl font-semibold text-slate-800">
                     No pricing data found
                   </h3>

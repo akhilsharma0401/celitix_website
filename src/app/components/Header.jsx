@@ -758,7 +758,7 @@ const Header = () => {
                       <ResourcesItem title="Tutorial" desc="Learn & Explore" />
                     </div>
                   </Link>
-                  <Link href="https://blog.celitix.com">
+                  <Link href="/blog">
                     <div className="flex flex-col popfh items-center justify-center">
                       <ResourcesItem title="Blog" desc="Learn & Explore" />
                     </div>
@@ -1113,7 +1113,7 @@ const Header = () => {
           w-full md:w-[800px] max-h-[80vh] overflow-y-auto`}
               >
                 <Link
-                  href="https://blog.celitix.com"
+                  href="/blog"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <ResourcesItem title="Blog" desc="Learn & Explore" />
