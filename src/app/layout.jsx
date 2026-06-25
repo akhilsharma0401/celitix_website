@@ -131,6 +131,35 @@ export default function RootLayout({ children }) {
             fbq("track", "PageView");
           `}
         </Script> */}
+
+         <Script id="linkedin-partner-id" strategy="afterInteractive">
+          {`
+            _linkedin_partner_id = "9594316";
+            window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+            window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+          `}
+        </Script>
+
+        <Script id="linkedin-insight-tag" strategy="afterInteractive">
+          {`
+            (function(l) {
+              if (!l) {
+                window.lintrk = function(a,b) {
+                  window.lintrk.q.push([a,b]);
+                };
+                window.lintrk.q = [];
+              }
+
+              var s = document.getElementsByTagName("script")[0];
+              var b = document.createElement("script");
+              b.type = "text/javascript";
+              b.async = true;
+              b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+              s.parentNode.insertBefore(b, s);
+            })(window.lintrk);
+          `}
+        </Script>
+
       </head>
       <body className={`${lora.variable} ${poppins.variable}`}>
         {/* Google Tag Manager (noscript) */}
@@ -150,6 +179,8 @@ export default function RootLayout({ children }) {
             src="https://www.facebook.com/tr?id=587446320662611&ev=PageView&noscript=1"
           />
         </noscript>
+
+        <noscript> <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=9594316&fmt=gif" /> </noscript>
         <script
           src="./widget.js"
           data-widget-id={`${process.env.NEXT_PUBLIC_WIDGET_ID}`}
