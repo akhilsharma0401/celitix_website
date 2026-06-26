@@ -180,7 +180,7 @@ export default function RootLayout({ children }) {
           />
         </noscript>
 
-        <noscript> <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=9594316&fmt=gif" /> </noscript>
+        <noscript> <img height="1" width="1" alt="" src="https://px.ads.linkedin.com/collect/?pid=9594316&fmt=gif" /> </noscript>
         <script
           src="./widget.js"
           data-widget-id={`${process.env.NEXT_PUBLIC_WIDGET_ID}`}
